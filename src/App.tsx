@@ -20,6 +20,8 @@ import RolePage from "./pages/career-hub/RolePage";
 import LocationPage from "./pages/career-hub/LocationPage";
 import GuidesPage from "./pages/career-hub/GuidesPage";
 import FinancialTipsPage from "./pages/career-hub/FinancialTipsPage";
+import GuidesArticlePage from "./pages/career-hub/articles/GuidesArticlePage";
+import FinancialTipsArticlePage from "./pages/career-hub/articles/FinancialTipsArticlePage";
 
 const queryClient = new QueryClient();
 
@@ -45,7 +47,9 @@ const App = () => (
           <Route path="/career-hub/roles/:roleSlug" element={<RolePage />} />
           <Route path="/career-hub/locations/:locationSlug" element={<LocationPage />} />
           <Route path="/career-hub/guides" element={<GuidesPage />} />
+          <Route path="/career-hub/guides/:slug" element={<GuidesArticlePage />} />
           <Route path="/career-hub/financial-tips" element={<FinancialTipsPage />} />
+          <Route path="/career-hub/financial-tips/:slug" element={<FinancialTipsArticlePage />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
