@@ -6,8 +6,11 @@ import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
 import KeyFacts from "@/components/career-hub/KeyFacts";
 import RelatedContent from "@/components/career-hub/RelatedContent";
+import DayInTheLife from "@/components/career-hub/DayInTheLife";
+import RoleComparisons from "@/components/career-hub/RoleComparisons";
 import { getRoleBySlug, roles } from "@/data/roles";
 import { usLocations } from "@/data/locations";
+import { getDayInTheLife, getComparisonsForRole } from "@/data/role-content";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DollarSign, CheckCircle, TrendingUp, ArrowRight, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -29,6 +32,10 @@ const RolePage = () => {
   const relatedRoles = roles
     .filter(r => r.industry === role.industry && r.id !== role.id)
     .slice(0, 3);
+
+  // Get Day in the Life and comparison content
+  const dayInTheLife = getDayInTheLife(role.slug);
+  const comparisons = getComparisonsForRole(role.slug);
 
   return (
     <>
@@ -236,6 +243,16 @@ const RolePage = () => {
             </div>
           </div>
         </section>
+
+        {/* Day in the Life */}
+        {dayInTheLife && (
+          <DayInTheLife content={dayInTheLife} roleTitle={role.title} />
+        )}
+
+        {/* Role Comparisons */}
+        {comparisons.length > 0 && (
+          <RoleComparisons comparisons={comparisons} currentRoleSlug={role.slug} />
+        )}
 
         {/* FAQ */}
         <section className="py-12 bg-secondary">
