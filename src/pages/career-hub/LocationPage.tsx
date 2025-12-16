@@ -4,7 +4,9 @@ import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import RoleCard from "@/components/career-hub/RoleCard";
-import { getLocationBySlug } from "@/data/locations";
+import KeyFacts from "@/components/career-hub/KeyFacts";
+import RelatedContent from "@/components/career-hub/RelatedContent";
+import { getLocationBySlug, usLocations } from "@/data/locations";
 import { roles } from "@/data/roles";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, DollarSign, Home, ShoppingCart, Car, Users, Clock, CheckCircle } from "lucide-react";
@@ -80,6 +82,22 @@ const LocationPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Key Facts - GEO Optimized */}
+        <section className="py-8">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <KeyFacts
+              title={`Key Facts: Working in ${location.city}`}
+              facts={[
+                { label: "Average Pay", value: `$${location.avgHourlyWage.min}-$${location.avgHourlyWage.max} per hour` },
+                { label: "Studio Rent", value: `$${location.costOfLiving.rent.studio}/month` },
+                { label: "Top Industries", value: location.topIndustries.slice(0, 3).join(", ") },
+                { label: "Timezone", value: location.timezone },
+              ]}
+              summary={`Indeed Flex offers flexible work opportunities in ${location.city}, ${location.stateCode} paying $${location.avgHourlyWage.min}-$${location.avgHourlyWage.max}/hr. Popular industries include ${location.topIndustries.slice(0, 2).join(" and ")}. Download the Indeed Flex app to find shifts near you.`}
+            />
           </div>
         </section>
 
@@ -203,6 +221,22 @@ const LocationPage = () => {
             }
           })
         }} />
+
+        {/* Cross-Linking Section */}
+        <RelatedContent
+          currentLocation={location.city}
+          roles={topRoles.slice(0, 4).map(r => ({ title: r.title, slug: r.slug, pay: `$${r.avgHourlyRate.min}-${r.avgHourlyRate.max}/hr` }))}
+          locations={usLocations.filter(l => l.slug !== location.slug).slice(0, 4).map(l => ({ name: `${l.city}, ${l.stateCode}`, slug: l.slug }))}
+          tools={[
+            { title: "Cost of Living Comparison", slug: "cost-of-living", description: `Compare ${location.city} expenses` },
+            { title: "Pay Calculator", slug: "pay-calculator", description: "Calculate your earnings" },
+          ]}
+          guides={[
+            { title: "Complete Guide to Indeed Flex", slug: "complete-guide", readTime: "8 min" },
+            { title: "What to Expect on Your First Shift", slug: "first-shift", readTime: "4 min" },
+          ]}
+          variant="full"
+        />
 
         <CTASection 
           title={`Find Shifts in ${location.city} Today`}

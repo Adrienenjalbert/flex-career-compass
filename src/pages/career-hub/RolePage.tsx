@@ -5,7 +5,9 @@ import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
 import KeyFacts from "@/components/career-hub/KeyFacts";
+import RelatedContent from "@/components/career-hub/RelatedContent";
 import { getRoleBySlug, roles } from "@/data/roles";
+import { usLocations } from "@/data/locations";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DollarSign, CheckCircle, TrendingUp, ArrowRight, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -295,6 +297,22 @@ const RolePage = () => {
             "qualifications": role.requirements.join(". ")
           })
         }} />
+
+        {/* Cross-Linking Section */}
+        <RelatedContent
+          currentRole={role.title}
+          roles={relatedRoles.map(r => ({ title: r.title, slug: r.slug, pay: `$${r.avgHourlyRate.min}-${r.avgHourlyRate.max}/hr` }))}
+          locations={usLocations.slice(0, 5).map(l => ({ name: `${l.city}, ${l.stateCode}`, slug: l.slug }))}
+          tools={[
+            { title: "Pay Calculator", slug: "pay-calculator", description: `Calculate your ${role.title} earnings` },
+            { title: "Shift Planner", slug: "shift-planner", description: "Plan your work schedule" },
+          ]}
+          guides={[
+            { title: "How to Get Your First Flexible Job", slug: "first-flex-job", readTime: "5 min" },
+            { title: "Skills That Boost Your Hourly Rate", slug: "skill-boost", readTime: "7 min" },
+          ]}
+          variant="full"
+        />
 
         <CTASection 
           title={`Ready to Start as a ${role.title}?`}
