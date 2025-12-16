@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
@@ -8,6 +7,14 @@ import KeyFacts from "@/components/career-hub/KeyFacts";
 import RelatedContent from "@/components/career-hub/RelatedContent";
 import DayInTheLife from "@/components/career-hub/DayInTheLife";
 import RoleComparisons from "@/components/career-hub/RoleComparisons";
+import { 
+  SEOMetaTags, 
+  generateKeywords,
+  JobPostingSchema, 
+  OccupationSchema, 
+  FAQSchema,
+  WebPageSchema 
+} from "@/components/career-hub/seo";
 import { getRoleBySlug, roles } from "@/data/roles";
 import { usLocations } from "@/data/locations";
 import { getDayInTheLife, getComparisonsForRole } from "@/data/role-content";
@@ -37,13 +44,82 @@ const RolePage = () => {
   const dayInTheLife = getDayInTheLife(role.slug);
   const comparisons = getComparisonsForRole(role.slug);
 
+  const pageUrl = `https://indeedflex.com/career-hub/roles/${role.slug}`;
+  const pageDescription = `Learn how to become a ${role.title}. ${role.shortDescription}. Average pay: $${role.avgHourlyRate.min}-$${role.avgHourlyRate.max}/hr.`;
+
+  // Generate FAQ data for schema
+  const faqData = role.faqs.map(faq => ({
+    question: faq.question,
+    answer: faq.answer
+  }));
+
   return (
     <>
-      <Helmet>
-        <title>{role.title} Career Guide | Indeed Flex</title>
-        <meta name="description" content={`Learn how to become a ${role.title}. ${role.shortDescription}. Average pay: $${role.avgHourlyRate.min}-$${role.avgHourlyRate.max}/hr.`} />
-        <link rel="canonical" href={`https://indeedflex.com/career-hub/roles/${role.slug}`} />
-      </Helmet>
+      {/* SEO Meta Tags */}
+      <SEOMetaTags
+        title={`${role.title} Career Guide`}
+        description={pageDescription}
+        canonical={pageUrl}
+        keywords={generateKeywords(
+          ["temp work", "flexible jobs", "hourly work"],
+          undefined,
+          role.title,
+          role.industry
+        )}
+        ogType="article"
+        section="Career Guide"
+        tags={[role.industry, role.title, "flexible work", "temp jobs"]}
+      />
+
+      {/* Structured Data */}
+      <JobPostingSchema
+        title={role.title}
+        description={role.description}
+        employmentType={["TEMPORARY", "PART_TIME", "CONTRACTOR"]}
+        hiringOrganization={{
+          name: "Indeed Flex",
+          url: "https://indeedflex.com"
+        }}
+        baseSalary={{
+          currency: "USD",
+          minValue: role.avgHourlyRate.min,
+          maxValue: role.avgHourlyRate.max,
+          unitText: "HOUR"
+        }}
+        skills={role.skills}
+        qualifications={role.requirements}
+        responsibilities={role.responsibilities}
+        industry={role.industry}
+        directApply={true}
+      />
+
+      <OccupationSchema
+        name={role.title}
+        description={role.description}
+        estimatedSalary={{
+          currency: "USD",
+          minValue: role.avgHourlyRate.min,
+          maxValue: role.avgHourlyRate.max,
+          unitText: "HOUR"
+        }}
+        occupationLocation={{ type: "Country", name: "United States" }}
+        skills={role.skills}
+        responsibilities={role.responsibilities}
+        qualifications={role.requirements}
+      />
+
+      <FAQSchema questions={faqData} />
+
+      <WebPageSchema
+        name={`${role.title} Career Guide`}
+        description={pageDescription}
+        url={pageUrl}
+        breadcrumb={[
+          { name: "Career Hub", url: "https://indeedflex.com/career-hub" },
+          { name: role.industry.charAt(0).toUpperCase() + role.industry.slice(1), url: `https://indeedflex.com/career-hub/industries/${role.industry}` },
+          { name: role.title }
+        ]}
+      />
 
       <Layout>
         <div className="container mx-auto px-4">
@@ -260,60 +336,6 @@ const RolePage = () => {
             <FAQSection faqs={role.faqs} title={`${role.title} FAQs`} />
           </div>
         </section>
-
-        {/* Schema Markup - JobPosting */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "JobPosting",
-            "title": role.title,
-            "description": role.description,
-            "industry": role.industry,
-            "baseSalary": {
-              "@type": "MonetaryAmount",
-              "currency": "USD",
-              "value": {
-                "@type": "QuantitativeValue",
-                "minValue": role.avgHourlyRate.min,
-                "maxValue": role.avgHourlyRate.max,
-                "unitText": "HOUR"
-              }
-            },
-            "skills": role.skills.join(", "),
-            "hiringOrganization": {
-              "@type": "Organization",
-              "name": "Indeed Flex",
-              "sameAs": "https://indeedflex.com"
-            },
-            "employmentType": ["TEMPORARY", "PART_TIME", "CONTRACTOR"],
-            "jobLocationType": "TELECOMMUTE"
-          })
-        }} />
-
-        {/* Schema Markup - Occupation */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Occupation",
-            "name": role.title,
-            "description": role.description,
-            "estimatedSalary": {
-              "@type": "MonetaryAmountDistribution",
-              "currency": "USD",
-              "percentile25": `$${role.avgHourlyRate.min}`,
-              "median": `$${Math.round((role.avgHourlyRate.min + role.avgHourlyRate.max) / 2)}`,
-              "percentile75": `$${role.avgHourlyRate.max}`,
-              "unitText": "HOUR"
-            },
-            "occupationLocation": {
-              "@type": "Country",
-              "name": "United States"
-            },
-            "skills": role.skills.join(", "),
-            "responsibilities": role.responsibilities.join(". "),
-            "qualifications": role.requirements.join(". ")
-          })
-        }} />
 
         {/* Cross-Linking Section */}
         <RelatedContent
