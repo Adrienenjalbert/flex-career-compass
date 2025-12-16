@@ -29,7 +29,13 @@ const FinancialTipsArticlePage = () => {
 
   const ArticleIcon = article.icon;
 
-  // Generate schema
+  // Check if article is a how-to guide
+  const isHowToGuide = article.sections.some(s => 
+    s.heading.toLowerCase().includes('step') || 
+    article.title.toLowerCase().includes('how to')
+  );
+
+  // Generate Article schema
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -55,7 +61,26 @@ const FinancialTipsArticlePage = () => {
     }
   };
 
-  const faqSchema = {
+  // Generate HowTo schema for step-by-step financial guides
+  const howToSchema = isHowToGuide ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": article.title,
+    "description": article.description,
+    "totalTime": `PT${parseInt(article.readTime)}M`,
+    "step": article.sections
+      .filter(s => s.heading.toLowerCase().includes('step') || article.sections.indexOf(s) > 0)
+      .slice(0, 8)
+      .map((section, index) => ({
+        "@type": "HowToStep",
+        "position": index + 1,
+        "name": section.heading.replace(/^Step \d+:\s*/i, ''),
+        "text": section.content.substring(0, 500)
+      }))
+  } : null;
+
+  // Generate FAQ schema
+  const faqSchema = article.faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": article.faqs.map(faq => ({
@@ -66,7 +91,7 @@ const FinancialTipsArticlePage = () => {
         "text": faq.answer
       }
     }))
-  };
+  } : null;
 
   return (
     <>
@@ -77,9 +102,16 @@ const FinancialTipsArticlePage = () => {
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        {howToSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(howToSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Layout>
