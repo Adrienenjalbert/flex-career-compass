@@ -1,5 +1,6 @@
 import { roles } from "@/data/roles";
 import { usLocations } from "@/data/locations";
+import { cities } from "@/data/cities";
 import { guideCategories } from "@/data/articles/guides";
 import { financialTips as financialTipsData } from "@/data/articles/financial-tips";
 
@@ -69,7 +70,33 @@ export const generateSitemapEntries = (): SitemapEntry[] => {
     });
   });
 
-  // Tools pages
+  // City pages
+  entries.push({
+    loc: `${BASE_URL}/career-hub/cities`,
+    lastmod: TODAY,
+    changefreq: "weekly",
+    priority: 0.9,
+  });
+
+  cities.forEach((city) => {
+    // City index pages
+    entries.push({
+      loc: `${BASE_URL}/career-hub/cities/${city.slug}`,
+      lastmod: TODAY,
+      changefreq: "weekly",
+      priority: 0.8,
+    });
+
+    // City x Role pages (high-value programmatic pages)
+    roles.forEach((role) => {
+      entries.push({
+        loc: `${BASE_URL}/career-hub/cities/${city.slug}/${role.slug}`,
+        lastmod: TODAY,
+        changefreq: "monthly",
+        priority: 0.7,
+      });
+    });
+  });
   entries.push({
     loc: `${BASE_URL}/career-hub/tools`,
     lastmod: TODAY,
@@ -182,6 +209,8 @@ export const getPageCountByType = (): Record<string, number> => {
     roles: 0,
     locations: 0,
     locationRoles: 0,
+    cities: 0,
+    cityRoles: 0,
     tools: 0,
     guides: 0,
     financialTips: 0,
@@ -195,6 +224,8 @@ export const getPageCountByType = (): Record<string, number> => {
     else if (path.match(/\/roles\/[^/]+$/)) counts.roles++;
     else if (path.match(/\/locations\/[^/]+$/)) counts.locations++;
     else if (path.match(/\/locations\/[^/]+\/[^/]+$/)) counts.locationRoles++;
+    else if (path.match(/\/cities\/[^/]+$/)) counts.cities++;
+    else if (path.match(/\/cities\/[^/]+\/[^/]+$/)) counts.cityRoles++;
     else if (path.includes("/tools")) counts.tools++;
     else if (path.includes("/guides/")) counts.guides++;
     else if (path.includes("/financial-tips/")) counts.financialTips++;
