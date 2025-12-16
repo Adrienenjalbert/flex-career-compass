@@ -24,8 +24,12 @@ import {
 import { getRoleBySlug, roles } from "@/data/roles";
 import { usLocations } from "@/data/locations";
 import { getDayInTheLife, getComparisonsForRole } from "@/data/role-content";
+import { generateComprehensiveFAQs } from "@/lib/faq-generator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { DollarSign, CheckCircle, TrendingUp, ArrowRight, Briefcase } from "lucide-react";
+import { 
+  DollarSign, CheckCircle, TrendingUp, ArrowRight, Briefcase, 
+  Clock, Users, GraduationCap, Target
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const RolePage = () => {
@@ -44,7 +48,7 @@ const RolePage = () => {
 
   const relatedRoles = roles
     .filter(r => r.industry === role.industry && r.id !== role.id)
-    .slice(0, 3);
+    .slice(0, 4);
 
   // Get Day in the Life and comparison content
   const dayInTheLife = getDayInTheLife(role.slug);
@@ -53,8 +57,9 @@ const RolePage = () => {
   const pageUrl = `https://indeedflex.com/career-hub/roles/${role.slug}`;
   const pageDescription = `Learn how to become a ${role.title}. ${role.shortDescription}. Average pay: $${role.avgHourlyRate.min}-$${role.avgHourlyRate.max}/hr.`;
 
-  // Generate FAQ data for schema
-  const faqData = role.faqs.map(faq => ({
+  // Generate comprehensive FAQs (10+)
+  const comprehensiveFaqs = generateComprehensiveFAQs(role);
+  const faqData = comprehensiveFaqs.map(faq => ({
     question: faq.question,
     answer: faq.answer
   }));
@@ -155,28 +160,54 @@ const RolePage = () => {
           ]} />
         </div>
 
-        {/* Hero */}
-        <section className="bg-primary text-primary-foreground py-12">
+        {/* Hero Section - Improved with more stats */}
+        <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium capitalize">
                   {role.industry}
                 </span>
+                <span className="bg-primary-foreground/10 text-primary-foreground/80 px-3 py-1 rounded-full text-sm">
+                  Flexible Work
+                </span>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">
                 {role.title} Career Guide
               </h1>
-              <p className="text-xl text-primary-foreground/90 mb-6">
+              <p className="text-xl text-primary-foreground/90 mb-8 max-w-3xl">
                 {role.description}
               </p>
-              <div className="flex items-center gap-6">
-                <div className="flex items-center gap-2">
-                  <DollarSign className="h-6 w-6 text-accent" />
-                  <div>
-                    <div className="text-2xl font-bold">${role.avgHourlyRate.min}-${role.avgHourlyRate.max}</div>
-                    <div className="text-sm text-primary-foreground/70">per hour</div>
+              
+              {/* Quick Stats Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-primary-foreground/10 backdrop-blur rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-primary-foreground/70 text-sm mb-1">
+                    <DollarSign className="h-4 w-4" />
+                    Hourly Pay
                   </div>
+                  <div className="text-2xl font-bold">${role.avgHourlyRate.min}-${role.avgHourlyRate.max}</div>
+                </div>
+                <div className="bg-primary-foreground/10 backdrop-blur rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-primary-foreground/70 text-sm mb-1">
+                    <Clock className="h-4 w-4" />
+                    Schedule
+                  </div>
+                  <div className="text-2xl font-bold">Flexible</div>
+                </div>
+                <div className="bg-primary-foreground/10 backdrop-blur rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-primary-foreground/70 text-sm mb-1">
+                    <GraduationCap className="h-4 w-4" />
+                    Experience
+                  </div>
+                  <div className="text-2xl font-bold">Entry-Level</div>
+                </div>
+                <div className="bg-primary-foreground/10 backdrop-blur rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-primary-foreground/70 text-sm mb-1">
+                    <Target className="h-4 w-4" />
+                    Growth
+                  </div>
+                  <div className="text-2xl font-bold">{role.careerPath.length} Levels</div>
                 </div>
               </div>
             </div>
@@ -199,39 +230,18 @@ const RolePage = () => {
           </div>
         </section>
 
-        {/* Interactive Tools Section */}
-        <section className="py-12 bg-secondary/30">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-              Calculate Your {role.title} Earnings
-            </h2>
-            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <EmbeddedPayCalculator
-                roleTitle={role.title}
-                minRate={role.avgHourlyRate.min}
-                maxRate={role.avgHourlyRate.max}
-              />
-              <EarningsGoalCalculator
-                roleTitle={role.title}
-                minRate={role.avgHourlyRate.min}
-                maxRate={role.avgHourlyRate.max}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Content Grid */}
+        {/* Main Content Grid - Core Information First */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">
-                {/* Responsibilities */}
+                {/* What You'll Do */}
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Briefcase className="h-5 w-5 text-primary" />
-                      What You'll Do
+                      What You'll Do as a {role.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -246,12 +256,15 @@ const RolePage = () => {
                   </CardContent>
                 </Card>
 
-                {/* Skills */}
+                {/* Skills Required */}
                 <Card>
                   <CardHeader>
-                    <CardTitle>Skills Required</CardTitle>
+                    <CardTitle>Skills You'll Need</CardTitle>
                   </CardHeader>
                   <CardContent>
+                    <p className="text-muted-foreground mb-4">
+                      These skills will help you succeed as a {role.title}. Don't worry if you don't have all of them—many can be learned on the job.
+                    </p>
                     <div className="flex flex-wrap gap-3">
                       {role.skills.map((skill) => (
                         <span 
@@ -287,24 +300,29 @@ const RolePage = () => {
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <TrendingUp className="h-5 w-5 text-primary" />
-                      Career Path
+                      Career Growth Path
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
+                    <p className="text-muted-foreground mb-6">
+                      Starting as a {role.title} can lead to exciting career opportunities. Here's a typical progression:
+                    </p>
                     <div className="relative">
+                      {/* Timeline line */}
+                      <div className="absolute left-5 top-5 bottom-5 w-0.5 bg-border" />
                       {role.careerPath.map((step, index) => (
-                        <div key={index} className="flex items-center gap-4 mb-4 last:mb-0">
-                          <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${
-                            index === 0 ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'
+                        <div key={index} className="flex items-start gap-4 mb-6 last:mb-0 relative">
+                          <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm z-10 ${
+                            index === 0 ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground border-2 border-background'
                           }`}>
                             {index + 1}
                           </div>
-                          <div className="flex-1">
-                            <div className="font-medium">{step.role}</div>
+                          <div className="flex-1 pt-1">
+                            <div className="font-semibold text-lg">{step.role}</div>
                             <div className="text-sm text-muted-foreground">{step.years}</div>
                           </div>
                           {index < role.careerPath.length - 1 && (
-                            <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                            <ArrowRight className="h-4 w-4 text-muted-foreground mt-3" />
                           )}
                         </div>
                       ))}
@@ -315,8 +333,8 @@ const RolePage = () => {
 
               {/* Sidebar */}
               <div className="space-y-6">
-                {/* Quick Stats */}
-                <Card className="bg-primary text-primary-foreground">
+                {/* Quick Stats Card */}
+                <Card className="bg-primary text-primary-foreground sticky top-4">
                   <CardHeader>
                     <CardTitle className="text-primary-foreground">Quick Stats</CardTitle>
                   </CardHeader>
@@ -333,6 +351,15 @@ const RolePage = () => {
                       <div className="text-sm text-primary-foreground/70">Career Growth</div>
                       <div className="text-lg font-medium">{role.careerPath.length} advancement levels</div>
                     </div>
+                    <div className="pt-4 border-t border-primary-foreground/20">
+                      <Link 
+                        to="#calculator"
+                        className="flex items-center justify-center gap-2 w-full py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
+                      >
+                        <DollarSign className="h-4 w-4" />
+                        Calculate Earnings
+                      </Link>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -340,7 +367,10 @@ const RolePage = () => {
                 {relatedRoles.length > 0 && (
                   <Card>
                     <CardHeader>
-                      <CardTitle>Related Roles</CardTitle>
+                      <CardTitle className="flex items-center gap-2">
+                        <Users className="h-5 w-5 text-primary" />
+                        Related Roles
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-3">
@@ -348,9 +378,9 @@ const RolePage = () => {
                           <li key={related.id}>
                             <Link 
                               to={`/career-hub/roles/${related.slug}`}
-                              className="flex items-center justify-between hover:text-primary transition-colors"
+                              className="flex items-center justify-between hover:text-primary transition-colors group"
                             >
-                              <span>{related.title}</span>
+                              <span className="group-hover:underline">{related.title}</span>
                               <span className="text-sm text-muted-foreground">
                                 ${related.avgHourlyRate.min}-${related.avgHourlyRate.max}/hr
                               </span>
@@ -361,33 +391,25 @@ const RolePage = () => {
                     </CardContent>
                   </Card>
                 )}
-
-                {/* Skills Assessment */}
-                <SkillsAssessment
-                  roleTitle={role.title}
-                  skills={role.skills}
-                  requirements={role.requirements}
-                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Salary Comparison Section */}
-        <section className="py-12">
+        {/* Skills Assessment - Standalone Section */}
+        <section className="py-12 bg-secondary/30">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <SalaryComparison
-                title={`${role.industry.charAt(0).toUpperCase() + role.industry.slice(1)} Role Salaries`}
-                currentItem={role.title}
-                items={salaryComparisonRoles}
-                type="role"
-              />
-              <SalaryComparison
-                title="Pay by Location"
-                currentItem=""
-                items={locationComparisonData}
-                type="location"
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
+                Are You Ready to Be a {role.title}?
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                Check off the skills you already have to see how prepared you are
+              </p>
+              <SkillsAssessment
+                roleTitle={role.title}
+                skills={role.skills}
+                requirements={role.requirements}
               />
             </div>
           </div>
@@ -403,10 +425,63 @@ const RolePage = () => {
           <RoleComparisons comparisons={comparisons} currentRoleSlug={role.slug} />
         )}
 
-        {/* FAQ */}
+        {/* FAQ Section - Now with 10+ FAQs */}
         <section className="py-12 bg-secondary">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <FAQSection faqs={role.faqs} title={`${role.title} FAQs`} />
+          <div className="container mx-auto px-4 max-w-4xl">
+            <FAQSection 
+              faqs={comprehensiveFaqs} 
+              title={`Frequently Asked Questions About ${role.title} Jobs`} 
+            />
+          </div>
+        </section>
+
+        {/* Pay Calculator Section - Moved Lower */}
+        <section id="calculator" className="py-12 scroll-mt-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
+              Calculate Your {role.title} Earnings
+            </h2>
+            <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+              Use these tools to estimate your potential earnings as a {role.title} with Indeed Flex
+            </p>
+            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <EmbeddedPayCalculator
+                roleTitle={role.title}
+                minRate={role.avgHourlyRate.min}
+                maxRate={role.avgHourlyRate.max}
+              />
+              <EarningsGoalCalculator
+                roleTitle={role.title}
+                minRate={role.avgHourlyRate.min}
+                maxRate={role.avgHourlyRate.max}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Salary Comparison Section */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
+              Compare {role.title} Pay
+            </h2>
+            <p className="text-muted-foreground text-center mb-8">
+              See how {role.title} pay compares across roles and locations
+            </p>
+            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <SalaryComparison
+                title={`${role.industry.charAt(0).toUpperCase() + role.industry.slice(1)} Role Salaries`}
+                currentItem={role.title}
+                items={salaryComparisonRoles}
+                type="role"
+              />
+              <SalaryComparison
+                title="Pay by Location"
+                currentItem=""
+                items={locationComparisonData}
+                type="location"
+              />
+            </div>
           </div>
         </section>
 
@@ -428,7 +503,7 @@ const RolePage = () => {
 
         <CTASection 
           title={`Ready to Start as a ${role.title}?`}
-          subtitle="Download Indeed Flex and find your first shift today."
+          subtitle="Download Indeed Flex and find your first shift today. Most workers book their first shift within 48 hours."
         />
       </Layout>
     </>
