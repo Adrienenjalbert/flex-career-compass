@@ -7,6 +7,7 @@ import KeyFacts from "@/components/career-hub/KeyFacts";
 import RelatedContent from "@/components/career-hub/RelatedContent";
 import DayInTheLife from "@/components/career-hub/DayInTheLife";
 import RoleComparisons from "@/components/career-hub/RoleComparisons";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { 
   SEOMetaTags, 
   generateKeywords,
@@ -500,6 +501,14 @@ const RolePage = () => {
           ]}
           variant="full"
         />
+
+        {/* Internal Link Hub for SEO */}
+        <div className="container mx-auto px-4 py-12">
+          <InternalLinkHub 
+            variant="footer" 
+            currentPage={{ type: 'role', role: role.slug, industry: role.industry }}
+          />
+        </div>
 
         <CTASection 
           title={`Ready to Start as a ${role.title}?`}

@@ -3,6 +3,7 @@ import Layout from '@/components/career-hub/Layout';
 import Breadcrumbs from '@/components/career-hub/Breadcrumbs';
 import CTASection from '@/components/career-hub/CTASection';
 import FAQSection from '@/components/career-hub/FAQSection';
+import { InternalLinkHub } from '@/components/career-hub/InternalLinkHub';
 import { getCityBySlug, getCitiesNearMajorCity, cities } from '@/data/cities';
 import { roles } from '@/data/roles';
 import { MapPin, DollarSign, TrendingUp, Building, Clock, Users, Home, Bus, ShoppingCart, ChevronRight, Star } from 'lucide-react';
@@ -11,7 +12,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { BreadcrumbSchema, LocalBusinessSchema, FAQSchema, WebPageSchema } from '@/components/career-hub/seo/EnhancedSchema';
 import SEOMetaTags from '@/components/career-hub/seo/SEOMetaTags';
-
 const CityPage = () => {
   const { citySlug } = useParams<{ citySlug: string }>();
   const city = getCityBySlug(citySlug || '');
@@ -409,6 +409,14 @@ const CityPage = () => {
             title={`FAQs About Working in ${city.city}`}
           />
         </div>
+      </div>
+
+      {/* Internal Link Hub for SEO */}
+      <div className="container mx-auto px-4 py-12">
+        <InternalLinkHub 
+          variant="footer" 
+          currentPage={{ type: 'city', city: city.slug }}
+        />
       </div>
 
       {/* CTA */}

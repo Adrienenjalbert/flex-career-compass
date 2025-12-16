@@ -6,9 +6,9 @@ import LocationCard from "@/components/career-hub/LocationCard";
 import ToolCard from "@/components/career-hub/ToolCard";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { usLocations } from "@/data/locations";
 import { roles } from "@/data/roles";
-
 const industries = [
   {
     id: "hospitality",
@@ -164,6 +164,13 @@ const CareerHubHome = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 max-w-3xl">
             <FAQSection faqs={homeFAQs} />
+          </div>
+        </section>
+
+        {/* Internal Link Hub for SEO */}
+        <section className="py-16 bg-secondary">
+          <div className="container mx-auto px-4">
+            <InternalLinkHub variant="full" />
           </div>
         </section>
 
