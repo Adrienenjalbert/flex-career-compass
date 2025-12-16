@@ -15,6 +15,12 @@ import {
   FAQSchema,
   WebPageSchema 
 } from "@/components/career-hub/seo";
+import {
+  EmbeddedPayCalculator,
+  SkillsAssessment,
+  SalaryComparison,
+  EarningsGoalCalculator
+} from "@/components/career-hub/interactive";
 import { getRoleBySlug, roles } from "@/data/roles";
 import { usLocations } from "@/data/locations";
 import { getDayInTheLife, getComparisonsForRole } from "@/data/role-content";
@@ -51,6 +57,25 @@ const RolePage = () => {
   const faqData = role.faqs.map(faq => ({
     question: faq.question,
     answer: faq.answer
+  }));
+
+  // Get comparison data for salary chart
+  const salaryComparisonRoles = roles
+    .filter(r => r.industry === role.industry)
+    .slice(0, 6)
+    .map(r => ({
+      name: r.title,
+      minRate: r.avgHourlyRate.min,
+      maxRate: r.avgHourlyRate.max,
+      slug: r.slug
+    }));
+
+  // Location comparison data
+  const locationComparisonData = usLocations.slice(0, 5).map(l => ({
+    name: `${l.city}, ${l.stateCode}`,
+    minRate: l.avgHourlyWage.min,
+    maxRate: l.avgHourlyWage.max,
+    slug: l.slug
   }));
 
   return (
@@ -171,6 +196,27 @@ const RolePage = () => {
               ]}
               summary={`Indeed Flex offers ${role.title.toLowerCase()} positions paying $${role.avgHourlyRate.min}-$${role.avgHourlyRate.max}/hr with flexible scheduling. ${role.shortDescription}. Apply through the Indeed Flex app and start working within 48 hours.`}
             />
+          </div>
+        </section>
+
+        {/* Interactive Tools Section */}
+        <section className="py-12 bg-secondary/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+              Calculate Your {role.title} Earnings
+            </h2>
+            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <EmbeddedPayCalculator
+                roleTitle={role.title}
+                minRate={role.avgHourlyRate.min}
+                maxRate={role.avgHourlyRate.max}
+              />
+              <EarningsGoalCalculator
+                roleTitle={role.title}
+                minRate={role.avgHourlyRate.min}
+                maxRate={role.avgHourlyRate.max}
+              />
+            </div>
           </div>
         </section>
 
@@ -315,7 +361,34 @@ const RolePage = () => {
                     </CardContent>
                   </Card>
                 )}
+
+                {/* Skills Assessment */}
+                <SkillsAssessment
+                  roleTitle={role.title}
+                  skills={role.skills}
+                  requirements={role.requirements}
+                />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Salary Comparison Section */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <SalaryComparison
+                title={`${role.industry.charAt(0).toUpperCase() + role.industry.slice(1)} Role Salaries`}
+                currentItem={role.title}
+                items={salaryComparisonRoles}
+                type="role"
+              />
+              <SalaryComparison
+                title="Pay by Location"
+                currentItem=""
+                items={locationComparisonData}
+                type="location"
+              />
             </div>
           </div>
         </section>
