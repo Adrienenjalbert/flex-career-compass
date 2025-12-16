@@ -4,6 +4,7 @@ import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
+import KeyFacts from "@/components/career-hub/KeyFacts";
 import { getRoleBySlug, roles } from "@/data/roles";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DollarSign, CheckCircle, TrendingUp, ArrowRight, Briefcase } from "lucide-react";
@@ -69,6 +70,22 @@ const RolePage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Key Facts - GEO Optimized */}
+        <section className="py-8">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <KeyFacts
+              title={`Key Facts: ${role.title}`}
+              facts={[
+                { label: "Hourly Rate", value: `$${role.avgHourlyRate.min}-$${role.avgHourlyRate.max} per hour` },
+                { label: "Industry", value: role.industry.charAt(0).toUpperCase() + role.industry.slice(1) },
+                { label: "Experience", value: role.requirements.find(r => r.toLowerCase().includes('experience')) || "Entry-level positions available" },
+                { label: "Key Skills", value: role.skills.slice(0, 3).join(", ") },
+              ]}
+              summary={`Indeed Flex offers ${role.title.toLowerCase()} positions paying $${role.avgHourlyRate.min}-$${role.avgHourlyRate.max}/hr with flexible scheduling. ${role.shortDescription}. Apply through the Indeed Flex app and start working within 48 hours.`}
+            />
           </div>
         </section>
 
@@ -225,7 +242,7 @@ const RolePage = () => {
           </div>
         </section>
 
-        {/* Schema Markup */}
+        {/* Schema Markup - JobPosting */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -246,8 +263,36 @@ const RolePage = () => {
             "skills": role.skills.join(", "),
             "hiringOrganization": {
               "@type": "Organization",
-              "name": "Indeed Flex"
-            }
+              "name": "Indeed Flex",
+              "sameAs": "https://indeedflex.com"
+            },
+            "employmentType": ["TEMPORARY", "PART_TIME", "CONTRACTOR"],
+            "jobLocationType": "TELECOMMUTE"
+          })
+        }} />
+
+        {/* Schema Markup - Occupation */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Occupation",
+            "name": role.title,
+            "description": role.description,
+            "estimatedSalary": {
+              "@type": "MonetaryAmountDistribution",
+              "currency": "USD",
+              "percentile25": `$${role.avgHourlyRate.min}`,
+              "median": `$${Math.round((role.avgHourlyRate.min + role.avgHourlyRate.max) / 2)}`,
+              "percentile75": `$${role.avgHourlyRate.max}`,
+              "unitText": "HOUR"
+            },
+            "occupationLocation": {
+              "@type": "Country",
+              "name": "United States"
+            },
+            "skills": role.skills.join(", "),
+            "responsibilities": role.responsibilities.join(". "),
+            "qualifications": role.requirements.join(". ")
           })
         }} />
 
