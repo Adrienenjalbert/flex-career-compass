@@ -80,12 +80,53 @@ const IndustryPage = () => {
     );
   }
 
+  // Generate comprehensive schema
+  const industrySchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": content.title,
+    "description": content.heroDescription,
+    "numberOfItems": industryRoles.length,
+    "itemListElement": industryRoles.map((role, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Occupation",
+        "name": role.title,
+        "description": role.description,
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "United States"
+        }
+      }
+    }))
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": content.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <Helmet>
         <title>{content.title} | Indeed Flex Career Hub</title>
         <meta name="description" content={content.heroDescription} />
         <link rel="canonical" href={`https://indeedflex.com/career-hub/industries/${industryId}`} />
+        <script type="application/ld+json">
+          {JSON.stringify(industrySchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <Layout>
