@@ -26,6 +26,8 @@ import FinancialTipsArticlePage from "./pages/career-hub/articles/FinancialTipsA
 import LLMPage from "./pages/career-hub/LLMPage";
 import CityPage from "./pages/career-hub/CityPage";
 import CitiesIndexPage from "./pages/career-hub/CitiesIndexPage";
+import CityRolePage from "./pages/career-hub/CityRolePage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -56,6 +58,7 @@ const App = () => (
           <Route path="/career-hub/financial-tips/:slug" element={<FinancialTipsArticlePage />} />
           <Route path="/career-hub/cities" element={<CitiesIndexPage />} />
           <Route path="/career-hub/cities/:citySlug" element={<CityPage />} />
+          <Route path="/career-hub/cities/:citySlug/:roleSlug" element={<CityRolePage />} />
           <Route path="/career-hub/llm" element={<LLMPage />} />
           
           <Route path="*" element={<NotFound />} />
