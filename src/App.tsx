@@ -18,6 +18,7 @@ import CareerPathExplorer from "./pages/career-hub/tools/CareerPathExplorer";
 import IndustryPage from "./pages/career-hub/IndustryPage";
 import RolePage from "./pages/career-hub/RolePage";
 import LocationPage from "./pages/career-hub/LocationPage";
+import LocationRolePage from "./pages/career-hub/LocationRolePage";
 import GuidesPage from "./pages/career-hub/GuidesPage";
 import FinancialTipsPage from "./pages/career-hub/FinancialTipsPage";
 import GuidesArticlePage from "./pages/career-hub/articles/GuidesArticlePage";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/career-hub/industries/:industryId" element={<IndustryPage />} />
           <Route path="/career-hub/roles/:roleSlug" element={<RolePage />} />
           <Route path="/career-hub/locations/:locationSlug" element={<LocationPage />} />
+          <Route path="/career-hub/locations/:locationSlug/:roleSlug" element={<LocationRolePage />} />
           <Route path="/career-hub/guides" element={<GuidesPage />} />
           <Route path="/career-hub/guides/:slug" element={<GuidesArticlePage />} />
           <Route path="/career-hub/financial-tips" element={<FinancialTipsPage />} />

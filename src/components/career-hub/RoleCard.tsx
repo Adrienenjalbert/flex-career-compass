@@ -4,12 +4,15 @@ import type { Role } from "@/data/roles";
 
 interface RoleCardProps {
   role: Role;
+  linkPrefix?: string;
 }
 
-const RoleCard = ({ role }: RoleCardProps) => {
+const RoleCard = ({ role, linkPrefix }: RoleCardProps) => {
+  const basePath = linkPrefix || '/career-hub/roles';
+  
   return (
     <Link 
-      to={`/career-hub/roles/${role.slug}`}
+      to={`${basePath}/${role.slug}`}
       className="group bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/30"
     >
       <h3 className="text-lg font-semibold text-card-foreground group-hover:text-primary transition-colors mb-2">
