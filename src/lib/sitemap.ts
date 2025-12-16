@@ -111,6 +111,25 @@ export const generateSitemapEntries = (): SitemapEntry[] => {
     });
   });
 
+  // Intent-based pages (programmatic SEO)
+  cities.forEach((city) => {
+    // How to find temp work pages
+    entries.push({
+      loc: `${BASE_URL}/how-to-find-temp-work-in-${city.slug}`,
+      lastmod: TODAY,
+      changefreq: "monthly",
+      priority: 0.7,
+    });
+    
+    // Best paying jobs pages
+    entries.push({
+      loc: `${BASE_URL}/best-paying-temp-jobs-${city.slug}`,
+      lastmod: TODAY,
+      changefreq: "weekly",
+      priority: 0.7,
+    });
+  });
+
   entries.push({
     loc: `${BASE_URL}/career-hub/tools`,
     lastmod: TODAY,
