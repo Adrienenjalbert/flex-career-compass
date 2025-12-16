@@ -1,11 +1,18 @@
 import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
 import RoleCard from "@/components/career-hub/RoleCard";
 import LocationCard from "@/components/career-hub/LocationCard";
+import { 
+  SEOMetaTags, 
+  generateKeywords,
+  JobPostingSchema, 
+  OccupationSchema, 
+  FAQSchema,
+  WebPageSchema 
+} from "@/components/career-hub/seo";
 import { getLocationRoleData, getPopularRolesForLocation, getPopularLocationsForRole } from "@/data/location-role-data";
 import { 
   MapPin, DollarSign, Briefcase, TrendingUp, Award, Calendar, Building2, 
@@ -40,122 +47,102 @@ const LocationRolePage = () => {
   const otherRoles = getPopularRolesForLocation(location.slug).filter(r => r.slug !== role.slug).slice(0, 3);
   const otherLocations = getPopularLocationsForRole(role.slug).filter(l => l.slug !== location.slug).slice(0, 3);
 
-  const pageTitle = `${role.title} Jobs in ${location.city}, ${location.stateCode} | Indeed Flex`;
+  const pageUrl = `https://indeedflex.com/career-hub/locations/${location.slug}/${role.slug}`;
+  const pageTitle = `${role.title} Jobs in ${location.city}, ${location.stateCode}`;
   const pageDescription = `Find ${role.title} jobs in ${location.city}, ${location.stateCode}. Earn $${localSalary.min}-$${localSalary.max}/hr${tipsRange ? ` plus $${tipsRange.min}-$${tipsRange.max}/hr in tips` : ''}. ${jobCount}+ positions available with Indeed Flex.`;
 
-  // Schema markup for JobPosting
-  const jobPostingSchema = {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": `${role.title} - Flexible Shifts`,
-    "description": `${role.description} Work flexible shifts in ${location.city}, ${location.state}.`,
-    "datePosted": new Date().toISOString().split('T')[0],
-    "validThrough": new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-    "employmentType": ["TEMPORARY", "PART_TIME", "FULL_TIME"],
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Indeed Flex",
-      "sameAs": "https://indeedflex.com"
+  // FAQ data for schema
+  const faqData = [
+    {
+      question: `How much do ${role.title}s make in ${location.city}?`,
+      answer: `${role.title}s in ${location.city}, ${location.stateCode} earn $${localSalary.min}-$${localSalary.max} per hour${tipsRange ? `, plus an additional $${tipsRange.min}-$${tipsRange.max} per hour in tips` : ''}. Annual earnings can range from $${(localSalary.min * 2080).toLocaleString()} to $${(localSalary.max * 2080).toLocaleString()} for full-time work.`
     },
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": location.city,
-        "addressRegion": location.stateCode,
-        "addressCountry": location.country
-      }
+    {
+      question: `What certifications do I need to work as a ${role.title} in ${location.state}?`,
+      answer: certifications.length > 0 
+        ? `In ${location.state}, ${role.title}s typically need: ${certifications.join(', ')}. Indeed Flex can help you obtain these certifications.`
+        : `No specific certifications are required to work as a ${role.title} in ${location.state}, though food handler or safety certifications may be preferred by some employers.`
     },
-    "baseSalary": {
-      "@type": "MonetaryAmount",
-      "currency": location.country === 'US' ? 'USD' : 'GBP',
-      "value": {
-        "@type": "QuantitativeValue",
-        "minValue": localSalary.min,
-        "maxValue": localSalary.max,
-        "unitText": "HOUR"
-      }
-    },
-    "skills": role.skills.join(", "),
-    "qualifications": role.requirements.join(". ")
-  };
-
-  // Occupation schema
-  const occupationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Occupation",
-    "name": role.title,
-    "occupationLocation": {
-      "@type": "City",
-      "name": location.city
-    },
-    "estimatedSalary": {
-      "@type": "MonetaryAmountDistribution",
-      "currency": location.country === 'US' ? 'USD' : 'GBP',
-      "percentile25": localSalary.min,
-      "median": Math.round((localSalary.min + localSalary.max) / 2),
-      "percentile75": localSalary.max,
-      "unitText": "HOUR"
-    },
-    "responsibilities": role.responsibilities.join(". "),
-    "skills": role.skills.join(", ")
-  };
-
-  // FAQ Schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `How much do ${role.title}s make in ${location.city}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `${role.title}s in ${location.city}, ${location.stateCode} earn $${localSalary.min}-$${localSalary.max} per hour${tipsRange ? `, plus an additional $${tipsRange.min}-$${tipsRange.max} per hour in tips` : ''}. Annual earnings can range from $${(localSalary.min * 2080).toLocaleString()} to $${(localSalary.max * 2080).toLocaleString()} for full-time work.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `What certifications do I need to work as a ${role.title} in ${location.state}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": certifications.length > 0 
-            ? `In ${location.state}, ${role.title}s typically need: ${certifications.join(', ')}. Indeed Flex can help you obtain these certifications.`
-            : `No specific certifications are required to work as a ${role.title} in ${location.state}, though food handler or safety certifications may be preferred by some employers.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `When is the best time to find ${role.title} work in ${location.city}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Peak hiring seasons for ${role.title}s in ${location.city} include: ${peakSeasons.join(', ')}. During these periods, demand increases significantly and you may find higher-paying shifts available.`
-        }
-      }
-    ]
-  };
+    {
+      question: `When is the best time to find ${role.title} work in ${location.city}?`,
+      answer: `Peak hiring seasons for ${role.title}s in ${location.city} include: ${peakSeasons.join(', ')}. During these periods, demand increases significantly and you may find higher-paying shifts available.`
+    }
+  ];
 
   const demandBadgeColor = demandLevel === 'high' ? 'bg-success text-success-foreground' : demandLevel === 'medium' ? 'bg-warning text-warning-foreground' : 'bg-muted text-muted-foreground';
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={`https://indeedflex.com/career-hub/locations/${location.slug}/${role.slug}`} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">
-          {JSON.stringify(jobPostingSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(occupationSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      {/* SEO Meta Tags */}
+      <SEOMetaTags
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageUrl}
+        keywords={generateKeywords(
+          ["temp work", "flexible jobs", "hourly work"],
+          location.city,
+          role.title,
+          role.industry
+        )}
+        geoRegion={`US-${location.stateCode}`}
+        geoPlacename={location.city}
+      />
+
+      {/* Structured Data */}
+      <JobPostingSchema
+        title={`${role.title} - Flexible Shifts`}
+        description={`${role.description} Work flexible shifts in ${location.city}, ${location.state}.`}
+        employmentType={["TEMPORARY", "PART_TIME", "FULL_TIME"]}
+        hiringOrganization={{
+          name: "Indeed Flex",
+          url: "https://indeedflex.com"
+        }}
+        jobLocation={{
+          city: location.city,
+          state: location.state,
+          stateCode: location.stateCode,
+          country: location.country
+        }}
+        baseSalary={{
+          currency: location.country === 'US' ? 'USD' : 'GBP',
+          minValue: localSalary.min,
+          maxValue: localSalary.max,
+          unitText: "HOUR"
+        }}
+        skills={role.skills}
+        qualifications={role.requirements}
+        responsibilities={role.responsibilities}
+        industry={role.industry}
+        directApply={true}
+      />
+
+      <OccupationSchema
+        name={role.title}
+        description={role.description}
+        estimatedSalary={{
+          currency: location.country === 'US' ? 'USD' : 'GBP',
+          minValue: localSalary.min,
+          maxValue: localSalary.max,
+          unitText: "HOUR"
+        }}
+        occupationLocation={{ type: "City", name: location.city }}
+        skills={role.skills}
+        responsibilities={role.responsibilities}
+        qualifications={role.requirements}
+      />
+
+      <FAQSchema questions={faqData} />
+
+      <WebPageSchema
+        name={pageTitle}
+        description={pageDescription}
+        url={pageUrl}
+        breadcrumb={[
+          { name: "Career Hub", url: "https://indeedflex.com/career-hub" },
+          { name: location.city, url: `https://indeedflex.com/career-hub/locations/${location.slug}` },
+          { name: role.title }
+        ]}
+      />
 
       <Layout>
         <div className="container mx-auto px-4">

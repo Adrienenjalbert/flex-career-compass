@@ -1,11 +1,17 @@
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import RoleCard from "@/components/career-hub/RoleCard";
 import KeyFacts from "@/components/career-hub/KeyFacts";
 import RelatedContent from "@/components/career-hub/RelatedContent";
+import { 
+  SEOMetaTags, 
+  generateKeywords,
+  LocalBusinessSchema,
+  WebPageSchema,
+  FAQSchema
+} from "@/components/career-hub/seo";
 import { getLocationBySlug, usLocations } from "@/data/locations";
 import { roles } from "@/data/roles";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,13 +34,66 @@ const LocationPage = () => {
   // Get top roles for this location (just show a sample)
   const topRoles = roles.slice(0, 6);
 
+  const pageUrl = `https://indeedflex.com/career-hub/locations/${location.slug}`;
+  const pageTitle = `Find Flexible Work in ${location.city}, ${location.stateCode}`;
+  const pageDescription = `Find flexible hourly jobs in ${location.city}, ${location.state}. Average pay $${location.avgHourlyWage.min}-$${location.avgHourlyWage.max}/hr. ${location.description}`;
+
+  // Generate FAQ data for location
+  const faqData = [
+    {
+      question: `What is the average hourly wage in ${location.city}?`,
+      answer: `The average hourly wage for flexible work in ${location.city}, ${location.stateCode} ranges from $${location.avgHourlyWage.min} to $${location.avgHourlyWage.max} per hour, depending on the role and experience level.`
+    },
+    {
+      question: `What industries are hiring in ${location.city}?`,
+      answer: `The top industries hiring flexible workers in ${location.city} include ${location.topIndustries.join(', ')}.`
+    },
+    {
+      question: `What is the cost of living in ${location.city}?`,
+      answer: `A studio apartment in ${location.city} averages $${location.costOfLiving.rent.studio}/month. Groceries average $${location.costOfLiving.groceries}/month and transportation costs about $${location.costOfLiving.transport}/month.`
+    }
+  ];
+
   return (
     <>
-      <Helmet>
-        <title>Find Flexible Work in {location.city}, {location.stateCode} | Indeed Flex</title>
-        <meta name="description" content={`Find flexible hourly jobs in ${location.city}, ${location.state}. Average pay $${location.avgHourlyWage.min}-$${location.avgHourlyWage.max}/hr. ${location.description}`} />
-        <link rel="canonical" href={`https://indeedflex.com/career-hub/locations/${location.slug}`} />
-      </Helmet>
+      {/* SEO Meta Tags */}
+      <SEOMetaTags
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageUrl}
+        keywords={generateKeywords(
+          ["flexible work", "temp jobs", "hourly jobs"],
+          location.city,
+          undefined,
+          location.topIndustries[0]
+        )}
+        geoRegion={`US-${location.stateCode}`}
+        geoPlacename={location.city}
+      />
+
+      {/* Location Schema */}
+      <LocalBusinessSchema
+        name={`Indeed Flex - ${location.city}`}
+        description={`Find flexible work opportunities in ${location.city}, ${location.state}. ${location.description}`}
+        address={{
+          addressLocality: location.city,
+          addressRegion: location.stateCode,
+          addressCountry: location.country
+        }}
+        url={pageUrl}
+      />
+
+      <WebPageSchema
+        name={pageTitle}
+        description={pageDescription}
+        url={pageUrl}
+        breadcrumb={[
+          { name: "Career Hub", url: "https://indeedflex.com/career-hub" },
+          { name: `${location.city}, ${location.stateCode}` }
+        ]}
+      />
+
+      <FAQSchema questions={faqData} />
 
       <Layout>
         <div className="container mx-auto px-4">
@@ -207,22 +266,21 @@ const LocationPage = () => {
           </div>
         </section>
 
-        {/* Local Schema */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Place",
-            "name": `${location.city}, ${location.state}`,
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": location.city,
-              "addressRegion": location.stateCode,
-              "addressCountry": location.country
-            }
-          })
-        }} />
-
         {/* Cross-Linking Section */}
+        <RelatedContent
+          currentLocation={location.city}
+          roles={topRoles.slice(0, 4).map(r => ({ title: r.title, slug: r.slug, pay: `$${r.avgHourlyRate.min}-${r.avgHourlyRate.max}/hr` }))}
+          locations={usLocations.filter(l => l.slug !== location.slug).slice(0, 4).map(l => ({ name: `${l.city}, ${l.stateCode}`, slug: l.slug }))}
+          tools={[
+            { title: "Cost of Living Comparison", slug: "cost-of-living", description: `Compare ${location.city} expenses` },
+            { title: "Pay Calculator", slug: "pay-calculator", description: "Calculate your earnings" },
+          ]}
+          guides={[
+            { title: "Complete Guide to Indeed Flex", slug: "complete-guide", readTime: "8 min" },
+            { title: "What to Expect on Your First Shift", slug: "first-shift", readTime: "4 min" },
+          ]}
+          variant="full"
+        />
         <RelatedContent
           currentLocation={location.city}
           roles={topRoles.slice(0, 4).map(r => ({ title: r.title, slug: r.slug, pay: `$${r.avgHourlyRate.min}-${r.avgHourlyRate.max}/hr` }))}
