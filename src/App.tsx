@@ -27,6 +27,7 @@ import LLMPage from "./pages/career-hub/LLMPage";
 import CityPage from "./pages/career-hub/CityPage";
 import CitiesIndexPage from "./pages/career-hub/CitiesIndexPage";
 import CityRolePage from "./pages/career-hub/CityRolePage";
+import IndustryLocationPage from "./pages/career-hub/programmatic/IndustryLocationPage";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,9 @@ const App = () => (
           <Route path="/career-hub/cities/:citySlug" element={<CityPage />} />
           <Route path="/career-hub/cities/:citySlug/:roleSlug" element={<CityRolePage />} />
           <Route path="/career-hub/llm" element={<LLMPage />} />
+          
+          {/* Programmatic SEO Routes - Industry + Location */}
+          <Route path="/:industryLocationSlug" element={<IndustryLocationPage />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

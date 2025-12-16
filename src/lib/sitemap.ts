@@ -97,6 +97,20 @@ export const generateSitemapEntries = (): SitemapEntry[] => {
       });
     });
   });
+
+  // Industry + Location pages (programmatic SEO)
+  const industryUrlSlugs = ['warehouse', 'hospitality', 'retail', 'facilities'];
+  cities.forEach((city) => {
+    industryUrlSlugs.forEach((industrySlug) => {
+      entries.push({
+        loc: `${BASE_URL}/${industrySlug}-jobs-${city.slug}`,
+        lastmod: TODAY,
+        changefreq: "weekly",
+        priority: 0.8,
+      });
+    });
+  });
+
   entries.push({
     loc: `${BASE_URL}/career-hub/tools`,
     lastmod: TODAY,
