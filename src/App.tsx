@@ -23,6 +23,7 @@ import GuidesPage from "./pages/career-hub/GuidesPage";
 import FinancialTipsPage from "./pages/career-hub/FinancialTipsPage";
 import GuidesArticlePage from "./pages/career-hub/articles/GuidesArticlePage";
 import FinancialTipsArticlePage from "./pages/career-hub/articles/FinancialTipsArticlePage";
+import LLMPage from "./pages/career-hub/LLMPage";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/career-hub/guides/:slug" element={<GuidesArticlePage />} />
           <Route path="/career-hub/financial-tips" element={<FinancialTipsPage />} />
           <Route path="/career-hub/financial-tips/:slug" element={<FinancialTipsArticlePage />} />
+          <Route path="/career-hub/llm" element={<LLMPage />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
