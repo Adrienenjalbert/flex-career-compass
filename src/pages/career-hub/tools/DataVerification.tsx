@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
 import { 
   Database, 
@@ -18,9 +18,11 @@ import {
   Loader2,
   Info,
   FileText,
-  Shield
+  Shield,
+  CloudOff,
+  Table
 } from "lucide-react";
-import { firecrawlApi, verificationSources } from "@/lib/api/firecrawl";
+import { firecrawlApi, verificationSources, isCloudEnabled } from "@/lib/api/firecrawl";
 import { stateTaxData } from "@/data/state-taxes";
 import { stateUnemploymentData } from "@/data/unemployment-benefits";
 
@@ -44,12 +46,18 @@ interface ScrapeResult {
 const statesToVerify = ['CA', 'TX', 'FL', 'NY', 'PA', 'IL', 'OH', 'GA', 'NC', 'MI'];
 
 const DataVerification = () => {
+  const [cloudEnabled, setCloudEnabled] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentStep, setCurrentStep] = useState("");
   const [scrapeResults, setScrapeResults] = useState<Record<string, ScrapeResult>>({});
   const [verificationResults, setVerificationResults] = useState<VerificationResult[]>([]);
   const [lastVerified, setLastVerified] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    setCloudEnabled(isCloudEnabled());
+  }, []);
 
   // Parse minimum wage from scraped content
   const parseMinWageFromContent = (content: string, stateCode: string): number | null => {
@@ -98,10 +106,16 @@ const DataVerification = () => {
   };
 
   const runVerification = async () => {
+    if (!cloudEnabled) {
+      setErrorMessage('Please enable Lovable Cloud first to use Firecrawl.');
+      return;
+    }
+
     setIsLoading(true);
     setProgress(0);
     setVerificationResults([]);
     setScrapeResults({});
+    setErrorMessage(null);
 
     const results: VerificationResult[] = [];
     const totalSteps = 3 + statesToVerify.length * 2;
@@ -117,6 +131,12 @@ const DataVerification = () => {
       setCurrentStep("Scraping DOL Minimum Wage data...");
       const minWageResult = await firecrawlApi.scrape(verificationSources.minimumWage);
       setScrapeResults(prev => ({ ...prev, minimumWage: minWageResult }));
+      
+      if (!minWageResult.success && minWageResult.error) {
+        setErrorMessage(minWageResult.error);
+        setIsLoading(false);
+        return;
+      }
       updateProgress();
 
       // Step 2: Scrape Tax Foundation
@@ -193,6 +213,7 @@ const DataVerification = () => {
       setLastVerified(new Date().toLocaleString());
     } catch (error) {
       console.error('Verification error:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'Verification failed');
     } finally {
       setIsLoading(false);
       setCurrentStep("");
@@ -274,12 +295,33 @@ const DataVerification = () => {
         <section className="py-8">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-6">
+              {/* Cloud Not Enabled Alert */}
+              {!cloudEnabled && (
+                <Alert variant="destructive">
+                  <CloudOff className="h-4 w-4" />
+                  <AlertTitle>Lovable Cloud Required</AlertTitle>
+                  <AlertDescription>
+                    This tool requires Lovable Cloud to be enabled for Firecrawl integration. 
+                    Please enable Cloud in your project settings to use data verification.
+                  </AlertDescription>
+                </Alert>
+              )}
+
+              {/* Error Alert */}
+              {errorMessage && (
+                <Alert variant="destructive">
+                  <XCircle className="h-4 w-4" />
+                  <AlertTitle>Verification Error</AlertTitle>
+                  <AlertDescription>{errorMessage}</AlertDescription>
+                </Alert>
+              )}
+
               {/* Info Alert */}
               <Alert>
                 <Info className="h-4 w-4" />
                 <AlertDescription>
                   This tool uses Firecrawl to scrape official government sources and compare the data with what's stored in our data files. 
-                  Discrepancies are highlighted for manual review.
+                  Discrepancies are highlighted for manual review. <strong>Requires Lovable Cloud to be enabled.</strong>
                 </AlertDescription>
               </Alert>
 
@@ -335,7 +377,7 @@ const DataVerification = () => {
                   <div className="flex items-center gap-4">
                     <Button 
                       onClick={runVerification} 
-                      disabled={isLoading}
+                      disabled={isLoading || !cloudEnabled}
                       size="lg"
                     >
                       {isLoading ? (
@@ -353,6 +395,11 @@ const DataVerification = () => {
                     {lastVerified && (
                       <span className="text-sm text-muted-foreground">
                         Last run: {lastVerified}
+                      </span>
+                    )}
+                    {!cloudEnabled && (
+                      <span className="text-sm text-destructive">
+                        Enable Cloud to run verification
                       </span>
                     )}
                   </div>
@@ -484,57 +531,78 @@ const DataVerification = () => {
               {/* Local Data Summary */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Local Data Summary</CardTitle>
+                  <CardTitle className="flex items-center gap-2">
+                    <Table className="h-5 w-5" />
+                    Current Local Data Summary
+                  </CardTitle>
                   <CardDescription>
-                    Overview of data currently stored in data files
+                    Overview of data currently stored in data files (what will be verified)
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-medium mb-3">State Tax Data (state-taxes.ts)</h4>
+                    <div className="p-4 bg-muted/30 rounded-lg">
+                      <h4 className="font-medium mb-3 flex items-center gap-2">
+                        <FileText className="h-4 w-4" />
+                        State Tax Data
+                        <Badge variant="outline" className="text-xs">state-taxes.ts</Badge>
+                      </h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex justify-between">
                           <span className="text-muted-foreground">Total States:</span>
-                          <span>{Object.keys(stateTaxData).length}</span>
+                          <span className="font-medium">{Object.keys(stateTaxData).length}</span>
                         </li>
                         <li className="flex justify-between">
                           <span className="text-muted-foreground">No Income Tax States:</span>
-                          <span>
+                          <span className="font-medium">
                             {Object.values(stateTaxData).filter(s => s.hasNoIncomeTax).length}
                           </span>
                         </li>
                         <li className="flex justify-between">
                           <span className="text-muted-foreground">Min Wage Range:</span>
-                          <span>
-                            ${Math.min(...Object.values(stateTaxData).map(s => s.minWage))} - 
-                            ${Math.max(...Object.values(stateTaxData).map(s => s.minWage))}
+                          <span className="font-medium">
+                            ${Math.min(...Object.values(stateTaxData).map(s => s.minWage)).toFixed(2)} - 
+                            ${Math.max(...Object.values(stateTaxData).map(s => s.minWage)).toFixed(2)}
                           </span>
                         </li>
                       </ul>
+                      <div className="mt-3 pt-3 border-t">
+                        <p className="text-xs text-muted-foreground">
+                          States to verify: {statesToVerify.join(', ')}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-medium mb-3">Unemployment Data (unemployment-benefits.ts)</h4>
+                    <div className="p-4 bg-muted/30 rounded-lg">
+                      <h4 className="font-medium mb-3 flex items-center gap-2">
+                        <FileText className="h-4 w-4" />
+                        Unemployment Data
+                        <Badge variant="outline" className="text-xs">unemployment-benefits.ts</Badge>
+                      </h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex justify-between">
                           <span className="text-muted-foreground">Total States:</span>
-                          <span>{Object.keys(stateUnemploymentData).length}</span>
+                          <span className="font-medium">{Object.keys(stateUnemploymentData).length}</span>
                         </li>
                         <li className="flex justify-between">
                           <span className="text-muted-foreground">Max Weekly Range:</span>
-                          <span>
+                          <span className="font-medium">
                             ${Math.min(...Object.values(stateUnemploymentData).map(s => s.maxWeeklyBenefit))} - 
                             ${Math.max(...Object.values(stateUnemploymentData).map(s => s.maxWeeklyBenefit))}
                           </span>
                         </li>
                         <li className="flex justify-between">
                           <span className="text-muted-foreground">Duration Range:</span>
-                          <span>
+                          <span className="font-medium">
                             {Math.min(...Object.values(stateUnemploymentData).map(s => s.maxWeeks))} - 
                             {Math.max(...Object.values(stateUnemploymentData).map(s => s.maxWeeks))} weeks
                           </span>
                         </li>
                       </ul>
+                      <div className="mt-3 pt-3 border-t">
+                        <p className="text-xs text-muted-foreground">
+                          Verifies: Max weekly benefit amounts
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
