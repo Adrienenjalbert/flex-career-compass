@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      data_corrections: {
+        Row: {
+          category: string
+          created_at: string
+          current_value: string
+          field_name: string
+          id: string
+          local_file: string
+          reviewed_at: string | null
+          reviewer_notes: string | null
+          source_name: string
+          source_url: string
+          state_code: string
+          status: string
+          suggested_value: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          current_value: string
+          field_name: string
+          id?: string
+          local_file: string
+          reviewed_at?: string | null
+          reviewer_notes?: string | null
+          source_name: string
+          source_url: string
+          state_code: string
+          status?: string
+          suggested_value: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          current_value?: string
+          field_name?: string
+          id?: string
+          local_file?: string
+          reviewed_at?: string | null
+          reviewer_notes?: string | null
+          source_name?: string
+          source_url?: string
+          state_code?: string
+          status?: string
+          suggested_value?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
