@@ -131,7 +131,7 @@ function generateBestPayingFAQs(city: City, topRoles: ReturnType<typeof getTopPa
     },
     {
       question: `What's the fastest way to get high-paying temp work in ${city.city}?`,
-      answer: `To quickly access high-paying shifts in ${city.city}: 1) Download Indeed Flex, 2) Complete all available training modules, 3) Get relevant certifications, 4) Maintain a high rating by showing up on time and working hard. Top performers unlock access to premium shifts.`
+      answer: `To quickly access high-paying shifts in ${city.city}: 1) Download Indeed Flex (https://indeedflex.onelink.me/4jvh/x7l4jms3), 2) Complete all available training modules, 3) Get relevant certifications, 4) Maintain a high rating by showing up on time and working hard. Top performers unlock access to premium shifts.`
     }
   ];
 }
@@ -287,7 +287,7 @@ const BestPayingJobsPage = () => {
 
             <Button size="lg" asChild>
               <a
-                href="https://indeedflex.com/worker"
+                href="https://indeedflex.onelink.me/4jvh/x7l4jms3"
                 target="_blank"
                 rel="noopener noreferrer"
               >

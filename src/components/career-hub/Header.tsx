@@ -251,8 +251,10 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-              Get the App
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold" asChild>
+              <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
+                Get the App
+              </a>
             </Button>
           </div>
 
@@ -326,8 +328,10 @@ const Header = () => {
                 </Link>
               </div>
 
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2">
-                Get the App
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2" asChild>
+                <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
+                  Get the App
+                </a>
               </Button>
             </div>
           </nav>

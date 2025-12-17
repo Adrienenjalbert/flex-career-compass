@@ -80,7 +80,7 @@ function generateCityRoleFAQs(city: City, role: Role, localSalary: { min: number
     },
     {
       question: `How do I get started as a ${role.title} in ${city.city}?`,
-      answer: `Getting started is easy: 1) Download the Indeed Flex app, 2) Complete your profile and any required training, 3) Browse ${role.title} shifts in ${city.city}, 4) Accept shifts that fit your schedule and start earning. Many workers complete their first shift within a week of signing up.`
+      answer: `Getting started is easy: 1) Download the Indeed Flex app (https://indeedflex.onelink.me/4jvh/x7l4jms3), 2) Complete your profile and any required training, 3) Browse ${role.title} shifts in ${city.city}, 4) Accept shifts that fit your schedule and start earning. Many workers complete their first shift within a week of signing up.`
     },
     {
       question: `What is the cost of living like in ${city.city} for ${role.title}s?`,
@@ -334,7 +334,7 @@ const CityRolePage = () => {
               <div className="flex flex-wrap gap-3">
                 <Button size="lg" asChild>
                   <a
-                    href="https://indeedflex.com/worker"
+                    href="https://indeedflex.onelink.me/4jvh/x7l4jms3"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

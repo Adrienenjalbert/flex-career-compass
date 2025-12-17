@@ -89,11 +89,11 @@ export const guideArticles: Record<string, Article> = {
     sections: [
       {
         heading: "Why Flexible Work Is Growing",
-        content: "The gig economy has transformed how people work. In 2024, over 36% of US workers participate in some form of gig or flexible work. Whether you're looking for supplemental income, transitioning careers, or prefer the freedom of setting your own schedule, flexible work offers opportunities that traditional employment often can't match.\n\nIndeed Flex connects workers with thousands of businesses looking for reliable help in hospitality, warehouse, retail, and facilities management. The best part? You choose when you work and can start earning within days of signing up."
+        content: "The gig economy has transformed how people work. In 2024, over 36% of US workers participate in some form of gig or flexible work. Whether you're looking for supplemental income, transitioning careers, or prefer the freedom of setting your own schedule, flexible work offers opportunities that traditional employment often can't match.\n\nIndeed Flex connects workers with thousands of businesses looking for reliable help in hospitality, warehouse, retail, and facilities management. The best part? You choose when you work and can start earning within days of signing up. Download the app at https://indeedflex.onelink.me/4jvh/x7l4jms3 to get started."
       },
       {
         heading: "Step 1: Download and Set Up Your Profile",
-        content: "Getting started with Indeed Flex takes about 15 minutes. Download the app from the App Store or Google Play, then create your account.\n\nYour profile is your first impression with employers. Include:\n• A professional photo (clear face, neutral background)\n• Your work experience, even if it's limited\n• Any relevant skills or certifications\n• Your availability and preferred work locations\n\nPro tip: Profiles with photos get 40% more shift offers than those without."
+        content: "Getting started with Indeed Flex takes about 15 minutes. Download the app from the App Store or Google Play at https://indeedflex.onelink.me/4jvh/x7l4jms3, then create your account.\n\nYour profile is your first impression with employers. Include:\n• A professional photo (clear face, neutral background)\n• Your work experience, even if it's limited\n• Any relevant skills or certifications\n• Your availability and preferred work locations\n\nPro tip: Profiles with photos get 40% more shift offers than those without."
       },
       {
         heading: "Step 2: Complete Required Verifications",
@@ -115,7 +115,7 @@ export const guideArticles: Record<string, Article> = {
     faqs: [
       {
         question: "How quickly can I start working after signing up?",
-        answer: "Most workers can start booking shifts within 24-48 hours of completing their profile and passing verification. Some verification processes may take longer depending on your background."
+        answer: "Most workers can start booking shifts within 24-48 hours of completing their profile and passing verification. Download the Indeed Flex app (https://indeedflex.onelink.me/4jvh/x7l4jms3) to get started."
       },
       {
         question: "Do I need previous work experience?",
@@ -123,7 +123,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         question: "How do I get paid?",
-        answer: "Indeed Flex offers weekly payments directly to your bank account. Some shifts also offer same-day pay options."
+        answer: "Indeed Flex offers weekly payments directly to your bank account. Some shifts also offer same-day pay options. Download the app (https://indeedflex.onelink.me/4jvh/x7l4jms3) to learn more."
       }
     ],
     relatedArticles: ["complete-guide", "first-shift", "worker-profile"]

@@ -46,6 +46,7 @@ const Footer = () => {
               <li><Link to="/career-hub/guides" className="hover:text-accent transition-colors">Career Guides</Link></li>
               <li><Link to="/career-hub/financial-tips" className="hover:text-accent transition-colors">Financial Tips</Link></li>
               <li><Link to="/career-hub/tools/pay-calculator" className="hover:text-accent transition-colors">Pay Calculator</Link></li>
+              <li><a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Download the App</a></li>
             </ul>
           </div>
         </div>
