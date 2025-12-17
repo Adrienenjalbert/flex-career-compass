@@ -24,6 +24,7 @@ import LocationPage from "./pages/career-hub/LocationPage";
 import LocationRolePage from "./pages/career-hub/LocationRolePage";
 import GuidesPage from "./pages/career-hub/GuidesPage";
 import FinancialTipsPage from "./pages/career-hub/FinancialTipsPage";
+import ResourcesPage from "./pages/career-hub/ResourcesPage";
 import GuidesArticlePage from "./pages/career-hub/articles/GuidesArticlePage";
 import FinancialTipsArticlePage from "./pages/career-hub/articles/FinancialTipsArticlePage";
 import LLMPage from "./pages/career-hub/LLMPage";
@@ -65,6 +66,7 @@ const App = () => (
           <Route path="/career-hub/guides/:slug" element={<GuidesArticlePage />} />
           <Route path="/career-hub/financial-tips" element={<FinancialTipsPage />} />
           <Route path="/career-hub/financial-tips/:slug" element={<FinancialTipsArticlePage />} />
+          <Route path="/career-hub/resources" element={<ResourcesPage />} />
           <Route path="/career-hub/cities" element={<CitiesIndexPage />} />
           <Route path="/career-hub/cities/:citySlug" element={<CityPage />} />
           <Route path="/career-hub/cities/:citySlug/:roleSlug" element={<CityRolePage />} />
