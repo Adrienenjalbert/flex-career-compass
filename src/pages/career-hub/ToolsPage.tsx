@@ -12,37 +12,10 @@ import {
   ArrowRight,
   Sparkles,
   HelpCircle,
-  CheckCircle2,
-  Zap
+  CheckCircle2
 } from "lucide-react";
 
 const toolCategories = [
-  {
-    id: "getting-started",
-    name: "Getting Started",
-    icon: Zap,
-    description: "Essential tools for job seekers and first-time workers",
-    colorClass: "bg-green-500/10 text-green-600",
-    iconBg: "bg-green-500/10",
-    tools: [
-      {
-        title: "Resume Builder for Hourly Workers",
-        description: "Build a professional resume in 10 minutes. Industry-specific templates for warehouse, hospitality, retail. Perfect for first-time job seekers.",
-        icon: "FileText" as const,
-        href: "/career-hub/tools/resume-builder",
-        answersQuestion: "How do I create a resume for hourly work?",
-        estimatedTime: "~10 min",
-      },
-      {
-        title: "Workplace Spanish Phrase Guide",
-        description: "Essential workplace phrases with audio pronunciation. Perfect for bilingual workplaces. Save favorites for quick reference on the job.",
-        icon: "Languages" as const,
-        href: "/career-hub/tools/spanish-phrases",
-        answersQuestion: "How do I communicate with Spanish-speaking coworkers?",
-        estimatedTime: "Browse anytime",
-      },
-    ],
-  },
   {
     id: "income-pay",
     name: "Income & Pay",
@@ -164,16 +137,6 @@ const toolCategories = [
 
 const decisionHelper = [
   {
-    question: "How do I create a resume for hourly work?",
-    tool: "Resume Builder",
-    href: "/career-hub/tools/resume-builder",
-  },
-  {
-    question: "How do I communicate at work in Spanish?",
-    tool: "Spanish Phrases",
-    href: "/career-hub/tools/spanish-phrases",
-  },
-  {
     question: "How much will I take home after taxes?",
     tool: "Paycheck Calculator",
     href: "/career-hub/tools/pay-calculator",
@@ -224,7 +187,7 @@ const ToolsPage = () => {
         <title>Free Career Tools & Calculators | Indeed Flex Career Hub</title>
         <meta 
           name="description" 
-          content="10 free career tools: resume builder, paycheck calculator, childcare break-even, commute costs, tax estimator & more. All 50 states covered with 2024-2025 data." 
+          content="9 free career tools: paycheck calculator, childcare break-even, commute costs, tax estimator & more. All 50 states covered with 2024-2025 data." 
         />
         <link rel="canonical" href="https://indeedflex.com/career-hub/tools" />
         <script type="application/ld+json">
