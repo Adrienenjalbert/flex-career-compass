@@ -316,111 +316,53 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Simplified */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-6 border-t border-primary-foreground/20 max-h-[80vh] overflow-y-auto">
-            <div className="flex flex-col gap-6">
-              {/* Tools */}
-              <div className="space-y-3">
-                <Link
-                  to="/career-hub/tools"
-                  className="flex items-center justify-between p-3 rounded-xl bg-primary-foreground/10 font-semibold"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  All Tools
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                {tools.slice(0, 3).map((tool) => (
-                  <Link
-                    key={tool.slug}
-                    to={`/career-hub/tools/${tool.slug}`}
-                    className="block hover:text-accent transition-colors py-1 pl-3"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {tool.title}
-                  </Link>
-                ))}
-              </div>
+          <nav className="md:hidden py-4 border-t border-primary-foreground/20">
+            <div className="flex flex-col gap-1">
+              <Link
+                to="/career-hub/tools"
+                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Tools</span>
+                <Calculator className="h-4 w-4 opacity-60" />
+              </Link>
+              
+              <Link
+                to="/career-hub/guides"
+                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Career Guides</span>
+                <BookOpen className="h-4 w-4 opacity-60" />
+              </Link>
+              
+              <Link
+                to="/career-hub/financial-tips"
+                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Financial Tips</span>
+                <DollarSign className="h-4 w-4 opacity-60" />
+              </Link>
+              
+              <Link
+                to="/career-hub/locations"
+                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Roles & Locations</span>
+                <Compass className="h-4 w-4 opacity-60" />
+              </Link>
 
-              {/* Career Guides */}
-              <div className="space-y-3">
-                <Link
-                  to="/career-hub/guides"
-                  className="flex items-center justify-between p-3 rounded-xl bg-primary-foreground/10 font-semibold"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  All Career Guides
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/career-hub/guides/first-flex-job"
-                  className="block hover:text-accent transition-colors py-1 pl-3"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Get Your First Job
-                </Link>
-                <Link
-                  to="/career-hub/guides/career-paths"
-                  className="block hover:text-accent transition-colors py-1 pl-3"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Career Paths
-                </Link>
-                <Link
-                  to="/career-hub/guides/certifications"
-                  className="block hover:text-accent transition-colors py-1 pl-3"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Certifications
-                </Link>
+              <div className="pt-3 mt-2 border-t border-primary-foreground/20">
+                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full rounded-xl" asChild>
+                  <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
+                    Get the App
+                  </a>
+                </Button>
               </div>
-
-              {/* Financial Tips */}
-              <div className="space-y-3">
-                <Link
-                  to="/career-hub/financial-tips"
-                  className="flex items-center justify-between p-3 rounded-xl bg-primary-foreground/10 font-semibold"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  All Financial Tips
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/career-hub/financial-tips/tax-tips"
-                  className="block hover:text-accent transition-colors py-1 pl-3"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Tax Tips
-                </Link>
-                <Link
-                  to="/career-hub/financial-tips/irregular-income-budget"
-                  className="block hover:text-accent transition-colors py-1 pl-3"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Budgeting Guide
-                </Link>
-              </div>
-
-              {/* Roles */}
-              <div className="space-y-3">
-                <div className="text-xs font-semibold uppercase tracking-wide text-primary-foreground/60">Roles & Industries</div>
-                {industries.map((industry) => (
-                  <Link
-                    key={industry.id}
-                    to={`/career-hub/industries/${industry.id}`}
-                    className="block hover:text-accent transition-colors py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {industry.name}
-                  </Link>
-                ))}
-              </div>
-
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2 rounded-xl" asChild>
-                <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
-                  Get the App
-                </a>
-              </Button>
             </div>
           </nav>
         )}
