@@ -440,10 +440,71 @@ const TaxCalculator = () => {
                     )}
                   </CardContent>
                 </Card>
+
+                {/* Quarterly Deadlines Card - Moved to left column */}
+                <Card>
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      2025 Quarterly Deadlines
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {quarterlyDeadlines2025.map((deadline) => (
+                        <div 
+                          key={deadline.quarter}
+                          className={`flex items-center justify-between p-2 rounded-lg ${
+                            deadline === nextDeadline 
+                              ? 'bg-accent/10 border border-accent/20' 
+                              : ''
+                          }`}
+                        >
+                          <div>
+                            <span className="font-medium">{deadline.quarter}</span>
+                            <span className="text-xs text-muted-foreground ml-2">
+                              {deadline.period}
+                            </span>
+                          </div>
+                          <span className={`text-sm ${
+                            deadline === nextDeadline ? 'font-medium text-accent' : 'text-muted-foreground'
+                          }`}>
+                            {deadline.dueDate.replace(', 2025', '').replace(', 2026', ' \'26')}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Pro Tips - Moved to left column */}
+                <Card>
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base">💡 Tax Tips for Gig Workers</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3 text-sm">
+                    <div className="flex gap-2">
+                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                      <span>Open a separate savings account for taxes</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                      <span>Track ALL work miles—they add up fast!</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                      <span>Keep receipts for work-related purchases</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                      <span>Consider a SEP-IRA for additional deductions</span>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
 
-              {/* Results Section */}
-              <div className="lg:col-span-2 space-y-6">
+              {/* Results Section - Only sticky card */}
+              <div className="lg:col-span-2">
                 <Card className="bg-primary text-primary-foreground sticky top-20">
                   <CardHeader>
                     <CardTitle className="text-primary-foreground">Tax Estimate 2025</CardTitle>
@@ -534,67 +595,6 @@ const TaxCalculator = () => {
                         </span>
                       </div>
                     )}
-                  </CardContent>
-                </Card>
-
-                {/* Quarterly Deadlines Card */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base flex items-center gap-2">
-                      <Calendar className="h-4 w-4" />
-                      2025 Quarterly Deadlines
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      {quarterlyDeadlines2025.map((deadline) => (
-                        <div 
-                          key={deadline.quarter}
-                          className={`flex items-center justify-between p-2 rounded-lg ${
-                            deadline === nextDeadline 
-                              ? 'bg-accent/10 border border-accent/20' 
-                              : ''
-                          }`}
-                        >
-                          <div>
-                            <span className="font-medium">{deadline.quarter}</span>
-                            <span className="text-xs text-muted-foreground ml-2">
-                              {deadline.period}
-                            </span>
-                          </div>
-                          <span className={`text-sm ${
-                            deadline === nextDeadline ? 'font-medium text-accent' : 'text-muted-foreground'
-                          }`}>
-                            {deadline.dueDate.replace(', 2025', '').replace(', 2026', ' \'26')}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Pro Tips */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base">💡 Tax Tips for Gig Workers</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm">
-                    <div className="flex gap-2">
-                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Open a separate savings account for taxes</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Track ALL work miles—they add up fast!</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Keep receipts for work-related purchases</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Consider a SEP-IRA for additional deductions</span>
-                    </div>
                   </CardContent>
                 </Card>
               </div>
