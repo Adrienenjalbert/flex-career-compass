@@ -443,10 +443,78 @@ const PayCalculator = () => {
                     )}
                   </CardContent>
                 </Card>
+
+                {/* W-2 vs 1099 Comparison - Moved to left column */}
+                {calculations.w2Comparison && (
+                  <Card>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4" />
+                        {employmentType === 'w2' ? '1099' : 'W-2'} Comparison
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">
+                            As {employmentType === 'w2' ? '1099 contractor' : 'W-2 employee'}:
+                          </span>
+                          <span>${parseFloat(calculations.w2Comparison.yearlyNet).toLocaleString()}/yr</span>
+                        </div>
+                        <div className={`flex justify-between text-sm font-medium ${
+                          parseFloat(calculations.w2Comparison.difference) > 0 
+                            ? 'text-success' 
+                            : 'text-destructive'
+                        }`}>
+                          <span>Difference:</span>
+                          <span>
+                            {parseFloat(calculations.w2Comparison.difference) > 0 ? '+' : ''}
+                            ${parseFloat(calculations.w2Comparison.difference).toLocaleString()}/yr
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-2">
+                          {employmentType === 'w2' 
+                            ? 'As 1099, you pay more in taxes but may have more deductions available.'
+                            : 'As W-2, employer pays half of FICA, resulting in lower tax burden.'}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* State Info Card - Moved to left column */}
+                {stateInfo && (
+                  <Card>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base flex items-center gap-2">
+                        <Calendar className="h-4 w-4" />
+                        {stateInfo.name} Quick Facts
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Minimum Wage</span>
+                        <span>${stateInfo.minWage}/hr</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">State Income Tax</span>
+                        <span>{stateInfo.hasNoIncomeTax ? 'None' : `${(stateInfo.incomeTaxRate * 100).toFixed(2)}%`}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Overtime Rules</span>
+                        <span>{stateInfo.overtimeRules === 'daily' ? 'Daily (8+ hrs)' : 'Weekly (40+ hrs)'}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Max Unemployment</span>
+                        <span>${stateInfo.unemploymentMaxWeekly}/wk</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
 
-              {/* Results Section */}
-              <div className="lg:col-span-2 space-y-6">
+              {/* Results Section - Only sticky card */}
+              <div className="lg:col-span-2">
                 <Card className="bg-primary text-primary-foreground sticky top-20">
                   <CardHeader>
                     <CardTitle className="text-primary-foreground">Your Take-Home Pay</CardTitle>
@@ -508,74 +576,6 @@ const PayCalculator = () => {
                     </div>
                   </CardContent>
                 </Card>
-
-                {/* W-2 vs 1099 Comparison */}
-                {calculations.w2Comparison && (
-                  <Card>
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-base flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4" />
-                        {employmentType === 'w2' ? '1099' : 'W-2'} Comparison
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">
-                            As {employmentType === 'w2' ? '1099 contractor' : 'W-2 employee'}:
-                          </span>
-                          <span>${parseFloat(calculations.w2Comparison.yearlyNet).toLocaleString()}/yr</span>
-                        </div>
-                        <div className={`flex justify-between text-sm font-medium ${
-                          parseFloat(calculations.w2Comparison.difference) > 0 
-                            ? 'text-success' 
-                            : 'text-destructive'
-                        }`}>
-                          <span>Difference:</span>
-                          <span>
-                            {parseFloat(calculations.w2Comparison.difference) > 0 ? '+' : ''}
-                            ${parseFloat(calculations.w2Comparison.difference).toLocaleString()}/yr
-                          </span>
-                        </div>
-                        <p className="text-xs text-muted-foreground mt-2">
-                          {employmentType === 'w2' 
-                            ? 'As 1099, you pay more in taxes but may have more deductions available.'
-                            : 'As W-2, employer pays half of FICA, resulting in lower tax burden.'}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-
-                {/* State Info Card */}
-                {stateInfo && (
-                  <Card>
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-base flex items-center gap-2">
-                        <Calendar className="h-4 w-4" />
-                        {stateInfo.name} Quick Facts
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Minimum Wage</span>
-                        <span>${stateInfo.minWage}/hr</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">State Income Tax</span>
-                        <span>{stateInfo.hasNoIncomeTax ? 'None' : `${(stateInfo.incomeTaxRate * 100).toFixed(2)}%`}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Overtime Rules</span>
-                        <span>{stateInfo.overtimeRules === 'daily' ? 'Daily (8+ hrs)' : 'Weekly (40+ hrs)'}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Max Unemployment</span>
-                        <span>${stateInfo.unemploymentMaxWeekly}/wk</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
               </div>
             </div>
 
