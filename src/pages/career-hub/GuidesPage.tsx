@@ -1,62 +1,93 @@
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
+import { SEOMetaTags } from "@/components/career-hub/seo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, TrendingUp, Users, Award } from "lucide-react";
-
-const guides = [
-  {
-    category: "Getting Started",
-    icon: BookOpen,
-    articles: [
-      { title: "How to Get Your First Flexible Job", slug: "first-flex-job", readTime: "5 min" },
-      { title: "Complete Guide to Indeed Flex", slug: "complete-guide", readTime: "8 min" },
-      { title: "What to Expect on Your First Shift", slug: "first-shift", readTime: "4 min" },
-      { title: "Building Your Worker Profile", slug: "worker-profile", readTime: "6 min" },
-    ]
-  },
-  {
-    category: "Career Growth",
-    icon: TrendingUp,
-    articles: [
-      { title: "From Entry-Level to Management: Career Paths", slug: "career-paths", readTime: "10 min" },
-      { title: "Skills That Boost Your Hourly Rate", slug: "skill-boost", readTime: "7 min" },
-      { title: "Getting Certifications That Pay Off", slug: "certifications", readTime: "8 min" },
-      { title: "How to Get More (and Better) Shifts", slug: "more-shifts", readTime: "6 min" },
-    ]
-  },
-  {
-    category: "Industry Guides",
-    icon: Users,
-    articles: [
-      { title: "Breaking Into Hospitality Work", slug: "hospitality-guide", readTime: "9 min" },
-      { title: "Warehouse Work: What You Need to Know", slug: "warehouse-guide", readTime: "8 min" },
-      { title: "Retail Jobs: Tips for Success", slug: "retail-guide", readTime: "7 min" },
-      { title: "Facilities & Cleaning Careers", slug: "facilities-guide", readTime: "6 min" },
-    ]
-  },
-  {
-    category: "Professional Development",
-    icon: Award,
-    articles: [
-      { title: "Building Your Professional Network", slug: "networking", readTime: "6 min" },
-      { title: "Resume Tips for Hourly Workers", slug: "resume-tips", readTime: "5 min" },
-      { title: "Interview Skills for Flex Work", slug: "interview-skills", readTime: "7 min" },
-      { title: "Balancing Multiple Gigs", slug: "multiple-gigs", readTime: "8 min" },
-    ]
-  },
-];
+import { guideCategories } from "@/data/articles/guides";
 
 const GuidesPage = () => {
+  // ItemList schema for guide categories
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Indeed Flex Career Guides",
+    "description": "Expert career guides for flexible workers covering getting started, career growth, industry tips, and professional development.",
+    "numberOfItems": guideCategories.reduce((acc, cat) => acc + cat.articles.length, 0),
+    "itemListElement": guideCategories.flatMap((category, catIndex) =>
+      category.articles.map((article, artIndex) => ({
+        "@type": "ListItem",
+        "position": catIndex * 4 + artIndex + 1,
+        "item": {
+          "@type": "Article",
+          "name": article.title,
+          "url": `https://indeedflex.com/career-hub/guides/${article.slug}`
+        }
+      }))
+    )
+  };
+
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Career Hub",
+        "item": "https://indeedflex.com/career-hub"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Career Guides",
+        "item": "https://indeedflex.com/career-hub/guides"
+      }
+    ]
+  };
+
+  // CollectionPage schema
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Career Guides | Indeed Flex Career Hub",
+    "description": "Free career guides for flexible workers. Learn how to grow your career, increase your earnings, and succeed in hospitality, warehouse, retail, and facilities work.",
+    "url": "https://indeedflex.com/career-hub/guides",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": guideCategories.reduce((acc, cat) => acc + cat.articles.length, 0)
+    }
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Career Guides | Indeed Flex Career Hub</title>
-        <meta name="description" content="Free career guides for flexible workers. Learn how to grow your career, increase your earnings, and succeed in hospitality, warehouse, retail, and facilities work." />
-        <link rel="canonical" href="https://indeedflex.com/career-hub/guides" />
-      </Helmet>
+      <SEOMetaTags
+        title="Career Guides | Indeed Flex Career Hub"
+        description="Free career guides for flexible workers. Learn how to grow your career, increase your earnings, and succeed in hospitality, warehouse, retail, and facilities work."
+        canonical="https://indeedflex.com/career-hub/guides"
+        keywords={[
+          'career guides',
+          'flexible work tips',
+          'indeed flex guide',
+          'temp job advice',
+          'hospitality career',
+          'warehouse jobs guide',
+          'gig work tips'
+        ]}
+      />
+
+      {/* Schema Scripts */}
+      <script type="application/ld+json">
+        {JSON.stringify(itemListSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(collectionPageSchema)}
+      </script>
 
       <Layout>
         <div className="container mx-auto px-4">
@@ -84,8 +115,8 @@ const GuidesPage = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-12">
-              {guides.map((category) => (
-                <div key={category.category}>
+              {guideCategories.map((category) => (
+                <div key={category.category} id={category.slug}>
                   <div className="flex items-center gap-3 mb-6">
                     <category.icon className="h-6 w-6 text-primary" />
                     <h2 className="text-2xl font-bold text-foreground">{category.category}</h2>
