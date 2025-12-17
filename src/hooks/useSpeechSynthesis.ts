@@ -34,18 +34,62 @@ export const useSpeechSynthesis = (
     if (!isSupported) return null;
     
     const voices = window.speechSynthesis.getVoices();
-    
-    // Try to find a voice that matches the language
-    const exactMatch = voices.find(v => v.lang === lang);
-    if (exactMatch) return exactMatch;
-    
-    // Fallback to any voice that starts with the language code
     const langCode = lang.split('-')[0];
-    const partialMatch = voices.find(v => v.lang.startsWith(langCode));
-    if (partialMatch) return partialMatch;
     
-    // Last resort: return default voice
-    return voices[0] || null;
+    // Filter voices that match the language
+    const matchingVoices = voices.filter(v => 
+      v.lang === lang || v.lang.startsWith(langCode)
+    );
+    
+    if (matchingVoices.length === 0) {
+      return voices[0] || null;
+    }
+    
+    // Priority list for high-quality voices (ranked by typical quality)
+    const preferredVoicePatterns = lang === 'en-US' ? [
+      // Google voices (usually high quality)
+      /google.*us/i,
+      /google.*english/i,
+      // Microsoft voices (often good quality)
+      /microsoft.*aria/i,
+      /microsoft.*jenny/i,
+      /microsoft.*guy/i,
+      /microsoft.*en/i,
+      // Apple voices
+      /samantha/i,
+      /alex/i,
+      /karen/i,
+      // Other quality indicators
+      /enhanced/i,
+      /premium/i,
+      /natural/i,
+    ] : [
+      // Spanish voices
+      /google.*español/i,
+      /google.*spanish/i,
+      /microsoft.*es/i,
+      /paulina/i,
+      /jorge/i,
+      /monica/i,
+      /enhanced/i,
+      /premium/i,
+      /natural/i,
+    ];
+    
+    // Try to find a preferred voice
+    for (const pattern of preferredVoicePatterns) {
+      const preferredVoice = matchingVoices.find(v => 
+        pattern.test(v.name) || pattern.test(v.voiceURI)
+      );
+      if (preferredVoice) return preferredVoice;
+    }
+    
+    // Prefer non-local voices as they're often higher quality
+    const remoteVoice = matchingVoices.find(v => !v.localService);
+    if (remoteVoice) return remoteVoice;
+    
+    // Return first matching voice
+    return matchingVoices[0];
   }, [isSupported]);
 
   const speak = useCallback((text: string, lang: 'en-US' | 'es-ES' = 'en-US') => {
