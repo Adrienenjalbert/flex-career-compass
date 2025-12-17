@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/accordion";
 
 // Map article slugs to relevant resource categories
-const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'all' => {
+const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'all' => {
   switch (slug) {
     case 'tax-tips':
       return 'tax';
@@ -27,7 +27,7 @@ const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' 
     case 'government-resources':
       return 'government';
     case 'maximize-indeed-flex':
-      return 'certifications';
+      return 'learning';
     case 'irregular-income-budget':
     case 'emergency-fund-guide':
     case 'retirement-saving':
@@ -48,7 +48,7 @@ const getResourceTitle = (slug: string): string => {
     case 'government-resources':
       return 'More Ways to Get Help';
     case 'maximize-indeed-flex':
-      return 'Boost Your Skills';
+      return 'Skill Building Resources';
     case 'irregular-income-budget':
     case 'emergency-fund-guide':
       return 'Financial Tools & Resources';
@@ -70,7 +70,7 @@ const getResourceDescription = (slug: string): string => {
     case 'government-resources':
       return 'Additional resources and tools';
     case 'maximize-indeed-flex':
-      return 'Certifications that increase your earning potential';
+      return 'Free courses and certifications to boost your earnings';
     case 'irregular-income-budget':
     case 'emergency-fund-guide':
       return 'Tools to manage your money effectively';
