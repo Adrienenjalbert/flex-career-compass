@@ -11,8 +11,8 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Admin email(s) to notify - update this with actual admin emails
-const ADMIN_EMAILS = ["admin@example.com"];
+// Admin email(s) to notify
+const ADMIN_EMAILS = ["adrien.enjalbert@indeedflex.com"];
 
 // Verification sources
 const verificationSources = {
