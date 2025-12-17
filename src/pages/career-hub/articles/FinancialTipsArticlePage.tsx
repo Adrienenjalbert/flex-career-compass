@@ -24,7 +24,10 @@ const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' 
     case 'gig-benefits':
       return 'healthcare';
     case 'between-shifts':
+    case 'government-resources':
       return 'government';
+    case 'maximize-indeed-flex':
+      return 'certifications';
     case 'irregular-income-budget':
     case 'emergency-fund-guide':
     case 'retirement-saving':
@@ -42,6 +45,10 @@ const getResourceTitle = (slug: string): string => {
       return 'Healthcare Resources';
     case 'between-shifts':
       return 'Free Assistance Programs';
+    case 'government-resources':
+      return 'More Ways to Get Help';
+    case 'maximize-indeed-flex':
+      return 'Boost Your Skills';
     case 'irregular-income-budget':
     case 'emergency-fund-guide':
       return 'Financial Tools & Resources';
@@ -60,6 +67,10 @@ const getResourceDescription = (slug: string): string => {
       return 'Find affordable health coverage options';
     case 'between-shifts':
       return 'Government programs to help during tight times';
+    case 'government-resources':
+      return 'Additional resources and tools';
+    case 'maximize-indeed-flex':
+      return 'Certifications that increase your earning potential';
     case 'irregular-income-budget':
     case 'emergency-fund-guide':
       return 'Tools to manage your money effectively';

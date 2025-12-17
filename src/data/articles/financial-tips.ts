@@ -1,4 +1,4 @@
-import { Wallet, PiggyBank, Receipt, TrendingUp, Shield, Calculator, LucideIcon } from "lucide-react";
+import { Wallet, PiggyBank, Receipt, TrendingUp, Shield, Calculator, Heart, Zap, LucideIcon } from "lucide-react";
 
 export interface FinancialArticle {
   slug: string;
@@ -53,6 +53,20 @@ export const financialTips: { icon: LucideIcon; title: string; description: stri
     title: "Retirement Saving for Gig Workers",
     description: "How to save for retirement when you don't have an employer-sponsored 401(k).",
     slug: "retirement-saving",
+    readTime: "8 min"
+  },
+  {
+    icon: Heart,
+    title: "Free Government Resources for Gig Workers",
+    description: "Programs and assistance you've already paid for with your taxes—here's how to use them.",
+    slug: "government-resources",
+    readTime: "7 min"
+  },
+  {
+    icon: Zap,
+    title: "How to Maximize Indeed Flex Earnings",
+    description: "Pro tips to earn more, get better shifts, and unlock all the benefits Indeed Flex offers.",
+    slug: "maximize-indeed-flex",
     readTime: "8 min"
   },
 ];
@@ -424,5 +438,151 @@ export const financialArticles: Record<string, FinancialArticle> = {
       }
     ],
     relatedArticles: ["emergency-fund-guide", "gig-benefits", "tax-tips"]
+  },
+  "government-resources": {
+    slug: "government-resources",
+    title: "Free Government Resources for Gig Workers",
+    icon: Heart,
+    description: "Programs and assistance you've already paid for with your taxes—here's how to use them.",
+    readTime: "7 min",
+    keyTakeaways: [
+      "211 connects you with local help for bills, food, and housing—call or text anytime",
+      "SNAP (food stamps) helps many gig workers with variable income buy groceries",
+      "IRS VITA provides free tax preparation if you earn $67,000 or less",
+      "CareerOneStop offers free job training and career services nationwide",
+      "These programs exist because you pay taxes—using them is smart, not shameful"
+    ],
+    sections: [
+      {
+        heading: "Why These Resources Matter for Gig Workers",
+        content: "Gig workers face unique challenges:\n\n- Variable income makes budgeting difficult\n- No employer-provided safety net\n- Often no unemployment insurance\n- Health issues mean no work = no pay\n\n**The truth about government programs:** These aren't handouts—they're services funded by your tax dollars. Using them during tough times is exactly what they're designed for.\n\nMany programs have income thresholds that gig workers with variable earnings often qualify for, even if you have good months."
+      },
+      {
+        heading: "211: Your First Call for Any Need",
+        content: "**What is 211?**\n\n[211](https://211.org) is a free, confidential service that connects you with local resources. It's available 24/7 by phone, text, or online.\n\n**How to use it:**\n\n- **Call or text 211** from anywhere in the US\n- Tell them what you need (bills, food, housing, healthcare, etc.)\n- Get connected to local programs that can help\n\n**What 211 can help with:**\n\n- Utility bill assistance\n- Food banks and meal programs\n- Rent and housing help\n- Healthcare access\n- Mental health services\n- Childcare assistance\n- Job training and employment\n\n**Why it works:** 211 specialists know every program in your area. Instead of spending hours searching, they match you with the right resources in one call.\n\n[Visit 211.org →](https://211.org)"
+      },
+      {
+        heading: "SNAP: Help Buying Groceries",
+        content: "**What is SNAP?**\n\nThe Supplemental Nutrition Assistance Program (formerly food stamps) helps eligible people buy food. Benefits come on an EBT card that works like a debit card at grocery stores.\n\n**Who qualifies:**\n\n- Income limits vary by state and household size\n- Many gig workers with variable income qualify\n- Self-employment income is calculated differently (business expenses deducted)\n\n**How much you could receive:**\n\n- Average benefit: ~$200/month per person\n- Depends on income, household size, and expenses\n- Even partial benefits help stretch your food budget\n\n**How to apply:**\n\n1. Check eligibility at [fns.usda.gov/snap](https://www.fns.usda.gov/snap/recipient/eligibility)\n2. Apply through your state's SNAP office or online\n3. Provide proof of income (bank statements, 1099s, pay stubs)\n4. Complete an interview (often by phone)\n\n**Pro tip for gig workers:** Your \"income\" for SNAP is calculated after business expenses. Track your mileage, supplies, and other costs—they reduce your countable income."
+      },
+      {
+        heading: "Free Tax Preparation (Save $100-300)",
+        content: "**IRS VITA Program**\n\nVolunteer Income Tax Assistance (VITA) offers free tax preparation by IRS-certified volunteers.\n\n**Who qualifies:**\n\n- Income of $67,000 or less\n- People with disabilities\n- Limited English speakers\n\n**What you get:**\n\n- Free federal and state tax return preparation\n- Free e-filing\n- Help claiming all credits you're eligible for (EITC, Child Tax Credit, etc.)\n\n**How to find a VITA site:**\n\n- Call **800-906-9887**\n- Use the [IRS locator tool](https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers)\n- Many sites open January through April\n\n**IRS Free File**\n\nIf you prefer doing taxes yourself:\n\n- [IRS Free File](https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free) offers free software for incomes under $84,000\n- Guided preparation through trusted partners\n- Free federal filing (some include free state)\n\n**Why this matters:** Gig workers often miss valuable credits. VITA volunteers are trained to find every deduction and credit you qualify for."
+      },
+      {
+        heading: "CareerOneStop: Free Job Training",
+        content: "**What is CareerOneStop?**\n\n[CareerOneStop](https://www.careeronestop.org) is a U.S. Department of Labor resource providing free career exploration, training, and job search help.\n\n**What's available:**\n\n- **Free career assessments** to identify your skills and interests\n- **Training program finder** for local education and certification programs\n- **Scholarship search** with over 8,000 financial aid opportunities\n- **Job search tools** including resume builders and interview prep\n- **Local American Job Centers** with in-person assistance\n\n**How to use it:**\n\n1. Visit [careeronestop.org](https://www.careeronestop.org)\n2. Explore career paths that match your interests\n3. Find training programs in your area\n4. Connect with local workforce services\n\n**American Job Centers:**\n\nThese local centers offer:\n\n- One-on-one career counseling\n- Resume and interview help\n- Job fairs and employer connections\n- Training scholarships and grants\n\nFind your nearest center at [careeronestop.org/LocalHelp](https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx)"
+      },
+      {
+        heading: "Healthcare: Options for Gig Workers",
+        content: "**Healthcare.gov (ACA Marketplace)**\n\nThe Affordable Care Act marketplace offers health insurance with subsidies based on income.\n\n- Open enrollment: November 1 - January 15\n- Special enrollment with qualifying events (job loss, moving, etc.)\n- **Subsidies** can significantly reduce monthly premiums\n- Cannot deny coverage for pre-existing conditions\n\n[Get a quote at healthcare.gov →](https://www.healthcare.gov)\n\n**Medicaid**\n\nFree or low-cost health coverage if your income is below your state's threshold.\n\n- Income limits vary by state\n- Many gig workers with variable income qualify during slow periods\n- Check eligibility at [medicaid.gov](https://www.medicaid.gov)\n\n**Community Health Centers**\n\nAffordable healthcare regardless of ability to pay:\n\n- Sliding fee scale based on income\n- Primary care, dental, mental health\n- No insurance required\n\n[Find a health center near you →](https://findahealthcenter.hrsa.gov)\n\n**Indeed Flex Benefits:**\n\nIf you work through [Indeed Flex](https://indeedflex.com/download-app/), you have access to [medical, dental, and vision coverage](https://indeedflex.com/benefits-pay/) through Essential StaffCARE."
+      },
+      {
+        heading: "Benefits.gov: Find Everything You Qualify For",
+        content: "**One-Stop Benefits Finder**\n\n[Benefits.gov](https://www.benefits.gov) is the official government website for finding assistance programs.\n\n**How it works:**\n\n1. Answer questions about your situation (5-10 minutes)\n2. Get a personalized list of programs you may qualify for\n3. Links directly to applications\n\n**Programs covered:**\n\n- Food assistance (SNAP, WIC)\n- Healthcare (Medicaid, CHIP)\n- Housing assistance\n- Utility help (LIHEAP)\n- Education and training\n- Unemployment benefits\n- And many more\n\n**Why use it:** You might qualify for programs you don't know about. The questionnaire checks eligibility for hundreds of federal and state programs at once.\n\n[Start your benefits check →](https://www.benefits.gov/benefit-finder)"
+      },
+      {
+        heading: "How to Ask for Help (Without Feeling Weird)",
+        content: "Many people avoid using these programs because they feel embarrassed. Here's a reframe:\n\n**You already paid for these services.**\n\nEvery time you:\n- Pay sales tax on purchases\n- Pay income tax (even on gig work)\n- Buy gas (fuel taxes)\n- Pay property tax (directly or through rent)\n\n...you're funding these programs.\n\n**These programs exist because:**\n\n- Income fluctuates for many workers\n- Temporary help prevents bigger problems\n- Helping people stay stable benefits everyone\n\n**What actually happens when you apply:**\n\n- You fill out forms (mostly online)\n- You provide income documentation\n- Someone reviews your application\n- You receive benefits if you qualify\n\nNo judgment. No lectures. Just services you've paid for.\n\n**Start here:**\n\n1. Call or text **211** to describe your situation\n2. Get matched with relevant programs\n3. Apply for what you need\n\nOr bookmark these resources for when you need them—slow periods happen to everyone in gig work."
+      }
+    ],
+    faqs: [
+      {
+        question: "Will using these programs affect my credit or future job prospects?",
+        answer: "No. Using SNAP, VITA, 211, or other assistance programs does not affect your credit score or appear on background checks. These are confidential services designed to help you."
+      },
+      {
+        question: "I had a good month—do I still qualify?",
+        answer: "Possibly. Many programs look at annual income or average monthly income over several months, not just your best month. Gig workers with variable income often qualify even with occasional high-earning periods. Apply and let them determine eligibility."
+      },
+      {
+        question: "What documents do I need to apply?",
+        answer: "Typically: ID (driver's license, passport), proof of income (bank statements, 1099s, pay stubs), proof of expenses (rent, utilities), and Social Security numbers for household members. Requirements vary by program—211 can tell you exactly what you need."
+      },
+      {
+        question: "How long does it take to get help?",
+        answer: "It varies. 211 referrals can be immediate. SNAP applications are processed within 30 days (7 days for emergencies). VITA appointments are scheduled during tax season. Healthcare enrollment depends on open enrollment periods or qualifying events."
+      }
+    ],
+    relatedArticles: ["between-shifts", "gig-benefits", "tax-tips"]
+  },
+  "maximize-indeed-flex": {
+    slug: "maximize-indeed-flex",
+    title: "How to Maximize Indeed Flex Earnings",
+    icon: Zap,
+    description: "Pro tips to earn more, get better shifts, and unlock all the benefits Indeed Flex offers.",
+    readTime: "8 min",
+    keyTakeaways: [
+      "Enable notifications to be first in line for new shifts",
+      "Maintain a 5-star rating to get priority access to the best opportunities",
+      "Get added to Talent Pools for repeat work with companies you impress",
+      "Use Same Day Pay to access 50% of earnings within 1 hour of completing shifts",
+      "Get certifications to unlock higher-paying roles and more shift options"
+    ],
+    sections: [
+      {
+        heading: "Why Indeed Flex is Different",
+        content: "[Indeed Flex](https://indeedflex.com/download-app/) isn't just another gig app—it's a platform designed for flexible workers who want stability, benefits, and growth.\n\n**Key differences:**\n\n- **W-2 employment** – Taxes are handled for you, unlike 1099 gig work\n- **Real benefits** – Medical, dental, vision, disability, and life insurance through Essential StaffCARE\n- **Same Day Pay** – Access earnings fast when you need them\n- **Career growth** – Build ratings, get into Talent Pools, unlock better opportunities\n\nThis guide shows you how to maximize everything Indeed Flex offers."
+      },
+      {
+        heading: "Get Shifts First: Enable Notifications",
+        content: "The best shifts go fast. Here's how to never miss an opportunity:\n\n**Enable push notifications:**\n\n1. Open the Indeed Flex app\n2. Go to your profile settings\n3. Turn on notifications for new shifts\n4. Allow notifications in your phone's settings too\n\n**Why it matters:**\n\nPopular shifts can be booked within minutes of posting. Workers who respond first have the best selection of:\n\n- Higher-paying shifts\n- Convenient locations\n- Preferred time slots\n- Repeat opportunities with great companies\n\n**Pro tip:** Check the app first thing in the morning and right after dinner—these are common times for new shift postings."
+      },
+      {
+        heading: "Build Your Rating to 5 Stars",
+        content: "Your rating is your reputation. Higher ratings = better opportunities.\n\n**How ratings work:**\n\n- Companies rate you after each shift (1-5 stars)\n- Your average rating is visible to all companies\n- **5-star workers get first access** to the best shifts\n\n**How to earn 5-star ratings:**\n\n1. **Show up on time** – Arrive 10-15 minutes early\n2. **Come prepared** – Right clothes, right attitude, any required gear\n3. **Work hard** – Give full effort throughout your shift\n4. **Be professional** – Positive attitude, follow instructions, communicate clearly\n5. **Finish strong** – Don't slack off as the shift ends\n\n**What hurts your rating:**\n\n- Late arrivals or no-shows (most damaging)\n- Leaving early without approval\n- Phone use during work\n- Poor attitude or conflicts\n- Not following instructions\n\n**Recovering from a low rating:**\n\nOne bad shift doesn't define you. Book more shifts, deliver excellent work, and your average will improve over time."
+      },
+      {
+        heading: "Get Into Talent Pools",
+        content: "Talent Pools are your path to consistent work.\n\n**What are Talent Pools?**\n\nWhen a company loves your work, they can add you to their Talent Pool. This means:\n\n- **First access** to their shifts before other Flexers\n- **Repeat work** with a company you already know\n- **Relationship building** that can lead to more hours\n- Potential path to **temp-to-perm** opportunities\n\n**How to get added:**\n\n1. Deliver excellent work on your first shift\n2. Learn company-specific procedures quickly\n3. Be reliable—no call-outs or late arrivals\n4. Show initiative without overstepping\n5. Express interest in returning\n\n**Maximize Talent Pool opportunities:**\n\n- Check the app regularly for Talent Pool shift offers\n- Accept quickly—these go even faster than regular shifts\n- Continue delivering excellent work to stay in the pool\n- Some workers build enough Talent Pool relationships for near-full-time hours"
+      },
+      {
+        heading: "Use Same Day Pay Strategically",
+        content: "[Same Day Pay](https://indeedflex.com/benefits-pay/same-day-pay/) lets you access your earnings when you need them.\n\n**How it works:**\n\n- After completing a shift, you can withdraw up to **50% of your earnings**\n- Funds available **within 1 hour** of shift completion\n- Remaining 50% paid on regular Friday payroll\n- No fees for using Same Day Pay\n\n**When to use it:**\n\n- Bridge a gap before regular payday\n- Cover unexpected expenses\n- Avoid overdraft fees or late payment charges\n- When cash flow is tight\n\n**When to skip it:**\n\n- If you don't need the money immediately\n- When you're trying to build savings (Friday payroll helps with discipline)\n- If you've already used it this week and can wait\n\n**Strategic approach:**\n\nSome workers use Same Day Pay for a portion of their earnings and let the rest accumulate to Friday. This provides both immediate cash and a \"mini paycheck\" feeling at week's end."
+      },
+      {
+        heading: "Unlock Higher-Paying Roles with Certifications",
+        content: "More certifications = more shift options and higher pay.\n\n**Certifications that boost Indeed Flex earnings:**\n\n| Certification | Cost | Time | Pay Increase | Roles Unlocked |\n|--------------|------|------|--------------|----------------|\n| **Forklift** | $60-150 | 4-8 hrs | +$3-5/hr | Warehouse, distribution |\n| **Food Handler** | $15-18 | 2-4 hrs | Required | All hospitality |\n| **TIPS Alcohol** | $38-55 | 3-4 hrs | +$5-10/hr | Bartending, events |\n| **OSHA 10** | $25-89 | 10 hrs | +$1-3/hr | Industrial, construction |\n| **ServSafe Manager** | $150-180 | 8 hrs | +$2-4/hr | Kitchen supervisor |\n\n**[See all certifications →](/career-hub/guides/professional-development/certifications)**\n\n**ROI example:**\n\nA $100 forklift certification that adds $4/hr to your rate pays for itself in just **25 hours of work**. After that, it's pure extra earnings.\n\n**Free training through Indeed Flex:**\n\nIndeed Flex offers free training for certain roles. Check the app for current training opportunities."
+      },
+      {
+        heading: "Expand Your Industries",
+        content: "More industries = more shift options.\n\n**Industries on Indeed Flex:**\n\n- **Industrial/Warehouse:** Forklift driver, picker packer, machine operator, assembler\n- **Hospitality:** Event staff, banquet server, bartender, prep cook, dishwasher\n- **Facilities:** Cleaner, custodian\n- **Retail:** Retail assistant, various roles\n- **Administrative:** Admin assistant, sales support\n\n**[See all roles →](https://indeedflex.com/roles-and-industries/)**\n\n**Why work multiple industries:**\n\n- More shifts available overall\n- Reduce impact of seasonal slowdowns\n- Discover what you enjoy most\n- Build diverse skills\n\n**How to expand:**\n\n1. Update your Indeed Flex profile with all relevant experience\n2. Get verified for additional industries\n3. Start with entry-level roles to build ratings\n4. Get certifications that open new doors"
+      },
+      {
+        heading: "Benefits You Might Be Missing",
+        content: "Indeed Flex offers more than just shifts:\n\n**Essential StaffCARE Benefits:**\n\n- **Medical insurance** – Health coverage for you\n- **Dental coverage** – Preventive and major dental\n- **Vision coverage** – Eye exams and glasses/contacts\n- **Disability insurance** – Income protection if you can't work\n- **Life insurance** – Protection for your family\n\n[Learn more about benefits →](https://indeedflex.com/benefits-pay/)\n\n**Refer a Friend Program:**\n\nEarn bonuses when friends you refer start working:\n\n1. Share your referral link from the app\n2. Friend signs up and completes shifts\n3. Both of you earn bonus money\n\n**24/7 Support:**\n\n- **Lexi AI agent** – Instant answers anytime\n- **Human support** – Mon-Sat 6:30 AM-10:30 PM, Sun 8 AM-10 PM\n- Access through Profile → Support in the app"
+      },
+      {
+        heading: "Build Toward Your Goals",
+        content: "Indeed Flex can be a stepping stone or a long-term solution—you decide.\n\n**Short-term paths:**\n\n- **Extra income** while job searching\n- **Side hustle** alongside other work\n- **Seasonal boost** during high-demand periods\n- **Flexible schedule** during school or family obligations\n\n**Long-term possibilities:**\n\n- **Consistent hours** through multiple Talent Pools\n- **Temp-to-perm** opportunities with companies you impress\n- **Skill building** across industries\n- **Career exploration** to find your fit\n\n**Track your progress:**\n\n- Use our [Pay Calculator](/career-hub/tools/pay-calculator) to estimate earnings\n- Set weekly/monthly earning goals\n- Monitor your rating improvement\n- Count your Talent Pool invitations\n\n**The key:** Treat every shift like an audition. Companies remember great workers, and Indeed Flex rewards reliability with better opportunities."
+      },
+      {
+        heading: "Quick Start Checklist",
+        content: "Ready to maximize your Indeed Flex earnings? Here's your action plan:\n\n**Today:**\n\n- [ ] [Download Indeed Flex](https://indeedflex.com/download-app/) if you haven't\n- [ ] Enable push notifications\n- [ ] Complete your profile with professional photo\n- [ ] Add all relevant skills and experience\n\n**This week:**\n\n- [ ] Book your first shift (or next shift)\n- [ ] Arrive 10-15 minutes early\n- [ ] Give 100% effort for a 5-star rating\n- [ ] Express interest in Talent Pool to supervisor\n\n**This month:**\n\n- [ ] Identify one certification to pursue\n- [ ] Try shifts in a new industry\n- [ ] Refer a friend to earn bonuses\n- [ ] Review your benefits eligibility\n\n**Your earning potential grows with every shift.** The workers who earn the most are the ones who show up reliably, work hard, and take advantage of everything the platform offers."
+      }
+    ],
+    faqs: [
+      {
+        question: "How soon can I start working after signing up?",
+        answer: "Once you've downloaded the app, created a profile, completed verification (I-9 documents), and passed your onboarding interview, you can start booking shifts immediately. Timing varies based on demand in your area and role requirements."
+      },
+      {
+        question: "What's the difference between Applied, Offered, and Booked?",
+        answer: "**Applied** means you've applied and are waiting for the company to accept. **Offered** means the company wants you—book it before other Flexers do! **Booked** means the shift is yours—confirm attendance 24 hours before."
+      },
+      {
+        question: "Can I work multiple roles on Indeed Flex?",
+        answer: "Yes! As long as you're verified and have the required skills, you can work multiple roles. Many Flexers work as assembler, picker packer, AND event staff depending on what's available."
+      },
+      {
+        question: "What happens if I need to cancel a shift?",
+        answer: "Cancel as early as possible through the app. Last-minute cancellations and no-shows hurt your rating significantly. If you have an emergency, contact support immediately through the app."
+      },
+      {
+        question: "How do I get verified for new roles?",
+        answer: "Update your profile with relevant experience, then apply for shifts in that role. Some roles require specific certifications or additional interviews. The app will guide you through requirements."
+      }
+    ],
+    relatedArticles: ["between-shifts", "gig-benefits", "government-resources"]
   }
 };
