@@ -5,9 +5,11 @@ import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Target, CheckCircle, XCircle, ArrowRight, RotateCcw, Lightbulb } from "lucide-react";
+import { Target, CheckCircle, XCircle, ArrowRight, RotateCcw, Lightbulb, Clock, DollarSign, Zap } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
 import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
+import SkillRecommendationCard from "@/components/career-hub/interactive/SkillRecommendationCard";
+import { skillRecommendations, getRecommendationsForSkills, sortByPriority } from "@/data/skill-recommendations";
 
 interface Skill {
   id: string;
@@ -125,13 +127,24 @@ const SkillsAnalyzer = () => {
     ? (checkedSkills.size / currentPath.requiredSkills.length) * 100 
     : 0;
 
-  const missingSkills = currentPath?.requiredSkills.filter(s => !checkedSkills.has(s.id)) || [];
+  const missingSkillIds = currentPath?.requiredSkills.filter(s => !checkedSkills.has(s.id)).map(s => s.id) || [];
+  const missingRecommendations = sortByPriority(getRecommendationsForSkills(missingSkillIds));
+  const quickWins = missingRecommendations.filter(r => r.quickWin);
+
+  // Calculate total time and cost for action plan
+  const actionPlanSummary = missingRecommendations.reduce((acc, rec) => {
+    const costMatch = rec.costRange.match(/\$(\d+)/);
+    if (costMatch) {
+      acc.minCost += parseInt(costMatch[1]);
+    }
+    return acc;
+  }, { minCost: 0 });
 
   return (
     <>
       <Helmet>
         <title>Skills Gap Analyzer | Indeed Flex Career Hub</title>
-        <meta name="description" content="Identify the skills you need to advance to higher-paying roles. Get personalized recommendations to grow your career." />
+        <meta name="description" content="Identify the skills you need to advance to higher-paying roles. Get personalized recommendations with step-by-step action plans and resources." />
         <link rel="canonical" href="https://indeedflex.com/career-hub/tools/skills-analyzer" />
       </Helmet>
 
@@ -155,7 +168,7 @@ const SkillsAnalyzer = () => {
               Skills Gap Analyzer
             </h1>
             <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-              Discover what skills you need to advance to higher-paying roles and get personalized recommendations.
+              Discover what skills you need to advance to higher-paying roles and get personalized action plans with resources.
             </p>
           </div>
         </section>
@@ -280,31 +293,72 @@ const SkillsAnalyzer = () => {
                     })}
                   </div>
 
-                  {/* Recommendations */}
-                  {missingSkills.length > 0 && missingSkills.length < (currentPath?.requiredSkills.length || 0) && (
-                    <Card className="bg-primary text-primary-foreground">
-                      <CardHeader>
-                        <CardTitle className="text-primary-foreground flex items-center gap-2">
-                          <Lightbulb className="h-5 w-5 text-accent" />
-                          Recommendations
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-4">
-                        {missingSkills.map((skill) => (
-                          <div key={skill.id} className="bg-primary-foreground/10 rounded-lg p-4">
-                            <div className="font-medium mb-1">{skill.name}</div>
-                            <p className="text-sm text-primary-foreground/80">
-                              {skill.category === 'certification' 
-                                ? `Get certified: ${skill.description}. Many programs are available online or through employers.`
-                                : skill.category === 'technical'
-                                ? `Practice this skill: ${skill.description}. Ask for opportunities to develop this on the job.`
-                                : `Develop this soft skill: ${skill.description}. Focus on demonstrating this in your current role.`
-                              }
-                            </p>
+                  {/* Action Plan with Rich Recommendations */}
+                  {missingRecommendations.length > 0 && missingRecommendations.length < (currentPath?.requiredSkills.length || 0) && (
+                    <div className="space-y-6">
+                      {/* Action Plan Summary */}
+                      <Card className="bg-primary text-primary-foreground">
+                        <CardHeader>
+                          <CardTitle className="text-primary-foreground flex items-center gap-2">
+                            <Lightbulb className="h-5 w-5 text-accent" />
+                            Your Action Plan
+                          </CardTitle>
+                          <CardDescription className="text-primary-foreground/80">
+                            {missingRecommendations.length} skill{missingRecommendations.length > 1 ? 's' : ''} to develop for {currentPath?.nextLevel}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div className="bg-primary-foreground/10 rounded-lg p-3">
+                              <div className="text-2xl font-bold">{missingRecommendations.length}</div>
+                              <div className="text-sm text-primary-foreground/70">Skills to Learn</div>
+                            </div>
+                            <div className="bg-primary-foreground/10 rounded-lg p-3">
+                              <div className="text-2xl font-bold">{quickWins.length}</div>
+                              <div className="text-sm text-primary-foreground/70">Quick Wins</div>
+                            </div>
+                            <div className="bg-primary-foreground/10 rounded-lg p-3">
+                              <div className="text-2xl font-bold flex items-center gap-1">
+                                <DollarSign className="h-5 w-5" />{actionPlanSummary.minCost}+
+                              </div>
+                              <div className="text-sm text-primary-foreground/70">Est. Investment</div>
+                            </div>
+                            <div className="bg-primary-foreground/10 rounded-lg p-3">
+                              <div className="text-2xl font-bold text-accent">{currentPath?.salaryIncrease}</div>
+                              <div className="text-sm text-primary-foreground/70">Potential Raise</div>
+                            </div>
                           </div>
-                        ))}
-                      </CardContent>
-                    </Card>
+
+                          {quickWins.length > 0 && (
+                            <div className="mt-4 p-3 bg-accent/20 rounded-lg">
+                              <div className="flex items-center gap-2 mb-1">
+                                <Zap className="h-4 w-4 text-accent" />
+                                <span className="font-semibold text-accent">Start Here:</span>
+                              </div>
+                              <p className="text-sm text-primary-foreground/90">
+                                <strong>{quickWins[0].skillName}</strong> — {quickWins[0].timeEstimate}, {quickWins[0].costRange}
+                              </p>
+                            </div>
+                          )}
+                        </CardContent>
+                      </Card>
+
+                      {/* Detailed Recommendations */}
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-4">
+                          Step-by-Step Skill Development
+                        </h3>
+                        <div className="space-y-4">
+                          {missingRecommendations.map((rec) => (
+                            <SkillRecommendationCard 
+                              key={rec.skillId} 
+                              recommendation={rec}
+                              compact
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   )}
                 </div>
               )}
@@ -320,7 +374,7 @@ const SkillsAnalyzer = () => {
                 type="educational"
                 sources={["Industry hiring requirements", "Certification body data", "Employer skill surveys"]}
                 lastUpdated="December 2024"
-                customText="Skill requirements and salary increases shown are general industry estimates. Actual advancement criteria vary by employer. This assessment is for educational purposes—consult with employers about specific advancement requirements in your area."
+                customText="Skill requirements, costs, and salary increases shown are general industry estimates. Actual advancement criteria and resource pricing vary. This assessment is for educational purposes—consult with employers about specific requirements."
               />
             </div>
           </div>
