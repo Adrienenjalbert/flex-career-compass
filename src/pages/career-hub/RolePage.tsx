@@ -337,7 +337,7 @@ const RolePage = () => {
                 {/* Quick Stats Card */}
                 <Card className="bg-primary text-primary-foreground sticky top-4">
                   <CardHeader>
-                    <CardTitle className="text-primary-foreground">Quick Stats</CardTitle>
+                    <CardTitle className="text-primary-foreground">Start Earning Today</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
@@ -352,14 +352,19 @@ const RolePage = () => {
                       <div className="text-sm text-primary-foreground/70">Career Growth</div>
                       <div className="text-lg font-medium">{role.careerPath.length} advancement levels</div>
                     </div>
-                    <div className="pt-4 border-t border-primary-foreground/20">
-                      <Link 
-                        to="#calculator"
-                        className="flex items-center justify-center gap-2 w-full py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
+                    <p className="text-sm text-primary-foreground/80 pt-2">
+                      Find {role.title.toLowerCase()} shifts near you. Choose your schedule and start working within 48 hours.
+                    </p>
+                    <div className="pt-2">
+                      <a 
+                        href="https://indeedflex.onelink.me/4jvh/x7l4jms3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors"
                       >
                         <DollarSign className="h-4 w-4" />
-                        Calculate Earnings
-                      </Link>
+                        Get the App - It's Free
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
