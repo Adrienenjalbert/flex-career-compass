@@ -27,9 +27,12 @@ const CTASection = ({
           <Button 
             size="lg" 
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8"
+            asChild
           >
-            <Download className="mr-2 h-5 w-5" />
-            {primaryCTA}
+            <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2 h-5 w-5" />
+              {primaryCTA}
+            </a>
           </Button>
           <Button 
             size="lg" 

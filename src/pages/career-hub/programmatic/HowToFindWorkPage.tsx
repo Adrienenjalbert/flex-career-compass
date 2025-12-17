@@ -54,7 +54,7 @@ function generateHowToSteps(city: City) {
   return [
     {
       name: "Download the Indeed Flex App",
-      text: `Start by downloading the Indeed Flex app from the App Store or Google Play. The app is free and available to anyone looking for flexible work in ${city.city}, ${city.stateCode}.`,
+      text: `Start by downloading the Indeed Flex app (https://indeedflex.onelink.me/4jvh/x7l4jms3) from the App Store or Google Play. The app is free and available to anyone looking for flexible work in ${city.city}, ${city.stateCode}.`,
       duration: "PT2M",
     },
     {
@@ -271,7 +271,7 @@ const HowToFindWorkPage = () => {
 
             <Button size="lg" asChild>
               <a
-                href="https://indeedflex.com/worker"
+                href="https://indeedflex.onelink.me/4jvh/x7l4jms3"
                 target="_blank"
                 rel="noopener noreferrer"
               >

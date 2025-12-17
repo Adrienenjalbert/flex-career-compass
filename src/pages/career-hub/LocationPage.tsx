@@ -155,7 +155,7 @@ const LocationPage = () => {
                 { label: "Top Industries", value: location.topIndustries.slice(0, 3).join(", ") },
                 { label: "Timezone", value: location.timezone },
               ]}
-              summary={`Indeed Flex offers flexible work opportunities in ${location.city}, ${location.stateCode} paying $${location.avgHourlyWage.min}-$${location.avgHourlyWage.max}/hr. Popular industries include ${location.topIndustries.slice(0, 2).join(" and ")}. Download the Indeed Flex app to find shifts near you.`}
+              summary={<>Indeed Flex offers flexible work opportunities in {location.city}, {location.stateCode} paying ${location.avgHourlyWage.min}-${location.avgHourlyWage.max}/hr. Popular industries include {location.topIndustries.slice(0, 2).join(" and ")}. <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Download the Indeed Flex app</a> to find shifts near you.</>}
             />
           </div>
         </section>

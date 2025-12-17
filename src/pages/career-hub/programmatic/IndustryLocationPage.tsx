@@ -148,7 +148,7 @@ function generateIndustryLocationFAQs(industrySlug: string, city: City, salaryRa
     },
     {
       question: `How do I apply for ${displayName.toLowerCase()} jobs in ${city.city}?`,
-      answer: `Download the Indeed Flex app, create your profile, and browse available ${displayName.toLowerCase()} shifts in ${city.city}. You can see exact pay rates, locations, and schedules before accepting any shift. Most workers complete their first shift within a week.`
+      answer: `Download the Indeed Flex app (https://indeedflex.onelink.me/4jvh/x7l4jms3), create your profile, and browse available ${displayName.toLowerCase()} shifts in ${city.city}. You can see exact pay rates, locations, and schedules before accepting any shift. Most workers complete their first shift within a week.`
     },
     {
       question: `What are the typical hours for ${displayName.toLowerCase()} work in ${city.city}?`,

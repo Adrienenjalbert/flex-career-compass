@@ -1,4 +1,5 @@
 import { Info } from "lucide-react";
+import { ReactNode } from "react";
 
 interface KeyFact {
   label: string;
@@ -8,7 +9,7 @@ interface KeyFact {
 interface KeyFactsProps {
   title: string;
   facts: KeyFact[];
-  summary?: string;
+  summary?: string | ReactNode;
 }
 
 const KeyFacts = ({ title, facts, summary }: KeyFactsProps) => {

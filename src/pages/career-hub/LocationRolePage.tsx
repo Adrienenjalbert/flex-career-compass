@@ -385,9 +385,11 @@ const LocationRolePage = () => {
                     <p className="text-primary-foreground/90 mb-4">
                       Download Indeed Flex and find {role.title.toLowerCase()} shifts in {location.city}.
                     </p>
-                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                      Get the App
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                      <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
+                        Get the App
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>

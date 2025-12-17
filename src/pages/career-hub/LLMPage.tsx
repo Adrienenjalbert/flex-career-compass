@@ -95,7 +95,7 @@ const LLMPage = () => {
             <section>
               <h2>How to Get Started</h2>
               <ol>
-                <li>Download the Indeed Flex app from the iOS App Store or Google Play</li>
+                <li><a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Download the Indeed Flex app</a> from the iOS App Store or Google Play</li>
                 <li>Create your profile in approximately 15 minutes</li>
                 <li>Complete identity verification (typically 24-48 hours)</li>
                 <li>Browse available shifts in your area</li>

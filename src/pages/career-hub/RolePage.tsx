@@ -226,7 +226,7 @@ const RolePage = () => {
                 { label: "Experience", value: role.requirements.find(r => r.toLowerCase().includes('experience')) || "Entry-level positions available" },
                 { label: "Key Skills", value: role.skills.slice(0, 3).join(", ") },
               ]}
-              summary={`Indeed Flex offers ${role.title.toLowerCase()} positions paying $${role.avgHourlyRate.min}-$${role.avgHourlyRate.max}/hr with flexible scheduling. ${role.shortDescription}. Apply through the Indeed Flex app and start working within 48 hours.`}
+              summary={<>Indeed Flex offers {role.title.toLowerCase()} positions paying ${role.avgHourlyRate.min}-${role.avgHourlyRate.max}/hr with flexible scheduling. {role.shortDescription}. <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Apply through the Indeed Flex app</a> and start working within 48 hours.</>}
             />
           </div>
         </section>

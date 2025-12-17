@@ -75,7 +75,7 @@ const homeFAQs = [
   },
   {
     question: "How do I get started with flexible work?",
-    answer: "Download the Indeed Flex app, create a profile, verify your identity, and browse available shifts in your area. You can start picking up shifts as soon as you're approved."
+    answer: "Download the Indeed Flex app (https://indeedflex.onelink.me/4jvh/x7l4jms3), create a profile, verify your identity, and browse available shifts in your area. You can start picking up shifts as soon as you're approved."
   },
   {
     question: "What types of jobs are available?",
