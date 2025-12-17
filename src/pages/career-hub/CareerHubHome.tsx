@@ -1,14 +1,34 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Layout from "@/components/career-hub/Layout";
 import HeroSection from "@/components/career-hub/HeroSection";
 import IndustryCard from "@/components/career-hub/IndustryCard";
-import LocationCard from "@/components/career-hub/LocationCard";
 import ToolCard from "@/components/career-hub/ToolCard";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
-import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
+import GuidesCategorySection from "@/components/career-hub/GuidesCategorySection";
+import FinancialTipsSection from "@/components/career-hub/FinancialTipsSection";
 import { usLocations } from "@/data/locations";
 import { roles } from "@/data/roles";
+import { MapPin, BadgeCheck, ChevronRight } from "lucide-react";
+
+// Indeed Flex active markets (from official website)
+const ACTIVE_MARKET_CITIES = [
+  'Austin', 'Dallas', 'Houston', // Texas
+  'Nashville', // Tennessee
+  'Atlanta', 'Cartersville', // Georgia
+  'Cincinnati', 'Cleveland', 'Columbus', // Ohio
+  'Ontario', // California
+  'Chicago', // Illinois
+  'Washington', // DC
+  'Las Vegas', 'Reno', // Nevada
+  'Charlotte', // North Carolina
+  'Bentonville', // Arkansas
+  'Fort Mill', // South Carolina
+  'Orlando', // Florida
+  'Phoenix', // Arizona
+];
+
 const industries = [
   {
     id: "hospitality",
@@ -91,6 +111,9 @@ const homeFAQs = [
   }
 ];
 
+// Get active Indeed Flex markets from locations
+const activeMarkets = usLocations.filter(loc => ACTIVE_MARKET_CITIES.includes(loc.city));
+
 const CareerHubHome = () => {
   return (
     <>
@@ -141,22 +164,59 @@ const CareerHubHome = () => {
           </div>
         </section>
 
-        {/* Locations Section */}
+        {/* Career Guides Section */}
+        <GuidesCategorySection />
+
+        {/* Financial Tips Section */}
+        <FinancialTipsSection />
+
+        {/* Active Markets Section */}
         <section className="py-16 bg-secondary">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Find Work in Your City
+                Indeed Flex Active Markets
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore job opportunities, salary data, and cost of living information for major US cities.
+                Find flexible work opportunities in these cities where Indeed Flex is currently operating.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {usLocations.map((location) => (
-                <LocationCard key={location.id} location={location} />
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {activeMarkets.slice(0, 8).map((location) => (
+                <Link
+                  key={location.id}
+                  to={`/career-hub/locations/${location.slug}`}
+                  className="group bg-card rounded-xl p-4 border border-border/50 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <MapPin className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
+                        {location.city}
+                      </h3>
+                      <p className="text-xs text-muted-foreground">{location.stateCode}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 mt-2">
+                    <BadgeCheck className="h-3 w-3 text-green-600" />
+                    <span className="text-xs text-green-600 font-medium">Active Market</span>
+                  </div>
+                </Link>
               ))}
             </div>
+            {activeMarkets.length > 8 && (
+              <div className="text-center mt-8">
+                <Link
+                  to="/career-hub/active-markets"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+                >
+                  View all {activeMarkets.length} active markets
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              </div>
+            )}
           </div>
         </section>
 
@@ -164,13 +224,6 @@ const CareerHubHome = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 max-w-3xl">
             <FAQSection faqs={homeFAQs} />
-          </div>
-        </section>
-
-        {/* Internal Link Hub for SEO */}
-        <section className="py-16 bg-secondary">
-          <div className="container mx-auto px-4">
-            <InternalLinkHub variant="full" />
           </div>
         </section>
 
