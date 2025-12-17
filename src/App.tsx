@@ -19,6 +19,7 @@ import SkillsAnalyzer from "./pages/career-hub/tools/SkillsAnalyzer";
 import CareerPathExplorer from "./pages/career-hub/tools/CareerPathExplorer";
 import ChildcareCalculator from "./pages/career-hub/tools/ChildcareCalculator";
 import CommuteCalculator from "./pages/career-hub/tools/CommuteCalculator";
+import ResumeBuilder from "./pages/career-hub/tools/ResumeBuilder";
 import DataVerification from "./pages/career-hub/tools/DataVerification";
 import IndustryPage from "./pages/career-hub/IndustryPage";
 import RolePage from "./pages/career-hub/RolePage";
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/career-hub/tools/childcare-calculator" element={<ChildcareCalculator />} />
           <Route path="/career-hub/tools/commute-calculator" element={<CommuteCalculator />} />
           <Route path="/career-hub/tools/data-verification" element={<DataVerification />} />
+          <Route path="/career-hub/tools/resume-builder" element={<ResumeBuilder />} />
           <Route path="/career-hub/industries/:industryId" element={<IndustryPage />} />
           <Route path="/career-hub/roles/:roleSlug" element={<RolePage />} />
           <Route path="/career-hub/locations" element={<ActiveMarketsPage />} />
