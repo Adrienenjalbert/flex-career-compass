@@ -33,16 +33,29 @@ const locations = [
     { name: "Dallas", slug: "dallas" },
     { name: "Houston", slug: "houston" },
   ]},
-  { state: "Southeast", cities: [
+  { state: "Georgia", cities: [
+    { name: "Atlanta", slug: "atlanta" },
+    { name: "Cartersville", slug: "cartersville" },
+  ]},
+  { state: "Ohio", cities: [
+    { name: "Cincinnati", slug: "cincinnati" },
+    { name: "Cleveland", slug: "cleveland" },
+    { name: "Columbus", slug: "columbus" },
+  ]},
+  { state: "Nevada", cities: [
+    { name: "Las Vegas", slug: "las-vegas" },
+    { name: "Reno", slug: "reno" },
+  ]},
+  { state: "Other Markets", cities: [
     { name: "Nashville, TN", slug: "nashville" },
-    { name: "Atlanta, GA", slug: "atlanta" },
-  ]},
-  { state: "Midwest", cities: [
-    { name: "Cincinnati, OH", slug: "cincinnati" },
-    { name: "Columbus, OH", slug: "columbus" },
-  ]},
-  { state: "California", cities: [
-    { name: "Ontario", slug: "ontario" },
+    { name: "Chicago, IL", slug: "chicago" },
+    { name: "Charlotte, NC", slug: "charlotte" },
+    { name: "Orlando, FL", slug: "orlando" },
+    { name: "Phoenix, AZ", slug: "phoenix" },
+    { name: "Ontario, CA", slug: "ontario" },
+    { name: "Washington D.C.", slug: "washington-dc" },
+    { name: "Bentonville, AR", slug: "bentonville" },
+    { name: "Fort Mill, SC", slug: "fort-mill" },
   ]},
 ];
 
