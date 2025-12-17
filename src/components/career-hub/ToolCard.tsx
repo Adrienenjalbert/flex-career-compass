@@ -12,14 +12,15 @@ import {
   Car,
   Clock,
   Calendar,
-  FileText
+  FileText,
+  Languages
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ToolCardProps {
   title: string;
   description: string;
-  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car' | 'FileText';
+  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car' | 'FileText' | 'Languages';
   href: string;
   featured?: boolean;
   answersQuestion?: string;
@@ -39,6 +40,7 @@ const iconMap: Record<string, LucideIcon> = {
   Baby,
   Car,
   FileText,
+  Languages,
 };
 
 const ToolCard = ({ 
