@@ -33,6 +33,14 @@ const toolCategories = [
         answersQuestion: "How do I create a resume for hourly work?",
         estimatedTime: "~10 min",
       },
+      {
+        title: "Workplace Spanish Phrase Guide",
+        description: "Essential workplace phrases with audio pronunciation. Perfect for bilingual workplaces. Save favorites for quick reference on the job.",
+        icon: "Languages" as const,
+        href: "/career-hub/tools/spanish-phrases",
+        answersQuestion: "How do I communicate with Spanish-speaking coworkers?",
+        estimatedTime: "Browse anytime",
+      },
     ],
   },
   {
@@ -159,6 +167,11 @@ const decisionHelper = [
     question: "How do I create a resume for hourly work?",
     tool: "Resume Builder",
     href: "/career-hub/tools/resume-builder",
+  },
+  {
+    question: "How do I communicate at work in Spanish?",
+    tool: "Spanish Phrases",
+    href: "/career-hub/tools/spanish-phrases",
   },
   {
     question: "How much will I take home after taxes?",
