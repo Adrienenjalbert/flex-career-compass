@@ -52,15 +52,15 @@ const MarkdownContent = ({ content, className = '' }: MarkdownContentProps) => {
           },
           // Unordered lists
           ul: ({ children }) => (
-            <ul className="list-disc list-inside space-y-2 mb-4 text-muted-foreground">{children}</ul>
+            <ul className="list-disc pl-6 space-y-2 mb-4 text-muted-foreground">{children}</ul>
           ),
           // Ordered lists
           ol: ({ children }) => (
-            <ol className="list-decimal list-inside space-y-2 mb-4 text-muted-foreground">{children}</ol>
+            <ol className="list-decimal pl-6 space-y-2 mb-4 text-muted-foreground">{children}</ol>
           ),
           // List items
           li: ({ children }) => (
-            <li className="text-muted-foreground leading-relaxed">{children}</li>
+            <li className="text-muted-foreground leading-relaxed pl-1">{children}</li>
           ),
           // Blockquotes
           blockquote: ({ children }) => (
