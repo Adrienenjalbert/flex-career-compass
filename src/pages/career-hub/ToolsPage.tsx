@@ -113,6 +113,14 @@ const toolCategories = [
         answersQuestion: "What skills do I need to advance?",
         estimatedTime: "~4 min",
       },
+      {
+        title: "WorkTalk: Job English",
+        description: "Learn essential workplace English phrases with audio. Bilingual tool for Spanish speakers in warehouse, hospitality & more.",
+        icon: "Languages" as const,
+        href: "/career-hub/tools/worktalk",
+        answersQuestion: "How do I learn job English fast?",
+        estimatedTime: "~10 min",
+      },
     ],
   },
   {
