@@ -17,6 +17,7 @@ import TaxCalculator from "./pages/career-hub/tools/TaxCalculator";
 import UnemploymentCalculator from "./pages/career-hub/tools/UnemploymentCalculator";
 import SkillsAnalyzer from "./pages/career-hub/tools/SkillsAnalyzer";
 import CareerPathExplorer from "./pages/career-hub/tools/CareerPathExplorer";
+import DataVerification from "./pages/career-hub/tools/DataVerification";
 import IndustryPage from "./pages/career-hub/IndustryPage";
 import RolePage from "./pages/career-hub/RolePage";
 import LocationPage from "./pages/career-hub/LocationPage";
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/career-hub/tools/unemployment-calculator" element={<UnemploymentCalculator />} />
           <Route path="/career-hub/tools/skills-analyzer" element={<SkillsAnalyzer />} />
           <Route path="/career-hub/tools/career-path" element={<CareerPathExplorer />} />
+          <Route path="/career-hub/tools/data-verification" element={<DataVerification />} />
           <Route path="/career-hub/industries/:industryId" element={<IndustryPage />} />
           <Route path="/career-hub/roles/:roleSlug" element={<RolePage />} />
           <Route path="/career-hub/locations/:locationSlug" element={<LocationPage />} />
