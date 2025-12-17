@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, UtensilsCrossed, Warehouse, ShoppingBag, Building2, MapPin, Calculator, BookOpen, DollarSign, Compass, Clock, TrendingUp, Wrench } from "lucide-react";
+import { Menu, X, ChevronDown, UtensilsCrossed, Warehouse, ShoppingBag, Building2, MapPin, Calculator, BookOpen, DollarSign, Compass, Clock, TrendingUp, Wrench, Heart } from "lucide-react";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -71,6 +71,7 @@ const tools = [
 const resources = [
   { title: "Career Guides", href: "/career-hub/guides", icon: BookOpen, description: "Tips for getting started and growing" },
   { title: "Financial Tips", href: "/career-hub/financial-tips", icon: DollarSign, description: "Money management for flex workers" },
+  { title: "Free Resources", href: "/career-hub/resources", icon: Heart, description: "Government help, certifications & more" },
   { title: "All Tools", href: "/career-hub/tools", icon: Wrench, description: "Free calculators and planners" },
 ];
 
@@ -352,6 +353,13 @@ const Header = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Financial Tips
+                </Link>
+                <Link
+                  to="/career-hub/resources"
+                  className="block hover:text-accent transition-colors py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Free Resources
                 </Link>
               </div>
 
