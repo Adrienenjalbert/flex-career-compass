@@ -13,6 +13,13 @@ const tools = [
     featured: true,
   },
   {
+    title: "Commute Cost Calculator",
+    description: "Calculate the true cost of your commute including gas, maintenance, depreciation, parking, and time. Compare driving vs transit.",
+    icon: "Car" as const,
+    href: "/career-hub/tools/commute-calculator",
+    featured: true,
+  },
+  {
     title: "State-by-State Paycheck Calculator",
     description: "Calculate take-home pay in all 50 states with W-2 vs 1099 comparison, role templates, and shift differentials.",
     icon: "Calculator" as const,
