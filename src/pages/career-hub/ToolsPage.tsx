@@ -6,6 +6,13 @@ import CTASection from "@/components/career-hub/CTASection";
 
 const tools = [
   {
+    title: "Childcare Break-Even Calculator",
+    description: "Calculate if working is worth it after childcare costs. Includes 2024 state data, tax credits, and flexible schedule comparisons.",
+    icon: "Baby" as const,
+    href: "/career-hub/tools/childcare-calculator",
+    featured: true,
+  },
+  {
     title: "State-by-State Paycheck Calculator",
     description: "Calculate take-home pay in all 50 states with W-2 vs 1099 comparison, role templates, and shift differentials.",
     icon: "Calculator" as const,

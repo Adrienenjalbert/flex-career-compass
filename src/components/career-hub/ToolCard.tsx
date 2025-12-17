@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Calculator, TrendingUp, MapPin, DollarSign, PiggyBank, Target, ShieldCheck } from "lucide-react";
+import { ArrowRight, Calculator, TrendingUp, MapPin, DollarSign, PiggyBank, Target, ShieldCheck, Baby } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ToolCardProps {
   title: string;
   description: string;
-  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck';
+  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby';
   href: string;
   featured?: boolean;
 }
@@ -18,6 +18,7 @@ const iconMap: Record<string, LucideIcon> = {
   PiggyBank,
   Target,
   ShieldCheck,
+  Baby,
 };
 
 const ToolCard = ({ title, description, icon, href, featured }: ToolCardProps) => {
