@@ -75,7 +75,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation - Mega Menu */}
-          <NavigationMenu className="hidden md:flex">
+          <NavigationMenu className="hidden md:flex" delayDuration={0} skipDelayDuration={0}>
             <NavigationMenuList>
               {/* Roles Mega Menu */}
               <NavigationMenuItem>
