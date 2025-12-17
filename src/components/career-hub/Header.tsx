@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.svg";
 
 const popularRoles = [
   { title: "Bartender", slug: "bartender", pay: "$15-28/hr" },
@@ -65,13 +66,11 @@ const Header = () => {
 
   return (
     <header className="bg-primary text-primary-foreground sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between h-18">
           {/* Logo */}
-          <Link to="/career-hub" className="flex items-center gap-2">
-            <div className="font-bold text-xl tracking-tight">
-              indeed<span className="text-accent">flex</span>
-            </div>
+          <Link to="/career-hub" className="flex items-center">
+            <img src={logo} alt="Indeed Flex" className="h-8 md:h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation - Mega Menu */}
@@ -83,11 +82,11 @@ const Header = () => {
                   Roles
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[600px] p-6 bg-card border border-border shadow-lg">
-                    <div className="grid grid-cols-2 gap-6">
+                  <div className="w-[600px] p-8 bg-card border border-border shadow-soft-lg rounded-xl">
+                    <div className="grid grid-cols-2 gap-8">
                       {/* Industries */}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide">By Industry</h3>
+                        <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wide">By Industry</h3>
                         <div className="space-y-2">
                           {industries.map((industry) => {
                             const Icon = industry.icon;
@@ -95,9 +94,9 @@ const Header = () => {
                               <Link
                                 key={industry.id}
                                 to={`/career-hub/industries/${industry.id}`}
-                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors group"
+                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted transition-colors group"
                               >
-                                <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                                <div className="p-2.5 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
                                   <Icon className="h-4 w-4 text-primary" />
                                 </div>
                                 <div>
@@ -116,13 +115,13 @@ const Header = () => {
 
                       {/* Popular Roles */}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide">Popular Roles</h3>
+                        <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wide">Popular Roles</h3>
                         <div className="space-y-2">
                           {popularRoles.map((role) => (
                             <Link
                               key={role.slug}
                               to={`/career-hub/roles/${role.slug}`}
-                              className="flex items-center justify-between p-2 rounded-lg hover:bg-muted transition-colors group"
+                              className="flex items-center justify-between p-3 rounded-xl hover:bg-muted transition-colors group"
                             >
                               <span className="font-medium text-foreground group-hover:text-primary transition-colors">
                                 {role.title}
@@ -151,11 +150,11 @@ const Header = () => {
                   Locations
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[500px] p-6 bg-card border border-border shadow-lg">
-                    <div className="grid grid-cols-2 gap-6">
+                  <div className="w-[500px] p-8 bg-card border border-border shadow-soft-lg rounded-xl">
+                    <div className="grid grid-cols-2 gap-8">
                       {locations.map((region) => (
                         <div key={region.state}>
-                          <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                          <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
                             <MapPin className="h-3 w-3" />
                             {region.state}
                           </h3>
@@ -164,7 +163,7 @@ const Header = () => {
                               <Link
                                 key={city.slug}
                                 to={`/career-hub/locations/${city.slug}`}
-                                className="block p-2 rounded-lg text-foreground hover:bg-muted hover:text-primary transition-colors"
+                                className="block p-2.5 rounded-xl text-foreground hover:bg-muted hover:text-primary transition-colors"
                               >
                                 {city.name}
                               </Link>
@@ -183,17 +182,17 @@ const Header = () => {
                   Tools
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[450px] p-6 bg-card border border-border shadow-lg">
-                    <div className="grid grid-cols-2 gap-3">
+                  <div className="w-[450px] p-8 bg-card border border-border shadow-soft-lg rounded-xl">
+                    <div className="grid grid-cols-2 gap-4">
                       {tools.map((tool) => {
                         const Icon = tool.icon;
                         return (
                           <Link
                             key={tool.slug}
                             to={`/career-hub/tools/${tool.slug}`}
-                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
+                            className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted transition-colors group"
                           >
-                            <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                            <div className="p-2.5 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
                               <Icon className="h-4 w-4 text-primary" />
                             </div>
                             <div>
@@ -218,7 +217,7 @@ const Header = () => {
                   Resources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[350px] p-6 bg-card border border-border shadow-lg">
+                  <div className="w-[350px] p-8 bg-card border border-border shadow-soft-lg rounded-xl">
                     <div className="space-y-2">
                       {resources.map((resource) => {
                         const Icon = resource.icon;
@@ -226,9 +225,9 @@ const Header = () => {
                           <Link
                             key={resource.href}
                             to={resource.href}
-                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
+                            className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted transition-colors group"
                           >
-                            <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                            <div className="p-2.5 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
                               <Icon className="h-4 w-4 text-primary" />
                             </div>
                             <div>
@@ -251,7 +250,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold" asChild>
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-xl px-6" asChild>
               <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
                 Get the App
               </a>
@@ -270,16 +269,16 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-primary-foreground/20 max-h-[80vh] overflow-y-auto">
-            <div className="flex flex-col gap-4">
+          <nav className="md:hidden py-6 border-t border-primary-foreground/20 max-h-[80vh] overflow-y-auto">
+            <div className="flex flex-col gap-6">
               {/* Industries */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="text-xs font-semibold uppercase tracking-wide text-primary-foreground/60">Industries</div>
                 {industries.map((industry) => (
                   <Link
                     key={industry.id}
                     to={`/career-hub/industries/${industry.id}`}
-                    className="block hover:text-accent transition-colors"
+                    className="block hover:text-accent transition-colors py-1"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {industry.name}
@@ -288,13 +287,13 @@ const Header = () => {
               </div>
 
               {/* Locations */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="text-xs font-semibold uppercase tracking-wide text-primary-foreground/60">Locations</div>
                 {locations.flatMap(r => r.cities).slice(0, 5).map((city) => (
                   <Link
                     key={city.slug}
                     to={`/career-hub/locations/${city.slug}`}
-                    className="block hover:text-accent transition-colors"
+                    className="block hover:text-accent transition-colors py-1"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {city.name}
@@ -303,32 +302,32 @@ const Header = () => {
               </div>
 
               {/* Resources */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="text-xs font-semibold uppercase tracking-wide text-primary-foreground/60">Resources</div>
                 <Link
                   to="/career-hub/tools"
-                  className="block hover:text-accent transition-colors"
+                  className="block hover:text-accent transition-colors py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Career Tools
                 </Link>
                 <Link
                   to="/career-hub/guides"
-                  className="block hover:text-accent transition-colors"
+                  className="block hover:text-accent transition-colors py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Career Guides
                 </Link>
                 <Link
                   to="/career-hub/financial-tips"
-                  className="block hover:text-accent transition-colors"
+                  className="block hover:text-accent transition-colors py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Financial Tips
                 </Link>
               </div>
 
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2" asChild>
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2 rounded-xl" asChild>
                 <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
                   Get the App
                 </a>
