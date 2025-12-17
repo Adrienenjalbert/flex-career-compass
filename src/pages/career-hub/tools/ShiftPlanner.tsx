@@ -8,6 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, DollarSign, Clock, Calendar } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
+import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 
 const ShiftPlanner = () => {
   const [hourlyRate, setHourlyRate] = useState(15);
@@ -247,6 +248,19 @@ const ShiftPlanner = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <ToolDisclaimer 
+                type="planning"
+                sources={["Indeed Flex shift data", "Industry wage averages"]}
+                lastUpdated="December 2024"
+              />
             </div>
           </div>
         </section>
