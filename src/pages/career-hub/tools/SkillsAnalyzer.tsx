@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Target, CheckCircle, XCircle, ArrowRight, RotateCcw, Lightbulb, Clock, DollarSign, Zap } from "lucide-react";
+import { Target, CheckCircle, XCircle, ArrowRight, RotateCcw, Lightbulb, Clock, DollarSign, Zap, Sparkles, ChefHat, Package, ShoppingBag, Building2, Wrench, PartyPopper, Star } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
 import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 import SkillRecommendationCard from "@/components/career-hub/interactive/SkillRecommendationCard";
@@ -25,7 +25,45 @@ interface RoleSkills {
   nextLevel: string;
   requiredSkills: Skill[];
   salaryIncrease: string;
+  industry: string;
+  traits: string[];
 }
+
+// Industry categories for interests
+const industries = [
+  { id: "hospitality-bar", name: "Bar & Nightlife", icon: "🍸", description: "Bartending, bar service" },
+  { id: "hospitality-kitchen", name: "Kitchen & Culinary", icon: "🍳", description: "Cooking, food prep" },
+  { id: "hospitality-foh", name: "Front of House", icon: "🍽️", description: "Serving, hosting" },
+  { id: "warehouse", name: "Warehouse & Logistics", icon: "📦", description: "Picking, packing, forklift" },
+  { id: "retail", name: "Retail & Sales", icon: "🛍️", description: "Customer service, sales" },
+  { id: "events", name: "Events & Entertainment", icon: "🎉", description: "Setup, staffing events" },
+  { id: "facilities", name: "Facilities & Cleaning", icon: "🧹", description: "Maintenance, custodial" },
+  { id: "industrial", name: "Manufacturing", icon: "⚙️", description: "Assembly, machine operation" },
+];
+
+// Personal traits/preferences
+const personalTraits = [
+  { id: "people-person", name: "I enjoy working with people", matchIndustries: ["hospitality-bar", "hospitality-foh", "retail", "events"] },
+  { id: "physical-work", name: "I prefer physical/active work", matchIndustries: ["warehouse", "facilities", "industrial", "hospitality-kitchen"] },
+  { id: "fast-paced", name: "I thrive in fast-paced environments", matchIndustries: ["hospitality-bar", "hospitality-kitchen", "events", "warehouse"] },
+  { id: "detail-oriented", name: "I'm detail-oriented", matchIndustries: ["industrial", "warehouse", "facilities", "retail"] },
+  { id: "leadership", name: "I want to lead teams", matchIndustries: ["hospitality-foh", "retail", "warehouse", "facilities"] },
+  { id: "tips-income", name: "I want to earn tips", matchIndustries: ["hospitality-bar", "hospitality-foh", "events"] },
+  { id: "daytime", name: "I prefer daytime hours", matchIndustries: ["warehouse", "retail", "facilities", "industrial"] },
+  { id: "creative", name: "I enjoy creative work", matchIndustries: ["hospitality-bar", "hospitality-kitchen", "events"] },
+];
+
+// Existing skills users might have
+const existingSkills = [
+  { id: "customer-service-exp", name: "Customer service experience", boostIndustries: ["retail", "hospitality-foh", "hospitality-bar"] },
+  { id: "food-handling", name: "Food handling knowledge", boostIndustries: ["hospitality-kitchen", "hospitality-foh", "events"] },
+  { id: "forklift-interest", name: "Forklift or machinery experience", boostIndustries: ["warehouse", "industrial"] },
+  { id: "cash-handling", name: "Cash register/POS experience", boostIndustries: ["retail", "hospitality-foh", "hospitality-bar"] },
+  { id: "team-lead-exp", name: "Team lead or supervisor experience", boostIndustries: ["warehouse", "retail", "facilities", "events"] },
+  { id: "cleaning-exp", name: "Professional cleaning experience", boostIndustries: ["facilities", "hospitality-foh"] },
+  { id: "alcohol-service", name: "Alcohol service experience", boostIndustries: ["hospitality-bar", "events"] },
+  { id: "warehouse-exp", name: "Warehouse or logistics experience", boostIndustries: ["warehouse", "industrial"] },
+];
 
 const roleProgression: RoleSkills[] = [
   // Hospitality - Bar
@@ -35,6 +73,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Barback",
     nextLevel: "Bartender",
     salaryIncrease: "$5-10/hr more + tips",
+    industry: "hospitality-bar",
+    traits: ["people-person", "fast-paced", "tips-income", "creative"],
     requiredSkills: [
       { id: "mixology", name: "Mixology Basics", description: "Know 20+ classic cocktail recipes", category: "technical" },
       { id: "tips-cert", name: "TIPS Certification", description: "Responsible alcohol service training", category: "certification" },
@@ -50,6 +90,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Dishwasher",
     nextLevel: "Prep Cook",
     salaryIncrease: "$2-4/hr more",
+    industry: "hospitality-kitchen",
+    traits: ["physical-work", "detail-oriented", "fast-paced"],
     requiredSkills: [
       { id: "knife-skills", name: "Basic Knife Skills", description: "Proper cutting techniques and safety", category: "technical" },
       { id: "food-safety", name: "Food Safety Cert", description: "ServSafe or equivalent certification", category: "certification" },
@@ -64,6 +106,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Prep Cook",
     nextLevel: "Line Cook",
     salaryIncrease: "$3-5/hr more",
+    industry: "hospitality-kitchen",
+    traits: ["fast-paced", "physical-work", "creative"],
     requiredSkills: [
       { id: "cooking-techniques", name: "Cooking Techniques", description: "Master sautéing, grilling, frying", category: "technical" },
       { id: "station-management", name: "Station Management", description: "Run a station during service", category: "technical" },
@@ -79,6 +123,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Server",
     nextLevel: "Shift Supervisor",
     salaryIncrease: "$4-6/hr more",
+    industry: "hospitality-foh",
+    traits: ["people-person", "leadership", "fast-paced", "tips-income"],
     requiredSkills: [
       { id: "leadership", name: "Leadership Skills", description: "Guide and motivate team members", category: "soft" },
       { id: "conflict", name: "Conflict Resolution", description: "Handle customer complaints professionally", category: "soft" },
@@ -94,6 +140,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Picker/Packer",
     nextLevel: "Lead Picker",
     salaryIncrease: "$2-4/hr more",
+    industry: "warehouse",
+    traits: ["physical-work", "detail-oriented", "leadership", "daytime"],
     requiredSkills: [
       { id: "productivity", name: "High Productivity", description: "Consistently exceed rate targets", category: "technical" },
       { id: "quality", name: "Quality Accuracy", description: "Maintain 99%+ accuracy rate", category: "technical" },
@@ -108,6 +156,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Warehouse Operative",
     nextLevel: "Forklift Driver",
     salaryIncrease: "$3-5/hr more",
+    industry: "warehouse",
+    traits: ["physical-work", "detail-oriented", "daytime"],
     requiredSkills: [
       { id: "forklift-cert", name: "Forklift Certification", description: "OSHA-compliant training (1-2 days)", category: "certification" },
       { id: "spatial", name: "Spatial Awareness", description: "Navigate tight spaces safely", category: "technical" },
@@ -122,6 +172,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Forklift Driver",
     nextLevel: "Warehouse Supervisor",
     salaryIncrease: "$4-7/hr more",
+    industry: "warehouse",
+    traits: ["leadership", "detail-oriented", "daytime"],
     requiredSkills: [
       { id: "team-leadership", name: "Team Leadership", description: "Manage and motivate 5-15 team members", category: "soft" },
       { id: "osha-30", name: "OSHA 30 Certification", description: "Advanced safety certification", category: "certification" },
@@ -137,6 +189,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Retail Associate",
     nextLevel: "Shift Lead",
     salaryIncrease: "$2-4/hr more",
+    industry: "retail",
+    traits: ["people-person", "detail-oriented", "leadership", "daytime"],
     requiredSkills: [
       { id: "pos-mastery", name: "POS Mastery", description: "Handle returns, voids, manager overrides", category: "technical" },
       { id: "customer-service", name: "Customer Service Excellence", description: "Resolve issues and create positive experiences", category: "soft" },
@@ -151,6 +205,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Shift Lead",
     nextLevel: "Store Manager",
     salaryIncrease: "$5-10/hr more + bonus",
+    industry: "retail",
+    traits: ["leadership", "people-person", "detail-oriented"],
     requiredSkills: [
       { id: "p-and-l", name: "P&L Understanding", description: "Read and impact profit/loss statements", category: "technical" },
       { id: "hiring", name: "Hiring & Onboarding", description: "Interview, hire, and train new staff", category: "soft" },
@@ -166,6 +222,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Event Staff",
     nextLevel: "Event Lead",
     salaryIncrease: "$3-5/hr more",
+    industry: "events",
+    traits: ["people-person", "fast-paced", "physical-work", "creative"],
     requiredSkills: [
       { id: "event-setup", name: "Setup Expertise", description: "Efficient venue setup and breakdown", category: "technical" },
       { id: "guest-management", name: "Guest Management", description: "Handle VIPs and special requests", category: "soft" },
@@ -181,6 +239,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Cleaner",
     nextLevel: "Cleaning Supervisor",
     salaryIncrease: "$3-5/hr more",
+    industry: "facilities",
+    traits: ["detail-oriented", "leadership", "physical-work", "daytime"],
     requiredSkills: [
       { id: "quality-control", name: "Quality Inspection", description: "Evaluate cleaning standards", category: "technical" },
       { id: "team-management", name: "Team Coordination", description: "Assign tasks and manage workflow", category: "soft" },
@@ -195,6 +255,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Custodian",
     nextLevel: "Facilities Technician",
     salaryIncrease: "$4-6/hr more",
+    industry: "facilities",
+    traits: ["detail-oriented", "physical-work", "daytime"],
     requiredSkills: [
       { id: "basic-maintenance", name: "Basic Maintenance", description: "Handle minor repairs and fixes", category: "technical" },
       { id: "hvac-basics", name: "HVAC Basics", description: "Basic understanding of heating/cooling systems", category: "technical" },
@@ -210,6 +272,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Machine Operator",
     nextLevel: "Lead Operator",
     salaryIncrease: "$2-4/hr more",
+    industry: "industrial",
+    traits: ["detail-oriented", "physical-work", "leadership", "daytime"],
     requiredSkills: [
       { id: "multi-machine", name: "Multi-Machine Operation", description: "Operate 3+ different machine types", category: "technical" },
       { id: "troubleshooting", name: "Basic Troubleshooting", description: "Diagnose and fix minor issues", category: "technical" },
@@ -224,6 +288,8 @@ const roleProgression: RoleSkills[] = [
     currentLevel: "Assembler",
     nextLevel: "Quality Inspector",
     salaryIncrease: "$2-3/hr more",
+    industry: "industrial",
+    traits: ["detail-oriented", "daytime"],
     requiredSkills: [
       { id: "attention-detail", name: "Attention to Detail", description: "Spot defects and inconsistencies", category: "soft" },
       { id: "measurement-tools", name: "Measurement Tools", description: "Use calipers, gauges, and testing equipment", category: "technical" },
@@ -234,11 +300,79 @@ const roleProgression: RoleSkills[] = [
   },
 ];
 
+type ViewMode = "quiz" | "select" | "analyze";
+
 const SkillsAnalyzer = () => {
+  const [viewMode, setViewMode] = useState<ViewMode>("quiz");
   const [selectedPath, setSelectedPath] = useState<string | null>(null);
   const [checkedSkills, setCheckedSkills] = useState<Set<string>>(new Set());
+  
+  // Quiz state
+  const [selectedIndustries, setSelectedIndustries] = useState<Set<string>>(new Set());
+  const [selectedTraits, setSelectedTraits] = useState<Set<string>>(new Set());
+  const [selectedExistingSkills, setSelectedExistingSkills] = useState<Set<string>>(new Set());
+  const [showRecommendations, setShowRecommendations] = useState(false);
 
   const currentPath = roleProgression.find(r => r.roleId === selectedPath);
+
+  // Calculate recommended paths based on quiz answers
+  const getRecommendedPaths = () => {
+    const scores = roleProgression.map(path => {
+      let score = 0;
+      
+      // Industry match (highest weight)
+      if (selectedIndustries.has(path.industry)) {
+        score += 30;
+      }
+      
+      // Trait matches
+      path.traits.forEach(trait => {
+        if (selectedTraits.has(trait)) {
+          score += 10;
+        }
+      });
+      
+      // Existing skills boost
+      existingSkills.forEach(skill => {
+        if (selectedExistingSkills.has(skill.id) && skill.boostIndustries.includes(path.industry)) {
+          score += 15;
+        }
+      });
+      
+      return { path, score };
+    });
+    
+    return scores.sort((a, b) => b.score - a.score).slice(0, 3);
+  };
+
+  const recommendedPaths = getRecommendedPaths();
+
+  const toggleIndustry = (id: string) => {
+    setSelectedIndustries(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) newSet.delete(id);
+      else newSet.add(id);
+      return newSet;
+    });
+  };
+
+  const toggleTrait = (id: string) => {
+    setSelectedTraits(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) newSet.delete(id);
+      else newSet.add(id);
+      return newSet;
+    });
+  };
+
+  const toggleExistingSkill = (id: string) => {
+    setSelectedExistingSkills(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) newSet.delete(id);
+      else newSet.add(id);
+      return newSet;
+    });
+  };
 
   const toggleSkill = (skillId: string) => {
     setCheckedSkills(prev => {
@@ -255,7 +389,18 @@ const SkillsAnalyzer = () => {
   const resetAnalysis = () => {
     setSelectedPath(null);
     setCheckedSkills(new Set());
+    setViewMode("quiz");
+    setShowRecommendations(false);
   };
+
+  const resetQuiz = () => {
+    setSelectedIndustries(new Set());
+    setSelectedTraits(new Set());
+    setSelectedExistingSkills(new Set());
+    setShowRecommendations(false);
+  };
+
+  const canShowRecommendations = selectedIndustries.size > 0 || selectedTraits.size > 0;
 
   const progressPercentage = currentPath 
     ? (checkedSkills.size / currentPath.requiredSkills.length) * 100 
@@ -311,38 +456,277 @@ const SkillsAnalyzer = () => {
         <section className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              {!selectedPath ? (
-                /* Path Selection */
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-                    Choose Your Career Path
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {roleProgression.map((path) => (
-                      <Card 
-                        key={path.roleId}
-                        className="cursor-pointer hover:border-primary/50 hover:shadow-lg transition-all"
-                        onClick={() => setSelectedPath(path.roleId)}
-                      >
-                        <CardHeader>
-                          <CardTitle className="text-lg">{path.title}</CardTitle>
-                          <CardDescription>
-                            {path.requiredSkills.length} skills to develop
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm text-success font-medium">
-                              {path.salaryIncrease}
-                            </span>
-                            <ArrowRight className="h-5 w-5 text-primary" />
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
+              {viewMode === "quiz" && !showRecommendations && (
+                /* Career Path Quiz */
+                <div className="space-y-8">
+                  <div className="text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent mb-4">
+                      <Sparkles className="h-4 w-4" />
+                      <span className="text-sm font-medium">Career Path Finder</span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">
+                      Find Your Best Career Path
+                    </h2>
+                    <p className="text-muted-foreground">
+                      Answer a few questions and we'll recommend the best paths for you
+                    </p>
+                  </div>
+
+                  {/* Step 1: Industry Interest */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm">1</span>
+                        What industries interest you?
+                      </CardTitle>
+                      <CardDescription>Select all that apply</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        {industries.map((industry) => (
+                          <button
+                            key={industry.id}
+                            onClick={() => toggleIndustry(industry.id)}
+                            className={`p-3 rounded-lg border text-left transition-all ${
+                              selectedIndustries.has(industry.id)
+                                ? "border-primary bg-primary/10"
+                                : "border-border hover:border-primary/50"
+                            }`}
+                          >
+                            <span className="text-2xl block mb-1">{industry.icon}</span>
+                            <span className="font-medium text-sm block">{industry.name}</span>
+                            <span className="text-xs text-muted-foreground">{industry.description}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Step 2: Personal Traits */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm">2</span>
+                        What describes you?
+                      </CardTitle>
+                      <CardDescription>Select all that apply</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {personalTraits.map((trait) => (
+                          <button
+                            key={trait.id}
+                            onClick={() => toggleTrait(trait.id)}
+                            className={`p-3 rounded-lg border text-left transition-all flex items-center gap-3 ${
+                              selectedTraits.has(trait.id)
+                                ? "border-primary bg-primary/10"
+                                : "border-border hover:border-primary/50"
+                            }`}
+                          >
+                            <div className={`w-5 h-5 rounded border flex items-center justify-center ${
+                              selectedTraits.has(trait.id) ? "bg-primary border-primary" : "border-muted-foreground"
+                            }`}>
+                              {selectedTraits.has(trait.id) && <CheckCircle className="h-4 w-4 text-primary-foreground" />}
+                            </div>
+                            <span className="text-sm">{trait.name}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Step 3: Existing Skills */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm">3</span>
+                        What experience do you have?
+                      </CardTitle>
+                      <CardDescription>Select all that apply (optional)</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {existingSkills.map((skill) => (
+                          <button
+                            key={skill.id}
+                            onClick={() => toggleExistingSkill(skill.id)}
+                            className={`p-3 rounded-lg border text-left transition-all flex items-center gap-3 ${
+                              selectedExistingSkills.has(skill.id)
+                                ? "border-success bg-success/10"
+                                : "border-border hover:border-success/50"
+                            }`}
+                          >
+                            <div className={`w-5 h-5 rounded border flex items-center justify-center ${
+                              selectedExistingSkills.has(skill.id) ? "bg-success border-success" : "border-muted-foreground"
+                            }`}>
+                              {selectedExistingSkills.has(skill.id) && <CheckCircle className="h-4 w-4 text-success-foreground" />}
+                            </div>
+                            <span className="text-sm">{skill.name}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Actions */}
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button
+                      size="lg"
+                      onClick={() => setShowRecommendations(true)}
+                      disabled={!canShowRecommendations}
+                      className="gap-2"
+                    >
+                      <Sparkles className="h-4 w-4" />
+                      Get Recommendations
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      onClick={() => setViewMode("select")}
+                    >
+                      Skip Quiz → Browse All Paths
+                    </Button>
                   </div>
                 </div>
-              ) : (
+              )}
+
+              {viewMode === "quiz" && showRecommendations && (
+                /* Recommendations */
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 rounded-full text-success mb-4">
+                      <Star className="h-4 w-4" />
+                      <span className="text-sm font-medium">Your Personalized Matches</span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">
+                      Recommended Career Paths
+                    </h2>
+                    <p className="text-muted-foreground">
+                      Based on your interests, traits, and experience
+                    </p>
+                  </div>
+
+                  {/* Top Recommendations */}
+                  <div className="space-y-4">
+                    {recommendedPaths.map((item, index) => {
+                      const industry = industries.find(i => i.id === item.path.industry);
+                      const matchScore = Math.min(100, Math.round((item.score / 70) * 100));
+                      
+                      return (
+                        <Card 
+                          key={item.path.roleId}
+                          className={`cursor-pointer transition-all hover:shadow-lg ${
+                            index === 0 ? "border-2 border-success" : "hover:border-primary/50"
+                          }`}
+                          onClick={() => {
+                            setSelectedPath(item.path.roleId);
+                            setViewMode("analyze");
+                          }}
+                        >
+                          <CardContent className="py-4">
+                            <div className="flex items-start gap-4">
+                              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl ${
+                                index === 0 ? "bg-success/20" : "bg-muted"
+                              }`}>
+                                {industry?.icon}
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2 mb-1">
+                                  {index === 0 && (
+                                    <span className="text-xs px-2 py-0.5 bg-success text-success-foreground rounded-full">
+                                      Best Match
+                                    </span>
+                                  )}
+                                  <span className="text-xs text-muted-foreground">
+                                    {matchScore}% match
+                                  </span>
+                                </div>
+                                <h3 className="font-semibold text-lg">{item.path.title}</h3>
+                                <p className="text-sm text-muted-foreground mb-2">
+                                  {item.path.requiredSkills.length} skills to develop • {item.path.salaryIncrease}
+                                </p>
+                                <div className="flex flex-wrap gap-1">
+                                  {item.path.traits.filter(t => selectedTraits.has(t)).slice(0, 3).map(traitId => {
+                                    const trait = personalTraits.find(t => t.id === traitId);
+                                    return (
+                                      <span key={traitId} className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full">
+                                        ✓ {trait?.name.replace("I ", "").replace("I'm ", "")}
+                                      </span>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                              <ArrowRight className="h-5 w-5 text-primary mt-2" />
+                            </div>
+                          </CardContent>
+                        </Card>
+                      );
+                    })}
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+                    <Button variant="outline" onClick={resetQuiz} className="gap-2">
+                      <RotateCcw className="h-4 w-4" />
+                      Retake Quiz
+                    </Button>
+                    <Button variant="ghost" onClick={() => setViewMode("select")}>
+                      Browse All {roleProgression.length} Paths
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {viewMode === "select" && !selectedPath && (
+                /* Path Selection */
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-bold text-foreground">
+                      All Career Paths
+                    </h2>
+                    <Button variant="outline" onClick={() => setViewMode("quiz")} className="gap-2">
+                      <Sparkles className="h-4 w-4" />
+                      Get Recommendations
+                    </Button>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {roleProgression.map((path) => {
+                      const industry = industries.find(i => i.id === path.industry);
+                      return (
+                        <Card 
+                          key={path.roleId}
+                          className="cursor-pointer hover:border-primary/50 hover:shadow-lg transition-all"
+                          onClick={() => {
+                            setSelectedPath(path.roleId);
+                            setViewMode("analyze");
+                          }}
+                        >
+                          <CardHeader>
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-lg">{industry?.icon}</span>
+                              <span className="text-xs text-muted-foreground">{industry?.name}</span>
+                            </div>
+                            <CardTitle className="text-lg">{path.title}</CardTitle>
+                            <CardDescription>
+                              {path.requiredSkills.length} skills to develop
+                            </CardDescription>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-success font-medium">
+                                {path.salaryIncrease}
+                              </span>
+                              <ArrowRight className="h-5 w-5 text-primary" />
+                            </div>
+                          </CardContent>
+                        </Card>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {(viewMode === "analyze" || selectedPath) && currentPath && (
                 /* Skill Analysis */
                 <div>
                   <div className="flex items-center justify-between mb-6">
