@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, MapPin, TrendingUp } from "lucide-react";
+import { ArrowRight, Briefcase, MapPin, TrendingUp, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -13,10 +13,21 @@ const HeroSection = () => {
           <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
             Resources, guides, and tools to help you earn more, grow faster, and manage your money as a flexible worker.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8"
+              asChild
+            >
+              <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-5 w-5" />
+                Get the App
+              </a>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-lg px-8"
               asChild
             >
               <Link to="/career-hub/tools">
