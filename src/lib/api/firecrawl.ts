@@ -16,11 +16,25 @@ type ScrapeOptions = {
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 
+// Check if Cloud is enabled
+export const isCloudEnabled = (): boolean => {
+  return Boolean(SUPABASE_URL);
+};
+
 export const firecrawlApi = {
   /**
    * Scrape a single URL and return its content
    */
   async scrape(url: string, options?: ScrapeOptions): Promise<FirecrawlResponse> {
+    // Check if Cloud is enabled
+    if (!SUPABASE_URL) {
+      console.error('Supabase URL not configured. Please enable Lovable Cloud.');
+      return { 
+        success: false, 
+        error: 'Lovable Cloud is not enabled. Please enable Cloud to use Firecrawl functionality.' 
+      };
+    }
+
     try {
       const response = await fetch(`${SUPABASE_URL}/functions/v1/firecrawl-scrape`, {
         method: 'POST',
@@ -29,6 +43,23 @@ export const firecrawlApi = {
         },
         body: JSON.stringify({ url, options }),
       });
+
+      // Check if the function exists
+      if (response.status === 404) {
+        return {
+          success: false,
+          error: 'Edge function not found. The firecrawl-scrape function may not be deployed yet.'
+        };
+      }
+
+      // Check for other HTTP errors
+      if (!response.ok) {
+        const errorText = await response.text();
+        return {
+          success: false,
+          error: `HTTP ${response.status}: ${errorText || 'Request failed'}`
+        };
+      }
 
       const data = await response.json();
       return data;
