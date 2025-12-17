@@ -11,14 +11,15 @@ import {
   Baby, 
   Car,
   Clock,
-  Calendar
+  Calendar,
+  Languages
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ToolCardProps {
   title: string;
   description: string;
-  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car';
+  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car' | 'Languages';
   href: string;
   featured?: boolean;
   answersQuestion?: string;
@@ -37,6 +38,7 @@ const iconMap: Record<string, LucideIcon> = {
   ShieldCheck,
   Baby,
   Car,
+  Languages,
 };
 
 const ToolCard = ({ 
