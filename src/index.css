@@ -4,102 +4,102 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Indeed Flex Design System */
+/* Indeed Flex Brand Design System - Wellness Inspired */
 
 @layer base {
   :root {
-    /* Indeed Flex Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 18%;
+    /* Indeed Flex Exact Brand Colors */
+    --background: 40 10% 99%;
+    --foreground: 220 25% 15%;
     
-    /* Indeed Blue - Primary brand color */
-    --primary: 215 68% 40%;
+    /* Primary: Indeed Blue #003ea2 */
+    --primary: 218 100% 32%;
     --primary-foreground: 0 0% 100%;
     
-    /* Indeed Orange - CTA accent */
-    --accent: 24 100% 50%;
+    /* Accent: Flex Pink #dd01aa */
+    --accent: 310 99% 43%;
     --accent-foreground: 0 0% 100%;
     
-    /* Secondary - Light gray background */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 18%;
+    /* Wellness-Inspired Secondary Colors */
+    --secondary: 40 20% 97%;
+    --secondary-foreground: 220 25% 15%;
     
-    /* Muted colors */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 46%;
+    /* Muted - Soft earth tones */
+    --muted: 40 15% 94%;
+    --muted-foreground: 220 15% 45%;
     
-    /* Cards */
+    /* Cards - Pure white for contrast */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 18%;
+    --card-foreground: 220 25% 15%;
     
     /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 18%;
+    --popover-foreground: 220 25% 15%;
     
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Borders */
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 215 68% 40%;
+    /* Borders - Soft and subtle */
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
+    --ring: 218 100% 32%;
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Success color for positive indicators */
-    --success: 142 71% 45%;
+    /* Success - Wellness green */
+    --success: 158 64% 42%;
     --success-foreground: 0 0% 100%;
     
-    /* Warning */
+    /* Warning - Warm amber */
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
     
-    /* Info */
+    /* Info - Calming blue */
     --info: 199 89% 48%;
     --info-foreground: 0 0% 100%;
 
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 18%;
-    --sidebar-primary: 215 68% 40%;
+    --sidebar-background: 40 15% 98%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 218 100% 32%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 18%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 215 68% 40%;
+    --sidebar-accent: 40 15% 94%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 40 10% 88%;
+    --sidebar-ring: 218 100% 32%;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 95%;
+    --background: 220 20% 8%;
+    --foreground: 40 10% 95%;
     
-    --primary: 215 68% 55%;
+    --primary: 218 90% 50%;
     --primary-foreground: 0 0% 100%;
     
-    --accent: 24 100% 55%;
+    --accent: 310 90% 55%;
     --accent-foreground: 0 0% 100%;
     
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 220 15% 14%;
+    --secondary-foreground: 40 10% 95%;
     
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 220 15% 14%;
+    --muted-foreground: 40 10% 60%;
     
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 18% 12%;
+    --card-foreground: 40 10% 95%;
     
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 18% 12%;
+    --popover-foreground: 40 10% 95%;
     
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 215 68% 55%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 218 90% 50%;
     
-    --success: 142 71% 35%;
+    --success: 158 64% 35%;
     --success-foreground: 0 0% 100%;
     
     --warning: 38 92% 40%;
@@ -108,14 +108,14 @@
     --info: 199 89% 38%;
     --info-foreground: 0 0% 100%;
 
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 215 68% 55%;
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 40 10% 95%;
+    --sidebar-primary: 218 90% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 14%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 215 68% 55%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 40 10% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 218 90% 50%;
   }
 }
 
@@ -139,15 +139,36 @@
     text-wrap: balance;
   }
   
+  /* Indeed Flex Brand Gradients */
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(215 68% 50%) 100%);
+    background: linear-gradient(135deg, hsl(218 100% 32%) 0%, hsl(218 90% 42%) 100%);
   }
   
   .gradient-accent {
-    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(24 100% 60%) 100%);
+    background: linear-gradient(135deg, hsl(310 99% 43%) 0%, hsl(310 85% 55%) 100%);
   }
   
+  /* Wellness-Inspired Hero Gradient */
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(215 68% 35%) 0%, hsl(215 68% 45%) 100%);
+    background: linear-gradient(135deg, hsl(218 100% 28%) 0%, hsl(218 90% 38%) 50%, hsl(260 60% 35%) 100%);
+  }
+  
+  /* Soft Wellness Gradient */
+  .gradient-wellness {
+    background: linear-gradient(135deg, hsl(218 100% 32% / 0.08) 0%, hsl(310 99% 43% / 0.05) 100%);
+  }
+  
+  /* Calm Earth Tone Gradient */
+  .gradient-calm {
+    background: linear-gradient(180deg, hsl(40 20% 97%) 0%, hsl(40 15% 94%) 100%);
+  }
+  
+  /* Soft shadow for cards */
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px hsl(220 25% 15% / 0.08), 0 2px 8px -2px hsl(220 25% 15% / 0.04);
+  }
+  
+  .shadow-soft-lg {
+    box-shadow: 0 8px 30px -6px hsl(220 25% 15% / 0.12), 0 4px 12px -4px hsl(220 25% 15% / 0.06);
   }
 }
