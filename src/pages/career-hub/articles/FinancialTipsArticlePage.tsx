@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import MarkdownContent from "@/components/career-hub/MarkdownContent";
 import TableOfContents, { generateTOCFromSections } from "@/components/career-hub/TableOfContents";
+import { ExternalResourcesSection } from "@/components/career-hub/ExternalResourcesSection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { financialArticles, financialTips } from "@/data/articles/financial-tips";
 import { Clock, ArrowLeft, ArrowRight, CheckCircle2, Calculator, TrendingUp } from "lucide-react";
@@ -14,6 +15,60 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+// Map article slugs to relevant resource categories
+const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'all' => {
+  switch (slug) {
+    case 'tax-tips':
+      return 'tax';
+    case 'gig-benefits':
+      return 'healthcare';
+    case 'between-shifts':
+      return 'government';
+    case 'irregular-income-budget':
+    case 'emergency-fund-guide':
+    case 'retirement-saving':
+      return 'financial';
+    default:
+      return 'all';
+  }
+};
+
+const getResourceTitle = (slug: string): string => {
+  switch (slug) {
+    case 'tax-tips':
+      return 'Free Tax Resources';
+    case 'gig-benefits':
+      return 'Healthcare Resources';
+    case 'between-shifts':
+      return 'Free Assistance Programs';
+    case 'irregular-income-budget':
+    case 'emergency-fund-guide':
+      return 'Financial Tools & Resources';
+    case 'retirement-saving':
+      return 'Retirement Planning Resources';
+    default:
+      return 'Helpful Resources';
+  }
+};
+
+const getResourceDescription = (slug: string): string => {
+  switch (slug) {
+    case 'tax-tips':
+      return 'Free and low-cost tax help for gig workers';
+    case 'gig-benefits':
+      return 'Find affordable health coverage options';
+    case 'between-shifts':
+      return 'Government programs to help during tight times';
+    case 'irregular-income-budget':
+    case 'emergency-fund-guide':
+      return 'Tools to manage your money effectively';
+    case 'retirement-saving':
+      return 'Get started with retirement accounts';
+    default:
+      return 'Verified resources to help you succeed';
+  }
+};
 
 const FinancialTipsArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -275,7 +330,21 @@ const FinancialTipsArticlePage = () => {
             </section>
           )}
 
-          {/* Related Articles */}
+          {/* External Resources */}
+          <section className="py-12">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <ExternalResourcesSection
+                  category={getResourceCategory(article.slug)}
+                  title={getResourceTitle(article.slug)}
+                  description={getResourceDescription(article.slug)}
+                  showIndeedFlex={article.slug === 'between-shifts' || article.slug === 'gig-benefits'}
+                  limit={6}
+                />
+              </div>
+            </div>
+          </section>
+
           {relatedArticleData.length > 0 && (
             <section className="py-12 bg-muted/50">
               <div className="container mx-auto px-4">
