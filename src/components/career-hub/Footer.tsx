@@ -35,8 +35,7 @@ const Footer = () => {
               <li><Link to="/career-hub/locations/las-vegas" className="hover:text-accent transition-colors">Las Vegas, NV</Link></li>
               <li><Link to="/career-hub/locations/charlotte" className="hover:text-accent transition-colors">Charlotte, NC</Link></li>
               <li><Link to="/career-hub/locations/chicago" className="hover:text-accent transition-colors">Chicago, IL</Link></li>
-              <li><Link to="/career-hub/locations/orlando" className="hover:text-accent transition-colors">Orlando, FL</Link></li>
-              <li><Link to="/career-hub/locations/phoenix" className="hover:text-accent transition-colors">Phoenix, AZ</Link></li>
+              <li><Link to="/career-hub/locations" className="hover:text-accent transition-colors font-medium text-accent">View All 19 Markets →</Link></li>
             </ul>
           </div>
 
