@@ -1,21 +1,62 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import Layout from "@/components/career-hub/Layout";
-import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
-import CTASection from "@/components/career-hub/CTASection";
-import MarkdownContent from "@/components/career-hub/MarkdownContent";
-import TableOfContents, { generateTOCFromSections } from "@/components/career-hub/TableOfContents";
-import CertificationProviderCard from "@/components/career-hub/CertificationProviderCard";
-import { SEOMetaTags } from "@/components/career-hub/seo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { guideArticles, guideCategories } from "@/data/articles/guides";
-import { certifications, getCertificationsByCategory } from "@/data/certifications";
-import { Clock, ArrowLeft, ArrowRight, CheckCircle2, Award, ExternalLink } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
+import CertificationProviderCard from "@/components/career-hub/CertificationProviderCard";
+import CTASection from "@/components/career-hub/CTASection";
+import { ExternalResourcesSection } from "@/components/career-hub/ExternalResourcesSection";
+import Layout from "@/components/career-hub/Layout";
+import MarkdownContent from "@/components/career-hub/MarkdownContent";
+import { SEOMetaTags } from "@/components/career-hub/seo";
+import TableOfContents, { generateTOCFromSections } from "@/components/career-hub/TableOfContents";
+import { guideArticles, guideCategories } from "@/data/articles/guides";
+import { certifications, getCertificationsByCategory } from "@/data/certifications";
+import { Clock, ArrowLeft, ArrowRight, CheckCircle2, Award, ExternalLink } from "lucide-react";
+
+// Helper functions to determine resource category based on article slug
+const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'all' => {
+  if (slug === 'certifications' || slug === 'warehouse-skills' || slug === 'hospitality-skills') {
+    return 'certifications';
+  }
+  if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
+    return 'healthcare';
+  }
+  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
+    return 'government';
+  }
+  return 'all';
+};
+
+const getResourceTitle = (slug: string): string => {
+  if (slug === 'certifications' || slug === 'warehouse-skills' || slug === 'hospitality-skills') {
+    return 'Certification Resources';
+  }
+  if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
+    return 'Safety & Healthcare Resources';
+  }
+  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
+    return 'Career Development Resources';
+  }
+  return 'Helpful Resources';
+};
+
+const getResourceDescription = (slug: string): string => {
+  if (slug === 'certifications' || slug === 'warehouse-skills' || slug === 'hospitality-skills') {
+    return 'Find accredited certification providers and training programs';
+  }
+  if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
+    return 'Access safety training and healthcare resources for workers';
+  }
+  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
+    return 'Free government resources to support your career growth';
+  }
+  return 'Verified external resources to help you succeed';
+};
 
 const GuidesArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -404,9 +445,24 @@ const GuidesArticlePage = () => {
             </section>
           )}
 
+          {/* External Resources Section */}
+          <section className="py-12">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <ExternalResourcesSection
+                  category={getResourceCategory(slug || '')}
+                  title={getResourceTitle(slug || '')}
+                  description={getResourceDescription(slug || '')}
+                  showIndeedFlex={true}
+                  limit={6}
+                />
+              </div>
+            </div>
+          </section>
+
           {/* Related Articles */}
           {relatedArticleData.length > 0 && (
-            <section className="py-12">
+            <section className="py-12 bg-secondary/30">
               <div className="container mx-auto px-4">
                 <div className="max-w-5xl mx-auto">
                   <h2 className="text-2xl font-bold text-foreground mb-6">
