@@ -10,6 +10,11 @@ import {
   healthcareResources,
   certificationResources,
   financialToolResources,
+  warehouseResources,
+  hospitalityResources,
+  retailResources,
+  workerRightsResources,
+  learningResources,
   indeedFlexLinks
 } from '@/data/external-resources';
 
@@ -74,7 +79,7 @@ const ExternalResourceCard: React.FC<ExternalResourceCardProps> = ({ resource, c
 };
 
 interface ExternalResourcesSectionProps {
-  category?: 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'all';
+  category?: 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'all';
   title?: string;
   description?: string;
   compact?: boolean;
@@ -102,6 +107,16 @@ export const ExternalResourcesSection: React.FC<ExternalResourcesSectionProps> =
         return certificationResources;
       case 'financial':
         return financialToolResources;
+      case 'warehouse':
+        return warehouseResources;
+      case 'hospitality':
+        return hospitalityResources;
+      case 'retail':
+        return retailResources;
+      case 'rights':
+        return workerRightsResources;
+      case 'learning':
+        return learningResources;
       case 'all':
       default:
         return [

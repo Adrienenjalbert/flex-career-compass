@@ -19,41 +19,77 @@ import { certifications, getCertificationsByCategory } from "@/data/certificatio
 import { Clock, ArrowLeft, ArrowRight, CheckCircle2, Award, ExternalLink } from "lucide-react";
 
 // Helper functions to determine resource category based on article slug
-const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'all' => {
-  if (slug === 'certifications' || slug === 'warehouse-skills' || slug === 'hospitality-skills') {
+const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'all' => {
+  if (slug === 'warehouse-skills' || slug === 'forklift-certification') {
+    return 'warehouse';
+  }
+  if (slug === 'hospitality-skills' || slug === 'food-service-guide') {
+    return 'hospitality';
+  }
+  if (slug === 'retail-skills') {
+    return 'retail';
+  }
+  if (slug === 'certifications') {
     return 'certifications';
   }
   if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
     return 'healthcare';
   }
   if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
-    return 'government';
+    return 'learning';
+  }
+  if (slug === 'worker-rights' || slug === 'know-your-rights') {
+    return 'rights';
   }
   return 'all';
 };
 
 const getResourceTitle = (slug: string): string => {
-  if (slug === 'certifications' || slug === 'warehouse-skills' || slug === 'hospitality-skills') {
+  if (slug === 'warehouse-skills' || slug === 'forklift-certification') {
+    return 'Warehouse & Industrial Resources';
+  }
+  if (slug === 'hospitality-skills' || slug === 'food-service-guide') {
+    return 'Hospitality Industry Resources';
+  }
+  if (slug === 'retail-skills') {
+    return 'Retail Industry Resources';
+  }
+  if (slug === 'certifications') {
     return 'Certification Resources';
   }
   if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
     return 'Safety & Healthcare Resources';
   }
   if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
-    return 'Career Development Resources';
+    return 'Free Learning Resources';
+  }
+  if (slug === 'worker-rights' || slug === 'know-your-rights') {
+    return 'Worker Rights Resources';
   }
   return 'Helpful Resources';
 };
 
 const getResourceDescription = (slug: string): string => {
-  if (slug === 'certifications' || slug === 'warehouse-skills' || slug === 'hospitality-skills') {
+  if (slug === 'warehouse-skills' || slug === 'forklift-certification') {
+    return 'Training programs and certifications for warehouse and industrial careers';
+  }
+  if (slug === 'hospitality-skills' || slug === 'food-service-guide') {
+    return 'Food safety, bartending, and hospitality certifications';
+  }
+  if (slug === 'retail-skills') {
+    return 'Training and development resources for retail careers';
+  }
+  if (slug === 'certifications') {
     return 'Find accredited certification providers and training programs';
   }
   if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
     return 'Access safety training and healthcare resources for workers';
   }
   if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
-    return 'Free government resources to support your career growth';
+    return 'Free courses and learning platforms to build new skills';
+  }
+  if (slug === 'worker-rights' || slug === 'know-your-rights') {
+    return 'Know your rights and access legal resources for workers';
   }
   return 'Verified external resources to help you succeed';
 };
