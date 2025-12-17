@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { cities, City } from '@/data/cities';
+import { cities, City, activeMarketSlugs, isActiveMarket } from '@/data/cities';
 import { roles, industries, Role } from '@/data/roles';
 import { 
   MapPin, 
@@ -39,12 +39,18 @@ interface InternalLinkHubProps {
   showAllSections?: boolean;
 }
 
-// Get top cities by search volume
+// Get top cities - prioritize Indeed Flex active markets
 const getTopCities = (limit: number = 8, excludeSlug?: string): City[] => {
-  return cities
+  // First get active markets, then fill with high search volume cities
+  const activeMarkets = cities
     .filter(city => city.slug !== excludeSlug)
-    .filter(city => city.searchVolume === 'high')
-    .slice(0, limit);
+    .filter(city => isActiveMarket(city.slug));
+  
+  const otherHighVolume = cities
+    .filter(city => city.slug !== excludeSlug)
+    .filter(city => !isActiveMarket(city.slug) && city.searchVolume === 'high');
+  
+  return [...activeMarkets, ...otherHighVolume].slice(0, limit);
 };
 
 // Get roles by industry

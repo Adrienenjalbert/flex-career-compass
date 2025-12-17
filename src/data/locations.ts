@@ -210,6 +210,271 @@ export const usLocations: Location[] = [
       'Access to greater LA job market'
     ],
     timezone: 'PST'
+  },
+  // Additional Indeed Flex Active Markets
+  {
+    id: 'chicago',
+    city: 'Chicago',
+    state: 'Illinois',
+    stateCode: 'IL',
+    slug: 'chicago',
+    country: 'US',
+    description: 'Chicago is the third-largest city in the US with a diverse economy spanning logistics, hospitality, and manufacturing. The city offers abundant flexible work opportunities across multiple industries.',
+    population: '2,746,388',
+    topIndustries: ['Logistics', 'Hospitality', 'Manufacturing', 'Healthcare'],
+    avgHourlyWage: { min: 15, max: 24 },
+    costOfLiving: {
+      rent: { studio: 1400, oneBed: 1750 },
+      groceries: 350,
+      transport: 105
+    },
+    highlights: [
+      'Major logistics hub',
+      'Diverse hospitality sector',
+      'Strong manufacturing base',
+      'Year-round events'
+    ],
+    timezone: 'CST'
+  },
+  {
+    id: 'washington-dc',
+    city: 'Washington',
+    state: 'District of Columbia',
+    stateCode: 'DC',
+    slug: 'washington-dc',
+    country: 'US',
+    description: 'Washington D.C. is the nation\'s capital with a job market driven by government, hospitality, and tourism. The city offers flexible work in hotels, restaurants, events, and healthcare.',
+    population: '689,545',
+    topIndustries: ['Government', 'Hospitality', 'Tourism', 'Healthcare'],
+    avgHourlyWage: { min: 16, max: 26 },
+    costOfLiving: {
+      rent: { studio: 1800, oneBed: 2200 },
+      groceries: 380,
+      transport: 130
+    },
+    highlights: [
+      'High wages',
+      'Year-round tourism',
+      'Major events venue',
+      'Diverse hospitality sector'
+    ],
+    timezone: 'EST'
+  },
+  {
+    id: 'las-vegas',
+    city: 'Las Vegas',
+    state: 'Nevada',
+    stateCode: 'NV',
+    slug: 'las-vegas',
+    country: 'US',
+    description: 'Las Vegas is the entertainment capital of the world with unparalleled hospitality opportunities. The city offers abundant flexible work in casinos, hotels, restaurants, and events.',
+    population: '641,903',
+    topIndustries: ['Hospitality', 'Entertainment', 'Tourism', 'Logistics'],
+    avgHourlyWage: { min: 14, max: 24 },
+    costOfLiving: {
+      rent: { studio: 1150, oneBed: 1350 },
+      groceries: 330,
+      transport: 90
+    },
+    highlights: [
+      '24/7 hospitality industry',
+      'No state income tax',
+      'High tip potential',
+      'Year-round tourism'
+    ],
+    timezone: 'PST'
+  },
+  {
+    id: 'reno',
+    city: 'Reno',
+    state: 'Nevada',
+    stateCode: 'NV',
+    slug: 'reno',
+    country: 'US',
+    description: 'Reno is a growing city in Northern Nevada known for its casino industry, logistics sector, and tech presence. The city offers no state income tax and affordable living.',
+    population: '264,165',
+    topIndustries: ['Hospitality', 'Logistics', 'Manufacturing', 'Tourism'],
+    avgHourlyWage: { min: 14, max: 22 },
+    costOfLiving: {
+      rent: { studio: 1100, oneBed: 1350 },
+      groceries: 320,
+      transport: 85
+    },
+    highlights: [
+      'No state income tax',
+      'Growing logistics hub',
+      'Casino hospitality jobs',
+      'Affordable vs California'
+    ],
+    timezone: 'PST'
+  },
+  {
+    id: 'charlotte',
+    city: 'Charlotte',
+    state: 'North Carolina',
+    stateCode: 'NC',
+    slug: 'charlotte',
+    country: 'US',
+    description: 'Charlotte is North Carolina\'s largest city and a major financial center. The fast-growing metro area offers abundant opportunities in logistics, hospitality, and healthcare.',
+    population: '879,709',
+    topIndustries: ['Finance', 'Logistics', 'Healthcare', 'Hospitality'],
+    avgHourlyWage: { min: 14, max: 21 },
+    costOfLiving: {
+      rent: { studio: 1250, oneBed: 1450 },
+      groceries: 320,
+      transport: 85
+    },
+    highlights: [
+      'Major banking hub',
+      'Fast job growth',
+      'Lower cost than Northeast',
+      'Growing warehouse sector'
+    ],
+    timezone: 'EST'
+  },
+  {
+    id: 'cartersville',
+    city: 'Cartersville',
+    state: 'Georgia',
+    stateCode: 'GA',
+    slug: 'cartersville',
+    country: 'US',
+    description: 'Cartersville is located northwest of Atlanta with strong manufacturing and logistics sectors. Home to major employers like Anheuser-Busch and Toyo Tires.',
+    population: '22,600',
+    topIndustries: ['Manufacturing', 'Logistics', 'Distribution', 'Retail'],
+    avgHourlyWage: { min: 14, max: 21 },
+    costOfLiving: {
+      rent: { studio: 900, oneBed: 1100 },
+      groceries: 290,
+      transport: 70
+    },
+    highlights: [
+      'Major manufacturing hub',
+      'Near Atlanta metro',
+      'Growing logistics sector',
+      'Affordable living'
+    ],
+    timezone: 'EST'
+  },
+  {
+    id: 'bentonville',
+    city: 'Bentonville',
+    state: 'Arkansas',
+    stateCode: 'AR',
+    slug: 'bentonville',
+    country: 'US',
+    description: 'Bentonville is home to Walmart headquarters and a fast-growing city in Northwest Arkansas. The area offers opportunities in retail, logistics, and hospitality.',
+    population: '54,909',
+    topIndustries: ['Retail', 'Corporate', 'Logistics', 'Hospitality'],
+    avgHourlyWage: { min: 14, max: 22 },
+    costOfLiving: {
+      rent: { studio: 950, oneBed: 1150 },
+      groceries: 300,
+      transport: 75
+    },
+    highlights: [
+      'Walmart HQ',
+      'Fast-growing region',
+      'Strong logistics',
+      'Corporate opportunities'
+    ],
+    timezone: 'CST'
+  },
+  {
+    id: 'fort-mill',
+    city: 'Fort Mill',
+    state: 'South Carolina',
+    stateCode: 'SC',
+    slug: 'fort-mill',
+    country: 'US',
+    description: 'Fort Mill is a rapidly growing suburb of Charlotte with strong logistics and manufacturing presence. Lower South Carolina taxes while accessing the greater Charlotte job market.',
+    population: '25,745',
+    topIndustries: ['Logistics', 'Manufacturing', 'Healthcare', 'Retail'],
+    avgHourlyWage: { min: 14, max: 21 },
+    costOfLiving: {
+      rent: { studio: 1100, oneBed: 1300 },
+      groceries: 310,
+      transport: 80
+    },
+    highlights: [
+      'Lower SC taxes',
+      'Near Charlotte',
+      'Growing logistics hub',
+      'Major distribution centers'
+    ],
+    timezone: 'EST'
+  },
+  {
+    id: 'orlando',
+    city: 'Orlando',
+    state: 'Florida',
+    stateCode: 'FL',
+    slug: 'orlando',
+    country: 'US',
+    description: 'Orlando is a major tourism destination with world-famous theme parks. The city offers abundant hospitality, entertainment, and logistics opportunities.',
+    population: '307,573',
+    topIndustries: ['Hospitality', 'Tourism', 'Entertainment', 'Logistics'],
+    avgHourlyWage: { min: 13, max: 21 },
+    costOfLiving: {
+      rent: { studio: 1350, oneBed: 1600 },
+      groceries: 330,
+      transport: 90
+    },
+    highlights: [
+      'No state income tax',
+      'Theme park jobs',
+      'Year-round tourism',
+      'Growing hospitality sector'
+    ],
+    timezone: 'EST'
+  },
+  {
+    id: 'phoenix',
+    city: 'Phoenix',
+    state: 'Arizona',
+    stateCode: 'AZ',
+    slug: 'phoenix',
+    country: 'US',
+    description: 'Phoenix is the fifth-largest city in the US and one of the fastest-growing metros. The city offers diverse flexible work in logistics, hospitality, and manufacturing.',
+    population: '1,608,139',
+    topIndustries: ['Logistics', 'Hospitality', 'Manufacturing', 'Healthcare'],
+    avgHourlyWage: { min: 14, max: 22 },
+    costOfLiving: {
+      rent: { studio: 1200, oneBed: 1450 },
+      groceries: 320,
+      transport: 85
+    },
+    highlights: [
+      'Fast-growing job market',
+      'Major logistics hub',
+      'Growing manufacturing',
+      'Year-round warm weather'
+    ],
+    timezone: 'MST'
+  },
+  {
+    id: 'cleveland',
+    city: 'Cleveland',
+    state: 'Ohio',
+    stateCode: 'OH',
+    slug: 'cleveland',
+    country: 'US',
+    description: 'Cleveland is a major city in Northeast Ohio with strong healthcare, manufacturing, and logistics sectors. The city offers affordable living with steady work opportunities.',
+    population: '372,624',
+    topIndustries: ['Healthcare', 'Manufacturing', 'Logistics', 'Hospitality'],
+    avgHourlyWage: { min: 13, max: 20 },
+    costOfLiving: {
+      rent: { studio: 900, oneBed: 1050 },
+      groceries: 290,
+      transport: 70
+    },
+    highlights: [
+      'Major healthcare employers',
+      'Affordable living',
+      'Strong manufacturing',
+      'Growing logistics sector'
+    ],
+    timezone: 'EST'
   }
 ];
 

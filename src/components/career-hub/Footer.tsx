@@ -31,9 +31,12 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/70">
               <li><Link to="/career-hub/locations/austin" className="hover:text-accent transition-colors">Austin, TX</Link></li>
               <li><Link to="/career-hub/locations/dallas" className="hover:text-accent transition-colors">Dallas, TX</Link></li>
-              <li><Link to="/career-hub/locations/houston" className="hover:text-accent transition-colors">Houston, TX</Link></li>
-              <li><Link to="/career-hub/locations/nashville" className="hover:text-accent transition-colors">Nashville, TN</Link></li>
               <li><Link to="/career-hub/locations/atlanta" className="hover:text-accent transition-colors">Atlanta, GA</Link></li>
+              <li><Link to="/career-hub/locations/las-vegas" className="hover:text-accent transition-colors">Las Vegas, NV</Link></li>
+              <li><Link to="/career-hub/locations/charlotte" className="hover:text-accent transition-colors">Charlotte, NC</Link></li>
+              <li><Link to="/career-hub/locations/chicago" className="hover:text-accent transition-colors">Chicago, IL</Link></li>
+              <li><Link to="/career-hub/locations/orlando" className="hover:text-accent transition-colors">Orlando, FL</Link></li>
+              <li><Link to="/career-hub/locations/phoenix" className="hover:text-accent transition-colors">Phoenix, AZ</Link></li>
             </ul>
           </div>
 

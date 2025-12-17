@@ -1085,8 +1085,123 @@ export const cities: City[] = [
     metroArea: 'Cincinnati',
     nearbyMajorCity: 'Cincinnati',
     searchVolume: 'low'
+  },
+  // Indeed Flex Active Markets - Additional Cities
+  {
+    id: 'cartersville',
+    city: 'Cartersville',
+    state: 'Georgia',
+    stateCode: 'GA',
+    slug: 'cartersville',
+    country: 'US',
+    region: 'Southeast',
+    population: '22,600',
+    description: 'Cartersville is located northwest of Atlanta with strong manufacturing and logistics sectors. Home to major employers like Anheuser-Busch and Toyo Tires, the city offers steady flexible work opportunities.',
+    topIndustries: ['Manufacturing', 'Logistics', 'Distribution', 'Retail'],
+    avgHourlyWage: { min: 14, max: 21 },
+    costOfLiving: {
+      index: 85,
+      rent: { studio: 900, oneBed: 1100 },
+      groceries: 290,
+      transport: 70
+    },
+    highlights: ['Major manufacturing hub', 'Near Atlanta metro', 'Growing logistics sector', 'Affordable living'],
+    timezone: 'EST',
+    metroArea: 'Atlanta-Sandy Springs-Alpharetta',
+    nearbyMajorCity: 'Atlanta',
+    searchVolume: 'medium'
+  },
+  {
+    id: 'washington-dc',
+    city: 'Washington',
+    state: 'District of Columbia',
+    stateCode: 'DC',
+    slug: 'washington-dc',
+    country: 'US',
+    region: 'Mid-Atlantic',
+    population: '689,545',
+    description: 'Washington D.C. is the nation\'s capital with a unique job market driven by government, hospitality, and tourism. The city offers abundant flexible work in hotels, restaurants, events, and healthcare.',
+    topIndustries: ['Government', 'Hospitality', 'Tourism', 'Healthcare'],
+    avgHourlyWage: { min: 16, max: 26 },
+    costOfLiving: {
+      index: 148,
+      rent: { studio: 1800, oneBed: 2200 },
+      groceries: 380,
+      transport: 130
+    },
+    highlights: ['High wages', 'Year-round tourism', 'Major events venue', 'Diverse hospitality sector'],
+    timezone: 'EST',
+    metroArea: 'Washington-Arlington-Alexandria',
+    searchVolume: 'high'
+  },
+  {
+    id: 'bentonville',
+    city: 'Bentonville',
+    state: 'Arkansas',
+    stateCode: 'AR',
+    slug: 'bentonville',
+    country: 'US',
+    region: 'South',
+    population: '54,909',
+    description: 'Bentonville is the home of Walmart headquarters and a fast-growing city in Northwest Arkansas. The area offers opportunities in retail, corporate services, logistics, and hospitality.',
+    topIndustries: ['Retail', 'Corporate', 'Logistics', 'Hospitality'],
+    avgHourlyWage: { min: 14, max: 22 },
+    costOfLiving: {
+      index: 88,
+      rent: { studio: 950, oneBed: 1150 },
+      groceries: 300,
+      transport: 75
+    },
+    highlights: ['Walmart HQ', 'Fast-growing region', 'Strong logistics', 'Corporate opportunities'],
+    timezone: 'CST',
+    metroArea: 'Fayetteville-Springdale-Rogers',
+    searchVolume: 'medium'
+  },
+  {
+    id: 'fort-mill',
+    city: 'Fort Mill',
+    state: 'South Carolina',
+    stateCode: 'SC',
+    slug: 'fort-mill',
+    country: 'US',
+    region: 'Southeast',
+    population: '25,745',
+    description: 'Fort Mill is a rapidly growing suburb of Charlotte with strong logistics and manufacturing presence. The city offers lower South Carolina taxes while accessing the greater Charlotte job market.',
+    topIndustries: ['Logistics', 'Manufacturing', 'Healthcare', 'Retail'],
+    avgHourlyWage: { min: 14, max: 21 },
+    costOfLiving: {
+      index: 92,
+      rent: { studio: 1100, oneBed: 1300 },
+      groceries: 310,
+      transport: 80
+    },
+    highlights: ['Lower SC taxes', 'Near Charlotte', 'Growing logistics hub', 'Major distribution centers'],
+    timezone: 'EST',
+    metroArea: 'Charlotte-Concord-Gastonia',
+    nearbyMajorCity: 'Charlotte',
+    searchVolume: 'medium'
   }
 ];
+
+// Indeed Flex Active Market slugs for prioritization
+export const activeMarketSlugs = [
+  'austin', 'dallas', 'houston', // Texas
+  'nashville', // Tennessee
+  'atlanta', 'cartersville', // Georgia
+  'cincinnati', 'cleveland', 'columbus', // Ohio
+  'ontario', // California
+  'chicago', // Illinois
+  'washington-dc', // D.C.
+  'las-vegas', 'reno', // Nevada
+  'charlotte', // North Carolina
+  'bentonville', // Arkansas
+  'fort-mill', // South Carolina
+  'orlando', // Florida
+  'phoenix', // Arizona
+];
+
+export const isActiveMarket = (slug: string): boolean => 
+  activeMarketSlugs.includes(slug);
 
 // Helper functions
 export const getCityBySlug = (slug: string): City | undefined => 
