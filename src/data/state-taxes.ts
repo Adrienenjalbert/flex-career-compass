@@ -1,5 +1,17 @@
 // Comprehensive state tax data for 2025
-// Sources: Tax Foundation, state tax agencies
+// 
+// IMPORTANT DISCLAIMER:
+// This data is for educational and estimation purposes only.
+// Tax rates and minimum wages change frequently. Always verify with official sources.
+//
+// Data Sources:
+// - State Income Tax Rates: Tax Foundation (https://taxfoundation.org/data/all/state/state-income-tax-rates-2024/)
+// - Minimum Wage Data: US Department of Labor (https://www.dol.gov/agencies/whd/minimum-wage/state)
+// - Federal Tax Brackets: IRS (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)
+// - Unemployment Benefits: Department of Labor OUI (https://oui.doleta.gov/unemploy/)
+//
+// Last data verification: December 2024
+// Note: Rates shown are simplified/effective averages. Many states have progressive brackets.
 
 export interface StateTaxInfo {
   name: string;

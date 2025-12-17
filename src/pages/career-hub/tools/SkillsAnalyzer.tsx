@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Target, CheckCircle, XCircle, ArrowRight, RotateCcw, Lightbulb } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
+import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 
 interface Skill {
   id: string;
@@ -307,6 +308,20 @@ const SkillsAnalyzer = () => {
                   )}
                 </div>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <ToolDisclaimer 
+                type="educational"
+                sources={["Industry hiring requirements", "Certification body data", "Employer skill surveys"]}
+                lastUpdated="December 2024"
+                customText="Skill requirements and salary increases shown are general industry estimates. Actual advancement criteria vary by employer. This assessment is for educational purposes—consult with employers about specific advancement requirements in your area."
+              />
             </div>
           </div>
         </section>

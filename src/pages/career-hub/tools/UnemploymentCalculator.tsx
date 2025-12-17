@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
+import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 import {
   stateUnemploymentData,
   gigWorkGuidanceGeneral,
@@ -802,20 +803,12 @@ const UnemploymentCalculator = () => {
 
             {/* Disclaimer */}
             <div className="max-w-6xl mx-auto mt-8">
-              <div className="flex items-start gap-3 bg-secondary rounded-lg p-4">
-                <Info className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <div className="text-sm text-muted-foreground">
-                  <p className="mb-2">
-                    <strong>Disclaimer:</strong> This calculator provides estimates for educational purposes only. 
-                    Actual benefits depend on your complete work history, reason for unemployment, and other factors. 
-                    Rules and benefit amounts change periodically.
-                  </p>
-                  <p>
-                    Always verify with your state's unemployment office for official eligibility and benefit amounts. 
-                    This tool is not a substitute for official guidance.
-                  </p>
-                </div>
-              </div>
+              <ToolDisclaimer 
+                type="calculator"
+                sources={["US Department of Labor OUI", "State Workforce Agencies", "CareerOneStop.org"]}
+                lastUpdated="December 2024"
+                customText="This calculator provides estimates for educational purposes only. Actual benefits depend on your complete work history, reason for unemployment, and other factors. Rules and benefit amounts change periodically. Always verify with your state's unemployment office for official eligibility and benefit amounts. This tool is not a substitute for official guidance."
+              />
             </div>
           </div>
         </section>

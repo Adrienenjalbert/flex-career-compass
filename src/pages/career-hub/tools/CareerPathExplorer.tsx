@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { TrendingUp, DollarSign, Clock, ArrowRight, Award, Briefcase, Target } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
+import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 import { Link } from "react-router-dom";
 
 interface CareerStep {
@@ -449,6 +450,19 @@ const CareerPathExplorer = () => {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <ToolDisclaimer 
+                type="educational"
+                sources={["Bureau of Labor Statistics", "Industry salary surveys", "Indeed Flex hiring data"]}
+                lastUpdated="December 2024"
+              />
             </div>
           </div>
         </section>

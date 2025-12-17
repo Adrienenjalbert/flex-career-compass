@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { PiggyBank, DollarSign, Info, Calculator, CheckCircle, Calendar, AlertCircle, TrendingUp } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
+import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 import { 
   stateTaxData, 
   commonDeductions, 
@@ -601,15 +602,12 @@ const TaxCalculator = () => {
 
             {/* Disclaimer */}
             <div className="max-w-6xl mx-auto mt-8">
-              <div className="flex items-start gap-3 bg-secondary rounded-lg p-4">
-                <Info className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-muted-foreground">
-                  This calculator provides estimates for educational purposes only. Tax situations vary based on 
-                  filing status, dependents, other income sources, credits, and deductions not included here. 
-                  Self-employment tax rates and brackets are simplified. Consult a qualified tax professional 
-                  for personalized advice.
-                </p>
-              </div>
+              <ToolDisclaimer 
+                type="calculator"
+                sources={["IRS Self-Employment Tax Guidelines", "Tax Foundation State Tax Rates", "IRS 2025 Quarterly Due Dates"]}
+                lastUpdated="December 2024"
+                customText="This calculator provides estimates for educational purposes only. Tax situations vary based on filing status, dependents, other income sources, credits, and deductions not included here. Self-employment tax rates and brackets are simplified. Consult a qualified tax professional for personalized advice."
+              />
             </div>
           </div>
         </section>

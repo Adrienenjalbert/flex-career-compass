@@ -1,6 +1,17 @@
 // Comprehensive state unemployment benefits data for 2024/2025
-// Sources: US Department of Labor, State Workforce Agencies
-// Last verified: December 2024
+//
+// IMPORTANT DISCLAIMER:
+// This data is for educational and estimation purposes only.
+// Unemployment benefits vary based on individual circumstances and are subject to change.
+// Always verify eligibility and benefit amounts with your state workforce agency.
+//
+// Data Sources:
+// - US Department of Labor OUI: https://oui.doleta.gov/unemploy/data_summary/DataSum.asp
+// - State Workforce Agencies: Individual state employment department websites
+// - Benefit calculation methods: https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/unemployment-benefits.aspx
+//
+// Last data verification: December 2024
+// Note: Maximum benefits and eligibility rules change frequently. Some states adjust based on unemployment rate.
 
 export interface StateUnemploymentInfo {
   name: string;

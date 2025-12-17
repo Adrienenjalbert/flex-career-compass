@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { DollarSign, Calculator, Info, Moon, Calendar, Briefcase, TrendingUp } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
+import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 import { 
   stateTaxData, 
   roleTemplates, 
@@ -580,14 +581,12 @@ const PayCalculator = () => {
 
             {/* Disclaimer */}
             <div className="max-w-6xl mx-auto mt-8">
-              <div className="flex items-start gap-3 bg-secondary rounded-lg p-4">
-                <Info className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-muted-foreground">
-                  This calculator provides estimates for educational purposes. Actual take-home pay may vary based on 
-                  pre-tax deductions (401k, health insurance), tax credits, local taxes, filing status, and individual circumstances. 
-                  Tax rates are simplified averages for 2025. Consult a tax professional for personalized advice.
-                </p>
-              </div>
+              <ToolDisclaimer 
+                type="calculator"
+                sources={["IRS 2025 Tax Brackets", "Tax Foundation State Tax Data", "US Department of Labor Minimum Wage Data"]}
+                lastUpdated="December 2024"
+                customText="This calculator provides estimates for educational purposes. Actual take-home pay may vary based on pre-tax deductions (401k, health insurance), tax credits, local taxes, filing status, and individual circumstances. Tax rates shown are simplified averages for 2025. Consult a tax professional for personalized advice."
+              />
             </div>
           </div>
         </section>

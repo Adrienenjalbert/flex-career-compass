@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { MapPin, Home, ShoppingCart, Car, DollarSign, ArrowRight } from "lucide-react";
 import { usLocations } from "@/data/locations";
 import CTASection from "@/components/career-hub/CTASection";
+import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 
 const CostOfLivingComparison = () => {
   const [city1, setCity1] = useState("austin");
@@ -296,6 +297,19 @@ const CostOfLivingComparison = () => {
                   </Card>
                 </div>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <ToolDisclaimer 
+                type="comparison"
+                sources={["Numbeo.com", "BLS Consumer Price Index", "Zillow Housing Data"]}
+                lastUpdated="December 2024"
+              />
             </div>
           </div>
         </section>
