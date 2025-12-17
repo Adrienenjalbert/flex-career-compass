@@ -7,7 +7,52 @@ interface MarkdownContentProps {
   className?: string;
 }
 
+// Preprocess content to convert bullet characters to proper markdown
+const preprocessContent = (content: string): string => {
+  // Split content into lines
+  const lines = content.split('\n');
+  const processedLines: string[] = [];
+  
+  for (const line of lines) {
+    // Check if line contains inline bullets (• or - followed by text, multiple on same line)
+    if (line.includes('• ') || line.includes(' • ')) {
+      // Check if it's a line with multiple inline bullets (like "• item1 • item2 • item3")
+      const bulletCount = (line.match(/•/g) || []).length;
+      
+      if (bulletCount > 1 && !line.trim().startsWith('•')) {
+        // This is a line with inline bullets after text like "Features: • item1 • item2"
+        const parts = line.split(/\s*•\s*/);
+        const prefix = parts[0];
+        const items = parts.slice(1).filter(item => item.trim());
+        
+        if (prefix.trim()) {
+          processedLines.push(`**${prefix.trim()}**`);
+          processedLines.push('');
+        }
+        items.forEach(item => {
+          processedLines.push(`- ${item.trim()}`);
+        });
+      } else if (bulletCount > 1 && line.trim().startsWith('•')) {
+        // Multiple bullets starting with • like "• item1 • item2"
+        const items = line.split(/\s*•\s*/).filter(item => item.trim());
+        items.forEach(item => {
+          processedLines.push(`- ${item.trim()}`);
+        });
+      } else {
+        // Single bullet - convert to markdown list
+        processedLines.push(line.replace(/^(\s*)•\s*/, '$1- '));
+      }
+    } else {
+      processedLines.push(line);
+    }
+  }
+  
+  return processedLines.join('\n');
+};
+
 const MarkdownContent = ({ content, className = '' }: MarkdownContentProps) => {
+  const processedContent = preprocessContent(content);
+  
   return (
     <div className={`prose prose-slate dark:prose-invert max-w-none ${className}`}>
       <ReactMarkdown
@@ -52,15 +97,18 @@ const MarkdownContent = ({ content, className = '' }: MarkdownContentProps) => {
           },
           // Unordered lists
           ul: ({ children }) => (
-            <ul className="list-disc pl-6 space-y-2 mb-4 text-muted-foreground">{children}</ul>
+            <ul className="space-y-2 mb-4 ml-1">{children}</ul>
           ),
           // Ordered lists
           ol: ({ children }) => (
             <ol className="list-decimal pl-6 space-y-2 mb-4 text-muted-foreground">{children}</ol>
           ),
-          // List items
+          // List items with custom bullet styling
           li: ({ children }) => (
-            <li className="text-muted-foreground leading-relaxed pl-1">{children}</li>
+            <li className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
+              <span>{children}</span>
+            </li>
           ),
           // Blockquotes
           blockquote: ({ children }) => (
@@ -102,7 +150,7 @@ const MarkdownContent = ({ content, className = '' }: MarkdownContentProps) => {
           ),
         }}
       >
-        {content}
+        {processedContent}
       </ReactMarkdown>
     </div>
   );
