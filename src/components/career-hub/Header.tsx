@@ -163,9 +163,9 @@ const Header = () => {
                   Locations
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[500px] p-8 bg-card border border-border shadow-soft-lg rounded-xl">
+                  <div className="w-[550px] p-8 bg-card border border-border shadow-soft-lg rounded-xl">
                     <div className="grid grid-cols-2 gap-8">
-                      {locations.map((region) => (
+                      {locations.slice(0, 4).map((region) => (
                         <div key={region.state}>
                           <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
                             <MapPin className="h-3 w-3" />
@@ -184,6 +184,14 @@ const Header = () => {
                           </div>
                         </div>
                       ))}
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-border">
+                      <Link
+                        to="/career-hub/locations"
+                        className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline"
+                      >
+                        View all 19 active markets →
+                      </Link>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -312,6 +320,13 @@ const Header = () => {
                     {city.name}
                   </Link>
                 ))}
+                <Link
+                  to="/career-hub/locations"
+                  className="block text-accent hover:underline transition-colors py-1 font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  View all 19 markets →
+                </Link>
               </div>
 
               {/* Resources */}

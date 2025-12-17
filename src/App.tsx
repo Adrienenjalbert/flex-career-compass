@@ -30,6 +30,7 @@ import LLMPage from "./pages/career-hub/LLMPage";
 import CityPage from "./pages/career-hub/CityPage";
 import CitiesIndexPage from "./pages/career-hub/CitiesIndexPage";
 import CityRolePage from "./pages/career-hub/CityRolePage";
+import ActiveMarketsPage from "./pages/career-hub/ActiveMarketsPage";
 import ProgrammaticRouter from "./pages/career-hub/programmatic/ProgrammaticRouter";
 
 const queryClient = new QueryClient();
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/career-hub/tools/data-verification" element={<DataVerification />} />
           <Route path="/career-hub/industries/:industryId" element={<IndustryPage />} />
           <Route path="/career-hub/roles/:roleSlug" element={<RolePage />} />
+          <Route path="/career-hub/locations" element={<ActiveMarketsPage />} />
           <Route path="/career-hub/locations/:locationSlug" element={<LocationPage />} />
           <Route path="/career-hub/locations/:locationSlug/:roleSlug" element={<LocationRolePage />} />
           <Route path="/career-hub/guides" element={<GuidesPage />} />

@@ -162,6 +162,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Locations Index Page -->
+  <url>
+    <loc>https://indeedflex.com/career-hub/locations</loc>
+    <lastmod>2024-12-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Indeed Flex Active Market Location Pages -->
   <url>
     <loc>https://indeedflex.com/career-hub/locations/austin</loc>
