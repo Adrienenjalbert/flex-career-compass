@@ -281,20 +281,6 @@ const LocationPage = () => {
           ]}
           variant="full"
         />
-        <RelatedContent
-          currentLocation={location.city}
-          roles={topRoles.slice(0, 4).map(r => ({ title: r.title, slug: r.slug, pay: `$${r.avgHourlyRate.min}-${r.avgHourlyRate.max}/hr` }))}
-          locations={usLocations.filter(l => l.slug !== location.slug).slice(0, 4).map(l => ({ name: `${l.city}, ${l.stateCode}`, slug: l.slug }))}
-          tools={[
-            { title: "Cost of Living Comparison", slug: "cost-of-living", description: `Compare ${location.city} expenses` },
-            { title: "Pay Calculator", slug: "pay-calculator", description: "Calculate your earnings" },
-          ]}
-          guides={[
-            { title: "Complete Guide to Indeed Flex", slug: "complete-guide", readTime: "8 min" },
-            { title: "What to Expect on Your First Shift", slug: "first-shift", readTime: "4 min" },
-          ]}
-          variant="full"
-        />
 
         <CTASection 
           title={`Find Shifts in ${location.city} Today`}
