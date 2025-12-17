@@ -28,6 +28,7 @@ interface RoleSkills {
 }
 
 const roleProgression: RoleSkills[] = [
+  // Hospitality - Bar
   {
     roleId: "barback-to-bartender",
     title: "Barback → Bartender",
@@ -42,6 +43,51 @@ const roleProgression: RoleSkills[] = [
       { id: "memory", name: "Order Memory", description: "Remember complex orders without notes", category: "technical" },
     ]
   },
+  // Hospitality - Kitchen
+  {
+    roleId: "dishwasher-to-prep",
+    title: "Dishwasher → Prep Cook",
+    currentLevel: "Dishwasher",
+    nextLevel: "Prep Cook",
+    salaryIncrease: "$2-4/hr more",
+    requiredSkills: [
+      { id: "knife-skills", name: "Basic Knife Skills", description: "Proper cutting techniques and safety", category: "technical" },
+      { id: "food-safety", name: "Food Safety Cert", description: "ServSafe or equivalent certification", category: "certification" },
+      { id: "kitchen-stations", name: "Station Knowledge", description: "Understand kitchen workflow and stations", category: "technical" },
+      { id: "time-management", name: "Time Management", description: "Complete prep lists within deadlines", category: "soft" },
+      { id: "recipe-following", name: "Recipe Accuracy", description: "Follow recipes and portion standards", category: "technical" },
+    ]
+  },
+  {
+    roleId: "prep-to-line",
+    title: "Prep Cook → Line Cook",
+    currentLevel: "Prep Cook",
+    nextLevel: "Line Cook",
+    salaryIncrease: "$3-5/hr more",
+    requiredSkills: [
+      { id: "cooking-techniques", name: "Cooking Techniques", description: "Master sautéing, grilling, frying", category: "technical" },
+      { id: "station-management", name: "Station Management", description: "Run a station during service", category: "technical" },
+      { id: "pressure-handling", name: "Handle Pressure", description: "Stay calm during rush hours", category: "soft" },
+      { id: "plating", name: "Plating & Presentation", description: "Consistent, attractive plate presentation", category: "technical" },
+      { id: "kitchen-communication", name: "Kitchen Communication", description: "Call backs, timing, team coordination", category: "soft" },
+    ]
+  },
+  // Hospitality - Front of House
+  {
+    roleId: "server-to-supervisor",
+    title: "Server → Shift Supervisor",
+    currentLevel: "Server",
+    nextLevel: "Shift Supervisor",
+    salaryIncrease: "$4-6/hr more",
+    requiredSkills: [
+      { id: "leadership", name: "Leadership Skills", description: "Guide and motivate team members", category: "soft" },
+      { id: "conflict", name: "Conflict Resolution", description: "Handle customer complaints professionally", category: "soft" },
+      { id: "pos", name: "POS System Mastery", description: "Handle voids, comps, and reports", category: "technical" },
+      { id: "scheduling", name: "Scheduling Basics", description: "Understand shift planning", category: "technical" },
+      { id: "food-safety", name: "Food Safety Cert", description: "ServSafe or equivalent", category: "certification" },
+    ]
+  },
+  // Warehouse
   {
     roleId: "picker-to-lead",
     title: "Picker/Packer → Lead",
@@ -71,19 +117,64 @@ const roleProgression: RoleSkills[] = [
     ]
   },
   {
-    roleId: "server-to-supervisor",
-    title: "Server → Restaurant Supervisor",
-    currentLevel: "Server",
-    nextLevel: "Shift Supervisor",
-    salaryIncrease: "$4-6/hr more",
+    roleId: "forklift-to-supervisor",
+    title: "Forklift Driver → Warehouse Supervisor",
+    currentLevel: "Forklift Driver",
+    nextLevel: "Warehouse Supervisor",
+    salaryIncrease: "$4-7/hr more",
     requiredSkills: [
-      { id: "leadership", name: "Leadership Skills", description: "Guide and motivate team members", category: "soft" },
-      { id: "conflict", name: "Conflict Resolution", description: "Handle customer complaints professionally", category: "soft" },
-      { id: "pos", name: "POS System Mastery", description: "Handle voids, comps, and reports", category: "technical" },
-      { id: "scheduling", name: "Scheduling Basics", description: "Understand shift planning", category: "technical" },
-      { id: "food-safety", name: "Food Safety Cert", description: "ServSafe or equivalent", category: "certification" },
+      { id: "team-leadership", name: "Team Leadership", description: "Manage and motivate 5-15 team members", category: "soft" },
+      { id: "osha-30", name: "OSHA 30 Certification", description: "Advanced safety certification", category: "certification" },
+      { id: "inventory-systems", name: "Inventory Management", description: "Track stock levels and shrinkage", category: "technical" },
+      { id: "scheduling", name: "Scheduling Basics", description: "Create and manage shift schedules", category: "technical" },
+      { id: "reporting", name: "KPI Reporting", description: "Track and report productivity metrics", category: "technical" },
     ]
   },
+  // Retail
+  {
+    roleId: "retail-to-lead",
+    title: "Retail Associate → Shift Lead",
+    currentLevel: "Retail Associate",
+    nextLevel: "Shift Lead",
+    salaryIncrease: "$2-4/hr more",
+    requiredSkills: [
+      { id: "pos-mastery", name: "POS Mastery", description: "Handle returns, voids, manager overrides", category: "technical" },
+      { id: "customer-service", name: "Customer Service Excellence", description: "Resolve issues and create positive experiences", category: "soft" },
+      { id: "inventory-basics", name: "Inventory Basics", description: "Stock counts, receiving, loss prevention", category: "technical" },
+      { id: "opening-closing", name: "Opening/Closing", description: "Handle store open/close procedures", category: "technical" },
+      { id: "coaching", name: "Peer Coaching", description: "Help train and support team members", category: "soft" },
+    ]
+  },
+  {
+    roleId: "retail-lead-to-manager",
+    title: "Shift Lead → Store Manager",
+    currentLevel: "Shift Lead",
+    nextLevel: "Store Manager",
+    salaryIncrease: "$5-10/hr more + bonus",
+    requiredSkills: [
+      { id: "p-and-l", name: "P&L Understanding", description: "Read and impact profit/loss statements", category: "technical" },
+      { id: "hiring", name: "Hiring & Onboarding", description: "Interview, hire, and train new staff", category: "soft" },
+      { id: "merchandising", name: "Visual Merchandising", description: "Create appealing product displays", category: "technical" },
+      { id: "loss-prevention", name: "Loss Prevention", description: "Reduce shrinkage and theft", category: "technical" },
+      { id: "nrf-cert", name: "NRF Certification", description: "National Retail Federation credential", category: "certification" },
+    ]
+  },
+  // Events
+  {
+    roleId: "event-staff-to-lead",
+    title: "Event Staff → Event Lead",
+    currentLevel: "Event Staff",
+    nextLevel: "Event Lead",
+    salaryIncrease: "$3-5/hr more",
+    requiredSkills: [
+      { id: "event-setup", name: "Setup Expertise", description: "Efficient venue setup and breakdown", category: "technical" },
+      { id: "guest-management", name: "Guest Management", description: "Handle VIPs and special requests", category: "soft" },
+      { id: "problem-solving", name: "Quick Problem Solving", description: "Handle issues during live events", category: "soft" },
+      { id: "team-coordination", name: "Team Coordination", description: "Direct staff during events", category: "soft" },
+      { id: "food-safety", name: "Food Safety Cert", description: "Required for events with food service", category: "certification" },
+    ]
+  },
+  // Facilities
   {
     roleId: "cleaner-to-supervisor",
     title: "Cleaner → Cleaning Supervisor",
@@ -96,6 +187,49 @@ const roleProgression: RoleSkills[] = [
       { id: "inventory-mgmt", name: "Supply Management", description: "Track and order cleaning supplies", category: "technical" },
       { id: "client-relations", name: "Client Communication", description: "Handle client requests professionally", category: "soft" },
       { id: "safety-protocols", name: "Safety Compliance", description: "OSHA cleaning safety knowledge", category: "certification" },
+    ]
+  },
+  {
+    roleId: "custodian-to-facilities",
+    title: "Custodian → Facilities Technician",
+    currentLevel: "Custodian",
+    nextLevel: "Facilities Technician",
+    salaryIncrease: "$4-6/hr more",
+    requiredSkills: [
+      { id: "basic-maintenance", name: "Basic Maintenance", description: "Handle minor repairs and fixes", category: "technical" },
+      { id: "hvac-basics", name: "HVAC Basics", description: "Basic understanding of heating/cooling systems", category: "technical" },
+      { id: "electrical-safety", name: "Electrical Safety", description: "Safe handling of electrical systems", category: "certification" },
+      { id: "work-orders", name: "Work Order Systems", description: "Use facility management software", category: "technical" },
+      { id: "vendor-coordination", name: "Vendor Coordination", description: "Work with contractors and suppliers", category: "soft" },
+    ]
+  },
+  // Industrial
+  {
+    roleId: "machine-op-to-lead",
+    title: "Machine Operator → Lead Operator",
+    currentLevel: "Machine Operator",
+    nextLevel: "Lead Operator",
+    salaryIncrease: "$2-4/hr more",
+    requiredSkills: [
+      { id: "multi-machine", name: "Multi-Machine Operation", description: "Operate 3+ different machine types", category: "technical" },
+      { id: "troubleshooting", name: "Basic Troubleshooting", description: "Diagnose and fix minor issues", category: "technical" },
+      { id: "quality-standards", name: "Quality Standards", description: "Ensure output meets specifications", category: "technical" },
+      { id: "training-others", name: "Training New Operators", description: "Onboard and mentor new hires", category: "soft" },
+      { id: "osha-10", name: "OSHA 10 Certification", description: "Occupational safety certification", category: "certification" },
+    ]
+  },
+  {
+    roleId: "assembler-to-quality",
+    title: "Assembler → Quality Inspector",
+    currentLevel: "Assembler",
+    nextLevel: "Quality Inspector",
+    salaryIncrease: "$2-3/hr more",
+    requiredSkills: [
+      { id: "attention-detail", name: "Attention to Detail", description: "Spot defects and inconsistencies", category: "soft" },
+      { id: "measurement-tools", name: "Measurement Tools", description: "Use calipers, gauges, and testing equipment", category: "technical" },
+      { id: "documentation", name: "Documentation Skills", description: "Record findings accurately", category: "technical" },
+      { id: "quality-standards", name: "Quality Standards", description: "Understand ISO and company standards", category: "technical" },
+      { id: "six-sigma", name: "Six Sigma Yellow Belt", description: "Basic quality improvement methodology", category: "certification" },
     ]
   },
 ];
