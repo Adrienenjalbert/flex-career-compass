@@ -259,29 +259,37 @@ const GuidesArticlePage = () => {
             </div>
           </section>
 
-          {/* Table of Contents */}
-          {tocItems.length >= 3 && (
-            <section className="py-6">
-              <div className="container mx-auto px-4">
-                <div className="max-w-3xl mx-auto">
-                  <TableOfContents items={tocItems} />
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Article Content */}
+          {/* Article Content with Sticky TOC */}
           <section className="py-12">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto">
-                {article.sections.map((section, index) => (
-                  <div key={index} id={`section-${index}`} className="mb-10 scroll-mt-24">
-                    <h2 className="text-2xl font-bold text-foreground mb-4">
-                      {section.heading}
-                    </h2>
-                    <MarkdownContent content={section.content} />
+              <div className="max-w-6xl mx-auto">
+                <div className="flex flex-col lg:flex-row gap-8">
+                  {/* Sticky Table of Contents - Desktop */}
+                  {tocItems.length >= 3 && (
+                    <aside className="hidden lg:block lg:w-64 flex-shrink-0">
+                      <TableOfContents items={tocItems} sticky />
+                    </aside>
+                  )}
+
+                  {/* Mobile TOC */}
+                  {tocItems.length >= 3 && (
+                    <div className="lg:hidden mb-6">
+                      <TableOfContents items={tocItems} />
+                    </div>
+                  )}
+
+                  {/* Main Content */}
+                  <div className="flex-1 max-w-3xl">
+                    {article.sections.map((section, index) => (
+                      <div key={index} id={`section-${index}`} className="mb-10 scroll-mt-24">
+                        <h2 className="text-2xl font-bold text-foreground mb-4">
+                          {section.heading}
+                        </h2>
+                        <MarkdownContent content={section.content} />
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </section>
