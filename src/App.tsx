@@ -14,6 +14,7 @@ import PayCalculator from "./pages/career-hub/tools/PayCalculator";
 import ShiftPlanner from "./pages/career-hub/tools/ShiftPlanner";
 import CostOfLivingComparison from "./pages/career-hub/tools/CostOfLivingComparison";
 import TaxCalculator from "./pages/career-hub/tools/TaxCalculator";
+import UnemploymentCalculator from "./pages/career-hub/tools/UnemploymentCalculator";
 import SkillsAnalyzer from "./pages/career-hub/tools/SkillsAnalyzer";
 import CareerPathExplorer from "./pages/career-hub/tools/CareerPathExplorer";
 import IndustryPage from "./pages/career-hub/IndustryPage";
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/career-hub/tools/shift-planner" element={<ShiftPlanner />} />
           <Route path="/career-hub/tools/cost-of-living" element={<CostOfLivingComparison />} />
           <Route path="/career-hub/tools/tax-calculator" element={<TaxCalculator />} />
+          <Route path="/career-hub/tools/unemployment-calculator" element={<UnemploymentCalculator />} />
           <Route path="/career-hub/tools/skills-analyzer" element={<SkillsAnalyzer />} />
           <Route path="/career-hub/tools/career-path" element={<CareerPathExplorer />} />
           <Route path="/career-hub/industries/:industryId" element={<IndustryPage />} />

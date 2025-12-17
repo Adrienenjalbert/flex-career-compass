@@ -6,10 +6,24 @@ import CTASection from "@/components/career-hub/CTASection";
 
 const tools = [
   {
-    title: "Hourly Pay Calculator",
-    description: "Calculate your weekly and monthly take-home pay after taxes for any US state. See exactly what you'll earn.",
+    title: "State-by-State Paycheck Calculator",
+    description: "Calculate take-home pay in all 50 states with W-2 vs 1099 comparison, role templates, and shift differentials.",
     icon: "Calculator" as const,
     href: "/career-hub/tools/pay-calculator",
+    featured: true,
+  },
+  {
+    title: "1099 & Quarterly Tax Estimator",
+    description: "Estimate self-employment taxes with combined W-2/1099 income, deduction tracker, and quarterly deadline reminders.",
+    icon: "PiggyBank" as const,
+    href: "/career-hub/tools/tax-calculator",
+    featured: true,
+  },
+  {
+    title: "Unemployment Benefits Calculator",
+    description: "Estimate unemployment benefits in all 50 states. See partial unemployment rules and gig work guidance.",
+    icon: "ShieldCheck" as const,
+    href: "/career-hub/tools/unemployment-calculator",
     featured: true,
   },
   {
@@ -29,12 +43,6 @@ const tools = [
     description: "Compare rent, groceries, and transport costs between cities to find where your money goes furthest.",
     icon: "MapPin" as const,
     href: "/career-hub/tools/cost-of-living",
-  },
-  {
-    title: "Tax Savings Calculator",
-    description: "Estimate quarterly tax payments and discover deductions available to gig and flexible workers.",
-    icon: "PiggyBank" as const,
-    href: "/career-hub/tools/tax-calculator",
   },
   {
     title: "Skills Gap Analyzer",
