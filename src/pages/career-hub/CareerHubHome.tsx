@@ -9,7 +9,6 @@ import FAQSection from "@/components/career-hub/FAQSection";
 import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { usLocations } from "@/data/locations";
 import { roles } from "@/data/roles";
-
 const industries = [
   {
     id: "hospitality",
@@ -105,90 +104,72 @@ const CareerHubHome = () => {
         <HeroSection />
 
         {/* Industries Section */}
-        <section className="py-20 md:py-24 gradient-calm">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+        <section className="py-16 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Explore Industries
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Discover flexible work opportunities across multiple industries. Find the right fit for your skills and schedule.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {industries.map((industry, index) => (
-                <div 
-                  key={industry.id} 
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <IndustryCard {...industry} />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {industries.map((industry) => (
+                <IndustryCard key={industry.id} {...industry} />
               ))}
             </div>
           </div>
         </section>
 
         {/* Tools Section */}
-        <section className="py-20 md:py-24 bg-background">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Free Career Tools
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Use our interactive tools to plan your career, calculate earnings, and compare cities.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {tools.map((tool, index) => (
-                <div 
-                  key={tool.title}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <ToolCard {...tool} />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {tools.map((tool) => (
+                <ToolCard key={tool.title} {...tool} />
               ))}
             </div>
           </div>
         </section>
 
         {/* Locations Section */}
-        <section className="py-20 md:py-24 gradient-wellness">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+        <section className="py-16 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Find Work in Your City
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore job opportunities, salary data, and cost of living information for major US cities.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {usLocations.map((location, index) => (
-                <div 
-                  key={location.id}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 75}ms` }}
-                >
-                  <LocationCard location={location} />
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {usLocations.map((location) => (
+                <LocationCard key={location.id} location={location} />
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 md:py-24 bg-background">
-          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-3xl">
             <FAQSection faqs={homeFAQs} />
           </div>
         </section>
 
         {/* Internal Link Hub for SEO */}
-        <section className="py-20 md:py-24 gradient-calm">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="py-16 bg-secondary">
+          <div className="container mx-auto px-4">
             <InternalLinkHub variant="full" />
           </div>
         </section>
