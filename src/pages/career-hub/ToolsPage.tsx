@@ -130,6 +130,14 @@ const toolCategories = [
         answersQuestion: "How do I learn bartending skills?",
         estimatedTime: "~15 min",
       },
+      {
+        title: "SafetyFirst: OSHA Trainer",
+        description: "Learn workplace safety with bilingual quizzes. Hazard ID, PPE requirements & emergency procedures for warehouse and hospitality.",
+        icon: "Shield" as const,
+        href: "/career-hub/tools/safety-first",
+        answersQuestion: "How do I learn OSHA safety?",
+        estimatedTime: "~10 min",
+      },
     ],
   },
   {
