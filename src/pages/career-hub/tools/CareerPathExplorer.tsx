@@ -4,7 +4,8 @@ import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { TrendingUp, DollarSign, Clock, ArrowRight, Award, Briefcase, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { TrendingUp, DollarSign, Clock, ArrowRight, Award, Briefcase, Target, GraduationCap, ExternalLink } from "lucide-react";
 import CTASection from "@/components/career-hub/CTASection";
 import ToolDisclaimer from "@/components/career-hub/ToolDisclaimer";
 import { Link } from "react-router-dom";
@@ -25,6 +26,59 @@ interface CareerPath {
   industry: string;
   steps: CareerStep[];
 }
+
+// Map skills to learning tools
+interface LearningResource {
+  name: string;
+  path: string;
+  isExternal?: boolean;
+}
+
+const skillToLearningMap: Record<string, LearningResource> = {
+  // Bartending/Hospitality skills -> CocktailQuiz
+  "mixology": { name: "CocktailQuiz", path: "/career-hub/tools/cocktail-quiz" },
+  "menu development": { name: "CocktailQuiz", path: "/career-hub/tools/cocktail-quiz" },
+  "cocktail knowledge": { name: "CocktailQuiz", path: "/career-hub/tools/cocktail-quiz" },
+  
+  // Safety skills -> SafetyFirst
+  "safety focus": { name: "SafetyFirst", path: "/career-hub/tools/safety-first" },
+  "osha training": { name: "SafetyFirst", path: "/career-hub/tools/safety-first" },
+  "physical stamina": { name: "SafetyFirst", path: "/career-hub/tools/safety-first" },
+  
+  // Culinary skills -> MenuMaster
+  "basic knife skills": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "knife skills": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "menu knowledge": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "recipe development": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "menu creation": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "menu innovation": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "consistency": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "quality control": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  "cleanliness": { name: "MenuMaster", path: "/career-hub/tools/menu-master" },
+  
+  // External certifications
+  "forklift certification": { name: "OSHA Forklift", path: "https://www.osha.gov/training", isExternal: true },
+  "tips certified": { name: "TIPS Training", path: "https://www.gettips.com/", isExternal: true },
+  "food safety certified": { name: "ServSafe", path: "https://www.servsafe.com/", isExternal: true },
+};
+
+const getSkillLearningResource = (skill: string): LearningResource | null => {
+  const normalizedSkill = skill.toLowerCase();
+  
+  // Direct match
+  if (skillToLearningMap[normalizedSkill]) {
+    return skillToLearningMap[normalizedSkill];
+  }
+  
+  // Partial match
+  for (const [key, resource] of Object.entries(skillToLearningMap)) {
+    if (normalizedSkill.includes(key) || key.includes(normalizedSkill)) {
+      return resource;
+    }
+  }
+  
+  return null;
+};
 
 const careerPaths: CareerPath[] = [
   {
@@ -383,14 +437,41 @@ const CareerPathExplorer = () => {
                                     <span className="font-medium text-sm">Key Skills</span>
                                   </div>
                                   <div className="flex flex-wrap gap-2">
-                                    {step.keySkills.map((skill) => (
-                                      <span 
-                                        key={skill}
-                                        className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full"
-                                      >
-                                        {skill}
-                                      </span>
-                                    ))}
+                                    {step.keySkills.map((skill) => {
+                                      const resource = getSkillLearningResource(skill);
+                                      return (
+                                        <div key={skill} className="flex items-center gap-1">
+                                          <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-l-full">
+                                            {skill}
+                                          </span>
+                                          {resource && (
+                                            resource.isExternal ? (
+                                              <a
+                                                href={resource.path}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1 text-xs bg-accent text-accent-foreground px-2 py-1 rounded-r-full hover:bg-accent/80 transition-colors"
+                                              >
+                                                <GraduationCap className="h-3 w-3" />
+                                                <span className="hidden sm:inline">{resource.name}</span>
+                                                <ExternalLink className="h-2.5 w-2.5" />
+                                              </a>
+                                            ) : (
+                                              <Link
+                                                to={resource.path}
+                                                className="inline-flex items-center gap-1 text-xs bg-accent text-accent-foreground px-2 py-1 rounded-r-full hover:bg-accent/80 transition-colors"
+                                              >
+                                                <GraduationCap className="h-3 w-3" />
+                                                <span className="hidden sm:inline">Learn</span>
+                                              </Link>
+                                            )
+                                          )}
+                                          {!resource && (
+                                            <span className="text-xs bg-secondary text-secondary-foreground px-1 py-1 rounded-r-full" />
+                                          )}
+                                        </div>
+                                      );
+                                    })}
                                   </div>
                                 </div>
                                 {index < currentPath.steps.length - 1 && (
