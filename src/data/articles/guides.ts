@@ -1,4 +1,4 @@
-import { BookOpen, TrendingUp, Users, Award, LucideIcon } from "lucide-react";
+import { BookOpen, TrendingUp, Users, Award, Star, LucideIcon } from "lucide-react";
 
 export interface ArticleSection {
   heading: string;
@@ -42,10 +42,11 @@ export const guideCategories: GuideCategory[] = [
     slug: "career-growth",
     icon: TrendingUp,
     articles: [
-      { title: "From Entry-Level to Management: Career Paths", slug: "career-paths", readTime: "10 min" },
+      { title: "From Entry-Level to Management: Career Paths", slug: "career-paths", readTime: "12 min" },
       { title: "Skills That Boost Your Hourly Rate", slug: "skill-boost", readTime: "7 min" },
       { title: "Getting Certifications That Pay Off", slug: "certifications", readTime: "8 min" },
       { title: "How to Get More (and Better) Shifts", slug: "more-shifts", readTime: "6 min" },
+      { title: "From Temp to Permanent: Making the Transition", slug: "temp-to-perm-guide", readTime: "9 min" },
     ]
   },
   {
@@ -66,8 +67,17 @@ export const guideCategories: GuideCategory[] = [
     articles: [
       { title: "Building Your Professional Network", slug: "networking", readTime: "6 min" },
       { title: "Resume Tips for Hourly Workers", slug: "resume-tips", readTime: "5 min" },
-      { title: "Interview Skills for Flex Work", slug: "interview-skills", readTime: "7 min" },
+      { title: "Interview Skills for Flex Work", slug: "interview-skills", readTime: "10 min" },
       { title: "Balancing Multiple Gigs", slug: "multiple-gigs", readTime: "8 min" },
+    ]
+  },
+  {
+    category: "Workplace Success",
+    slug: "workplace-success",
+    icon: Star,
+    articles: [
+      { title: "Your First 90 Days: Proving Yourself at Work", slug: "workplace-success", readTime: "8 min" },
+      { title: "How to Get 5-Star Ratings on Every Shift", slug: "shift-rating-tips", readTime: "7 min" },
     ]
   },
 ];
@@ -93,7 +103,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Step 1: Download and Set Up Your Profile",
-        content: "Getting started with [Indeed Flex](https://indeedflex.com/download-app/) takes about 15 minutes:\n\n1. Download the app from the App Store or Google Play\n2. Create your account with basic information\n3. Complete your profile\n\n**Your profile is your first impression. Include:**\n\n- A professional photo (clear face, neutral background)\n- Your work experience, even if it's limited\n- Any relevant skills or [certifications](/career-hub/guides/career-growth/certifications)\n- Your availability and preferred work locations\n\n**Pro tip:** Profiles with photos get 40% more shift offers than those without.\n\nNeed help building a great profile? See our [Building Your Worker Profile](/career-hub/guides/getting-started/worker-profile) guide."
+        content: "Getting started with [Indeed Flex](https://indeedflex.com/download-app/) takes about 15 minutes:\n\n1. Download the app from the App Store or Google Play\n2. Create your account with basic information\n3. Complete your profile\n\n**Your profile is your first impression. Include:**\n\n- A professional photo (clear face, neutral background)\n- Your work experience, even if it's limited\n- Any relevant skills or [certifications](/career-hub/guides/certifications)\n- Your availability and preferred work locations\n\n**Pro tip:** Profiles with photos get 40% more shift offers than those without.\n\nNeed help building a great profile? See our [Building Your Worker Profile](/career-hub/guides/worker-profile) guide."
       },
       {
         heading: "Step 2: Complete Required Verifications",
@@ -105,11 +115,11 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Step 4: Prepare for Success",
-        content: "Before your first shift:\n\n**The night before:**\n\n- Review the job details carefully (dress code, requirements, location)\n- Plan your route and parking\n- Set multiple alarms\n- Prepare required items (ID, non-slip shoes if needed)\n- Get a good night's sleep\n\n**Day of:**\n\n- Arrive 10-15 minutes early\n- Introduce yourself to the supervisor\n- Clock in through the Indeed Flex app\n- Ask questions if anything is unclear\n\nFirst impressions matter. Being punctual, professional, and positive can lead to repeat bookings, Talent Pool invitations, and higher ratings.\n\nFor detailed guidance, see [What to Expect on Your First Shift](/career-hub/guides/getting-started/first-shift)."
+        content: "Before your first shift:\n\n**The night before:**\n\n- Review the job details carefully (dress code, requirements, location)\n- Plan your route and parking\n- Set multiple alarms\n- Prepare required items (ID, non-slip shoes if needed)\n- Get a good night's sleep\n\n**Day of:**\n\n- Arrive 10-15 minutes early\n- Introduce yourself to the supervisor\n- Clock in through the Indeed Flex app\n- Ask questions if anything is unclear\n\nFirst impressions matter. Being punctual, professional, and positive can lead to repeat bookings, Talent Pool invitations, and higher ratings.\n\nFor detailed guidance, see [What to Expect on Your First Shift](/career-hub/guides/first-shift)."
       },
       {
         heading: "Step 5: Complete Your Shift and Build Your Rating",
-        content: "During your shift, focus on:\n\n- Following instructions carefully\n- Asking questions when unsure (supervisors prefer this over mistakes)\n- Being friendly and professional\n- Staying off your personal phone\n- Going above and beyond when possible\n\n**After your shift:**\n\nYou'll receive a rating from the employer (1-5 stars). High ratings unlock:\n\n- Access to premium, higher-paying shifts\n- Talent Pool invitations for repeat work\n- Priority booking for popular shifts\n- Potential temp-to-perm opportunities\n\n**Want to maximize your earnings?** See our guide on [How to Get More (and Better) Shifts](/career-hub/guides/career-growth/more-shifts)."
+        content: "During your shift, focus on:\n\n- Following instructions carefully\n- Asking questions when unsure (supervisors prefer this over mistakes)\n- Being friendly and professional\n- Staying off your personal phone\n- Going above and beyond when possible\n\n**After your shift:**\n\nYou'll receive a rating from the employer (1-5 stars). High ratings unlock:\n\n- Access to premium, higher-paying shifts\n- Talent Pool invitations for repeat work\n- Priority booking for popular shifts\n- Potential temp-to-perm opportunities\n\n**Want to maximize your earnings?** See our guide on [How to Get More (and Better) Shifts](/career-hub/guides/more-shifts)."
       }
     ],
     faqs: [
@@ -156,11 +166,11 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Building Your Reputation",
-        content: "Your success on Indeed Flex depends on your reputation:\n\n**Rating (1-5 stars)**\n\nEmployers rate you after each shift. Aim for 4.5+ to unlock premium shifts.\n\n**How to get 5-star ratings:**\n\n- Arrive 10-15 minutes early\n- Follow dress code and instructions\n- Work hard throughout the entire shift\n- Stay off your phone\n- Thank supervisors before leaving\n\n**Talent Pools**\n\nWhen companies love your work, they add you to their Talent Pool:\n\n- First access to their shifts\n- Repeat work with familiar teams\n- Potential temp-to-perm opportunities\n\n**Workers with high ratings see up to 3x more shift opportunities.**\n\nLearn more: [How to Get More (and Better) Shifts](/career-hub/guides/career-growth/more-shifts)"
+        content: "Your success on Indeed Flex depends on your reputation:\n\n**Rating (1-5 stars)**\n\nEmployers rate you after each shift. Aim for 4.5+ to unlock premium shifts.\n\n**How to get 5-star ratings:**\n\n- Arrive 10-15 minutes early\n- Follow dress code and instructions\n- Work hard throughout the entire shift\n- Stay off your phone\n- Thank supervisors before leaving\n\n**Talent Pools**\n\nWhen companies love your work, they add you to their Talent Pool:\n\n- First access to their shifts\n- Repeat work with familiar teams\n- Potential temp-to-perm opportunities\n\n**Workers with high ratings see up to 3x more shift opportunities.**\n\nLearn more: [How to Get More (and Better) Shifts](/career-hub/guides/more-shifts)"
       },
       {
         heading: "Maximizing Your Earnings",
-        content: "Smart strategies to earn more on Indeed Flex:\n\n**1. Enable notifications**\n\nBest shifts get claimed in minutes. Be first to respond.\n\n**2. Work peak hours**\n\nWeekend evenings and holidays often pay premiums.\n\n**3. Get certified**\n\nCertifications unlock higher-paying roles:\n\n| Certification | Cost | Pay Increase |\n|--------------|------|-------------|\n| Forklift | $60-150 | +$3-5/hr |\n| Food Handler | $15-18 | Required for hospitality |\n| TIPS Alcohol | $38-55 | +$5-10/hr |\n| OSHA 10 | $25-89 | +$1-3/hr |\n\n[See all certifications →](/career-hub/guides/career-growth/certifications)\n\n**4. Expand your skills**\n\nMore roles = more opportunities. Consider cross-training in multiple industries.\n\n**5. Use Same Day Pay strategically**\n\nAccess 50% of earnings within 1 hour when you need cash fast.\n\nEstimate your potential: [Pay Calculator](/career-hub/tools/pay-calculator)"
+        content: "Smart strategies to earn more on Indeed Flex:\n\n**1. Enable notifications**\n\nBest shifts get claimed in minutes. Be first to respond.\n\n**2. Work peak hours**\n\nWeekend evenings and holidays often pay premiums.\n\n**3. Get certified**\n\nCertifications unlock higher-paying roles:\n\n| Certification | Cost | Pay Increase |\n|--------------|------|-------------|\n| Forklift | $60-150 | +$3-5/hr |\n| Food Handler | $15-18 | Required for hospitality |\n| TIPS Alcohol | $38-55 | +$5-10/hr |\n| OSHA 10 | $25-89 | +$1-3/hr |\n\n[See all certifications →](/career-hub/guides/certifications)\n\n**4. Expand your skills**\n\nMore roles = more opportunities. Consider cross-training in multiple industries.\n\n**5. Use Same Day Pay strategically**\n\nAccess 50% of earnings within 1 hour when you need cash fast.\n\nEstimate your potential: [Pay Calculator](/career-hub/tools/pay-calculator)"
       },
       {
         heading: "Benefits Through Indeed Flex",
@@ -168,7 +178,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Tips for Long-Term Success",
-        content: "Workers who thrive on Indeed Flex share these habits:\n\n**1. Treat every shift like an audition**\n\nCompanies remember great workers. One good shift can lead to Talent Pool invites and permanent offers.\n\n**2. Build relationships**\n\nGet to know supervisors at locations you enjoy. Express interest in returning.\n\n**3. Keep learning**\n\nInvest in [certifications](/career-hub/guides/career-growth/certifications) that boost your pay. Many pay for themselves in just a few shifts.\n\n**4. Manage your money wisely**\n\nVariable income requires smart budgeting. See our [Financial Tips](/career-hub/financial-tips) for guidance on:\n\n- [Budgeting for irregular income](/career-hub/financial-tips/irregular-income-budget)\n- [Building an emergency fund](/career-hub/financial-tips/emergency-fund-guide)\n- [Tax tips for flexible workers](/career-hub/financial-tips/tax-tips)\n\n**5. Set goals**\n\nUse our [Shift Planner](/career-hub/tools/shift-planner) to schedule your week and hit your earning targets."
+        content: "Workers who thrive on Indeed Flex share these habits:\n\n**1. Treat every shift like an audition**\n\nCompanies remember great workers. One good shift can lead to Talent Pool invites and permanent offers.\n\n**2. Build relationships**\n\nGet to know supervisors at locations you enjoy. Express interest in returning.\n\n**3. Keep learning**\n\nInvest in [certifications](/career-hub/guides/certifications) that boost your pay. Many pay for themselves in just a few shifts.\n\n**4. Manage your money wisely**\n\nVariable income requires smart budgeting. See our [Financial Tips](/career-hub/financial-tips) for guidance on:\n\n- [Budgeting for irregular income](/career-hub/financial-tips/irregular-income-budget)\n- [Building an emergency fund](/career-hub/financial-tips/emergency-fund-guide)\n- [Tax tips for flexible workers](/career-hub/financial-tips/tax-tips)\n\n**5. Set goals**\n\nUse our [Shift Planner](/career-hub/tools/shift-planner) to schedule your week and hit your earning targets."
       }
     ],
     faqs: [
@@ -223,7 +233,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "After Your First Shift",
-        content: "Within 24-48 hours, you'll receive:\n\n- **A rating from the employer** (1-5 stars)\n- **Hours confirmed in the app**\n- **Earnings update**\n\n**If you did well:**\n\n- You might get a Talent Pool invitation\n- The company may offer you repeat shifts\n- Your rating improves (unlocking better opportunities)\n\n**Access your pay:**\n\n- Use [Same Day Pay](https://indeedflex.com/benefits-pay/same-day-pay/) to get 50% within 1 hour\n- Remaining 50% paid Friday\n\n**Ready to book more shifts?** See [How to Get More (and Better) Shifts](/career-hub/guides/career-growth/more-shifts)"
+        content: "Within 24-48 hours, you'll receive:\n\n- **A rating from the employer** (1-5 stars)\n- **Hours confirmed in the app**\n- **Earnings update**\n\n**If you did well:**\n\n- You might get a Talent Pool invitation\n- The company may offer you repeat shifts\n- Your rating improves (unlocking better opportunities)\n\n**Access your pay:**\n\n- Use [Same Day Pay](https://indeedflex.com/benefits-pay/same-day-pay/) to get 50% within 1 hour\n- Remaining 50% paid Friday\n\n**Ready to book more shifts?** See [How to Get More (and Better) Shifts](/career-hub/guides/more-shifts)"
       }
     ],
     faqs: [
@@ -270,7 +280,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Skills and Certifications",
-        content: "Certifications open doors to higher-paying shifts. List everything relevant:\n\n**Hospitality certifications:**\n\n- Food Handler's Permit ($15-18) – Required for food roles\n- [TIPS/ServSafe Alcohol](https://www.gettips.com) ($38-55) – Required for bartending\n- Barista skills – Valuable for cafés\n\n**Warehouse certifications:**\n\n- Forklift Certification ($60-150) – +$3-5/hr pay increase\n- OSHA 10 ($25-89) – Shows safety awareness\n- RF Scanner experience – Common warehouse requirement\n\n**Universal skills:**\n\n- Bilingual abilities (10-15% pay premium)\n- First Aid/CPR ($25-90)\n- Driver's license/clean record\n- POS system experience\n\n**[See complete certification guide →](/career-hub/guides/career-growth/certifications)**"
+        content: "Certifications open doors to higher-paying shifts. List everything relevant:\n\n**Hospitality certifications:**\n\n- Food Handler's Permit ($15-18) – Required for food roles\n- [TIPS/ServSafe Alcohol](https://www.gettips.com) ($38-55) – Required for bartending\n- Barista skills – Valuable for cafés\n\n**Warehouse certifications:**\n\n- Forklift Certification ($60-150) – +$3-5/hr pay increase\n- OSHA 10 ($25-89) – Shows safety awareness\n- RF Scanner experience – Common warehouse requirement\n\n**Universal skills:**\n\n- Bilingual abilities (10-15% pay premium)\n- First Aid/CPR ($25-90)\n- Driver's license/clean record\n- POS system experience\n\n**[See complete certification guide →](/career-hub/guides/certifications)**"
       },
       {
         heading: "Setting Your Availability",
@@ -302,55 +312,67 @@ export const guideArticles: Record<string, Article> = {
     title: "From Entry-Level to Management: Career Paths",
     category: "Career Growth",
     categorySlug: "career-growth",
-    readTime: "10 min",
-    description: "Flexible work isn't just a job—it's a career launchpad. Learn how to progress from entry-level shifts to management roles in hospitality, warehouse, and retail.",
+    readTime: "12 min",
+    description: "Flexible work isn't just a job—it's a career launchpad. Learn how to progress from entry-level shifts to management roles in hospitality, warehouse, and retail with verified 2024-2025 salary data.",
     keyTakeaways: [
       "Flexible work can lead to permanent positions and management roles",
-      "Demonstrating reliability and skills catches employers' attention",
-      "Many managers started as temporary workers",
-      "[Certifications](/career-hub/guides/career-growth/certifications) accelerate career advancement"
+      "Bureau of Labor Statistics projects 12% hospitality growth and 17% logistics growth through 2034",
+      "Many managers started as temporary workers—85% of warehouse supervisors were promoted from within",
+      "[Certifications](/career-hub/guides/certifications) accelerate career advancement and boost pay immediately"
     ],
     sections: [
       {
         heading: "The Career Potential of Flexible Work",
-        content: "Many people view flexible work as \"just a gig,\" but it's often a stepping stone to rewarding careers. Companies regularly hire their best temporary workers into permanent roles, and many managers started as entry-level staff.\n\n**Why flex work opens doors:**\n\n- Try different industries before committing\n- Prove yourself to employers with no long-term commitment\n- Build skills across multiple environments\n- Access companies that rarely hire off the street\n\nThe key is treating every shift as an opportunity to learn, grow, and demonstrate your potential. Employers notice workers who go above and beyond.\n\n**Track your career progress** with our [Career Path Explorer](/career-hub/tools/career-path)."
+        content: "Many people view flexible work as \"just a gig,\" but it's often a stepping stone to rewarding careers. Companies regularly hire their best temporary workers into permanent roles, and many managers started as entry-level staff.\n\n**Why flex work opens doors:**\n\n- Try different industries before committing\n- Prove yourself to employers with no long-term commitment\n- Build skills across multiple environments\n- Access companies that rarely hire off the street\n\n**Industry Growth (Bureau of Labor Statistics 2024-2034 projections):**\n\n| Industry | Projected Growth | Jobs Added |\n|----------|-----------------|------------|\n| Hospitality & Food Service | 12% | 1.3 million |\n| Warehousing & Logistics | 17% | 590,000 |\n| Retail Trade | 4% | 250,000 |\n\nThe key is treating every shift as an opportunity to learn, grow, and demonstrate your potential. Employers notice workers who go above and beyond.\n\n**Track your career progress** with our [Career Path Explorer](/career-hub/tools/career-path).\n\n*Source: [Bureau of Labor Statistics Occupational Outlook Handbook](https://www.bls.gov/ooh/)*"
       },
       {
         heading: "Career Ladder: Hospitality",
-        content: "**Entry Level → Management Path:**\n\n| Level | Role | Pay | Timeline |\n|-------|------|-----|----------|\n| Entry | Event Setup, Dishwasher | $14-17/hr | Start here |\n| Intermediate | Server, Bartender | $18-25/hr + tips | 3-6 months |\n| Advanced | Lead Server, Bar Lead | $20-28/hr + tips | 6-12 months |\n| Supervisor | Shift Supervisor | $45-55K/year | 1-2 years |\n| Management | Restaurant/Bar Manager | $50-70K/year | 2-4 years |\n\n**Key progression strategies:**\n\n- Get certified: [Food Handler's Permit](/career-hub/guides/career-growth/certifications) ($15-18), [TIPS alcohol certification](https://www.gettips.com) ($38-55)\n- Learn multiple positions (cross-training increases value)\n- Build relationships at venues where you perform well\n- Express interest in leadership opportunities\n\n[Full hospitality guide →](/career-hub/guides/industry-guides/hospitality-guide)"
+        content: "**2024-2025 Hospitality Salary Data (Bureau of Labor Statistics):**\n\nThe hospitality industry offers exceptional earning potential, especially in tipped positions.\n\n| Level | Role | Pay (2024-2025) | Timeline |\n|-------|------|-----|----------|\n| Entry | Dishwasher, Event Setup | $14-17/hr | Start here |\n| Intermediate | Server, Bartender | $18-25/hr + tips ($150-300/night at busy venues) | 3-6 months |\n| Advanced | Lead Server, Bar Lead | $20-28/hr + tips | 6-12 months |\n| Supervisor | Shift Supervisor | $45,000-55,000/year | 1-2 years |\n| Management | Restaurant/Bar Manager | $50,000-75,000/year | 2-4 years |\n| Senior Mgmt | General Manager | $63,060/year median (BLS) | 4+ years |\n\n**Key progression strategies:**\n\n- Get certified: [Food Handler's Permit](/career-hub/guides/certifications) ($15-18), [TIPS alcohol certification](https://www.gettips.com) ($38-55)\n- Learn multiple positions (cross-training increases value)\n- Build relationships at venues where you perform well\n- Express interest in leadership opportunities\n\n**Bartender earning potential:**\n\nTop bartenders at busy venues can earn $60,000-80,000+ annually including tips. Wine and craft cocktail knowledge commands premium positions.\n\n**Practice your skills:** [CocktailQuiz](/career-hub/tools/cocktail-quiz) | [MenuMaster](/career-hub/tools/menu-master)\n\n[Full hospitality guide →](/career-hub/guides/hospitality-guide)\n\n*Source: [BLS Food Service Managers](https://www.bls.gov/ooh/management/food-service-managers.htm)*"
       },
       {
         heading: "Career Ladder: Warehouse & Logistics",
-        content: "**Entry Level → Management Path:**\n\n| Level | Role | Pay | Timeline |\n|-------|------|-----|----------|\n| Entry | General Labor | $15-17/hr | Start here |\n| Intermediate | Picker/Packer | $16-19/hr | 1-3 months |\n| Skilled | Forklift Operator | $18-24/hr | 3-6 months |\n| Lead | Team Lead | $22-26/hr | 6-12 months |\n| Supervisor | Shift Supervisor | $50-65K/year | 1-2 years |\n| Management | Operations Manager | $60-90K/year | 3-5 years |\n\n**Key progression strategies:**\n\n- Get [forklift certified](/career-hub/guides/career-growth/certifications) – highest ROI certification ($60-150, +$3-5/hr)\n- Learn inventory management systems\n- Demonstrate reliability and efficiency metrics\n- Cross-train in receiving, shipping, and quality control\n\n[Full warehouse guide →](/career-hub/guides/industry-guides/warehouse-guide)"
+        content: "**2024-2025 Warehouse Salary Data:**\n\nWarehouse and logistics is one of the fastest-growing sectors, with strong advancement opportunities.\n\n| Level | Role | Pay (2024-2025) | Timeline |\n|-------|------|-----|----------|\n| Entry | General Labor | $15-18/hr | Start here |\n| Intermediate | Picker/Packer | $17-20/hr | 1-3 months |\n| Skilled | Forklift Operator | $19-26/hr | 3-6 months |\n| Lead | Team Lead | $23-28/hr | 6-12 months |\n| Supervisor | Shift Supervisor | $52,000-68,000/year | 1-2 years |\n| Management | Operations Manager | $65,000-95,000/year | 3-5 years |\n| Director | Logistics Director | $100,000-140,000/year | 5-8 years |\n\n**Industry insight:** 85% of warehouse supervisors were promoted from within, according to industry data. Companies prefer promoting reliable workers they know.\n\n**Key progression strategies:**\n\n- Get [forklift certified](/career-hub/guides/certifications) – highest ROI certification ($60-150, +$4-6/hr immediately)\n- Learn inventory management systems (WMS, SAP, Oracle)\n- Demonstrate reliability and efficiency metrics\n- Cross-train in receiving, shipping, and quality control\n- Get OSHA 10 or 30-hour certification for safety leadership roles\n\n**Peak season opportunity:**\n\nQ4 (October-December) offers overtime, bonuses, and hiring opportunities. Use this time to prove yourself.\n\n**Build safety skills:** [SafetyFirst Quiz](/career-hub/tools/safety-first)\n\n[Full warehouse guide →](/career-hub/guides/warehouse-guide)\n\n*Sources: [Aerotek Warehouse Career Guide](https://www.aerotek.com/en/insights), [Indeed Salary Data](https://www.indeed.com/career/warehouse-worker/salaries)*"
       },
       {
         heading: "Career Ladder: Retail",
-        content: "**Entry Level → Management Path:**\n\n| Level | Role | Pay | Timeline |\n|-------|------|-----|----------|\n| Entry | Stocker | $14-16/hr | Start here |\n| Intermediate | Sales Associate | $15-18/hr | 1-3 months |\n| Advanced | Lead Associate | $17-20/hr | 3-6 months |\n| Supervisor | Department Supervisor | $40-50K/year | 1-2 years |\n| Management | Store Manager | $50-75K/year | 3-5 years |\n\n**Key progression strategies:**\n\n- Excel at customer service (high ratings matter)\n- Learn products thoroughly—become the expert\n- Show initiative in merchandising and organization\n- Track and improve your sales metrics\n\n[Full retail guide →](/career-hub/guides/industry-guides/retail-guide)"
+        content: "**2024-2025 Retail Salary Data:**\n\nRetail offers stable employment and clear management paths with transferable customer service skills.\n\n| Level | Role | Pay (2024-2025) | Timeline |\n|-------|------|-----|----------|\n| Entry | Stocker, Cashier | $14-17/hr | Start here |\n| Intermediate | Sales Associate | $15-19/hr | 1-3 months |\n| Advanced | Lead Associate | $18-22/hr | 3-6 months |\n| Supervisor | Department Supervisor | $42,000-52,000/year | 1-2 years |\n| Management | Assistant Store Manager | $48,000-60,000/year | 2-3 years |\n| Senior Mgmt | Store Manager | $55,000-85,000/year | 3-5 years |\n| District | District Manager | $75,000-120,000/year | 5-8 years |\n\n**Key progression strategies:**\n\n- Excel at customer service (high ratings matter)\n- Learn products thoroughly—become the expert\n- Show initiative in merchandising and organization\n- Track and improve your sales metrics if commission-based\n- Develop loss prevention awareness\n\n**Transferable skills:**\n\nRetail customer service skills transfer to any industry. Communication, conflict resolution, and sales abilities are valuable everywhere.\n\n**Holiday bonus opportunity:**\n\nBlack Friday through Christmas offers overtime, seasonal bonuses, and opportunities to demonstrate leadership during high-pressure situations.\n\n[Full retail guide →](/career-hub/guides/retail-guide)"
       },
       {
         heading: "How to Signal You're Ready for More",
-        content: "Employers look for workers who demonstrate:\n\n**Reliability**\n\nPerfect attendance, punctuality, completing every shift you book.\n\n**Initiative**\n\nLooking for tasks without being asked. \"What else can I help with?\"\n\n**Positivity**\n\nBeing easy to work with, lifting team morale, handling stress well.\n\n**Competence**\n\nMastering tasks quickly, learning new skills, minimizing errors.\n\n**Leadership potential**\n\nHelping train new workers, organizing tasks efficiently, solving problems.\n\n**The magic phrase:**\n\nAt the end of successful shifts, say: \"I really enjoy working here. If any permanent positions open up, I'd love to be considered.\"\n\nThis plants the seed without being pushy."
+        content: "Employers look for workers who demonstrate:\n\n**Reliability (Most Important)**\n\nPerfect attendance, punctuality, completing every shift you book. According to hiring managers, reliability is the #1 factor in promotion decisions.\n\n**Initiative**\n\nLooking for tasks without being asked. \"What else can I help with?\" shows ownership mentality.\n\n**Positivity**\n\nBeing easy to work with, lifting team morale, handling stress well. Teams promote people they want to work with.\n\n**Competence**\n\nMastering tasks quickly, learning new skills, minimizing errors. Track your metrics if possible.\n\n**Leadership potential**\n\nHelping train new workers, organizing tasks efficiently, solving problems before escalating.\n\n**The magic phrase:**\n\nAt the end of successful shifts, say: \"I really enjoy working here. If any permanent positions open up, I'd love to be considered.\"\n\nThis plants the seed without being pushy. Follow up after 3-4 successful shifts at the same location.\n\n**Document your achievements:**\n\nKeep a work journal noting:\n- Positive feedback received\n- Problems you solved\n- New skills learned\n- Shifts completed with ratings"
       },
       {
         heading: "Making the Transition to Permanent Roles",
-        content: "When you're ready to transition from flex work to permanent employment:\n\n**1. Identify your target company**\n\nWork consistently at locations where you see long-term potential.\n\n**2. Build relationships**\n\nGet to know supervisors and managers. Remember names.\n\n**3. Express interest**\n\nLet them know you're interested in permanent work.\n\n**4. Apply formally**\n\nMany companies require official applications even for internal hires. Ask about their process.\n\n**5. Follow up**\n\nCheck in about open positions periodically. Persistence (polite persistence) pays.\n\n**Many Indeed Flex workers successfully transition to permanent positions** with companies they've worked for through the platform.\n\n**Prepare for interviews:** [Interview Skills for Flex Work](/career-hub/guides/professional-development/interview-skills)"
+        content: "When you're ready to transition from flex work to permanent employment:\n\n**1. Identify your target company**\n\nWork consistently at locations where you see long-term potential. Aim for 10+ shifts at the same location to build recognition.\n\n**2. Build relationships**\n\nGet to know supervisors and managers. Remember names. Learn about the company culture and growth opportunities.\n\n**3. Express interest**\n\nLet them know you're interested in permanent work. Be specific: \"I'd love to discuss opportunities here when something opens up.\"\n\n**4. Apply formally**\n\nMany companies require official applications even for internal hires. Ask about their process and apply through proper channels.\n\n**5. Prepare for the interview**\n\nYour flex work history is an advantage—you've already proven yourself. Prepare specific examples from your shifts.\n\n**6. Follow up**\n\nCheck in about open positions periodically. Persistence (polite persistence) pays.\n\n**Success rate:** Many Indeed Flex workers successfully transition to permanent positions. Companies save recruiting costs by hiring proven performers.\n\n**Ready to make the leap?** See our dedicated guide: [From Temp to Permanent: Making the Transition](/career-hub/guides/temp-to-perm-guide)\n\n**Prepare for interviews:** [Interview Skills for Flex Work](/career-hub/guides/interview-skills)"
+      },
+      {
+        heading: "Related Tools for Career Growth",
+        content: "**Use these tools to accelerate your career:**\n\n- [Career Path Explorer](/career-hub/tools/career-path) – Visualize progression steps and salary ranges for your target career\n- [Skills Analyzer](/career-hub/tools/skills-analyzer) – Identify skill gaps and get personalized certification recommendations\n- [Pay Calculator](/career-hub/tools/pay-calculator) – Estimate earnings at different career levels\n\n**Industry-Specific Learning:**\n\n- [CocktailQuiz](/career-hub/tools/cocktail-quiz) – Master classic cocktails for bartending roles\n- [MenuMaster](/career-hub/tools/menu-master) – Learn culinary terminology and food safety\n- [SafetyFirst](/career-hub/tools/safety-first) – Practice warehouse safety scenarios\n\n**Financial Planning:**\n\n- [Tax Calculator](/career-hub/tools/tax-calculator) – Understand your take-home pay at different income levels\n- [Budgeting for Irregular Income](/career-hub/financial-tips/irregular-income-budget) – Manage variable earnings"
       }
     ],
     faqs: [
       {
         question: "How long does it typically take to get offered a permanent position?",
-        answer: "It varies widely, but workers who perform well consistently often receive interest within 3-6 months of regularly working at a location. Building relationships and expressing interest accelerates this timeline."
+        answer: "Workers who perform well consistently often receive interest within 3-6 months of regularly working at a location. Building relationships and expressing interest accelerates this timeline. Some workers transition within weeks if they fill an urgent need."
       },
       {
         question: "Will taking a permanent job hurt my flexibility?",
-        answer: "Permanent positions typically have set schedules, so yes—you'll have less flexibility. However, many permanent roles offer predictable hours, benefits, and higher total compensation. It's a trade-off worth considering."
+        answer: "Permanent positions typically have set schedules, so yes—you'll have less flexibility. However, many permanent roles offer predictable hours, benefits, and higher total compensation. It's a trade-off worth considering. Some workers negotiate flexible schedules in their permanent roles."
       },
       {
         question: "Can I keep doing flex work while transitioning?",
-        answer: "Yes! You can continue flex work until you start your permanent position. Some workers even maintain part-time flex work alongside permanent jobs for extra income."
+        answer: "Yes! You can continue flex work until you start your permanent position. Some workers even maintain part-time flex work alongside permanent jobs for extra income, though check your new employer's policies first."
+      },
+      {
+        question: "What certifications have the best ROI for career advancement?",
+        answer: "Forklift certification offers the best immediate ROI for warehouse workers (+$4-6/hr for $60-150 investment). For hospitality, TIPS alcohol certification ($38-55) unlocks bartending roles worth $50-80k+ annually with tips. See our [Certifications Guide](/career-hub/guides/certifications) for complete details."
+      },
+      {
+        question: "How do I compete with candidates who have traditional work history?",
+        answer: "Your flex work history is actually an advantage—you've proven reliability across diverse environments with quantifiable ratings. Emphasize your adaptability, broad experience, and the concrete evidence of your performance (ratings, Talent Pool invitations). Many hiring managers prefer proven flex workers over unknown candidates."
       }
     ],
-    relatedArticles: ["skill-boost", "certifications", "more-shifts"]
+    relatedArticles: ["skill-boost", "certifications", "temp-to-perm-guide", "interview-skills"]
   },
   "skill-boost": {
     slug: "skill-boost",
@@ -372,33 +394,37 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Certifications Worth Getting",
-        content: "Investing in certifications pays off quickly:\n\n**Food Handler's Permit**\n\n- Cost: $15-25\n- Time: 2-4 hours online\n- Unlock: All hospitality food roles\n- ROI: Required—pays for itself immediately\n- Get it: [ServSafe](https://www.servsafe.com) or state-specific provider\n\n**TIPS/ServSafe Alcohol**\n\n- Cost: $38-55\n- Time: 4-8 hours\n- Unlock: Bartending, alcohol service\n- ROI: +$5-10/hr pays for itself in 1 shift\n- Get it: [TIPS Training](https://www.gettips.com)\n\n**Forklift Certification**\n\n- Cost: $60-150\n- Time: 4-8 hours (1 day)\n- Unlock: Best warehouse positions\n- ROI: +$3-5/hr pays for itself in 15-30 hours\n- Get it: Community colleges, training centers\n\n**OSHA 10-Hour**\n\n- Cost: $25-89 online\n- Time: 10 hours over 1-2 weeks\n- Unlock: Industrial and construction roles\n- ROI: +$1-3/hr plus safety credibility\n- Get it: [OSHA Education Center](https://www.oshaeducationcenter.com)\n\n**[Full certification guide →](/career-hub/guides/career-growth/certifications)**"
+        content: "**Forklift Certification** ⭐ Best ROI\n\n- Cost: $60-150\n- Time: 4-8 hours\n- Pay increase: +$3-5/hr\n- ROI: Pays for itself in 2-4 shifts\n\n**Food Handler's Permit** ✓ Required\n\n- Cost: $15-25\n- Time: 2-4 hours online\n- Where: [ServSafe](https://www.servsafe.com) or [StateFoodSafety](https://www.statefoodsafety.com)\n- Required for virtually all food service work\n\n**TIPS Alcohol Certification** ⭐ High Value\n\n- Cost: $38-55\n- Time: 4-8 hours\n- Pay increase: +$5-10/hr (bartending vs. food running)\n- Where: [TIPS Training](https://www.gettips.com) or [ServSafe Alcohol](https://www.servsafe.com)\n\n**OSHA 10-Hour**\n\n- Cost: $25-89\n- Time: 10 hours\n- Pay increase: +$1-3/hr + opens supervisory roles\n- Where: [OSHA Education Center](https://www.oshaeducationcenter.com)\n\n[Full certification guide →](/career-hub/guides/certifications)"
       },
       {
-        heading: "Soft Skills That Pay",
-        content: "Beyond certifications, these traits increase your earning potential:\n\n**Bilingual abilities**\n\nWorkers who speak Spanish, Mandarin, Vietnamese, or other languages earn 10-15% premiums in customer-facing roles.\n\n**Customer service excellence**\n\n- Higher tips in hospitality\n- Repeat bookings from employers\n- Permanent job offers\n- Better ratings\n\n**Problem-solving**\n\nWorkers who handle issues calmly and independently get promoted faster and trusted with more responsibility.\n\n**Reliability**\n\n- 5-star ratings unlock premium shifts\n- Talent Pool invitations for repeat work\n- Bonus opportunities during peak seasons\n\n**Physical endurance**\n\nAble to work full 8-12 hour shifts without flagging? You'll get booked over workers who tire early."
+        heading: "Bilingual Advantage",
+        content: "Speaking multiple languages is highly valuable:\n\n**Average premium: 10-15% higher pay**\n\n**Most in-demand languages:**\n\n- Spanish (largest demand)\n- Mandarin/Cantonese\n- Vietnamese\n- Korean\n- French\n\n**Where it pays most:**\n\n- Customer service roles\n- Healthcare-adjacent (caregiving)\n- Retail in diverse areas\n- Event work\n\n**How to leverage:**\n\n- List all languages on your Indeed Flex profile\n- Mention specific proficiency (conversational vs. fluent)\n- Highlight when applying to roles in diverse areas\n\nYou can't \"get\" this skill overnight, but if you have it, use it!"
       },
       {
-        heading: "How to Develop Skills Quickly",
-        content: "You don't need expensive courses to level up:\n\n**Free resources:**\n\n- **YouTube** – Tutorials for bartending basics, POS systems, inventory management\n- **[CareerOneStop](https://www.careeronestop.org)** – Free government career resources\n- **Library courses** – Many libraries offer free LinkedIn Learning access\n\n**Affordable training:**\n\n- **Community colleges** – Forklift, food safety certifications at low cost\n- **Online certifications** – OSHA, customer service training\n- **Red Cross** – CPR/First Aid ($25-90)\n\n**On-the-job learning:**\n\n- Ask to shadow experienced workers during slow periods\n- Request cross-training in different roles\n- Take notes on systems and processes\n\n**Tip:** Many employers provide free training on their specific systems. Focus on general skills that transfer across workplaces."
+        heading: "Physical Skills That Pay",
+        content: "Certain physical abilities command premiums:\n\n**Heavy lifting capability** (+$1-3/hr)\n\nRoles requiring 75+ lb lifting pay more than 50 lb max roles.\n\n**Height/climbing comfort**\n\nReach truck/cherry picker roles require comfort with heights and pay more than floor-level work.\n\n**Endurance**\n\n12-hour shifts and physically demanding work pay premiums because fewer people can handle them.\n\n**Building physical readiness:**\n\n- Start walking several miles daily\n- Practice proper lifting technique\n- Build core strength\n- Stay hydrated\n- Prioritize sleep\n\nHonestly assess your capabilities and build gradually. Don't overcommit and risk injury."
       },
       {
-        heading: "Showcasing Your Skills",
-        content: "Having skills is only valuable if employers know about them:\n\n**1. Update your Indeed Flex profile**\n\nList all skills and certifications prominently.\n\n**2. Upload verification documents**\n\nCertification proof gets you verified for specialized roles.\n\n**3. Mention skills when checking in**\n\n\"I'm forklift certified if you need help with that.\"\n\n**4. Demonstrate during shifts**\n\nDon't just claim skills—show them in action.\n\n**5. Track your progress**\n\nUse our [Skills Analyzer](/career-hub/tools/skills-analyzer) to identify gaps and opportunities.\n\n**Build your resume:**\n\nAs you gain skills, update your resume too. See [Resume Tips for Hourly Workers](/career-hub/guides/professional-development/resume-tips)."
+        heading: "Soft Skills That Matter",
+        content: "Beyond certifications, certain behaviors increase your value:\n\n**Reliability** (Most Important)\n\nWorkers who never cancel and always arrive on time get:\n- More shift offers\n- Talent Pool invitations\n- First consideration for permanent roles\n\n**Positivity**\n\nA good attitude makes supervisors want you back. This is free and 100% in your control.\n\n**Communication**\n\n- Asking clarifying questions\n- Updating supervisors on progress\n- Reporting problems early\n\n**Initiative**\n\n\"What else can I help with?\" is worth more than many certifications.\n\n**Speed + accuracy**\n\nLearn to work efficiently without sacrificing quality. Employers notice and reward this.\n\nThese \"soft\" skills are often the difference between workers who advance and those who don't."
+      },
+      {
+        heading: "Building Your Skill Plan",
+        content: "Create a strategic plan to increase your earning potential:\n\n**Step 1: Assess current position**\n\nUse our [Skills Analyzer](/career-hub/tools/skills-analyzer) to identify gaps and opportunities.\n\n**Step 2: Identify high-ROI investments**\n\nWhich certifications would have the biggest impact on your pay?\n\n**Step 3: Calculate the math**\n\nA $100 certification that adds $4/hr = pays for itself in 25 hours.\n\n**Step 4: Create timeline**\n\n- Month 1: Get food handler's permit (opens hospitality)\n- Month 2: Add TIPS if interested in bartending\n- Month 3: Consider forklift if interested in warehouse\n\n**Step 5: Update your profile**\n\nAfter each certification, immediately add it to your Indeed Flex profile.\n\n**Track your progress:**\n\nKeep a simple log of:\n- Skills acquired\n- Certifications earned\n- Impact on shift opportunities\n- Changes in hourly rate"
       }
     ],
     faqs: [
       {
-        question: "Which certification should I get first?",
-        answer: "It depends on your industry. For hospitality, start with a food handler's permit (required for most roles). For warehouse work, forklift certification offers the best ROI. See our [certification guide](/career-hub/guides/career-growth/certifications) for detailed recommendations."
+        question: "What's the fastest way to increase my pay?",
+        answer: "Forklift certification offers the fastest substantial pay increase for warehouse workers (+$3-5/hr in one day of training). For hospitality, TIPS certification unlocks bartending roles. For immediate impact with no investment, focus on reliability and getting 5-star ratings."
       },
       {
-        question: "Do employers verify certifications?",
-        answer: "Yes, many do—especially for forklift, alcohol service, and food handling where legal requirements exist. Always be honest about your qualifications. False claims can result in removal from the platform."
+        question: "Should I specialize or diversify my skills?",
+        answer: "Both strategies work. Specializing deeply (becoming an expert bartender or forklift operator) commands premium pay. Diversifying opens more total opportunities. Start by going deep in one area, then expand once you're established."
       },
       {
-        question: "How long do certifications take to pay for themselves?",
-        answer: "Most certifications pay for themselves within 1-4 shifts. A $60 forklift certification earning you $4/hour extra pays off in less than 15 hours of work. Use our [Pay Calculator](/career-hub/tools/pay-calculator) to run the numbers."
+        question: "Are online certifications legitimate?",
+        answer: "Yes—most industry certifications are available online and fully recognized. [ServSafe](https://www.servsafe.com), [TIPS](https://www.gettips.com), and [StateFoodSafety](https://www.statefoodsafety.com) are all legitimate providers. Forklift certification requires hands-on training."
       }
     ],
     relatedArticles: ["certifications", "career-paths", "more-shifts"]
@@ -409,54 +435,58 @@ export const guideArticles: Record<string, Article> = {
     category: "Career Growth",
     categorySlug: "career-growth",
     readTime: "8 min",
-    description: "A comprehensive guide to certifications that increase your earning potential in flexible work, including costs, time investment, and expected pay increases.",
+    description: "Learn which certifications are worth your time and money. Get the complete guide to credentials that unlock higher-paying shifts.",
     keyTakeaways: [
-      "Most certifications cost $25-150 and pay for themselves within a week",
-      "Forklift certification offers the highest ROI for warehouse workers",
-      "Food handler and alcohol permits are essential for hospitality",
-      "Many certifications can be completed online in a few hours"
+      "Forklift certification offers the best ROI: $60-150 cost, +$3-5/hr pay increase",
+      "Food handler's permit is required for virtually all food service roles",
+      "TIPS/ServSafe alcohol opens bartending opportunities worth $50K+ annually",
+      "Most certifications pay for themselves within 1-4 shifts"
     ],
     sections: [
       {
         heading: "Why Certifications Matter",
-        content: "Certifications serve two purposes:\n\n1. **Prove you have specific skills** – Stand out from other applicants\n2. **Satisfy legal requirements** – Some work legally requires credentials\n\nIn flexible work, certifications help you stand out. When employers see multiple applicants for a premium shift, certified workers get priority.\n\n**The ROI is real:**\n\nMost certifications pay for themselves in just 1-4 shifts, then keep paying dividends every hour you work.\n\n**Calculate your potential earnings increase** with our [Pay Calculator](/career-hub/tools/pay-calculator)."
+        content: "In flexible work, certifications serve three purposes:\n\n**1. Legal requirements**\n\nSome roles legally require specific certifications (food handling, alcohol service).\n\n**2. Skill verification**\n\nCertifications prove you can do the job safely and competently.\n\n**3. Pay differentiation**\n\nCertified workers earn more because they can do more.\n\n**The math is compelling:**\n\nA $100 forklift certification that adds $4/hr pays for itself in 25 hours of work. Everything after that is pure profit.\n\nUse our [Skills Analyzer](/career-hub/tools/skills-analyzer) to see which certifications would benefit you most."
       },
       {
         heading: "Hospitality Certifications",
-        content: "**Food Handler's Permit**\n\n| Detail | Info |\n|--------|------|\n| Cost | $15-25 |\n| Time | 2-4 hours online |\n| Required for | Any role handling food |\n| Pay impact | Required for roles paying $15+/hr |\n| Get it | [ServSafe](https://www.servsafe.com), state providers |\n\n**TIPS/ServSafe Alcohol**\n\n| Detail | Info |\n|--------|------|\n| Cost | $38-55 |\n| Time | 4-8 hours |\n| Required for | Serving alcohol |\n| Pay impact | +$5-10/hr vs. non-bartending |\n| Get it | [TIPS Training](https://www.gettips.com), [ServSafe Alcohol](https://www.servsafe.com) |\n\n**Food Manager Certification**\n\n| Detail | Info |\n|--------|------|\n| Cost | $100-150 |\n| Time | 8-16 hours |\n| Required for | Kitchen management |\n| Pay impact | Opens supervisor roles ($45K+ annually) |\n| Get it | [ServSafe Manager](https://www.servsafe.com) |"
+        content: "**Food Handler's Permit** ✓ Essential\n\n- **Cost:** $15-25\n- **Time:** 2-4 hours online\n- **Validity:** 2-5 years (varies by state)\n- **Where:** [ServSafe](https://www.servsafe.com), [StateFoodSafety](https://www.statefoodsafety.com)\n- **Impact:** Required for food service roles\n\n**TIPS Alcohol Certification** ⭐ High Value\n\n- **Cost:** $38-55\n- **Time:** 4-8 hours\n- **Validity:** 3 years typically\n- **Where:** [TIPS Training](https://www.gettips.com)\n- **Impact:** +$5-10/hr, unlocks bartending\n\n**ServSafe Food Protection Manager** (Leadership)\n\n- **Cost:** $100-180\n- **Time:** 8-16 hours\n- **Impact:** Opens supervisor roles, $45K+ annually\n\n**Practice hospitality skills:** [CocktailQuiz](/career-hub/tools/cocktail-quiz) | [MenuMaster](/career-hub/tools/menu-master)"
       },
       {
-        heading: "Warehouse Certifications",
-        content: "**Forklift Operator Certification** ⭐ Best ROI\n\n| Detail | Info |\n|--------|------|\n| Cost | $60-150 |\n| Time | 4-8 hours (1 day) |\n| Validity | 3 years (requires refresher) |\n| Pay impact | +$3-5/hr over general labor |\n| Get it | Community colleges, local training centers |\n\n**OSHA 10-Hour Construction**\n\n| Detail | Info |\n|--------|------|\n| Cost | $25-89 online |\n| Time | 10 hours over 1-2 weeks |\n| Shows | Safety awareness |\n| Pay impact | +$1-3/hr, more job access |\n| Get it | [OSHA Education Center](https://www.oshaeducationcenter.com) |\n\n**Reach Truck/Cherry Picker**\n\n| Detail | Info |\n|--------|------|\n| Cost | $75-150 |\n| Time | 4-8 hours |\n| Pay impact | +$2-4/hr over standard forklift |\n| Get it | Training centers, some employers provide |"
+        heading: "Warehouse & Industrial Certifications",
+        content: "**Forklift Operator Certification** ⭐ Best ROI\n\n- **Cost:** $60-150\n- **Time:** 4-8 hours (1 day)\n- **Validity:** 3 years\n- **Where:** Community colleges, training centers\n- **Impact:** +$3-5/hr immediately\n\n**Note:** Forklift certification requires hands-on training—not available fully online.\n\n**Reach Truck/Cherry Picker**\n\n- **Cost:** $75-150\n- **Time:** 4-6 hours (often add-on to forklift)\n- **Impact:** +$2-4/hr additional\n\n**OSHA 10-Hour General Industry**\n\n- **Cost:** $25-89 online\n- **Time:** 10 hours\n- **Where:** [OSHA Education Center](https://www.oshaeducationcenter.com)\n- **Impact:** +$1-3/hr, required for some sites\n\n**OSHA 30-Hour** (Supervisory)\n\n- **Cost:** $150-200\n- **Impact:** Opens safety and supervisor roles\n\n**Practice safety skills:** [SafetyFirst Quiz](/career-hub/tools/safety-first)"
       },
       {
         heading: "Universal Certifications",
-        content: "**CPR/First Aid/AED**\n\n| Detail | Info |\n|--------|------|\n| Cost | $50-90 |\n| Time | 4-6 hours |\n| Valuable for | All industries |\n| Pay impact | Modest, but increases job access |\n| Get it | [American Red Cross](https://www.redcross.org/take-a-class), [American Heart Association](https://cpr.heart.org) |\n\n**Customer Service Certification**\n\n| Detail | Info |\n|--------|------|\n| Cost | $50-200 |\n| Time | 8-20 hours |\n| Valuable for | Retail, hospitality |\n| Pay impact | Demonstrates professionalism |\n| Get it | LinkedIn Learning, Coursera |\n\n**Driver's License/Clean Record**\n\n| Detail | Info |\n|--------|------|\n| Cost | Varies by state |\n| Valuable for | Delivery, transport roles |\n| Pay impact | Opens delivery shifts ($18-25/hr) |"
+        content: "These apply across industries:\n\n**First Aid/CPR/AED**\n\n- **Cost:** $25-90\n- **Time:** 4-8 hours\n- **Where:** [American Red Cross](https://www.redcross.org), [American Heart Association](https://www.heart.org)\n- **Impact:** Required for some roles, shows professionalism\n\n**Driver's License + Clean Record**\n\n- Already have? Highlight it!\n- Opens delivery, driving, transportation roles\n- Some roles require specific endorsements\n\n**Microsoft Office/Google Workspace**\n\n- **Cost:** Free to $100+\n- **Where:** [LinkedIn Learning](https://www.linkedin.com/learning), [Coursera](https://www.coursera.org)\n- **Impact:** Opens administrative roles at higher pay"
       },
       {
-        heading: "Where to Get Certified",
-        content: "**Online options:**\n\n- **Food handler:** [ServSafe.com](https://www.servsafe.com), [StateFoodSafety.com](https://www.statefoodsafety.com)\n- **OSHA:** [OSHAEducationCenter.com](https://www.oshaeducationcenter.com)\n- **Alcohol:** [TIPS Training](https://www.gettips.com), [ServSafe Alcohol](https://www.servsafe.com)\n\n**In-person options:**\n\n- **Forklift:** Community colleges, [CareerOneStop](https://www.careeronestop.org) training centers\n- **CPR/First Aid:** [American Red Cross](https://www.redcross.org/take-a-class), local hospitals\n\n**Free training resources:**\n\n- [CareerOneStop](https://www.careeronestop.org) – Free government job training finder\n- Some Indeed Flex employers offer on-site training\n- Check the Indeed Flex app for partner programs\n\n**Financial help:**\n\nIf certification costs are a barrier, [211.org](https://211.org) can connect you with local job training assistance programs."
+        heading: "Calculating Certification ROI",
+        content: "Before investing, calculate the return:\n\n**Formula:**\n\nHours to break even = Certification cost ÷ Hourly pay increase\n\n**Examples:**\n\n| Certification | Cost | Pay Increase | Break-even |\n|--------------|------|-------------|------------|\n| Forklift | $100 | +$4/hr | 25 hours |\n| TIPS Alcohol | $50 | +$7/hr | 7 hours |\n| Food Handler | $20 | Required | Immediate |\n| OSHA 10 | $50 | +$2/hr | 25 hours |\n\n**After break-even, every hour is pure additional income.**\n\nUse our [Pay Calculator](/career-hub/tools/pay-calculator) to estimate your earnings with different certifications."
       },
       {
-        heading: "Prioritizing Your Certification Path",
-        content: "Not sure where to start? Follow this priority order:\n\n**Hospitality workers:**\n\n1. Food Handler's Permit (required for most jobs) – $15-18\n2. TIPS/Alcohol Certification (unlocks bartending) – $38-55\n3. Food Manager Certification (for leadership roles) – $100-150\n\n**Warehouse workers:**\n\n1. Forklift Certification (best ROI) – $60-150\n2. OSHA 10 (shows safety commitment) – $25-89\n3. Reach truck/cherry picker (specialized) – $75-150\n\n**Multi-industry workers:**\n\n1. Start with the industry you work most\n2. CPR/First Aid (universal value) – $50-90\n3. Customer service training (retail/hospitality)\n\n**Use our [Skills Analyzer](/career-hub/tools/skills-analyzer)** to get personalized certification recommendations based on your goals.\n\n**Track your ROI:**\n\nOur [Pay Calculator](/career-hub/tools/pay-calculator) shows how certifications impact your earnings."
+        heading: "Free and Low-Cost Training",
+        content: "Not all training costs money:\n\n**Free options:**\n\n- **Indeed Flex training** – Free for certain roles\n- **YouTube** – Bartending techniques, cooking skills\n- **Library resources** – Many offer free LinkedIn Learning access\n- **Employer-provided** – Express interest and employers may train you\n\n**Low-cost options:**\n\n- **Community colleges** – Often offer subsidized workforce training\n- **Workforce development centers** – Free or reduced training for job seekers\n- **Union training** – Some industries offer member training\n\n**Government resources:**\n\n- [CareerOneStop](https://www.careeronestop.org) – Find local training programs\n- [USA.gov Job Training](https://www.usa.gov/job-training) – Federal programs\n\nSee our [External Resources](/career-hub/resources) for more free learning opportunities."
+      },
+      {
+        heading: "Creating Your Certification Plan",
+        content: "Build a strategic certification roadmap:\n\n**Step 1: Choose your focus industry**\n\n- Hospitality → Start with food handler + consider TIPS\n- Warehouse → Consider forklift + OSHA 10\n- General → Focus on universal certs first\n\n**Step 2: Prioritize by ROI**\n\nStart with certifications that have the best return on investment.\n\n**Step 3: Budget and schedule**\n\n- Can you save $100 over 2-3 weeks?\n- Block time for training\n- Schedule around your shifts\n\n**Step 4: Complete and update profile**\n\nAfter certification, immediately:\n- Add to Indeed Flex profile\n- Upload verification documents if needed\n- Start applying for higher-paying shifts\n\n**Step 5: Track results**\n\nNote changes in:\n- Shift offers received\n- Average hourly rate\n- Total weekly earnings"
       }
     ],
     faqs: [
       {
-        question: "Do certifications expire?",
-        answer: "Yes, most do. Food handler permits typically last 2-3 years, forklift certifications 3 years, and CPR certifications 2 years. Mark your calendar for renewals and factor renewal costs into your ROI calculations."
+        question: "Where should I start if I have no certifications?",
+        answer: "For hospitality: Get your food handler's permit first ($15-25, 2-4 hours). For warehouse: Consider forklift certification if you want the biggest immediate pay boost. For general flexibility: First Aid/CPR is universally valuable."
       },
       {
-        question: "Will Indeed Flex reimburse certification costs?",
-        answer: "Indeed Flex occasionally offers certification programs or reimbursements for high-performing workers. Check the app for current offerings. Some employers also provide free training for workers they want to keep."
+        question: "Are employer-provided certifications worth as much?",
+        answer: "Often yes, but confirm the certification is portable (you can use it elsewhere). Some employers provide training that only counts at their company. Ask before assuming it transfers."
       },
       {
-        question: "Can I get certified if I have no experience?",
-        answer: "Absolutely! Most certifications are designed for beginners and include all necessary training. You don't need prior experience to get a food handler's permit, OSHA 10, or even forklift certification (includes hands-on training)."
+        question: "What if I can't afford certification costs upfront?",
+        answer: "Some options: workforce development centers offer free training for job seekers, community colleges have payment plans, and some employers will train you if you commit to working for them. Express interest—you might be surprised what's available."
       }
     ],
-    relatedArticles: ["skill-boost", "career-paths", "more-shifts"]
+    relatedArticles: ["skill-boost", "career-paths", "hospitality-guide", "warehouse-guide"]
   },
   "more-shifts": {
     slug: "more-shifts",
@@ -464,37 +494,29 @@ export const guideArticles: Record<string, Article> = {
     category: "Career Growth",
     categorySlug: "career-growth",
     readTime: "6 min",
-    description: "Want more hours and better-paying shifts? Learn strategies for maximizing your opportunities on Indeed Flex.",
+    description: "Practical strategies to increase both the quantity and quality of shifts you book through Indeed Flex.",
     keyTakeaways: [
-      "High ratings and reliability scores unlock premium shifts",
-      "Enable notifications to claim the best shifts quickly",
-      "Expanding your availability increases opportunities significantly",
-      "[Certifications](/career-hub/guides/career-growth/certifications) open doors to higher-paying roles"
+      "Higher ratings unlock more (and better-paying) opportunities",
+      "Joining Talent Pools gives you first access to preferred shifts",
+      "Expanding your skills qualifies you for more role types",
+      "Response speed matters—best shifts get claimed in minutes"
     ],
     sections: [
       {
-        heading: "Understanding the Shift System",
-        content: "[Indeed Flex](https://indeedflex.com/download-app/) matches workers with shifts based on several factors:\n\n**What determines your opportunities:**\n\n- **Skills and certifications** – Match you with appropriate roles\n- **Ratings** – Higher-rated workers see more opportunities\n- **Reliability score** – Completing shifts consistently matters\n- **Availability** – More flexibility means more options\n- **Location/radius** – Shifts within your travel distance\n- **Talent Pools** – Companies that want you back\n\nUnderstanding this system helps you optimize each factor.\n\n**Track your metrics** in the Indeed Flex app to see where you can improve."
+        heading: "The Rating Game",
+        content: "Your rating is the single biggest factor in shift availability:\n\n**How ratings work:**\n\nAfter each shift, employers rate you 1-5 stars based on:\n- Punctuality and attendance\n- Work quality and attitude\n- Following instructions\n- Professionalism\n\n**Rating thresholds:**\n\n| Rating | Effect |\n|--------|--------|\n| 4.8+ | Premium shift access, Talent Pool invites |\n| 4.5-4.7 | Good shift availability |\n| 4.0-4.4 | Reduced opportunities |\n| Below 4.0 | Significantly limited options |\n\n**Improving your rating:**\n\nEvery shift is an opportunity. Focus on:\n- Arriving early (10-15 minutes)\n- Positive attitude throughout\n- Going above expectations\n- Thanking supervisors\n\nSee our guide: [How to Get 5-Star Ratings on Every Shift](/career-hub/guides/shift-rating-tips)"
       },
       {
-        heading: "Boost Your Rating",
-        content: "Your star rating directly affects the quantity and quality of shifts you see.\n\n**How to maintain 4.5+ stars:**\n\n- Arrive 10-15 minutes early\n- Follow dress code precisely\n- Ask questions instead of guessing\n- Stay off your personal phone\n- Go beyond minimum expectations\n- Thank supervisors before leaving\n\n**What hurts your rating:**\n\n- Late arrivals (even by a few minutes)\n- Leaving early without approval\n- Phone use during work\n- Negative attitude\n- Not following instructions\n\n**Workers with 4.8+ ratings often get first access to premium shifts.**\n\nIf your rating dropped, see [What to Expect on Your First Shift](/career-hub/guides/getting-started/first-shift) to refresh your approach."
+        heading: "Joining Talent Pools",
+        content: "Talent Pools are your ticket to preferred status:\n\n**What they are:**\n\nWhen companies love your work, they add you to their Talent Pool, giving you:\n- First access to their shifts before other workers\n- Higher likelihood of booking\n- Building toward permanent opportunities\n\n**How to get invited:**\n\n1. Perform exceptionally on every shift\n2. Be reliable (never cancel)\n3. Express interest: \"I really enjoy working here\"\n4. Ask about repeat opportunities\n5. Be memorable (in a good way)\n\n**Multiple Talent Pools = more options**\n\nAim to get into Talent Pools at 5+ companies. This creates a steady stream of preferred opportunities."
       },
       {
-        heading: "Improve Your Reliability Score",
-        content: "Your reliability score measures how consistently you complete booked shifts.\n\n**What hurts your score:**\n\n- Canceling shifts (especially last-minute)\n- No-shows (most damaging)\n- Leaving early without approval\n\n**What helps your score:**\n\n- Completing every shift you book\n- Canceling early if you must cancel (24+ hours)\n- Being punctual and staying the full shift\n- Confirming attendance 24 hours before\n\n**Pro tip:** Only book shifts you're confident you can complete. It's better to skip a shift than to cancel later.\n\nPlan your week with our [Shift Planner](/career-hub/tools/shift-planner) to avoid overbooking."
+        heading: "Expand Your Skill Set",
+        content: "More qualifications = more opportunities:\n\n**Get certified:**\n\n- [Food handler's permit](/career-hub/guides/certifications) → All food service roles\n- [TIPS alcohol](/career-hub/guides/certifications) → Bartending\n- [Forklift certification](/career-hub/guides/certifications) → Premium warehouse roles\n\n**Cross-train across industries:**\n\n- Hospitality + Warehouse = maximum flexibility\n- Retail + Administrative = diverse options\n- Multiple certifications = premium pay\n\n**Add to your profile:**\n\n- Update skills after each new experience\n- List equipment you've operated\n- Include any training completed\n\nUse our [Skills Analyzer](/career-hub/tools/skills-analyzer) to identify valuable skills to develop."
       },
       {
         heading: "Optimize Your Availability",
-        content: "More availability = more opportunities.\n\n**High-demand times:**\n\n- Weekend evenings (hospitality)\n- Early mornings (warehouse)\n- Holidays (all industries)\n- Peak seasons (Q4 retail, summer events)\n\n**Expand strategically:**\n\n- Add one new day or time slot per week\n- Increase your travel radius if you have reliable transportation\n- Consider overnight shifts (often less competition)\n\n**Balance is key:**\n\nDon't overcommit. Working 7 days a week leads to burnout, which leads to cancellations, which hurts your score.\n\nSee [Balancing Multiple Gigs](/career-hub/guides/professional-development/multiple-gigs) for sustainability tips."
-      },
-      {
-        heading: "Get Into Talent Pools",
-        content: "Talent Pools are your path to consistent work.\n\n**What are Talent Pools?**\n\nWhen a company loves your work, they add you to their Talent Pool:\n\n- **First access** to their shifts before other Flexers\n- **Repeat work** with familiar teams\n- **Relationship building** that can lead to permanent roles\n\n**How to get added:**\n\n1. Deliver excellent work on your first shift\n2. Learn company-specific procedures quickly\n3. Be reliable—no call-outs or late arrivals\n4. Show initiative without overstepping\n5. Express interest: \"I'd love to work here again\"\n\n**Maximize Talent Pool opportunities:**\n\n- Check the app regularly for Talent Pool shift offers\n- Accept quickly—these go even faster than regular shifts\n- Continue delivering excellent work to stay in the pool"
-      },
-      {
-        heading: "Build Skills for Premium Shifts",
-        content: "The highest-paying shifts require specific qualifications.\n\n**Quick wins:**\n\n| Certification | Cost | Pay Increase |\n|--------------|------|-------------|\n| Food Handler | $15-18 | Required for hospitality |\n| Forklift | $60-150 | +$3-5/hr |\n| TIPS Alcohol | $38-55 | +$5-10/hr |\n| OSHA 10 | $25-89 | +$1-3/hr |\n\n**[Full certification guide →](/career-hub/guides/career-growth/certifications)**\n\n**Cross-train:**\n\n- Work in multiple industries to see more total shifts\n- Learn multiple roles within an industry\n- Add new skills to your profile as you acquire them\n\nUse our [Skills Analyzer](/career-hub/tools/skills-analyzer) to identify which certifications would help you most."
+        content: "More availability = more opportunities:\n\n**High-demand times:**\n\n- Weekends (especially Saturday nights)\n- Early mornings (5-8 AM starts)\n- Holidays (premium pay + bonuses)\n- Last-minute shifts (when others cancel)\n\n**Strategic availability:**\n\n- Keep your calendar updated in real-time\n- Be flexible when building your reputation\n- Consider expanding your travel radius\n- Enable all relevant industries\n\n**Use our [Shift Planner](/career-hub/tools/shift-planner)** to organize your schedule and maximize earning potential."
       },
       {
         heading: "Enable Notifications and Respond Fast",
@@ -512,10 +534,10 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         question: "What if I'm not seeing any shifts in my area?",
-        answer: "Try expanding your travel radius, adding more skills to your profile, or checking availability for different days/times. If opportunities are truly limited, consider getting [certifications](/career-hub/guides/career-growth/certifications) to qualify for more roles."
+        answer: "Try expanding your travel radius, adding more skills to your profile, or checking availability for different days/times. If opportunities are truly limited, consider getting [certifications](/career-hub/guides/certifications) to qualify for more roles."
       }
     ],
-    relatedArticles: ["skill-boost", "certifications", "worker-profile"]
+    relatedArticles: ["skill-boost", "certifications", "worker-profile", "shift-rating-tips"]
   },
   "hospitality-guide": {
     slug: "hospitality-guide",
@@ -533,7 +555,7 @@ export const guideArticles: Record<string, Article> = {
     sections: [
       {
         heading: "Why Hospitality?",
-        content: "The hospitality industry offers unique advantages for flexible workers:\n\n- **High demand** – Restaurants, bars, hotels, and events constantly need staff\n- **Tip potential** – Customer-facing roles can double your hourly earnings\n- **Flexible scheduling** – Evening and weekend shifts fit many lifestyles\n- **Social environment** – Work with interesting people\n- **Career growth** – Clear paths from entry-level to management\n\n[Indeed Flex](https://indeedflex.com/download-app/) offers hospitality roles including event staff, banquet servers, bartenders, prep cooks, and dishwashers.\n\n[See all Indeed Flex hospitality roles →](https://indeedflex.com/roles-and-industries/)"
+        content: "The hospitality industry offers unique advantages for flexible workers:\n\n- **High demand** – Restaurants, bars, hotels, and events constantly need staff\n- **Tip potential** – Customer-facing roles can double your hourly earnings\n- **Flexible scheduling** – Evening and weekend shifts fit many lifestyles\n- **Social environment** – Work with interesting people\n- **Career growth** – Clear paths from entry-level to management\n\n**Bureau of Labor Statistics projects 12% industry growth through 2034**, adding 1.3 million jobs.\n\n[Indeed Flex](https://indeedflex.com/download-app/) offers hospitality roles including event staff, banquet servers, bartenders, prep cooks, and dishwashers.\n\n[See all Indeed Flex hospitality roles →](https://indeedflex.com/roles-and-industries/)"
       },
       {
         heading: "Common Hospitality Roles",
@@ -541,7 +563,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Essential Certifications",
-        content: "Before applying for hospitality shifts, get certified:\n\n**Food Handler's Permit** (Required for most roles)\n\n- Cost: $15-25\n- Time: 2-4 hours online\n- Get it: [ServSafe](https://www.servsafe.com) or [StateFoodSafety](https://www.statefoodsafety.com)\n- ROI: Required—unlocks all food service roles\n\n**TIPS/Alcohol Certification** (Required for bartending)\n\n- Cost: $38-55\n- Time: 4-8 hours\n- Get it: [TIPS Training](https://www.gettips.com) or [ServSafe Alcohol](https://www.servsafe.com)\n- ROI: +$5-10/hr, pays for itself in one shift\n\n**Food Manager Certification** (For leadership)\n\n- Cost: $100-150\n- Time: 8-16 hours\n- Opens: Supervisor roles ($45K+ annually)\n\nMany employers won't consider candidates without basic food safety certification.\n\n[Full certification guide →](/career-hub/guides/career-growth/certifications)"
+        content: "Before applying for hospitality shifts, get certified:\n\n**Food Handler's Permit** (Required for most roles)\n\n- Cost: $15-25\n- Time: 2-4 hours online\n- Get it: [ServSafe](https://www.servsafe.com) or [StateFoodSafety](https://www.statefoodsafety.com)\n- ROI: Required—unlocks all food service roles\n\n**TIPS/Alcohol Certification** (Required for bartending)\n\n- Cost: $38-55\n- Time: 4-8 hours\n- Get it: [TIPS Training](https://www.gettips.com) or [ServSafe Alcohol](https://www.servsafe.com)\n- ROI: +$5-10/hr, pays for itself in one shift\n\n**Food Manager Certification** (For leadership)\n\n- Cost: $100-150\n- Time: 8-16 hours\n- Opens: Supervisor roles ($45K+ annually)\n\nMany employers won't consider candidates without basic food safety certification.\n\n**Practice your skills:** [CocktailQuiz](/career-hub/tools/cocktail-quiz) | [MenuMaster](/career-hub/tools/menu-master)\n\n[Full certification guide →](/career-hub/guides/certifications)"
       },
       {
         heading: "What Employers Look For",
@@ -553,7 +575,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Career Growth in Hospitality",
-        content: "Hospitality offers clear advancement paths:\n\n**Short-term (3-12 months):**\n\nDishwasher → Food Runner → Server/Bartender\n\n**Medium-term (1-3 years):**\n\nServer → Lead Server → Shift Supervisor\nBartender → Bar Manager\n\n**Long-term (3+ years):**\n\nSupervisor → Assistant Manager → General Manager\n\n**Earning potential:**\n\n- Top restaurant managers earn $50,000-80,000+ annually\n- Many started from entry-level positions\n- Indeed Flex workers regularly transition to permanent roles\n\nSee [Career Paths](/career-hub/guides/career-growth/career-paths) for detailed progression strategies."
+        content: "Hospitality offers clear advancement paths:\n\n**Short-term (3-12 months):**\n\nDishwasher → Food Runner → Server/Bartender\n\n**Medium-term (1-3 years):**\n\nServer → Lead Server → Shift Supervisor\nBartender → Bar Manager\n\n**Long-term (3+ years):**\n\nSupervisor → Assistant Manager → General Manager\n\n**Earning potential:**\n\n- Top restaurant managers earn $50,000-80,000+ annually\n- Many started from entry-level positions\n- Indeed Flex workers regularly transition to permanent roles\n\n**Plan your path:** [Career Path Explorer](/career-hub/tools/career-path)\n\nSee [Career Paths](/career-hub/guides/career-paths) for detailed progression strategies."
       }
     ],
     faqs: [
@@ -568,9 +590,13 @@ export const guideArticles: Record<string, Article> = {
       {
         question: "Are tips guaranteed in hospitality?",
         answer: "No—tips depend on customer generosity and your service quality. Back-of-house roles like dishwasher typically don't receive direct tips. Tip amounts vary significantly by venue and shift."
+      },
+      {
+        question: "What's the fastest path to bartending?",
+        answer: "Get your food handler's permit and TIPS certification (total investment ~$70, one day of training). Start as a barback or food runner at a bar to learn the environment, then transition to bartending. Our [CocktailQuiz](/career-hub/tools/cocktail-quiz) helps you practice drink recipes."
       }
     ],
-    relatedArticles: ["skill-boost", "certifications", "career-paths"]
+    relatedArticles: ["skill-boost", "certifications", "career-paths", "retail-guide"]
   },
   "warehouse-guide": {
     slug: "warehouse-guide",
@@ -582,13 +608,13 @@ export const guideArticles: Record<string, Article> = {
     keyTakeaways: [
       "Warehouse work offers consistent hours and good starting pay",
       "Physical fitness is important—expect to walk 8-15 miles per shift",
-      "[Forklift certification](/career-hub/guides/career-growth/certifications) can boost pay by $3-5/hour",
+      "[Forklift certification](/career-hub/guides/certifications) can boost pay by $3-5/hour",
       "Peak seasons (Q4 holidays) offer overtime and bonus opportunities"
     ],
     sections: [
       {
         heading: "Why Warehouse Work?",
-        content: "Warehouse and logistics roles offer several advantages:\n\n- **Consistent demand** – E-commerce growth means warehouses always need workers\n- **Predictable work** – Clear tasks, measurable performance\n- **Physical activity** – Get paid to stay active\n- **Career advancement** – Clear paths to supervisory roles\n- **Immediate start** – Often no experience required\n- **Good pay** – Entry-level $15-18/hr, skilled $18-25/hr\n\n[Indeed Flex](https://indeedflex.com/download-app/) offers warehouse roles including forklift driver, picker/packer, machine operator, and assembler.\n\n[See all Indeed Flex industrial roles →](https://indeedflex.com/roles-and-industries/)"
+        content: "Warehouse and logistics roles offer several advantages:\n\n- **Consistent demand** – E-commerce growth means warehouses always need workers\n- **Predictable work** – Clear tasks, measurable performance\n- **Physical activity** – Get paid to stay active\n- **Career advancement** – Clear paths to supervisory roles\n- **Immediate start** – Often no experience required\n- **Good pay** – Entry-level $15-18/hr, skilled $18-25/hr\n\n**Bureau of Labor Statistics projects 17% industry growth through 2034**, adding 590,000 jobs—one of the fastest-growing sectors.\n\n[Indeed Flex](https://indeedflex.com/download-app/) offers warehouse roles including forklift driver, picker/packer, machine operator, and assembler.\n\n[See all Indeed Flex industrial roles →](https://indeedflex.com/roles-and-industries/)"
       },
       {
         heading: "Common Warehouse Roles",
@@ -600,7 +626,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Essential Certifications",
-        content: "**Forklift Certification** ⭐ Best ROI for warehouse workers\n\n- Cost: $60-150\n- Time: 4-8 hours (1 day)\n- Pay increase: +$3-5/hr over general labor\n- Valid: 3 years (requires refresher)\n- Where to get it: Community colleges, training centers\n\n**The math:**\n\nA $100 certification that adds $4/hr pays for itself in 25 hours of work.\n\n**Other valuable certifications:**\n\n| Certification | Cost | Pay Increase |\n|--------------|------|-------------|\n| Reach truck/cherry picker | $75-150 | +$2-4/hr |\n| OSHA 10-Hour | $25-89 | +$1-3/hr |\n| RF scanner training | Often free | Required for many roles |\n\n**Pro tip:** Many employers provide free forklift training to workers they want to keep. Express interest during shifts.\n\n[Full certification guide →](/career-hub/guides/career-growth/certifications)"
+        content: "**Forklift Certification** ⭐ Best ROI for warehouse workers\n\n- Cost: $60-150\n- Time: 4-8 hours (1 day)\n- Pay increase: +$3-5/hr over general labor\n- Valid: 3 years (requires refresher)\n- Where to get it: Community colleges, training centers\n\n**The math:**\n\nA $100 certification that adds $4/hr pays for itself in 25 hours of work.\n\n**Other valuable certifications:**\n\n| Certification | Cost | Pay Increase |\n|--------------|------|-------------|\n| Reach truck/cherry picker | $75-150 | +$2-4/hr |\n| OSHA 10-Hour | $25-89 | +$1-3/hr |\n| RF scanner training | Often free | Required for many roles |\n\n**Pro tip:** Many employers provide free forklift training to workers they want to keep. Express interest during shifts.\n\n**Practice safety skills:** [SafetyFirst Quiz](/career-hub/tools/safety-first)\n\n[Full certification guide →](/career-hub/guides/certifications)"
       },
       {
         heading: "What Employers Look For",
@@ -623,9 +649,13 @@ export const guideArticles: Record<string, Article> = {
       {
         question: "Is warehouse work physically safe?",
         answer: "Warehouses prioritize safety, but injuries can occur. Follow all safety protocols, use proper lifting technique (lift with your legs), report hazards, and don't push beyond your physical limits. Safety training is usually provided."
+      },
+      {
+        question: "What's the career path from general labor to management?",
+        answer: "Typical progression: General Labor → Picker/Packer → Forklift Operator → Team Lead → Shift Supervisor → Operations Manager. With certifications and strong performance, you can reach supervisor level within 1-2 years. See our [Career Paths guide](/career-hub/guides/career-paths) for detailed timelines."
       }
     ],
-    relatedArticles: ["certifications", "skill-boost", "career-paths"]
+    relatedArticles: ["certifications", "skill-boost", "career-paths", "hospitality-guide"]
   },
   "retail-guide": {
     slug: "retail-guide",
@@ -651,7 +681,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Customer Service Excellence",
-        content: "Great customer service drives retail success:\n\n**The 10-4 Rule:**\n\n- At 10 feet: Make eye contact and smile\n- At 4 feet: Greet the customer verbally\n\n**LAST Method for complaints:**\n\n- **L**isten actively\n- **A**pologize sincerely\n- **S**olve the problem\n- **T**hank them for feedback\n\n**Sales tips:**\n\n- Learn products thoroughly—become the expert\n- Ask open-ended questions about needs\n- Suggest complementary items naturally\n- Never be pushy—guide, don't pressure\n- Follow up: \"Did you find everything you needed?\"\n\nCustomer service skills transfer everywhere. See [Skills That Boost Your Hourly Rate](/career-hub/guides/career-growth/skill-boost)."
+        content: "Great customer service drives retail success:\n\n**The 10-4 Rule:**\n\n- At 10 feet: Make eye contact and smile\n- At 4 feet: Greet the customer verbally\n\n**LAST Method for complaints:**\n\n- **L**isten actively\n- **A**pologize sincerely\n- **S**olve the problem\n- **T**hank them for feedback\n\n**Sales tips:**\n\n- Learn products thoroughly—become the expert\n- Ask open-ended questions about needs\n- Suggest complementary items naturally\n- Never be pushy—guide, don't pressure\n- Follow up: \"Did you find everything you needed?\"\n\nCustomer service skills transfer everywhere. See [Skills That Boost Your Hourly Rate](/career-hub/guides/skill-boost)."
       },
       {
         heading: "What Employers Look For",
@@ -659,28 +689,28 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Peak Season Opportunities",
-        content: "Retail hiring surges during predictable periods:\n\n**Holiday Season (October-December):**\n\n- Massive hiring increases\n- Overtime opportunities\n- Seasonal bonuses\n- Temp-to-hire conversions\n\n**Back-to-School (July-September):**\n\nClothing, office supplies, and electronics stores especially\n\n**Inventory Periods:**\n\nMany stores need overnight inventory counters\n\n**Strategy:**\n\n- Apply early for holiday positions (September)\n- Express interest in permanent roles during your shifts\n- Be available for peak hours (Black Friday, weekends)\n- Use high performance during peak to earn permanent offers\n\nPlan your schedule: [Shift Planner](/career-hub/tools/shift-planner)"
+        content: "Retail demand peaks during predictable seasons:\n\n**Holiday Season (October-December):**\n\n- Maximum overtime opportunities\n- Seasonal bonuses common\n- Temp-to-hire conversions\n- Experience with high-volume sales\n\n**Back-to-School (July-August):**\n\nStrong demand for staff at school supply, clothing, and electronics retailers.\n\n**Strategy:**\n\nMake yourself fully available during peak seasons to:\n- Maximize earnings\n- Demonstrate reliability\n- Build relationships for permanent opportunities\n\nUse our [Shift Planner](/career-hub/tools/shift-planner) to plan your schedule."
       },
       {
         heading: "Career Growth in Retail",
-        content: "Retail offers clear advancement:\n\n**Entry to Leadership (1-2 years):**\n\nSales Associate → Lead Associate → Department Supervisor\n\n**Supervisor to Management (2-4 years):**\n\nSupervisor → Assistant Manager → Store Manager\n\n**Salary progression:**\n\n| Level | Compensation |\n|-------|-------------|\n| Sales Associate | $14-18/hr |\n| Lead Associate | $17-21/hr |\n| Department Supervisor | $40-50K/year |\n| Store Manager | $50-80K/year |\n| District Manager | $70-100K+/year |\n\nMany retail executives started as part-time sales associates.\n\nSee [Career Paths](/career-hub/guides/career-growth/career-paths) for advancement strategies."
+        content: "Retail offers clear advancement:\n\n**Short-term (3-12 months):**\n\nStocker → Sales Associate → Key Holder\n\n**Medium-term (1-3 years):**\n\nSales Associate → Department Lead → Assistant Manager\n\n**Long-term (3+ years):**\n\nAssistant Manager → Store Manager → District Manager\n\n**Earning potential:**\n\n- Store managers: $50,000-75,000+/year\n- District managers: $75,000-120,000+/year\n\n**Keys to advancement:**\n\n- Exceed sales metrics consistently\n- Show leadership initiative\n- Express career interest to managers\n- Learn multiple departments\n\n**Plan your path:** [Career Path Explorer](/career-hub/tools/career-path)\n\nSee [Career Paths](/career-hub/guides/career-paths) for detailed strategies."
       }
     ],
     faqs: [
       {
+        question: "Do I need retail experience to start?",
+        answer: "No—entry-level positions like stocker and cashier require no prior experience. Customer service skills from any background (including family caregiving) are valuable."
+      },
+      {
         question: "What should I wear to a retail shift?",
-        answer: "Follow the store's dress code precisely. Generally: clean, professional clothing in line with the brand's image. Some stores provide uniforms or require specific colors. Check the Indeed Flex app for specific requirements."
+        answer: "Follow the specific dress code in the Indeed Flex app. Generally: neat, clean casual clothing that aligns with the store's brand. Some stores provide uniforms or specific color requirements."
       },
       {
         question: "How do I handle difficult customers?",
-        answer: "Stay calm, listen actively, and focus on solutions. Use the LAST method: Listen, Apologize, Solve, Thank. If a customer becomes abusive, politely involve a supervisor. Never take complaints personally—it's rarely about you."
-      },
-      {
-        question: "Can retail work lead to a permanent job?",
-        answer: "Absolutely! Many retailers hire their best seasonal/temporary workers into permanent roles. Express your interest in permanent positions and demonstrate reliability during your shifts."
+        answer: "Use the LAST method: Listen, Apologize, Solve, Thank. Stay calm and professional. If a situation escalates, get a manager involved. Never argue with customers—de-escalation is the goal."
       }
     ],
-    relatedArticles: ["skill-boost", "career-paths", "interview-skills"]
+    relatedArticles: ["skill-boost", "career-paths", "hospitality-guide", "warehouse-guide"]
   },
   "facilities-guide": {
     slug: "facilities-guide",
@@ -688,54 +718,46 @@ export const guideArticles: Record<string, Article> = {
     category: "Industry Guides",
     categorySlug: "industry-guides",
     readTime: "6 min",
-    description: "Explore opportunities in facilities management, janitorial work, and cleaning services. Learn about roles, schedules, and career advancement.",
+    description: "A complete guide to facilities management and cleaning work: roles, advancement opportunities, and strategies for success.",
     keyTakeaways: [
-      "Facilities work offers flexible schedules including overnight shifts",
-      "Lower competition means easier entry for new workers",
-      "Commercial cleaning can lead to supervisor roles or business ownership",
-      "Consistent, independent work appeals to many personalities"
+      "Consistent demand for cleaning and facilities staff across all industries",
+      "Flexible hours including evening and weekend shifts",
+      "Entry-level roles with potential to advance to supervisor positions",
+      "Physical work that keeps you active"
     ],
     sections: [
       {
-        heading: "Why Facilities & Cleaning Work?",
-        content: "Facilities work offers unique benefits:\n\n- **Flexible schedules** – Many shifts are evenings or overnights\n- **Independent work** – Often work alone or in small teams\n- **Lower barriers** – Less competition than hospitality or retail\n- **Consistent demand** – Every building needs maintenance\n- **Physical activity** – Stay active while earning\n- **Less customer interaction** – If you prefer working independently\n\n[Indeed Flex](https://indeedflex.com/download-app/) offers facilities roles including cleaner and custodian positions.\n\n[See Indeed Flex facilities roles →](https://indeedflex.com/roles-and-industries/)"
+        heading: "Why Facilities Work?",
+        content: "Facilities and cleaning roles offer unique advantages:\n\n- **Constant demand** – Every business needs clean facilities\n- **Flexible schedules** – Many evening and weekend shifts available\n- **Independent work** – Often work with minimal supervision\n- **Physical activity** – Stay active throughout your shift\n- **Low barrier to entry** – Start with no prior experience\n\n[Indeed Flex](https://indeedflex.com/download-app/) offers facilities roles including cleaners and custodians.\n\n[See all Indeed Flex roles →](https://indeedflex.com/roles-and-industries/)"
       },
       {
         heading: "Common Facilities Roles",
-        content: "**Cleaning:**\n\n| Role | Pay | Setting |\n|------|-----|--------|\n| Janitor/Custodian | $14-18/hr | Schools, offices |\n| Commercial Cleaner | $15-19/hr | Office buildings |\n| Deep Cleaning Specialist | $17-22/hr | Various |\n\n**Facilities:**\n\n| Role | Pay | Setting |\n|------|-----|--------|\n| Maintenance Helper | $15-19/hr | Various |\n| Groundskeeper | $14-18/hr | Outdoor |\n\n**Specialized:**\n\n| Role | Pay | Requirements |\n|------|-----|-------------|\n| Window Cleaning | $16-23/hr | Training |\n| Floor Care Technician | $16-21/hr | Equipment training |\n\nEstimate earnings: [Pay Calculator](/career-hub/tools/pay-calculator)"
+        content: "**Entry Level:**\n\n| Role | Pay | Requirements |\n|------|-----|-------------|\n| Cleaner | $14-18/hr | Physical capability |\n| Custodian | $14-17/hr | Reliability |\n| Porter | $13-16/hr | Basic cleaning skills |\n\n**Specialized:**\n\n| Role | Pay | Requirements |\n|------|-----|-------------|\n| Industrial Cleaner | $16-20/hr | Training |\n| Floor Care Specialist | $17-22/hr | Equipment training |\n\n**Leadership:**\n\n| Role | Pay | Requirements |\n|------|-----|-------------|\n| Cleaning Supervisor | $18-24/hr | Experience |\n| Facilities Coordinator | $45K-55K/year | Management skills |\n\nEstimate your earnings: [Pay Calculator](/career-hub/tools/pay-calculator)"
       },
       {
-        heading: "What the Work Involves",
-        content: "Typical facilities tasks:\n\n**Cleaning:**\n\n- Vacuuming, mopping, dusting\n- Restroom sanitization\n- Trash removal and recycling\n- Window and glass cleaning\n- Kitchen/break room maintenance\n\n**Facilities support:**\n\n- Light repairs and maintenance\n- Equipment setup/breakdown\n- Inventory of supplies\n- Safety checks\n\n**The work is:**\n\n- Physical but typically less demanding than warehouse\n- Routine and predictable\n- Often independent (work at your own pace)\n- Measured by cleanliness standards, not speed"
-      },
-      {
-        heading: "Schedules and Flexibility",
-        content: "Facilities work often offers schedule options other industries don't:\n\n**Evening/Night shifts:**\n\nOffice buildings are cleaned after business hours—ideal for people with daytime commitments (school, childcare, second job).\n\n**Weekend-heavy schedules:**\n\nRetail and event venues need weekend cleaning.\n\n**Early morning:**\n\nSome facilities require cleaning before business hours.\n\n**Advantages of off-hours work:**\n\n- Less traffic commuting\n- Cooler temperatures (summer)\n- Work independently without interruptions\n- Premium pay for overnight shifts at some locations\n\nPlan your shifts: [Shift Planner](/career-hub/tools/shift-planner)"
-      },
-      {
-        heading: "Standing Out in Facilities Work",
-        content: "Employers value:\n\n**1. Reliability**\n\nShowing up consistently matters enormously. Buildings need to be clean every day.\n\n**2. Attention to detail**\n\nQuality matters—supervisors notice corners cut.\n\n**3. Trustworthiness**\n\nYou're often alone in buildings with access to everything.\n\n**4. Self-motivation**\n\nWorking independently requires initiative.\n\n**5. Physical capability**\n\nSome roles involve moderate exertion.\n\n**Tips for success:**\n\n- Double-check your work before leaving\n- Report maintenance issues promptly\n- Respect confidential areas and materials\n- Build rapport with building staff"
+        heading: "What Employers Look For",
+        content: "Facilities employers prioritize:\n\n**1. Reliability**\n\nShowing up consistently is essential—facilities work often happens before or after business hours.\n\n**2. Attention to Detail**\n\nNoticing areas that need cleaning and doing thorough work.\n\n**3. Safety Awareness**\n\nProper chemical handling and safety procedures.\n\n**4. Independence**\n\nWorking effectively without constant supervision.\n\n**5. Physical Capability**\n\nAbility to stand, walk, and perform physical tasks for full shifts.\n\n**Stand out by:**\n\n- Arriving early and ready to work\n- Going beyond the minimum requirements\n- Learning proper cleaning techniques\n- Reporting maintenance issues proactively"
       },
       {
         heading: "Career Advancement",
-        content: "Facilities work offers growth paths:\n\n**Within companies:**\n\n- Cleaner → Lead Cleaner → Facilities Supervisor → Facilities Manager\n\n**Earning potential:**\n\n| Role | Compensation |\n|------|-------------|\n| Entry-level Cleaner | $14-18/hr |\n| Lead/Supervisor | $18-24/hr |\n| Facilities Manager | $45-60K/year |\n\n**Entrepreneurship path:**\n\nMany successful cleaning business owners started as commercial cleaners:\n\n1. Learn the business working for others\n2. Build client relationships\n3. Start your own cleaning service\n4. Scale with employees\n\n**Skills to develop:**\n\n- Equipment operation (floor buffers, extractors)\n- Chemical safety and mixing\n- Time management\n- Basic maintenance skills\n\nSee [Career Paths](/career-hub/guides/career-growth/career-paths) for more advancement strategies."
+        content: "Facilities work offers clear growth paths:\n\n**Short-term (6-12 months):**\n\nCleaner → Lead Cleaner\n\n**Medium-term (1-2 years):**\n\nLead Cleaner → Cleaning Supervisor\n\n**Long-term (3+ years):**\n\nSupervisor → Facilities Manager → Director of Operations\n\n**Earning potential:**\n\n- Facilities Managers: $45,000-65,000/year\n- Directors: $70,000-100,000+/year\n\n**Keys to advancement:**\n\n- Develop expertise in specialized cleaning (floor care, industrial)\n- Get certifications in OSHA safety\n- Learn building maintenance basics\n- Demonstrate leadership potential\n\nSee [Career Paths](/career-hub/guides/career-paths) for detailed progression strategies."
       }
     ],
     faqs: [
       {
+        question: "Do I need experience for facilities work?",
+        answer: "No—most entry-level cleaning roles require no prior experience. Basic reliability and physical capability are the main requirements."
+      },
+      {
+        question: "What hours do facilities jobs typically offer?",
+        answer: "Hours vary widely. Many cleaning jobs are evening or night shifts (after businesses close). Some are early morning. Weekend work is also common. This flexibility works well for people with other commitments."
+      },
+      {
         question: "Is facilities work physically demanding?",
-        answer: "Moderately. It involves walking, bending, and some lifting (trash bags, equipment), but it's generally less physically intense than warehouse work. Build stamina gradually if you're new to physical work."
-      },
-      {
-        question: "Do I need special training for facilities work?",
-        answer: "Basic cleaning requires no special training. However, learning to operate floor buffers, carpet extractors, and other equipment can increase your pay. Many employers provide on-the-job training."
-      },
-      {
-        question: "Are overnight shifts safe?",
-        answer: "Most commercial buildings have security systems and sometimes on-site security. You'll typically have emergency contacts and protocols. If you're uncomfortable with a location, communicate with your supervisor."
+        answer: "Yes—expect to be on your feet for the full shift, walk significant distances, and perform tasks like mopping, vacuuming, and lifting supplies. Wear comfortable, supportive shoes."
       }
     ],
-    relatedArticles: ["career-paths", "more-shifts", "multiple-gigs"]
+    relatedArticles: ["warehouse-guide", "career-paths", "certifications"]
   },
   "networking": {
     slug: "networking",
@@ -743,50 +765,50 @@ export const guideArticles: Record<string, Article> = {
     category: "Professional Development",
     categorySlug: "professional-development",
     readTime: "6 min",
-    description: "Networking isn't just for corporate workers. Learn how to build professional relationships that lead to more opportunities and better shifts.",
+    description: "Learn how to build valuable professional connections through flexible work that can lead to better opportunities and career advancement.",
     keyTakeaways: [
-      "Every shift is a networking opportunity with supervisors and coworkers",
-      "Building relationships leads to Talent Pool invitations and permanent offers",
-      "LinkedIn works for hourly workers too—use it strategically",
-      "Give as much as you take—help others and they'll help you"
+      "Every shift is a networking opportunity",
+      "Supervisors and coworkers can become valuable references",
+      "Talent Pools are essentially networking in action",
+      "Professional relationships lead to permanent opportunities"
     ],
     sections: [
       {
-        heading: "Why Networking Matters for Flexible Workers",
-        content: "In flexible work, your network directly impacts your income:\n\n- **Talent Pool invitations** come from supervisors who remember you\n- **Permanent job offers** often go to workers management already knows\n- **Premium shifts** sometimes get shared by word of mouth\n- **References** help you land opportunities\n\n**The reality:**\n\nEvery shift is a networking event. The supervisors, managers, and even coworkers you meet can become valuable connections—if you make a good impression."
+        heading: "Why Networking Matters for Flex Workers",
+        content: "In flexible work, your network directly impacts your opportunities:\n\n**Networking effects:**\n\n- Talent Pool invitations come from relationships\n- Permanent job offers often come through connections\n- References from supervisors boost applications\n- Word-of-mouth leads to preferred scheduling\n\n**The advantage of flex work:**\n\nYou interact with many more people than traditional employees. Each shift at a new location expands your network.\n\n**Your network = your net worth** in the gig economy."
       },
       {
-        heading: "Networking During Shifts",
-        content: "Build connections while you work:\n\n**With supervisors:**\n\n- Introduce yourself clearly: \"Hi, I'm [Name], here through Indeed Flex\"\n- Follow their instructions exactly\n- Ask thoughtful questions\n- At the end: \"I really enjoyed working here. I'd love to come back if you need help again.\"\n\n**With coworkers:**\n\n- Be friendly and helpful\n- Learn names and remember them\n- Offer to help when they're struggling\n- Exchange contact info with people you connect with\n\n**With managers:**\n\n- If you interact with higher-ups, be professional and memorable\n- A brief, confident introduction goes a long way\n\n**Remember:** You're always being evaluated, even informally."
+        heading: "Networking on Every Shift",
+        content: "Make every shift a networking opportunity:\n\n**With supervisors:**\n\n- Introduce yourself clearly at the start\n- Do excellent work throughout\n- Ask questions showing genuine interest\n- Thank them specifically at the end\n- Express interest in returning\n\n**With coworkers:**\n\n- Be friendly and helpful\n- Learn about their experiences\n- Share tips and knowledge\n- Stay connected if appropriate\n\n**Simple phrase that works:**\n\n\"I really enjoyed working here today. I'd love to come back if opportunities come up.\"\n\nThis simple statement opens doors."
       },
       {
-        heading: "Building Your LinkedIn Presence",
-        content: "LinkedIn isn't just for corporate workers:\n\n**Profile tips:**\n\n- **Headline:** \"Reliable Hospitality Professional\" or \"Certified Forklift Operator\"\n- **Summary:** Highlight your flexibility, skills, and goals\n- **Experience:** List your Indeed Flex work and achievements (\"100+ shifts, 4.8-star rating\")\n- **Skills:** Include all certifications and abilities\n\n**Building connections:**\n\n- Connect with supervisors after good shifts\n- Join industry groups (Hospitality Workers, Warehouse Professionals)\n- Follow companies where you'd like to work\n- Share relevant content occasionally\n\n**Pro tip:** A LinkedIn profile shows employers you're professional and serious about your career, even in hourly work."
+        heading: "Building Talent Pool Relationships",
+        content: "Talent Pools are formalized networking:\n\n**What they mean:**\n\n- A company valued your work enough to want you back\n- You have a relationship with that employer\n- You get preferential access to their shifts\n\n**How to cultivate:**\n\n1. Perform exceptionally on every shift\n2. Be memorable (in positive ways)\n3. Express genuine interest in the company\n4. Follow through consistently\n\n**Goal:** 5+ Talent Pool memberships create a stable foundation of preferred opportunities.\n\nSee [How to Get More (and Better) Shifts](/career-hub/guides/more-shifts) for strategies."
       },
       {
-        heading: "Staying in Touch",
-        content: "Networking isn't just meeting people—it's maintaining relationships:\n\n**After great shifts:**\n\n- Send a brief LinkedIn connection request\n- Thank supervisors via the app if possible\n- Note names and details for future reference\n\n**Periodically:**\n\n- Check in with former supervisors (holiday greetings, congratulating promotions)\n- Engage with connections' LinkedIn updates (likes, comments)\n- Share job postings you see that might help others\n\n**Keep a networking log:**\n\nTrack who you've met, where, and any notable interactions. This is invaluable when you need references or want to reconnect."
+        heading: "From Network to Opportunity",
+        content: "Turn connections into career advancement:\n\n**Seeking permanent work:**\n\nAfter building a relationship through multiple shifts:\n\n\"I've really enjoyed working here. Are there any permanent positions I should apply for?\"\n\n**Getting references:**\n\nAfter positive interactions:\n\n\"Would you be willing to serve as a reference if I apply for a permanent role?\"\n\n**Staying connected:**\n\n- Connect on LinkedIn when appropriate\n- Keep contact information for key supervisors\n- Follow up periodically (not too frequently)\n\n**The goal:** Convert flex work relationships into permanent opportunities or excellent references."
       },
       {
-        heading: "Converting Connections to Opportunities",
-        content: "Strong networks lead to opportunities:\n\n**Ask for:**\n\n- References for job applications\n- Introductions to their contacts\n- Advice on career advancement\n- Heads-up on upcoming opportunities\n\n**Give back:**\n\n- Refer reliable workers you've met\n- Share job postings you see\n- Offer to help with busy shifts\n- Be a reference for others\n\n**Networking is reciprocal:** Give as much as you take. Help others, and they'll help you.\n\nPrepare for opportunities: [Interview Skills for Flex Work](/career-hub/guides/professional-development/interview-skills)"
+        heading: "Maintaining Your Network",
+        content: "Relationships need maintenance:\n\n**Best practices:**\n\n- Accept shifts at companies where you have relationships\n- Deliver consistently great work every time\n- Check in occasionally with supervisors you've worked with\n- Update contacts when your skills or availability change\n\n**What to avoid:**\n\n- Burning bridges (don't cancel shifts carelessly)\n- Over-contacting (don't be pushy)\n- Taking relationships for granted\n- Asking for favors before building trust\n\n**Quality over quantity:** A few strong relationships are worth more than many weak ones."
       }
     ],
     faqs: [
       {
-        question: "I'm shy—how do I network comfortably?",
-        answer: "Start small with brief, genuine interactions. A simple \"Thanks for your help today\" or asking about someone's experience goes a long way. Quality matters more than quantity. You don't need to be an extrovert."
+        question: "Is it appropriate to connect with supervisors on LinkedIn?",
+        answer: "Yes, after you've worked multiple successful shifts together and built a genuine relationship. Include a personalized note mentioning your work together."
       },
       {
-        question: "Should I add supervisors on social media?",
-        answer: "LinkedIn is appropriate for professional connections after working together. For personal social media (Instagram, Facebook), wait until you have a genuine personal relationship beyond work."
+        question: "How do I ask for a reference from a flex work supervisor?",
+        answer: "After several successful shifts with positive feedback, simply ask: \"Would you be willing to be a reference if I apply for a permanent position?\" Most supervisors are happy to help workers who've performed well."
       },
       {
-        question: "How do I ask for references from short-term shifts?",
-        answer: "After a successful shift: \"I really enjoyed working here. Would you be willing to be a reference for future opportunities?\" Most supervisors are happy to help workers who impressed them."
+        question: "What if I don't get invited to a Talent Pool?",
+        answer: "Keep performing well. Ask supervisors directly if there's a Talent Pool and how you can be considered. Sometimes it just takes a few more shifts to demonstrate consistency."
       }
     ],
-    relatedArticles: ["resume-tips", "interview-skills", "career-paths"]
+    relatedArticles: ["career-paths", "more-shifts", "resume-tips"]
   },
   "resume-tips": {
     slug: "resume-tips",
@@ -794,9 +816,9 @@ export const guideArticles: Record<string, Article> = {
     category: "Professional Development",
     categorySlug: "professional-development",
     readTime: "5 min",
-    description: "Create a professional resume that showcases your flexible work experience and lands you better opportunities.",
+    description: "Create a compelling resume that showcases your flexible work experience, skills, and reliability.",
     keyTakeaways: [
-      "Flexible work experience is valuable—present it professionally",
+      "Present flex work as valuable experience, not random jobs",
       "Quantify achievements: shifts completed, ratings earned, skills gained",
       "Skills and certifications are as important as job history",
       "Keep it simple, clean, and focused on relevant experience"
@@ -812,7 +834,7 @@ export const guideArticles: Record<string, Article> = {
       },
       {
         heading: "Skills Section Essentials",
-        content: "For hourly workers, skills often matter more than job history:\n\n**Create a prominent skills section:**\n\n---\n\n**Certifications:**\nFood Handler's Permit | TIPS Alcohol | Forklift Certified | OSHA 10\n\n**Technical Skills:**\nPOS Systems (Toast, Square) | Inventory Management | RF Scanners | Excel\n\n**Soft Skills:**\nCustomer Service | Team Collaboration | Time Management | Problem Solving\n\n**Physical Capabilities:**\nStanding 8+ hours | Lifting 50 lbs | Fast-paced environments\n\n---\n\nPut this section near the top if your work history is limited.\n\n[Get valuable certifications →](/career-hub/guides/career-growth/certifications)"
+        content: "For hourly workers, skills often matter more than job history:\n\n**Create a prominent skills section:**\n\n---\n\n**Certifications:**\nFood Handler's Permit | TIPS Alcohol | Forklift Certified | OSHA 10\n\n**Technical Skills:**\nPOS Systems (Toast, Square) | Inventory Management | RF Scanners | Excel\n\n**Soft Skills:**\nCustomer Service | Team Collaboration | Time Management | Problem Solving\n\n**Physical Capabilities:**\nStanding 8+ hours | Lifting 50 lbs | Fast-paced environments\n\n---\n\nPut this section near the top if your work history is limited.\n\n[Get valuable certifications →](/career-hub/guides/certifications)"
       },
       {
         heading: "Resume Format Tips",
@@ -844,55 +866,71 @@ export const guideArticles: Record<string, Article> = {
     title: "Interview Skills for Flex Work",
     category: "Professional Development",
     categorySlug: "professional-development",
-    readTime: "7 min",
-    description: "Master interviews for permanent positions and specialized shifts. Learn how to present your flexible work experience professionally.",
+    readTime: "10 min",
+    description: "Master interviews for permanent positions and specialized shifts. Learn the STAR method, industry-specific questions, and how to present your flexible work experience professionally.",
     keyTakeaways: [
-      "Prepare stories that showcase your flexibility and reliability",
-      "Research the company and role before interviews",
-      "Ask thoughtful questions to show genuine interest",
-      "Follow up professionally after every interview"
+      "Use the STAR method to structure compelling stories from your flex work experience",
+      "Research the company and role thoroughly before every interview",
+      "Your varied flex experience is an advantage—frame it as adaptability and broad skill development",
+      "Follow up professionally within 24 hours of every interview"
     ],
     sections: [
       {
         heading: "When Flexible Workers Interview",
-        content: "You might interview for:\n\n- **Permanent positions** at companies where you've worked shifts\n- **Specialized shifts** requiring additional screening\n- **Higher-tier opportunities** on platforms\n- **Traditional jobs** when transitioning from gig work\n\nWhile [Indeed Flex](https://indeedflex.com/download-app/) shifts often don't require interviews (beyond initial verification), building interview skills prepares you for career advancement.\n\nPrepare your documents: [Resume Tips for Hourly Workers](/career-hub/guides/professional-development/resume-tips)"
+        content: "You might interview for:\n\n- **Permanent positions** at companies where you've worked shifts\n- **Specialized shifts** requiring additional screening\n- **Higher-tier opportunities** on platforms\n- **Traditional jobs** when transitioning from gig work\n\nWhile [Indeed Flex](https://indeedflex.com/download-app/) shifts often don't require interviews (beyond initial verification), building interview skills prepares you for career advancement.\n\n**Verification interview tips:**\n\nThe Indeed Flex onboarding interview is straightforward. Be prepared to:\n- Discuss your work experience honestly\n- Explain your availability\n- Present required documents (I-9 materials)\n- Show enthusiasm for flexible work\n\nPrepare your documents: [Resume Tips for Hourly Workers](/career-hub/guides/resume-tips)"
       },
       {
-        heading: "Preparing Your Stories",
-        content: "Interviewers love specific examples. Prepare stories using the **STAR method:**\n\n- **S**ituation: Set the scene briefly\n- **T**ask: What you needed to accomplish\n- **A**ction: What you specifically did\n- **R**esult: The positive outcome\n\n**Example:**\n\n\"During a busy Saturday night **(Situation)**, we were suddenly short-staffed when a coworker called in sick **(Task)**. I stepped up to cover both my section and part of theirs, while helping train a new server on the fly **(Action)**. We handled the rush smoothly, and the manager asked me to work every Saturday after that **(Result)**.\"\n\n**Prepare 3-5 stories** covering different scenarios: handling stress, solving problems, working with teams, going above and beyond."
+        heading: "The STAR Method: Your Secret Weapon",
+        content: "Interviewers love specific examples. The STAR method creates compelling stories:\n\n- **S**ituation: Set the scene briefly\n- **T**ask: What you needed to accomplish\n- **A**ction: What you specifically did\n- **R**esult: The positive outcome\n\n**Hospitality Example:**\n\n\"During a busy Saturday night **(Situation)**, we were suddenly short-staffed when a coworker called in sick **(Task)**. I stepped up to cover both my section and part of theirs, while helping train a new server on the fly **(Action)**. We handled the rush smoothly, and the manager asked me to work every Saturday after that **(Result)**.\"\n\n**Warehouse Example:**\n\n\"During the holiday rush at a fulfillment center **(Situation)**, our team was falling behind on pick rates **(Task)**. I suggested reorganizing our route through the warehouse and helped train two newer workers on efficiency techniques **(Action)**. Our team exceeded quota by 15% for the rest of the week, and I was asked to join the company's Talent Pool **(Result)**.\"\n\n**Prepare 3-5 stories** covering: handling stress, solving problems, working with teams, going above and beyond, and learning quickly."
       },
       {
-        heading: "Common Questions and Answers",
-        content: "Prepare for these frequent questions:\n\n**\"Why do you want this position?\"**\n\nConnect your interests and skills to the specific role. Show you've researched the company.\n\n**\"Tell me about your experience.\"**\n\nHighlight relevant flex work, emphasizing reliability, ratings, and skills gained.\n\n**\"How do you handle difficult situations?\"**\n\nShare a specific story about a challenging shift you navigated successfully.\n\n**\"Why were you doing flexible work?\"**\n\nBe honest: flexibility, skill building, exploring industries. Frame it positively.\n\n**\"What are your strengths?\"**\n\nReliability, adaptability, quick learning, customer service—backed by examples and your Indeed Flex rating."
+        heading: "Common Interview Questions with Sample Answers",
+        content: "**\"Tell me about yourself.\"**\n\n*Sample:* \"I'm a reliable worker with over 100 completed shifts through Indeed Flex, maintaining a 4.8-star rating. I've worked in hospitality and warehouse roles, which has taught me to adapt quickly to new environments. I'm looking for a permanent position where I can apply my proven work ethic and continue growing professionally.\"\n\n**\"Why do you want this position?\"**\n\nConnect your interests and skills to the specific role. Mention what you know about the company.\n\n**\"Why were you doing flexible work?\"**\n\n*Sample:* \"Flexible work allowed me to explore different industries and develop diverse skills. It's given me experience across hospitality and warehouse roles, and I've proven my reliability with a 4.8-star rating. Now I'm ready to commit to a permanent role where I can grow long-term.\"\n\n**\"What's your greatest strength?\"**\n\n*Sample:* \"Reliability and adaptability. I've completed over 100 shifts with high ratings because I show up early, work hard, and adjust quickly to new teams and environments. Supervisors know they can count on me.\"\n\n**\"Tell me about a difficult situation you handled.\"**\n\nUse a STAR-method story showing problem-solving and professionalism."
+      },
+      {
+        heading: "Industry-Specific Interview Questions",
+        content: "**Hospitality Questions:**\n\n- \"How would you handle an unhappy customer?\" → Use LAST method: Listen, Apologize, Solve, Thank\n- \"What experience do you have with POS systems?\" → List specific systems (Toast, Square, etc.)\n- \"Can you work weekends and holidays?\" → Be honest about availability\n- \"What's your experience with food safety?\" → Mention certifications and practices\n\n**Warehouse Questions:**\n\n- \"How do you handle repetitive tasks?\" → Focus on consistency and finding efficiency\n- \"What's your experience with heavy lifting?\" → Be honest about capabilities\n- \"Have you operated any equipment?\" → List forklift, pallet jacks, RF scanners\n- \"How do you prioritize safety?\" → Give specific examples of safety awareness\n\n**Retail Questions:**\n\n- \"How would you handle a customer complaint?\" → Use LAST method\n- \"What's your approach to meeting sales goals?\" → Focus on customer service driving sales\n- \"How do you stay busy during slow periods?\" → Mention restocking, straightening, learning products\n\n**Practice hospitality knowledge:** [CocktailQuiz](/career-hub/tools/cocktail-quiz) | [MenuMaster](/career-hub/tools/menu-master)\n\n**Practice safety scenarios:** [SafetyFirst](/career-hub/tools/safety-first)"
       },
       {
         heading: "Asking Great Questions",
-        content: "Always prepare questions—it shows genuine interest:\n\n**Good questions:**\n\n- \"What does success look like in this role after 90 days?\"\n- \"How would you describe the team culture?\"\n- \"What are the biggest challenges someone in this position faces?\"\n- \"What do you enjoy most about working here?\"\n- \"What's the path for growth in this role?\"\n\n**Avoid:**\n\n- Questions easily answered on the website\n- Only asking about pay/benefits (save for offer stage)\n- Nothing at all—always ask something"
+        content: "Always prepare questions—it shows genuine interest:\n\n**Strong questions to ask:**\n\n- \"What does success look like in this role after 90 days?\"\n- \"How would you describe the team culture?\"\n- \"What are the biggest challenges someone in this position faces?\"\n- \"What do you enjoy most about working here?\"\n- \"What's the path for growth in this role?\"\n- \"What are the busiest periods for this position?\"\n\n**Avoid:**\n\n- Questions easily answered on the website\n- Only asking about pay/benefits (save for offer stage)\n- Nothing at all—always ask something\n- Negative questions about why people leave"
       },
       {
-        heading: "Interview Day Tips",
-        content: "**Before:**\n\n- Research the company and interviewer (LinkedIn)\n- Review your stories and the job description\n- Prepare your outfit (professional, appropriate to industry)\n- Know the location; plan to arrive 10-15 minutes early\n\n**During:**\n\n- Firm handshake, eye contact, genuine smile\n- Listen carefully before answering\n- Be concise but thorough\n- Show enthusiasm and positivity\n- Use your Indeed Flex metrics as credentials\n\n**After:**\n\n- Thank the interviewer before leaving\n- Send a brief thank-you email within 24 hours\n- Follow up if you don't hear back within stated timeframe"
+        heading: "Phone and Video Interview Tips",
+        content: "Remote interviews require special preparation:\n\n**Phone interviews:**\n\n- Find a quiet location with good reception\n- Have your resume and notes in front of you\n- Stand up or sit straight—it improves your voice\n- Smile—it comes through in your voice\n- Listen carefully before responding\n\n**Video interviews:**\n\n- Test your technology beforehand\n- Choose a clean, professional background\n- Ensure good lighting (face a window)\n- Look at the camera, not the screen\n- Dress professionally (full outfit, not just top)\n- Close other apps to avoid distractions\n\n**Indeed Flex verification call tips:**\n\n- Treat it like a real interview\n- Have I-9 documents ready\n- Be prepared to discuss availability and experience\n- Show enthusiasm for flexible work"
+      },
+      {
+        heading: "Interview Day and Follow-Up",
+        content: "**Before the interview:**\n\n- Research the company and interviewer (LinkedIn)\n- Review your stories and the job description\n- Prepare your outfit (professional, appropriate to industry)\n- Know the location; plan to arrive 10-15 minutes early\n- Bring copies of your resume and a notepad\n\n**During the interview:**\n\n- Firm handshake, eye contact, genuine smile\n- Listen carefully before answering\n- Be concise but thorough\n- Show enthusiasm and positivity\n- Use your Indeed Flex metrics as credentials\n\n**After the interview (within 24 hours):**\n\n- Send a brief thank-you email\n- Reference specific topics discussed\n- Reiterate your interest\n- Follow up if you don't hear back within stated timeframe\n\n**Sample thank-you:**\n\n\"Thank you for taking the time to speak with me today about the [position]. I was particularly excited to learn about [specific topic discussed]. My experience with [relevant skill] makes me confident I'd be a strong addition to your team. I look forward to hearing from you.\""
       },
       {
         heading: "Turning Flex Work into an Advantage",
-        content: "Your flexible work history is actually a strength:\n\n**Frame it positively:**\n\n- \"I've worked at 20+ venues, so I adapt quickly to new environments\"\n- \"My 4.8 rating across 150+ shifts demonstrates my consistency\"\n- \"I've developed skills across multiple industries\"\n- \"I chose flexible work to explore where I could contribute most\"\n- \"I've earned spots in 5 company Talent Pools through performance\"\n\n**Employers value workers who've proven themselves across diverse settings.**\n\nYour varied experience shows adaptability, reliability, and broad skill development—qualities that transfer to any role."
+        content: "Your flexible work history is actually a strength:\n\n**Frame it positively:**\n\n- \"I've worked at 20+ venues, so I adapt quickly to new environments\"\n- \"My 4.8 rating across 150+ shifts demonstrates my consistency\"\n- \"I've developed skills across multiple industries\"\n- \"I chose flexible work to explore where I could contribute most\"\n- \"I've earned spots in 5 company Talent Pools through performance\"\n\n**Address concerns directly:**\n\nIf asked about frequent job changes: \"Flexible work isn't job-hopping—it's intentional skill-building. I've proven my reliability to every employer with high ratings. When I commit to a role, I'm all in.\"\n\n**Employers value workers who've proven themselves across diverse settings.** Your varied experience shows adaptability, reliability, and broad skill development—qualities that transfer to any role.\n\n**Tools to help you prepare:**\n\n- [Career Path Explorer](/career-hub/tools/career-path) – Visualize your target career\n- [Skills Analyzer](/career-hub/tools/skills-analyzer) – Identify your strengths\n- [CocktailQuiz](/career-hub/tools/cocktail-quiz) – Practice hospitality knowledge\n- [MenuMaster](/career-hub/tools/menu-master) – Learn culinary terms\n- [SafetyFirst](/career-hub/tools/safety-first) – Practice safety scenarios"
       }
     ],
     faqs: [
       {
         question: "What if I'm nervous during interviews?",
-        answer: "Nervousness is normal. Prepare thoroughly, practice with a friend, and remember that some anxiety actually improves performance. Deep breathing helps in the moment. The more you interview, the easier it gets."
+        answer: "Nervousness is normal and some anxiety actually improves performance. Prepare thoroughly by practicing your STAR stories out loud. Take deep breaths before entering. Remember—you've proven yourself across many shifts. The more you interview, the easier it gets."
       },
       {
         question: "How do I explain frequent job changes from flex work?",
-        answer: "Flexible work isn't job-hopping—it's intentional. Explain that you chose flexibility to develop skills, explore industries, and find the right fit. Emphasize your loyalty once you commit (mention Talent Pool relationships)."
+        answer: "Flexible work isn't job-hopping—it's intentional. Explain that you chose flexibility to develop skills, explore industries, and find the right fit. Emphasize your loyalty once you commit (mention Talent Pool relationships and repeat bookings). Your ratings prove your reliability."
       },
       {
-        question: "What should I wear?",
-        answer: "Match or slightly exceed the company's dress code. When in doubt, business casual is safe. For hospitality/warehouse, clean and neat casual is usually appropriate. Check company social media for clues about culture."
+        question: "What should I wear to an interview?",
+        answer: "Match or slightly exceed the company's dress code. When in doubt, business casual is safe. For hospitality interviews, neat casual with clean, pressed clothes works. For warehouse, clean and presentable casual. Check company social media for clues about culture."
+      },
+      {
+        question: "Should I mention my Indeed Flex rating?",
+        answer: "Absolutely! A high rating (4.5+) is concrete evidence of your reliability and performance. Say something like: \"I've completed 150+ shifts with a 4.8-star average rating, which demonstrates my consistency and work ethic.\" It's more credible than just claiming you're reliable."
+      },
+      {
+        question: "How do I prepare for the Indeed Flex verification interview?",
+        answer: "Have your I-9 documents ready (two forms of ID proving work eligibility). Be prepared to discuss your experience, availability, and industries you're interested in. Dress neatly. Be honest about your skills—overcommitting leads to problems. Show genuine enthusiasm for flexible work opportunities."
       }
     ],
-    relatedArticles: ["resume-tips", "networking", "career-paths"]
+    relatedArticles: ["resume-tips", "networking", "career-paths", "temp-to-perm-guide"]
   },
   "multiple-gigs": {
     slug: "multiple-gigs",
@@ -948,5 +986,186 @@ export const guideArticles: Record<string, Article> = {
       }
     ],
     relatedArticles: ["more-shifts", "career-paths", "irregular-income-budget"]
+  },
+  "workplace-success": {
+    slug: "workplace-success",
+    title: "Your First 90 Days: Proving Yourself at Work",
+    category: "Workplace Success",
+    categorySlug: "workplace-success",
+    readTime: "8 min",
+    description: "A week-by-week guide to making great impressions and setting yourself up for success, whether you're starting flex work or transitioning to a permanent role.",
+    keyTakeaways: [
+      "The first 90 days are your audition period—treat every interaction accordingly",
+      "Reliability matters more than brilliance in the early days",
+      "Building relationships with supervisors and coworkers accelerates your success",
+      "Document your wins to build evidence for advancement"
+    ],
+    sections: [
+      {
+        heading: "Why the First 90 Days Matter",
+        content: "Your first three months set the tone for your entire experience:\n\n**What employers are assessing:**\n\n- Can you show up reliably?\n- Do you follow instructions?\n- Are you pleasant to work with?\n- Can you handle the work?\n- Do you fit the culture?\n\n**What you're demonstrating:**\n\n- Your work ethic\n- Your ability to learn\n- Your professionalism\n- Your potential for advancement\n\nWhether you're doing flex shifts through [Indeed Flex](https://indeedflex.com/download-app/) or starting a permanent role, these principles apply."
+      },
+      {
+        heading: "Week 1-2: Learning Mode",
+        content: "**Primary focus: Absorb everything**\n\n**Do:**\n\n- Arrive 15 minutes early every day\n- Listen more than you speak\n- Take notes (physically or mentally)\n- Ask clarifying questions\n- Learn names of coworkers and supervisors\n- Observe how successful people operate\n\n**Don't:**\n\n- Suggest changes or improvements yet\n- Complain about anything\n- Form strong opinions about people\n- Get involved in workplace drama\n- Use your phone during work hours\n\n**Magic phrase:** \"I want to make sure I understand correctly—could you show me again?\"\n\nAsking for help shows maturity, not weakness."
+      },
+      {
+        heading: "Week 3-4: Building Competence",
+        content: "**Primary focus: Demonstrate reliability**\n\nBy now you should:\n\n- Know your core responsibilities\n- Complete tasks without constant supervision\n- Anticipate what comes next\n- Start building relationships\n\n**Prove yourself through:**\n\n- Perfect attendance (no late arrivals or early departures)\n- Completing tasks accurately and on time\n- Helping others when your work is done\n- Staying positive even during challenges\n\n**Start documenting:**\n\n- Tasks you've mastered\n- Positive feedback you've received\n- Problems you've solved\n- Skills you've developed\n\nThis documentation builds your case for advancement later."
+      },
+      {
+        heading: "Month 2: Adding Value",
+        content: "**Primary focus: Go beyond the basics**\n\nNow you can:\n\n- Start suggesting small improvements\n- Take on additional responsibilities\n- Train newer workers\n- Build deeper relationships\n\n**Value-add behaviors:**\n\n- \"I noticed [problem]—what if we tried [solution]?\"\n- \"I've finished my tasks—where can I help?\"\n- \"I can show the new person how to do that\"\n- \"I've been tracking [metric] and we've improved\"\n\n**Relationship building:**\n\n- Learn supervisors' priorities and pain points\n- Help coworkers succeed (not just yourself)\n- Be known as someone easy to work with\n- Show genuine interest in the company's success"
+      },
+      {
+        heading: "Month 3: Demonstrating Potential",
+        content: "**Primary focus: Position for advancement**\n\nBy day 90, you should have:\n\n- Mastered core responsibilities\n- Built positive relationships\n- Added value beyond basic job duties\n- Demonstrated reliability\n\n**Conversations to have:**\n\n- \"I'm really enjoying this work. What would it take to grow here?\"\n- \"Are there additional responsibilities I could take on?\"\n- \"I'd like to discuss my performance and get your feedback\"\n\n**For flex workers:**\n\n- Express interest in Talent Pool membership\n- Ask about permanent opportunities\n- Request feedback on your ratings\n\n**For permanent employees:**\n\n- Schedule a check-in with your manager\n- Discuss performance and development goals\n- Ask about growth opportunities\n\nSee [From Temp to Permanent](/career-hub/guides/temp-to-perm-guide) for transition strategies."
+      },
+      {
+        heading: "Common Mistakes to Avoid",
+        content: "**First 90 days don'ts:**\n\n**1. Being unreliable**\n\nCalling out sick, arriving late, or leaving early destroys trust faster than anything else.\n\n**2. Complaining too soon**\n\nYou haven't earned the right to critique yet. Save concerns for after you've proven yourself.\n\n**3. Getting involved in politics**\n\nStay neutral on workplace drama. You don't have enough context to pick sides.\n\n**4. Overconfidence**\n\nEven if you're experienced, every workplace is different. Stay humble.\n\n**5. Underconfidence**\n\nDon't be so timid you fail to contribute. Find the balance.\n\n**6. Burning bridges**\n\nEven if you don't like someone, maintain professionalism. You never know who influences your future.\n\n**7. Neglecting documentation**\n\nWithout records of your successes, it's your word against nothing when advancement comes up."
+      }
+    ],
+    faqs: [
+      {
+        question: "What if I make a mistake in my first 90 days?",
+        answer: "Everyone makes mistakes. The key is how you handle them: acknowledge immediately, take responsibility, fix what you can, and learn from it. One mistake rarely defines you—your response does. Supervisors respect honesty over cover-ups."
+      },
+      {
+        question: "How do I stand out in the first 90 days?",
+        answer: "Reliability is the foundation. After that: be genuinely helpful, stay positive even during challenges, and show initiative by asking \"What else can I help with?\" These behaviors stand out because they're rare."
+      },
+      {
+        question: "Should I ask for feedback during the first 90 days?",
+        answer: "Yes! Asking for feedback shows you care about improving. Try: \"Is there anything I could do better?\" or \"How am I doing compared to your expectations?\" Most supervisors appreciate workers who seek feedback."
+      }
+    ],
+    relatedArticles: ["shift-rating-tips", "first-shift", "temp-to-perm-guide", "networking"]
+  },
+  "shift-rating-tips": {
+    slug: "shift-rating-tips",
+    title: "How to Get 5-Star Ratings on Every Shift",
+    category: "Workplace Success",
+    categorySlug: "workplace-success",
+    readTime: "7 min",
+    description: "Actionable strategies to earn top ratings on every Indeed Flex shift, unlock better opportunities, and build your reputation.",
+    keyTakeaways: [
+      "Ratings directly impact which shifts you see and how much you can earn",
+      "Reliability (showing up on time, every time) is the foundation of high ratings",
+      "Small gestures—arriving early, staying positive, thanking supervisors—make big differences",
+      "Consistent 4.8+ ratings unlock premium shifts and Talent Pool invitations"
+    ],
+    sections: [
+      {
+        heading: "Why Ratings Matter",
+        content: "Your Indeed Flex rating determines your opportunities:\n\n**Rating impacts:**\n\n| Rating | Effect |\n|--------|--------|\n| 4.8+ | Premium shift access, Talent Pool invites, temp-to-perm consideration |\n| 4.5-4.7 | Good shift availability, solid opportunities |\n| 4.0-4.4 | Reduced opportunities, limited premium access |\n| Below 4.0 | Significantly limited options |\n\n**The math:**\n\nWorkers with 4.8+ ratings see up to 3x more shift opportunities than those with lower ratings.\n\n**Your rating is your reputation.** It follows you across all Indeed Flex shifts and influences how employers view you."
+      },
+      {
+        heading: "Before the Shift: Preparation",
+        content: "High ratings start before you arrive:\n\n**The night before:**\n\n- Review shift details carefully (dress code, requirements, location)\n- Prepare your outfit and supplies\n- Set multiple alarms (nothing kills ratings like being late)\n- Get adequate sleep\n\n**Morning of:**\n\n- Leave early to account for unexpected delays\n- Bring your ID, phone (charged), and any required items\n- Eat and hydrate so you're energized\n\n**Plan to arrive 15 minutes early**\n\nThis single habit separates 5-star workers from the rest. Supervisors notice who's early.\n\n**Use our [Shift Planner](/career-hub/tools/shift-planner)** to organize your week and avoid conflicts."
+      },
+      {
+        heading: "During the Shift: Excellence in Action",
+        content: "**The 5-star behaviors:**\n\n**1. Clock in and introduce yourself**\n\n\"Hi, I'm [Name], here through Indeed Flex for the [role] shift. Where would you like me to start?\"\n\n**2. Follow instructions carefully**\n\nListen fully before starting. Ask clarifying questions if unsure. Better to ask than make mistakes.\n\n**3. Stay engaged throughout**\n\nNo phone use. Find tasks during slow periods. \"What else can I help with?\" is magic.\n\n**4. Work at a steady pace**\n\nDon't burn out early. Consistent effort beats initial sprints followed by slowdowns.\n\n**5. Be pleasant to everyone**\n\nPositive attitude matters. Introduce yourself to coworkers. Handle stress gracefully.\n\n**6. Stay off your phone**\n\nThis is worth emphasizing. Personal phone use is the #1 complaint about flex workers."
+      },
+      {
+        heading: "Industry-Specific Tips",
+        content: "**Hospitality:**\n\n- Follow dress codes exactly (appearance matters in customer-facing roles)\n- Be attentive to guests without hovering\n- Handle complaints gracefully using the LAST method (Listen, Apologize, Solve, Thank)\n- Clear tables/areas proactively\n- Master the menu/products: [CocktailQuiz](/career-hub/tools/cocktail-quiz) | [MenuMaster](/career-hub/tools/menu-master)\n\n**Warehouse:**\n\n- Meet productivity metrics (ask what's expected)\n- Follow safety protocols without shortcuts\n- Handle products carefully (damage affects metrics)\n- Communicate about problems early\n- Practice safety: [SafetyFirst Quiz](/career-hub/tools/safety-first)\n\n**Retail:**\n\n- Greet every customer (10-4 rule: eye contact at 10 feet, verbal at 4)\n- Know products better than expected\n- Stay busy during slow periods (straightening, restocking)\n- Handle complaints professionally\n\n**Facilities:**\n\n- Be thorough—cut corners get noticed\n- Report maintenance issues proactively\n- Work efficiently but completely\n- Minimize disruption to building occupants"
+      },
+      {
+        heading: "End of Shift: The Lasting Impression",
+        content: "How you finish affects how you're remembered:\n\n**Before leaving:**\n\n- \"Is there anything else you need before I head out?\"\n- Complete any final tasks thoroughly\n- Return borrowed equipment (aprons, radios, keys)\n- Leave your work area clean\n\n**The magic goodbye:**\n\n\"Thanks for having me today. I really enjoyed it and would love to come back.\"\n\nThis simple statement:\n- Leaves a positive final impression\n- Plants the seed for Talent Pool invitations\n- Shows genuine appreciation\n- Differentiates you from workers who just leave\n\n**Clock out accurately**\n\nMake sure your hours are recorded correctly in the app."
+      },
+      {
+        heading: "Recovering from a Low Rating",
+        content: "Even great workers occasionally receive lower ratings. Here's how to recover:\n\n**If you receive a low rating:**\n\n1. **Reflect honestly** – Was there something you could have done better?\n2. **Don't take it personally** – Sometimes ratings are unfair, but focus on what you control\n3. **Improve consistently** – Your overall average matters more than individual ratings\n4. **Book more shifts** – More data points dilute individual low ratings\n\n**Building back your average:**\n\n- Focus on your strengths (industries where you perform best)\n- Apply extra care to your next 10-15 shifts\n- Ask for feedback when possible\n- Review these tips before each shift\n\n**The good news:** Consistent effort rebuilds ratings over time. One or two low ratings don't define you."
+      }
+    ],
+    faqs: [
+      {
+        question: "How quickly does my rating update?",
+        answer: "Ratings typically update within 24-48 hours of completing a shift. Your overall average is recalculated based on your recent performance history."
+      },
+      {
+        question: "Can I dispute an unfair rating?",
+        answer: "You can contact Indeed Flex support if you believe a rating was clearly unfair (e.g., technical issues, shift changes beyond your control). However, focus on building positive ratings rather than fighting individual ones."
+      },
+      {
+        question: "Do older ratings count less than recent ones?",
+        answer: "Recent performance typically weighs more heavily in how you're perceived, but your overall average matters. Consistent recent improvement can overcome historical challenges."
+      },
+      {
+        question: "What's the fastest way to improve my rating?",
+        answer: "Arrive 15 minutes early to every shift, stay off your phone completely, and end each shift by thanking the supervisor and expressing interest in returning. These three habits alone can transform your ratings."
+      }
+    ],
+    relatedArticles: ["workplace-success", "more-shifts", "first-shift", "networking"]
+  },
+  "temp-to-perm-guide": {
+    slug: "temp-to-perm-guide",
+    title: "From Temp to Permanent: Making the Transition",
+    category: "Career Growth",
+    categorySlug: "career-growth",
+    readTime: "9 min",
+    description: "A comprehensive guide to transitioning from flexible temp work to permanent employment—how to position yourself, when to ask, and how to negotiate.",
+    keyTakeaways: [
+      "Many employers prefer hiring proven flex workers over unknown external candidates",
+      "Build relationships over 10+ shifts at your target company before expressing interest",
+      "Ask directly but professionally—supervisors can't read minds",
+      "Prepare for interviews as carefully as any external candidate would"
+    ],
+    sections: [
+      {
+        heading: "Why Companies Hire Flex Workers",
+        content: "Employers often prefer converting temp workers to permanent employees:\n\n**Employer benefits:**\n\n- **Reduced risk** – They've seen your work firsthand\n- **No recruiting costs** – Saves $4,000-15,000 per hire in recruitment expenses\n- **Faster onboarding** – You already know their systems and culture\n- **Proven culture fit** – They know you work well with the team\n\n**Your advantage:**\n\nAs a flex worker, you're essentially doing a working interview. Every shift demonstrates your value.\n\n**The opportunity is real:**\n\nMany Indeed Flex workers successfully transition to permanent positions with companies they've served. Companies actively use temp-to-perm as a hiring strategy."
+      },
+      {
+        heading: "Positioning Yourself for Conversion",
+        content: "Start building toward permanent opportunities from day one:\n\n**1. Choose your target wisely**\n\nWork consistently at 2-3 companies where you see long-term potential. Random shifts everywhere don't build relationships.\n\n**2. Earn excellent ratings**\n\nYour rating is your resume. Aim for 4.8+ through consistent excellence. See [How to Get 5-Star Ratings](/career-hub/guides/shift-rating-tips).\n\n**3. Build relationships**\n\nLearn names. Be memorable (positively). Get to know what supervisors need.\n\n**4. Go beyond the minimum**\n\n\"What else can I help with?\" shows permanent-employee mentality.\n\n**5. Express interest early**\n\nCasual comments like \"I really enjoy working here\" plant seeds without pressure.\n\n**6. Be reliable above all else**\n\nNever cancel shifts at your target companies. Reliability is the #1 factor in conversion decisions."
+      },
+      {
+        heading: "Signs You're Ready to Ask",
+        content: "**Green lights:**\n\n- You've worked 10+ shifts at the company\n- Supervisors request you specifically\n- You're in their Talent Pool\n- You receive regular positive feedback\n- Coworkers treat you as \"one of the team\"\n- You've built relationships with decision-makers\n\n**Yellow lights (wait a bit longer):**\n\n- Fewer than 10 shifts completed\n- Mixed feedback or ratings\n- You don't know supervisors' names\n- No Talent Pool invitation yet\n- Company seems understaffed (bad time to ask)\n\n**Red lights (don't ask yet):**\n\n- Recent negative feedback\n- Company is doing layoffs or cutbacks\n- You've had conflicts or issues\n- You're not sure you want permanent work there"
+      },
+      {
+        heading: "How to Ask the Question",
+        content: "**The direct approach (recommended):**\n\nAfter a successful shift with a supervisor you've built rapport with:\n\n\"I've really enjoyed working here over the past [timeframe]. If any permanent positions open up, I'd love to be considered. What would be the best way to pursue that?\"\n\n**What to expect:**\n\n- **Best case:** \"We'd love that—let me connect you with HR\"\n- **Good case:** \"We'll keep you in mind when something opens\"\n- **Neutral case:** \"We're not hiring now, but keep doing great work\"\n- **Rare case:** \"We only use temps for this role\" (valuable information!)\n\n**Follow-up questions:**\n\n- \"What does your typical hiring process look like?\"\n- \"What qualities do you look for in permanent employees?\"\n- \"When do you usually hire for these roles?\"\n\n**The key:** Being direct is better than waiting and hoping. Supervisors can't read minds."
+      },
+      {
+        heading: "The Interview Process",
+        content: "Even after working there, you'll likely interview formally:\n\n**Why interviews matter:**\n\n- HR and other managers need to meet you\n- Documentation for hiring decisions\n- Benefits/salary discussions\n- Formal commitment on both sides\n\n**Prepare thoroughly:**\n\n- Research the company (even if you've worked there)\n- Prepare STAR stories from your shifts there\n- Review the formal job description\n- Prepare questions about benefits, growth, schedule\n- Dress more formally than for shifts\n\n**Leverage your insider knowledge:**\n\n- Reference specific experiences at the company\n- Mention relationships with team members\n- Discuss challenges you've already navigated there\n- Share ideas based on your observations\n\nSee [Interview Skills for Flex Work](/career-hub/guides/interview-skills) for comprehensive preparation."
+      },
+      {
+        heading: "Negotiating the Offer",
+        content: "When you receive an offer:\n\n**Salary considerations:**\n\n- Research market rates for the role (Indeed, Glassdoor, BLS data)\n- Consider that flex hourly rate excludes benefits value\n- Factor in benefits: health insurance, PTO, retirement contributions\n- Ask about sign-on bonuses or start date flexibility\n\n**Calculate total compensation:**\n\n| Component | Flex Work | Permanent |\n|-----------|-----------|----------|\n| Hourly wage | $18/hr | $17/hr |\n| Health insurance | $0 value | +$3/hr equivalent |\n| PTO | $0 | +$1.50/hr equivalent |\n| 401(k) match | $0 | +$1/hr equivalent |\n| **Effective rate** | **$18/hr** | **$22.50/hr** |\n\n**Negotiation tips:**\n\n- Always ask if there's flexibility—most offers have room\n- Use your proven performance as leverage\n- Be willing to accept if the offer is fair\n- Get the final offer in writing before giving notice elsewhere"
+      },
+      {
+        heading: "Making the Transition Successfully",
+        content: "Once you accept:\n\n**Wind down flex work:**\n\n- Complete any committed shifts (don't burn bridges)\n- Thank other companies where you've worked\n- Update your Indeed Flex availability\n\n**Start strong:**\n\n- Apply your first-90-days mindset: [Workplace Success Guide](/career-hub/guides/workplace-success)\n- Build on existing relationships\n- Learn aspects of the job you didn't see as a temp\n- Set clear expectations with your manager\n\n**Maintain your advantage:**\n\n- Keep the same reliability and attitude that earned the position\n- Don't become complacent—you earned this through excellence\n- Continue learning and growing\n- Help train new temp workers (full circle!)\n\n**The transition is a new beginning, not an endpoint.** Apply the same drive that got you here to advancing in your permanent role."
+      }
+    ],
+    faqs: [
+      {
+        question: "How long should I work somewhere before asking about permanent positions?",
+        answer: "Generally, 10+ shifts over 2-3 months provides enough time to prove yourself and build relationships. Earlier conversations can happen if there's mutual interest, but patience typically pays off."
+      },
+      {
+        question: "Should I continue flex work at other companies while pursuing a permanent role?",
+        answer: "Yes—don't put all your eggs in one basket. Keep working and building ratings elsewhere until you have a formal offer. Once you accept, fulfill any committed shifts but transition your focus."
+      },
+      {
+        question: "What if they say they're not hiring right now?",
+        answer: "Stay positive and keep performing excellently. Things change—companies grow, people leave, positions open. Stay in their Talent Pool and check in periodically. Your consistent presence keeps you top of mind when opportunities arise."
+      },
+      {
+        question: "Will my Indeed Flex rating carry over to permanent evaluation?",
+        answer: "Not formally, but the relationships and reputation you've built absolutely carry over. Supervisors remember great workers. Your flex performance becomes your informal track record for advancement conversations."
+      },
+      {
+        question: "Can I negotiate salary even though they've seen me work?",
+        answer: "Absolutely. The fact that they've seen your quality work is leverage, not a limitation. Research market rates, articulate your value, and make a reasonable ask. Most offers have some flexibility."
+      }
+    ],
+    relatedArticles: ["career-paths", "interview-skills", "workplace-success", "networking"]
   }
 };

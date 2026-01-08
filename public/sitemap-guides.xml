@@ -1,109 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Getting Started -->
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/getting-started-indeed-flex</loc>
+    <loc>https://indeedflex.com/career-hub/guides/first-flex-job</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/complete-guide</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/first-shift</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/building-strong-profile</loc>
+    <loc>https://indeedflex.com/career-hub/guides/worker-profile</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Career Growth -->
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/career-paths</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/skill-boost</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/verification-process</loc>
+    <loc>https://indeedflex.com/career-hub/guides/certifications</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/more-shifts</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/booking-first-shift</loc>
+    <loc>https://indeedflex.com/career-hub/guides/temp-to-perm-guide</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Industry Guides -->
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/hospitality-guide</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/warehouse-guide</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/retail-guide</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/facilities-guide</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Professional Development -->
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/networking</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/maximizing-earnings</loc>
+    <loc>https://indeedflex.com/career-hub/guides/resume-tips</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/understanding-ratings</loc>
+    <loc>https://indeedflex.com/career-hub/guides/interview-skills</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/multiple-gigs</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Workplace Success -->
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/workplace-success</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/shift-rating-tips</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Financial Tips -->
+  <url>
+    <loc>https://indeedflex.com/career-hub/financial-tips/irregular-income-budget</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/worker-rights</loc>
+    <loc>https://indeedflex.com/career-hub/financial-tips/emergency-fund-guide</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/workplace-safety</loc>
+    <loc>https://indeedflex.com/career-hub/financial-tips/tax-tips</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/career-advancement</loc>
+    <loc>https://indeedflex.com/career-hub/financial-tips/between-shifts</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/networking-strategies</loc>
+    <loc>https://indeedflex.com/career-hub/financial-tips/gig-benefits</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/work-life-balance</loc>
+    <loc>https://indeedflex.com/career-hub/financial-tips/retirement-saving</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/guides/interview-preparation</loc>
+    <loc>https://indeedflex.com/career-hub/financial-tips/government-resources</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indeedflex.com/career-hub/financial-tips/budgeting-flexible-income</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://indeedflex.com/career-hub/financial-tips/emergency-fund-basics</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://indeedflex.com/career-hub/financial-tips/tax-tips-gig-workers</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://indeedflex.com/career-hub/financial-tips/retirement-planning</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://indeedflex.com/career-hub/financial-tips/health-insurance-options</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://indeedflex.com/career-hub/financial-tips/maximizing-same-day-pay</loc>
+    <loc>https://indeedflex.com/career-hub/financial-tips/maximize-indeed-flex</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
