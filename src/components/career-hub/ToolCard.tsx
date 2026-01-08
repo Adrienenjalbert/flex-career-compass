@@ -14,14 +14,15 @@ import {
   Calendar,
   Languages,
   Wine,
-  Shield
+  Shield,
+  ChefHat
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ToolCardProps {
   title: string;
   description: string;
-  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car' | 'Languages' | 'Wine' | 'Shield';
+  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car' | 'Languages' | 'Wine' | 'Shield' | 'ChefHat';
   href: string;
   featured?: boolean;
   answersQuestion?: string;
@@ -43,6 +44,7 @@ const iconMap: Record<string, LucideIcon> = {
   Languages,
   Wine,
   Shield,
+  ChefHat,
 };
 
 const ToolCard = ({ 
