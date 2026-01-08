@@ -1,9 +1,10 @@
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import ToolCard from "@/components/career-hub/ToolCard";
 import CTASection from "@/components/career-hub/CTASection";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
+import { SEOMetaTags } from "@/components/career-hub/seo";
 import { 
   DollarSign, 
   Scale, 
@@ -191,28 +192,34 @@ const ToolsPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Free Career Tools & Calculators | Indeed Flex Career Hub</title>
-        <meta 
-          name="description" 
-          content="9 free career tools: paycheck calculator, childcare break-even, commute costs, tax estimator & more. All 50 states covered with 2024-2025 data." 
-        />
-        <link rel="canonical" href="https://indeedflex.com/career-hub/tools" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": decisionHelper.slice(0, 5).map(item => ({
-              "@type": "Question",
-              "name": item.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": `Use our free ${item.tool} to find out. Visit ${item.href} to get started.`
-              }
-            }))
-          })}
-        </script>
-      </Helmet>
+      <SEOMetaTags
+        title="Free Career Tools & Calculators | Indeed Flex Career Hub"
+        description="10 free career tools: paycheck calculator, childcare break-even, commute costs, tax estimator & more. All 50 states covered with 2024-2025 data."
+        canonical="https://indeedflex.com/career-hub/tools"
+        keywords={[
+          'paycheck calculator',
+          'tax calculator',
+          'career tools',
+          'gig worker tools',
+          'childcare calculator',
+          'commute calculator',
+          'shift planner'
+        ]}
+      />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": decisionHelper.slice(0, 5).map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `Use our free ${item.tool} to find out. Visit ${item.href} to get started.`
+            }
+          }))
+        })}
+      </script>
 
       <Layout>
         <div className="container mx-auto px-4 md:px-6">
@@ -387,6 +394,13 @@ const ToolsPage = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Internal Link Hub for SEO */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <InternalLinkHub variant="footer" currentPage={{ type: 'tool' }} />
           </div>
         </section>
 

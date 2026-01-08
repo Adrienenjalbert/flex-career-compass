@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Layout from "@/components/career-hub/Layout";
 import HeroSection from "@/components/career-hub/HeroSection";
@@ -8,6 +7,8 @@ import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
 import GuidesCategorySection from "@/components/career-hub/GuidesCategorySection";
 import FinancialTipsSection from "@/components/career-hub/FinancialTipsSection";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
+import { SEOMetaTags } from "@/components/career-hub/seo";
 import { usLocations } from "@/data/locations";
 import { roles } from "@/data/roles";
 import { MapPin, BadgeCheck, ChevronRight } from "lucide-react";
@@ -117,11 +118,21 @@ const activeMarkets = usLocations.filter(loc => ACTIVE_MARKET_CITIES.includes(lo
 const CareerHubHome = () => {
   return (
     <>
-      <Helmet>
-        <title>Career Hub | Indeed Flex - Career Resources for Flexible Workers</title>
-        <meta name="description" content="Discover career growth resources, salary guides, and financial tips for flexible workers. Find hourly jobs in hospitality, warehouse, retail, and more across the US." />
-        <link rel="canonical" href="https://indeedflex.com/career-hub" />
-      </Helmet>
+      <SEOMetaTags
+        title="Career Hub | Indeed Flex - Career Resources for Flexible Workers"
+        description="Discover career growth resources, salary guides, and financial tips for flexible workers. Find hourly jobs in hospitality, warehouse, retail, and more across the US."
+        canonical="https://indeedflex.com/career-hub"
+        keywords={[
+          'flexible work',
+          'temp jobs',
+          'indeed flex',
+          'career resources',
+          'hourly jobs',
+          'gig work',
+          'warehouse jobs',
+          'hospitality jobs'
+        ]}
+      />
 
       <Layout>
         <HeroSection />
@@ -224,6 +235,13 @@ const CareerHubHome = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 max-w-3xl">
             <FAQSection faqs={homeFAQs} />
+          </div>
+        </section>
+
+        {/* Internal Link Hub for SEO */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <InternalLinkHub variant="full" currentPage={{ type: 'guide' }} />
           </div>
         </section>
 

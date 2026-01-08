@@ -5,6 +5,7 @@ import CTASection from "@/components/career-hub/CTASection";
 import RoleCard from "@/components/career-hub/RoleCard";
 import KeyFacts from "@/components/career-hub/KeyFacts";
 import RelatedContent from "@/components/career-hub/RelatedContent";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { 
   SEOMetaTags, 
   generateKeywords,
@@ -281,6 +282,13 @@ const LocationPage = () => {
           ]}
           variant="full"
         />
+
+        {/* Internal Link Hub for SEO */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <InternalLinkHub variant="footer" currentPage={{ type: 'location', slug: location.slug }} />
+          </div>
+        </section>
 
         <CTASection 
           title={`Find Shifts in ${location.city} Today`}

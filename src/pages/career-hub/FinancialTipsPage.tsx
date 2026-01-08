@@ -1,7 +1,8 @@
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
+import { SEOMetaTags } from "@/components/career-hub/seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, Wallet, PiggyBank, Receipt, TrendingUp, Shield, Calculator } from "lucide-react";
@@ -63,11 +64,19 @@ const quickTips = [
 const FinancialTipsPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Financial Tips for Flexible Workers | Indeed Flex Career Hub</title>
-        <meta name="description" content="Master your finances as a flexible worker. Learn budgeting, saving, tax tips, and money management strategies for irregular income." />
-        <link rel="canonical" href="https://indeedflex.com/career-hub/financial-tips" />
-      </Helmet>
+      <SEOMetaTags
+        title="Financial Tips for Flexible Workers | Indeed Flex Career Hub"
+        description="Master your finances as a flexible worker. Learn budgeting, saving, tax tips, and money management strategies for irregular income."
+        canonical="https://indeedflex.com/career-hub/financial-tips"
+        keywords={[
+          'financial tips gig workers',
+          'budgeting irregular income',
+          'flexible work finances',
+          'tax tips contractors',
+          'emergency fund gig economy',
+          'retirement saving freelancers'
+        ]}
+      />
 
       <Layout>
         <div className="container mx-auto px-4">
@@ -174,6 +183,13 @@ const FinancialTipsPage = () => {
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Internal Link Hub for SEO */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <InternalLinkHub variant="footer" currentPage={{ type: 'guide' }} />
           </div>
         </section>
 

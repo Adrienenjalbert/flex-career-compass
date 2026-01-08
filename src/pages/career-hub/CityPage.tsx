@@ -102,7 +102,7 @@ const CityPage = () => {
       <SEOMetaTags
         title={pageTitle}
         description={pageDescription}
-        canonical={`https://workhustle.com/career-hub/cities/${city.slug}`}
+        canonical={`https://indeedflex.com/career-hub/cities/${city.slug}`}
         keywords={[
           `temp jobs ${city.city}`,
           `${city.city} flexible work`,
@@ -119,7 +119,7 @@ const CityPage = () => {
       <WebPageSchema
         name={pageTitle}
         description={pageDescription}
-        url={`https://workhustle.com/career-hub/cities/${city.slug}`}
+        url={`https://indeedflex.com/career-hub/cities/${city.slug}`}
       />
       <LocalBusinessSchema
         name={`Temp Work Opportunities in ${city.city}`}
@@ -178,7 +178,7 @@ const CityPage = () => {
 
             <div className="flex flex-wrap gap-4">
               <Button size="lg" asChild>
-                <a href="https://www.workhustle.com/workers" target="_blank" rel="noopener noreferrer">
+                <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
                   Find Jobs in {city.city}
                 </a>
               </Button>
