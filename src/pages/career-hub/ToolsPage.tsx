@@ -122,6 +122,14 @@ const toolCategories = [
         answersQuestion: "How do I learn job English fast?",
         estimatedTime: "~10 min",
       },
+      {
+        title: "CocktailQuiz: Bartending Trainer",
+        description: "Master 50+ classic cocktails with flashcards, quizzes & speed rounds. Essential for barbacks becoming bartenders.",
+        icon: "Wine" as const,
+        href: "/career-hub/tools/cocktail-quiz",
+        answersQuestion: "How do I learn bartending skills?",
+        estimatedTime: "~15 min",
+      },
     ],
   },
   {
