@@ -1,5 +1,5 @@
 # Indeed Flex Career Hub - robots.txt
-# Last updated: December 2024
+# Last updated: January 2025
 
 # Allow all major search engine crawlers
 User-agent: Googlebot
@@ -38,12 +38,21 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
 # Default rule for all other bots
 User-agent: *
 Allow: /
 Crawl-delay: 2
 
-# Sitemap location
+# Sitemap index location (contains all category sitemaps)
 Sitemap: https://indeedflex.com/sitemap.xml
 
 # LLM-specific content
