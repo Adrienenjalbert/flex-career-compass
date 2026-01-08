@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import RoleCard from "@/components/career-hub/RoleCard";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
+import { SEOMetaTags } from "@/components/career-hub/seo";
 import { roles, industries, getRolesByIndustry } from "@/data/roles";
 import { UtensilsCrossed, Warehouse, ShoppingBag, Building2 } from "lucide-react";
 
@@ -117,17 +118,25 @@ const IndustryPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{content.title} | Indeed Flex Career Hub</title>
-        <meta name="description" content={content.heroDescription} />
-        <link rel="canonical" href={`https://indeedflex.com/career-hub/industries/${industryId}`} />
-        <script type="application/ld+json">
-          {JSON.stringify(industrySchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      <SEOMetaTags
+        title={`${content.title} | Indeed Flex Career Hub`}
+        description={content.heroDescription}
+        canonical={`https://indeedflex.com/career-hub/industries/${industryId}`}
+        keywords={[
+          content.title.toLowerCase(),
+          `${industryId} jobs`,
+          'flexible work',
+          'temp jobs',
+          'indeed flex',
+          ...industryRoles.slice(0, 5).map(r => r.title.toLowerCase())
+        ]}
+      />
+      <script type="application/ld+json">
+        {JSON.stringify(industrySchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </script>
 
       <Layout>
         <div className="container mx-auto px-4">
@@ -174,6 +183,13 @@ const IndustryPage = () => {
         <section className="py-12 bg-secondary">
           <div className="container mx-auto px-4 max-w-3xl">
             <FAQSection faqs={content.faqs} title={`${content.title} FAQs`} />
+          </div>
+        </section>
+
+        {/* Internal Link Hub for SEO */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <InternalLinkHub variant="footer" currentPage={{ type: 'industry', industry: industryId }} />
           </div>
         </section>
 

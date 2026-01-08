@@ -1,6 +1,7 @@
 import Layout from "@/components/career-hub/Layout";
 import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
+import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { SEOMetaTags } from "@/components/career-hub/seo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -165,6 +166,13 @@ const GuidesPage = () => {
                 </button>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Internal Link Hub for SEO */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <InternalLinkHub variant="footer" currentPage={{ type: 'guide' }} />
           </div>
         </section>
 
