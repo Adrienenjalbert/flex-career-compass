@@ -138,6 +138,14 @@ const toolCategories = [
         answersQuestion: "How do I learn OSHA safety?",
         estimatedTime: "~10 min",
       },
+      {
+        title: "MenuMaster: Culinary Trainer",
+        description: "Master culinary terms, knife cuts & ServSafe food safety. Bilingual flashcards and quizzes for kitchen workers advancing to chef.",
+        icon: "ChefHat" as const,
+        href: "/career-hub/tools/menu-master",
+        answersQuestion: "How do I learn OSHA safety?",
+        estimatedTime: "~10 min",
+      },
     ],
   },
   {

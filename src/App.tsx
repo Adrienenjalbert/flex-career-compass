@@ -23,6 +23,7 @@ import DataVerification from "./pages/career-hub/tools/DataVerification";
 import WorkTalk from "./pages/career-hub/tools/WorkTalk";
 import CocktailQuiz from "./pages/career-hub/tools/CocktailQuiz";
 import SafetyFirst from "./pages/career-hub/tools/SafetyFirst";
+import MenuMaster from "./pages/career-hub/tools/MenuMaster";
 import IndustryPage from "./pages/career-hub/IndustryPage";
 import RolePage from "./pages/career-hub/RolePage";
 import LocationPage from "./pages/career-hub/LocationPage";
@@ -67,6 +68,7 @@ const App = () => (
           <Route path="/career-hub/tools/worktalk" element={<WorkTalk />} />
           <Route path="/career-hub/tools/cocktail-quiz" element={<CocktailQuiz />} />
           <Route path="/career-hub/tools/safety-first" element={<SafetyFirst />} />
+          <Route path="/career-hub/tools/menu-master" element={<MenuMaster />} />
           <Route path="/career-hub/industries/:industryId" element={<IndustryPage />} />
           <Route path="/career-hub/roles/:roleSlug" element={<RolePage />} />
           <Route path="/career-hub/locations" element={<ActiveMarketsPage />} />
