@@ -13,14 +13,15 @@ import {
   Clock,
   Calendar,
   Languages,
-  Wine
+  Wine,
+  Shield
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ToolCardProps {
   title: string;
   description: string;
-  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car' | 'Languages' | 'Wine';
+  icon: 'Calculator' | 'TrendingUp' | 'MapPin' | 'DollarSign' | 'PiggyBank' | 'Target' | 'ShieldCheck' | 'Baby' | 'Car' | 'Languages' | 'Wine' | 'Shield';
   href: string;
   featured?: boolean;
   answersQuestion?: string;
@@ -41,6 +42,7 @@ const iconMap: Record<string, LucideIcon> = {
   Car,
   Languages,
   Wine,
+  Shield,
 };
 
 const ToolCard = ({ 
