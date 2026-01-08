@@ -172,7 +172,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       },
       {
         heading: "Building Beyond the Basics",
-        content: "Once you hit $1,000, keep going:\n\n**Milestones:**\n\n- $1,000 (minor emergency coverage) ✓\n- 1 month baseline expenses (breathing room)\n- 3 months (solid foundation)\n- 6 months (true security)\n\n**Increase savings when:**\n\n- You get a raise or find higher-paying work\n- You [earn certifications](/career-hub/guides/professional-development/certifications) that boost your hourly rate\n- You pay off a debt (redirect that payment to savings)\n- You're in a seasonal peak (save the excess)\n\n**Celebrate milestones** (in small, budget-friendly ways) to stay motivated."
+        content: "Once you hit $1,000, keep going:\n\n**Milestones:**\n\n- $1,000 (minor emergency coverage) ✓\n- 1 month baseline expenses (breathing room)\n- 3 months (solid foundation)\n- 6 months (true security)\n\n**Increase savings when:**\n\n- You get a raise or find higher-paying work\n- You [earn certifications](/career-hub/guides/certifications) that boost your hourly rate\n- You pay off a debt (redirect that payment to savings)\n- You're in a seasonal peak (save the excess)\n\n**Celebrate milestones** (in small, budget-friendly ways) to stay motivated."
       }
     ],
     faqs: [
@@ -219,7 +219,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       },
       {
         heading: "Deductions That Lower Your Tax Bill",
-        content: "If you're a 1099 contractor, these reduce your taxable income:\n\n**Mileage (often the biggest deduction):**\n\n- 2024 rate: **67 cents per mile** for business driving\n- Track with apps like [Stride](https://www.stridehealth.com) (free) or [Everlance](https://www.everlance.com)\n- Example: 5,000 work miles = **$3,350 deduction**\n\n**Other common deductions:**\n\n- Phone/internet (business use percentage)\n- Work clothing (uniforms, non-slip shoes, safety gear)\n- Equipment and supplies\n- Professional development and [certifications](/career-hub/guides/professional-development/certifications)\n- Home office (if you use dedicated space for admin work)\n\n**Keep receipts!** Photo apps like your phone's camera or expense trackers make this easy."
+        content: "If you're a 1099 contractor, these reduce your taxable income:\n\n**Mileage (often the biggest deduction):**\n\n- 2024 rate: **67 cents per mile** for business driving\n- Track with apps like [Stride](https://www.stridehealth.com) (free) or [Everlance](https://www.everlance.com)\n- Example: 5,000 work miles = **$3,350 deduction**\n\n**Other common deductions:**\n\n- Phone/internet (business use percentage)\n- Work clothing (uniforms, non-slip shoes, safety gear)\n- Equipment and supplies\n- Professional development and [certifications](/career-hub/guides/certifications)\n- Home office (if you use dedicated space for admin work)\n\n**Keep receipts!** Photo apps like your phone's camera or expense trackers make this easy."
       },
       {
         heading: "Record-Keeping Essentials",
@@ -274,7 +274,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       },
       {
         heading: "Boost Your Earning Potential with Certifications",
-        content: "Slow periods are perfect for investing in yourself:\n\n**High-ROI certifications to get during downtime:**\n\n| Certification | Cost | Time | Pay Increase |\n|--------------|------|------|-------------|\n| Forklift | $60-150 | 4-8 hrs | +$3-5/hr |\n| Food Handler (ServSafe) | $15-18 | 2-4 hrs | Required for hospitality |\n| OSHA 10 | $25-89 | 10 hrs | +$1-3/hr |\n| TIPS Bartending | $38-55 | 3-4 hrs | +$5-10/hr |\n| CPR/First Aid | $25-90 | 4-6 hrs | Valuable everywhere |\n\n**[See all certifications →](/career-hub/guides/professional-development/certifications)**\n\nMany certifications pay for themselves within a few shifts. A $60 forklift certification that adds $4/hr to your rate pays for itself in just 15 hours of work."
+        content: "Slow periods are perfect for investing in yourself:\n\n**High-ROI certifications to get during downtime:**\n\n| Certification | Cost | Time | Pay Increase |\n|--------------|------|------|-------------|\n| Forklift | $60-150 | 4-8 hrs | +$3-5/hr |\n| Food Handler (ServSafe) | $15-18 | 2-4 hrs | Required for hospitality |\n| OSHA 10 | $25-89 | 10 hrs | +$1-3/hr |\n| TIPS Bartending | $38-55 | 3-4 hrs | +$5-10/hr |\n| CPR/First Aid | $25-90 | 4-6 hrs | Valuable everywhere |\n\n**[See all certifications →](/career-hub/guides/certifications)**\n\nMany certifications pay for themselves within a few shifts. A $60 forklift certification that adds $4/hr to your rate pays for itself in just 15 hours of work."
       },
       {
         heading: "Free Resources When Money is Tight",
@@ -282,7 +282,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       },
       {
         heading: "Use Slow Time Productively",
-        content: "Turn downtime into opportunity:\n\n**Skill building (increases future earnings):**\n\n- Get [certifications](/career-hub/guides/professional-development/certifications) that unlock higher-paying roles\n- Watch free tutorials on YouTube for skills in demand\n- Practice skills at home\n\n**Job searching:**\n\n- Update your [Indeed Flex](https://indeedflex.com/download-app/) profile with new skills\n- Add a professional photo and detailed bio\n- Consider expanding to new industries on the platform\n\n**Financial planning:**\n\n- Review your budget with our [tools](/career-hub/tools)\n- Update your financial goals\n- Research ways to earn more when things pick up"
+        content: "Turn downtime into opportunity:\n\n**Skill building (increases future earnings):**\n\n- Get [certifications](/career-hub/guides/certifications) that unlock higher-paying roles\n- Watch free tutorials on YouTube for skills in demand\n- Practice skills at home\n\n**Job searching:**\n\n- Update your [Indeed Flex](https://indeedflex.com/download-app/) profile with new skills\n- Add a professional photo and detailed bio\n- Consider expanding to new industries on the platform\n\n**Financial planning:**\n\n- Review your budget with our [tools](/career-hub/tools)\n- Update your financial goals\n- Research ways to earn more when things pick up"
       },
       {
         heading: "Communicating During Tight Times",
@@ -304,7 +304,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       },
       {
         question: "How do I know if a slow period is temporary or permanent?",
-        answer: "Check industry trends, talk to other workers, and monitor your Indeed Flex app for patterns. If slow periods extend beyond 6-8 weeks with no improvement, consider getting [certifications](/career-hub/guides/professional-development/certifications) for new roles or expanding to new industries."
+        answer: "Check industry trends, talk to other workers, and monitor your Indeed Flex app for patterns. If slow periods extend beyond 6-8 weeks with no improvement, consider getting [certifications](/career-hub/guides/certifications) for new roles or expanding to new industries."
       },
       {
         question: "What if I need money immediately?",
@@ -416,7 +416,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       },
       {
         heading: "Start Today—Even if It's Small",
-        content: "The most important step is the first one:\n\n**If you can save $25/week:**\n\n- That's $1,300/year\n- In a Roth IRA at 7% return\n- After 30 years: ~$130,000 (tax-free!)\n\n**Action steps today:**\n\n1. Open a Roth IRA at [Fidelity](https://www.fidelity.com) (free, no minimum)\n2. Set up a $25/week automatic transfer\n3. Invest in a target-date fund (one-click, automatically diversified)\n4. Forget about it and let compounding work\n\nThat's it. You're now saving for retirement.\n\n**Build income to save more:** Get [certifications](/career-hub/guides/professional-development/certifications) to increase your hourly rate, then save the difference."
+        content: "The most important step is the first one:\n\n**If you can save $25/week:**\n\n- That's $1,300/year\n- In a Roth IRA at 7% return\n- After 30 years: ~$130,000 (tax-free!)\n\n**Action steps today:**\n\n1. Open a Roth IRA at [Fidelity](https://www.fidelity.com) (free, no minimum)\n2. Set up a $25/week automatic transfer\n3. Invest in a target-date fund (one-click, automatically diversified)\n4. Forget about it and let compounding work\n\nThat's it. You're now saving for retirement.\n\n**Build income to save more:** Get [certifications](/career-hub/guides/certifications) to increase your hourly rate, then save the difference."
       }
     ],
     faqs: [
