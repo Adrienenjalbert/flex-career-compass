@@ -31,8 +31,7 @@ import LocationRolePage from "./pages/career-hub/LocationRolePage";
 import GuidesPage from "./pages/career-hub/GuidesPage";
 import FinancialTipsPage from "./pages/career-hub/FinancialTipsPage";
 import ResourcesPage from "./pages/career-hub/ResourcesPage";
-import GuidesArticlePage from "./pages/career-hub/articles/GuidesArticlePage";
-import SeasonalLocationArticlePage from "./pages/career-hub/articles/SeasonalLocationArticlePage";
+import GuidesSlugRouter from "./pages/career-hub/articles/GuidesSlugRouter";
 import FinancialTipsArticlePage from "./pages/career-hub/articles/FinancialTipsArticlePage";
 import LLMPage from "./pages/career-hub/LLMPage";
 import CityPage from "./pages/career-hub/CityPage";
@@ -77,9 +76,7 @@ const App = () => (
           <Route path="/career-hub/locations/:locationSlug" element={<LocationPage />} />
           <Route path="/career-hub/locations/:locationSlug/:roleSlug" element={<LocationRolePage />} />
           <Route path="/career-hub/guides" element={<GuidesPage />} />
-          <Route path="/career-hub/guides/:slug" element={<GuidesArticlePage />} />
-          {/* Seasonal Location Articles (e.g., holiday-warehouse-guide-austin) */}
-          <Route path="/career-hub/guides/:slug" element={<SeasonalLocationArticlePage />} />
+          <Route path="/career-hub/guides/:slug" element={<GuidesSlugRouter />} />
           <Route path="/career-hub/financial-tips" element={<FinancialTipsPage />} />
           <Route path="/career-hub/financial-tips/:slug" element={<FinancialTipsArticlePage />} />
           <Route path="/career-hub/resources" element={<ResourcesPage />} />
