@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { SEOMetaTags } from "@/components/career-hub/seo";
+import HiringCalendar from "@/components/career-hub/HiringCalendar";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -283,32 +284,13 @@ const SeasonalHiringPage = () => {
           </div>
         </section>
         
-        {/* Content Calendar */}
+        {/* Interactive Hiring Calendar */}
         <section className="py-12">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">2026 Hiring Calendar</h2>
-            <p className="text-muted-foreground mb-8">Plan your job search around peak hiring periods</p>
+            <p className="text-muted-foreground mb-8">Interactive timeline showing hiring demand throughout the year</p>
             
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-3 px-4 font-semibold">Month</th>
-                    <th className="text-left py-3 px-4 font-semibold">Focus</th>
-                    <th className="text-left py-3 px-4 font-semibold">Demand</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {contentCalendar.map(month => (
-                    <tr key={month.month} className="border-b hover:bg-secondary/30 transition-colors">
-                      <td className="py-3 px-4 font-medium">{month.month}</td>
-                      <td className="py-3 px-4 text-muted-foreground">{month.focus}</td>
-                      <td className="py-3 px-4">{getDemandBadge(month.trafficPotential)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <HiringCalendar />
           </div>
         </section>
         
