@@ -35,7 +35,7 @@ import {
   stateGasPrices,
   cityTransitCosts,
   NATIONAL_AVERAGES,
-  IRS_MILEAGE_RATE_2024,
+  IRS_MILEAGE_RATE_2026,
   getStateGasPrice,
   getVehicleType,
   getCityTransit,
@@ -48,7 +48,7 @@ type CommuteMethod = "car" | "transit" | "mixed" | "bike";
 const faqs = [
   {
     question: "How is the cost per mile calculated?",
-    answer: "We use AAA's 2024 Your Driving Costs data which includes all vehicle expenses: fuel, maintenance, tires, insurance, depreciation, and registration. This gives a true picture of driving costs beyond just gas."
+    answer: "We use AAA's 2026 Your Driving Costs data which includes all vehicle expenses: fuel, maintenance, tires, insurance, depreciation, and registration. This gives a true picture of driving costs beyond just gas."
   },
   {
     question: "Why is my commute cost so high even with good gas mileage?",

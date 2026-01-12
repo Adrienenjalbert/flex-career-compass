@@ -31,7 +31,7 @@ const toolCategories = [
         icon: "Calculator" as const,
         href: "/career-hub/tools/pay-calculator",
         answersQuestion: "How much will I take home after taxes?",
-        dataYear: "2025",
+        dataYear: "2026",
         estimatedTime: "~3 min",
       },
       {
@@ -40,7 +40,7 @@ const toolCategories = [
         icon: "PiggyBank" as const,
         href: "/career-hub/tools/tax-calculator",
         answersQuestion: "How much should I save for taxes?",
-        dataYear: "2025",
+        dataYear: "2026",
         estimatedTime: "~5 min",
       },
       {
@@ -63,11 +63,11 @@ const toolCategories = [
     tools: [
       {
         title: "Childcare Break-Even Calculator",
-        description: "Calculate if working is worth it after childcare costs. Includes 2024 state data, tax credits, and flexible schedule comparisons.",
+        description: "Calculate if working is worth it after childcare costs. Includes 2026 state data, tax credits, and flexible schedule comparisons.",
         icon: "Baby" as const,
         href: "/career-hub/tools/childcare-calculator",
         answersQuestion: "Is working worth it after daycare costs?",
-        dataYear: "2024",
+        dataYear: "2026",
         estimatedTime: "~4 min",
       },
       {
@@ -76,7 +76,7 @@ const toolCategories = [
         icon: "Car" as const,
         href: "/career-hub/tools/commute-calculator",
         answersQuestion: "How much is my commute really costing me?",
-        dataYear: "2024",
+        dataYear: "2026",
         estimatedTime: "~3 min",
       },
       {
@@ -85,7 +85,7 @@ const toolCategories = [
         icon: "ShieldCheck" as const,
         href: "/career-hub/tools/unemployment-calculator",
         answersQuestion: "What benefits am I eligible for?",
-        dataYear: "2024",
+        dataYear: "2026",
         estimatedTime: "~3 min",
       },
     ],

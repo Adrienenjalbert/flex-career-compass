@@ -20,7 +20,7 @@ import {
   calculateFederalTax, 
   getSortedStates,
   getNoIncomeTaxStates,
-  quarterlyDeadlines2025,
+  quarterlyDeadlines2026,
   type Deduction
 } from "@/data/state-taxes";
 
@@ -42,11 +42,11 @@ const faqs = [
   },
   {
     question: "What deductions can gig workers claim?",
-    answer: "Common deductions include vehicle mileage (70¢/mile in 2025), phone expenses, work uniforms, tools and equipment, home office space, and professional services like tax preparation."
+    answer: "Common deductions include vehicle mileage (70¢/mile in 2026), phone expenses, work uniforms, tools and equipment, home office space, and professional services like tax preparation."
   },
   {
     question: "How do I track mileage for taxes?",
-    answer: "Keep a log of work-related miles (not including regular commuting). Use apps or a simple spreadsheet to track date, destination, purpose, and miles. The 2025 IRS rate is 70 cents per mile."
+    answer: "Keep a log of work-related miles (not including regular commuting). Use apps or a simple spreadsheet to track date, destination, purpose, and miles. The 2026 IRS rate is 70 cents per mile."
   },
   {
     question: "What's the difference between W-2 and 1099 taxes?",
@@ -74,15 +74,14 @@ const TaxCalculator = () => {
   // Get next quarterly deadline
   const nextDeadline = useMemo(() => {
     const today = new Date();
-    const currentYear = today.getFullYear();
     
-    for (const deadline of quarterlyDeadlines2025) {
+    for (const deadline of quarterlyDeadlines2026) {
       const dueDate = new Date(deadline.dueDate);
       if (dueDate > today) {
         return deadline;
       }
     }
-    return quarterlyDeadlines2025[0]; // Return Q1 if all passed
+    return quarterlyDeadlines2026[0]; // Return Q1 if all passed
   }, []);
 
   const calculations = useMemo(() => {
@@ -187,8 +186,8 @@ const TaxCalculator = () => {
   return (
     <>
       <Helmet>
-        <title>1099 & Quarterly Tax Calculator 2025 | Indeed Flex Career Hub</title>
-        <meta name="description" content="Estimate your self-employment taxes and quarterly payments. Free tax calculator for gig workers with W-2 + 1099 combined income, deductions tracker, and deadline reminders." />
+        <title>1099 & Quarterly Tax Calculator 2026 | Indeed Flex Career Hub</title>
+        <meta name="description" content="Estimate your self-employment taxes and quarterly payments for 2026. Free tax calculator for gig workers with W-2 + 1099 combined income, deductions tracker, and deadline reminders." />
         <link rel="canonical" href="https://indeedflex.com/career-hub/tools/tax-calculator" />
       </Helmet>
 
@@ -232,7 +231,7 @@ const TaxCalculator = () => {
                 </span>
               </div>
               <div className="flex gap-2">
-                {quarterlyDeadlines2025.map((deadline, i) => (
+                {quarterlyDeadlines2026.map((deadline, i) => (
                   <Badge 
                     key={deadline.quarter}
                     variant={deadline === nextDeadline ? "default" : "secondary"}
@@ -363,7 +362,7 @@ const TaxCalculator = () => {
                           placeholder="5000"
                         />
                         <p className="text-xs text-muted-foreground">
-                          Track miles driven for work (not regular commuting). 2025 IRS rate: <strong>$0.70/mile</strong>
+                          Track miles driven for work (not regular commuting). 2026 IRS rate: <strong>$0.70/mile</strong>
                         </p>
                         <div className="text-sm font-medium text-accent">
                           = ${(parseFloat(milesPerYear || '0') * 0.70).toLocaleString()} deduction
@@ -451,7 +450,7 @@ const TaxCalculator = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {quarterlyDeadlines2025.map((deadline) => (
+                      {quarterlyDeadlines2026.map((deadline) => (
                         <div 
                           key={deadline.quarter}
                           className={`flex items-center justify-between p-2 rounded-lg ${

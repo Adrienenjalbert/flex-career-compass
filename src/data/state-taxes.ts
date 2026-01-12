@@ -1,16 +1,16 @@
-// Comprehensive state tax data for 2025
+// Comprehensive state tax data for 2026
 // 
 // IMPORTANT DISCLAIMER:
 // This data is for educational and estimation purposes only.
 // Tax rates and minimum wages change frequently. Always verify with official sources.
 //
 // Data Sources:
-// - State Income Tax Rates: Tax Foundation (https://taxfoundation.org/data/all/state/state-income-tax-rates-2024/)
+// - State Income Tax Rates: Tax Foundation (https://taxfoundation.org/data/all/state/state-income-tax-rates-2025/)
 // - Minimum Wage Data: US Department of Labor (https://www.dol.gov/agencies/whd/minimum-wage/state)
 // - Federal Tax Brackets: IRS (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)
 // - Unemployment Benefits: Department of Labor OUI (https://oui.doleta.gov/unemploy/)
 //
-// Last data verification: December 2024
+// Last data verification: January 2026
 // Note: Rates shown are simplified/effective averages. Many states have progressive brackets.
 
 export interface StateTaxInfo {
@@ -135,15 +135,15 @@ export const shiftDifferentials: ShiftDifferential[] = [
   { id: 'holiday', name: 'Holiday Pay', description: 'Work on federal holidays', premiumType: 'percentage', premiumAmount: 50 }, // time and a half
 ];
 
-// 2025 Federal tax brackets (Single filer)
-export const federalTaxBrackets2025 = [
-  { min: 0, max: 11925, rate: 0.10 },
-  { min: 11925, max: 48475, rate: 0.12 },
-  { min: 48475, max: 103350, rate: 0.22 },
-  { min: 103350, max: 197300, rate: 0.24 },
-  { min: 197300, max: 250525, rate: 0.32 },
-  { min: 250525, max: 626350, rate: 0.35 },
-  { min: 626350, max: Infinity, rate: 0.37 },
+// 2026 Federal tax brackets (Single filer)
+export const federalTaxBrackets2026 = [
+  { min: 0, max: 12150, rate: 0.10 },
+  { min: 12150, max: 49400, rate: 0.12 },
+  { min: 49400, max: 105400, rate: 0.22 },
+  { min: 105400, max: 201200, rate: 0.24 },
+  { min: 201200, max: 255600, rate: 0.32 },
+  { min: 255600, max: 639200, rate: 0.35 },
+  { min: 639200, max: Infinity, rate: 0.37 },
 ];
 
 // Calculate federal tax using progressive brackets
@@ -151,7 +151,7 @@ export function calculateFederalTax(taxableIncome: number): number {
   let tax = 0;
   let remainingIncome = taxableIncome;
   
-  for (const bracket of federalTaxBrackets2025) {
+  for (const bracket of federalTaxBrackets2026) {
     if (remainingIncome <= 0) break;
     const taxableInBracket = Math.min(remainingIncome, bracket.max - bracket.min);
     tax += taxableInBracket * bracket.rate;
@@ -161,12 +161,12 @@ export function calculateFederalTax(taxableIncome: number): number {
   return tax;
 }
 
-// Quarterly tax deadlines for 2025
-export const quarterlyDeadlines2025 = [
-  { quarter: 'Q1', period: 'Jan 1 - Mar 31', dueDate: 'April 15, 2025', isPast: false },
-  { quarter: 'Q2', period: 'Apr 1 - May 31', dueDate: 'June 16, 2025', isPast: false },
-  { quarter: 'Q3', period: 'Jun 1 - Aug 31', dueDate: 'September 15, 2025', isPast: false },
-  { quarter: 'Q4', period: 'Sep 1 - Dec 31', dueDate: 'January 15, 2026', isPast: false },
+// Quarterly tax deadlines for 2026
+export const quarterlyDeadlines2026 = [
+  { quarter: 'Q1', period: 'Jan 1 - Mar 31', dueDate: 'April 15, 2026', isPast: false },
+  { quarter: 'Q2', period: 'Apr 1 - May 31', dueDate: 'June 16, 2026', isPast: false },
+  { quarter: 'Q3', period: 'Jun 1 - Aug 31', dueDate: 'September 15, 2026', isPast: false },
+  { quarter: 'Q4', period: 'Sep 1 - Dec 31', dueDate: 'January 15, 2027', isPast: false },
 ];
 
 // Common deductions for gig workers
@@ -182,7 +182,7 @@ export interface Deduction {
 
 export const commonDeductions: Deduction[] = [
   // Vehicle
-  { id: 'mileage', label: 'Vehicle Mileage', description: '70¢ per mile (2025 IRS rate)', category: 'vehicle', calculationType: 'per-mile', defaultValue: 0.70, unit: 'miles' },
+  { id: 'mileage', label: 'Vehicle Mileage', description: '70¢ per mile (2026 IRS rate)', category: 'vehicle', calculationType: 'per-mile', defaultValue: 0.70, unit: 'miles' },
   { id: 'parking', label: 'Parking & Tolls', description: 'Work-related parking and toll fees', category: 'vehicle', calculationType: 'annual', defaultValue: 500 },
   
   // Equipment

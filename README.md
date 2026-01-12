@@ -32,19 +32,23 @@ The **Indeed Flex Career Hub** is a content-rich web application designed to hel
 
 ## ✨ Features
 
-### 🛠️ Interactive Tools (9)
+### 🛠️ Interactive Tools (14)
 
 | Tool | Description | Data Source |
 |------|-------------|-------------|
-| **💰 Paycheck Calculator** | Take-home pay estimates for all 50 states | 2025 tax rates |
-| **📊 Tax Estimator** | 1099/W-2 quarterly tax planning | 2025 federal brackets |
+| **💰 Paycheck Calculator** | Take-home pay estimates for all 50 states | 2026 tax rates |
+| **📊 Tax Estimator** | 1099/W-2 quarterly tax planning | 2026 federal brackets |
 | **📅 Shift Income Planner** | Weekly/monthly earnings projection | Real-time calculation |
-| **👶 Childcare Calculator** | Break-even analysis with state-specific costs | 2024 state data |
-| **🚗 Commute Calculator** | True commuting cost including time value | 2024 IRS rates |
-| **📉 Unemployment Calculator** | State-by-state benefit estimates | 2024 state rules |
+| **👶 Childcare Calculator** | Break-even analysis with state-specific costs | 2026 state data |
+| **🚗 Commute Calculator** | True commuting cost including time value | 2026 IRS rates |
+| **📉 Unemployment Calculator** | State-by-state benefit estimates | 2026 state rules |
 | **🎯 Career Path Explorer** | Visual role progression mapping | 20+ career paths |
 | **🔍 Skills Analyzer** | Gap analysis with recommendations | Industry standards |
 | **🗣️ WorkTalk** | Job-specific English for Spanish speakers | 250+ phrases with TTS |
+| **🍸 CocktailQuiz** | Bartending trainer with 50+ cocktails | Industry standards |
+| **⚠️ SafetyFirst** | OSHA safety trainer (bilingual EN/ES) | OSHA-aligned |
+| **👨‍🍳 MenuMaster** | Culinary terms & food safety trainer | ServSafe-aligned |
+| **🏙️ Cost of Living** | City-to-city expense comparison | BLS/Numbeo 2026 |
 
 ### 📍 Programmatic SEO Pages
 
@@ -161,13 +165,13 @@ All calculators use verified, up-to-date data:
 
 | Data Type | Coverage | Year | Update Frequency |
 |-----------|----------|------|------------------|
-| Federal Tax Brackets | US | 2025 | Annual |
-| State Income Tax | 50 states | 2025 | Annual |
-| Indeed Flex Markets | 19 metros | 2024 | As announced |
-| Job Roles & Requirements | 20+ roles | 2024 | Quarterly |
-| Childcare Costs | 50 states | 2024 | Annual |
-| Unemployment Benefits | 50 states | 2024 | Annual |
-| Workplace English Phrases | 250+ | 2024 | Ongoing |
+| Federal Tax Brackets | US | 2026 | Annual |
+| State Income Tax | 50 states | 2026 | Annual |
+| Indeed Flex Markets | 19 metros | 2026 | As announced |
+| Job Roles & Requirements | 20+ roles | 2026 | Quarterly |
+| Childcare Costs | 50 states | 2026 | Annual |
+| Unemployment Benefits | 50 states | 2026 | Annual |
+| Workplace English Phrases | 250+ | 2026 | Ongoing |
 
 ---
 

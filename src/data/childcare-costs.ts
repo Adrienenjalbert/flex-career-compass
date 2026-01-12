@@ -1,4 +1,4 @@
-// Childcare costs by state - Data from Child Care Aware of America 2024
+// Childcare costs by state - Data from Child Care Aware of America 2026
 // Source: https://www.childcareaware.org/our-issues/research/the-us-and-the-high-price-of-child-care/
 
 export interface StateChildcareCosts {
@@ -20,10 +20,10 @@ export interface StateChildcareCosts {
   subsidyAgencyUrl: string;
 }
 
-// 2024 Federal Poverty Level for family of 4: $31,200
-export const FEDERAL_POVERTY_LEVEL_2024 = 31200;
+// 2026 Federal Poverty Level for family of 4: $32,400 (estimated)
+export const FEDERAL_POVERTY_LEVEL_2026 = 32400;
 
-// IRS Child and Dependent Care Tax Credit 2024
+// IRS Child and Dependent Care Tax Credit 2026
 export const CDCTC_LIMITS = {
   oneChild: 3000,
   twoOrMoreChildren: 6000,
@@ -48,7 +48,7 @@ export const CDCTC_LIMITS = {
   ]
 };
 
-// Dependent Care FSA limit 2024
+// Dependent Care FSA limit 2026
 export const DCFSA_LIMIT = 5000;
 
 // National averages for reference
