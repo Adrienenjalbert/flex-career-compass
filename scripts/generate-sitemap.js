@@ -148,6 +148,32 @@ const tools = [
 const industries = ["hospitality", "industrial", "retail", "facilities"];
 const industryUrlSlugs = ["warehouse", "hospitality", "retail", "facilities"];
 
+// Seasonal hiring data
+const seasons = [
+  { id: "holiday-2026", slug: "holiday-warehouse-jobs-2026", locationPrefix: "christmas-temp-jobs" },
+  { id: "summer-2026", slug: "summer-hospitality-jobs-2026", locationPrefix: "summer-jobs" },
+  { id: "back-to-school-2026", slug: "back-to-school-jobs-2026", locationPrefix: "fall-retail-jobs" },
+  { id: "tax-season-2026", slug: "tax-season-jobs-2026", locationPrefix: "tax-season-jobs" },
+  { id: "spring-2026", slug: "spring-hiring-jobs-2026", locationPrefix: "spring-jobs" },
+];
+
+const seasonalEvents = [
+  { id: "black-friday-2026", slug: "black-friday-jobs-2026" },
+  { id: "prime-day-2026", slug: "prime-day-hiring-2026" },
+  { id: "super-bowl-2026", slug: "super-bowl-staffing-2026" },
+  { id: "concert-season-2026", slug: "concert-venue-jobs-2026" },
+  { id: "new-years-2026", slug: "new-years-eve-staffing-2026" },
+];
+
+const seasonalGuideArticles = [
+  "holiday-warehouse-guide",
+  "black-friday-hiring",
+  "summer-hospitality-guide",
+  "student-jobs-fall",
+  "event-staffing-guide",
+  "tax-season-jobs",
+];
+
 /**
  * Generate XML for a single sitemap
  */
@@ -351,12 +377,88 @@ function generateGuidesSitemap() {
     });
   });
 
+  // Seasonal guide articles
+  seasonalGuideArticles.forEach((slug) => {
+    entries.push({
+      loc: `${BASE_URL}/career-hub/guides/${slug}`,
+      lastmod: TODAY,
+      changefreq: "monthly",
+      priority: 0.7,
+    });
+  });
+
   financialTips.forEach((slug) => {
     entries.push({
       loc: `${BASE_URL}/career-hub/financial-tips/${slug}`,
       lastmod: TODAY,
       changefreq: "monthly",
       priority: 0.7,
+    });
+  });
+
+  return entries;
+}
+
+/**
+ * Generate seasonal and event hiring pages sitemap
+ */
+function generateSeasonalSitemap() {
+  const entries = [];
+
+  // Seasonal hub index page
+  entries.push({
+    loc: `${BASE_URL}/career-hub/seasonal-hiring`,
+    lastmod: TODAY,
+    changefreq: "weekly",
+    priority: 0.9,
+  });
+
+  // National seasonal hub pages
+  seasons.forEach((season) => {
+    entries.push({
+      loc: `${BASE_URL}/${season.slug}`,
+      lastmod: TODAY,
+      changefreq: "weekly",
+      priority: 0.8,
+    });
+  });
+
+  // Seasonal x Location pages (5 seasons × 50 cities = 250 pages)
+  seasons.forEach((season) => {
+    cities.forEach((city) => {
+      entries.push({
+        loc: `${BASE_URL}/${season.locationPrefix}-${city.slug}`,
+        lastmod: TODAY,
+        changefreq: "weekly",
+        priority: 0.7,
+      });
+    });
+  });
+
+  // Event pages (national)
+  seasonalEvents.forEach((event) => {
+    entries.push({
+      loc: `${BASE_URL}/${event.slug}`,
+      lastmod: TODAY,
+      changefreq: "weekly",
+      priority: 0.8,
+    });
+  });
+
+  // Event x Location pages for major events (Black Friday, Prime Day)
+  const locationEvents = [
+    { prefix: "black-friday-jobs", eventId: "black-friday-2026" },
+    { prefix: "prime-day-jobs", eventId: "prime-day-2026" },
+  ];
+
+  locationEvents.forEach(({ prefix }) => {
+    cities.forEach((city) => {
+      entries.push({
+        loc: `${BASE_URL}/${prefix}-${city.slug}`,
+        lastmod: TODAY,
+        changefreq: "weekly",
+        priority: 0.7,
+      });
     });
   });
 
@@ -381,6 +483,7 @@ function generateAllSitemaps() {
     { filename: "sitemap-programmatic.xml", generator: generateProgrammaticSitemap },
     { filename: "sitemap-tools.xml", generator: generateToolsSitemap },
     { filename: "sitemap-guides.xml", generator: generateGuidesSitemap },
+    { filename: "sitemap-seasonal.xml", generator: generateSeasonalSitemap },
   ];
 
   let totalUrls = 0;
