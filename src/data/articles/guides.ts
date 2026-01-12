@@ -1300,51 +1300,59 @@ export const guideArticles: Record<string, Article> = {
 
   "summer-hospitality-guide": {
     slug: "summer-hospitality-guide",
-    title: "Summer Hospitality Jobs: Peak Season Guide",
+    title: "Summer 2026 Hospitality Jobs: Peak Season Guide",
     category: "Seasonal & Event Hiring",
     categorySlug: "seasonal-hiring",
-    readTime: "8 min",
-    description: "Summer 2026 brings peak hospitality hiring. Learn how to land the best positions at resorts, pools, outdoor venues, and restaurants during the busiest season of the year.",
+    readTime: "11 min",
+    description: "Summer 2026 hospitality hiring guide with resort pay rates, pool job openings, wedding season dates, and festival staffing. Major employers hiring 500K+ seasonal workers nationwide.",
     keyTakeaways: [
-      "Summer hospitality hiring peaks April-May for June-August positions",
-      "Tips can add $10-20/hr to base pay at busy venues",
-      "Pool, resort, and outdoor event jobs are summer-specific opportunities",
-      "Building a summer reputation leads to year-round hospitality work"
+      "Summer hospitality hiring peaks April-May—apply by March 2026 for best positions",
+      "Resort bartenders earn $35-65/hr with tips at peak season venues",
+      "2026 wedding season (May-October) books 2.5 million events needing staff",
+      "Theme parks (Disney, Universal, Six Flags) hire 100,000+ combined"
     ],
     sections: [
       {
-        heading: "Why Summer Hospitality Pays Well",
-        content: "Summer is peak season for hospitality:\n\n**Demand drivers:**\n\n- Tourism surges (vacations, travel)\n- Outdoor venues open (pools, patios, festivals)\n- Events increase (weddings, concerts, corporate outings)\n- Extended hours at restaurants and bars\n\n**What this means for workers:**\n\n- More shifts available\n- Higher base pay at competitive employers\n- Significantly higher tips at busy venues\n- Premium events (weddings, galas) pay top dollar\n\n**Summer hospitality pay ranges:**\n\n| Role | Base Pay | With Tips |\n|------|----------|----------|\n| Server | $12-18/hr | $25-45/hr |\n| Bartender | $15-22/hr | $30-60/hr |\n| Event Staff | $15-20/hr | $20-35/hr |\n| Pool Attendant | $14-18/hr | $18-25/hr |\n\n[Explore hospitality roles →](/career-hub/industries/hospitality)"
+        heading: "Summer 2026 Hospitality Hiring Timeline",
+        content: "**Critical dates for Summer 2026 jobs:**\n\n| Month | What's Happening | Action |\n|-------|------------------|--------|\n| **February** | Resorts begin posting | Start watching job boards |\n| **March** | Peak application window | Apply to 10-15 venues |\n| **April** | Interviews and hiring | Complete certifications |\n| **May** | Training begins | Accept offers, start work |\n| **June-August** | Peak season | Maximum shifts available |\n| **September** | Transition period | Express interest in fall |\n\n## Major Employers Hiring for Summer 2026\n\n| Employer | Seasonal Hires | Pay Range | Apply At |\n|----------|---------------|-----------|----------|\n| **Marriott International** | 50,000+ | $15-22/hr | [careers.marriott.com](https://careers.marriott.com/) |\n| **Hilton Hotels** | 40,000+ | $14-21/hr | [jobs.hilton.com](https://jobs.hilton.com/) |\n| **Disney Parks** | 35,000+ | $17-23/hr | [disneycareers.com](https://jobs.disneycareers.com/) |\n| **Universal Resorts** | 15,000+ | $16-22/hr | [jobs.universalparks.com](https://www.universalorlando.com/web/en/us/careers) |\n| **Six Flags** | 30,000+ | $14-18/hr | [sixflags.com/jobs](https://www.sixflags.com/jobs) |\n| **MGM Resorts** | 8,000+ | $17-28/hr | [mgmresortscareers.com](https://www.mgmresorts.com/en/careers.html) |\n| **Aramark** | 25,000+ | $15-22/hr | [careers.aramark.com](https://careers.aramark.com/) |\n\n[Find hospitality jobs in your area →](/career-hub/industries/hospitality)"
       },
       {
-        heading: "Summer-Specific Opportunities",
-        content: "**Pool & Resort Work:**\n\n- Pool attendant/lifeguard\n- Cabana service\n- Resort restaurant staff\n- Beach/poolside bartending\n\n**Outdoor Events:**\n\n- Music festival staffing\n- Outdoor concert venues\n- Sports stadium events\n- Food truck crew\n\n**Wedding Season:**\n\n- Banquet servers (highest tips)\n- Bartenders for receptions\n- Event setup/teardown\n- Catering staff\n\n**Tourism Hotspots:**\n\n- Beach town restaurants\n- Vacation destination hospitality\n- Theme park food service\n- Hotel restaurants and bars\n\nThese opportunities are **summer-specific**—they're not available year-round, so maximize them while you can."
+        heading: "Summer 2026 Pay Rates by Role",
+        content: "**Detailed summer hospitality pay (2026 rates):**\n\n| Role | Base Pay | Avg Tips | Total Hourly |\n|------|----------|----------|-------------|\n| **Resort Server** | $12-16/hr | $18-30/hr | $30-46/hr |\n| **Resort Bartender** | $14-20/hr | $25-45/hr | $39-65/hr |\n| **Pool Bartender** | $14-18/hr | $20-35/hr | $34-53/hr |\n| **Cabana Attendant** | $14-17/hr | $15-25/hr | $29-42/hr |\n| **Beach Server** | $12-15/hr | $18-28/hr | $30-43/hr |\n| **Event Banquet Server** | $16-22/hr | $8-20/hr | $24-42/hr |\n| **Wedding Server** | $18-25/hr | $15-40/hr | $33-65/hr |\n| **Theme Park Food Service** | $15-19/hr | $0-5/hr | $15-24/hr |\n| **Hotel Front Desk** | $15-20/hr | $0 | $15-20/hr |\n| **Lifeguard** | $14-20/hr | $0 | $14-20/hr |\n| **Hotel Housekeeping** | $14-18/hr | $5-15/hr | $19-33/hr |\n\n## Top-Paying Summer Markets\n\n| Location | Avg Hospitality Pay | Why Higher |\n|----------|--------------------|-----------|\n| Las Vegas | $22-40/hr | Casino resorts, tips |\n| Miami Beach | $20-38/hr | Luxury tourism |\n| Hamptons/Cape Cod | $25-50/hr | Wealthy clientele |\n| Lake Tahoe | $20-35/hr | Resort premiums |\n| Napa Valley | $22-42/hr | Wine country tips |\n| Hawaii | $18-32/hr | Tourism demand |\n\n[Calculate your potential earnings →](/career-hub/tools/pay-calculator)"
       },
       {
-        heading: "When and Where to Apply",
-        content: "**Hiring timeline for Summer 2026:**\n\n| Month | What's Happening |\n|-------|------------------|\n| March | Resorts and pools begin posting |\n| April | Peak application period |\n| May | Training and early-season starts |\n| June-Aug | Peak summer season |\n| September | Transitions to fall staffing |\n\n**Best employers for summer:**\n\n- Hotel and resort chains\n- Country clubs and golf courses\n- Wedding venues and caterers\n- Stadium and arena concessions\n- Festival and event production companies\n- High-volume tourist-area restaurants\n\n**Application strategy:**\n\n- Apply to 10+ venues in April\n- Emphasize summer availability\n- Highlight any hospitality experience or [certifications](/career-hub/guides/certifications)\n- Express interest in the busiest shifts"
+        heading: "Pool & Resort Opportunities",
+        content: "**Pool Season 2026 (Memorial Day - Labor Day)**\n\nMemorial Day: May 25, 2026 | Labor Day: September 7, 2026\n\n## Pool/Resort Roles in Demand\n\n| Role | Availability | Requirements |\n|------|-------------|-------------|\n| Pool Bartender | High demand | TIPS certified |\n| Cabana Server | Very high demand | Food handler |\n| Pool Attendant | Moderate | CPR preferred |\n| Lifeguard | High demand | Lifeguard cert required |\n| Towel/Chair Service | Entry-level | None |\n| Poolside Food Runner | Entry-level | Food handler |\n\n## Top Resort Employers\n\n**Las Vegas Pool Clubs:**\n- Wet Republic (MGM Grand) - $25-50/hr with tips\n- Marquee Dayclub (Cosmopolitan) - $22-45/hr\n- Encore Beach Club - $24-48/hr\n- Drai's Beach Club - $20-42/hr\n\n**Destination Resorts:**\n- Four Seasons properties - $18-30/hr + premium tips\n- Ritz-Carlton resorts - $17-28/hr + tips\n- Hyatt Regency pools - $15-24/hr\n- Omni Hotels - $14-22/hr\n\n**Application tip:** Vegas pool clubs start hiring in February. Apply early for Memorial Day opening positions."
       },
       {
-        heading: "Skills That Increase Summer Earnings",
-        content: "**Essential certifications:**\n\n- **Food Handler Certificate** ($15-25, required in most states)\n- **TIPS Alcohol Certification** ($38-55, required for alcohol service)\n- **ServSafe** ($36-78, preferred for advanced roles)\n\n**High-value skills:**\n\n- Bartending: Opens highest-paying shifts\n- Barista skills: Coffee shops are busy summer mornings\n- Bilingual: Tourist areas love multilingual staff\n- Wine knowledge: Upscale restaurants pay more\n- Craft cocktails: Differentiator at bars\n\n**Physical skills:**\n\n- Carrying heavy trays\n- Standing for 6-10 hour shifts in heat\n- Moving quickly in busy environments\n\n[Get the certifications →](/career-hub/guides/certifications)\n\n[Try our Cocktail Quiz →](/career-hub/tools/cocktail-quiz)"
+        heading: "Wedding Season 2026",
+        content: "**2026 Wedding Season Facts:**\n\n- **2.5 million weddings** projected in the US for 2026\n- **Peak months:** May, June, September, October\n- **Average wedding staff needed:** 8-25 workers per event\n- **Average wedding budget:** $35,000 (highest-paying events)\n\n## Peak Wedding Dates 2026\n\n| Date | Day | Why Popular |\n|------|-----|-------------|\n| May 23, 2026 | Saturday | Start of summer |\n| June 6, 2026 | Saturday | 06/06 date |\n| June 20, 2026 | Saturday | Summer solstice weekend |\n| September 19, 2026 | Saturday | Early fall |\n| October 10, 2026 | Saturday | 10/10 date |\n| October 17, 2026 | Saturday | Peak fall foliage |\n\n## Wedding Staffing Pay Rates\n\n| Role | Hourly Rate | Tips | Total |\n|------|-------------|------|-------|\n| Banquet Captain | $22-30/hr | $30-60 | $52-90/hr |\n| Banquet Server | $18-25/hr | $25-50 | $43-75/hr |\n| Wedding Bartender | $20-28/hr | $50-150 | $70-178/hr |\n| Setup Crew | $15-20/hr | $0-20 | $15-40/hr |\n| Catering Server | $17-24/hr | $20-40 | $37-64/hr |\n\n## Top Wedding Catering Companies\n\n- [Wolfgang Puck Catering](https://www.wolfgangpuck.com/catering/) - Premium events\n- [Occasions Caterers](https://www.occasionscaterers.com/) - DC/East Coast\n- [24 Carrots Catering](https://24carrots.com/) - SoCal\n- [Great Performances](https://greatperformances.com/) - NYC\n\n[Get certifications for catering →](/career-hub/guides/certifications)"
       },
       {
-        heading: "Maximizing Summer Tips",
-        content: "Tips make summer hospitality lucrative:\n\n**High-tip shifts:**\n\n- Friday and Saturday evenings\n- Brunch service (especially weekends)\n- Special events and private parties\n- Poolside and patio service\n- Wedding receptions\n\n**Tip-maximizing techniques:**\n\n- Introduce yourself by name\n- Remember regular customers\n- Check back without hovering\n- Handle complaints gracefully\n- Be genuinely friendly (tourists tip well for hospitality)\n- Suggest popular items with enthusiasm\n\n**Sample summer tip breakdown:**\n\n| Shift Type | Base (8 hrs) | Tips | Total |\n|------------|--------------|------|-------|\n| Weekday lunch | $128 | $60 | $188 |\n| Friday dinner | $144 | $180 | $324 |\n| Wedding reception | $160 | $200 | $360 |\n| Pool bar (Sat) | $136 | $150 | $286 |\n\nFriday dinner shift = almost double a weekday lunch."
+        heading: "Theme Park & Tourism Jobs",
+        content: "## Theme Park Summer Hiring 2026\n\n| Park/Company | Seasonal Hires | Hourly Rate | Perks |\n|--------------|---------------|-------------|-------|\n| **Walt Disney World** | 20,000+ | $17-23/hr | Free park access, discounts |\n| **Disneyland** | 15,000+ | $19-25/hr | California premiums |\n| **Universal Orlando** | 10,000+ | $16-22/hr | Free park access |\n| **Universal Hollywood** | 5,000+ | $18-24/hr | Entertainment perks |\n| **Six Flags (all parks)** | 30,000+ | $14-18/hr | Free season pass |\n| **Cedar Fair parks** | 25,000+ | $14-19/hr | Housing available |\n| **Busch Gardens** | 8,000+ | $15-20/hr | Free park access |\n| **SeaWorld** | 6,000+ | $15-19/hr | Marine life perks |\n\n## Tourism Hotspot Opportunities\n\n**Beach towns hiring heavily:**\n- Myrtle Beach, SC\n- Virginia Beach, VA\n- Panama City Beach, FL\n- Ocean City, MD\n- Cape Cod, MA\n- The Outer Banks, NC\n\n**Mountain resorts (summer):**\n- Aspen, CO\n- Park City, UT\n- Lake Tahoe, CA/NV\n- Jackson Hole, WY\n\n**Many offer housing assistance** for seasonal workers relocating.\n\n[Find summer jobs by location →](/career-hub/locations)"
+      },
+      {
+        heading: "Skills That Maximize Summer Earnings",
+        content: "**Get certified before summer 2026:**\n\n| Certification | Cost | Time | Earning Impact |\n|--------------|------|------|----------------|\n| **TIPS Alcohol** | $38-55 | 4 hours | Opens bartending ($+15-25/hr) |\n| **ServSafe Food Handler** | $15-25 | 2-4 hours | Required for most roles |\n| **ServSafe Manager** | $36-78 | 8 hours | Leadership positions |\n| **Lifeguard Certification** | $200-350 | 25-30 hours | $17-22/hr pool jobs |\n| **CPR/First Aid** | $30-75 | 4 hours | Many employers require |\n\n## High-Value Skills for Tips\n\n**Bartending specialties:**\n- Craft cocktails: +$3-8/hr in tips\n- Wine service: +$5-10/hr at upscale venues\n- Speed bartending: More drinks = more tips\n\n**Server skills:**\n- Upselling techniques: +10-20% on check averages\n- Wine pairings: Higher tabs = higher tips\n- Tableside service: Premium at fine dining\n\n**Physical preparation:**\n- Practice carrying heavy trays\n- Build endurance for 8-12 hour shifts\n- Heat acclimation for outdoor work\n\n[Get bartending certified →](/career-hub/tools/cocktail-quiz)\n\n[Learn hospitality phrases →](/career-hub/tools/work-talk)"
       }
     ],
     faqs: [
       {
+        question: "When should I apply for summer 2026 hospitality jobs?",
+        answer: "Start in February 2026 for resorts and theme parks. March is the peak hiring month. Pool clubs (especially Vegas) hire in February-March. Wedding venues book through catering companies—apply in early spring. Apply to 10-15 places minimum."
+      },
+      {
         question: "Do I need hospitality experience for summer jobs?",
-        answer: "Entry-level roles like barback, busser, and event setup don't require experience. For server and bartender positions, some experience is preferred but not always required—especially at high-volume tourist spots that train quickly."
+        answer: "Entry-level roles (busser, barback, runner, setup crew) don't require experience. Server and bartender positions prefer experience but tourist-heavy areas train quickly. Get your food handler and TIPS certifications to stand out."
       },
       {
-        question: "How do I handle working in the heat?",
-        answer: "Stay hydrated (bring a water bottle), wear breathable clothing under your uniform, use sunscreen for outdoor shifts, take breaks seriously, and eat regular meals. Pace yourself—summer is a marathon, not a sprint."
+        question: "What's the highest-paying summer hospitality job?",
+        answer: "Wedding bartenders and Vegas pool club bartenders earn the most—$50-80/hr with tips is realistic at premium venues. Resort cabana servers at luxury properties can also exceed $40/hr. These require experience and certifications."
       },
       {
-        question: "Can summer work lead to year-round hospitality jobs?",
-        answer: "Absolutely. Many workers prove themselves during summer and transition to permanent roles. Express interest early, excel during the season, and stay in touch with managers after summer ends."
+        question: "How do I handle working in summer heat?",
+        answer: "Stay hydrated (bring a water bottle), wear breathable undergarments, use sunscreen for outdoor shifts, take breaks seriously, and eat regular meals. Avoid caffeine and alcohol before shifts. Acclimate gradually in spring—don't start your first outdoor shift in July without preparation."
       }
     ],
     relatedArticles: ["hospitality-guide", "first-flex-job", "certifications", "event-staffing-guide"]
@@ -1404,51 +1412,59 @@ export const guideArticles: Record<string, Article> = {
 
   "event-staffing-guide": {
     slug: "event-staffing-guide",
-    title: "Event Staffing: Concerts, Sports & More",
+    title: "Event Staffing: Concerts, Sports & More (2026 Guide)",
     category: "Seasonal & Event Hiring",
     categorySlug: "seasonal-hiring",
-    readTime: "9 min",
-    description: "Get hired for concerts, sporting events, festivals, and conferences. Learn what event staffing pays, what roles are available, and how to build a reputation in this exciting industry.",
+    readTime: "12 min",
+    description: "Get hired for concerts, sporting events, festivals, and conferences in 2026. Complete guide with Super Bowl LX details, major tour dates, stadium hiring info, and pay rates from top employers.",
     keyTakeaways: [
-      "Event staffing pays $15-30/hr depending on the role and event type",
-      "Peak event seasons are summer (outdoor) and fall (sports/concerts)",
-      "Reliability is THE key factor—no-shows ruin event reputations",
-      "Build relationships to get invited to premium events repeatedly"
+      "Super Bowl LX (February 8, 2026) in Santa Clara needs 10,000+ event workers",
+      "Event staffing pays $15-35/hr depending on role—premium events pay more",
+      "Live Nation, Legends Hospitality, and Aramark are the biggest employers",
+      "Summer 2026 concert season features 100+ stadium tours needing massive crews"
     ],
     sections: [
       {
-        heading: "Types of Event Staffing",
-        content: "Event work spans diverse venues and experiences:\n\n**Concert & Festival Staffing:**\n\n- Ticket scanning/entry management\n- Concessions and bar service\n- VIP area service\n- Merchandise sales\n- Cleanup crew\n\n**Sporting Events:**\n\n- Stadium concessions\n- Suite-level service\n- Parking and entry\n- Guest services\n- Premium seating attendants\n\n**Corporate Events:**\n\n- Conference registration\n- Catering service\n- A/V support\n- Trade show booth staffing\n- Executive events\n\n**Private Events:**\n\n- Wedding service\n- Gala and fundraiser staffing\n- Private party service\n- Luxury event crews\n\n| Event Type | Pay Range | Tip Potential | Demand |\n|------------|-----------|---------------|--------|\n| Concerts | $15-22/hr | Low-Medium | High (summer) |\n| Sports | $15-25/hr | Medium | Year-round |\n| Corporate | $18-28/hr | Low | Year-round |\n| Weddings | $18-30/hr | High | Spring-Fall |"
+        heading: "2026 Major Events Calendar",
+        content: "Plan your event work around 2026's biggest opportunities:\n\n## Confirmed 2026 Events\n\n| Event | Date | Location | Est. Staff Needed |\n|-------|------|----------|-------------------|\n| **Super Bowl LX** | Feb 8, 2026 | Levi's Stadium, Santa Clara, CA | 10,000+ |\n| **NCAA Final Four** | April 4-6, 2026 | Indianapolis, IN | 5,000+ |\n| **NFL Draft** | Late April 2026 | TBD | 3,000+ |\n| **Coachella** | April 10-12 & 17-19, 2026 | Indio, CA | 8,000+ |\n| **EDC Las Vegas** | May 15-17, 2026 | Las Vegas, NV | 6,000+ |\n| **Lollapalooza** | July 30 - Aug 2, 2026 | Chicago, IL | 7,000+ |\n| **US Open Tennis** | Aug 24 - Sep 6, 2026 | Flushing, NY | 4,000+ |\n\n## 2026 Summer Tours (Expected)\n\nMajor tours requiring stadium-level staffing:\n- Beyoncé - Renaissance World Tour continuation\n- Taylor Swift - Potential new album tour\n- Coldplay - Music of the Spheres Tour\n- Metallica - M72 World Tour\n- Bad Bunny - Stadium dates\n\n**Each stadium show = 800-2,000 event staff positions**\n\n[See all Indeed Flex locations →](/career-hub/locations)"
       },
       {
-        heading: "How to Break Into Event Work",
-        content: "**Entry points:**\n\n1. **Indeed Flex**: Browse event-specific opportunities in your area\n2. **Venue websites**: Major stadiums and arenas hire directly\n3. **Event staffing agencies**: Specialize in concerts and festivals\n4. **Catering companies**: Handle weddings and corporate events\n\n**What employers look for:**\n\n- Professional appearance and demeanor\n- Ability to work 6-12 hour shifts on your feet\n- Flexible schedule (events happen evenings and weekends)\n- Reliability—this is non-negotiable for events\n- Customer service attitude\n\n**Helpful certifications:**\n\n- TIPS or ServSafe Alcohol (for bar service)\n- Food Handler (for concessions/catering)\n- CPR/First Aid (for some venues)\n- Security guard license (for entry management)\n\n[Get event-ready certifications →](/career-hub/guides/certifications)"
+        heading: "Top Event Staffing Employers",
+        content: "These companies hire thousands for 2026 events:\n\n## Major Employers & Pay Rates\n\n| Company | Roles | Pay Range | Apply At |\n|---------|-------|-----------|----------|\n| **Legends Hospitality** | Suite service, premium dining, concessions | $18-32/hr | [legends.net/careers](https://www.legends.net/careers) |\n| **Aramark** | Concessions, catering, stadium services | $16-25/hr | [careers.aramark.com](https://careers.aramark.com/) |\n| **Delaware North** | Venue hospitality, concessions | $15-24/hr | [delawarenorth.com/careers](https://www.delawarenorth.com/careers) |\n| **Live Nation** | Event ops, box office, VIP services | $17-28/hr | [livenationentertainment.com/careers](https://www.livenationentertainment.com/careers/) |\n| **AEG** | Arena services, event staff | $16-26/hr | [aegworldwide.com/careers](https://www.aegworldwide.com/careers) |\n| **Levy Restaurants** | Premium dining, suites, catering | $18-30/hr | [levyrestaurants.com/careers](https://www.levyrestaurants.com/careers) |\n\n## Super Bowl LX Hiring (Feb 8, 2026)\n\n**Location:** Levi's Stadium, Santa Clara, CA\n\n**Hiring companies for Super Bowl LX:**\n- Legends Hospitality (premium services)\n- Levy Restaurants (stadium dining)\n- CSC (contemporary Services Corporation - security/ushers)\n- On Location (NFL hospitality partner)\n\n**Apply by:** November-December 2025 for best positions\n\n[Find work in the Bay Area →](/career-hub/locations/california)"
       },
       {
-        heading: "What to Expect at Events",
-        content: "**Before the event:**\n\n- Arrive 30-60 minutes before public entry\n- Check in with event coordinator/supervisor\n- Receive assignment and training briefing\n- Set up your station/area\n\n**During the event:**\n\n- Constant customer interaction\n- Fast-paced service (especially concerts)\n- Problem-solving on the fly\n- Standing and moving for hours\n- Following security and safety protocols\n\n**After the event:**\n\n- Breakdown and cleanup (often adds 1-2 hours)\n- Inventory and cash-out if handling money\n- Debriefing with supervisor\n- Rating and feedback exchange\n\n**Physical demands:**\n\n- Expect 8-14 hour shifts for major events\n- Constant standing and walking\n- Loud environments at concerts\n- Weather exposure for outdoor events\n- Crowded, high-energy situations"
+        heading: "Event Roles & Pay Breakdown",
+        content: "**Detailed pay by role (2026 rates):**\n\n| Role | Base Pay | Tips Avg | Total/Shift |\n|------|----------|----------|-------------|\n| Concessions Cashier | $15-18/hr | $0-15 | $130-160 |\n| Concessions Runner | $14-17/hr | $0 | $112-136 |\n| Suite Attendant | $18-25/hr | $40-100 | $185-300 |\n| Premium Bartender | $20-30/hr | $80-200 | $240-440 |\n| Usher/Ticket Scanner | $15-18/hr | $0 | $120-144 |\n| VIP Host/Hostess | $18-24/hr | $20-60 | $165-250 |\n| Event Setup/Teardown | $16-22/hr | $0 | $128-176 |\n| Parking Attendant | $14-18/hr | $10-40 | $120-185 |\n| Merchandise Sales | $14-17/hr | Commission | $130-220 |\n| Security (licensed) | $18-28/hr | $0 | $144-224 |\n\n## Premium Event Premiums\n\nSpecial events pay extra:\n- **Super Bowl:** +$5-10/hr above regular rate\n- **Championship games:** +$3-8/hr premium\n- **Major concerts:** Often 8-12 hour shifts with overtime\n- **Corporate events:** Higher base, fewer tips\n\n[Explore all hospitality roles →](/career-hub/industries/hospitality)"
       },
       {
-        heading: "Maximizing Event Earnings",
-        content: "**Highest-paying event roles:**\n\n1. **Bartending at premium events** ($20-30/hr + tips)\n2. **Suite-level service at sports venues** ($20-28/hr + gratuities)\n3. **Wedding catering service** ($18-28/hr + tips)\n4. **VIP service at concerts** ($18-25/hr)\n5. **Executive event service** ($20-30/hr)\n\n**Strategies for more opportunities:**\n\n- Maintain perfect attendance (this is everything)\n- Request high-profile events after proving yourself\n- Learn multiple roles (flexibility = more bookings)\n- Build supervisor relationships\n- Express interest in recurring venue work\n\n**Sample event earnings:**\n\n| Event | Hours | Rate | Tips | Total |\n|-------|-------|------|------|-------|\n| Concert (concessions) | 8 | $144 | $30 | $174 |\n| Football game (suite) | 6 | $132 | $80 | $212 |\n| Wedding (server) | 7 | $154 | $100 | $254 |\n| Conference (registration) | 10 | $200 | $0 | $200 |\n\nOne good wedding can pay more than two regular shifts."
+        heading: "Getting Hired for Major Events",
+        content: "**Super Bowl LX Application Timeline:**\n\n| When | What to Do |\n|------|------------|\n| **Now** | Create profiles on Legends, Aramark, Levy, CSC websites |\n| **Oct 2025** | Watch for Super Bowl LX job postings |\n| **Nov 2025** | Apply immediately when positions open |\n| **Dec 2025** | Interviews and background checks |\n| **Jan 2026** | Training sessions |\n| **Feb 1-8** | Super Bowl week events and game day |\n\n**How to stand out:**\n\n1. **Build experience now** - Work regular stadium/arena events\n2. **Get certifications** - TIPS/ServSafe open premium roles\n3. **Maintain 5-star ratings** - Employers check your track record\n4. **Apply to multiple companies** - Cast a wide net\n5. **Be flexible** - Accept setup/teardown shifts to get in the door\n\n**Required certifications for premium roles:**\n\n| Certification | Cost | Required For |\n|--------------|------|-------------|\n| TIPS Alcohol | $38-55 | Any alcohol service |\n| Food Handler | $15-25 | Concessions, catering |\n| ServSafe | $36-78 | Kitchen, food prep |\n| Guard Card (state) | $50-150 | Security positions |\n\n[Get certified →](/career-hub/guides/certifications)"
       },
       {
-        heading: "Building an Event Career",
-        content: "Event work can become a specialty:\n\n**Progression path:**\n\n1. Entry-level concessions/general staff\n2. Specialized roles (bartending, VIP service)\n3. Lead staff/shift supervisor\n4. Event coordinator/manager\n\n**Becoming a preferred worker:**\n\n- Venues maintain lists of top performers\n- Get first access to major events\n- Receive repeat bookings automatically\n- Premium events go to proven workers\n\n**Year-round event calendar:**\n\n| Season | Major Events |\n|--------|-------------|\n| Winter | Super Bowl, NBA, NHL, conferences |\n| Spring | March Madness, graduations, proms |\n| Summer | Concerts, festivals, outdoor events |\n| Fall | NFL season, fall festivals, corporate events |\n\n**The payoff:**\n\nExperienced event staff work the events they actually want to attend—getting paid to be at concerts, sports championships, and exclusive galas.\n\n[Explore all hospitality roles →](/career-hub/industries/hospitality)"
+        heading: "Summer 2026 Festival Season",
+        content: "## Major Festival Staffing Opportunities\n\n| Festival | Dates 2026 | Location | Staff Needed |\n|----------|------------|----------|-------------|\n| Coachella | Apr 10-12 & 17-19 | Indio, CA | 8,000+ |\n| Stagecoach | Apr 24-26 | Indio, CA | 4,000+ |\n| EDC Las Vegas | May 15-17 | Las Vegas | 6,000+ |\n| Bonnaroo | June 11-14 | Manchester, TN | 5,000+ |\n| Electric Forest | June 25-28 | Rothbury, MI | 3,000+ |\n| Lollapalooza | Jul 30 - Aug 2 | Chicago | 7,000+ |\n| Outside Lands | Aug 7-9 | San Francisco | 4,000+ |\n| Austin City Limits | Oct 2-4 & 9-11 | Austin, TX | 5,000+ |\n\n## Festival Pay Rates\n\n- **Standard crew:** $15-20/hr\n- **Bar service:** $18-25/hr + tips\n- **VIP areas:** $20-30/hr + tips\n- **Setup/teardown:** $16-22/hr (often 10-14 hour days)\n\n**Festival perks:**\n- Free festival access during downtime (role dependent)\n- Meals provided\n- Camping accommodations (some festivals)\n- Networking with entertainment industry\n\n**Apply through:**\n- Goldenvoice (Coachella, Stagecoach)\n- Insomniac Events (EDC)\n- C3 Presents (Lollapalooza, ACL)\n- Superfly (Bonnaroo)"
+      },
+      {
+        heading: "NFL & Sports Season 2026",
+        content: "## NFL 2026 Season (Sep 2026 - Feb 2027)\n\nEvery NFL stadium needs 2,000-4,000 workers per game:\n\n**Typical stadium staffing breakdown:**\n- 400-600 concessions workers\n- 200-400 suite attendants\n- 300-500 security staff\n- 200-300 ushers/ticket takers\n- 150-250 parking staff\n- 100-200 premium dining staff\n\n**Highest-paying NFL venues (2026):**\n\n| Stadium | Team | Avg Event Pay |\n|---------|------|---------------|\n| SoFi Stadium | Rams/Chargers | $18-28/hr |\n| Allegiant Stadium | Raiders | $17-26/hr |\n| AT&T Stadium | Cowboys | $16-25/hr |\n| Levi's Stadium | 49ers | $18-27/hr |\n| MetLife Stadium | Giants/Jets | $17-26/hr |\n\n## College Football 2026\n\n100+ FBS stadiums need workers every Saturday:\n- Michigan Stadium (110,000 capacity)\n- Ohio Stadium (102,000)\n- Texas Memorial Stadium (100,000)\n\n**Apply:** Contact stadium hospitality partners directly or search Indeed Flex in college towns.\n\n## NBA/NHL 2026-27 Season\n\n41 home games each = consistent work October-April\n\n[Find stadium jobs near you →](/career-hub/locations)"
       }
     ],
     faqs: [
       {
+        question: "How do I get hired for Super Bowl LX in Santa Clara?",
+        answer: "Apply directly to Legends Hospitality, Levy Restaurants, and CSC (Contemporary Services Corporation) starting October 2025. Build experience at Levi's Stadium regular events beforehand. Have TIPS certification for bar roles. Apply to multiple companies—the NFL uses several vendors."
+      },
+      {
+        question: "What's the best-paying event staffing role?",
+        answer: "Suite-level bartending at premium events pays highest—$25-35/hr plus $100-200+ in tips. Super Bowl and championship games pay premiums. For regular events, suite attendant and VIP host roles average $22-28/hr with solid tips."
+      },
+      {
         question: "Do I get to watch the event while working?",
-        answer: "It depends on your role and the event. Some positions (like concessions during downtime) allow glimpses, but most of the time you're busy working. Premium roles like suite service may have better views. Never prioritize watching over working—that gets noticed."
+        answer: "It depends on your role. Suite attendants and concessions workers may catch some action during slow periods. VIP hosts often have good sightlines. However, your focus must be on guests—watching instead of working gets noticed. Many workers report seeing key moments on replays during cleanup."
       },
       {
         question: "What should I wear to event jobs?",
-        answer: "Dress code is usually specified—often black pants and white/black shirt for hospitality, venue-branded gear for concessions, or business casual for corporate events. Always confirm dress code in advance and have non-slip shoes."
-      },
-      {
-        question: "How do I deal with difficult event guests?",
-        answer: "Stay calm, be professional, and escalate to supervisors when needed. Events bring all personalities—alcohol is often involved at concerts and games. De-escalation skills are valuable. Never argue with guests; get management involved for serious issues."
+        answer: "Dress code varies: black pants and white/black shirt for hospitality, venue-branded polo for concessions, suit for premium events. Always confirm in advance. Non-slip black shoes are universal. Super Bowl and premium events may provide special uniforms."
       }
     ],
     relatedArticles: ["hospitality-guide", "summer-hospitality-guide", "certifications", "networking"]
@@ -1456,51 +1472,63 @@ export const guideArticles: Record<string, Article> = {
 
   "tax-season-jobs": {
     slug: "tax-season-jobs",
-    title: "Tax Season Jobs: 1099 Work Opportunities",
+    title: "Tax Season 2026 Jobs: Hiring Guide",
     category: "Seasonal & Event Hiring",
     categorySlug: "seasonal-hiring",
-    readTime: "6 min",
-    description: "Tax season (January-April) creates unique job opportunities. Learn about seasonal tax preparer roles, administrative support, and how to leverage this period for flexible work.",
+    readTime: "10 min",
+    description: "Tax Season 2026 jobs guide with H&R Block, Jackson Hewitt, and Intuit hiring details. Key dates, pay rates, and application timelines for January-April seasonal work.",
     keyTakeaways: [
-      "Tax season hiring peaks January-February for March-April work",
-      "Certified tax preparers earn $15-25/hr; experienced preparers earn more",
-      "Administrative and clerical demand also increases during tax season",
-      "Tax experience opens doors to year-round accounting and finance roles"
+      "H&R Block hires 60,000+ seasonal workers—training starts November 2025",
+      "Tax preparers earn $15-35/hr; experienced preparers with certifications earn more",
+      "Tax Season 2026: January 27, 2026 (IRS opens) through April 15, 2026",
+      "Remote opportunities available—Intuit TurboTax hires 10,000+ virtual tax experts"
     ],
     sections: [
       {
-        heading: "Tax Season Job Landscape",
-        content: "Tax season (January 1 - April 15) creates predictable hiring demand:\n\n**Tax preparation roles:**\n\n- Entry-level tax preparer: $15-20/hr\n- Experienced tax preparer: $20-35/hr\n- Tax reviewer/quality check: $18-28/hr\n- Reception/client intake: $14-18/hr\n\n**Administrative support:**\n\n- Data entry for tax firms: $15-20/hr\n- Document processing: $14-18/hr\n- Customer service for tax software: $15-22/hr\n- Appointment scheduling: $14-18/hr\n\n**Major employers:**\n\n- H&R Block\n- Jackson Hewitt\n- Liberty Tax\n- Local CPA firms\n- Virtual tax preparation companies\n\n**Hiring timeline:**\n\n| Month | Activity |\n|-------|----------|\n| November-December | Hiring begins, training available |\n| January | Peak hiring, training intensifies |\n| February-April | Tax season—full work availability |\n| May | Season ends, some roles continue |"
+        heading: "Tax Season 2026 Key Dates",
+        content: "**Critical Tax Season 2026 Dates:**\n\n| Date | Event | Hiring Impact |\n|------|-------|---------------|\n| **Nov 1, 2025** | H&R Block training begins | Apply October 2025 |\n| **Dec 15, 2025** | Peak hiring deadline | Last chance for training |\n| **Jan 27, 2026** | IRS e-file opens | Season officially begins |\n| **Jan 31, 2026** | W-2s due to employees | Rush period starts |\n| **Feb 15, 2026** | 1099s fully distributed | Peak workload begins |\n| **April 15, 2026** | Tax filing deadline | Season ends |\n| **Oct 15, 2026** | Extension deadline | Secondary season |\n\n## Tax Season Hiring Timeline\n\n| When | What to Do |\n|------|------------|\n| **Sept 2025** | Research companies, decide on in-person vs remote |\n| **Oct 2025** | Apply to H&R Block, Jackson Hewitt, Liberty Tax |\n| **Nov 2025** | Complete training (40-80 hours paid) |\n| **Dec 2025** | Finish certification, background checks |\n| **Jan 2026** | Begin work—busy season starts |\n| **Feb-Apr 2026** | Peak season—overtime available |\n\n[Calculate your potential tax season earnings →](/career-hub/tools/pay-calculator)"
       },
       {
-        heading: "Becoming a Tax Preparer",
-        content: "**No experience path:**\n\nMajor tax companies hire and train from scratch:\n\n1. Apply October-December\n2. Complete company training (paid, 40-100+ hours)\n3. Pass IRS competency exam (AFTR)\n4. Begin preparing returns under supervision\n\n**Requirements:**\n\n- High school diploma or GED\n- Pass background check\n- Complete training program\n- Register with IRS (PTIN - free)\n- Some states require additional registration\n\n**Certification options:**\n\n| Certification | Cost | Time | Benefit |\n|--------------|------|------|--------|\n| IRS AFTR | Free (with employer training) | 40-80 hours | Required for preparers |\n| H&R Block Tax Course | $0-$200 | 80+ hours | Employment + certification |\n| IRS Volunteer (VITA) | Free | 30+ hours | Experience + community service |\n\n**Career value:**\n\nTax preparation skills are valuable year-round. Many preparers transition to bookkeeping, accounting, or financial services roles."
+        heading: "Major Tax Season Employers",
+        content: "## 2026 Tax Season Hiring by Company\n\n| Company | Seasonal Hires | Pay Range | Remote Options | Apply At |\n|---------|---------------|-----------|----------------|----------|\n| **H&R Block** | 60,000+ | $15-28/hr | Limited | [hrblock.com/careers](https://www.hrblock.com/corporate/careers/) |\n| **Jackson Hewitt** | 25,000+ | $13-25/hr | Limited | [jacksonhewitt.com/careers](https://www.jacksonhewitt.com/careers/) |\n| **Liberty Tax** | 15,000+ | $14-26/hr | No | [libertytax.com/careers](https://www.libertytax.com/careers) |\n| **Intuit TurboTax** | 10,000+ | $17-35/hr | Yes (fully remote) | [intuit.com/careers](https://www.intuit.com/careers/) |\n| **TaxAct** | 2,000+ | $15-28/hr | Yes | [taxact.com/careers](https://www.taxact.com/) |\n| **Local CPA Firms** | 50,000+ | $16-40/hr | Varies | Indeed, LinkedIn |\n\n## H&R Block Details (Largest Employer)\n\n**What they offer:**\n- Free tax preparation training (60-80 hours)\n- Paid training in most locations\n- Career progression to year-round roles\n- Employee benefits for qualifying positions\n\n**Requirements:**\n- High school diploma or GED\n- Pass background check\n- Complete IRS PTIN registration (free)\n- Complete company training program\n\n## Intuit TurboTax Live (Best Remote Option)\n\n**Roles available:**\n- TurboTax Live Tax Expert: $22-35/hr\n- TurboTax Live Customer Support: $17-24/hr\n- TurboTax Live Full Service: $25-40/hr\n\n**Work from home requirements:**\n- Quiet home office space\n- Reliable internet (25+ Mbps)\n- Computer meeting specifications\n- Previous tax experience preferred\n\n[Explore remote work options →](/career-hub/guides/remote-work)"
       },
       {
-        heading: "Administrative Tax Season Roles",
-        content: "Not everyone wants to prepare taxes. Support roles are also in demand:\n\n**Client-facing roles:**\n\n- Receptionist at tax offices\n- Appointment coordinator\n- Client intake specialist\n- Document collector\n\n**Back-office roles:**\n\n- Data entry for tax software\n- Document scanning and filing\n- Quality control reviewer\n- Administrative assistant\n\n**Remote opportunities:**\n\n- Virtual receptionist for tax firms\n- Customer support for tax software companies\n- Document processing from home\n- Appointment scheduling\n\n**What employers value:**\n\n- Accuracy and attention to detail\n- Customer service skills\n- Confidentiality (handling sensitive financial data)\n- Computer proficiency\n- Reliability during the busy season\n\n[Explore clerical roles →](/career-hub/roles)"
+        heading: "Tax Season Roles & Pay Rates",
+        content: "**Detailed Tax Season 2026 Pay Rates:**\n\n| Role | Experience | Hourly Rate | Season Earnings |\n|------|------------|-------------|----------------|\n| Entry Tax Preparer | None | $15-18/hr | $6,000-8,500 |\n| Tax Preparer | 1-2 seasons | $18-24/hr | $8,500-11,500 |\n| Senior Tax Preparer | 3+ seasons | $24-32/hr | $11,500-15,000 |\n| Tax Pro Review | EA/CPA | $30-45/hr | $14,000-21,000 |\n| Receptionist | None | $13-17/hr | $5,000-7,500 |\n| Tax Office Manager | 2+ years | $22-30/hr | $10,500-14,000 |\n| Remote Tax Expert | 1+ years | $22-35/hr | $10,000-16,500 |\n\n*Season earnings based on 12 weeks, 40 hrs/week. Overtime adds 20-40% more.*\n\n## Earning More During Tax Season\n\n**Overtime reality:** Most offices need 50-60 hour weeks Feb-April:\n- Time-and-a-half after 40 hours\n- Double time on holidays (some employers)\n- Weekend premium pay at some locations\n\n**Bonus opportunities:**\n- Referral bonuses: $50-200 per new client\n- Production bonuses: High-volume preparers\n- Quality bonuses: Error-free returns\n- Upsell commissions: Additional products\n\n[Calculate your tax liability →](/career-hub/tools/tax-calculator)"
       },
       {
-        heading: "W-2 vs 1099 Tax Work",
-        content: "Tax season work comes in both employment types:\n\n**W-2 employment (Indeed Flex, major chains):**\n\n- Taxes withheld from paycheck\n- May include benefits\n- Regular pay schedule\n- Worker protections\n\n**1099 independent contractor:**\n\n- Higher per-hour rate (but you pay self-employment tax)\n- More flexibility in scheduling\n- Can work for multiple clients\n- Responsible for your own taxes\n\n**1099 tax considerations:**\n\nIf you're a 1099 tax preparer, you'll pay:\n\n- Self-employment tax (15.3%)\n- Federal income tax\n- State income tax (if applicable)\n- Quarterly estimated payments recommended\n\n**Rule of thumb:** 1099 rate should be 25-30% higher than W-2 to be equivalent after self-employment taxes.\n\n[Calculate your taxes →](/career-hub/tools/tax-calculator)"
+        heading: "Training & Certification Paths",
+        content: "## Free Tax Preparer Training\n\n**H&R Block Income Tax Course:**\n- **Cost:** Free to $0 (some locations charge, refunded upon employment)\n- **Duration:** 60-80 hours over 12 weeks\n- **Format:** In-person, online, or hybrid\n- **Outcome:** Employment opportunity + industry certification\n- **Apply by:** October 2025 for January 2026 start\n\n**Jackson Hewitt Training:**\n- **Cost:** Free with employment commitment\n- **Duration:** 40-60 hours\n- **Format:** Online with in-person practicum\n\n**IRS VITA Program (Volunteer):**\n- **Cost:** Completely free\n- **Duration:** 20-40 hours\n- **Benefit:** Real experience helping low-income taxpayers\n- **Link:** [irs.gov/individuals/irs-tax-volunteers](https://www.irs.gov/individuals/irs-tax-volunteers)\n\n## Professional Certifications\n\n| Certification | Cost | Time | Salary Impact |\n|--------------|------|------|---------------|\n| **IRS PTIN** | Free | 1 hour | Required to prepare |\n| **AFSP** (Annual Filing Season Program) | $30-60 | Self-study | +$2-4/hr |\n| **EA** (Enrolled Agent) | $185/part | 3 exams | +$10-20/hr |\n| **CPA** | $1,000+ | 4 exams | +$15-40/hr |\n\n**The EA path:** Highest ROI certification. Takes 3-6 months of study, opens year-round tax work and IRS representation privileges."
       },
       {
-        heading: "Leveraging Tax Season Experience",
-        content: "Tax season can open career doors:\n\n**Immediate benefits:**\n\n- Intensive training in tax law\n- Client service experience\n- Understanding of financial documents\n- Seasonal income boost (January-April)\n\n**Long-term opportunities:**\n\n- Year-round bookkeeping roles\n- Payroll processing positions\n- Financial services careers\n- CPA firm support roles\n- Enrolled Agent certification path\n\n**Building on your experience:**\n\n| After Tax Season | Next Step |\n|------------------|----------|\n| Enjoyed tax prep? | Take EA exam, work year-round |\n| Liked the admin work? | Pursue bookkeeping certification |\n| Want more finance? | Consider accounting courses |\n| Prefer flexible work? | Continue with Indeed Flex |\n\n**The opportunity:**\n\nMany people who \"try\" tax work during one season discover a career path they hadn't considered. Tax preparation is a learnable skill with steady demand.\n\n[Read: Getting Certifications That Pay Off →](/career-hub/guides/certifications)"
+        heading: "In-Person vs Remote Tax Work",
+        content: "## In-Person Tax Office Work\n\n**Pros:**\n- Free training often provided\n- Entry-level friendly (no experience needed)\n- More interaction and mentorship\n- Clear career progression path\n\n**Cons:**\n- Commuting required\n- Fixed office hours\n- Limited geographic flexibility\n\n**Best for:** First-time tax preparers, those who prefer supervision, career builders\n\n## Remote Tax Work (TurboTax Live, H&R Block Virtual)\n\n**Pros:**\n- Work from home completely\n- Flexible scheduling (many roles)\n- No commute\n- Often higher hourly rates\n\n**Cons:**\n- Usually requires prior experience\n- Need dedicated home office\n- Less mentorship available\n- Self-discipline required\n\n**Best for:** Experienced preparers, parents, those in rural areas\n\n## Hybrid Options\n\nSome companies offer:\n- Work from office during training (Nov-Jan)\n- Remote work during peak season (Feb-Apr)\n- Best of both worlds\n\n## Remote Tax Job Requirements\n\n| Requirement | Minimum |\n|-------------|---------|\n| Experience | 1+ tax seasons usually |\n| Internet | 25 Mbps download |\n| Computer | Modern Windows/Mac, webcam |\n| Space | Private, quiet room |\n| Schedule | Available during peak hours |"
+      },
+      {
+        heading: "After Tax Season: What's Next",
+        content: "## Tax Season Extensions (April 16 - October 15)\n\nWork continues for:\n- Extension filers (millions of people)\n- Amended return preparation\n- State-specific deadlines\n- Quarterly estimate preparation\n\n**Reduced hours but steady work through October**\n\n## Year-Round Tax Careers\n\n| Path | Requirements | Salary Range |\n|------|--------------|-------------|\n| Year-round Tax Office | 2+ seasons, strong performance | $40-55K/year |\n| Tax Office Manager | 3+ seasons, leadership | $50-70K/year |\n| Enrolled Agent | Pass EA exams | $55-85K/year |\n| CPA Firm Associate | CPA license | $60-100K+/year |\n| Bookkeeper | Certification helpful | $40-60K/year |\n\n## Transition to Bookkeeping\n\nTax skills transfer directly:\n- QuickBooks proficiency\n- Financial document familiarity\n- Client service experience\n- Deadline management\n\n**Many tax preparers add bookkeeping clients for year-round income**\n\n## Return to Flexible Work\n\nAfter tax season, Indeed Flex provides:\n- Immediate work availability\n- Flexibility until next tax season\n- Income while studying for EA/CPA\n- Different industry experience\n\n[Find flexible work post-tax season →](https://indeedflex.com/download-app/)"
       }
     ],
     faqs: [
       {
         question: "Do I need an accounting degree to prepare taxes?",
-        answer: "No. Major tax preparation companies train from scratch. You'll need to pass IRS exams and complete training, but no prior accounting background is required. Many successful tax preparers came from completely different fields."
+        answer: "No. H&R Block, Jackson Hewitt, and Liberty Tax all train from scratch. You'll complete their free training program (40-80 hours), pass IRS certification, and begin preparing returns under supervision. Many successful tax preparers started with no financial background."
       },
       {
-        question: "How much can I earn during tax season?",
-        answer: "Working 40 hours/week for 10-12 weeks at $18-22/hr yields roughly $7,000-10,500 for the season. Experienced preparers and those working overtime can earn significantly more."
+        question: "How much can I earn during tax season 2026?",
+        answer: "First-year preparers typically earn $6,000-8,500 working full-time for 12 weeks. With overtime (common Feb-April), earnings reach $9,000-12,000. Experienced preparers earning $25-35/hr can make $15,000-20,000 for the season. Remote TurboTax experts average $12,000-16,000."
+      },
+      {
+        question: "When should I apply for tax season jobs?",
+        answer: "Apply by October 2025 to start training in November. H&R Block's Income Tax Course fills up—early applicants get their preferred training schedule. December applications may still be accepted but training is compressed and less thorough."
       },
       {
         question: "What happens after April 15?",
-        answer: "Most seasonal positions end, but options exist: extension preparation (continues through October), year-round firms, bookkeeping roles, or returning to other flexible work through Indeed Flex. Some tax preparers work seasonally by choice, taking summers off."
+        answer: "Most seasonal positions reduce hours significantly but don't fully end. Extension work continues through October 15. Top performers are offered year-round positions. Many preparers transition to bookkeeping or return to Indeed Flex for summer hospitality work. Some intentionally work tax season only, enjoying summers off."
+      },
+      {
+        question: "Is remote tax work available for beginners?",
+        answer: "Limited. Intuit TurboTax Live prefers 1+ seasons of experience. H&R Block Virtual requires training completion and may start you in-office. Your best path: complete one in-person season, then apply for remote roles the following year. VITA volunteer experience also counts."
       }
     ],
     relatedArticles: ["first-flex-job", "certifications", "multiple-gigs", "skill-boost"]
