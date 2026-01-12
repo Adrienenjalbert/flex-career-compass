@@ -1,4 +1,4 @@
-// Comprehensive state unemployment benefits data for 2024/2025
+// Comprehensive state unemployment benefits data for 2026
 //
 // IMPORTANT DISCLAIMER:
 // This data is for educational and estimation purposes only.
@@ -10,7 +10,7 @@
 // - State Workforce Agencies: Individual state employment department websites
 // - Benefit calculation methods: https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/unemployment-benefits.aspx
 //
-// Last data verification: December 2024
+// Last data verification: January 2026
 // Note: Maximum benefits and eligibility rules change frequently. Some states adjust based on unemployment rate.
 
 export interface StateUnemploymentInfo {

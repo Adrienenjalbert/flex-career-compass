@@ -1,5 +1,5 @@
-// Commute cost data - Sources: AAA 2024 Your Driving Costs, EIA, Transit Agency data
-// Last updated: December 2024
+// Commute cost data - Sources: AAA 2026 Your Driving Costs, EIA, Transit Agency data
+// Last updated: January 2026
 
 // AAA 2024 Vehicle Operating Costs per Mile
 export interface VehicleType {
@@ -86,7 +86,7 @@ export const vehicleTypes: VehicleType[] = [
   }
 ];
 
-// Average gas prices by state (as of December 2024, $/gallon regular unleaded)
+// Average gas prices by state (as of January 2026, $/gallon regular unleaded)
 // Source: AAA Gas Prices, EIA
 export interface StateGasPrice {
   name: string;
@@ -150,7 +150,7 @@ export const stateGasPrices: StateGasPrice[] = [
 ];
 
 // Public transit monthly pass costs by city
-// Source: Transit agency websites, December 2024
+// Source: Transit agency websites, January 2026
 export interface CityTransit {
   city: string;
   state: string;
@@ -489,7 +489,7 @@ export const NATIONAL_AVERAGES = {
 };
 
 // IRS mileage rate for reference
-export const IRS_MILEAGE_RATE_2024 = 0.67;  // $/mile for business use
+export const IRS_MILEAGE_RATE_2026 = 0.70;  // $/mile for business use
 
 // Helper functions
 export const getStateGasPrice = (abbreviation: string): StateGasPrice | undefined => {

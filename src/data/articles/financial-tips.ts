@@ -201,7 +201,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       "W-2 workers have taxes withheld; 1099 workers must pay self-employment tax",
       "Track all work-related expenses—they reduce your taxable income",
       "Set aside 25-30% of 1099 income for quarterly taxes",
-      "Mileage is often the largest deduction for gig workers (67¢/mile in 2024)",
+      "Mileage is often the largest deduction for gig workers (70¢/mile in 2026)",
       "Free tax help is available through [IRS VITA](https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers) if you earn $67,000 or less"
     ],
     sections: [
@@ -219,7 +219,7 @@ export const financialArticles: Record<string, FinancialArticle> = {
       },
       {
         heading: "Deductions That Lower Your Tax Bill",
-        content: "If you're a 1099 contractor, these reduce your taxable income:\n\n**Mileage (often the biggest deduction):**\n\n- 2024 rate: **67 cents per mile** for business driving\n- Track with apps like [Stride](https://www.stridehealth.com) (free) or [Everlance](https://www.everlance.com)\n- Example: 5,000 work miles = **$3,350 deduction**\n\n**Other common deductions:**\n\n- Phone/internet (business use percentage)\n- Work clothing (uniforms, non-slip shoes, safety gear)\n- Equipment and supplies\n- Professional development and [certifications](/career-hub/guides/certifications)\n- Home office (if you use dedicated space for admin work)\n\n**Keep receipts!** Photo apps like your phone's camera or expense trackers make this easy."
+        content: "If you're a 1099 contractor, these reduce your taxable income:\n\n**Mileage (often the biggest deduction):**\n\n- 2026 rate: **70 cents per mile** for business driving\n- Track with apps like [Stride](https://www.stridehealth.com) (free) or [Everlance](https://www.everlance.com)\n- Example: 5,000 work miles = **$3,500 deduction**\n\n**Other common deductions:**\n\n- Phone/internet (business use percentage)\n- Work clothing (uniforms, non-slip shoes, safety gear)\n- Equipment and supplies\n- Professional development and [certifications](/career-hub/guides/certifications)\n- Home office (if you use dedicated space for admin work)\n\n**Keep receipts!** Photo apps like your phone's camera or expense trackers make this easy."
       },
       {
         heading: "Record-Keeping Essentials",

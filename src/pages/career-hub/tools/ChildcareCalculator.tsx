@@ -224,11 +224,11 @@ const ChildcareCalculator = () => {
         <title>Childcare Break-Even Calculator | Is Working Worth It After Daycare Costs?</title>
         <meta 
           name="description" 
-          content="Calculate if returning to work is financially worth it after childcare costs. Free calculator with 2024 state-by-state daycare costs, tax credit calculations, and flexible schedule comparisons." 
+          content="Calculate if returning to work is financially worth it after childcare costs. Free calculator with 2026 state-by-state daycare costs, tax credit calculations, and flexible schedule comparisons." 
         />
         <link rel="canonical" href="https://flex-career-compass.lovable.app/career-hub/tools/childcare-calculator" />
         <meta property="og:title" content="Childcare Break-Even Calculator | Is Working Worth It?" />
-        <meta property="og:description" content="Calculate your true take-home pay after childcare costs with our free calculator. Includes 2024 state data, tax credits, and flexible schedule scenarios." />
+        <meta property="og:description" content="Calculate your true take-home pay after childcare costs with our free calculator. Includes 2026 state data, tax credits, and flexible schedule scenarios." />
         <meta property="og:type" content="website" />
       </Helmet>
 

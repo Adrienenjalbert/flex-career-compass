@@ -29,7 +29,7 @@ const SELF_EMPLOYMENT_TAX_RATE = 0.153; // 15.3% for 1099 workers
 const faqs = [
   {
     question: "How accurate is this pay calculator?",
-    answer: "This calculator provides estimates based on 2025 federal and state tax rates. Actual take-home pay may vary based on deductions, credits, local taxes, and individual circumstances."
+    answer: "This calculator provides estimates based on 2026 federal and state tax rates. Actual take-home pay may vary based on deductions, credits, local taxes, and individual circumstances."
   },
   {
     question: "What's the difference between W-2 and 1099 income?",
@@ -200,8 +200,8 @@ const PayCalculator = () => {
   return (
     <>
       <Helmet>
-        <title>State-by-State Paycheck Calculator 2025 | Indeed Flex Career Hub</title>
-        <meta name="description" content="Calculate your take-home pay in all 50 states. Free paycheck calculator for hourly workers with W-2 vs 1099 comparison, shift differentials, and role templates." />
+        <title>State-by-State Paycheck Calculator 2026 | Indeed Flex Career Hub</title>
+        <meta name="description" content="Calculate your take-home pay in all 50 states. Free 2026 paycheck calculator for hourly workers with W-2 vs 1099 comparison, shift differentials, and role templates." />
         <link rel="canonical" href="https://indeedflex.com/career-hub/tools/pay-calculator" />
       </Helmet>
 
