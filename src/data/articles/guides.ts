@@ -1,4 +1,4 @@
-import { BookOpen, TrendingUp, Users, Award, Star, LucideIcon } from "lucide-react";
+import { BookOpen, TrendingUp, Users, Award, Star, Calendar, LucideIcon } from "lucide-react";
 
 export interface ArticleSection {
   heading: string;
@@ -78,6 +78,19 @@ export const guideCategories: GuideCategory[] = [
     articles: [
       { title: "Your First 90 Days: Proving Yourself at Work", slug: "workplace-success", readTime: "8 min" },
       { title: "How to Get 5-Star Ratings on Every Shift", slug: "shift-rating-tips", readTime: "7 min" },
+    ]
+  },
+  {
+    category: "Seasonal & Event Hiring",
+    slug: "seasonal-hiring",
+    icon: Calendar,
+    articles: [
+      { title: "Holiday Warehouse Jobs 2026: Complete Guide", slug: "holiday-warehouse-guide", readTime: "10 min" },
+      { title: "How to Get Hired for Black Friday 2026", slug: "black-friday-hiring", readTime: "8 min" },
+      { title: "Summer Hospitality Jobs: Peak Season Guide", slug: "summer-hospitality-guide", readTime: "8 min" },
+      { title: "Part-Time Jobs for Students Fall 2026", slug: "student-jobs-fall", readTime: "7 min" },
+      { title: "Event Staffing: Concerts, Sports & More", slug: "event-staffing-guide", readTime: "9 min" },
+      { title: "Tax Season Jobs: 1099 Work Opportunities", slug: "tax-season-jobs", readTime: "6 min" },
     ]
   },
 ];
@@ -1167,5 +1180,325 @@ export const guideArticles: Record<string, Article> = {
       }
     ],
     relatedArticles: ["career-paths", "interview-skills", "workplace-success", "networking"]
+  },
+
+  // ============================================
+  // SEASONAL & EVENT HIRING ARTICLES
+  // ============================================
+
+  "holiday-warehouse-guide": {
+    slug: "holiday-warehouse-guide",
+    title: "Holiday Warehouse Jobs 2026: Complete Guide",
+    category: "Seasonal & Event Hiring",
+    categorySlug: "seasonal-hiring",
+    readTime: "10 min",
+    description: "Everything you need to know about landing holiday warehouse jobs in 2026—when to apply, top employers, expected pay, and how to convert seasonal work into permanent opportunities.",
+    keyTakeaways: [
+      "Holiday hiring starts in August-September—apply early for best positions",
+      "Top employers include Amazon, UPS, FedEx, Target, and Walmart",
+      "Expect $18-28/hr with overtime and shift differentials",
+      "High performers often receive permanent offers after the season"
+    ],
+    sections: [
+      {
+        heading: "Why Holiday Warehouse Work Pays Well",
+        content: "The holiday season (October-December) creates massive demand for warehouse workers. E-commerce orders surge 30-50% above normal levels, and fulfillment centers desperately need reliable staff.\n\n**Why pay rates jump:**\n\n- Demand far exceeds available workers\n- Night and weekend shifts offer premiums\n- Overtime is often mandatory (time-and-a-half)\n- Sign-on bonuses are common ($500-3,000)\n\n**Typical holiday warehouse pay in 2026:**\n\n| Role | Base Pay | With Premiums |\n|------|----------|---------------|\n| Picker/Packer | $17-20/hr | $20-26/hr |\n| Forklift Operator | $20-25/hr | $24-32/hr |\n| Loader | $16-19/hr | $19-25/hr |\n| Warehouse Associate | $17-21/hr | $20-28/hr |\n\nUse our [Pay Calculator](/career-hub/tools/pay-calculator) to estimate your holiday earnings."
+      },
+      {
+        heading: "When to Apply (Timing Is Critical)",
+        content: "Holiday hiring follows a predictable pattern:\n\n**August-September:** Major employers post positions and begin interviews. This is the BEST time to apply—you get first pick of shifts and locations.\n\n**October:** Peak hiring. Most positions fill quickly. Training begins for early starters.\n\n**November:** Last-minute hiring. Limited positions, less flexibility on schedules.\n\n**December:** Emergency hiring only. Usually only available for workers who can start immediately.\n\n**Pro tip:** Apply to multiple employers in August. Accept the best offer and decline others politely—they remember workers who communicate professionally.\n\n[Download Indeed Flex](https://indeedflex.com/download-app/) to start browsing holiday opportunities now."
+      },
+      {
+        heading: "Top Holiday Employers in 2026",
+        content: "**Mega employers (10,000+ seasonal hires):**\n\n- **Amazon** – Fulfillment centers, sort centers, delivery stations\n- **UPS** – Package handlers, drivers, helpers\n- **FedEx** – Warehouse, drivers, package handling\n- **Target** – Distribution centers, stores\n- **Walmart** – Fulfillment centers, stores\n\n**Major employers (1,000+ seasonal hires):**\n\n- Best Buy, Home Depot, Lowe's\n- Macy's, Kohl's, Nordstrom\n- Costco, Sam's Club\n- Third-party logistics (XPO, DHL)\n\n**What makes a good employer:**\n\n- Clear pay and schedule expectations\n- Training provided\n- Path to permanent roles\n- Good worker reviews on Indeed/Glassdoor\n\n[Explore warehouse roles →](/career-hub/industries/industrial)"
+      },
+      {
+        heading: "What Employers Look For",
+        content: "Holiday warehouse hiring is high-volume—employers interview hundreds of candidates. Stand out by:\n\n**Physical capability:**\n\n- Ability to stand for 8-12 hour shifts\n- Lift 50+ lbs repeatedly\n- Work in temperature-varied environments\n\n**Reliability indicators:**\n\n- Consistent work history (gaps are okay, but explain them)\n- Transportation to get to early/late shifts\n- Flexible schedule (nights/weekends = more opportunities)\n\n**Attitude:**\n\n- Willingness to work hard during the busy season\n- Team player mentality\n- Following safety procedures without shortcuts\n\n**Bonus qualifications:**\n\n- Forklift certification (+$3-5/hr) – [Get certified →](/career-hub/guides/certifications)\n- Prior warehouse experience\n- Bilingual skills"
+      },
+      {
+        heading: "Making the Most of Your Holiday Job",
+        content: "The holiday season is an audition for permanent employment:\n\n**During the season:**\n\n- Never call off unless truly necessary\n- Volunteer for overtime when offered\n- Learn multiple stations/roles\n- Build relationships with supervisors\n- Maintain high productivity and accuracy\n\n**Positioning for permanent work:**\n\n- Express interest early: \"I'd love to stay after the season\"\n- Ask what it takes to get a permanent offer\n- Document your performance metrics\n- Connect with HR about ongoing opportunities\n\n**Statistics:** 20-40% of holiday warehouse workers receive permanent offers. Top performers have even higher conversion rates.\n\n[Read: From Temp to Permanent →](/career-hub/guides/temp-to-perm-guide)"
+      },
+      {
+        heading: "Holiday Shift Survival Tips",
+        content: "Peak season is demanding. Prepare yourself:\n\n**Physical preparation:**\n\n- Break in your work shoes before starting\n- Invest in insoles and compression socks\n- Stretch before and after shifts\n- Stay hydrated (bring a water bottle)\n- Pack healthy snacks for energy\n\n**Schedule management:**\n\n- Expect 50-60 hour weeks during peak periods\n- Plan for mandatory overtime in late November/December\n- Arrange childcare and transportation in advance\n- Sleep is crucial—don't burn out early\n\n**Mental approach:**\n\n- It's a sprint, not a marathon (8-12 weeks)\n- Focus on the goal: earnings + permanent opportunity\n- Build camaraderie with coworkers\n- Take breaks seriously—you need them\n\n[Plan your shifts →](/career-hub/tools/shift-planner)"
+      }
+    ],
+    faqs: [
+      {
+        question: "How much can I realistically earn during the holiday season?",
+        answer: "Working full-time (40+ hours/week) at $18-22/hr base, with overtime and shift premiums, many workers earn $4,000-8,000 during the October-December period. Heavy overtime can push this higher."
+      },
+      {
+        question: "Do I need warehouse experience for holiday jobs?",
+        answer: "No—most holiday positions are entry-level with training provided. Employers care more about reliability and physical capability. Experience helps but isn't required."
+      },
+      {
+        question: "What happens after the holiday season ends?",
+        answer: "Top performers often receive permanent offers. Others may continue with reduced hours in January or can use their experience to land warehouse jobs elsewhere. Indeed Flex lets you continue finding flexible work year-round."
+      }
+    ],
+    relatedArticles: ["warehouse-guide", "temp-to-perm-guide", "certifications", "black-friday-hiring"]
+  },
+
+  "black-friday-hiring": {
+    slug: "black-friday-hiring",
+    title: "How to Get Hired for Black Friday 2026",
+    category: "Seasonal & Event Hiring",
+    categorySlug: "seasonal-hiring",
+    readTime: "8 min",
+    description: "Black Friday 2026 is November 27th. Here's exactly when to apply, what roles pay best, and how to maximize your earnings during the biggest shopping weekend of the year.",
+    keyTakeaways: [
+      "Apply by early October—Black Friday hiring starts 6-8 weeks before",
+      "Expect 1.5x-2x pay rates on Black Friday itself",
+      "Warehouse and logistics roles typically pay more than retail",
+      "Reliability during Black Friday week opens doors to ongoing holiday work"
+    ],
+    sections: [
+      {
+        heading: "Black Friday 2026 Hiring Timeline",
+        content: "**Black Friday 2026:** November 27th\n**Cyber Monday 2026:** November 30th\n\n**Hiring timeline:**\n\n| When | What's Happening |\n|------|------------------|\n| Early October | Major retailers post Black Friday positions |\n| Mid-October | Peak application period—best selection |\n| Late October | Interviews and offers made |\n| Early November | Training begins |\n| Nov 20-30 | Black Friday work period |\n\n**Key insight:** The best positions fill by mid-October. Don't wait for November.\n\n[Start browsing opportunities →](https://indeedflex.com/download-app/)"
+      },
+      {
+        heading: "Highest-Paying Black Friday Roles",
+        content: "**Warehouse & Fulfillment (Best Pay):**\n\n- Picker/Packer: $18-24/hr\n- Forklift Operator: $22-30/hr\n- Loader/Unloader: $17-23/hr\n- Package Handler: $18-25/hr\n\n**Retail (Tips + Premiums):**\n\n- Sales Associate: $14-20/hr + possible commission\n- Cashier: $14-18/hr\n- Stock Associate: $15-20/hr\n\n**Logistics/Delivery:**\n\n- Delivery Driver Helper: $16-22/hr\n- Sort Facility Worker: $18-25/hr\n\n**Black Friday premium pay:**\n\nMany employers offer 1.5x-2x normal rates on Black Friday itself, plus overnight and weekend differentials.\n\n[Calculate your earnings →](/career-hub/tools/pay-calculator)"
+      },
+      {
+        heading: "What to Expect During Black Friday Week",
+        content: "**Schedule expectations:**\n\n- Shifts: 8-12 hours (sometimes longer)\n- Schedule: Expect to work Thanksgiving evening through Sunday\n- Overtime: Often mandatory; plan for 50+ hour weeks\n\n**Physical demands:**\n\n- Fast-paced, high-volume work\n- Constant standing and moving\n- Heavy lifting (warehouse) or constant customer interaction (retail)\n- Temperature extremes (loading docks, crowded stores)\n\n**What employers value most:**\n\n1. **Showing up** – Attendance is everything\n2. **Endurance** – Maintaining pace through long shifts\n3. **Flexibility** – Saying yes to extended hours\n4. **Attitude** – Staying positive under pressure\n\nWorkers who excel during Black Friday often get first pick of December shifts and permanent role consideration."
+      },
+      {
+        heading: "Standing Out to Get Hired",
+        content: "Black Friday hiring is competitive. Here's how to stand out:\n\n**Application tips:**\n\n- Apply to 5-10 employers simultaneously\n- Emphasize availability: \"Available Thanksgiving through New Year's\"\n- Highlight any warehouse, retail, or customer service experience\n- Mention certifications (forklift, food handler, etc.)\n\n**Interview preparation:**\n\n- Research the employer's Black Friday history\n- Prepare for questions about physical demands\n- Have transportation plan ready (early/late shifts)\n- Express enthusiasm for the busy season\n\n**Bonus qualifications:**\n\n- Forklift certification: +$3-6/hr\n- Previous holiday season experience\n- Flexible schedule (nights, weekends, holidays)\n- Reliable transportation\n\n[Get certifications that pay off →](/career-hub/guides/certifications)"
+      },
+      {
+        heading: "Maximizing Your Black Friday Earnings",
+        content: "**Before Black Friday:**\n\n- Negotiate for the best-paying shifts during interview\n- Request overnight or Thanksgiving shifts (highest premiums)\n- Understand overtime policies\n\n**During the weekend:**\n\n- Accept all overtime offered\n- Be willing to extend shifts\n- Stay reliable—cancellations hurt your reputation\n\n**After Black Friday:**\n\n- Express interest in continued holiday work\n- Build relationships with supervisors\n- Ask about December opportunities\n\n**Sample earnings calculation:**\n\n| Day | Hours | Rate | Earnings |\n|-----|-------|------|----------|\n| Wed (prep) | 8 | $20 | $160 |\n| Thanksgiving | 6 | $30 (1.5x) | $180 |\n| Black Friday | 12 | $40 (2x) | $480 |\n| Saturday | 10 | $25 | $250 |\n| Sunday | 8 | $25 | $200 |\n| **Total** | **44** | -- | **$1,270** |\n\nOne weekend can equal half a month's typical earnings."
+      }
+    ],
+    faqs: [
+      {
+        question: "Do I have to work on Thanksgiving Day?",
+        answer: "Not always, but being available for Thanksgiving evening significantly increases your chances of getting hired and getting premium pay. Many stores and warehouses begin Black Friday operations Thursday night."
+      },
+      {
+        question: "Is retail or warehouse better for Black Friday?",
+        answer: "Warehouse typically pays $2-5/hr more, but retail may offer commissions and tips. Warehouse is more physically demanding but less customer-facing. Choose based on your skills and preferences."
+      },
+      {
+        question: "Can I work Black Friday through Indeed Flex?",
+        answer: "Yes! Indeed Flex partners with major retailers and fulfillment centers for Black Friday and holiday season staffing. [Download the app](https://indeedflex.com/download-app/) to see available opportunities in your area."
+      }
+    ],
+    relatedArticles: ["holiday-warehouse-guide", "warehouse-guide", "more-shifts", "shift-rating-tips"]
+  },
+
+  "summer-hospitality-guide": {
+    slug: "summer-hospitality-guide",
+    title: "Summer Hospitality Jobs: Peak Season Guide",
+    category: "Seasonal & Event Hiring",
+    categorySlug: "seasonal-hiring",
+    readTime: "8 min",
+    description: "Summer 2026 brings peak hospitality hiring. Learn how to land the best positions at resorts, pools, outdoor venues, and restaurants during the busiest season of the year.",
+    keyTakeaways: [
+      "Summer hospitality hiring peaks April-May for June-August positions",
+      "Tips can add $10-20/hr to base pay at busy venues",
+      "Pool, resort, and outdoor event jobs are summer-specific opportunities",
+      "Building a summer reputation leads to year-round hospitality work"
+    ],
+    sections: [
+      {
+        heading: "Why Summer Hospitality Pays Well",
+        content: "Summer is peak season for hospitality:\n\n**Demand drivers:**\n\n- Tourism surges (vacations, travel)\n- Outdoor venues open (pools, patios, festivals)\n- Events increase (weddings, concerts, corporate outings)\n- Extended hours at restaurants and bars\n\n**What this means for workers:**\n\n- More shifts available\n- Higher base pay at competitive employers\n- Significantly higher tips at busy venues\n- Premium events (weddings, galas) pay top dollar\n\n**Summer hospitality pay ranges:**\n\n| Role | Base Pay | With Tips |\n|------|----------|----------|\n| Server | $12-18/hr | $25-45/hr |\n| Bartender | $15-22/hr | $30-60/hr |\n| Event Staff | $15-20/hr | $20-35/hr |\n| Pool Attendant | $14-18/hr | $18-25/hr |\n\n[Explore hospitality roles →](/career-hub/industries/hospitality)"
+      },
+      {
+        heading: "Summer-Specific Opportunities",
+        content: "**Pool & Resort Work:**\n\n- Pool attendant/lifeguard\n- Cabana service\n- Resort restaurant staff\n- Beach/poolside bartending\n\n**Outdoor Events:**\n\n- Music festival staffing\n- Outdoor concert venues\n- Sports stadium events\n- Food truck crew\n\n**Wedding Season:**\n\n- Banquet servers (highest tips)\n- Bartenders for receptions\n- Event setup/teardown\n- Catering staff\n\n**Tourism Hotspots:**\n\n- Beach town restaurants\n- Vacation destination hospitality\n- Theme park food service\n- Hotel restaurants and bars\n\nThese opportunities are **summer-specific**—they're not available year-round, so maximize them while you can."
+      },
+      {
+        heading: "When and Where to Apply",
+        content: "**Hiring timeline for Summer 2026:**\n\n| Month | What's Happening |\n|-------|------------------|\n| March | Resorts and pools begin posting |\n| April | Peak application period |\n| May | Training and early-season starts |\n| June-Aug | Peak summer season |\n| September | Transitions to fall staffing |\n\n**Best employers for summer:**\n\n- Hotel and resort chains\n- Country clubs and golf courses\n- Wedding venues and caterers\n- Stadium and arena concessions\n- Festival and event production companies\n- High-volume tourist-area restaurants\n\n**Application strategy:**\n\n- Apply to 10+ venues in April\n- Emphasize summer availability\n- Highlight any hospitality experience or [certifications](/career-hub/guides/certifications)\n- Express interest in the busiest shifts"
+      },
+      {
+        heading: "Skills That Increase Summer Earnings",
+        content: "**Essential certifications:**\n\n- **Food Handler Certificate** ($15-25, required in most states)\n- **TIPS Alcohol Certification** ($38-55, required for alcohol service)\n- **ServSafe** ($36-78, preferred for advanced roles)\n\n**High-value skills:**\n\n- Bartending: Opens highest-paying shifts\n- Barista skills: Coffee shops are busy summer mornings\n- Bilingual: Tourist areas love multilingual staff\n- Wine knowledge: Upscale restaurants pay more\n- Craft cocktails: Differentiator at bars\n\n**Physical skills:**\n\n- Carrying heavy trays\n- Standing for 6-10 hour shifts in heat\n- Moving quickly in busy environments\n\n[Get the certifications →](/career-hub/guides/certifications)\n\n[Try our Cocktail Quiz →](/career-hub/tools/cocktail-quiz)"
+      },
+      {
+        heading: "Maximizing Summer Tips",
+        content: "Tips make summer hospitality lucrative:\n\n**High-tip shifts:**\n\n- Friday and Saturday evenings\n- Brunch service (especially weekends)\n- Special events and private parties\n- Poolside and patio service\n- Wedding receptions\n\n**Tip-maximizing techniques:**\n\n- Introduce yourself by name\n- Remember regular customers\n- Check back without hovering\n- Handle complaints gracefully\n- Be genuinely friendly (tourists tip well for hospitality)\n- Suggest popular items with enthusiasm\n\n**Sample summer tip breakdown:**\n\n| Shift Type | Base (8 hrs) | Tips | Total |\n|------------|--------------|------|-------|\n| Weekday lunch | $128 | $60 | $188 |\n| Friday dinner | $144 | $180 | $324 |\n| Wedding reception | $160 | $200 | $360 |\n| Pool bar (Sat) | $136 | $150 | $286 |\n\nFriday dinner shift = almost double a weekday lunch."
+      }
+    ],
+    faqs: [
+      {
+        question: "Do I need hospitality experience for summer jobs?",
+        answer: "Entry-level roles like barback, busser, and event setup don't require experience. For server and bartender positions, some experience is preferred but not always required—especially at high-volume tourist spots that train quickly."
+      },
+      {
+        question: "How do I handle working in the heat?",
+        answer: "Stay hydrated (bring a water bottle), wear breathable clothing under your uniform, use sunscreen for outdoor shifts, take breaks seriously, and eat regular meals. Pace yourself—summer is a marathon, not a sprint."
+      },
+      {
+        question: "Can summer work lead to year-round hospitality jobs?",
+        answer: "Absolutely. Many workers prove themselves during summer and transition to permanent roles. Express interest early, excel during the season, and stay in touch with managers after summer ends."
+      }
+    ],
+    relatedArticles: ["hospitality-guide", "first-flex-job", "certifications", "event-staffing-guide"]
+  },
+
+  "student-jobs-fall": {
+    slug: "student-jobs-fall",
+    title: "Part-Time Jobs for Students Fall 2026",
+    category: "Seasonal & Event Hiring",
+    categorySlug: "seasonal-hiring",
+    readTime: "7 min",
+    description: "Balance school and work in Fall 2026. Find flexible part-time jobs that accommodate class schedules, provide real income, and build your resume for future careers.",
+    keyTakeaways: [
+      "Indeed Flex allows students to work around class schedules",
+      "Campus-adjacent hospitality and retail jobs are most accessible",
+      "Working 15-20 hours/week is sustainable while maintaining grades",
+      "Fall semester leads directly into high-paying holiday opportunities"
+    ],
+    sections: [
+      {
+        heading: "Why Fall Semester Is Ideal for Starting",
+        content: "Fall 2026 is the perfect time for students to start working:\n\n**Timing advantages:**\n\n- Settle into class schedule before adding work\n- Build experience for holiday hiring surge\n- Establish income before winter expenses\n- Less competition than summer (fewer students looking)\n\n**Indeed Flex for students:**\n\n- Choose shifts that fit around classes\n- No minimum hours required\n- Cancel if you need to study for exams\n- Work more during breaks, less during finals\n\n**Entry requirements:**\n\n- Must be 18+ (Indeed Flex requirement)\n- US work authorization\n- Smartphone with the app\n- Bank account for direct deposit\n\n[Download Indeed Flex →](https://indeedflex.com/download-app/)"
+      },
+      {
+        heading: "Best Jobs for Student Schedules",
+        content: "**Hospitality (most flexible):**\n\n- Event staff: Work only on weekends\n- Barback: Evening shifts after class\n- Server: Friday/Saturday nights\n- Catering: Pick specific events\n\n**Retail (predictable hours):**\n\n- Retail associate: Evening and weekend shifts\n- Stock crew: Early morning or late night\n- Holiday retail: Scales with availability\n\n**Warehouse (best pay):**\n\n- Picker/packer: Night/weekend shifts\n- Loader: Early morning before class\n- Package handler: Flexible start times\n\n**Campus-adjacent ideas:**\n\n- Restaurants near campus (walking distance)\n- Event venues at your school\n- Shopping areas near student housing\n\n| Job Type | Flexibility | Pay Range | Physical Demand |\n|----------|-------------|-----------|----------------|\n| Event Staff | High | $14-20/hr | Medium |\n| Server | High | $20-40/hr w/tips | Medium |\n| Picker/Packer | Medium | $16-20/hr | High |\n| Retail | Medium | $13-17/hr | Low |"
+      },
+      {
+        heading: "Balancing Work and Academics",
+        content: "**Sustainable work hours:**\n\n- Full course load: 10-15 hours/week\n- Light course load: 15-25 hours/week\n- Finals week: Reduce or pause\n- School breaks: Increase significantly\n\n**Schedule strategies:**\n\n- Block your class times in the Indeed Flex app\n- Leave buffer time for studying\n- Work weekends, protect weekday evenings\n- Avoid back-to-back late shifts before morning classes\n\n**Protecting your grades:**\n\n- Set non-negotiable study times\n- Don't pick up shifts during exams\n- Communicate with employers about finals\n- Quality over quantity—fewer shifts, performed well\n\n**Financial reality:**\n\n| Hours/Week | Hourly Rate | Weekly | Monthly |\n|------------|-------------|--------|--------|\n| 10 | $16 | $160 | $640 |\n| 15 | $16 | $240 | $960 |\n| 20 | $16 | $320 | $1,280 |\n\n15 hours at $16/hr = ~$1,000/month. That covers many student expenses.\n\n[Plan your schedule →](/career-hub/tools/shift-planner)"
+      },
+      {
+        heading: "Building Skills for Your Career",
+        content: "Part-time work builds resume content:\n\n**Transferable skills gained:**\n\n- Customer service excellence\n- Time management under pressure\n- Team collaboration\n- Problem-solving in real situations\n- Reliability and professionalism\n\n**For specific majors:**\n\n| Your Major | Relevant Work | Skills Demonstrated |\n|------------|--------------|--------------------|\n| Business | Retail, Events | Sales, customer relations |\n| Communications | Hospitality | Public interaction, service |\n| Engineering | Warehouse | Process optimization, efficiency |\n| Healthcare | Any | Reliability, stress management |\n\n**Resume language:**\n\n- \"Maintained 4.8+ rating across 50+ shifts\"\n- \"Managed high-volume customer interactions\"\n- \"Consistently exceeded productivity targets\"\n\n**References:**\n\nFlexible work creates supervisor relationships you can use for internship and job applications.\n\n[Building your professional network →](/career-hub/guides/networking)"
+      },
+      {
+        heading: "Fall to Holiday Transition",
+        content: "Fall semester positions you for holiday earnings:\n\n**The opportunity:**\n\n- Holiday hiring starts October\n- You'll have 1-2 months of experience by then\n- Your rating and reputation are established\n- You can increase hours during winter break\n\n**Strategy:**\n\n1. Start working in September\n2. Build solid ratings and employer relationships\n3. Apply for holiday positions in October\n4. Work more during Thanksgiving break\n5. Maximize hours during winter break\n\n**Winter break potential:**\n\n- 3-4 weeks of near-full-time availability\n- Holiday premium pay rates\n- Overtime opportunities\n- Potential sign-on bonuses\n\n**Sample winter break earnings:**\n\n4 weeks × 40 hours × $20/hr = $3,200\n\nThat's a semester's worth of expenses in one month.\n\n[Read: Holiday Warehouse Jobs →](/career-hub/guides/holiday-warehouse-guide)"
+      }
+    ],
+    faqs: [
+      {
+        question: "Can I use Indeed Flex if I'm under 21?",
+        answer: "Yes! You must be 18+ to use Indeed Flex. However, you can't work positions that require serving alcohol until you're 21. Plenty of roles are available for 18-20 year olds."
+      },
+      {
+        question: "What if I need to cancel a shift for an exam?",
+        answer: "Cancel as early as possible—ideally 24+ hours in advance. Occasional cancellations for academic reasons are understandable, but frequent cancellations hurt your rating. Plan ahead by not booking shifts during exam weeks."
+      },
+      {
+        question: "How do I explain Indeed Flex work on my resume?",
+        answer: "List it as \"Flexible Work Associate, Indeed Flex\" with dates. Describe your roles (warehouse, hospitality, etc.) and quantify your performance (rating, number of shifts, specific achievements)."
+      }
+    ],
+    relatedArticles: ["first-flex-job", "multiple-gigs", "holiday-warehouse-guide", "more-shifts"]
+  },
+
+  "event-staffing-guide": {
+    slug: "event-staffing-guide",
+    title: "Event Staffing: Concerts, Sports & More",
+    category: "Seasonal & Event Hiring",
+    categorySlug: "seasonal-hiring",
+    readTime: "9 min",
+    description: "Get hired for concerts, sporting events, festivals, and conferences. Learn what event staffing pays, what roles are available, and how to build a reputation in this exciting industry.",
+    keyTakeaways: [
+      "Event staffing pays $15-30/hr depending on the role and event type",
+      "Peak event seasons are summer (outdoor) and fall (sports/concerts)",
+      "Reliability is THE key factor—no-shows ruin event reputations",
+      "Build relationships to get invited to premium events repeatedly"
+    ],
+    sections: [
+      {
+        heading: "Types of Event Staffing",
+        content: "Event work spans diverse venues and experiences:\n\n**Concert & Festival Staffing:**\n\n- Ticket scanning/entry management\n- Concessions and bar service\n- VIP area service\n- Merchandise sales\n- Cleanup crew\n\n**Sporting Events:**\n\n- Stadium concessions\n- Suite-level service\n- Parking and entry\n- Guest services\n- Premium seating attendants\n\n**Corporate Events:**\n\n- Conference registration\n- Catering service\n- A/V support\n- Trade show booth staffing\n- Executive events\n\n**Private Events:**\n\n- Wedding service\n- Gala and fundraiser staffing\n- Private party service\n- Luxury event crews\n\n| Event Type | Pay Range | Tip Potential | Demand |\n|------------|-----------|---------------|--------|\n| Concerts | $15-22/hr | Low-Medium | High (summer) |\n| Sports | $15-25/hr | Medium | Year-round |\n| Corporate | $18-28/hr | Low | Year-round |\n| Weddings | $18-30/hr | High | Spring-Fall |"
+      },
+      {
+        heading: "How to Break Into Event Work",
+        content: "**Entry points:**\n\n1. **Indeed Flex**: Browse event-specific opportunities in your area\n2. **Venue websites**: Major stadiums and arenas hire directly\n3. **Event staffing agencies**: Specialize in concerts and festivals\n4. **Catering companies**: Handle weddings and corporate events\n\n**What employers look for:**\n\n- Professional appearance and demeanor\n- Ability to work 6-12 hour shifts on your feet\n- Flexible schedule (events happen evenings and weekends)\n- Reliability—this is non-negotiable for events\n- Customer service attitude\n\n**Helpful certifications:**\n\n- TIPS or ServSafe Alcohol (for bar service)\n- Food Handler (for concessions/catering)\n- CPR/First Aid (for some venues)\n- Security guard license (for entry management)\n\n[Get event-ready certifications →](/career-hub/guides/certifications)"
+      },
+      {
+        heading: "What to Expect at Events",
+        content: "**Before the event:**\n\n- Arrive 30-60 minutes before public entry\n- Check in with event coordinator/supervisor\n- Receive assignment and training briefing\n- Set up your station/area\n\n**During the event:**\n\n- Constant customer interaction\n- Fast-paced service (especially concerts)\n- Problem-solving on the fly\n- Standing and moving for hours\n- Following security and safety protocols\n\n**After the event:**\n\n- Breakdown and cleanup (often adds 1-2 hours)\n- Inventory and cash-out if handling money\n- Debriefing with supervisor\n- Rating and feedback exchange\n\n**Physical demands:**\n\n- Expect 8-14 hour shifts for major events\n- Constant standing and walking\n- Loud environments at concerts\n- Weather exposure for outdoor events\n- Crowded, high-energy situations"
+      },
+      {
+        heading: "Maximizing Event Earnings",
+        content: "**Highest-paying event roles:**\n\n1. **Bartending at premium events** ($20-30/hr + tips)\n2. **Suite-level service at sports venues** ($20-28/hr + gratuities)\n3. **Wedding catering service** ($18-28/hr + tips)\n4. **VIP service at concerts** ($18-25/hr)\n5. **Executive event service** ($20-30/hr)\n\n**Strategies for more opportunities:**\n\n- Maintain perfect attendance (this is everything)\n- Request high-profile events after proving yourself\n- Learn multiple roles (flexibility = more bookings)\n- Build supervisor relationships\n- Express interest in recurring venue work\n\n**Sample event earnings:**\n\n| Event | Hours | Rate | Tips | Total |\n|-------|-------|------|------|-------|\n| Concert (concessions) | 8 | $144 | $30 | $174 |\n| Football game (suite) | 6 | $132 | $80 | $212 |\n| Wedding (server) | 7 | $154 | $100 | $254 |\n| Conference (registration) | 10 | $200 | $0 | $200 |\n\nOne good wedding can pay more than two regular shifts."
+      },
+      {
+        heading: "Building an Event Career",
+        content: "Event work can become a specialty:\n\n**Progression path:**\n\n1. Entry-level concessions/general staff\n2. Specialized roles (bartending, VIP service)\n3. Lead staff/shift supervisor\n4. Event coordinator/manager\n\n**Becoming a preferred worker:**\n\n- Venues maintain lists of top performers\n- Get first access to major events\n- Receive repeat bookings automatically\n- Premium events go to proven workers\n\n**Year-round event calendar:**\n\n| Season | Major Events |\n|--------|-------------|\n| Winter | Super Bowl, NBA, NHL, conferences |\n| Spring | March Madness, graduations, proms |\n| Summer | Concerts, festivals, outdoor events |\n| Fall | NFL season, fall festivals, corporate events |\n\n**The payoff:**\n\nExperienced event staff work the events they actually want to attend—getting paid to be at concerts, sports championships, and exclusive galas.\n\n[Explore all hospitality roles →](/career-hub/industries/hospitality)"
+      }
+    ],
+    faqs: [
+      {
+        question: "Do I get to watch the event while working?",
+        answer: "It depends on your role and the event. Some positions (like concessions during downtime) allow glimpses, but most of the time you're busy working. Premium roles like suite service may have better views. Never prioritize watching over working—that gets noticed."
+      },
+      {
+        question: "What should I wear to event jobs?",
+        answer: "Dress code is usually specified—often black pants and white/black shirt for hospitality, venue-branded gear for concessions, or business casual for corporate events. Always confirm dress code in advance and have non-slip shoes."
+      },
+      {
+        question: "How do I deal with difficult event guests?",
+        answer: "Stay calm, be professional, and escalate to supervisors when needed. Events bring all personalities—alcohol is often involved at concerts and games. De-escalation skills are valuable. Never argue with guests; get management involved for serious issues."
+      }
+    ],
+    relatedArticles: ["hospitality-guide", "summer-hospitality-guide", "certifications", "networking"]
+  },
+
+  "tax-season-jobs": {
+    slug: "tax-season-jobs",
+    title: "Tax Season Jobs: 1099 Work Opportunities",
+    category: "Seasonal & Event Hiring",
+    categorySlug: "seasonal-hiring",
+    readTime: "6 min",
+    description: "Tax season (January-April) creates unique job opportunities. Learn about seasonal tax preparer roles, administrative support, and how to leverage this period for flexible work.",
+    keyTakeaways: [
+      "Tax season hiring peaks January-February for March-April work",
+      "Certified tax preparers earn $15-25/hr; experienced preparers earn more",
+      "Administrative and clerical demand also increases during tax season",
+      "Tax experience opens doors to year-round accounting and finance roles"
+    ],
+    sections: [
+      {
+        heading: "Tax Season Job Landscape",
+        content: "Tax season (January 1 - April 15) creates predictable hiring demand:\n\n**Tax preparation roles:**\n\n- Entry-level tax preparer: $15-20/hr\n- Experienced tax preparer: $20-35/hr\n- Tax reviewer/quality check: $18-28/hr\n- Reception/client intake: $14-18/hr\n\n**Administrative support:**\n\n- Data entry for tax firms: $15-20/hr\n- Document processing: $14-18/hr\n- Customer service for tax software: $15-22/hr\n- Appointment scheduling: $14-18/hr\n\n**Major employers:**\n\n- H&R Block\n- Jackson Hewitt\n- Liberty Tax\n- Local CPA firms\n- Virtual tax preparation companies\n\n**Hiring timeline:**\n\n| Month | Activity |\n|-------|----------|\n| November-December | Hiring begins, training available |\n| January | Peak hiring, training intensifies |\n| February-April | Tax season—full work availability |\n| May | Season ends, some roles continue |"
+      },
+      {
+        heading: "Becoming a Tax Preparer",
+        content: "**No experience path:**\n\nMajor tax companies hire and train from scratch:\n\n1. Apply October-December\n2. Complete company training (paid, 40-100+ hours)\n3. Pass IRS competency exam (AFTR)\n4. Begin preparing returns under supervision\n\n**Requirements:**\n\n- High school diploma or GED\n- Pass background check\n- Complete training program\n- Register with IRS (PTIN - free)\n- Some states require additional registration\n\n**Certification options:**\n\n| Certification | Cost | Time | Benefit |\n|--------------|------|------|--------|\n| IRS AFTR | Free (with employer training) | 40-80 hours | Required for preparers |\n| H&R Block Tax Course | $0-$200 | 80+ hours | Employment + certification |\n| IRS Volunteer (VITA) | Free | 30+ hours | Experience + community service |\n\n**Career value:**\n\nTax preparation skills are valuable year-round. Many preparers transition to bookkeeping, accounting, or financial services roles."
+      },
+      {
+        heading: "Administrative Tax Season Roles",
+        content: "Not everyone wants to prepare taxes. Support roles are also in demand:\n\n**Client-facing roles:**\n\n- Receptionist at tax offices\n- Appointment coordinator\n- Client intake specialist\n- Document collector\n\n**Back-office roles:**\n\n- Data entry for tax software\n- Document scanning and filing\n- Quality control reviewer\n- Administrative assistant\n\n**Remote opportunities:**\n\n- Virtual receptionist for tax firms\n- Customer support for tax software companies\n- Document processing from home\n- Appointment scheduling\n\n**What employers value:**\n\n- Accuracy and attention to detail\n- Customer service skills\n- Confidentiality (handling sensitive financial data)\n- Computer proficiency\n- Reliability during the busy season\n\n[Explore clerical roles →](/career-hub/roles)"
+      },
+      {
+        heading: "W-2 vs 1099 Tax Work",
+        content: "Tax season work comes in both employment types:\n\n**W-2 employment (Indeed Flex, major chains):**\n\n- Taxes withheld from paycheck\n- May include benefits\n- Regular pay schedule\n- Worker protections\n\n**1099 independent contractor:**\n\n- Higher per-hour rate (but you pay self-employment tax)\n- More flexibility in scheduling\n- Can work for multiple clients\n- Responsible for your own taxes\n\n**1099 tax considerations:**\n\nIf you're a 1099 tax preparer, you'll pay:\n\n- Self-employment tax (15.3%)\n- Federal income tax\n- State income tax (if applicable)\n- Quarterly estimated payments recommended\n\n**Rule of thumb:** 1099 rate should be 25-30% higher than W-2 to be equivalent after self-employment taxes.\n\n[Calculate your taxes →](/career-hub/tools/tax-calculator)"
+      },
+      {
+        heading: "Leveraging Tax Season Experience",
+        content: "Tax season can open career doors:\n\n**Immediate benefits:**\n\n- Intensive training in tax law\n- Client service experience\n- Understanding of financial documents\n- Seasonal income boost (January-April)\n\n**Long-term opportunities:**\n\n- Year-round bookkeeping roles\n- Payroll processing positions\n- Financial services careers\n- CPA firm support roles\n- Enrolled Agent certification path\n\n**Building on your experience:**\n\n| After Tax Season | Next Step |\n|------------------|----------|\n| Enjoyed tax prep? | Take EA exam, work year-round |\n| Liked the admin work? | Pursue bookkeeping certification |\n| Want more finance? | Consider accounting courses |\n| Prefer flexible work? | Continue with Indeed Flex |\n\n**The opportunity:**\n\nMany people who \"try\" tax work during one season discover a career path they hadn't considered. Tax preparation is a learnable skill with steady demand.\n\n[Read: Getting Certifications That Pay Off →](/career-hub/guides/certifications)"
+      }
+    ],
+    faqs: [
+      {
+        question: "Do I need an accounting degree to prepare taxes?",
+        answer: "No. Major tax preparation companies train from scratch. You'll need to pass IRS exams and complete training, but no prior accounting background is required. Many successful tax preparers came from completely different fields."
+      },
+      {
+        question: "How much can I earn during tax season?",
+        answer: "Working 40 hours/week for 10-12 weeks at $18-22/hr yields roughly $7,000-10,500 for the season. Experienced preparers and those working overtime can earn significantly more."
+      },
+      {
+        question: "What happens after April 15?",
+        answer: "Most seasonal positions end, but options exist: extension preparation (continues through October), year-round firms, bookkeeping roles, or returning to other flexible work through Indeed Flex. Some tax preparers work seasonally by choice, taking summers off."
+      }
+    ],
+    relatedArticles: ["first-flex-job", "certifications", "multiple-gigs", "skill-boost"]
   }
 };
