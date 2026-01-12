@@ -268,7 +268,7 @@ const EventHiringPage = ({ eventSlug }: EventHiringPageProps) => {
                     <CardContent>
                       <p className="text-sm text-muted-foreground mb-2">{role.shortDescription}</p>
                       <p className="text-sm font-medium text-primary">
-                        ${role.payRange.min}-${role.payRange.max}/hr
+                        ${role.avgHourlyRate.min}-${role.avgHourlyRate.max}/hr
                       </p>
                     </CardContent>
                   </Card>

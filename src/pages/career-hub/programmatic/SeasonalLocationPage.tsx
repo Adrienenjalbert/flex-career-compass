@@ -253,7 +253,7 @@ const SeasonalLocationPage = ({ seasonSlug, citySlug }: SeasonalLocationPageProp
               <div className="prose prose-lg max-w-none mb-12">
                 <p>
                   {city.city}, {city.state} experiences strong seasonal hiring demand during {season.name}. 
-                  With a cost of living index of {city.costOfLivingIndex} and average wages of ${city.avgHourlyWage.min}-${city.avgHourlyWage.max}/hr, 
+                  With a cost of living index of {city.costOfLiving?.index || 100} and average wages of ${city.avgHourlyWage.min}-${city.avgHourlyWage.max}/hr, 
                   {city.city} offers solid earning opportunities for flexible workers.
                 </p>
                 <p>
@@ -299,7 +299,7 @@ const SeasonalLocationPage = ({ seasonSlug, citySlug }: SeasonalLocationPageProp
                     <CardContent>
                       <p className="text-sm text-muted-foreground mb-2">{role.shortDescription}</p>
                       <p className="text-sm font-medium text-primary">
-                        ${role.payRange.min}-${role.payRange.max}/hr
+                        ${role.avgHourlyRate.min}-${role.avgHourlyRate.max}/hr
                       </p>
                     </CardContent>
                   </Card>
