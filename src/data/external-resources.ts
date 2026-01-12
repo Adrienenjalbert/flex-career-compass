@@ -1,4 +1,4 @@
-import { ExternalLink, Building2, FileText, GraduationCap, Briefcase, Heart, DollarSign, LucideIcon, Truck, UtensilsCrossed, ShoppingBag, Scale, BookOpen, Shield, Warehouse, Users } from "lucide-react";
+import { ExternalLink, Building2, FileText, GraduationCap, Briefcase, Heart, DollarSign, LucideIcon, Truck, UtensilsCrossed, ShoppingBag, Scale, BookOpen, Shield, Warehouse, Users, Sun, Calendar, Receipt } from "lucide-react";
 
 export interface ExternalResource {
   name: string;
@@ -401,6 +401,194 @@ export const learningResources: ExternalResource[] = [
   }
 ];
 
+// ============================================
+// SEASONAL HIRING RESOURCES - 2026
+// ============================================
+
+// Holiday/Warehouse seasonal hiring
+export const seasonalWarehouseResources: ExternalResource[] = [
+  {
+    name: "Amazon Seasonal Jobs",
+    url: "https://www.amazon.jobs/en/landing_pages/hourly-jobs",
+    description: "Apply for warehouse, delivery, and seasonal positions. Amazon hires 150,000+ workers for holiday peak.",
+    icon: Warehouse
+  },
+  {
+    name: "UPS Seasonal Careers",
+    url: "https://www.jobs-ups.com/category/package-handler-jobs/1187/4362/1",
+    description: "Package handlers, driver helpers, and seasonal positions. UPS hires 100,000+ for peak season.",
+    icon: Truck
+  },
+  {
+    name: "FedEx Peak Season Jobs",
+    url: "https://careers.fedex.com/",
+    description: "Package handler and driver positions during holiday rush. FedEx hires 70,000+ seasonally.",
+    icon: Truck
+  },
+  {
+    name: "Target Seasonal Careers",
+    url: "https://jobs.target.com/hourly-store-roles",
+    description: "Distribution center and store positions. Target hires 100,000+ for the holiday season.",
+    icon: ShoppingBag
+  },
+  {
+    name: "Walmart Seasonal Jobs",
+    url: "https://careers.walmart.com/",
+    description: "Fulfillment center and store associate positions for holiday season staffing.",
+    icon: ShoppingBag
+  },
+  {
+    name: "USPS Holiday Hiring",
+    url: "https://about.usps.com/careers/",
+    description: "Postal Service Assistants and mail handlers for holiday mail volume surge.",
+    icon: Truck
+  },
+  {
+    name: "DHL Express Careers",
+    url: "https://careers.dhl.com/",
+    description: "Package handlers and logistics positions during e-commerce peak season.",
+    icon: Truck
+  },
+  {
+    name: "XPO Logistics Jobs",
+    url: "https://jobs.xpo.com/",
+    description: "Third-party logistics warehouse positions handling major retailer fulfillment.",
+    icon: Warehouse
+  }
+];
+
+// Event and hospitality staffing
+export const eventStaffingResources: ExternalResource[] = [
+  {
+    name: "Live Nation Careers",
+    url: "https://www.livenationentertainment.com/careers/",
+    description: "Event staff positions at concerts, festivals, and venues nationwide. Largest live events company.",
+    icon: Users
+  },
+  {
+    name: "Legends Hospitality",
+    url: "https://www.legends.net/careers",
+    description: "Premium hospitality at stadiums and arenas. Super Bowl, major sports, and concerts.",
+    icon: Building2
+  },
+  {
+    name: "Aramark Event Services",
+    url: "https://careers.aramark.com/",
+    description: "Catering, concessions, and hospitality at stadiums, arenas, and convention centers.",
+    icon: UtensilsCrossed
+  },
+  {
+    name: "Levy Restaurants",
+    url: "https://www.levyrestaurants.com/careers/",
+    description: "Premium food service at sports venues, convention centers, and special events.",
+    icon: UtensilsCrossed
+  },
+  {
+    name: "AEG Worldwide Careers",
+    url: "https://www.aegworldwide.com/careers",
+    description: "Event staffing at AEG-owned venues including Staples Center, O2 Arena, and festivals.",
+    icon: Users
+  },
+  {
+    name: "Delaware North Hospitality",
+    url: "https://careers.delawarenorth.com/",
+    description: "Hospitality services at national parks, stadiums, airports, and entertainment venues.",
+    icon: Building2
+  },
+  {
+    name: "Centerplate Careers",
+    url: "https://www.centerplate.com/careers/",
+    description: "Food and beverage service at convention centers and special events nationwide.",
+    icon: UtensilsCrossed
+  },
+  {
+    name: "Staffing Agencies - Events",
+    url: "https://www.indeed.com/q-event-staffing-jobs.html",
+    description: "Search event staffing positions from multiple agencies on Indeed.",
+    icon: Briefcase
+  }
+];
+
+// Tax season hiring
+export const taxSeasonResources: ExternalResource[] = [
+  {
+    name: "H&R Block Seasonal Jobs",
+    url: "https://www.hrblock.com/corporate/careers/",
+    description: "Tax preparer, receptionist, and support roles. Free training provided. 60,000+ seasonal positions.",
+    icon: FileText
+  },
+  {
+    name: "Jackson Hewitt Careers",
+    url: "https://www.jacksonhewitt.com/careers/",
+    description: "Tax preparation positions at retail locations. Training and certification included.",
+    icon: FileText
+  },
+  {
+    name: "Intuit TurboTax Experts",
+    url: "https://www.intuit.com/careers/",
+    description: "Remote tax expert positions. Flexible schedules, work from home during tax season.",
+    icon: FileText
+  },
+  {
+    name: "Liberty Tax Careers",
+    url: "https://www.libertytax.com/careers/",
+    description: "Tax preparer and marketing positions. Comprehensive training for new preparers.",
+    icon: FileText
+  },
+  {
+    name: "IRS Seasonal Jobs",
+    url: "https://www.jobs.irs.gov/",
+    description: "IRS Seasonal Processing positions. Government pay and benefits for tax season.",
+    icon: Building2
+  },
+  {
+    name: "Robert Half Tax Staffing",
+    url: "https://www.roberthalf.com/",
+    description: "Temporary accounting and tax support positions at CPA firms during tax season.",
+    icon: Briefcase
+  }
+];
+
+// Summer hospitality
+export const summerHospitalityResources: ExternalResource[] = [
+  {
+    name: "CoolWorks Summer Jobs",
+    url: "https://www.coolworks.com/",
+    description: "Jobs at national parks, resorts, ranches, and outdoor recreation destinations.",
+    icon: Sun
+  },
+  {
+    name: "Marriott Careers",
+    url: "https://careers.marriott.com/",
+    description: "Resort and hotel positions nationwide. Seasonal and year-round hospitality.",
+    icon: Building2
+  },
+  {
+    name: "Hilton Jobs",
+    url: "https://jobs.hilton.com/",
+    description: "Hotel and resort positions. Strong summer demand at vacation destinations.",
+    icon: Building2
+  },
+  {
+    name: "Omni Hotels Careers",
+    url: "https://www.omnihotels.com/careers",
+    description: "Luxury resort positions. Pool, restaurant, and event staffing for summer season.",
+    icon: Building2
+  },
+  {
+    name: "Xanterra Travel Collection",
+    url: "https://www.xanterra.com/careers/",
+    description: "Jobs at Yellowstone, Grand Canyon, and other national park destinations.",
+    icon: Sun
+  },
+  {
+    name: "Vail Resorts Summer Jobs",
+    url: "https://jobs.vailresorts.com/",
+    description: "Mountain resort positions. Hospitality, food service, and outdoor recreation.",
+    icon: Sun
+  }
+];
+
 // Indeed Flex specific links
 export const indeedFlexLinks = {
   download: {
@@ -485,7 +673,7 @@ export const resourceCategories: ResourceCategory[] = [
 ];
 
 // Helper function to get resources by category
-export const getResourcesByCategory = (category: 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning'): ExternalResource[] => {
+export const getResourcesByCategory = (category: 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'seasonal-warehouse' | 'seasonal-events' | 'seasonal-tax' | 'seasonal-summer'): ExternalResource[] => {
   switch (category) {
     case 'government':
       return governmentResources;
@@ -507,6 +695,14 @@ export const getResourcesByCategory = (category: 'government' | 'tax' | 'healthc
       return workerRightsResources;
     case 'learning':
       return learningResources;
+    case 'seasonal-warehouse':
+      return seasonalWarehouseResources;
+    case 'seasonal-events':
+      return eventStaffingResources;
+    case 'seasonal-tax':
+      return taxSeasonResources;
+    case 'seasonal-summer':
+      return summerHospitalityResources;
     default:
       return [];
   }

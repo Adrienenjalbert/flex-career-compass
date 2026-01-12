@@ -19,14 +19,32 @@ import { certifications, getCertificationsByCategory } from "@/data/certificatio
 import { Clock, ArrowLeft, ArrowRight, CheckCircle2, Award, ExternalLink } from "lucide-react";
 
 // Helper functions to determine resource category based on article slug
-const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'all' => {
-  if (slug === 'warehouse-skills' || slug === 'forklift-certification') {
+const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'seasonal-warehouse' | 'seasonal-events' | 'seasonal-tax' | 'seasonal-summer' | 'all' => {
+  // Seasonal hiring articles
+  if (slug === 'holiday-warehouse-guide' || slug === 'black-friday-hiring') {
+    return 'seasonal-warehouse';
+  }
+  if (slug === 'event-staffing-guide') {
+    return 'seasonal-events';
+  }
+  if (slug === 'summer-hospitality-guide') {
+    return 'seasonal-summer';
+  }
+  if (slug === 'tax-season-jobs') {
+    return 'seasonal-tax';
+  }
+  if (slug === 'student-jobs-fall') {
+    return 'retail';
+  }
+  
+  // Industry guides
+  if (slug === 'warehouse-skills' || slug === 'forklift-certification' || slug === 'warehouse-guide') {
     return 'warehouse';
   }
-  if (slug === 'hospitality-skills' || slug === 'food-service-guide') {
+  if (slug === 'hospitality-skills' || slug === 'food-service-guide' || slug === 'hospitality-guide') {
     return 'hospitality';
   }
-  if (slug === 'retail-skills') {
+  if (slug === 'retail-skills' || slug === 'retail-guide') {
     return 'retail';
   }
   if (slug === 'certifications') {
@@ -35,7 +53,7 @@ const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' 
   if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
     return 'healthcare';
   }
-  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
+  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development' || slug === 'networking') {
     return 'learning';
   }
   if (slug === 'worker-rights' || slug === 'know-your-rights') {
@@ -45,13 +63,28 @@ const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' 
 };
 
 const getResourceTitle = (slug: string): string => {
-  if (slug === 'warehouse-skills' || slug === 'forklift-certification') {
+  // Seasonal articles
+  if (slug === 'holiday-warehouse-guide' || slug === 'black-friday-hiring') {
+    return 'Holiday Season Hiring Resources';
+  }
+  if (slug === 'event-staffing-guide') {
+    return 'Event & Festival Staffing Resources';
+  }
+  if (slug === 'summer-hospitality-guide') {
+    return 'Summer Hospitality Job Resources';
+  }
+  if (slug === 'tax-season-jobs') {
+    return 'Tax Season Employment Resources';
+  }
+  
+  // Industry articles
+  if (slug === 'warehouse-skills' || slug === 'forklift-certification' || slug === 'warehouse-guide') {
     return 'Warehouse & Industrial Resources';
   }
-  if (slug === 'hospitality-skills' || slug === 'food-service-guide') {
+  if (slug === 'hospitality-skills' || slug === 'food-service-guide' || slug === 'hospitality-guide') {
     return 'Hospitality Industry Resources';
   }
-  if (slug === 'retail-skills') {
+  if (slug === 'retail-skills' || slug === 'retail-guide' || slug === 'student-jobs-fall') {
     return 'Retail Industry Resources';
   }
   if (slug === 'certifications') {
@@ -60,7 +93,7 @@ const getResourceTitle = (slug: string): string => {
   if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
     return 'Safety & Healthcare Resources';
   }
-  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
+  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development' || slug === 'networking') {
     return 'Free Learning Resources';
   }
   if (slug === 'worker-rights' || slug === 'know-your-rights') {
@@ -70,13 +103,28 @@ const getResourceTitle = (slug: string): string => {
 };
 
 const getResourceDescription = (slug: string): string => {
-  if (slug === 'warehouse-skills' || slug === 'forklift-certification') {
+  // Seasonal articles
+  if (slug === 'holiday-warehouse-guide' || slug === 'black-friday-hiring') {
+    return 'Apply directly to major employers hiring 100,000+ workers for holiday peak season';
+  }
+  if (slug === 'event-staffing-guide') {
+    return 'Find event staffing positions at concerts, sports venues, and festivals';
+  }
+  if (slug === 'summer-hospitality-guide') {
+    return 'Explore summer positions at resorts, national parks, and vacation destinations';
+  }
+  if (slug === 'tax-season-jobs') {
+    return 'Tax preparation companies hiring 60,000+ seasonal workers with training provided';
+  }
+  
+  // Industry articles
+  if (slug === 'warehouse-skills' || slug === 'forklift-certification' || slug === 'warehouse-guide') {
     return 'Training programs and certifications for warehouse and industrial careers';
   }
-  if (slug === 'hospitality-skills' || slug === 'food-service-guide') {
+  if (slug === 'hospitality-skills' || slug === 'food-service-guide' || slug === 'hospitality-guide') {
     return 'Food safety, bartending, and hospitality certifications';
   }
-  if (slug === 'retail-skills') {
+  if (slug === 'retail-skills' || slug === 'retail-guide' || slug === 'student-jobs-fall') {
     return 'Training and development resources for retail careers';
   }
   if (slug === 'certifications') {
@@ -85,7 +133,7 @@ const getResourceDescription = (slug: string): string => {
   if (slug === 'first-aid-skills' || slug === 'workplace-safety') {
     return 'Access safety training and healthcare resources for workers';
   }
-  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development') {
+  if (slug === 'career-paths' || slug === 'networking-success' || slug === 'professional-development' || slug === 'networking') {
     return 'Free courses and learning platforms to build new skills';
   }
   if (slug === 'worker-rights' || slug === 'know-your-rights') {
