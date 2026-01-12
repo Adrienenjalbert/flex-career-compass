@@ -3,6 +3,7 @@ import { usLocations } from "@/data/locations";
 import { cities } from "@/data/cities";
 import { guideCategories } from "@/data/articles/guides";
 import { financialTips as financialTipsData } from "@/data/articles/financial-tips";
+import { seasons, seasonalEvents } from "@/data/seasonal-hiring";
 
 export interface SitemapEntry {
   loc: string;
@@ -198,6 +199,67 @@ export const generateSitemapEntries = (): SitemapEntry[] => {
     priority: 0.5,
   });
 
+  // Seasonal hiring hub index
+  entries.push({
+    loc: `${BASE_URL}/career-hub/seasonal-hiring`,
+    lastmod: TODAY,
+    changefreq: "weekly",
+    priority: 0.9,
+  });
+
+  // National seasonal hub pages
+  seasons.forEach((season) => {
+    entries.push({
+      loc: `${BASE_URL}/${season.slug}`,
+      lastmod: TODAY,
+      changefreq: "weekly",
+      priority: 0.8,
+    });
+  });
+
+  // Seasonal x Location pages
+  const seasonLocationPrefixes = [
+    { prefix: "christmas-temp-jobs", seasonId: "holiday-2026" },
+    { prefix: "summer-jobs", seasonId: "summer-2026" },
+    { prefix: "fall-retail-jobs", seasonId: "back-to-school-2026" },
+    { prefix: "tax-season-jobs", seasonId: "tax-season-2026" },
+    { prefix: "spring-jobs", seasonId: "spring-2026" },
+  ];
+
+  seasonLocationPrefixes.forEach(({ prefix }) => {
+    cities.forEach((city) => {
+      entries.push({
+        loc: `${BASE_URL}/${prefix}-${city.slug}`,
+        lastmod: TODAY,
+        changefreq: "weekly",
+        priority: 0.7,
+      });
+    });
+  });
+
+  // Event pages (national)
+  seasonalEvents.forEach((event) => {
+    entries.push({
+      loc: `${BASE_URL}/${event.slug}`,
+      lastmod: TODAY,
+      changefreq: "weekly",
+      priority: 0.8,
+    });
+  });
+
+  // Event x Location pages for major events
+  const eventLocationPrefixes = ["black-friday-jobs", "prime-day-jobs"];
+  eventLocationPrefixes.forEach((prefix) => {
+    cities.forEach((city) => {
+      entries.push({
+        loc: `${BASE_URL}/${prefix}-${city.slug}`,
+        lastmod: TODAY,
+        changefreq: "weekly",
+        priority: 0.7,
+      });
+    });
+  });
+
   return entries;
 };
 
@@ -247,6 +309,8 @@ export const getPageCountByType = (): Record<string, number> => {
     tools: 0,
     guides: 0,
     financialTips: 0,
+    seasonal: 0,
+    events: 0,
     other: 0,
   };
 
@@ -262,6 +326,8 @@ export const getPageCountByType = (): Record<string, number> => {
     else if (path.includes("/tools")) counts.tools++;
     else if (path.includes("/guides/")) counts.guides++;
     else if (path.includes("/financial-tips/")) counts.financialTips++;
+    else if (path.includes("/seasonal-hiring") || path.match(/christmas-temp-jobs|summer-jobs|fall-retail-jobs|tax-season-jobs|spring-jobs|holiday-warehouse|back-to-school/)) counts.seasonal++;
+    else if (path.match(/black-friday|prime-day|super-bowl|concert-venue|new-years-eve/)) counts.events++;
     else counts.other++;
   });
 
