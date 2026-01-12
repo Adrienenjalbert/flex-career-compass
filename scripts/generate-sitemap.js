@@ -462,6 +462,19 @@ function generateSeasonalSitemap() {
     });
   });
 
+  // Location-specific seasonal guide articles (19 markets × 6 articles = 114 pages)
+  // These are geo-targeted versions of seasonal guides for Indeed Flex active markets
+  seasonalGuideArticles.forEach((articleSlug) => {
+    usLocations.forEach((location) => {
+      entries.push({
+        loc: `${BASE_URL}/career-hub/guides/${articleSlug}-${location.slug}`,
+        lastmod: TODAY,
+        changefreq: "monthly",
+        priority: 0.8,
+      });
+    });
+  });
+
   return entries;
 }
 

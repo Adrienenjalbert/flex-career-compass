@@ -2,30 +2,34 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://indeedflex.com/sitemap-core.xml</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-01-12</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://indeedflex.com/sitemap-roles.xml</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-01-12</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://indeedflex.com/sitemap-locations.xml</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-01-12</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://indeedflex.com/sitemap-cities.xml</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-01-12</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://indeedflex.com/sitemap-programmatic.xml</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-01-12</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://indeedflex.com/sitemap-tools.xml</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-01-12</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://indeedflex.com/sitemap-guides.xml</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-01-12</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://indeedflex.com/sitemap-seasonal.xml</loc>
+    <lastmod>2026-01-12</lastmod>
   </sitemap>
 </sitemapindex>
