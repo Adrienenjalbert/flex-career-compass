@@ -201,15 +201,15 @@ export const seasonalEvents: SeasonalEvent[] = [
       "cyber monday temp work",
       "thanksgiving retail jobs"
     ],
-    description: "Black Friday and Cyber Monday represent the single biggest shopping weekend of the year. Retailers, fulfillment centers, and logistics companies hire thousands of temporary workers to handle the massive surge in orders. Premium pay rates and overtime are common.",
-    shortDescription: "The biggest shopping weekend needs massive temporary staffing. Premium pay rates available.",
+    description: "Black Friday (November 27, 2026) and Cyber Monday (November 30, 2026) represent the single biggest shopping weekend of the year. Retailers, fulfillment centers, and logistics companies hire 500,000+ temporary workers combined. Premium pay rates of 1.5x-2x and overtime are common.",
+    shortDescription: "November 27, 2026 – The biggest shopping weekend needs massive staffing. Premium pay rates available.",
     hiringTimeline: "Apply by early October. Training typically begins 2-3 weeks before Thanksgiving.",
     tips: [
+      "Apply by October 15 for best shift selection",
       "Expect to work Thanksgiving evening through the weekend",
-      "Warehouse night shifts often pay the highest premiums",
-      "Reliability is crucial - call-offs hurt your future opportunities",
-      "Many workers earn 1.5x-2x normal rates on Black Friday itself",
-      "Use this as a foot in the door for ongoing holiday work"
+      "Warehouse night shifts often pay the highest premiums ($2-5/hr extra)",
+      "Reliability is crucial—call-offs hurt future opportunities",
+      "Many workers earn 1.5x-2x normal rates on Black Friday itself"
     ],
     avgPayIncrease: "+20-40%"
   },
@@ -218,7 +218,7 @@ export const seasonalEvents: SeasonalEvent[] = [
     name: "Prime Day 2026",
     slug: "prime-day-2026",
     icon: Zap,
-    date: "July 2026 (typically mid-month)",
+    date: "July 15-16, 2026 (Expected)",
     industries: ["warehouse", "logistics"],
     searchKeywords: [
       "prime day hiring 2026",
@@ -226,15 +226,15 @@ export const seasonalEvents: SeasonalEvent[] = [
       "summer warehouse surge",
       "fulfillment center temp work"
     ],
-    description: "Amazon Prime Day drives a mid-summer hiring surge at fulfillment centers and logistics companies nationwide. While centered on Amazon, competitors also run major sales, creating widespread demand for warehouse workers, pickers, packers, and drivers.",
-    shortDescription: "Mid-summer warehouse hiring surge as retailers compete with major sales events.",
+    description: "Amazon Prime Day (expected July 15-16, 2026) drives a mid-summer hiring surge at fulfillment centers and logistics companies nationwide. Based on previous years, Amazon hires 50,000+ temporary workers for this 48-hour event. Competitors like Target, Walmart, and Best Buy also run major sales.",
+    shortDescription: "July 15-16, 2026 (expected) – Mid-summer warehouse hiring surge across all major retailers.",
     hiringTimeline: "Apply in May-June. Hiring typically peaks 4-6 weeks before the event.",
     tips: [
-      "Fulfillment center experience is highly valuable for this period",
-      "Night shifts and weekend availability increase your chances",
+      "Amazon begins hiring for Prime Day in late May",
+      "Fulfillment center experience is highly valuable",
+      "Night shifts and weekend availability increase chances",
       "Many positions extend through the summer season",
-      "Forklift certification dramatically increases pay and opportunities",
-      "Use as practice for the larger holiday hiring surge"
+      "Use as practice run for the larger holiday hiring surge"
     ],
     avgPayIncrease: "+10-20%"
   },
@@ -245,22 +245,23 @@ export const seasonalEvents: SeasonalEvent[] = [
     icon: Trophy,
     date: "February 8, 2026",
     industries: ["hospitality", "events", "facilities"],
-    cities: ["san-francisco"], // Super Bowl LX is in Santa Clara/SF Bay Area
+    cities: ["san-francisco"],
     searchKeywords: [
       "super bowl jobs 2026",
-      "super bowl event staffing",
+      "super bowl lx event staffing",
+      "levi's stadium jobs",
       "super bowl hospitality work",
-      "san francisco super bowl jobs"
+      "santa clara super bowl jobs"
     ],
-    description: "Super Bowl LX in the San Francisco Bay Area creates massive local hiring demand for event staffing, hospitality, security, and facilities. Beyond the stadium, hotels, restaurants, and entertainment venues throughout the region need extra staff for the influx of visitors.",
-    shortDescription: "Massive local event creating demand for hospitality, events, and facilities staff in the Bay Area.",
-    hiringTimeline: "Apply in November-December. Major hiring occurs 6-8 weeks before the event.",
+    description: "Super Bowl LX takes place February 8, 2026 at Levi's Stadium in Santa Clara, California. This creates 10,000+ temporary positions in the San Francisco Bay Area including event staffing, hospitality, security, and facilities. Hotels, restaurants, and entertainment venues throughout the region need extra staff.",
+    shortDescription: "February 8, 2026 at Levi's Stadium, Santa Clara – 10,000+ event jobs in the Bay Area.",
+    hiringTimeline: "Apply in November-December 2025. Major hiring occurs 6-8 weeks before the event.",
     tips: [
+      "Legends Hospitality and Aramark are major stadium vendors",
       "Be prepared for background checks and credential verification",
       "Stadium and event experience is highly valued",
-      "Transportation and parking logistics are critical - plan ahead",
-      "Hotels and restaurants hire heavily for the week leading up",
-      "Network at the event for future major event opportunities"
+      "Hotels hire heavily for the week leading up to the game",
+      "Transportation to Santa Clara is critical—plan ahead"
     ],
     avgPayIncrease: "+25-50%"
   },
@@ -278,15 +279,15 @@ export const seasonalEvents: SeasonalEvent[] = [
       "amphitheater seasonal jobs",
       "festival event staff"
     ],
-    description: "Summer concert and festival season creates consistent demand for event staff at venues, amphitheaters, and festivals across the country. Positions range from concessions and security to stage crew and hospitality, often with perks like free show access.",
-    shortDescription: "Venues and festivals need staff all summer. Perks often include free show access.",
-    hiringTimeline: "Apply in March-April for main season positions. Venues hire throughout summer as shows are added.",
+    description: "Summer 2026 concert and festival season creates consistent demand for event staff at venues, amphitheaters, and festivals. Live Nation, AEG, and major venues hire thousands for positions from concessions to VIP service. Major tours and festivals (Coachella, Lollapalooza, Bonnaroo) drive regional hiring spikes.",
+    shortDescription: "May-September 2026 – Venues and festivals need staff all summer. Perks often include show access.",
+    hiringTimeline: "Apply in March-April for main season. Venues hire throughout summer as tours are announced.",
     tips: [
+      "Live Nation and AEG are the largest concert promoters",
       "Many positions include access to watch shows during breaks",
-      "Building venue relationships leads to premium concert assignments",
-      "Bartending/alcohol service certification opens higher-paying roles",
-      "Weather-appropriate clothing is essential for outdoor venues",
-      "Festival multi-day events often pay premium daily rates"
+      "TIPS alcohol certification opens bartending roles (+$5-10/hr)",
+      "Festival multi-day events often pay premium daily rates",
+      "Build venue relationships for premium concert assignments"
     ],
     avgPayIncrease: "+10-25%"
   },
@@ -303,15 +304,15 @@ export const seasonalEvents: SeasonalEvent[] = [
       "new years hospitality work",
       "nye catering jobs"
     ],
-    description: "New Year's Eve creates premium-pay opportunities in hospitality and events. Hotels, restaurants, bars, and event venues need extra staff for the busiest night of the year in the service industry. Premium rates and tips make this one of the highest-earning nights possible.",
-    shortDescription: "Premium pay night in hospitality. One of the highest-earning shifts of the year.",
+    description: "New Year's Eve 2026 creates premium-pay opportunities in hospitality and events. Hotels, restaurants, bars, and event venues need extra staff for the busiest night of the year. Premium rates and tips make this one of the highest-earning single nights possible—experienced bartenders can earn $300-500+.",
+    shortDescription: "December 31, 2026 – Premium pay night. One of the highest-earning shifts of the year.",
     hiringTimeline: "Apply in early December. Experienced hospitality workers are prioritized.",
     tips: [
-      "This is often the highest-tipping night of the year for servers/bartenders",
-      "Transportation planning is essential - public transit may be limited",
-      "Premium hourly rates plus tips can exceed $40-50/hr for some roles",
-      "Book this shift early - it fills fast",
-      "Build relationships for future holiday events year-round"
+      "Often the highest-tipping night of the year for servers/bartenders",
+      "Premium hourly rates plus tips can exceed $40-60/hr",
+      "Transportation planning is essential—public transit may be limited",
+      "Book this shift early—it fills fast",
+      "Many venues require formal attire for staff"
     ],
     avgPayIncrease: "+30-60%"
   }
