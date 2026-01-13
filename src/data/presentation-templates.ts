@@ -1,4 +1,5 @@
 // Presentation Templates Data for Indeed Flex Team Review
+// All URLs verified against actual routes in App.tsx
 
 export interface PageTemplate {
   id: string;
@@ -30,6 +31,7 @@ export interface SEOChecklistItem {
 }
 
 export const pageTemplates: PageTemplate[] = [
+  // === CORE PAGES ===
   {
     id: 'career-hub-home',
     name: 'Career Hub Home',
@@ -42,9 +44,33 @@ export const pageTemplates: PageTemplate[] = [
     priority: 1,
   },
   {
+    id: 'tools-index',
+    name: 'Tools Index',
+    description: 'Directory of all 14 interactive career tools and calculators',
+    exampleUrl: '/career-hub/tools',
+    pageCount: 1,
+    category: 'core',
+    targetKeywords: ['temp job calculator', 'career planning tools', 'shift planner'],
+    status: 'review',
+    priority: 1,
+  },
+  {
+    id: 'guides-index',
+    name: 'Guides Index',
+    description: 'Directory of all career guides and articles organized by category',
+    exampleUrl: '/career-hub/guides',
+    pageCount: 1,
+    category: 'core',
+    targetKeywords: ['temp work guides', 'flexible job tips', 'gig work advice'],
+    status: 'review',
+    priority: 1,
+  },
+
+  // === GEOGRAPHIC PAGES ===
+  {
     id: 'active-market',
     name: 'Active Market (Location)',
-    description: 'Detailed pages for 19 Indeed Flex active markets with local job data',
+    description: 'Detailed pages for 19 Indeed Flex active markets with local job data and seasonal guides',
     exampleUrl: '/career-hub/locations/austin',
     pageCount: 19,
     category: 'geographic',
@@ -60,19 +86,8 @@ export const pageTemplates: PageTemplate[] = [
     pageCount: 50,
     category: 'geographic',
     targetKeywords: ['temp jobs [city]', '[city] hourly work', 'gig work [city]'],
-    status: 'draft',
-    priority: 2,
-  },
-  {
-    id: 'role-page',
-    name: 'Role Page',
-    description: 'Job role guides with pay ranges, requirements, and career progression',
-    exampleUrl: '/career-hub/roles/bartender',
-    pageCount: 20,
-    category: 'content',
-    targetKeywords: ['[role] jobs', 'how to become a [role]', '[role] salary'],
     status: 'review',
-    priority: 1,
+    priority: 2,
   },
   {
     id: 'city-role',
@@ -84,6 +99,30 @@ export const pageTemplates: PageTemplate[] = [
     targetKeywords: ['[role] jobs in [city]', '[city] [role] salary', 'hiring [role] [city]'],
     status: 'draft',
     priority: 3,
+  },
+  {
+    id: 'location-role',
+    name: 'Location × Role',
+    description: 'Combined active market and role pages for Indeed Flex locations',
+    exampleUrl: '/career-hub/locations/austin/bartender',
+    pageCount: 380,
+    category: 'geographic',
+    targetKeywords: ['bartender jobs austin', '[role] jobs [market]'],
+    status: 'review',
+    priority: 2,
+  },
+
+  // === CONTENT PAGES ===
+  {
+    id: 'role-page',
+    name: 'Role Page',
+    description: 'Job role guides with pay ranges, requirements, and career progression',
+    exampleUrl: '/career-hub/roles/bartender',
+    pageCount: 20,
+    category: 'content',
+    targetKeywords: ['[role] jobs', 'how to become a [role]', '[role] salary'],
+    status: 'review',
+    priority: 1,
   },
   {
     id: 'guide-article',
@@ -108,17 +147,6 @@ export const pageTemplates: PageTemplate[] = [
     priority: 2,
   },
   {
-    id: 'interactive-tool',
-    name: 'Interactive Tool',
-    description: 'Calculators and planning tools for pay, taxes, childcare, commute',
-    exampleUrl: '/career-hub/tools/pay-calculator',
-    pageCount: 14,
-    category: 'tools',
-    targetKeywords: ['temp job pay calculator', 'hourly wage calculator', 'shift planner'],
-    status: 'review',
-    priority: 2,
-  },
-  {
     id: 'industry-page',
     name: 'Industry Page',
     description: 'Industry overviews for Industrial, Hospitality, Retail, Facilities',
@@ -126,29 +154,88 @@ export const pageTemplates: PageTemplate[] = [
     pageCount: 4,
     category: 'content',
     targetKeywords: ['[industry] temp jobs', 'indeed flex [industry]', '[industry] flexible work'],
-    status: 'draft',
+    status: 'review',
     priority: 2,
   },
   {
+    id: 'financial-tips',
+    name: 'Financial Tips',
+    description: 'Money management guides for hourly and temp workers',
+    exampleUrl: '/career-hub/financial-tips',
+    pageCount: 10,
+    category: 'content',
+    targetKeywords: ['temp worker budgeting', 'gig economy finances', 'flexible work money tips'],
+    status: 'review',
+    priority: 2,
+  },
+
+  // === TOOLS ===
+  {
+    id: 'pay-calculator',
+    name: 'Pay Calculator',
+    description: 'Calculate hourly, weekly, and annual earnings with tax estimates',
+    exampleUrl: '/career-hub/tools/pay-calculator',
+    pageCount: 1,
+    category: 'tools',
+    targetKeywords: ['hourly wage calculator', 'temp job pay calculator', 'shift earnings'],
+    status: 'review',
+    priority: 1,
+  },
+  {
+    id: 'tax-calculator',
+    name: 'Tax Calculator',
+    description: 'State-by-state tax estimator for W-2 and 1099 workers',
+    exampleUrl: '/career-hub/tools/tax-calculator',
+    pageCount: 1,
+    category: 'tools',
+    targetKeywords: ['gig worker tax calculator', 'w2 tax estimator', 'temp worker taxes'],
+    status: 'review',
+    priority: 1,
+  },
+  {
+    id: 'worktalk',
+    name: 'WorkTalk',
+    description: 'Workplace English phrases for ESL workers with audio pronunciation',
+    exampleUrl: '/career-hub/tools/worktalk',
+    pageCount: 1,
+    category: 'tools',
+    targetKeywords: ['workplace english', 'job phrases ESL', 'work vocabulary'],
+    status: 'review',
+    priority: 2,
+  },
+  {
+    id: 'cocktail-quiz',
+    name: 'Cocktail Quiz',
+    description: 'Interactive bartending knowledge trainer with flashcards',
+    exampleUrl: '/career-hub/tools/cocktail-quiz',
+    pageCount: 1,
+    category: 'tools',
+    targetKeywords: ['bartender training', 'cocktail recipes quiz', 'mixology practice'],
+    status: 'review',
+    priority: 2,
+  },
+
+  // === PROGRAMMATIC SEO ===
+  {
     id: 'seasonal-hub',
-    name: 'Seasonal Hub',
-    description: 'National seasonal hiring hubs for major hiring periods',
-    exampleUrl: '/holiday-jobs-2026',
-    pageCount: 5,
+    name: 'Seasonal Hiring Hub',
+    description: 'National hub for seasonal hiring with interactive calendar',
+    exampleUrl: '/career-hub/seasonal-hiring',
+    pageCount: 1,
     category: 'programmatic',
-    targetKeywords: ['holiday jobs 2026', 'summer hiring', 'seasonal employment'],
+    targetKeywords: ['seasonal jobs 2026', 'holiday hiring', 'summer employment'],
     status: 'review',
     priority: 1,
   },
   {
     id: 'event-page',
-    name: 'Event Page',
+    name: 'Event Hiring Page',
     description: 'Event-specific hiring pages (Black Friday, Super Bowl, Prime Day)',
     exampleUrl: '/black-friday-hiring-2026',
     pageCount: 5,
     category: 'programmatic',
     targetKeywords: ['black friday jobs', 'super bowl hiring', 'prime day warehouse jobs'],
-    status: 'draft',
+    status: 'review',
     priority: 2,
   },
   {
@@ -159,8 +246,30 @@ export const pageTemplates: PageTemplate[] = [
     pageCount: 80,
     category: 'programmatic',
     targetKeywords: ['warehouse jobs [city]', 'hospitality jobs [city]', '[industry] hiring [city]'],
-    status: 'draft',
-    priority: 3,
+    status: 'review',
+    priority: 2,
+  },
+  {
+    id: 'how-to-find',
+    name: 'How to Find Work',
+    description: 'Location-specific guides on finding flexible work',
+    exampleUrl: '/how-to-find-flexible-work-in-dallas',
+    pageCount: 19,
+    category: 'programmatic',
+    targetKeywords: ['how to find temp work [city]', 'flexible jobs [city]', 'gig work [city]'],
+    status: 'review',
+    priority: 2,
+  },
+  {
+    id: 'best-paying',
+    name: 'Best Paying Jobs',
+    description: 'City-specific pages highlighting highest-paying temp roles',
+    exampleUrl: '/best-paying-temp-jobs-chicago',
+    pageCount: 19,
+    category: 'programmatic',
+    targetKeywords: ['best paying temp jobs [city]', 'highest paying gig work'],
+    status: 'review',
+    priority: 2,
   },
 ];
 
@@ -206,8 +315,8 @@ export const reviewMilestones: ReviewMilestone[] = [
     ],
     pages: [
       '/career-hub/guides/complete-guide',
-      '/career-hub/guides/interview-tips',
-      '/career-hub/guides/career-development',
+      '/career-hub/guides/first-flex-job',
+      '/career-hub/guides/interview-skills',
     ],
     status: 'pending',
   },
@@ -222,7 +331,7 @@ export const reviewMilestones: ReviewMilestone[] = [
     ],
     pages: [
       '/career-hub/guides/summer-jobs-austin',
-      '/career-hub/guides/holiday-hiring-guide-chicago',
+      '/career-hub/guides/holiday-warehouse-dallas',
       '/career-hub/guides/back-to-school-jobs-atlanta',
     ],
     status: 'pending',
@@ -380,7 +489,7 @@ export const seoChecklist: SEOChecklistItem[] = [
 
 export const keyMetrics = {
   totalPages: 1700,
-  templateTypes: 12,
+  templateTypes: 21,
   activeMarkets: 19,
   interactiveTools: 14,
   guideArticles: 130,
