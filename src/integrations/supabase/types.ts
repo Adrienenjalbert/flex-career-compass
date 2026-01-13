@@ -14,6 +14,240 @@ export type Database = {
   }
   public: {
     Tables: {
+      city_employers: {
+        Row: {
+          apply_url: string | null
+          city_slug: string
+          created_at: string
+          employer_name: string
+          employer_type: string
+          estimated_seasonal_hires: number | null
+          facility_address: string | null
+          facility_name: string | null
+          hiring_end_date: string | null
+          hiring_start_date: string | null
+          id: string
+          is_verified: boolean
+          pay_range_max: number | null
+          pay_range_min: number | null
+          season_type: string
+          source_citation: string | null
+          updated_at: string
+          verified_at: string | null
+        }
+        Insert: {
+          apply_url?: string | null
+          city_slug: string
+          created_at?: string
+          employer_name: string
+          employer_type: string
+          estimated_seasonal_hires?: number | null
+          facility_address?: string | null
+          facility_name?: string | null
+          hiring_end_date?: string | null
+          hiring_start_date?: string | null
+          id?: string
+          is_verified?: boolean
+          pay_range_max?: number | null
+          pay_range_min?: number | null
+          season_type: string
+          source_citation?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Update: {
+          apply_url?: string | null
+          city_slug?: string
+          created_at?: string
+          employer_name?: string
+          employer_type?: string
+          estimated_seasonal_hires?: number | null
+          facility_address?: string | null
+          facility_name?: string | null
+          hiring_end_date?: string | null
+          hiring_start_date?: string | null
+          id?: string
+          is_verified?: boolean
+          pay_range_max?: number | null
+          pay_range_min?: number | null
+          season_type?: string
+          source_citation?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Relationships: []
+      }
+      city_events: {
+        Row: {
+          application_deadline: string | null
+          apply_url: string | null
+          city_slug: string
+          created_at: string
+          estimated_staffing_needs: number | null
+          event_end_date: string | null
+          event_name: string
+          event_start_date: string | null
+          event_type: string
+          id: string
+          is_verified: boolean
+          pay_range_max: number | null
+          pay_range_min: number | null
+          roles_needed: string[] | null
+          source_citation: string | null
+          updated_at: string
+          venue_address: string | null
+          venue_name: string | null
+          verified_at: string | null
+        }
+        Insert: {
+          application_deadline?: string | null
+          apply_url?: string | null
+          city_slug: string
+          created_at?: string
+          estimated_staffing_needs?: number | null
+          event_end_date?: string | null
+          event_name: string
+          event_start_date?: string | null
+          event_type: string
+          id?: string
+          is_verified?: boolean
+          pay_range_max?: number | null
+          pay_range_min?: number | null
+          roles_needed?: string[] | null
+          source_citation?: string | null
+          updated_at?: string
+          venue_address?: string | null
+          venue_name?: string | null
+          verified_at?: string | null
+        }
+        Update: {
+          application_deadline?: string | null
+          apply_url?: string | null
+          city_slug?: string
+          created_at?: string
+          estimated_staffing_needs?: number | null
+          event_end_date?: string | null
+          event_name?: string
+          event_start_date?: string | null
+          event_type?: string
+          id?: string
+          is_verified?: boolean
+          pay_range_max?: number | null
+          pay_range_min?: number | null
+          roles_needed?: string[] | null
+          source_citation?: string | null
+          updated_at?: string
+          venue_address?: string | null
+          venue_name?: string | null
+          verified_at?: string | null
+        }
+        Relationships: []
+      }
+      city_transport_info: {
+        Row: {
+          city_slug: string
+          commute_tips: string[] | null
+          created_at: string
+          id: string
+          is_verified: boolean
+          major_transit_lines: string[] | null
+          parking_notes: string | null
+          rideshare_notes: string | null
+          source_citation: string | null
+          transit_to_hospitality_areas: string | null
+          transit_to_warehouse_districts: string | null
+          updated_at: string
+          verified_at: string | null
+        }
+        Insert: {
+          city_slug: string
+          commute_tips?: string[] | null
+          created_at?: string
+          id?: string
+          is_verified?: boolean
+          major_transit_lines?: string[] | null
+          parking_notes?: string | null
+          rideshare_notes?: string | null
+          source_citation?: string | null
+          transit_to_hospitality_areas?: string | null
+          transit_to_warehouse_districts?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Update: {
+          city_slug?: string
+          commute_tips?: string[] | null
+          created_at?: string
+          id?: string
+          is_verified?: boolean
+          major_transit_lines?: string[] | null
+          parking_notes?: string | null
+          rideshare_notes?: string | null
+          source_citation?: string | null
+          transit_to_hospitality_areas?: string | null
+          transit_to_warehouse_districts?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Relationships: []
+      }
+      city_wage_data: {
+        Row: {
+          city_slug: string
+          created_at: string
+          data_source: string
+          effective_date: string
+          id: string
+          industry: string
+          is_verified: boolean
+          max_wage: number
+          median_wage: number | null
+          min_wage: number
+          national_average: number | null
+          role_type: string | null
+          state_average: number | null
+          updated_at: string
+          verified_at: string | null
+          wage_context: string | null
+        }
+        Insert: {
+          city_slug: string
+          created_at?: string
+          data_source: string
+          effective_date: string
+          id?: string
+          industry: string
+          is_verified?: boolean
+          max_wage: number
+          median_wage?: number | null
+          min_wage: number
+          national_average?: number | null
+          role_type?: string | null
+          state_average?: number | null
+          updated_at?: string
+          verified_at?: string | null
+          wage_context?: string | null
+        }
+        Update: {
+          city_slug?: string
+          created_at?: string
+          data_source?: string
+          effective_date?: string
+          id?: string
+          industry?: string
+          is_verified?: boolean
+          max_wage?: number
+          median_wage?: number | null
+          min_wage?: number
+          national_average?: number | null
+          role_type?: string | null
+          state_average?: number | null
+          updated_at?: string
+          verified_at?: string | null
+          wage_context?: string | null
+        }
+        Relationships: []
+      }
       data_corrections: {
         Row: {
           category: string
