@@ -90,7 +90,7 @@ const PresentationPage = () => {
                 <div className="text-sm opacity-80">Indexed Pages</div>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-lg p-4">
-                <div className="text-3xl font-bold">12</div>
+                <div className="text-3xl font-bold">21</div>
                 <div className="text-sm opacity-80">Template Types</div>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-lg p-4">
@@ -232,7 +232,7 @@ const PresentationPage = () => {
                 </div>
                 <div className="text-left">
                   <h2 className="text-2xl font-bold text-foreground">Page Templates</h2>
-                  <p className="text-muted-foreground">12 unique template types with representative examples</p>
+                  <p className="text-muted-foreground">21 unique template types with working example links</p>
                 </div>
               </div>
               <ChevronDown
