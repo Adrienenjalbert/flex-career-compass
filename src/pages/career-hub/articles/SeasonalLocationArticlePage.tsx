@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
@@ -14,14 +14,19 @@ import MarkdownContent from "@/components/career-hub/MarkdownContent";
 import { SEOMetaTags } from "@/components/career-hub/seo";
 import { RelatedLocationsSection } from "@/components/career-hub/RelatedLocationsSection";
 import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
+import { LocalEmployerCard } from "@/components/career-hub/LocalEmployerCard";
+import { LocalEventCard } from "@/components/career-hub/LocalEventCard";
+import { CommuteGuide } from "@/components/career-hub/CommuteGuide";
+import { WageContextCard } from "@/components/career-hub/WageContextCard";
+import { DataCompletenessIndicator } from "@/components/career-hub/DataCompletenessIndicator";
 import { guideArticles } from "@/data/articles/guides";
 import { 
   parseSeasonalLocationUrl, 
   getSeasonalLocationData,
-  SeasonalArticleSlug,
   LocalEmployer,
 } from "@/data/articles/seasonal-location-data";
 import { cities, isActiveMarket } from "@/data/cities";
+import { useLocalizedCityData } from "@/hooks/useLocalizedCityData";
 import { 
   Clock, 
   MapPin, 
@@ -33,6 +38,8 @@ import {
   ArrowLeft,
   ExternalLink,
   Briefcase,
+  Loader2,
+  Database,
 } from "lucide-react";
 
 const SeasonalLocationArticlePage = () => {
@@ -42,7 +49,6 @@ const SeasonalLocationArticlePage = () => {
   const parsed = slug ? parseSeasonalLocationUrl(slug) : null;
   
   if (!parsed) {
-    // Not a location-specific seasonal article, redirect to guides
     return <Navigate to="/career-hub/guides" replace />;
   }
 
@@ -51,19 +57,47 @@ const SeasonalLocationArticlePage = () => {
   const locationData = getSeasonalLocationData(citySlug, articleSlug);
   const cityInfo = cities.find(c => c.slug === citySlug);
 
+  // Fetch database-driven localized content
+  const { data: dbData, isLoading: isLoadingDbData } = useLocalizedCityData({
+    citySlug,
+    articleSlug,
+  });
+
   if (!baseArticle || !locationData || !cityInfo) {
     return <Navigate to="/career-hub/guides" replace />;
   }
 
+  // Determine if we have database data to show
+  const hasDbEmployers = dbData && dbData.employers.length > 0;
+  const hasDbEvents = dbData && dbData.events.length > 0;
+  const hasDbWageData = dbData && dbData.wageData.length > 0;
+  const hasDbTransport = dbData && dbData.transportInfo;
+  const hasAnyDbData = hasDbEmployers || hasDbEvents || hasDbWageData || hasDbTransport;
+
   // Generate location-specific title and description
   const pageTitle = `${baseArticle.title.replace('2026', '')} in ${cityInfo.city}, ${cityInfo.stateCode} 2026`;
-  const pageDescription = `Find ${locationData.seasonType} jobs in ${cityInfo.city}, ${cityInfo.stateCode}. Local employers hiring now: ${locationData.localEmployers.slice(0, 3).map(e => e.name).join(', ')}. Pay range: $${locationData.avgWageRange.min}-${locationData.avgWageRange.max}/hr.`;
+  
+  // Use database wage data if available, otherwise fall back to static data
+  const wageMin = hasDbWageData 
+    ? Math.min(...dbData.wageData.map(w => w.min_wage))
+    : locationData.avgWageRange.min;
+  const wageMax = hasDbWageData
+    ? Math.max(...dbData.wageData.map(w => w.max_wage))
+    : locationData.avgWageRange.max;
+  
+  const employerNames = hasDbEmployers
+    ? dbData.employers.slice(0, 3).map(e => e.employer_name).join(', ')
+    : locationData.localEmployers.slice(0, 3).map(e => e.name).join(', ');
 
-  // Generate FAQs specific to this location
+  const pageDescription = `Find ${locationData.seasonType} jobs in ${cityInfo.city}, ${cityInfo.stateCode}. Local employers hiring now: ${employerNames}. Pay range: $${wageMin}-${wageMax}/hr.`;
+
+  // Generate FAQs specific to this location (enhanced with db data)
   const locationFaqs = [
     {
       question: `What companies are hiring for ${locationData.seasonType} work in ${cityInfo.city}?`,
-      answer: `Major employers hiring in ${cityInfo.city} include ${locationData.localEmployers.map(e => e.name).join(', ')}. Pay rates typically range from $${locationData.avgWageRange.min} to $${locationData.avgWageRange.max} per hour.`
+      answer: hasDbEmployers
+        ? `Verified employers hiring in ${cityInfo.city} include ${dbData.employers.slice(0, 5).map(e => `${e.employer_name}${e.facility_name ? ` (${e.facility_name})` : ''}`).join(', ')}. Pay rates typically range from $${wageMin.toFixed(2)} to $${wageMax.toFixed(2)} per hour.`
+        : `Major employers hiring in ${cityInfo.city} include ${locationData.localEmployers.map(e => e.name).join(', ')}. Pay rates typically range from $${locationData.avgWageRange.min} to $${locationData.avgWageRange.max} per hour.`
     },
     {
       question: `When should I apply for ${locationData.seasonType} jobs in ${cityInfo.city}?`,
@@ -71,7 +105,9 @@ const SeasonalLocationArticlePage = () => {
     },
     {
       question: `How much do ${locationData.seasonType} jobs pay in ${cityInfo.city}?`,
-      answer: `${locationData.seasonType.charAt(0).toUpperCase() + locationData.seasonType.slice(1)} jobs in ${cityInfo.city} typically pay between $${locationData.avgWageRange.min} and $${locationData.avgWageRange.max} per hour. Pay varies by employer, role, and experience level. Premium pay is often available for nights, weekends, and holidays.`
+      answer: hasDbWageData
+        ? `${locationData.seasonType.charAt(0).toUpperCase() + locationData.seasonType.slice(1)} jobs in ${cityInfo.city} typically pay between $${wageMin.toFixed(2)} and $${wageMax.toFixed(2)} per hour. ${dbData.wageData[0]?.wage_context || 'Pay varies by employer, role, and experience level. Premium pay is often available for nights, weekends, and holidays.'}`
+        : `${locationData.seasonType.charAt(0).toUpperCase() + locationData.seasonType.slice(1)} jobs in ${cityInfo.city} typically pay between $${locationData.avgWageRange.min} and $${locationData.avgWageRange.max} per hour. Pay varies by employer, role, and experience level. Premium pay is often available for nights, weekends, and holidays.`
     },
     {
       question: `Is ${cityInfo.city} a good market for Indeed Flex?`,
@@ -79,6 +115,10 @@ const SeasonalLocationArticlePage = () => {
         ? `Yes! ${cityInfo.city} is an active Indeed Flex market with regular job opportunities across ${cityInfo.topIndustries.slice(0, 3).join(', ')}. Download the Indeed Flex app to browse available shifts.`
         : `Indeed Flex is expanding and may offer opportunities in the ${cityInfo.city} metro area. Check the app regularly for new openings in your area.`
     },
+    ...(hasDbTransport ? [{
+      question: `How do I get to work locations in ${cityInfo.city}?`,
+      answer: `${dbData.transportInfo?.transit_to_warehouse_districts || ''} ${dbData.transportInfo?.parking_notes || ''} ${dbData.transportInfo?.commute_tips?.[0] || ''}`
+    }] : []),
   ];
 
   // Schema markup
@@ -159,11 +199,15 @@ const SeasonalLocationArticlePage = () => {
     ]
   };
 
-  // Local business/job posting schema for employers
+  // Enhanced job posting schema with database data
+  const jobPostings = hasDbEmployers 
+    ? dbData.employers.slice(0, 5)
+    : locationData.localEmployers.slice(0, 5);
+
   const jobPostingSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "itemListElement": locationData.localEmployers.slice(0, 5).map((employer, index) => ({
+    "itemListElement": jobPostings.map((employer, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "item": {
@@ -171,7 +215,7 @@ const SeasonalLocationArticlePage = () => {
         "title": `${locationData.seasonType.charAt(0).toUpperCase() + locationData.seasonType.slice(1)} Worker`,
         "hiringOrganization": {
           "@type": "Organization",
-          "name": employer.name
+          "name": 'employer_name' in employer ? employer.employer_name : employer.name
         },
         "jobLocation": {
           "@type": "Place",
@@ -179,19 +223,20 @@ const SeasonalLocationArticlePage = () => {
             "@type": "PostalAddress",
             "addressLocality": cityInfo.city,
             "addressRegion": cityInfo.stateCode,
-            "addressCountry": "US"
+            "addressCountry": "US",
+            ...('facility_address' in employer && employer.facility_address ? { streetAddress: employer.facility_address } : {})
           }
         },
-        "baseSalary": employer.payRange ? {
+        "baseSalary": {
           "@type": "MonetaryAmount",
           "currency": "USD",
           "value": {
             "@type": "QuantitativeValue",
-            "minValue": employer.payRange.min,
-            "maxValue": employer.payRange.max,
+            "minValue": 'pay_range_min' in employer ? employer.pay_range_min : employer.payRange?.min,
+            "maxValue": 'pay_range_max' in employer ? employer.pay_range_max : employer.payRange?.max,
             "unitText": "HOUR"
           }
-        } : undefined
+        }
       }
     }))
   };
@@ -276,6 +321,12 @@ const SeasonalLocationArticlePage = () => {
                       Indeed Flex Active Market
                     </Badge>
                   )}
+                  {dbData && (
+                    <DataCompletenessIndicator 
+                      completeness={dbData.dataCompleteness} 
+                      cityName={cityInfo.city}
+                    />
+                  )}
                 </div>
 
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">
@@ -293,67 +344,125 @@ const SeasonalLocationArticlePage = () => {
                   </span>
                   <span className="flex items-center gap-2">
                     <DollarSign className="h-4 w-4" />
-                    ${locationData.avgWageRange.min}-${locationData.avgWageRange.max}/hr avg
+                    ${wageMin}-${wageMax}/hr avg
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     Peak: {locationData.peakHiringWindow}
                   </span>
+                  {hasAnyDbData && (
+                    <span className="flex items-center gap-2">
+                      <Database className="h-4 w-4" />
+                      {dbData?.dataCompleteness.totalDataPoints} verified data points
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
           </header>
 
-          {/* Local Employers Section */}
-          <section className="py-8 bg-accent/10">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                  <Building2 className="h-5 w-5 text-primary" />
-                  Top Employers Hiring in {cityInfo.city}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {locationData.localEmployers.map((employer, index) => (
-                    <Card key={index} className="hover:shadow-md transition-shadow">
-                      <CardContent className="p-4">
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <div className="flex items-center gap-2 mb-1">
-                              {getEmployerIcon(employer.type)}
-                              <h3 className="font-medium">{employer.name}</h3>
-                            </div>
-                            <p className="text-sm text-muted-foreground capitalize">
-                              {employer.type.replace('-', ' ')}
-                            </p>
-                          </div>
-                          {employer.payRange && (
-                            <Badge variant="outline">
-                              ${employer.payRange.min}-${employer.payRange.max}/hr
-                            </Badge>
-                          )}
-                        </div>
-                        {employer.estimatedHires && (
-                          <p className="text-sm text-muted-foreground mt-2">
-                            Estimated hires: {employer.estimatedHires}
-                          </p>
-                        )}
-                        {employer.applyUrl && (
-                          <a 
-                            href={employer.applyUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-2"
-                          >
-                            Apply Now <ExternalLink className="h-3 w-3" />
-                          </a>
-                        )}
-                      </CardContent>
-                    </Card>
-                  ))}
+          {/* Database-Driven Local Employers Section */}
+          {hasDbEmployers ? (
+            <section className="py-8 bg-accent/10">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Building2 className="h-5 w-5 text-primary" />
+                    Verified Employers Hiring in {cityInfo.city}
+                    <Badge variant="outline" className="ml-2 text-xs">
+                      {dbData.employers.length} verified
+                    </Badge>
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {dbData.employers.map((employer) => (
+                      <LocalEmployerCard key={employer.id} employer={employer} />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          ) : (
+            /* Fallback to static employer data */
+            <section className="py-8 bg-accent/10">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Building2 className="h-5 w-5 text-primary" />
+                    Top Employers Hiring in {cityInfo.city}
+                    {isLoadingDbData && <Loader2 className="h-4 w-4 animate-spin" />}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {locationData.localEmployers.map((employer, index) => (
+                      <Card key={index} className="hover:shadow-md transition-shadow">
+                        <CardContent className="p-4">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <div className="flex items-center gap-2 mb-1">
+                                {getEmployerIcon(employer.type)}
+                                <h3 className="font-medium">{employer.name}</h3>
+                              </div>
+                              <p className="text-sm text-muted-foreground capitalize">
+                                {employer.type.replace('-', ' ')}
+                              </p>
+                            </div>
+                            {employer.payRange && (
+                              <Badge variant="outline">
+                                ${employer.payRange.min}-${employer.payRange.max}/hr
+                              </Badge>
+                            )}
+                          </div>
+                          {employer.estimatedHires && (
+                            <p className="text-sm text-muted-foreground mt-2">
+                              Estimated hires: {employer.estimatedHires}
+                            </p>
+                          )}
+                          {employer.applyUrl && (
+                            <a 
+                              href={employer.applyUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-2"
+                            >
+                              Apply Now <ExternalLink className="h-3 w-3" />
+                            </a>
+                          )}
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Database-Driven Wage Context */}
+          {hasDbWageData && (
+            <section className="py-8">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                  <WageContextCard 
+                    wageData={dbData.wageData} 
+                    cityName={cityInfo.city}
+                    stateCode={cityInfo.stateCode}
+                  />
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Database-Driven Transport Info */}
+          {hasDbTransport && (
+            <section className="py-8 bg-secondary/30">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                  <CommuteGuide 
+                    transportInfo={dbData.transportInfo!} 
+                    cityName={cityInfo.city}
+                  />
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* Local Tips */}
           <section className="py-8">
@@ -374,8 +483,28 @@ const SeasonalLocationArticlePage = () => {
             </div>
           </section>
 
-          {/* Local Events (if any) */}
-          {locationData.localEvents.length > 0 && (
+          {/* Database-Driven Local Events */}
+          {hasDbEvents ? (
+            <section className="py-8 bg-secondary/30">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Calendar className="h-5 w-5 text-primary" />
+                    Upcoming Events in {cityInfo.city}
+                    <Badge variant="outline" className="ml-2 text-xs">
+                      {dbData.events.length} events
+                    </Badge>
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {dbData.events.map((event) => (
+                      <LocalEventCard key={event.id} event={event} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          ) : locationData.localEvents.length > 0 && (
+            /* Fallback to static events */
             <section className="py-8 bg-secondary/30">
               <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto">
