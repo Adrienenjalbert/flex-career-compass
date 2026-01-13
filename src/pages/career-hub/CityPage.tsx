@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/career-hub/Breadcrumbs';
 import CTASection from '@/components/career-hub/CTASection';
 import FAQSection from '@/components/career-hub/FAQSection';
 import { InternalLinkHub } from '@/components/career-hub/InternalLinkHub';
+import SeasonalGuidesSection from '@/components/career-hub/SeasonalGuidesSection';
 import { getCityBySlug, getCitiesNearMajorCity, cities } from '@/data/cities';
 import { roles } from '@/data/roles';
 import { MapPin, DollarSign, TrendingUp, Building, Clock, Users, Home, Bus, ShoppingCart, ChevronRight, Star } from 'lucide-react';
@@ -359,6 +360,9 @@ const CityPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Seasonal Guides Section */}
+      <SeasonalGuidesSection citySlug={city.slug} cityName={city.city} />
 
       {/* Nearby Cities */}
       {(nearbyCities.length > 0 || relatedCities.length > 0) && (
