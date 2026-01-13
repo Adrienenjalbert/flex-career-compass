@@ -6,6 +6,7 @@ import RoleCard from "@/components/career-hub/RoleCard";
 import KeyFacts from "@/components/career-hub/KeyFacts";
 import RelatedContent from "@/components/career-hub/RelatedContent";
 import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
+import SeasonalGuidesSection from "@/components/career-hub/SeasonalGuidesSection";
 import { 
   SEOMetaTags, 
   generateKeywords,
@@ -266,6 +267,9 @@ const LocationPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Seasonal Guides Section */}
+        <SeasonalGuidesSection citySlug={location.slug} cityName={location.city} />
 
         {/* Cross-Linking Section */}
         <RelatedContent
