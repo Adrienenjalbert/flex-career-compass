@@ -1,4 +1,4 @@
-import { BookOpen, TrendingUp, Users, Award, Star, Calendar, LucideIcon } from "lucide-react";
+import { BookOpen, TrendingUp, Users, Award, Star, Calendar, FileCheck, LucideIcon } from "lucide-react";
 
 export interface ArticleSection {
   heading: string;
@@ -91,6 +91,19 @@ export const guideCategories: GuideCategory[] = [
       { title: "Part-Time Jobs for Students Fall 2026", slug: "student-jobs-fall", readTime: "7 min" },
       { title: "Event Staffing: Concerts, Sports & More", slug: "event-staffing-guide", readTime: "9 min" },
       { title: "Tax Season Jobs: 1099 Work Opportunities", slug: "tax-season-jobs", readTime: "6 min" },
+    ]
+  },
+  {
+    category: "Employment Eligibility",
+    slug: "employment-eligibility",
+    icon: FileCheck,
+    articles: [
+      { title: "Form I-9 Explained: Complete Guide for Workers", slug: "i9-complete-guide", readTime: "12 min" },
+      { title: "Acceptable I-9 Documents: Lists A, B, C Explained", slug: "i9-documents-list", readTime: "8 min" },
+      { title: "Working in America: First Job Guide", slug: "first-job-america-guide", readTime: "15 min" },
+      { title: "Work Permit vs EAD: Work Authorization Types", slug: "work-authorization-types", readTime: "10 min" },
+      { title: "Can I Work Without a Social Security Number?", slug: "work-without-ssn", readTime: "8 min" },
+      { title: "E-Verify Explained: What Workers Need to Know", slug: "e-verify-explained", readTime: "7 min" },
     ]
   },
 ];
@@ -1532,5 +1545,463 @@ export const guideArticles: Record<string, Article> = {
       }
     ],
     relatedArticles: ["first-flex-job", "certifications", "multiple-gigs", "skill-boost"]
+  },
+
+  // ============================================
+  // EMPLOYMENT ELIGIBILITY ARTICLES
+  // ============================================
+  
+  "i9-complete-guide": {
+    slug: "i9-complete-guide",
+    title: "Form I-9 Explained: Complete Guide for Workers",
+    category: "Employment Eligibility",
+    categorySlug: "employment-eligibility",
+    readTime: "12 min",
+    description: "Everything workers need to know about Form I-9: requirements, timelines, acceptable documents, and how to complete it correctly for your new job.",
+    keyTakeaways: [
+      "Form I-9 verifies you're legally authorized to work in the United States",
+      "You must complete Section 1 on or before your first day of work",
+      "Your employer must complete Section 2 within 3 business days of your start date",
+      "You can choose which acceptable documents to present—employers cannot specify",
+      "Indeed Flex uses E-Verify for additional electronic verification"
+    ],
+    sections: [
+      {
+        heading: "What Is Form I-9 and Why It Matters",
+        content: "Form I-9, Employment Eligibility Verification, is a **federally required document** that every U.S. employer must complete for each person they hire. It verifies two things:\n\n1. **Identity** – You are who you say you are\n2. **Work Authorization** – You're legally allowed to work in the United States\n\n**Key Facts About Form I-9:**\n\n- Required by the Immigration Reform and Control Act of 1986\n- Applies to ALL employees—citizens and non-citizens alike\n- Employers face significant fines ($252-$2,507 per form) for violations\n- Employees can be terminated if I-9 cannot be completed\n\n**Important:** Form I-9 is about work authorization, NOT immigration status. U.S. citizens, permanent residents, and authorized non-citizens all complete the same form.\n\n[Download official Form I-9 from USCIS →](https://www.uscis.gov/i-9)"
+      },
+      {
+        heading: "The I-9 Timeline: What Happens When",
+        content: "Understanding the timeline helps you prepare:\n\n**Before Your First Day:**\n- Gather acceptable documents (see [I-9 Documents List](/career-hub/guides/i9-documents-list))\n- Verify documents aren't expired\n- Know your Social Security Number (or that you've applied for one)\n\n**On Your First Day (Day 1):**\n- Complete Section 1 of Form I-9\n- Sign and date the form\n- Cannot start working until Section 1 is complete\n\n**Within 3 Business Days of Start:**\n- Present original documents to employer\n- Employer completes Section 2\n- Documents must be original—no copies or photos\n\n| Timeline | What Happens | Who Does It |\n|----------|--------------|-------------|\n| Day 1 | Complete Section 1 | Employee |\n| Days 1-3 | Present documents | Employee |\n| Days 1-3 | Complete Section 2 | Employer |\n| Day 3 | I-9 must be fully complete | Both |\n\n**The 3-Day Rule:**\n\nIf you start work on Monday, your employer must complete Section 2 by Thursday (counting business days, not calendar days). Failure to complete on time is a violation for the employer."
+      },
+      {
+        heading: "Section 1: What You Fill Out",
+        content: "Section 1 is the employee's responsibility. Here's what you'll provide:\n\n**Required Information:**\n\n- Full legal name (as shown on documents)\n- Other last names used (maiden name, previous names)\n- Address (street, city, state, ZIP code)\n- Date of birth\n- Social Security Number (see note below)\n- Email address and telephone (optional but helpful)\n\n**Citizenship/Immigration Status (check ONE):**\n\n1. ☐ A citizen of the United States\n2. ☐ A noncitizen national of the United States\n3. ☐ A lawful permanent resident (Green Card holder)\n4. ☐ An alien authorized to work until [expiration date]\n\n**Social Security Number Note:**\n\nSSN is **required** if your employer uses E-Verify (like Indeed Flex). If you've applied but haven't received your SSN yet, write \"Applied for\" in the SSN field. You'll provide the number once you receive it.\n\n**For Work-Authorized Non-Citizens:**\n\nIf you check box 4, you must also provide:\n- Expiration date of work authorization\n- USCIS Number or Form I-94 Admission Number or Foreign Passport Number\n\n**Sign & Date:**\n\nYour signature certifies that:\n- Information is true and correct\n- You're aware that document fraud is a federal crime\n- You're authorized to work in the United States"
+      },
+      {
+        heading: "Section 2: What Your Employer Does",
+        content: "After you complete Section 1 and present your documents, your employer or their authorized representative completes Section 2.\n\n**What the Employer Records:**\n\n- Document titles (e.g., \"U.S. Passport\" or \"Driver's License + Social Security Card\")\n- Issuing authority (e.g., \"U.S. Department of State\" or \"State of Texas\")\n- Document numbers\n- Expiration dates\n\n**Physical Examination Required:**\n\nThe employer must physically examine your original documents. They must verify:\n\n- Documents appear genuine\n- Documents relate to you (photo match, name match)\n- Documents are on the Lists of Acceptable Documents\n\n**Who Can Complete Section 2?**\n\n- Your employer directly\n- An authorized representative (HR, hiring manager)\n- A notary public or other person authorized by law\n- For remote workers: A person you trust who is over 18\n\n**Remote I-9 Verification:**\n\nSince COVID-19, the Department of Homeland Security allows alternative procedures for remote examination of I-9 documents. Ask your employer about their specific process if you're a remote hire."
+      },
+      {
+        heading: "Common I-9 Mistakes and How to Avoid Them",
+        content: "Avoid these frequent errors:\n\n**Employee Mistakes:**\n\n| Mistake | Solution |\n|---------|----------|\n| Leaving fields blank | Fill in all required fields or write \"N/A\" if not applicable |\n| Using nickname | Use legal name exactly as shown on documents |\n| Wrong date format | Use MM/DD/YYYY format |\n| Forgetting to sign | Always sign and date Section 1 |\n| Bringing copies | Bring original documents only |\n| Expired documents | Check expiration dates before your first day |\n\n**What If You Make a Mistake?**\n\n- **Minor errors:** Draw a line through, write correct info, initial and date\n- **Major errors:** Ask employer if a new form is needed\n- **Never use white-out** on an I-9 form\n\n**Your Rights:**\n\n- You choose which documents to present (from acceptable lists)\n- Employer cannot specify which documents you must bring\n- Employer cannot reject valid documents that reasonably appear genuine\n- Employer cannot ask for more documents than required\n\n**Anti-Discrimination Protections:**\n\nIt's illegal for employers to:\n- Request specific documents\n- Reject valid documents\n- Treat you differently based on national origin or citizenship status\n\nReport discrimination to the [Immigrant and Employee Rights Section](https://www.justice.gov/crt/immigrant-and-employee-rights-section) at 1-800-255-7688."
+      },
+      {
+        heading: "What If I Don't Have My Documents Yet?",
+        content: "Life happens. Here's how to handle common situations:\n\n**Waiting for Social Security Card:**\n\n- Write \"Applied for\" in the SSN field on Section 1\n- Provide SSN to employer once you receive it (usually 2-6 weeks)\n- You can still start work—SSN isn't required to complete I-9\n\n**Lost or Stolen Documents:**\n\n- You have 3 business days to present documents\n- If you present a receipt for a replacement document, you have 90 days to show the actual document\n- Apply for replacements immediately (passport, state ID, birth certificate, etc.)\n\n**The \"Receipt Rule\":**\n\nYou can present a receipt for a lost, stolen, or damaged document instead of the actual document. You then have 90 days to present the actual replacement document.\n\n**Valid Receipts Include:**\n\n- Receipt for replacement of lost, stolen, or damaged document\n- Receipt showing I-551 stamp (Green Card renewal)\n- Receipt for Employment Authorization Document (Form I-766)\n\n**NOT Acceptable Receipts:**\n\n- Receipt showing you've applied for initial work authorization\n- Any receipt for a document you've never had\n\n**Pro Tip:** Don't wait until you have a job to get your documents in order. Apply for:\n- [Social Security Card](https://www.ssa.gov/number-card/request-number-first-time)\n- [U.S. Passport](https://travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html)\n- [State ID/Driver's License](https://www.usa.gov/state-motor-vehicle-services)"
+      },
+      {
+        heading: "I-9 and E-Verify: What's the Difference?",
+        content: "Many workers confuse I-9 and E-Verify. Here's the distinction:\n\n**Form I-9:**\n\n- Required by federal law for ALL employers\n- Paper-based verification\n- Employer examines documents visually\n- Form kept on file by employer\n\n**E-Verify:**\n\n- **Voluntary** for most employers (some exceptions)\n- Electronic verification system\n- Checks I-9 information against government databases (DHS, SSA)\n- Provides case number and confirmation\n\n**Which Employers Use E-Verify?**\n\n- Federal contractors and subcontractors (required)\n- Employers in certain states (Arizona, Mississippi, Alabama require it)\n- Companies that choose to use it voluntarily\n- **Indeed Flex uses E-Verify** as part of standard onboarding\n\n**What E-Verify Checks:**\n\n- Social Security Number matches name and date of birth\n- Work authorization is valid\n- Photo on certain documents matches E-Verify records\n\n**Most E-Verify cases (98.8%) are confirmed automatically.** If there's a mismatch (called a Tentative Nonconfirmation or TNC), you have 8 federal business days to resolve it.\n\nLearn more: [E-Verify Explained](/career-hub/guides/e-verify-explained)"
+      },
+      {
+        heading: "Indeed Flex I-9 Process",
+        content: "If you're joining Indeed Flex, here's what to expect:\n\n**Before Your Onboarding Interview:**\n\n1. Gather acceptable I-9 documents\n2. Ensure they're original (not copies)\n3. Check expiration dates\n\n**During Onboarding:**\n\n1. Complete Section 1 of Form I-9\n2. Present original documents to an authorized verifier\n3. Documents are examined and recorded\n4. Information is submitted to E-Verify\n\n**After Verification:**\n\n- Most cases confirm within 24-48 hours\n- You'll be cleared to book shifts once verified\n- If issues arise, you'll be notified and have time to resolve them\n\n**What Indeed Flex Requires:**\n\n- At least 18 years old\n- Valid I-9 documents proving work authorization\n- Smartphone (iOS or Android)\n- Registered US bank account for payment\n- Professional profile photo\n\n**Ready to get started?**\n\n[Download Indeed Flex →](https://indeedflex.com/download-app/)\n\n**Need help with documents?** Check our complete [I-9 Documents List](/career-hub/guides/i9-documents-list) to know exactly what to bring."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can someone else verify my I-9 documents for me?",
+        answer: "Yes. If your employer is remote, they can designate an \"authorized representative\" to examine your documents on their behalf. This can be anyone over 18 who you trust—a notary public, librarian, HR professional at a business center, or even a trusted friend or family member. They must physically examine your original documents and complete Section 2."
+      },
+      {
+        question: "What if my name has changed since my documents were issued?",
+        answer: "You can still use documents with a previous name, but you should bring documentation of the name change (marriage certificate, court order, etc.) to explain the discrepancy. Employers may make a note in the Additional Information field. Consider updating your documents when possible—start with Social Security, then use the new card to update your state ID."
+      },
+      {
+        question: "Can I use an expired document for I-9?",
+        answer: "Generally, no. List A, B, and C documents must be unexpired when presented. The only exception: some documents marked as unexpired by USCIS may be acceptable even after the printed date. U.S. passports, driver's licenses, and Green Cards must all be current. Check expiration dates before your first day."
+      },
+      {
+        question: "What's the difference between I-9 and E-Verify?",
+        answer: "Form I-9 is a paper form that all employers must complete. E-Verify is an optional electronic system that checks I-9 information against government databases. Indeed Flex uses both: you complete I-9 during onboarding, and your information is electronically verified through E-Verify. Most E-Verify cases confirm within 24-48 hours."
+      },
+      {
+        question: "I'm a U.S. citizen—do I still need to complete Form I-9?",
+        answer: "Absolutely yes. Form I-9 is required for ALL employees in the United States, regardless of citizenship. U.S. citizens complete the same form as permanent residents and work-authorized non-citizens. You'll check \"A citizen of the United States\" in Section 1 and present acceptable documents like a U.S. passport or driver's license + birth certificate."
+      },
+      {
+        question: "How long does my employer keep my I-9?",
+        answer: "Employers must retain your Form I-9 for either 3 years after hire date OR 1 year after employment ends—whichever is later. If you leave a job after 5 years, your I-9 is kept for 1 more year (6 years total). Employers may store I-9s electronically."
+      }
+    ],
+    relatedArticles: ["i9-documents-list", "e-verify-explained", "first-job-america-guide", "work-without-ssn"]
+  },
+
+  "i9-documents-list": {
+    slug: "i9-documents-list",
+    title: "Acceptable I-9 Documents: Lists A, B, C Explained",
+    category: "Employment Eligibility",
+    categorySlug: "employment-eligibility",
+    readTime: "8 min",
+    description: "Complete guide to acceptable Form I-9 documents. Learn about Lists A, B, and C, which documents to bring, and how to choose the easiest option for you.",
+    keyTakeaways: [
+      "List A documents prove BOTH identity AND work authorization (one document needed)",
+      "List B + C combination requires TWO documents (one from each list)",
+      "You choose which documents to present—employer cannot specify which ones",
+      "All documents must be original and unexpired",
+      "The most common combination is Driver's License (B) + Social Security Card (C)"
+    ],
+    sections: [
+      {
+        heading: "Understanding Lists A, B, and C",
+        content: "The I-9 acceptable documents are organized into three lists:\n\n**List A: Identity AND Work Authorization (Choose ONE)**\n\nThese \"gold standard\" documents prove both who you are AND that you're authorized to work. If you have a List A document, you only need to present that single document.\n\n**List B: Identity Only (Used with List C)**\n\nThese documents prove who you are but don't prove work authorization. Must be combined with a List C document.\n\n**List C: Work Authorization Only (Used with List B)**\n\nThese documents prove you can work in the U.S. but don't prove identity. Must be combined with a List B document.\n\n| Option | Documents Needed | Example |\n|--------|------------------|----------|\n| List A only | 1 document | U.S. Passport |\n| List B + C | 2 documents | Driver's License + Social Security Card |\n\n**Which Should You Choose?**\n\nIf you have a List A document, use it—it's simpler. If not, the most common combination is Driver's License (B) + Social Security Card (C)."
+      },
+      {
+        heading: "List A Documents: Identity + Work Authorization",
+        content: "Present ONE document from this list:\n\n**For U.S. Citizens:**\n\n- **U.S. Passport** (book or card)\n  - Most convenient single document\n  - Valid for 10 years (adults)\n  - Apply at [travel.state.gov](https://travel.state.gov/content/travel/en/passports.html)\n\n- **Certificate of U.S. Citizenship** (Form N-560 or N-561)\n- **Certificate of Naturalization** (Form N-550 or N-570)\n\n**For Permanent Residents:**\n\n- **Permanent Resident Card (Green Card)** (Form I-551)\n  - Valid for 10 years\n  - Must be renewed before expiration\n\n- **Permanent Resident Card with temporary I-551 stamp**\n\n**For Authorized Non-Citizens:**\n\n- **Employment Authorization Document (EAD)** (Form I-766)\n  - Issued to various visa categories\n  - Has work authorization expiration date\n  - Valid until date shown on card\n\n- **Foreign Passport with Form I-94** showing work-authorized status\n- **Foreign Passport with Form I-551 stamp** (temporary Green Card evidence)\n- **Foreign Passport with I-94 and endorsement for specific employer**\n\n**Pro Tip:** If you're a U.S. citizen, getting a passport ($165 for adults) gives you the easiest I-9 document. It's also useful for domestic air travel."
+      },
+      {
+        heading: "List B Documents: Identity Only",
+        content: "Present ONE document from List B **PLUS** one from List C:\n\n**Most Common List B Documents:**\n\n- **Driver's License** (any U.S. state)\n  - Most widely used List B document\n  - Must have photo and address\n\n- **State ID Card** (non-driver identification)\n  - Available at your state DMV\n  - Good option if you don't drive\n\n**Other Acceptable List B Documents:**\n\n- School ID card with photograph\n- Voter registration card\n- U.S. Military card or draft record\n- Military dependent's ID card\n- U.S. Coast Guard Merchant Mariner Document\n- Native American tribal document\n- Canadian driver's license (for Canadian workers)\n\n**For Workers Under 18:**\n\n- School record or report card\n- Clinic, doctor, or hospital record\n- Day-care or nursery school record\n\n**Key Requirements for List B:**\n\n✓ Must contain a photograph\n✓ Must contain identifying information (name, address, date of birth)\n✓ Must be unexpired (with limited exceptions)\n✓ Must appear genuine and relate to you"
+      },
+      {
+        heading: "List C Documents: Work Authorization Only",
+        content: "Present ONE document from List C **PLUS** one from List B:\n\n**For U.S. Citizens:**\n\n- **Social Security Card** (unrestricted)\n  - Most common List C document\n  - Must NOT say \"NOT VALID FOR EMPLOYMENT\"\n  - Must NOT say \"VALID FOR WORK ONLY WITH DHS AUTHORIZATION\"\n\n- **Birth Certificate** issued by U.S. state, territory, or possession\n  - Original or certified copy with official seal\n  - Hospital souvenir certificates NOT accepted\n\n- **Certification of Birth Abroad** (Form FS-545)\n- **Certification of Report of Birth** (Form DS-1350 or FS-240)\n\n**For Authorized Non-Citizens:**\n\n- **Employment Authorization Document (EAD)** (Form I-766)\n  - Note: EAD appears on both List A and List C\n  - When used as List C, must be combined with List B document\n\n- **Employment authorization issued by DHS**\n\n**Social Security Card Restrictions:**\n\n| Card Type | Says | Can Use for I-9? |\n|-----------|------|------------------|\n| Unrestricted | Nothing extra | ✓ Yes |\n| Restricted | \"VALID FOR WORK ONLY WITH DHS AUTHORIZATION\" | ✓ Yes (if you have current DHS authorization) |\n| Not for employment | \"NOT VALID FOR EMPLOYMENT\" | ✗ No |"
+      },
+      {
+        heading: "Best Document Combinations",
+        content: "Here are the most practical options for most workers:\n\n**Option 1: U.S. Passport (Easiest)**\n\n- Single document covers everything\n- No need to find multiple documents\n- Cost: $165 for adult book, $65 for card only\n- Processing: 6-8 weeks (or 2-3 weeks expedited)\n\n**Option 2: Driver's License + Social Security Card (Most Common)**\n\n- Documents most workers already have\n- Cost: Usually already obtained\n- Make sure SSN card doesn't say \"NOT VALID FOR EMPLOYMENT\"\n\n**Option 3: State ID + Birth Certificate**\n\n- Good if you don't have Social Security card handy\n- State ID: $10-30 at DMV\n- Birth certificate: Request from vital records office (~$15-30)\n\n**Option 4: Green Card (For Permanent Residents)**\n\n- Single document covers everything\n- Must be unexpired\n- Renewal takes months—plan ahead\n\n**Option 5: EAD Card (For Work Permit Holders)**\n\n- Single document if unexpired\n- Shows work authorization category\n- Start renewal 180 days before expiration\n\n**Quick Decision Guide:**\n\n| If You Are... | Best Option |\n|---------------|-------------|\n| U.S. Citizen with passport | U.S. Passport |\n| U.S. Citizen without passport | Driver's License + SS Card |\n| Permanent Resident | Green Card |\n| Work Permit Holder | EAD Card |\n| Waiting for documents | See [Work Without SSN](/career-hub/guides/work-without-ssn) |"
+      },
+      {
+        heading: "What NOT to Bring",
+        content: "These documents are commonly brought but NOT acceptable:\n\n**Not Acceptable for I-9:**\n\n- ❌ **Photocopies or photos** of documents\n- ❌ **Expired documents** (with limited exceptions)\n- ❌ **Social Security cards marked \"NOT VALID FOR EMPLOYMENT\"**\n- ❌ **Hospital-issued birth certificates** (souvenirs)\n- ❌ **Voter registration card** (alone—it's List B only)\n- ❌ **Credit cards or bank cards**\n- ❌ **Insurance cards**\n- ❌ **Utility bills** (not an identity document)\n- ❌ **Foreign documents not on the list** (e.g., foreign driver's license, unless Canadian)\n\n**Important Reminders:**\n\n- All documents must be **ORIGINALS**\n- Documents must be **UNEXPIRED** (check dates!)\n- Documents must **reasonably appear genuine**\n- Documents must **relate to you** (matching name, photo)\n\n**Digital Documents:**\n\nCurrently, I-9 requires physical document examination. Some states are piloting mobile driver's licenses, but acceptance for I-9 is still limited. Bring physical documents."
+      },
+      {
+        heading: "Special Situations",
+        content: "**Name Change:**\n\nIf your current legal name differs from your documents:\n- Bring proof of name change (marriage certificate, court order)\n- Employer notes the discrepancy\n- Update your documents when possible\n\n**Recent Arrival to U.S.:**\n\nIf you recently arrived and have work authorization:\n- Use passport + Form I-94 with work-authorized status\n- Or use EAD if you have one\n- See [Work Authorization Types](/career-hub/guides/work-authorization-types)\n\n**Pending SSN Application:**\n\nIf you've applied for but not received your SSN:\n- Write \"Applied for\" in the SSN field on Form I-9\n- Use other acceptable documents (birth certificate, passport)\n- Provide SSN to employer once received\n- See [Work Without SSN](/career-hub/guides/work-without-ssn)\n\n**Receipt Rule:**\n\nIf your document is lost, stolen, or damaged:\n- You can present a receipt showing you've applied for replacement\n- You then have 90 days to present the actual replacement document\n- This only applies to documents you previously had\n\n**Expired Green Card:**\n\nPermanent residents with expired Green Cards:\n- Apply for renewal immediately (Form I-90)\n- Use receipt notice as temporary evidence\n- Consider getting passport for easier I-9 completion"
+      },
+      {
+        heading: "Your Rights During Document Verification",
+        content: "Know your rights when presenting I-9 documents:\n\n**Employers CANNOT:**\n\n- ❌ Request specific documents (e.g., \"Bring a passport\")\n- ❌ Reject valid documents that reasonably appear genuine\n- ❌ Ask for more documents than required\n- ❌ Treat you differently based on citizenship or national origin\n- ❌ Refuse to hire based on future work authorization expiration\n\n**Employers MUST:**\n\n- ✓ Accept any valid List A document OR valid List B + C combination\n- ✓ Examine documents in your physical presence (or via authorized representative)\n- ✓ Allow you to choose which documents to present\n- ✓ Complete Section 2 within 3 business days of your start date\n\n**If You Experience Discrimination:**\n\nContact the Immigrant and Employee Rights Section (IER):\n- Phone: 1-800-255-7688\n- Website: [justice.gov/crt/ier](https://www.justice.gov/crt/immigrant-and-employee-rights-section)\n- They investigate discrimination in hiring and I-9 processes\n\n**Document Fraud Warning:**\n\nUsing fraudulent documents or making false statements on Form I-9 is a federal crime punishable by fines and imprisonment. Always use genuine documents."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can my employer tell me which documents to bring?",
+        answer: "No. Employers cannot specify which documents you must present. They must accept any valid document or combination from the Lists of Acceptable Documents. If an employer says \"You must bring a passport\" or \"We only accept Green Cards,\" that may be discrimination. You choose which acceptable documents to present."
+      },
+      {
+        question: "My Social Security card says 'VALID FOR WORK ONLY WITH DHS AUTHORIZATION'—can I use it?",
+        answer: "Yes, you can use it if you currently have DHS work authorization (like an EAD or valid work visa). This restriction appears on cards issued to non-citizens with temporary work authorization. You'll need to present it with a List B identity document. Cards that say 'NOT VALID FOR EMPLOYMENT' cannot be used for I-9."
+      },
+      {
+        question: "I lost my Social Security card—what can I use instead?",
+        answer: "Several options: (1) Apply for a replacement at ssa.gov and use another List C document meanwhile (birth certificate works), (2) Use a List A document like a passport instead, (3) Present a receipt for the replacement card (you'll have 90 days to show the actual card). Many workers use Driver's License + Birth Certificate instead."
+      },
+      {
+        question: "Do I need to bring my original documents or are copies okay?",
+        answer: "Original documents only. Employers must physically examine original documents—photocopies, scanned copies, and photos of documents are not acceptable. The only exception is certified copies of birth certificates, which are acceptable (and often the only version available). Keep your originals safe and bring them to your onboarding appointment."
+      },
+      {
+        question: "Can I use my school ID for I-9?",
+        answer: "A school ID can be used as a List B document (identity) if it contains a photograph. However, you'll still need a List C document (work authorization) to complete the combination. Most workers find a driver's license or state ID easier since they likely already have one."
+      },
+      {
+        question: "What if my Green Card is expiring soon?",
+        answer: "If your Green Card will expire soon, apply for renewal (Form I-90) 6 months before expiration. If you've filed for renewal and your card expires before you receive the new one, you can use the I-90 receipt notice as temporary evidence of your permanent resident status. Consider getting a U.S. passport as a permanent resident—it never needs renewal for I-9 purposes (though the passport itself expires)."
+      }
+    ],
+    relatedArticles: ["i9-complete-guide", "work-without-ssn", "first-job-america-guide", "e-verify-explained"]
+  },
+
+  "first-job-america-guide": {
+    slug: "first-job-america-guide",
+    title: "Working in America: First Job Guide",
+    category: "Employment Eligibility",
+    categorySlug: "employment-eligibility",
+    readTime: "15 min",
+    description: "Complete guide for new workers in the U.S. Learn about employment basics, required documents, your first paycheck, workplace culture, and how to build your American career.",
+    keyTakeaways: [
+      "Most U.S. jobs are W-2 employment where taxes are automatically withheld from your paycheck",
+      "You need an SSN (or application receipt), I-9 documents, and a bank account to start working",
+      "Your first paycheck will be less than expected—federal and state taxes are taken out",
+      "Indeed Flex offers Same Day Pay so you can access 50% of earnings within 1 hour",
+      "Building a good reputation leads to better shifts, higher pay, and permanent job offers"
+    ],
+    sections: [
+      {
+        heading: "Understanding U.S. Employment Basics",
+        content: "Before starting your first job in America, understand these fundamental concepts:\n\n**W-2 vs 1099 Employment:**\n\n| Type | W-2 Employee | 1099 Contractor |\n|------|--------------|----------------|\n| Taxes | Employer withholds | You pay quarterly |\n| Benefits | Often provided | Rarely provided |\n| Schedule | Set by employer | More flexible |\n| Equipment | Provided | You provide |\n| Example | Indeed Flex | Uber, DoorDash |\n\n**Indeed Flex is W-2 employment**, which means:\n- Taxes are automatically taken from your paycheck\n- You may receive benefits (medical, dental, vision)\n- Simpler tax filing at year-end\n\n**At-Will Employment:**\n\nMost U.S. jobs are \"at-will,\" meaning:\n- You can quit any time without giving notice (though 2 weeks is courteous)\n- Employer can end your employment for any legal reason\n- No guaranteed hours or job security\n- This is normal in the U.S.—don't be alarmed\n\n**Your Rights as a Worker:**\n\n- **Minimum wage:** Federal ($7.25/hr) or state minimum, whichever is higher\n- **Overtime:** 1.5x pay after 40 hours/week (most jobs)\n- **Safe workplace:** Protected by OSHA regulations\n- **No discrimination:** Based on race, gender, religion, national origin, etc.\n- **Workers' compensation:** If injured on the job\n\n[Learn more about worker rights →](/career-hub/guides)"
+      },
+      {
+        heading: "Documents You Need for Any Job",
+        content: "Every U.S. employer requires these:\n\n**1. Social Security Number (SSN)**\n\n- 9-digit number issued by Social Security Administration\n- Required for tax withholding and reporting\n- Apply at [ssa.gov](https://www.ssa.gov/number-card/request-number-first-time)\n- Processing: 2-6 weeks\n- **Can work while waiting** (see [Work Without SSN](/career-hub/guides/work-without-ssn))\n\n**2. Form I-9 Documents**\n\nProve identity AND work authorization:\n- U.S. Passport (easiest single document)\n- OR Driver's License + Social Security Card\n- OR Green Card or EAD\n- See complete [I-9 Documents List](/career-hub/guides/i9-documents-list)\n\n**3. Bank Account for Direct Deposit**\n\nMost employers pay via direct deposit:\n- Need routing number and account number\n- Many banks have no-fee checking accounts\n- Options if you're new to U.S.: Chime, Varo, or credit union\n- Indeed Flex requires a bank account for Same Day Pay\n\n**4. Form W-4 (Tax Withholding)**\n\n- Tells employer how much federal tax to withhold\n- Fill out when you start—employer provides the form\n- Single with no dependents: Basic setup\n- Married or have kids: May adjust withholding\n\n**Checklist Before Your First Day:**\n\n- ☐ Social Security Card (or application receipt)\n- ☐ State ID or Driver's License\n- ☐ Birth Certificate or Passport\n- ☐ Bank account information\n- ☐ Emergency contact information"
+      },
+      {
+        heading: "The Hiring Process Step-by-Step",
+        content: "Here's what to expect when getting hired in the U.S.:\n\n**Step 1: Application**\n\n- Online applications are standard\n- Include work history, availability, and contact info\n- For Indeed Flex: Download app, create profile, submit application\n\n**Step 2: Interview**\n\n- May be in-person, phone, or video\n- Dress appropriately (business casual or uniform-appropriate)\n- Bring ID and any required documents\n- Arrive 10-15 minutes early\n\n**Interview Tips:**\n- Make eye contact\n- Firm handshake\n- Answer questions concisely\n- Ask questions about the job\n- Thank the interviewer\n\n**Step 3: Background Check**\n\n- Most employers run background checks\n- May include: criminal history, employment verification, drug test\n- Typically takes 3-7 business days\n- Be honest on your application—discrepancies can disqualify you\n\n**Step 4: Job Offer**\n\n- May be verbal or written\n- Review: pay rate, hours, benefits, start date\n- Ask questions before accepting\n- Get important details in writing\n\n**Step 5: Onboarding**\n\n- Complete Form I-9 (first day)\n- Complete Form W-4 (tax withholding)\n- Provide bank information for direct deposit\n- Review company policies and handbook\n- Complete any required training\n\n**Indeed Flex Process:**\n\n1. Download app and create profile\n2. Complete verification interview\n3. Submit I-9 documents (verified through E-Verify)\n4. Once approved, start booking shifts immediately\n\n[Get started with Indeed Flex →](https://indeedflex.com/download-app/)"
+      },
+      {
+        heading: "Understanding Your Paycheck",
+        content: "Your first paycheck may be smaller than expected. Here's why:\n\n**Gross Pay vs Net Pay:**\n\n- **Gross Pay:** Total earned before deductions\n- **Net Pay:** What you actually receive (\"take-home pay\")\n\n**What's Deducted:**\n\n| Deduction | What It Is | Typical % |\n|-----------|------------|----------|\n| Federal Income Tax | Tax to federal government | 10-22% |\n| State Income Tax | Tax to your state | 0-10% |\n| Social Security (FICA) | Retirement fund | 6.2% |\n| Medicare | Healthcare for seniors | 1.45% |\n| Health Insurance | If you enroll | Varies |\n| Other | 401k, etc. | Varies |\n\n**Example Paycheck:**\n\n| | Amount |\n|----------|--------|\n| Hours Worked | 40 |\n| Hourly Rate | $17.00 |\n| **Gross Pay** | **$680.00** |\n| Federal Tax | -$68.00 |\n| State Tax | -$27.20 |\n| Social Security | -$42.16 |\n| Medicare | -$9.86 |\n| **Net Pay** | **$532.78** |\n\n**Reading Your Pay Stub:**\n\n- **Pay Period:** Dates covered (weekly, bi-weekly, etc.)\n- **Earnings:** Regular hours, overtime, tips, bonuses\n- **Deductions:** Taxes, benefits, garnishments\n- **Year-to-Date (YTD):** Total earned/deducted this year\n\n**Payment Schedule:**\n\n- Weekly (every Friday)\n- Bi-weekly (every other Friday)\n- Semi-monthly (1st and 15th)\n- Monthly (once per month)\n\n**Indeed Flex offers [Same Day Pay](https://indeedflex.com/benefits-pay/same-day-pay/):** Access up to 50% of your earnings within 1 hour of completing a shift."
+      },
+      {
+        heading: "Workplace Culture in the U.S.",
+        content: "U.S. workplace culture may differ from what you're used to:\n\n**Punctuality:**\n\n- **Arriving on time is essential**\n- On time = 10-15 minutes early\n- Being late without notice is very serious\n- Repeated lateness often leads to termination\n- If you'll be late, call/text immediately\n\n**Communication Style:**\n\n- Direct communication is valued\n- It's okay to ask questions—encouraged, actually\n- Say \"I don't understand\" rather than guessing\n- Address supervisors by first name (usually)\n- \"Please\" and \"thank you\" are expected\n\n**Professional Boundaries:**\n\n- Personal phones: Away during work (breaks only)\n- Appearance: Follow dress code strictly\n- Language: Keep it professional—no profanity\n- Personal matters: Handle on breaks\n\n**Work Ethic Expectations:**\n\n- Stay busy during your entire shift\n- Finish tasks without being reminded\n- Offer to help if you finish early\n- Don't leave early without permission\n- Complete the work, even if it's difficult\n\n**Common Workplace Practices:**\n\n| Practice | Explanation |\n|----------|-------------|\n| Clock in/out | Track your exact work hours |\n| Breaks | Usually 30-60 min unpaid meal, 15 min paid breaks |\n| Overtime | Extra pay (1.5x) after 40 hours |\n| Direct deposit | Pay goes directly to your bank |\n| Performance reviews | Regular feedback on your work |\n\n**Building Good Relationships:**\n\n- Learn coworkers' names\n- Be friendly but professional\n- Don't gossip or complain publicly\n- Help teammates when possible\n- Thank supervisors when leaving"
+      },
+      {
+        heading: "Building Your U.S. Work History",
+        content: "Your first job is the start of building your American career:\n\n**Why Reputation Matters:**\n\n- References from supervisors help get future jobs\n- Indeed Flex ratings unlock better shifts\n- Companies may add you to Talent Pools for repeat work\n- Temp-to-perm opportunities are earned\n\n**Getting Good References:**\n\n- Work hard consistently (not just when watched)\n- Be reliable—show up, on time, ready to work\n- Have a positive attitude even during tough tasks\n- Volunteer for extra responsibilities\n- Thank supervisors and express interest in returning\n\n**Building Your Rating on Indeed Flex:**\n\n| Star Rating | What It Means | Access |\n|-------------|---------------|--------|\n| 5 stars | Exceptional | Premium shifts, first offers |\n| 4-4.9 | Good | Standard access |\n| 3-3.9 | Needs improvement | Limited shifts |\n| Below 3 | Poor | May lose access |\n\n**How to Get 5-Star Ratings:**\n\n- Arrive 10-15 minutes early\n- Follow all instructions carefully\n- Stay off your personal phone\n- Go above minimum expectations\n- Ask questions when unsure\n- Clean up before leaving\n\n**Career Progression:**\n\n- Build ratings → Get into Talent Pools\n- Talent Pool access → Repeat work with familiar teams\n- Consistent performance → Temp-to-perm offers\n- Add certifications → Higher-paying roles\n\n[Skills that boost your hourly rate →](/career-hub/guides/skill-boost)"
+      },
+      {
+        heading: "Managing Money as a New Worker",
+        content: "Financial tips for workers new to the U.S.:\n\n**Opening a Bank Account:**\n\n- Needed for direct deposit\n- Many banks require SSN and ID\n- Alternatives if new to U.S.:\n  - Chime (online, no SSN required initially)\n  - Varo (no minimum balance)\n  - Credit unions (often more flexible)\n\n**Building Credit History:**\n\n- U.S. credit scores affect housing, loans, even jobs\n- Start with secured credit card\n- Pay full balance monthly\n- Check score free at CreditKarma.com\n\n**Budgeting for Variable Income:**\n\nFlexible work means variable income. Tips:\n\n- Base budget on minimum expected hours\n- Save extra income for slow periods\n- Build emergency fund (3-6 months expenses)\n- Use [Pay Calculator](/career-hub/tools/pay-calculator) to estimate earnings\n\n**Tax Filing:**\n\n- File taxes by April 15 each year\n- W-2 employees: Usually straightforward\n- May receive refund if too much was withheld\n- Free filing for low income: [IRS Free File](https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free)\n\n**Emergency Funds:**\n\nSuggested savings goals:\n\n| Level | Amount | Covers |\n|-------|--------|--------|\n| Starter | $500 | Minor emergencies |\n| Basic | 1 month expenses | Job transition |\n| Solid | 3 months | Extended gap |\n| Strong | 6 months | Major setbacks |\n\n[See all financial tips →](/career-hub/financial-tips)"
+      },
+      {
+        heading: "Indeed Flex for New Workers",
+        content: "Indeed Flex is an excellent starting point for workers new to the U.S.:\n\n**Why Indeed Flex Works for New Workers:**\n\n- **No long-term commitment:** Book shifts when you want\n- **Build work history:** Verifiable U.S. employment\n- **Learn workplace culture:** Experience multiple companies\n- **Flexible scheduling:** Work around other obligations\n- **Quick start:** Begin working within days of verification\n\n**Requirements to Join:**\n\n✓ At least 18 years old\n✓ I-9 documents proving work authorization\n✓ Smartphone (iOS or Android)\n✓ U.S. bank account for direct deposit\n✓ Passing verification interview\n\n**Getting Started:**\n\n1. [Download the app](https://indeedflex.com/download-app/)\n2. Create your profile\n3. Upload professional photo\n4. Schedule verification interview\n5. Present I-9 documents\n6. Pass E-Verify check\n7. Start booking shifts!\n\n**Benefits for New Workers:**\n\n- **Same Day Pay:** Access 50% of earnings within 1 hour\n- **Multiple industries:** Try warehouse, hospitality, retail\n- **Skill building:** Learn new roles, add to resume\n- **Medical benefits:** Essential StaffCARE coverage available\n- **Support:** Lexi AI agent available 24/7\n\n**Pro Tips:**\n\n- Start with entry-level roles (picker/packer, general labor)\n- Accept various shifts to build experience\n- Get into Talent Pools for repeat work\n- Add certifications for higher-paying roles\n\n[Download Indeed Flex →](https://indeedflex.com/download-app/)"
+      }
+    ],
+    faqs: [
+      {
+        question: "Can I work in the U.S. while waiting for my Social Security Number?",
+        answer: "Yes! You can start working while your SSN application is pending. Write \"Applied for\" in the SSN field on Form I-9 and provide the number to your employer once you receive it (usually 2-6 weeks). You'll still need to present acceptable I-9 documents proving your identity and work authorization."
+      },
+      {
+        question: "How much of my paycheck goes to taxes?",
+        answer: "Typically 20-30% of your gross pay goes to various taxes. This includes federal income tax (10-22% depending on income), Social Security (6.2%), Medicare (1.45%), and state income tax (0-10% depending on state). Your net pay (take-home) will be less than your gross pay. Use our Tax Calculator to estimate."
+      },
+      {
+        question: "What if I don't speak English well?",
+        answer: "Many flexible work opportunities don't require advanced English. Warehouse roles, cleaning, and food prep often have minimal English requirements. Being reliable, following visual instructions, and having a positive attitude matter more than perfect English. Your skills will improve as you work."
+      },
+      {
+        question: "How do I open a bank account without much credit history?",
+        answer: "Several options exist for newcomers: (1) Chime - online bank requiring minimal documentation, (2) Varo - no minimum balance or credit check, (3) Credit unions - often more flexible than big banks, (4) Some banks accept foreign passport + visa documents. Bring your ID, SSN (if available), and proof of address."
+      },
+      {
+        question: "What is 'at-will employment' and should I be worried?",
+        answer: "At-will employment means either you or your employer can end the job at any time for any legal reason. This sounds scary but it's normal in the U.S. and applies to most jobs. It also means you can leave anytime without notice (though 2 weeks is courteous). Focus on doing good work—employers want to keep reliable workers."
+      },
+      {
+        question: "How do I get references for future jobs?",
+        answer: "Build relationships with supervisors at jobs you enjoy. Express interest in returning or permanent positions. Ask if they'd be willing to be a reference. With Indeed Flex, your star rating and Talent Pool memberships serve as built-in references—high ratings prove you're a reliable worker."
+      }
+    ],
+    relatedArticles: ["i9-complete-guide", "work-without-ssn", "e-verify-explained", "first-flex-job"]
+  },
+
+  "work-authorization-types": {
+    slug: "work-authorization-types",
+    title: "Work Permit vs EAD: Work Authorization Types",
+    category: "Employment Eligibility",
+    categorySlug: "employment-eligibility",
+    readTime: "10 min",
+    description: "Understand the different types of work authorization in the U.S.: EAD, Green Card, work visas, and more. Know your rights and what employers can ask.",
+    keyTakeaways: [
+      "EAD (Employment Authorization Document) allows work with any U.S. employer",
+      "Green Card holders have permanent work authorization—no expiration for employment purposes",
+      "Work visas tie you to a specific employer; switching requires sponsorship",
+      "Employers cannot discriminate based on citizenship status or work authorization type",
+      "Indeed Flex works with ALL valid work authorizations"
+    ],
+    sections: [
+      {
+        heading: "Types of Work Authorization in the U.S.",
+        content: "There are several ways to be legally authorized to work in the United States:\n\n**1. U.S. Citizenship**\n\n- Permanent, unrestricted work authorization\n- Born in U.S. or naturalized\n- I-9 documents: U.S. Passport, or ID + Birth Certificate/Naturalization Certificate\n\n**2. Permanent Residence (Green Card)**\n\n- Permanent, unrestricted work authorization\n- Work for any employer\n- No employment sponsor needed\n- I-9 document: Permanent Resident Card (I-551)\n\n**3. Employment Authorization Document (EAD/I-766)**\n\n- Work permit for specific categories of non-citizens\n- Issued by USCIS\n- Has expiration date\n- Work for any employer while valid\n\n**4. Work Visas**\n\n- Authorization tied to specific employer\n- Examples: H-1B, L-1, O-1, H-2A, H-2B\n- Changing jobs requires new sponsorship\n\n**5. Student/Exchange Work Authorization**\n\n- F-1 OPT/CPT\n- J-1 work authorization\n- Limited duration and conditions\n\n| Type | Employer Restriction | Duration | Renewal |\n|------|---------------------|----------|--------|\n| Citizen | None | Permanent | N/A |\n| Green Card | None | Permanent | Card renews, status doesn't |\n| EAD | None | Varies (1-2 years typical) | Application required |\n| H-1B Visa | Specific employer | 3 years, 6 max | Requires employer sponsorship |\n| OPT (F-1) | In field of study | 12 months (36 for STEM) | Limited |"
+      },
+      {
+        heading: "Employment Authorization Document (EAD) Explained",
+        content: "The EAD (Form I-766) is a work permit issued to various categories of non-citizens:\n\n**Who Gets an EAD?**\n\n- Asylum applicants and asylees\n- Adjustment of status applicants (pending Green Card)\n- DACA recipients\n- TPS (Temporary Protected Status) holders\n- H-4 dependents (certain cases)\n- L-2 dependents\n- K-1 fiancé(e) visa holders\n- Refugees\n\n**EAD Category Codes:**\n\nYour EAD shows a category code that indicates your basis for work authorization:\n\n| Code | Category |\n|------|----------|\n| (A)(12) | TPS - Temporary Protected Status |\n| (C)(9) | Pending Adjustment of Status (Green Card application) |\n| (C)(10) | Pending Asylum Application |\n| (C)(33) | DACA - Deferred Action for Childhood Arrivals |\n| (C)(26) | H-4 Dependent (certain cases) |\n| (A)(5) | Asylee |\n| (A)(3) | Refugee |\n\n**EAD Validity:**\n\n- Typically 1-2 years, depending on category\n- Must be renewed before expiration\n- Apply for renewal 120-180 days before expiration\n- 180-day auto-extension applies to certain categories while renewal is pending\n\n**Using EAD for I-9:**\n\n- EAD is a List A document (proves both identity AND work authorization)\n- Only one document needed\n- Must be unexpired\n- Employer enters document number and expiration"
+      },
+      {
+        heading: "Green Card Holders: Permanent Work Authorization",
+        content: "Lawful Permanent Residents (LPRs) have unrestricted work authorization:\n\n**What Green Card Holders Can Do:**\n\n- Work for any employer\n- Change jobs freely\n- Work full-time, part-time, or flexible hours\n- No employer sponsorship needed\n- Self-employment allowed\n\n**Green Card for I-9:**\n\n- Permanent Resident Card (I-551) is a List A document\n- Proves both identity and work authorization\n- Note: Card expiration doesn't mean status expires\n- LPR status is permanent; only the card needs renewal\n\n**Expired Green Card?**\n\nIf your card is expired or expiring:\n- File Form I-90 to renew (up to 6 months before expiration)\n- Receipt notice extends validity for 24 months\n- Consider getting a U.S. passport after naturalization for easier I-9\n\n**Path to Citizenship:**\n\nGreen Card holders can apply for U.S. citizenship after:\n- 5 years as permanent resident (general rule)\n- 3 years if married to U.S. citizen\n- Meeting residence and presence requirements\n\n**Important:** Even permanent residents must complete Form I-9 at every new job. Citizenship isn't required to work."
+      },
+      {
+        heading: "Work Visas: Employer-Specific Authorization",
+        content: "Work visas tie your authorization to a specific employer:\n\n**H-1B Visa (Specialty Occupations)**\n\n- For professional jobs requiring bachelor's degree\n- Employer must sponsor and petition USCIS\n- 3-year initial period, up to 6 years total\n- Changing employers requires new petition\n- Portability: Can work for new employer once petition filed\n\n**L-1 Visa (Intracompany Transfer)**\n\n- Transfer from foreign office of same company\n- L-1A: Managers/executives (7 years max)\n- L-1B: Specialized knowledge (5 years max)\n- Tied to sponsoring employer\n\n**O-1 Visa (Extraordinary Ability)**\n\n- For individuals with extraordinary achievement\n- Arts, sciences, business, athletics, education\n- Initially 3 years, renewable\n- Tied to petitioning employer/agent\n\n**H-2B Visa (Temporary Non-Agricultural)**\n\n- Seasonal, peak-load, or intermittent need\n- Common in hospitality, landscaping, carnivals\n- Tied to petitioning employer\n- Limited to specific period of need\n\n**If You're On a Work Visa:**\n\n- You can only work for your sponsoring employer\n- Side gigs (even Indeed Flex) may not be authorized\n- Consult an immigration attorney before additional employment\n- Some visas allow spouse to work (H-4 EAD, L-2)"
+      },
+      {
+        heading: "Renewing Work Authorization",
+        content: "Most non-permanent work authorization expires and needs renewal:\n\n**EAD Renewal:**\n\n- File Form I-765 with USCIS\n- Apply 120-180 days before current EAD expires\n- Processing: 3-8 months (varies significantly)\n- **180-Day Auto-Extension:** Eligible categories can continue working for 180 days with expired EAD if timely renewal is filed\n\n**Eligible for Auto-Extension:**\n\n- (A)(12) TPS\n- (C)(9) Pending adjustment of status\n- (C)(10) Pending asylum\n- (C)(19) Refugee\n- Other categories—check USCIS website\n\n**During Renewal:**\n\n- Keep expired EAD + I-797C receipt notice\n- Present both to employer for I-9 purposes\n- Continue working while case is pending\n- Monitor case status at uscis.gov\n\n**Planning Ahead:**\n\n| Action | When |\n|--------|------|\n| Gather documents | 6 months before expiration |\n| File renewal | 4-6 months before expiration |\n| Follow up if no receipt | 30 days after filing |\n| Expedite if urgent | When work authorization critical |\n\n**Don't Wait:** USCIS processing times are unpredictable. File early to avoid gaps in work authorization."
+      },
+      {
+        heading: "What Employers Can and Cannot Ask",
+        content: "Know your rights during the hiring process:\n\n**Employers CANNOT:**\n\n❌ Ask about immigration status before hiring\n❌ Require specific documents for I-9\n❌ Refuse to hire based on citizenship status (with limited exceptions)\n❌ Retaliate if you file a discrimination complaint\n❌ Ask to see documents before making a job offer\n❌ Treat you differently based on national origin\n\n**Employers CAN:**\n\n✓ Ask \"Are you authorized to work in the United States?\" on application\n✓ Ask \"Will you now or in the future require sponsorship?\" on application\n✓ Require I-9 completion and valid documents after hire\n✓ Verify documents through E-Verify\n✓ Require reverification when work authorization expires\n\n**Interview Questions:**\n\n| Legal | Illegal |\n|-------|--------|\n| Are you authorized to work in the U.S.? | Are you a citizen? |\n| Will you require sponsorship? | Where were you born? |\n| Can you provide I-9 documents? | What's your visa status? |\n\n**If You Experience Discrimination:**\n\nContact the Immigrant and Employee Rights Section (IER):\n- Phone: 1-800-255-7688 (worker hotline)\n- TTY: 1-800-237-2515\n- Website: justice.gov/crt/ier\n\n**Document Abuse:**\n\nIf an employer:\n- Demands specific documents\n- Rejects valid documents\n- Requires more documents than necessary\n- Requests documents again before expiration\n\nThis may be document abuse—a form of discrimination."
+      },
+      {
+        heading: "Indeed Flex and Work Authorization",
+        content: "Indeed Flex works with workers who have valid work authorization:\n\n**Accepted Work Authorizations:**\n\n✓ U.S. Citizens\n✓ Permanent Residents (Green Card holders)\n✓ EAD holders (all valid categories)\n✓ Others with valid work authorization\n\n**What You'll Need:**\n\n- Valid I-9 documents (see [I-9 Documents List](/career-hub/guides/i9-documents-list))\n- Social Security Number (or application receipt)\n- Bank account for direct deposit\n- Smartphone (iOS or Android)\n\n**E-Verify Process:**\n\nIndeed Flex uses E-Verify:\n1. You complete Section 1 of Form I-9\n2. Present original documents\n3. Information is submitted to E-Verify\n4. Most cases confirm within 24-48 hours\n5. If issues arise, you have time to resolve them\n\n**When Your Authorization Expires:**\n\n- You must stop working when work authorization expires\n- Update your Indeed Flex profile when you renew\n- Re-verify with new documents\n- Set calendar reminders to track expiration dates\n\n**Questions About Your Status?**\n\nFor immigration questions, consult:\n- Licensed immigration attorney\n- DOJ-accredited representative\n- [USCIS website](https://www.uscis.gov)\n\n**Not sure if you're authorized?** Use [E-Verify Self Check](https://www.e-verify.gov/employees/e-verify-overview/self-check) to verify your own work authorization before applying.\n\n[Get started with Indeed Flex →](https://indeedflex.com/download-app/)"
+      }
+    ],
+    faqs: [
+      {
+        question: "What's the difference between an EAD and a work visa?",
+        answer: "An EAD (Employment Authorization Document) allows you to work for any U.S. employer. A work visa (like H-1B) ties your authorization to a specific employer who sponsored you. With an EAD, you can freelance, take multiple jobs, or use Indeed Flex. With a work visa, you can generally only work for your sponsoring employer."
+      },
+      {
+        question: "Can I work while my EAD renewal is pending?",
+        answer: "Yes, if you meet the auto-extension requirements. For many EAD categories, you can continue working for up to 180 days past your EAD expiration if you filed a timely renewal (before expiration) and belong to an eligible category. Keep your expired EAD and I-797C receipt notice as proof. Check USCIS website for eligible categories."
+      },
+      {
+        question: "My Green Card is expiring—can I still work?",
+        answer: "Yes. Your permanent resident STATUS doesn't expire—only the physical card does. File Form I-90 to renew the card. Once filed, your card validity is automatically extended for 24 months. You can continue working with an expired card plus the I-90 receipt notice. Your work authorization as a permanent resident is permanent."
+      },
+      {
+        question: "Can employers refuse to hire me because my work authorization expires?",
+        answer: "Generally, no. It's illegal to discriminate against a worker because their work authorization has an expiration date. Employers can ask if you're currently authorized and can verify documents, but they cannot refuse to hire you simply because your authorization will need renewal later. If this happens, contact the IER at 1-800-255-7688."
+      },
+      {
+        question: "I have an H-1B visa—can I use Indeed Flex for extra income?",
+        answer: "Generally, no. H-1B authorization is employer-specific. You can only work for your sponsoring employer. Taking additional employment (even flexible work) without proper authorization could jeopardize your immigration status. Consult an immigration attorney before taking any secondary employment. Some visa categories (like H-4 EAD or L-2) do allow general employment."
+      },
+      {
+        question: "What is E-Verify Self Check?",
+        answer: "E-Verify Self Check is a free service that lets you confirm your own work authorization before applying for jobs. It uses the same database that employers use but doesn't affect your employment eligibility or create any record that employers see. It's useful for catching potential SSN or document issues before you start a job. Visit e-verify.gov/employees/self-check."
+      }
+    ],
+    relatedArticles: ["i9-complete-guide", "e-verify-explained", "work-without-ssn", "first-job-america-guide"]
+  },
+
+  "work-without-ssn": {
+    slug: "work-without-ssn",
+    title: "Can I Work Without a Social Security Number?",
+    category: "Employment Eligibility",
+    categorySlug: "employment-eligibility",
+    readTime: "8 min",
+    description: "Yes, you can start working while waiting for your Social Security Number. Learn how to complete I-9, get paid, and handle taxes while your SSN is pending.",
+    keyTakeaways: [
+      "You CAN legally start work while your SSN application is pending",
+      "Write 'Applied for' in the SSN field on Form I-9 and provide it later",
+      "Employers cannot refuse to hire you just because you're waiting for SSN",
+      "Most payroll systems can process your first paychecks without SSN",
+      "Apply for your SSN as soon as possible—processing takes 2-6 weeks"
+    ],
+    sections: [
+      {
+        heading: "The Short Answer: Yes, You Can Work Without SSN",
+        content: "If you're authorized to work in the United States but haven't received your Social Security Number yet, you can still start working.\n\n**Key Facts:**\n\n- There is no law requiring you to have an SSN before starting work\n- Form I-9 does not require SSN to be complete\n- Employers can (and must) hire you if you're work-authorized\n- You'll provide your SSN to your employer once you receive it\n\n**Common Situations:**\n\n| Situation | Can You Work? |\n|-----------|---------------|\n| Applied for SSN, waiting for card | ✓ Yes |\n| Just arrived in U.S., haven't applied yet | ✓ Yes (apply immediately) |\n| Authorized to work, SSN not required for status | ✓ Yes |\n| No work authorization | ✗ No |\n\n**The One Exception: E-Verify Employers**\n\nIf your employer uses E-Verify (like Indeed Flex), SSN **is required on the I-9 form.** However, you can still:\n1. Write \"Applied for\" in the SSN field\n2. Start work and get paid\n3. Provide SSN once received (usually 2-6 weeks)\n4. Employer will update E-Verify case\n\n**Important:** You must be authorized to work in the U.S. Having (or waiting for) an SSN doesn't grant work authorization—your visa, EAD, Green Card, or citizenship does."
+      },
+      {
+        heading: "How Form I-9 Works Without an SSN",
+        content: "Form I-9 can be completed without a Social Security Number:\n\n**Section 1 (Employee Completes):**\n\n- Fill in all required fields\n- In the SSN field, write \"Applied for\" or leave blank (see note below)\n- Sign and date the form\n- You've completed your part!\n\n**SSN Field Requirements:**\n\n| Employer Type | SSN on I-9 Required? |\n|---------------|----------------------|\n| E-Verify employer | Yes (but can write \"Applied for\") |\n| Non-E-Verify employer | No (field is voluntary) |\n\n**Section 2 (Employer Completes):**\n\n- Employer examines your documents\n- Documents must prove identity AND work authorization\n- SSN is NOT required for document verification\n- I-9 can be fully completed without SSN\n\n**What Documents to Bring:**\n\nSince you might not have your Social Security card, use alternatives:\n\n**Option 1: List A Document (one document)**\n- U.S. Passport\n- Permanent Resident Card (Green Card)\n- EAD (Employment Authorization Document)\n\n**Option 2: List B + C (two documents)**\n- List B: Driver's License or State ID\n- List C: Birth Certificate (if citizen) OR EAD\n\nSee complete [I-9 Documents List](/career-hub/guides/i9-documents-list)"
+      },
+      {
+        heading: "Getting Your SSN While Working",
+        content: "Once you start working, continue the SSN application process:\n\n**Applying for a Social Security Number:**\n\n**Required Documents:**\n- Proof of identity (passport, driver's license)\n- Proof of work authorization (EAD, visa, Green Card)\n- Proof of age (birth certificate, passport)\n- Form SS-5 (Application for Social Security Card)\n\n**How to Apply:**\n\n1. **In Person (Recommended):**\n   - Find your local SSA office: [ssa.gov/locator](https://www.ssa.gov/locator)\n   - Bring original documents (no copies)\n   - Complete Form SS-5 there or bring completed form\n   - Receive receipt showing application is pending\n\n2. **By Mail:**\n   - Download Form SS-5 from ssa.gov\n   - Mail with original documents\n   - Documents returned within 14 days\n   - Slower processing\n\n**Processing Time:**\n\n| Situation | Typical Wait |\n|-----------|-------------|\n| U.S. Citizen | 2-4 weeks |\n| Permanent Resident | 2-4 weeks |\n| Work-authorized non-citizen | 4-6 weeks |\n| Complex cases | 6-12 weeks |\n\n**Once You Receive Your SSN:**\n\n1. Notify your employer immediately\n2. Employer updates your records\n3. If E-Verify employer: They update the E-Verify case\n4. Payroll will use SSN going forward\n5. You do NOT need to complete a new I-9"
+      },
+      {
+        heading: "Getting Paid Without an SSN",
+        content: "Most employers can process payroll while you wait for your SSN:\n\n**How Payroll Works:**\n\n- Employer can hire and pay you without SSN\n- First few paychecks may show \"Applied for\" or \"000-00-0000\"\n- Taxes are still withheld from your pay\n- Once SSN is received, records are updated\n\n**Potential Challenges:**\n\n| Issue | Solution |\n|-------|----------|\n| Direct deposit setup | Some banks require SSN; use check payment temporarily |\n| Payroll system rejection | Employer uses placeholder; updates later |\n| Tax withholding questions | Complete W-4 without SSN (same employer file) |\n\n**Indeed Flex and SSN:**\n\nIndeed Flex requires:\n- Valid I-9 documents ✓\n- SSN (or pending application) ✓\n- Bank account for payment ✓\n\nYou can start the onboarding process while SSN is pending, but the [Same Day Pay](https://indeedflex.com/benefits-pay/same-day-pay/) feature may require SSN and verified bank account to be fully functional.\n\n**Bank Account Without SSN:**\n\nOpening a bank account:\n- Some banks require SSN\n- Others accept ITIN (Individual Taxpayer Identification Number)\n- Some accept foreign passport + visa documents\n- Options: Chime, Varo, credit unions\n\nOnce you have your SSN, update your bank account information."
+      },
+      {
+        heading: "Tax Implications: ITIN vs SSN",
+        content: "Understanding tax numbers while waiting for SSN:\n\n**Social Security Number (SSN):**\n\n- Issued by Social Security Administration\n- Required for most employment\n- Used for tax filing and work records\n- Must be authorized to work to receive SSN\n\n**Individual Taxpayer Identification Number (ITIN):**\n\n- Issued by IRS (not SSA)\n- For people who need to file taxes but don't qualify for SSN\n- Does NOT authorize employment\n- Format: 9XX-XX-XXXX\n\n**When You Need an ITIN:**\n\n- Spouse/dependent of worker without own work authorization\n- Receiving certain types of income but not work-authorized\n- Nonresident alien required to file taxes\n\n**For Workers:**\n\nIf you're authorized to work, apply for an SSN—not an ITIN. ITINs don't authorize work and can delay employment.\n\n**Tax Filing While Waiting:**\n\n| Situation | What to Do |\n|-----------|------------|\n| SSN received before tax deadline | File normally with SSN |\n| SSN pending at tax time | File for extension, wait for SSN |\n| Can't get SSN | Apply for ITIN with tax return |\n\n**Form W-4 (Tax Withholding):**\n\nComplete Form W-4 when you start work:\n- Leave SSN blank if pending\n- Employer will update when you provide SSN\n- Taxes are still withheld from your paychecks"
+      },
+      {
+        heading: "What Employers Cannot Do",
+        content: "Know your rights if an employer gives you trouble:\n\n**Employers CANNOT:**\n\n❌ Refuse to hire you solely because SSN is pending\n❌ Delay your start date until SSN arrives\n❌ Require SSN before making a job offer\n❌ Reject valid I-9 documents because you don't have SS card\n❌ Treat you differently because of citizenship status\n\n**Employers MUST:**\n\n✓ Accept your statement that SSN is applied for\n✓ Allow you to start work with valid I-9 documents\n✓ Pay you for work performed\n✓ Update records when you provide SSN later\n\n**If You Experience Problems:**\n\nDocument the issue and contact:\n- **Immigrant and Employee Rights Section (IER):** 1-800-255-7688\n- **Department of Labor:** 1-866-487-9243\n- **EEOC (discrimination):** 1-800-669-4000\n\n**What to Say:**\n\n\"I am authorized to work in the United States. My Social Security Number application is pending. I can provide acceptable I-9 documents. I will provide my SSN as soon as I receive it. Employers may not refuse to hire me solely because my SSN is pending.\"\n\nMost employers understand this is a common situation, especially for new workers and recent arrivals."
+      },
+      {
+        heading: "Indeed Flex: Getting Started Without SSN",
+        content: "Here's how to start with Indeed Flex if your SSN is pending:\n\n**Step 1: Download and Apply**\n\n- Download [Indeed Flex app](https://indeedflex.com/download-app/)\n- Create your profile\n- Start the application process\n\n**Step 2: Prepare Your Documents**\n\nBring these to your verification interview:\n- Valid I-9 documents (passport, EAD, or ID + birth certificate)\n- Proof of SSN application (receipt from Social Security office if available)\n- Bank account information\n\n**Step 3: Complete Verification**\n\n- Attend verification interview\n- Present I-9 documents\n- Explain that SSN is pending\n- Indeed Flex will note \"Applied for\" in records\n\n**Step 4: Provide SSN When Received**\n\n- Contact Indeed Flex support once SSN arrives\n- Update your profile information\n- Complete E-Verify process\n\n**What Works Without SSN:**\n\n✓ Creating profile and applying\n✓ Completing verification interview\n✓ Presenting I-9 documents\n✓ Getting approved for shifts\n\n**What May Be Limited:**\n\n- Same Day Pay may require SSN verification\n- Full E-Verify confirmation needs SSN\n\n**Pro Tip:** Apply for SSN immediately upon arriving in the U.S. or becoming work-authorized. Don't wait until you need a job—the 2-6 week processing time can feel long when you're ready to work.\n\n[Download Indeed Flex →](https://indeedflex.com/download-app/)"
+      }
+    ],
+    faqs: [
+      {
+        question: "How long does it take to get a Social Security Number?",
+        answer: "Processing typically takes 2-4 weeks for U.S. citizens and permanent residents, and 4-6 weeks for other work-authorized non-citizens. In some cases, it can take up to 12 weeks. Apply as soon as you're work-authorized—you can start working while waiting if you have valid I-9 documents."
+      },
+      {
+        question: "Can my employer fire me because I don't have an SSN yet?",
+        answer: "No. If you're authorized to work and have valid I-9 documents, an employer cannot terminate you solely because your SSN is pending. You must provide the SSN when you receive it and complete any verification requirements (like E-Verify). If an employer threatens termination for this reason, it may be discrimination."
+      },
+      {
+        question: "What if my E-Verify case says 'SSN Required'?",
+        answer: "For E-Verify employers, SSN is required on the I-9. You can write 'Applied for' and start working. The employer's E-Verify case will be held until you provide your SSN. Once you receive it, inform your employer immediately so they can complete the E-Verify case within required timeframes."
+      },
+      {
+        question: "Can I get paid by check if direct deposit requires SSN?",
+        answer: "Yes. If your employer's direct deposit system requires SSN, ask for paper checks until your SSN arrives. Some banks will let you deposit checks without SSN using your account number. Once you have your SSN, switch to direct deposit for convenience and to use features like Same Day Pay."
+      },
+      {
+        question: "What's the difference between SSN and ITIN?",
+        answer: "SSN (Social Security Number) is issued to people authorized to work in the U.S. ITIN (Individual Taxpayer Identification Number) is issued to people who need to file taxes but don't qualify for SSN. If you're work-authorized, apply for an SSN, not an ITIN. ITINs don't authorize employment and look different (start with 9)."
+      },
+      {
+        question: "I just arrived in the U.S.—when should I apply for SSN?",
+        answer: "Apply immediately upon arrival or as soon as you receive work authorization (EAD, Green Card, etc.). Don't wait until you have a job offer. Processing takes 2-6 weeks, and having your SSN ready makes starting work much smoother. Visit ssa.gov to find your local Social Security office."
+      }
+    ],
+    relatedArticles: ["i9-complete-guide", "i9-documents-list", "first-job-america-guide", "e-verify-explained"]
+  },
+
+  "e-verify-explained": {
+    slug: "e-verify-explained",
+    title: "E-Verify Explained: What Workers Need to Know",
+    category: "Employment Eligibility",
+    categorySlug: "employment-eligibility",
+    readTime: "7 min",
+    description: "Learn how E-Verify works, what happens during the verification process, and what to do if you get a Tentative Nonconfirmation (TNC). Indeed Flex uses E-Verify.",
+    keyTakeaways: [
+      "E-Verify is an electronic system that confirms work authorization",
+      "98.8% of cases are confirmed automatically within 24-48 hours",
+      "If you get a TNC (mismatch), you have 8 federal business days to resolve it",
+      "You can continue working while contesting a TNC—you cannot be fired",
+      "Indeed Flex uses E-Verify as part of standard onboarding"
+    ],
+    sections: [
+      {
+        heading: "What Is E-Verify?",
+        content: "E-Verify is an electronic system that compares your Form I-9 information to government records:\n\n**How It Works:**\n\n1. You complete Form I-9 with your employer\n2. Employer enters your information into E-Verify\n3. E-Verify checks against DHS and SSA databases\n4. System returns a result (usually within 24-48 hours)\n\n**What E-Verify Checks:**\n\n- Social Security Number matches name and date of birth (SSA database)\n- Work authorization is valid (DHS database)\n- Photo on certain documents matches records\n\n**E-Verify is NOT:**\n\n- A background check\n- A credit check\n- An immigration status check\n- A criminal history check\n\nE-Verify only confirms you're authorized to work—nothing more.\n\n| Fact | Detail |\n|------|--------|\n| Created | 1997 (formerly Basic Pilot) |\n| Managed by | DHS and USCIS |\n| Accuracy rate | 98.8% instant confirmation |\n| Processing time | Usually 24-48 hours |\n| Cost to employers | Free |"
+      },
+      {
+        heading: "Which Employers Use E-Verify?",
+        content: "E-Verify is mandatory for some employers and optional for others:\n\n**Required to Use E-Verify:**\n\n- Federal contractors and subcontractors\n- Employers in certain states:\n  - Arizona (all employers)\n  - Mississippi (all employers)\n  - Alabama (employers with 25+ employees)\n  - South Carolina, North Carolina, Georgia, Tennessee (varies)\n- Companies receiving certain federal grants\n\n**Voluntarily Using E-Verify:**\n\n- Many large employers choose to participate\n- Demonstrates compliance commitment\n- May receive certain incentives\n\n**Indeed Flex Uses E-Verify:**\n\nIndeed Flex uses E-Verify as part of its onboarding process. This means:\n- Your SSN is required on Form I-9\n- Your information will be electronically verified\n- Most cases confirm within 24-48 hours\n- You'll be cleared to work once confirmed\n\n**How to Know If Your Employer Uses E-Verify:**\n\n- Look for E-Verify participation poster (required to display)\n- Ask during the hiring process\n- Check job posting—often mentioned\n- Federal contractor jobs always use it"
+      },
+      {
+        heading: "The E-Verify Process: Step by Step",
+        content: "Here's what happens when your employer runs E-Verify:\n\n**Step 1: You Complete I-9 (Day 1)**\n\n- Fill out Section 1 of Form I-9\n- Provide SSN (required for E-Verify employers)\n- Present acceptable documents to employer\n\n**Step 2: Employer Enters Information (Days 1-3)**\n\n- Employer completes Section 2\n- Enters your information into E-Verify system\n- Must be done within 3 business days of hire\n\n**Step 3: E-Verify Checks Records**\n\nSystem compares against:\n- SSA database (Social Security Administration)\n- DHS database (Department of Homeland Security)\n\n**Step 4: Result Returned**\n\n| Result | Meaning | What Happens |\n|--------|---------|-------------|\n| **Employment Authorized** | You're verified | Case closed, you work normally |\n| **Tentative Nonconfirmation (TNC)** | Mismatch found | You can contest or not |\n| **Final Nonconfirmation (FNC)** | Not verified | Employer may terminate |\n\n**Timeline:**\n\n- Most cases: Confirmed within 24-48 hours\n- Photo match cases: May take slightly longer\n- TNC cases: 8 federal business days to resolve\n\n**98.8% of cases confirm automatically** without any issues."
+      },
+      {
+        heading: "Tentative Nonconfirmation (TNC): What It Means",
+        content: "If E-Verify finds a mismatch, you receive a TNC—but don't panic:\n\n**What Causes a TNC:**\n\n- Name mismatch (spelling, maiden name, changed name)\n- SSN entry error\n- Date of birth discrepancy\n- Recent name change not updated in SSA records\n- USCIS records not yet updated\n- Citizenship status recently changed\n\n**Your Rights During a TNC:**\n\n✓ **You can continue working** while contesting\n✓ **You cannot be fired** solely due to TNC\n✓ **You have 8 federal business days** to decide whether to contest\n✓ **You choose** whether to take action or not\n\n**If You Receive a TNC:**\n\n1. Employer notifies you in private\n2. You receive the Further Action Notice\n3. Decide: Contest or don't contest\n4. If contesting, you have 8 federal business days to contact SSA or DHS\n\n**Two Types of TNCs:**\n\n| Type | Cause | Where to Resolve |\n|------|-------|------------------|\n| SSA TNC | Name/SSN mismatch | Social Security Administration |\n| DHS TNC | Immigration record issue | Department of Homeland Security |\n\n**Important:** A TNC doesn't mean you did anything wrong. Records sometimes have errors, or recent changes haven't been processed."
+      },
+      {
+        heading: "How to Resolve a TNC",
+        content: "If you receive a Tentative Nonconfirmation and choose to contest:\n\n**Step 1: Review the Notice**\n\nYour employer gives you:\n- E-Verify Further Action Notice\n- Specific instructions for your TNC type\n- Referral letter (DHS cases)\n\n**Step 2: Decide to Contest**\n\n- You have 8 federal business days to decide\n- If you don't contest, employer can terminate\n- Contesting preserves your right to work while resolving\n\n**Step 3: Contact the Right Agency**\n\n**For SSA TNC (Social Security mismatch):**\n- Visit your local SSA office in person\n- Bring your Social Security card and photo ID\n- Explain the TNC situation\n- SSA will verify or correct records\n\n**For DHS TNC (Immigration records):**\n- Call DHS: 888-897-7781\n- Or visit [uscis.gov/everify](https://www.uscis.gov/everify)\n- Provide case number from referral letter\n- DHS will investigate and respond\n\n**Step 4: Resolution**\n\n- Agency resolves the TNC\n- E-Verify case is updated\n- Employer receives new result\n\n**Timeline:**\n\n| Step | Deadline |\n|------|----------|\n| Employer notifies you | Same day as TNC |\n| You decide to contest | 8 federal business days |\n| Contact SSA/DHS | 8 federal business days |\n| Agency resolves | Usually 10-20 business days |\n\n**During This Time:**\n- You continue working normally\n- Employer cannot take adverse action\n- Document everything"
+      },
+      {
+        heading: "Photo Matching in E-Verify",
+        content: "Some documents trigger photo matching in E-Verify:\n\n**Documents That Trigger Photo Match:**\n\n- U.S. Passport\n- Passport Card\n- Permanent Resident Card (Green Card)\n- Employment Authorization Document (EAD)\n\n**How Photo Match Works:**\n\n1. E-Verify retrieves photo from government database\n2. Employer compares database photo to:\n   - Photo on your document\n   - Your actual appearance\n3. Employer confirms match or reports mismatch\n\n**What If Photo Doesn't Match?**\n\nPossible reasons:\n- Old photo in database (significant appearance change)\n- Database hasn't been updated with new document photo\n- Document error\n\n**If Photo Match Fails:**\n\n- Employer will follow E-Verify procedures\n- May result in additional verification\n- DHS will be notified if needed\n- You may need to provide additional documentation\n\n**Tips for Photo Match Success:**\n\n- Use current, valid documents\n- Ensure your appearance is similar to document photo\n- If you've changed significantly (weight, hair, etc.), be prepared to explain"
+      },
+      {
+        heading: "E-Verify and Indeed Flex",
+        content: "Indeed Flex uses E-Verify—here's what to expect:\n\n**During Onboarding:**\n\n1. Download [Indeed Flex app](https://indeedflex.com/download-app/)\n2. Create profile and schedule verification interview\n3. Complete Section 1 of Form I-9 (SSN required)\n4. Present original I-9 documents\n5. Your information is submitted to E-Verify\n\n**After Submission:**\n\n- Most cases: Confirmed within 24-48 hours\n- You'll be notified when cleared to book shifts\n- If TNC occurs, Indeed Flex will contact you with next steps\n\n**If You Get a TNC:**\n\n- You can still work while contesting\n- Follow the resolution process above\n- Keep Indeed Flex informed of your progress\n- Provide documentation once resolved\n\n**Tips for Smooth Verification:**\n\n✓ Double-check your SSN before submitting\n✓ Use documents with current legal name\n✓ If name changed recently, update SSA first\n✓ Bring original, unexpired documents\n✓ Have SSN card ready (if using List B+C)\n\n**Ready to get started?**\n\n[Download Indeed Flex →](https://indeedflex.com/download-app/)\n\nSee our [I-9 Documents List](/career-hub/guides/i9-documents-list) to prepare."
+      },
+      {
+        heading: "E-Verify Self Check: Verify Yourself First",
+        content: "Before applying for jobs, you can check your own work authorization:\n\n**What Is Self Check?**\n\n- Free service from E-Verify\n- Check your own employment eligibility\n- Uses same databases as employers\n- Results are private—only you see them\n\n**Why Use Self Check:**\n\n- Find and fix problems before a job\n- Confirm your SSN and name match SSA records\n- Verify your immigration status is up to date\n- Peace of mind before starting job search\n\n**How to Use Self Check:**\n\n1. Visit [e-verify.gov/employees/self-check](https://www.e-verify.gov/employees/e-verify-overview/self-check)\n2. Create an account\n3. Enter your information (SSN, name, DOB)\n4. Answer identity verification questions\n5. Receive your result\n\n**Results:**\n\n| Result | Meaning |\n|--------|--------|\n| Employment Authorized | Records match, you're good |\n| Action Needed | Mismatch found—fix before applying for jobs |\n\n**If Action Needed:**\n\n- Contact SSA or DHS to correct records\n- Resolve issues before job applications\n- Re-run Self Check after corrections\n\n**Important Notes:**\n\n- Self Check is voluntary and private\n- Employers never see Self Check results\n- It's a tool for your preparation, not a requirement\n- Does not replace actual E-Verify during employment\n\n**Pro Tip:** Run Self Check if you've recently:\n- Changed your name\n- Updated immigration status\n- Received a new Green Card or EAD\n- Had any SSA or USCIS interactions"
+      }
+    ],
+    faqs: [
+      {
+        question: "What happens if I fail E-Verify?",
+        answer: "If you receive a Tentative Nonconfirmation (TNC), you can contest it within 8 federal business days and continue working while it's resolved. Most TNCs are resolved in your favor. If you receive a Final Nonconfirmation after contesting (or don't contest), the employer must terminate your employment. However, this is rare—98.8% of cases confirm automatically."
+      },
+      {
+        question: "Can I be fired because of E-Verify?",
+        answer: "An employer cannot fire you while you're contesting a TNC. If you receive a TNC and choose to contest, you have the right to continue working while resolving it. If you receive a Final Nonconfirmation (case not resolved in your favor), the employer is required to terminate employment. But this is uncommon."
+      },
+      {
+        question: "How long does E-Verify take?",
+        answer: "Most E-Verify cases are confirmed within 24-48 hours. If additional verification is needed (like photo matching), it may take longer. If you receive a TNC, you have 8 federal business days to contest, and resolution typically takes 10-20 additional business days depending on the agency workload."
+      },
+      {
+        question: "Does E-Verify check my criminal history or credit?",
+        answer: "No. E-Verify only confirms work authorization. It checks your SSN, name, and work eligibility against SSA and DHS databases. It does not check criminal records, credit history, education, previous employment, or anything else. Employers run separate background checks if they want that information."
+      },
+      {
+        question: "I'm a U.S. citizen—do I still go through E-Verify?",
+        answer: "Yes. All employees at E-Verify participating employers go through the process, regardless of citizenship. U.S. citizens' information is checked against SSA records. Most citizen cases confirm instantly. If there's a mismatch (usually a name or SSN issue), you'll receive a TNC and can resolve it with your local Social Security office."
+      },
+      {
+        question: "What is E-Verify Self Check and should I use it?",
+        answer: "Self Check is a free, voluntary service that lets you verify your own work authorization before applying for jobs. It uses the same databases as employers but results are private. It's helpful to catch and fix any record mismatches before you're in a new-hire situation. Visit e-verify.gov/employees/self-check to try it."
+      }
+    ],
+    relatedArticles: ["i9-complete-guide", "i9-documents-list", "work-authorization-types", "work-without-ssn"]
   }
 };

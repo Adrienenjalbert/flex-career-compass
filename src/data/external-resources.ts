@@ -1,4 +1,4 @@
-import { ExternalLink, Building2, FileText, GraduationCap, Briefcase, Heart, DollarSign, LucideIcon, Truck, UtensilsCrossed, ShoppingBag, Scale, BookOpen, Shield, Warehouse, Users, Sun, Calendar, Receipt } from "lucide-react";
+import { ExternalLink, Building2, FileText, GraduationCap, Briefcase, Heart, DollarSign, LucideIcon, Truck, UtensilsCrossed, ShoppingBag, Scale, BookOpen, Shield, Warehouse, Users, Sun, Calendar, Receipt, FileCheck, BadgeCheck, IdCard } from "lucide-react";
 
 export interface ExternalResource {
   name: string;
@@ -672,8 +672,87 @@ export const resourceCategories: ResourceCategory[] = [
   }
 ];
 
+// ============================================
+// EMPLOYMENT ELIGIBILITY RESOURCES
+// ============================================
+
+export const employmentEligibilityResources: ExternalResource[] = [
+  {
+    name: "USCIS I-9 Central",
+    url: "https://www.uscis.gov/i-9-central",
+    description: "Official USCIS resource for I-9 forms, instructions, and acceptable documents list.",
+    icon: FileCheck
+  },
+  {
+    name: "Form I-9 Download",
+    url: "https://www.uscis.gov/i-9",
+    description: "Download the current Form I-9 and review detailed instructions from USCIS.",
+    icon: FileText
+  },
+  {
+    name: "E-Verify Self Check",
+    url: "https://www.e-verify.gov/employees/e-verify-overview/self-check",
+    description: "Free service to check your own work authorization before starting a new job.",
+    icon: BadgeCheck
+  },
+  {
+    name: "Social Security Number Application",
+    url: "https://www.ssa.gov/number-card/request-number-first-time",
+    description: "Apply for your Social Security number online or find your local SSA office.",
+    icon: IdCard
+  },
+  {
+    name: "ITIN Application (Form W-7)",
+    url: "https://www.irs.gov/individuals/individual-taxpayer-identification-number",
+    description: "Apply for an Individual Taxpayer Identification Number if you don't qualify for an SSN.",
+    icon: FileText
+  },
+  {
+    name: "I-9 Acceptable Documents",
+    url: "https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents",
+    description: "Official list of acceptable documents for Form I-9 verification.",
+    icon: FileCheck
+  },
+  {
+    name: "Handbook for Employers (M-274)",
+    url: "https://www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274",
+    description: "Comprehensive employer guide—useful for understanding what employers should do.",
+    icon: BookOpen
+  },
+  {
+    name: "Immigrant and Employee Rights",
+    url: "https://www.justice.gov/crt/immigrant-and-employee-rights-section",
+    description: "Report discrimination in employment verification. Hotline: 1-800-255-7688.",
+    icon: Scale
+  },
+  {
+    name: "E-Verify Overview for Employees",
+    url: "https://www.e-verify.gov/employees/e-verify-overview",
+    description: "Learn how E-Verify works and what to do if you receive a Tentative Nonconfirmation.",
+    icon: BadgeCheck
+  },
+  {
+    name: "Find Your Local SSA Office",
+    url: "https://www.ssa.gov/locator/",
+    description: "Locate the nearest Social Security Administration office for in-person services.",
+    icon: Building2
+  },
+  {
+    name: "U.S. Passport Application",
+    url: "https://travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html",
+    description: "Apply for a U.S. passport—the easiest single document for I-9 verification.",
+    icon: IdCard
+  },
+  {
+    name: "USCIS Case Status Check",
+    url: "https://egov.uscis.gov/casestatus/landing.do",
+    description: "Check the status of your pending immigration case or application.",
+    icon: FileCheck
+  }
+];
+
 // Helper function to get resources by category
-export const getResourcesByCategory = (category: 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'seasonal-warehouse' | 'seasonal-events' | 'seasonal-tax' | 'seasonal-summer'): ExternalResource[] => {
+export const getResourcesByCategory = (category: 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'seasonal-warehouse' | 'seasonal-events' | 'seasonal-tax' | 'seasonal-summer' | 'employment-eligibility'): ExternalResource[] => {
   switch (category) {
     case 'government':
       return governmentResources;
@@ -703,6 +782,8 @@ export const getResourcesByCategory = (category: 'government' | 'tax' | 'healthc
       return taxSeasonResources;
     case 'seasonal-summer':
       return summerHospitalityResources;
+    case 'employment-eligibility':
+      return employmentEligibilityResources;
     default:
       return [];
   }

@@ -19,7 +19,13 @@ import { certifications, getCertificationsByCategory } from "@/data/certificatio
 import { Clock, ArrowLeft, ArrowRight, CheckCircle2, Award, ExternalLink } from "lucide-react";
 
 // Helper functions to determine resource category based on article slug
-const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'seasonal-warehouse' | 'seasonal-events' | 'seasonal-tax' | 'seasonal-summer' | 'all' => {
+const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' | 'certifications' | 'financial' | 'warehouse' | 'hospitality' | 'retail' | 'rights' | 'learning' | 'seasonal-warehouse' | 'seasonal-events' | 'seasonal-tax' | 'seasonal-summer' | 'employment-eligibility' | 'all' => {
+  // Employment eligibility articles
+  if (slug === 'i9-complete-guide' || slug === 'i9-documents-list' || slug === 'first-job-america-guide' || 
+      slug === 'work-authorization-types' || slug === 'work-without-ssn' || slug === 'e-verify-explained') {
+    return 'employment-eligibility';
+  }
+  
   // Seasonal hiring articles
   if (slug === 'holiday-warehouse-guide' || slug === 'black-friday-hiring') {
     return 'seasonal-warehouse';
@@ -63,6 +69,12 @@ const getResourceCategory = (slug: string): 'government' | 'tax' | 'healthcare' 
 };
 
 const getResourceTitle = (slug: string): string => {
+  // Employment eligibility articles
+  if (slug === 'i9-complete-guide' || slug === 'i9-documents-list' || slug === 'first-job-america-guide' || 
+      slug === 'work-authorization-types' || slug === 'work-without-ssn' || slug === 'e-verify-explained') {
+    return 'Employment Eligibility Resources';
+  }
+  
   // Seasonal articles
   if (slug === 'holiday-warehouse-guide' || slug === 'black-friday-hiring') {
     return 'Holiday Season Hiring Resources';
@@ -103,6 +115,12 @@ const getResourceTitle = (slug: string): string => {
 };
 
 const getResourceDescription = (slug: string): string => {
+  // Employment eligibility articles
+  if (slug === 'i9-complete-guide' || slug === 'i9-documents-list' || slug === 'first-job-america-guide' || 
+      slug === 'work-authorization-types' || slug === 'work-without-ssn' || slug === 'e-verify-explained') {
+    return 'Official government resources for I-9, SSN, work permits, and employment verification';
+  }
+  
   // Seasonal articles
   if (slug === 'holiday-warehouse-guide' || slug === 'black-friday-hiring') {
     return 'Apply directly to major employers hiring 100,000+ workers for holiday peak season';
