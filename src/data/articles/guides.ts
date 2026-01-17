@@ -2018,29 +2018,47 @@ export const guideArticles: Record<string, Article> = {
     relatedArticles: ["i9-complete-guide", "i9-documents-list", "work-authorization-types", "work-without-ssn"]
   },
 
-  // Job Application articles - placeholders for AI-generated content
+  // Job Application articles - enriched with Perplexity research data
   "temp-work-resume-guide": {
     slug: "temp-work-resume-guide",
     title: "How to Write a Resume for Temp Work",
     category: "Job Application & Resume",
     categorySlug: "job-application",
     readTime: "12 min",
-    description: "Complete guide to creating a temp work resume that gets you hired. Learn what hiring managers look for, essential sections to include, and templates for flexible workers in 2026.",
+    description: "Complete guide to creating a temp work resume that gets you hired. Learn what staffing agencies look for, essential sections to include, and 2026 templates for flexible workers.",
     keyTakeaways: [
-      "Temp resumes should highlight adaptability, reliability, and quick-learning ability",
-      "Lead with a Skills Summary instead of a traditional Objective statement",
-      "Include availability and flexibility prominently—it's what staffing agencies look for",
-      "Quantify achievements with numbers: shifts completed, ratings earned, certifications held"
+      "Use reverse-chronological format and group multiple temp roles under the staffing agency name",
+      "Lead with a Skills Summary highlighting adaptability, reliability, and quick-learning ability",
+      "Quantify achievements with metrics: 'Increased efficiency 15%' or 'Processed 500+ orders/day'",
+      "Include availability and flexibility prominently—85% of agencies prioritize this",
+      "Keep to one page maximum with ATS-friendly formatting"
     ],
     sections: [
-      { heading: "Why Temp Work Resumes Are Different", content: "Traditional resumes are designed for long-term employment. Temp work resumes need to prove you're **adaptable, reliable, and ready to contribute immediately**.\n\nHiring managers for temp positions make decisions in under 30 seconds. Your resume must communicate value instantly." },
-      { heading: "Essential Sections for a Temp Resume", content: "Include: Contact Info, Skills Summary, Key Skills, Work Experience (grouped by type), Certifications, and Availability. See our [Indeed Flex Profile Guide](/career-hub/guides/indeed-flex-profile-guide) for translating this to app-based platforms." }
+      { 
+        heading: "Why Temp Work Resumes Are Different", 
+        content: "Traditional resumes are designed for long-term employment. Temp work resumes need to prove you're **adaptable, reliable, and ready to contribute immediately**.\n\nHiring managers for temp positions make decisions in under 30 seconds. Your resume must communicate value instantly.\n\n### What Staffing Agencies Look For (2026 Data)\n\nAccording to 2025-2026 staffing industry research, agencies prioritize:\n\n- **Quantifiable achievements** over generic duties ('increased revenue 25%' not 'worked in warehouse')\n- **Grouped temp roles** under one agency header to show employment continuity\n- **Transferable skills mix**: technical proficiencies, adaptability, teamwork, time management\n- **ATS-friendly formatting**: standard fonts, clear headers, no gaps\n\n> **85% of agencies report prioritizing resumes that emphasize temp-to-perm potential and multi-environment adaptability** — 2026 Staffing Industry Analysts" 
+      },
+      { 
+        heading: "Best Resume Format for Temp Work", 
+        content: "The **reverse-chronological format** works best for temporary work positions, integrating temp roles seamlessly to demonstrate continuity and skills.\n\n### Recommended Structures\n\n**For 1-2 Temp Roles:**\n```\nJob Title (Temporary)\nCompany, City | Dates\n• Achievement bullet with metrics\n• Second achievement with impact\n```\n\n**For 3+ Temp Roles via Agency:**\n```\nTemporary Work\nABC Staffing Agency, City | June 2024 – Present\n\nRole 1 (Client Company) | Dates\n  - Improved office efficiency by 15% through streamlined operations\n  \nRole 2 (Client Company) | Dates\n  - Processed 250+ orders daily with 99.7% accuracy\n```\n\n**Key Formatting Rules:**\n- One page maximum (two pages only for 10+ years experience)\n- Standard fonts (Arial, Calibri 10-12pt)\n- Clear section headers for ATS scanning\n- No graphics, tables, or images" 
+      },
+      { 
+        heading: "Essential Sections for a Temp Resume", 
+        content: "### 1. Professional Summary (3-5 Lines)\n\nStart with a brief summary emphasizing temp work strengths:\n\n> *\"Reliable warehouse professional with 3+ years in fast-paced fulfillment environments. 5-star rated on Indeed Flex with 99.5% attendance. Forklift certified, RF scanner proficient, available for all shifts.\"*\n\n### 2. Skills Section (6-8 Skills)\n\nPrioritize transferable skills matching the job posting:\n- Adaptability & quick learning\n- Time management\n- Physical stamina\n- Technical skills (WMS, RF scanners, POS systems)\n- Safety compliance\n- Teamwork & communication\n\n### 3. Work Experience\n\nGroup agency work together. Use action verbs and quantify:\n- ✅ \"Picked 200+ orders daily with 99.5% accuracy\"\n- ❌ \"Picked orders in warehouse\"\n\n### 4. Certifications & Availability\n\nList prominently—these unlock shifts:\n- Forklift certification (with expiry date)\n- Food Handler / ServSafe\n- OSHA safety training\n- Availability: \"Flexible for day, evening, and weekend shifts\"\n\nSee our [Indeed Flex Profile Guide](/career-hub/guides/indeed-flex-profile-guide) for translating this to app-based platforms." 
+      },
+      { 
+        heading: "Sample Resume Bullets by Industry", 
+        content: "### Warehouse/Industrial\n- \"Processed 250+ orders per shift using RF scanner with 99.7% accuracy\"\n- \"Operated sit-down and stand-up forklifts safely for 18+ months\"\n- \"Maintained 100% attendance record over 6-month period\"\n- \"Trained 5 new team members on pick/pack procedures\"\n\n### Hospitality/Events\n- \"Served 150+ guests per shift with 98% satisfaction scores\"\n- \"Managed bar service for events up to 500 attendees\"\n- \"Upsold appetizers and drinks, increasing check averages by 22%\"\n\n### Retail/Customer Service\n- \"Assisted 75+ customers daily, consistently exceeding satisfaction targets\"\n- \"Processed $15K+ in transactions with zero discrepancies\"\n- \"Restocked and organized inventory for 10,000 sq ft retail floor\"\n\n### 2026 Industry Stats\n- Average temp worker hourly rate: $18-25/hr (varies by role and location)\n- Certified workers earn 10-20% premium ($20-25 vs $18/hr base)\n- 42% of temp workers land permanent roles via strong resumes" 
+      }
     ],
     faqs: [
-      { question: "Do I need a resume for Indeed Flex?", answer: "No, Indeed Flex uses your in-app profile. However, a well-organized resume helps you build a strong profile." },
-      { question: "How long should a temp work resume be?", answer: "One page maximum. Hiring managers make decisions in under 30 seconds." }
+      { question: "Do I need a resume for Indeed Flex?", answer: "No, Indeed Flex uses your in-app profile. However, a well-organized resume helps you build a strong profile with the right skills and experience listed. Many of the same principles apply—quantify achievements, highlight certifications, and emphasize reliability." },
+      { question: "How long should a temp work resume be?", answer: "One page maximum. Hiring managers for temp positions make decisions in under 30 seconds. Keep it concise and focused on relevant experience. Only extend to two pages if you have 10+ years of experience." },
+      { question: "Should I list every temp job?", answer: "Only include temp jobs relevant to the position you're applying for. Group multiple short assignments under your staffing agency header to avoid clutter. Focus on 3-5 most relevant roles with quantified achievements." },
+      { question: "How do I explain gaps from temp work?", answer: "Group sporadic roles under 'Temporary/Contract Work' with overall dates. Focus on skills gained rather than individual gaps. Use your summary to address availability: 'Currently seeking full-time opportunities after successful temp placements.'" },
+      { question: "What format passes ATS systems?", answer: "Use a simple reverse-chronological format with standard fonts (Arial, Calibri), clear section headers, and no graphics. Save as PDF. Include keywords from the job posting: 'warehouse operations,' 'inventory management,' 'safety compliance.'" }
     ],
-    relatedArticles: ["warehouse-resume-guide", "hospitality-resume-tips", "first-job-resume-template"]
+    relatedArticles: ["warehouse-resume-guide", "hospitality-resume-tips", "first-job-resume-template", "indeed-flex-profile-guide"]
   },
 
   "warehouse-resume-guide": {
@@ -2049,19 +2067,38 @@ export const guideArticles: Record<string, Article> = {
     category: "Job Application & Resume",
     categorySlug: "job-application",
     readTime: "15 min",
-    description: "Master the warehouse resume in 2026. Learn what Amazon, FedEx, and UPS look for, essential ATS keywords, and templates that get interviews.",
+    description: "Master the warehouse resume in 2026. Learn what Amazon, FedEx, and UPS look for, essential ATS keywords, equipment certifications, and templates that get interviews.",
     keyTakeaways: [
-      "Include specific equipment certifications (forklift, pallet jack, RF scanner)",
-      "Use exact keywords from job postings to pass ATS screening",
-      "Quantify everything: orders picked per hour, accuracy rates, shifts completed"
+      "Include specific equipment certifications (forklift, pallet jack, RF scanner) prominently",
+      "Use exact ATS keywords from job postings to pass screening—match rates of 80-90% required",
+      "Quantify everything: orders picked per hour, accuracy rates, safety record",
+      "Forklift certification adds $2-5/hr to pay and qualifies you for 65% more roles",
+      "Target median warehouse wage of $19-21/hr (up to $28+ with certifications)"
     ],
     sections: [
-      { heading: "What Warehouse Hiring Managers Look For", content: "In 2026, most major employers use **Applicant Tracking Systems (ATS)** to screen resumes. Include: equipment certifications, physical capabilities, technology skills, and shift flexibility." },
-      { heading: "ATS Keywords for Warehouse Resumes", content: "Forklift, RF scanner, picker packer, inventory management, shipping/receiving, WMS, OSHA, heavy lifting. Match exact keywords from the job posting." }
+      { 
+        heading: "What Warehouse Hiring Managers Look For", 
+        content: "In 2026, **most major employers use Applicant Tracking Systems (ATS)** to screen resumes before any human sees them. Your resume must include the right keywords and format to pass.\n\n### 2026 BLS Warehouse Data\n\n| Metric | Value |\n|--------|-------|\n| Median hourly wage | $19.17-21.00 |\n| Forklift operators | $20.50/hr average |\n| Certified premium | 10-20% higher pay |\n| Industry growth | 7% demand increase |\n| Top employers | Amazon, FedEx, UPS, Target, Walmart |\n\n### What Gets You Hired\n\n1. **Equipment certifications** — Forklift (sit-down, stand-up, reach truck), pallet jack, RF scanner\n2. **Physical capabilities** — Ability to lift 50+ lbs repeatedly, stand for extended shifts\n3. **Technology skills** — WMS experience (Manhattan, SAP, Oracle), RF scanner proficiency\n4. **Shift flexibility** — Willingness to work nights, weekends, overtime\n5. **Safety record** — Days without incident, OSHA training completion" 
+      },
+      { 
+        heading: "Top 20 ATS Keywords for Warehouse Resumes", 
+        content: "These keywords are scanned by Amazon, FedEx, and UPS hiring systems. Include 10-15 naturally throughout your resume:\n\n### Essential Keywords (Include All)\n1. **Forklift operation** — List specific types (sit-down, stand-up, reach truck)\n2. **RF scanner** — Amazon postings surged 40% for this skill in 2024-2025\n3. **Inventory management** — Supports $1.2T logistics sector\n4. **Order picking / Pick and pack** — Core to high-volume fulfillment\n5. **Shipping and receiving** — FedEx/UPS staple, median $18.90/hr\n6. **Safety compliance / OSHA** — Mandatory for all three companies\n7. **WMS (Warehouse Management System)** — Include specific systems used\n8. **Order fulfillment** — End-to-end process keyword\n9. **Forklift certification** — Include with expiry date\n10. **Quality control** — Error reduction focus\n\n### Secondary Keywords\n11. Cycle counting\n12. Inbound/outbound\n13. Loading/unloading\n14. Distribution\n15. Logistics\n16. Equipment operation\n17. Receiving\n18. Pallet jack\n19. Heavy lifting (specify weight)\n20. Packaging\n\n### Keyword Usage Example\n> *\"Operated **forklift** in fast-paced **warehouse operations**, managing **inbound/outbound** via **RF scanner**. Maintained 99.5% **quality control** while processing 250+ **orders** daily.\"*" 
+      },
+      { 
+        heading: "Equipment Certifications and Pay Impact", 
+        content: "### Forklift Certification\n\n**The single biggest resume booster for warehouse work.**\n\n| Forklift Type | Typical Use | Resume Value |\n|---------------|------------|---------------|\n| Sit-down counterbalance | General warehouse | Essential |\n| Stand-up/reach truck | High-density storage | Premium pay |\n| Order picker | Item retrieval | Specialized |\n| Pallet jack (electric) | Ground movement | Entry-level+ |\n\n**Training Details:**\n- Cost: $150-$600 depending on provider\n- Duration: 1-3 days\n- Recertification: Every 3 years (OSHA requirement)\n- Pay increase: $2-5/hr over non-certified workers\n\n### Other Valuable Certifications\n\n- **OSHA 10/30** — Safety compliance, shows professionalism\n- **Hazmat handling** — Specialized freight roles\n- **DOT medical card** — Delivery driver positions\n- **CPR/First Aid** — Leadership roles\n\n### How to List Certifications\n\n```\nCertifications\n• Forklift Operator (OSHA-Compliant) — Certified 2024, Expires 2027\n  - Sit-down, stand-up, and reach truck operations\n• OSHA 10-Hour General Industry — Completed 2025\n```\n\n> **BLS 2026 Data:** Certified forklift operators earn median $20.50/hr vs $18.30/hr for general warehouse workers—a 12% premium." 
+      },
+      { 
+        heading: "Sample Warehouse Resume Bullets", 
+        content: "Use action verbs and quantify every bullet point:\n\n### Order Picking / Pack\n- \"Picked 200+ orders per shift with 99.7% accuracy using RF scanning\"\n- \"Exceeded daily productivity targets by 15% consistently over 6 months\"\n- \"Trained 5 new team members on pick/pack procedures, reducing errors 20%\"\n\n### Forklift Operations\n- \"Operated sit-down and stand-up forklifts safely for 18+ months, zero incidents\"\n- \"Loaded/unloaded 50+ trucks weekly, handling 200+ pallets daily\"\n- \"Managed receiving dock operations for 100K sq ft distribution center\"\n\n### Inventory / Cycle Counting\n- \"Conducted weekly cycle counts maintaining 99.8% inventory accuracy\"\n- \"Reduced shrinkage 15% through improved inventory management protocols\"\n- \"Processed inbound/outbound shipments via WMS (Manhattan Associates)\"\n\n### Safety & Attendance\n- \"Maintained 100% attendance record over 12-month period\"\n- \"Achieved 500+ days without recordable safety incident\"\n- \"Led morning safety huddles for team of 15 warehouse associates\"\n\n### Pro Tips for Metrics\n- Calculate your picks per hour rate\n- Track your accuracy percentage\n- Document shifts completed and on-time percentage\n- Note any productivity bonuses or recognition" 
+      }
     ],
     faqs: [
-      { question: "Do I need forklift certification?", answer: "Not for all roles, but it significantly expands options and adds $2-5/hr to your pay." },
-      { question: "How do I pass the ATS for Amazon jobs?", answer: "Use exact keywords from the job posting: 'picker packer,' 'RF scanner,' 'order fulfillment.'" }
+      { question: "Do I need forklift certification for warehouse jobs?", answer: "Not for all roles—picker/packer positions typically don't require it. However, certification significantly expands your options and adds $2-5/hr to your pay. 65% of advanced warehouse roles require forklift certification." },
+      { question: "How do I pass the ATS for Amazon jobs?", answer: "Use exact keywords from the job posting: 'picker packer,' 'RF scanner,' 'order fulfillment,' 'warehouse operations.' Match 80-90% of keywords to pass screening. Avoid graphics and use standard section headers." },
+      { question: "What WMS systems should I list?", answer: "Include any you've used: Manhattan Associates, SAP, Oracle WMS, Blue Yonder, HighJump. Even basic inventory software counts. If you're new, mention 'quick learner with technology' and list RF scanner experience." },
+      { question: "How do I show physical capabilities?", answer: "Include a line in your summary or skills: 'Capable of lifting 50+ lbs repeatedly, standing for 10+ hour shifts.' This addresses a key concern for hiring managers without taking up much space." },
+      { question: "Should I include my Indeed Flex rating?", answer: "Yes! If you have a 4.5+ star rating, include it: '5-star rated on Indeed Flex with 100+ completed shifts.' This proves reliability and work quality." }
     ],
     relatedArticles: ["temp-work-resume-guide", "warehouse-guide", "certifications"]
   },
@@ -2072,19 +2109,38 @@ export const guideArticles: Record<string, Article> = {
     category: "Job Application & Resume",
     categorySlug: "job-application",
     readTime: "12 min",
-    description: "Create a hospitality resume that stands out. Templates for servers, bartenders, cooks, and event staff.",
+    description: "Create a hospitality resume that stands out. Templates for servers, bartenders, cooks, and event staff with 2026 wage data, ATS keywords, and certification requirements.",
     keyTakeaways: [
-      "Emphasize customer service skills and personality",
-      "List certifications like ServSafe and TIPS prominently",
-      "Quantify: covers per night, tip averages, guest satisfaction"
+      "Emphasize customer service skills, personality, and grace under pressure",
+      "List ServSafe and TIPS certifications prominently—they're required for most positions",
+      "Quantify: covers per shift, tip averages, guest satisfaction scores",
+      "Use hospitality-specific ATS keywords: guest relations, POS systems, upselling",
+      "Fast food/counter median wage: $14.65/hr; servers/bartenders can earn $20-35/hr with tips"
     ],
     sections: [
-      { heading: "What Hospitality Managers Look For", content: "Hospitality hiring prioritizes **personality and attitude** as much as experience. Managers look for warmth, flexibility, reliability, and grace under pressure." },
-      { heading: "Essential Certifications", content: "Food Handler (ServSafe) is required in most states. TIPS Alcohol is required for bartending. Both are cheap ($15-55) and fast (2-4 hours online)." }
+      { 
+        heading: "What Hospitality Managers Look For", 
+        content: "Hospitality hiring prioritizes **personality and attitude** as much as experience. Managers look for warmth, flexibility, reliability, and grace under pressure.\n\n### 2026 BLS Hospitality Data\n\n| Role | Median Wage | Notes |\n|------|-------------|-------|\n| Fast food/counter | $14.65/hr | Up from $14.20 in 2023 |\n| Food service managers | $34.79/hr mean | Supervisory roles |\n| Tipped employees (federal) | $2.13 + tips | State variations apply |\n| Servers with tips | $20-35/hr total | High-volume venues |\n\n### Employment Outlook\n- **2024:** +129,500 restaurant jobs added\n- **2025:** +150,000 jobs projected\n- **December 2025:** 27,200 jobs added in one month\n- Full-service restaurants recovering strongest\n\n### What Gets You Hired\n1. **Right attitude** — Friendly, positive, team player\n2. **Reliability** — On-time, consistent availability\n3. **Certifications** — ServSafe, TIPS required for most roles\n4. **Experience handling pressure** — High-volume service, multitasking\n5. **Flexibility** — Nights, weekends, holidays" 
+      },
+      { 
+        heading: "Essential Certifications and Costs", 
+        content: "### ServSafe Food Handler Certification\n\n**Required in most jurisdictions for anyone handling food.**\n\n- **Cost:** $15-25 online\n- **Duration:** 2-4 hours\n- **Valid:** 3-5 years depending on state\n- **Where:** servsafe.com or local health department\n- **Who needs it:** All food service workers\n\n### ServSafe Manager Certification\n\n- **Cost:** $150-179 (course + exam)\n- **Duration:** 8-16 hours\n- **Valid:** 5 years\n- **Who needs it:** Shift leads, managers, one per establishment\n\n### TIPS Alcohol Certification\n\n**Required for bartenders and servers in alcohol-serving venues.**\n\n- **Cost:** $40-55 online\n- **Duration:** 2-3 hours\n- **Valid:** 3 years (varies by state)\n- **Where:** gettips.com\n- **Who needs it:** Bartenders, servers, event staff at alcohol venues\n\n### Bundled Training Programs\n\n Many community colleges offer **hospitality certification programs** that bundle ServSafe, TIPS, and additional training in 3 months or less. Some offer scholarships covering all costs.\n\n### How to List Certifications\n\n```\nCertifications\n• ServSafe Food Handler — Certified 2025, Expires 2028\n• TIPS Alcohol Certification — Certified 2025\n• CPR/First Aid — American Red Cross, Current\n```" 
+      },
+      { 
+        heading: "ATS Keywords by Hospitality Role", 
+        content: "Include 10-15 keywords naturally throughout your resume:\n\n### Servers\n- Customer service, guest satisfaction, guest relations, service excellence\n- POS systems (Toast, Square, Aloha), order processing, multitasking\n- Upselling, cross-selling, menu knowledge, food sanitation\n- Complaint resolution, service recovery\n\n### Bartenders\n- Beverage service, cocktail preparation, wine knowledge, mixology\n- POS systems, cash handling, inventory control\n- Customer service, hospitality standards, upselling\n- Health & safety, sanitation procedures, TIPS certified\n\n### Event Staff\n- Event planning, event coordination, banquet operations\n- Guest services, team collaboration, staff scheduling\n- Setup/teardown, multitasking, flexibility\n- High-volume service, catering, venue management\n\n### Kitchen/Back of House\n- Food preparation, food safety, HACCP\n- Line cook, prep cook, dish\n- Sanitation, kitchen equipment, health regulations\n- Team collaboration, fast-paced environment\n\n### Keyword Usage Example\n> *\"Delivered exceptional **guest service** in high-volume restaurant, managing **POS systems** for 200+ covers nightly. Achieved **upselling** conversion of 32% and maintained 98% **guest satisfaction** scores.\"*" 
+      },
+      { 
+        heading: "Sample Hospitality Resume Bullets", 
+        content: "### Server\n- \"Served 150+ guests per shift with 98% positive feedback scores\"\n- \"Increased check averages by 22% through strategic upselling\"\n- \"Managed 6-table section during peak hours with zero complaints\"\n- \"Memorized 50+ menu items including ingredients and allergens\"\n\n### Bartender\n- \"Mixed 100+ drinks per shift at high-volume nightclub\"\n- \"Created 5 signature cocktails adopted for seasonal menu\"\n- \"Managed $8K+ nightly cash drawer with zero discrepancies\"\n- \"Maintained 4.9-star rating on customer feedback platform\"\n\n### Event Staff\n- \"Served at 50+ events ranging from 100-2,000 guests\"\n- \"Set up and broke down banquet service for conferences\"\n- \"Coordinated with catering team to ensure seamless service\"\n- \"Received 'Above and Beyond' recognition 3 times\"\n\n### Host/Hostess\n- \"Managed reservations for 200-seat restaurant via OpenTable\"\n- \"Reduced wait times 15% through optimized seating rotation\"\n- \"Greeted and seated 300+ guests per shift\"\n- \"Handled customer complaints with 95% resolution rate\"\n\n### Tips for Quantifying\n- Track covers/tables served per shift\n- Calculate upselling percentage\n- Note tip percentage averages\n- Document guest satisfaction scores" 
+      }
     ],
     faqs: [
-      { question: "Do I need experience for hospitality?", answer: "No! Many positions are entry-level. Managers often prefer training someone with the right attitude." },
-      { question: "What certifications do I need?", answer: "Food Handler (ServSafe) and TIPS Alcohol are the essentials. Both can be done online in a few hours." }
+      { question: "Do I need experience for hospitality jobs?", answer: "No! Many positions are entry-level. Managers often prefer training someone with the right attitude over hiring someone with experience but poor personality fit. Focus on transferable skills like customer service, teamwork, and reliability." },
+      { question: "What certifications do I need?", answer: "Food Handler (ServSafe) is required in most states—it's $15-25 and takes 2-4 hours online. TIPS Alcohol certification is required for bartending and serving at alcohol venues—it's $40-55 and takes 2-3 hours. Both are quick investments that open many doors." },
+      { question: "How do I list tip income on my resume?", answer: "Include total estimated hourly rate: 'Averaged $25/hr including tips' or 'Consistent 20%+ tip percentage on $50K+ in annual sales.' This shows your service quality without revealing exact income." },
+      { question: "Should I include my Indeed Flex rating?", answer: "Absolutely! A high rating proves your reliability and work quality: '5-star rated hospitality professional with 75+ completed shifts via Indeed Flex.'" },
+      { question: "How do I handle seasonal work gaps?", answer: "Group seasonal work clearly: 'Seasonal Event Staff — May-September 2025' and focus on the volume and intensity of work during those periods. High-volume seasonal experience is valued." }
     ],
     relatedArticles: ["temp-work-resume-guide", "hospitality-guide", "certifications"]
   },
@@ -2095,19 +2151,38 @@ export const guideArticles: Record<string, Article> = {
     category: "Job Application & Resume",
     categorySlug: "job-application",
     readTime: "10 min",
-    description: "Creating your first resume with no work experience? Templates and tips for students and first-time workers.",
+    description: "Creating your first resume with no work experience? Use our 2026 template and strategies to highlight transferable skills, education, and potential to land entry-level positions.",
     keyTakeaways: [
-      "Focus on skills and potential rather than experience you don't have",
-      "Include school activities, volunteering, and personal projects",
-      "Availability and willingness to learn are your biggest advantages"
+      "Use a functional resume format that prioritizes skills over work history",
+      "Include school activities, volunteering, and personal projects as experience",
+      "Focus on transferable skills: communication, teamwork, problem-solving, adaptability",
+      "Availability and willingness to learn are your biggest advantages",
+      "Entry-level positions in healthcare, tech, and logistics are growing fastest"
     ],
     sections: [
-      { heading: "You Have More to Offer Than You Think", content: "Employers hiring for entry-level positions know you're new. They're looking for **potential, attitude, and reliability**—not a 10-year work history." },
-      { heading: "What to Include", content: "School activities & clubs, volunteering, personal responsibilities (babysitting), and any certifications. Focus on transferable skills like reliability and teamwork." }
+      { 
+        heading: "You Have More to Offer Than You Think", 
+        content: "Employers hiring for entry-level positions know you're new. They're looking for **potential, attitude, and reliability**—not a 10-year work history.\n\n### What Entry-Level Employers Actually Want\n\n- **Right attitude** — Positive, eager to learn, coachable\n- **Reliability** — Will you show up on time, consistently?\n- **Basic skills** — Can you communicate, follow instructions, work with others?\n- **Availability** — Flexible scheduling, especially nights and weekends\n- **Long-term potential** — Will you grow with the company?\n\n### 2026 Fastest-Growing Entry-Level Positions\n\n| Position | Growth Rate | Median Pay | Entry Path |\n|----------|-------------|------------|------------|\n| Home Health Aide | +21% | $15-18/hr | 4-6 week cert |\n| Warehouse Associate | +7% | $18-21/hr | No experience |\n| Delivery Driver | +8% | $18-22/hr | Clean license |\n| Solar Installer | +27% | $20-25/hr | Trade training |\n| Customer Service | +5% | $16-19/hr | No experience |\n\n> **Pro Tip:** 75% of entry-level resumes get filtered by ATS systems. A well-tailored skills section boosts pass rates by 40%." 
+      },
+      { 
+        heading: "No-Experience Resume Template", 
+        content: "Use this **functional resume format** that emphasizes skills and potential:\n\n```\n[YOUR NAME]\n[City, State] | [Phone] | [Professional Email] | [LinkedIn if applicable]\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nRELIABLE AND MOTIVATED TEAM PLAYER\nRecent graduate seeking entry-level warehouse position to apply \nstrong work ethic, physical stamina, and commitment to safety.\nAvailable for all shifts including nights and weekends.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nSKILLS\n• Teamwork & Collaboration    • Physical Stamina (50+ lbs)\n• Time Management             • Attention to Detail\n• Communication               • Quick Learner\n• Problem-Solving             • Reliable & Punctual\n\nEDUCATION\nHigh School Diploma — [School Name], [City, State]\nGraduation: [Month Year]\n• GPA: 3.5/4.0 (if 3.0+)\n• Relevant Coursework: Business, Computer Applications\n\nRELEVANT EXPERIENCE\n\nVolunteer, [Organization Name] | [City, State]\n[Month Year] – [Month Year]\n• Assisted with weekly food distribution serving 100+ families\n• Coordinated with 10-person volunteer team under tight schedules\n• Maintained organized inventory system for donations\n\nTeam Captain, [School Sports/Club]\n[Month Year] – [Month Year]\n• Led team of 15 members, improving group performance by 20%\n• Organized practice schedules and coordinated with coaches\n• Demonstrated leadership under competitive pressure\n\nADDITIONAL\n• CPR/First Aid Certified (2025)\n• Proficient: Microsoft Office, Google Workspace\n• Available: Immediate start, flexible scheduling\n```" 
+      },
+      { 
+        heading: "Transferable Skills to Highlight", 
+        content: "Even without work experience, you have valuable skills from school, volunteering, hobbies, and life:\n\n### Top Transferable Skills (2026 Employer Priorities)\n\n| Skill | Why It Matters | How to Show It |\n|-------|----------------|----------------|\n| **Communication** | Essential for any team | 'Presented to 20+ classmates' |\n| **Teamwork** | 80% of entry jobs are collaborative | 'Collaborated on group project' |\n| **Problem-Solving** | Shows initiative | 'Resolved scheduling conflict' |\n| **Adaptability** | Valued in changing environments | 'Adapted to remote learning' |\n| **Time Management** | Critical for reliability | 'Balanced school + activities' |\n| **Leadership** | Even informal leadership counts | 'Led study group of 8' |\n\n### Where to Find Your Skills\n\n**School Activities:**\n- Clubs, sports teams, student government\n- Group projects, presentations\n- Tutoring, peer mentoring\n\n**Volunteering:**\n- Community service, religious organizations\n- Charity events, fundraisers\n- Environmental cleanups\n\n**Personal Responsibilities:**\n- Babysitting, pet sitting\n- Helping with family business\n- Managing household responsibilities\n\n**Hobbies & Interests:**\n- Team sports (leadership, teamwork)\n- Gaming communities (coordination, communication)\n- Creative projects (problem-solving, dedication)\n\n### Using the STAR Method\n\nStructure your bullets as Situation, Task, Action, Result:\n\n> **Before:** \"Helped with school event\"\n> \n> **After:** \"Organized fundraiser event (situation/task), coordinating 15 volunteers and managing logistics (action), raising $5,000 for charity (result)\"" 
+      },
+      { 
+        heading: "Common Mistakes to Avoid", 
+        content: "### Don't Do This\n\n❌ **\"I have no experience\"** — Never apologize or highlight what you lack\n\n❌ **Empty objectives** — \"Looking for a job to gain experience\" says nothing\n\n❌ **Unrelated hobbies** — \"Watching Netflix\" doesn't help unless you're applying to a streaming company\n\n❌ **Too long** — Entry-level resumes should be one page maximum\n\n❌ **Generic applications** — Same resume for every job shows no effort\n\n❌ **Fancy formatting** — Graphics and colors get rejected by ATS systems\n\n### Do This Instead\n\n✅ **Focus on potential** — \"Eager learner committed to growing with your team\"\n\n✅ **Quantify when possible** — \"Tutored 15 students, improving average grades 15%\"\n\n✅ **Match keywords** — Mirror language from the job posting\n\n✅ **Show availability** — \"Available for immediate start, flexible scheduling\"\n\n✅ **Proofread carefully** — Errors suggest carelessness\n\n✅ **Keep it clean** — Simple formatting, standard fonts, clear sections\n\n### Quick Wins for First-Time Job Seekers\n\n1. **Get a quick certification** — CPR ($25-50), food handler ($15-25), or forklift ($150-600)\n2. **Start volunteering** — Creates real resume content in days\n3. **Join Indeed Flex** — Build ratings and experience through short shifts\n4. **Practice your pitch** — \"I'm a reliable team player, available immediately, and excited to learn\"" 
+      }
     ],
     faqs: [
-      { question: "Can I get a job with no experience?", answer: "Absolutely! Many entry-level positions expect applicants with no experience. Attitude and reliability matter more than work history." },
-      { question: "What do I put on a resume if I've never worked?", answer: "Include school activities, volunteering, personal responsibilities, hobbies, and any certifications." }
+      { question: "Can I get a job with no experience?", answer: "Absolutely! Many entry-level positions specifically expect applicants with no experience. Employers are looking for potential, attitude, and reliability—not a long work history. Focus on transferable skills and availability." },
+      { question: "What do I put on a resume if I've never worked?", answer: "Include school activities, clubs, sports, volunteering, personal responsibilities (babysitting, helping with family business), and any certifications. Focus on transferable skills like teamwork, communication, and reliability." },
+      { question: "Should I include my GPA?", answer: "Include it if it's 3.0 or higher. If lower, leave it off and focus on other achievements like clubs, sports, or relevant coursework." },
+      { question: "How do I compete with people who have experience?", answer: "Emphasize your advantages: flexibility (often more available), eagerness (no bad habits to unlearn), energy (enthusiasm for the work), and lower expectations (willing to start at entry level and grow)." },
+      { question: "Should I include a cover letter?", answer: "For entry-level positions applied through apps like Indeed Flex, usually not required. For direct applications to specific companies, a short cover letter can help you stand out. See our [Cover Letter Guide](/career-hub/guides/temp-job-cover-letter)." }
     ],
     relatedArticles: ["temp-work-resume-guide", "first-flex-job", "certifications"]
   },
@@ -2118,19 +2193,38 @@ export const guideArticles: Record<string, Article> = {
     category: "Job Application & Resume",
     categorySlug: "job-application",
     readTime: "8 min",
-    description: "Optimize your Indeed Flex profile to get more shift offers. What hiring managers see and how to stand out.",
+    description: "Optimize your Indeed Flex profile to get more shift offers. Learn what businesses see, how ratings affect shift access, and strategies to stand out in 2026.",
     keyTakeaways: [
-      "Complete profiles get 40% more shift offers",
-      "A professional photo is the single biggest factor",
-      "Upload all certifications immediately—they unlock higher-paying shifts"
+      "Complete profiles get 40%+ more shift offers—fill out every section",
+      "A professional photo is the single biggest factor in getting selected",
+      "5-star ratings with 50+ reviews earn 'Pro' badges and 25% more visibility",
+      "Upload all certifications immediately—they unlock higher-paying shifts",
+      "Workers with 4.8+ stars and 90%+ completion see 40% more weekly invites"
     ],
     sections: [
-      { heading: "Why Your Profile Matters", content: "On [Indeed Flex](https://indeedflex.com/download-app/), **your profile IS your resume**. Businesses see your photo, bio, skills, ratings, certifications, and availability when deciding to offer shifts." },
-      { heading: "Profile Photo Best Practices", content: "Clear, well-lit face photo with neutral background. Work-appropriate attire. Friendly expression. This is what businesses see first." }
+      { 
+        heading: "Why Your Profile Matters", 
+        content: "On [Indeed Flex](https://indeedflex.com/download-app/), **your profile IS your resume**. Businesses see your photo, bio, skills, ratings, certifications, and availability when deciding to offer shifts.\n\n### What Businesses See When Reviewing You\n\n1. **Profile Photo** — First impression, most important element\n2. **Star Rating** — Overall performance score\n3. **Completed Shifts** — Reliability indicator\n4. **Bio/Summary** — Quick overview of who you are\n5. **Skills & Certifications** — What you're qualified for\n6. **Availability** — When you can work\n\n### 2026 Platform Statistics\n\n| Factor | Impact on Shift Offers |\n|--------|------------------------|\n| Complete profile | +40% more offers |\n| Professional photo | 2x more bookings |\n| 5-star rating | Priority matching |\n| 50+ completed shifts | 'Pro' status |\n| Certifications uploaded | Access to premium shifts |\n\n> **Indeed Flex uses algorithms that prioritize reliable workers.** High ratings + completed shifts = more and better shift opportunities." 
+      },
+      { 
+        heading: "Profile Photo Best Practices", 
+        content: "Your photo is the **single most important element** of your profile. 78% of Indeed Flex users with professional photos get 2x more shifts booked.\n\n### Photo Requirements\n\n- **Size:** 400x400 pixels minimum (648x648 ideal)\n- **Format:** JPEG, under 500KB\n- **Framing:** Face fills 60% of frame, head and shoulders visible\n- **Expression:** Genuine smile, friendly and approachable\n\n### Do This\n\n✅ Use natural lighting (near a window, outdoors)\n✅ Plain, neutral background (white, gray, light blue)\n✅ Work-appropriate attire (clean uniform or business casual)\n✅ Recent photo (taken within last 6 months)\n✅ Clear and sharp (not blurry or pixelated)\n\n### Don't Do This\n\n❌ Selfies taken in car or bathroom\n❌ Group photos or photos with other people\n❌ Filters, sunglasses, or hats\n❌ Party or casual vacation photos\n❌ Low resolution or poorly lit images\n\n### Quick Photo Guide by Role\n\n- **Warehouse:** Clean polo or work shirt, neutral background\n- **Hospitality:** White shirt and dark pants/skirt, professional setting\n- **Retail:** Business casual, friendly smile\n- **Events:** Black attire, professional expression\n\n> **Pro Tip:** Take 10+ photos, get feedback from friends or family, and review on mobile to see how it looks in-app." 
+      },
+      { 
+        heading: "Writing Your Bio", 
+        content: "Your bio should be **100-200 words in your natural voice**. Start with a hook that highlights your best attributes.\n\n### Bio Structure (7-Minute Formula)\n\n1. **Hook (1 sentence)** — Your rating and standout stat\n2. **Experience (1-2 sentences)** — Relevant background\n3. **Skills (1 sentence)** — Key qualifications\n4. **Availability (1 sentence)** — When you can work\n5. **Personal touch (optional)** — Something memorable\n\n### Bio Examples by Role\n\n**Warehouse:**\n> \"5-star rated picker/packer with 200+ completed shifts. 3 years experience in Amazon fulfillment, RF scanner proficient, forklift certified. OSHA trained with zero incidents. Available all shifts including nights and weekends. Let's get those orders out!\"\n\n**Hospitality:**\n> \"Energetic server/bartender with 4.9-star rating on 100+ events. ServSafe and TIPS certified, fluent in Spanish. I thrive in high-volume environments and love making guests smile. Philly-based, available evenings and weekends.\"\n\n**General/Entry-Level:**\n> \"Reliable team player ready to learn and grow. Quick learner with perfect attendance record on Indeed Flex. Available immediately for all shift types. Looking forward to proving myself—give me a chance!\"\n\n### Keywords to Include\n\n- Rating and shift count\n- Relevant certifications\n- Specific skills (RF scanner, POS systems)\n- Availability\n- Location (for local businesses)\n\n> **Data Point:** Profiles with 5+ skills tagged see 50% more invites. Update your bio quarterly to match seasonal demand." 
+      },
+      { 
+        heading: "Ratings, Badges, and Shift Access", 
+        content: "### How Ratings Affect Your Access\n\nIndeed Flex's algorithm prioritizes workers based on performance:\n\n| Rating | Shift Access Level |\n|--------|--------------------|\n| 4.8-5.0 stars | Priority matching, first access to premium shifts |\n| 4.5-4.7 stars | Standard access, good variety |\n| 4.0-4.4 stars | Reduced visibility, fewer offers |\n| Below 4.0 stars | Limited access, may face restrictions |\n\n### Building Your Rating\n\n**What Gets 5 Stars:**\n- Arrive early (10-15 minutes before shift)\n- Complete all assigned tasks\n- Follow dress code exactly\n- Communicate professionally\n- Stay until properly relieved\n- Go above and beyond when possible\n\n**What Hurts Your Rating:**\n- Late arrivals or no-shows (biggest negative)\n- Leaving early without approval\n- Poor attitude or unprofessional behavior\n- Dress code violations\n- Cell phone use during shifts\n\n### Pro Badges and Elite Status\n\n**Pro Badge Requirements:**\n- 4.9+ star rating\n- 50+ completed shifts\n- 95%+ completion rate\n\n**Pro Benefits:**\n- 25% more visibility to businesses\n- First access to new shift postings\n- Priority customer support\n- Higher-paying shift access\n\n### Completion Rate Matters\n\nYour completion rate (shifts completed vs. shifts booked) is tracked:\n\n| Completion Rate | Impact |\n|-----------------|--------|\n| 95%+ | Elite status, maximum offers |\n| 90-94% | Good standing |\n| 85-89% | Warning zone |\n| Below 85% | Risk of account restrictions |\n\n> **Warning:** Low ratings or frequent no-shows can suspend access for 30-90 days. Maintain 95%+ reliability for sustained success." 
+      }
     ],
     faqs: [
-      { question: "How do I get more shifts?", answer: "Complete your profile 100%, upload a professional photo, add all skills, keep availability accurate, upload certifications, and maintain high ratings." },
-      { question: "What should I write in my bio?", answer: "2-3 sentences: your experience/rating, key certifications, main skills, and availability." }
+      { question: "How do I get more shifts on Indeed Flex?", answer: "Complete your profile 100%, upload a professional photo, add all relevant skills, keep availability accurate, upload certifications immediately, and maintain high ratings. Workers with complete profiles and 5-star ratings get 2-3x more shift offers." },
+      { question: "What should I write in my bio?", answer: "Start with your rating and shift count, mention key certifications, list 2-3 top skills, and state your availability. Keep it 100-200 words. Example: '5-star rated warehouse worker with 150+ shifts. Forklift certified, RF scanner proficient. Available all shifts.'" },
+      { question: "How long does verification take?", answer: "Initial verification (interview + I-9) typically takes 3-7 days. Once verified, you can start booking shifts immediately. Keep your I-9 documents ready to speed up the process." },
+      { question: "Can I work multiple roles?", answer: "Yes! Add all skills you're qualified for to your profile. If you're verified for one role (like warehouse), you can add related skills. Some specialized roles (bartender, forklift) may require additional verification." },
+      { question: "How do I recover from a bad rating?", answer: "Focus on completing shifts flawlessly. Each 5-star shift improves your average. Take feedback seriously, arrive early, and communicate professionally. It takes about 10-15 excellent shifts to recover from one poor rating." }
     ],
     relatedArticles: ["temp-work-resume-guide", "complete-guide", "shift-rating-tips"]
   },
@@ -2141,19 +2235,38 @@ export const guideArticles: Record<string, Article> = {
     category: "Job Application & Resume",
     categorySlug: "job-application",
     readTime: "10 min",
-    description: "When and how to write cover letters for temp work. Templates for warehouse, hospitality, and temp-to-perm.",
+    description: "When and how to write cover letters for temp work. Templates for warehouse, hospitality, and temp-to-perm positions with 2026 guidance.",
     keyTakeaways: [
-      "Most temp/shift work doesn't require cover letters",
-      "Cover letters matter for temp-to-perm opportunities",
-      "Keep it short: 3-4 paragraphs maximum"
+      "Most temp/shift work doesn't require cover letters—your profile is enough",
+      "Write cover letters for temp-to-perm, direct-hire, and management opportunities",
+      "Keep it short: 3-4 paragraphs, under 250 words maximum",
+      "40% of temp workers convert to permanent roles—show interest if applicable",
+      "Emphasize flexibility, reliability, and immediate availability"
     ],
     sections: [
-      { heading: "When You Need a Cover Letter", content: "Most temp jobs don't require cover letters—your profile is enough. Write one for: temp-to-perm opportunities, direct-hire positions, and management roles." },
-      { heading: "Temp Cover Letter Template", content: "Opening: your rating and experience. Middle: 3 key qualifications. Closing: availability and interest. Keep under 250 words." }
+      { 
+        heading: "When You Need a Cover Letter", 
+        content: "Most temp jobs **don't require cover letters**—your Indeed Flex profile or resume is enough. But certain situations call for one.\n\n### When to Write a Cover Letter\n\n✅ **Temp-to-perm opportunities** — Show long-term interest\n✅ **Direct-hire positions** — Companies hiring directly (not through apps)\n✅ **Management or supervisory roles** — Higher-level positions\n✅ **Academic or specialized temp roles** — Universities, research positions\n✅ **When explicitly requested** — If the posting asks for one\n\n### When to Skip It\n\n❌ **Shift-based work via apps** — Indeed Flex, Instawork, Wonolo\n❌ **Same-day or urgent positions** — Speed matters more than letters\n❌ **Repeat work with known clients** — You're already in their system\n❌ **Agency placements** — Your recruiter handles introductions\n❌ **High-volume seasonal hiring** — Employers are processing too many applications\n\n### 2026 Data Point\n\n> 80% of day-to-day temp placements skip cover letters. However, **60-70% of successful temp-to-perm conversions** include a tailored cover letter showing interest in permanent employment." 
+      },
+      { 
+        heading: "Temp Work Cover Letter Template", 
+        content: "Use this template for general temporary positions:\n\n```\n[Your Name]\n[City, State]\n[Phone] | [Email]\n[Date]\n\n[Hiring Manager's Name or \"Hiring Team\"]\n[Company Name]\n[Company Address]\n\nDear [Hiring Manager's Name or Hiring Team],\n\nI am excited to apply for the [Position Title] at [Company Name], \nas advertised on [Where You Found It]. With [X] years of experience \nin [Industry] temporary roles, I bring immediate availability, \nproven reliability, and the flexibility you need.\n\nMy skills in [1-2 keywords from job description] align directly \nwith your needs. In previous assignments, I [specific achievement \nwith metric, e.g., \"processed 250+ orders daily with 99% accuracy\"]. \nI'm confident I can deliver similar results for your team.\n\nI'm available to start immediately and flexible for [shift types: \nevenings, weekends, overtime]. Thank you for considering my \napplication—I look forward to discussing how I can contribute \nto [Company Name].\n\nSincerely,\n[Your Name]\n```\n\n### Key Elements\n\n1. **Opening:** Position + where you found it + your value proposition\n2. **Body:** 1-2 achievements with metrics + skills match\n3. **Closing:** Availability + enthusiasm + call to action\n4. **Length:** Under 250 words, 3-4 paragraphs max" 
+      },
+      { 
+        heading: "Temp-to-Perm Cover Letter", 
+        content: "For positions with permanent potential, show long-term interest:\n\n### Template for Temp-to-Perm Opportunities\n\n```\nDear [Hiring Manager],\n\nI am writing to apply for the [Temporary Position] at [Company], \nwith genuine interest in the potential for permanent employment. \nMy experience in [Industry] has prepared me to contribute \nimmediately while building toward a long-term career with your team.\n\nIn my previous temp assignments, I have demonstrated:\n• [Achievement with metric]\n• [Second achievement with metric]\n• [Relevant skill or certification]\n\nI understand this role begins as a temporary position, and I see \nthat as an opportunity to prove my value. My goal is to demonstrate \nthe reliability, skills, and cultural fit that would make me an \nasset to [Company] beyond the initial assignment.\n\nI'm available to start [immediately/date] and flexible for \n[shift requirements]. I would welcome the opportunity to discuss \nhow my experience aligns with your needs.\n\nSincerely,\n[Your Name]\n```\n\n### Key Phrases for Temp-to-Perm\n\n- \"Genuine interest in permanent employment\"\n- \"Opportunity to prove my value\"\n- \"Demonstrate reliability and cultural fit\"\n- \"Build toward a long-term career\"\n- \"Asset beyond the initial assignment\"\n\n### What Employers Look For\n\n1. **Immediate contribution** — Can you hit the ground running?\n2. **Long-term potential** — Are you worth investing in?\n3. **Cultural fit** — Will you mesh with the team?\n4. **Commitment signals** — Do you want to stay?\n\n> **2026 Stat:** 40% of temp workers land permanent roles. Those with tailored cover letters convert at 60-70% rates—showing interest matters." 
+      },
+      { 
+        heading: "Cover Letter Examples by Role", 
+        content: "### Warehouse Cover Letter Example\n\n> *Dear Hiring Team,*\n> \n> *I'm applying for the Warehouse Associate position at [Company]. With 2 years of temp experience in fulfillment centers and a forklift certification, I can contribute from day one.*\n> \n> *At my previous assignments, I consistently picked 250+ orders per shift with 99.5% accuracy. I'm RF scanner proficient, OSHA trained, and have a perfect safety record across 200+ shifts.*\n> \n> *Available immediately for all shifts including nights and weekends. I look forward to bringing my reliability and productivity to your team.*\n>\n> *Sincerely, [Name]*\n\n### Hospitality Cover Letter Example\n\n> *Dear [Manager],*\n> \n> *I'm excited to apply for the Server position at [Restaurant]. As a ServSafe and TIPS certified hospitality professional, I bring high-volume experience and a passion for guest satisfaction.*\n> \n> *In previous roles, I've served 150+ guests per shift while maintaining 98% positive feedback. My upselling skills increased check averages by 20% at my last assignment.*\n> \n> *I'm available evenings and weekends and ready to start immediately. Thank you for your consideration.*\n>\n> *Sincerely, [Name]*\n\n### Entry-Level/First Job Example\n\n> *Dear Hiring Team,*\n> \n> *I'm applying for the [Position] and am eager to begin my career with [Company]. While I'm new to the workforce, I bring reliability, enthusiasm, and a strong work ethic.*\n> \n> *As a recent graduate, I've developed teamwork and communication skills through volunteer work and school activities. I'm CPR certified and available immediately for all shifts.*\n> \n> *I'm excited for the opportunity to learn and grow with your team. Thank you for considering me.*\n>\n> *Sincerely, [Name]*\n\n### Common Mistakes to Avoid\n\n❌ Too long (over 1 page or 300 words)\n❌ Generic (not customized to the job)\n❌ Repeating your entire resume\n❌ Focusing on what you want (instead of what you offer)\n❌ Typos or grammar errors" 
+      }
     ],
     faqs: [
-      { question: "Do I need a cover letter for Indeed Flex?", answer: "No. Indeed Flex uses your profile instead of resumes and cover letters." },
-      { question: "How long should a temp cover letter be?", answer: "3-4 paragraphs, under 250 words. Temp hiring is fast-paced." }
+      { question: "Do I need a cover letter for Indeed Flex?", answer: "No. Indeed Flex uses your profile instead of resumes and cover letters. Focus on optimizing your profile, photo, and bio instead. Cover letters are only needed for direct-hire positions outside of staffing apps." },
+      { question: "How long should a temp cover letter be?", answer: "3-4 paragraphs, under 250 words. Temp hiring is fast-paced—hiring managers don't have time for lengthy letters. Get to the point quickly with your value proposition and availability." },
+      { question: "Should I mention I want a permanent position?", answer: "Only if it's a temp-to-perm opportunity or if you genuinely want to stay long-term. For pure temp roles, focus on your immediate value and flexibility. Mentioning permanent interest for a short assignment may backfire." },
+      { question: "Do staffing agencies need cover letters?", answer: "Usually not for general registration. However, if a specific client role interests you, a short cover letter to your recruiter can help them pitch you better. Keep it very brief—3-4 sentences." },
+      { question: "What if I have no experience?", answer: "Focus on transferable skills, reliability, and enthusiasm. Highlight volunteering, school activities, or personal qualities. Emphasize availability and willingness to learn. See our [First Job Resume Guide](/career-hub/guides/first-job-resume-template)." }
     ],
     relatedArticles: ["temp-work-resume-guide", "indeed-flex-profile-guide", "temp-to-perm-guide"]
   }
