@@ -25,21 +25,26 @@ export interface GuideCategory {
   articles: { title: string; slug: string; readTime: string }[];
 }
 
+// Consolidated into 4 clear categories for better UX
 export const guideCategories: GuideCategory[] = [
   {
     category: "Getting Started",
     slug: "getting-started",
     icon: BookOpen,
     articles: [
+      // Core getting started
       { title: "How to Get Your First Flexible Job", slug: "first-flex-job", readTime: "5 min" },
       { title: "Complete Guide to Indeed Flex", slug: "complete-guide", readTime: "8 min" },
       { title: "What to Expect on Your First Shift", slug: "first-shift", readTime: "4 min" },
       { title: "Building Your Worker Profile", slug: "worker-profile", readTime: "6 min" },
+      // From Workplace Success
+      { title: "Your First 90 Days: Proving Yourself at Work", slug: "workplace-success", readTime: "8 min" },
+      { title: "How to Get 5-Star Ratings on Every Shift", slug: "shift-rating-tips", readTime: "7 min" },
     ]
   },
   {
-    category: "Job Application & Resume",
-    slug: "job-application",
+    category: "Job Applications",
+    slug: "job-applications",
     icon: FileText,
     articles: [
       { title: "How to Write a Resume for Temp Work", slug: "temp-work-resume-guide", readTime: "12 min" },
@@ -55,18 +60,18 @@ export const guideCategories: GuideCategory[] = [
     slug: "career-growth",
     icon: TrendingUp,
     articles: [
+      // Core career growth
       { title: "From Entry-Level to Management: Career Paths", slug: "career-paths", readTime: "12 min" },
       { title: "Skills That Boost Your Hourly Rate", slug: "skill-boost", readTime: "7 min" },
       { title: "Getting Certifications That Pay Off", slug: "certifications", readTime: "8 min" },
       { title: "How to Get More (and Better) Shifts", slug: "more-shifts", readTime: "6 min" },
       { title: "From Temp to Permanent: Making the Transition", slug: "temp-to-perm-guide", readTime: "9 min" },
-    ]
-  },
-  {
-    category: "Industry Guides",
-    slug: "industry-guides",
-    icon: Users,
-    articles: [
+      // From Professional Development
+      { title: "Building Your Professional Network", slug: "networking", readTime: "6 min" },
+      { title: "Resume Tips for Hourly Workers", slug: "resume-tips", readTime: "5 min" },
+      { title: "Interview Skills for Flex Work", slug: "interview-skills", readTime: "10 min" },
+      { title: "Balancing Multiple Gigs", slug: "multiple-gigs", readTime: "8 min" },
+      // From Industry Guides
       { title: "Breaking Into Hospitality Work", slug: "hospitality-guide", readTime: "9 min" },
       { title: "Warehouse Work: What You Need to Know", slug: "warehouse-guide", readTime: "8 min" },
       { title: "Retail Jobs: Tips for Success", slug: "retail-guide", readTime: "7 min" },
@@ -74,43 +79,18 @@ export const guideCategories: GuideCategory[] = [
     ]
   },
   {
-    category: "Professional Development",
-    slug: "professional-development",
-    icon: Award,
-    articles: [
-      { title: "Building Your Professional Network", slug: "networking", readTime: "6 min" },
-      { title: "Resume Tips for Hourly Workers", slug: "resume-tips", readTime: "5 min" },
-      { title: "Interview Skills for Flex Work", slug: "interview-skills", readTime: "10 min" },
-      { title: "Balancing Multiple Gigs", slug: "multiple-gigs", readTime: "8 min" },
-    ]
-  },
-  {
-    category: "Workplace Success",
-    slug: "workplace-success",
-    icon: Star,
-    articles: [
-      { title: "Your First 90 Days: Proving Yourself at Work", slug: "workplace-success", readTime: "8 min" },
-      { title: "How to Get 5-Star Ratings on Every Shift", slug: "shift-rating-tips", readTime: "7 min" },
-    ]
-  },
-  {
-    category: "Seasonal & Event Hiring",
+    category: "Seasonal & Work Eligibility",
     slug: "seasonal-hiring",
     icon: Calendar,
     articles: [
+      // Seasonal hiring
       { title: "Holiday Warehouse Jobs 2026: Complete Guide", slug: "holiday-warehouse-guide", readTime: "10 min" },
       { title: "How to Get Hired for Black Friday 2026", slug: "black-friday-hiring", readTime: "8 min" },
       { title: "Summer Hospitality Jobs: Peak Season Guide", slug: "summer-hospitality-guide", readTime: "8 min" },
       { title: "Part-Time Jobs for Students Fall 2026", slug: "student-jobs-fall", readTime: "7 min" },
       { title: "Event Staffing: Concerts, Sports & More", slug: "event-staffing-guide", readTime: "9 min" },
       { title: "Tax Season Jobs: 1099 Work Opportunities", slug: "tax-season-jobs", readTime: "6 min" },
-    ]
-  },
-  {
-    category: "Employment Eligibility",
-    slug: "employment-eligibility",
-    icon: FileCheck,
-    articles: [
+      // Employment eligibility
       { title: "Form I-9 Explained: Complete Guide for Workers", slug: "i9-complete-guide", readTime: "12 min" },
       { title: "Acceptable I-9 Documents: Lists A, B, C Explained", slug: "i9-documents-list", readTime: "8 min" },
       { title: "Working in America: First Job Guide", slug: "first-job-america-guide", readTime: "15 min" },
