@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, UtensilsCrossed, Warehouse, ShoppingBag, Building2, Calculator, BookOpen, DollarSign, Compass, Clock, TrendingUp, Wrench, Wallet, PiggyBank, Receipt, Shield, Award, ArrowRight } from "lucide-react";
+import { Menu, X, UtensilsCrossed, Warehouse, ShoppingBag, Building2, Calculator, BookOpen, DollarSign, Compass, Clock, TrendingUp, Wrench, Wallet, PiggyBank, Receipt, Shield, Award, ArrowRight, FileText } from "lucide-react";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -138,16 +138,33 @@ const Header = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[600px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
-                    {/* Prominent View All CTA */}
+                    {/* Featured: Job Application Toolkit */}
                     <Link
-                      to="/career-hub/guides"
-                      className="flex items-center justify-between p-4 mb-4 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors group"
+                      to="/career-hub/job-application-toolkit"
+                      className="flex items-center justify-between p-4 mb-4 rounded-xl bg-gradient-to-r from-primary to-primary/80 text-primary-foreground hover:from-primary/90 hover:to-primary/70 transition-colors group"
                     >
-                      <div>
-                        <div className="font-semibold text-lg">All Career Guides</div>
-                        <div className="text-sm text-primary-foreground/80">16+ guides for getting started & growing</div>
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-primary-foreground/20 rounded-lg">
+                          <FileText className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-lg">Job Application Toolkit</div>
+                          <div className="text-sm text-primary-foreground/80">Resume tips & profile optimization</div>
+                        </div>
                       </div>
                       <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    {/* View All Guides CTA */}
+                    <Link
+                      to="/career-hub/guides"
+                      className="flex items-center justify-between p-3 mb-4 rounded-xl bg-muted hover:bg-muted/80 transition-colors group"
+                    >
+                      <div>
+                        <div className="font-medium text-foreground">All Career Guides</div>
+                        <div className="text-xs text-muted-foreground">16+ guides for getting started & growing</div>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
                     </Link>
                     
                     <div className="grid grid-cols-3 gap-5">
@@ -327,6 +344,15 @@ const Header = () => {
               >
                 <span className="font-medium">Tools</span>
                 <Calculator className="h-4 w-4 opacity-60" />
+              </Link>
+              
+              <Link
+                to="/career-hub/job-application-toolkit"
+                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Job Application Toolkit</span>
+                <FileText className="h-4 w-4 opacity-60" />
               </Link>
               
               <Link
