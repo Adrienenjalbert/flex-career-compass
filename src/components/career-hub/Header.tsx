@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, UtensilsCrossed, Warehouse, ShoppingBag, Building2, Calculator, BookOpen, DollarSign, Compass, Clock, TrendingUp, Wrench, Wallet, PiggyBank, Receipt, Shield, Award, ArrowRight, FileText } from "lucide-react";
+import { 
+  Menu, X, MapPin, Briefcase, Calculator, TrendingUp, 
+  ChevronDown, ChevronRight, DollarSign, Baby, Car, 
+  Umbrella, Scale, FileText, MessageSquare, Wine, 
+  ShieldCheck, Compass, Brain, BookOpen, Wallet,
+  UtensilsCrossed, Warehouse, ShoppingBag, Building2, ArrowRight
+} from "lucide-react";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -9,64 +15,65 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import logo from "@/assets/logo.svg";
 
-const popularRoles = [
-  { title: "Bartender", slug: "bartender", pay: "$15-28/hr" },
-  { title: "Server", slug: "server", pay: "$12-22/hr" },
-  { title: "Warehouse Operative", slug: "warehouse-operative", pay: "$15-22/hr" },
-  { title: "Forklift Driver", slug: "forklift-driver", pay: "$17-25/hr" },
+// Featured markets (6 top markets)
+const featuredMarkets = [
+  { name: "Austin, TX", slug: "austin" },
+  { name: "Dallas, TX", slug: "dallas" },
+  { name: "Chicago, IL", slug: "chicago" },
+  { name: "Atlanta, GA", slug: "atlanta" },
+  { name: "Las Vegas, NV", slug: "las-vegas" },
+  { name: "Nashville, TN", slug: "nashville" },
 ];
 
+// Industries
 const industries = [
-  { id: "hospitality", name: "Hospitality", icon: UtensilsCrossed, description: "Bars, restaurants & hotels", roles: 8 },
-  { id: "industrial", name: "Industrial & Warehouse", icon: Warehouse, description: "Distribution & logistics", roles: 6 },
-  { id: "retail", name: "Retail", icon: ShoppingBag, description: "Stores & shopping centers", roles: 4 },
-  { id: "facilities", name: "Facilities", icon: Building2, description: "Cleaning & maintenance", roles: 2 },
+  { id: "hospitality", name: "Hospitality", icon: UtensilsCrossed },
+  { id: "industrial", name: "Industrial", icon: Warehouse },
+  { id: "retail", name: "Retail", icon: ShoppingBag },
+  { id: "facilities", name: "Facilities", icon: Building2 },
 ];
 
-const tools = [
-  { title: "Pay Calculator", slug: "pay-calculator", icon: Calculator, description: "Estimate your earnings" },
-  { title: "Shift Planner", slug: "shift-planner", icon: Clock, description: "Plan your work week" },
-  { title: "Tax Calculator", slug: "tax-calculator", icon: DollarSign, description: "Estimate take-home pay" },
-  { title: "Skills Analyzer", slug: "skills-analyzer", icon: TrendingUp, description: "Discover your strengths" },
+// Popular roles
+const popularRoles = [
+  { title: "Bartender", slug: "bartender" },
+  { title: "Server", slug: "server" },
+  { title: "Warehouse Operative", slug: "warehouse-operative" },
+  { title: "Forklift Driver", slug: "forklift-driver" },
+];
+
+// Calculate tools (Pay & Life Decisions)
+const calculateTools = [
+  { title: "Pay Calculator", slug: "pay-calculator", icon: DollarSign, description: "Estimate your earnings" },
+  { title: "Tax Estimator", slug: "tax-calculator", icon: Calculator, description: "Take-home pay after taxes" },
+  { title: "Childcare Calculator", slug: "childcare-calculator", icon: Baby, description: "Work vs. childcare costs" },
+  { title: "Commute Calculator", slug: "commute-calculator", icon: Car, description: "True cost of your commute" },
+  { title: "Unemployment Calculator", slug: "unemployment-calculator", icon: Umbrella, description: "Estimate benefits" },
+  { title: "Cost of Living", slug: "cost-of-living", icon: Scale, description: "Compare cities" },
+];
+
+// Grow tools (Skill Building)
+const skillTools = [
+  { title: "WorkTalk", slug: "worktalk", icon: MessageSquare, description: "Job English practice" },
+  { title: "Cocktail Quiz", slug: "cocktail-quiz", icon: Wine, description: "Bartending knowledge" },
+  { title: "Safety First", slug: "safety-first", icon: ShieldCheck, description: "Warehouse safety" },
   { title: "Career Path", slug: "career-path", icon: Compass, description: "Plan your growth" },
+  { title: "Skills Analyzer", slug: "skills-analyzer", icon: Brain, description: "Discover strengths" },
 ];
 
-// Career Guide categories with featured articles
+// Guide categories (consolidated to 4)
 const guideCategories = [
-  {
-    category: "Getting Started",
-    icon: BookOpen,
-    articles: [
-      { title: "How to Get Your First Flexible Job", slug: "first-flex-job" },
-      { title: "Complete Guide to Indeed Flex", slug: "complete-guide" },
-    ]
-  },
-  {
-    category: "Career Growth",
-    icon: TrendingUp,
-    articles: [
-      { title: "Career Paths in Flexible Work", slug: "career-paths" },
-      { title: "Skills That Boost Your Hourly Rate", slug: "skill-boost" },
-    ]
-  },
-  {
-    category: "Industry Guides",
-    icon: Award,
-    articles: [
-      { title: "Getting Certifications That Pay Off", slug: "certifications" },
-      { title: "Warehouse Skills Guide", slug: "warehouse-skills" },
-    ]
-  },
-];
-
-// Financial Tips featured articles
-const financialArticles = [
-  { title: "Budgeting for Irregular Income", slug: "irregular-income-budget", icon: Wallet, description: "Create a flexible budget" },
-  { title: "Building an Emergency Fund", slug: "emergency-fund-guide", icon: PiggyBank, description: "Save 3-6 months expenses" },
-  { title: "Tax Tips for Flexible Workers", slug: "tax-tips", icon: Receipt, description: "Maximize your deductions" },
-  { title: "Benefits & Insurance Options", slug: "gig-benefits", icon: Shield, description: "Healthcare & retirement" },
+  { title: "Getting Started", slug: "first-flex-job", icon: BookOpen },
+  { title: "Job Applications", slug: "temp-work-resume-guide", icon: FileText },
+  { title: "Career Growth", slug: "career-paths", icon: TrendingUp },
+  { title: "Financial Tips", slug: "irregular-income-budget", icon: Wallet, isFinancial: true },
 ];
 
 const Header = () => {
@@ -75,36 +82,136 @@ const Header = () => {
   return (
     <header className="bg-primary text-primary-foreground sticky top-0 z-50">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-18">
-          {/* Logo - White version using same approach as footer */}
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <Link to="/career-hub" className="flex items-center">
             <img src={logo} alt="Indeed Flex" className="h-8 md:h-10 w-auto brightness-0 invert" />
           </Link>
 
-          {/* Desktop Navigation - Mega Menu */}
+          {/* Desktop Navigation - 3 Pillars */}
           <NavigationMenu className="hidden md:flex" delayDuration={0} skipDelayDuration={0}>
             <NavigationMenuList>
-              {/* Tools Mega Menu */}
+              {/* Pillar 1: Find Work */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
-                  Tools
+                  Find Work
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[580px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
+                    <div className="grid grid-cols-2 gap-6">
+                      {/* Left: Active Markets */}
+                      <div>
+                        <Link 
+                          to="/career-hub/active-markets"
+                          className="flex items-center justify-between mb-4 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                        >
+                          <span className="flex items-center gap-2">
+                            <MapPin className="h-4 w-4" />
+                            Active Markets
+                          </span>
+                          <span className="text-xs text-muted-foreground">19 cities</span>
+                        </Link>
+                        <div className="grid grid-cols-2 gap-2">
+                          {featuredMarkets.map((market) => (
+                            <Link
+                              key={market.slug}
+                              to={`/career-hub/locations/${market.slug}`}
+                              className="text-sm text-muted-foreground hover:text-primary hover:bg-muted p-2 rounded-lg transition-colors"
+                            >
+                              {market.name}
+                            </Link>
+                          ))}
+                        </div>
+                        <Link
+                          to="/career-hub/active-markets"
+                          className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3 hover:underline"
+                        >
+                          View all 19 markets <ArrowRight className="h-3 w-3" />
+                        </Link>
+                      </div>
+
+                      {/* Right: Industries & Roles */}
+                      <div className="space-y-5">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                            <Briefcase className="h-4 w-4" />
+                            By Industry
+                          </h3>
+                          <div className="grid grid-cols-2 gap-2">
+                            {industries.map((industry) => {
+                              const Icon = industry.icon;
+                              return (
+                                <Link
+                                  key={industry.id}
+                                  to={`/career-hub/industries/${industry.id}`}
+                                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted p-2 rounded-lg transition-colors"
+                                >
+                                  <Icon className="h-4 w-4" />
+                                  {industry.name}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground mb-3">Popular Roles</h3>
+                          <div className="space-y-1">
+                            {popularRoles.map((role) => (
+                              <Link
+                                key={role.slug}
+                                to={`/career-hub/roles/${role.slug}`}
+                                className="block text-sm text-muted-foreground hover:text-primary hover:bg-muted p-2 rounded-lg transition-colors"
+                              >
+                                {role.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Seasonal Hiring Banner */}
+                    <Link
+                      to="/career-hub/seasonal-hiring"
+                      className="flex items-center justify-between mt-5 p-3 rounded-xl bg-accent/10 hover:bg-accent/20 transition-colors group"
+                    >
+                      <div className="text-sm">
+                        <span className="font-medium text-foreground">🎄 Seasonal Hiring</span>
+                        <span className="text-muted-foreground ml-2">Holiday & event opportunities</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-accent group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Pillar 2: Calculate */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
+                  Calculate
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[480px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
-                    {/* Prominent View All CTA */}
+                    {/* Featured: Pay Calculator */}
                     <Link
-                      to="/career-hub/tools"
+                      to="/career-hub/tools/pay-calculator"
                       className="flex items-center justify-between p-4 mb-4 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors group"
                     >
-                      <div>
-                        <div className="font-semibold text-lg">All Career Tools</div>
-                        <div className="text-sm text-primary-foreground/80">Free calculators & planners</div>
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-primary-foreground/20 rounded-lg">
+                          <DollarSign className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <div className="font-semibold">Pay Calculator</div>
+                          <div className="text-sm text-primary-foreground/80">Estimate your weekly & monthly earnings</div>
+                        </div>
                       </div>
                       <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    
+
                     <div className="grid grid-cols-2 gap-3">
-                      {tools.map((tool) => {
+                      {calculateTools.slice(1).map((tool) => {
                         const Icon = tool.icon;
                         return (
                           <Link
@@ -127,17 +234,24 @@ const Header = () => {
                         );
                       })}
                     </div>
+
+                    <Link
+                      to="/career-hub/tools"
+                      className="flex items-center justify-center gap-2 mt-4 p-3 rounded-xl bg-muted hover:bg-muted/80 transition-colors text-sm font-medium text-foreground"
+                    >
+                      View all tools <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* Career Guides Mega Menu */}
+              {/* Pillar 3: Grow */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
-                  Career Guides
+                  Grow
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[600px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
+                  <div className="w-[580px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
                     {/* Featured: Job Application Toolkit */}
                     <Link
                       to="/career-hub/job-application-toolkit"
@@ -148,132 +262,35 @@ const Header = () => {
                           <FileText className="h-5 w-5" />
                         </div>
                         <div>
-                          <div className="font-semibold text-lg">Job Application Toolkit</div>
-                          <div className="text-sm text-primary-foreground/80">Resume tips & profile optimization</div>
+                          <div className="font-semibold">Job Application Toolkit</div>
+                          <div className="text-sm text-primary-foreground/80">Resume templates, cover letters & profile tips</div>
                         </div>
                       </div>
                       <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
 
-                    {/* View All Guides CTA */}
-                    <Link
-                      to="/career-hub/guides"
-                      className="flex items-center justify-between p-3 mb-4 rounded-xl bg-muted hover:bg-muted/80 transition-colors group"
-                    >
-                      <div>
-                        <div className="font-medium text-foreground">All Career Guides</div>
-                        <div className="text-xs text-muted-foreground">16+ guides for getting started & growing</div>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    
-                    <div className="grid grid-cols-3 gap-5">
-                      {guideCategories.map((category) => {
-                        const Icon = category.icon;
-                        return (
-                          <div key={category.category}>
-                            <div className="flex items-center gap-2 mb-3">
-                              <div className="p-1.5 bg-primary/10 rounded-lg">
-                                <Icon className="h-4 w-4 text-primary" />
-                              </div>
-                              <h3 className="font-semibold text-foreground text-sm">{category.category}</h3>
-                            </div>
-                            <div className="space-y-1">
-                              {category.articles.map((article) => (
-                                <Link
-                                  key={article.slug}
-                                  to={`/career-hub/guides/${article.slug}`}
-                                  className="block p-2 rounded-lg text-sm text-muted-foreground hover:bg-muted hover:text-primary transition-colors"
-                                >
-                                  {article.title}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              {/* Financial Tips Mega Menu */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
-                  Financial Tips
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[520px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
-                    {/* Prominent View All CTA */}
-                    <Link
-                      to="/career-hub/financial-tips"
-                      className="flex items-center justify-between p-4 mb-4 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors group"
-                    >
-                      <div>
-                        <div className="font-semibold text-lg">All Financial Tips</div>
-                        <div className="text-sm text-primary-foreground/80">Money management for flexible workers</div>
-                      </div>
-                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    
-                    <div className="grid grid-cols-2 gap-3">
-                      {financialArticles.map((article) => {
-                        const Icon = article.icon;
-                        return (
-                          <Link
-                            key={article.slug}
-                            to={`/career-hub/financial-tips/${article.slug}`}
-                            className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted transition-colors group"
-                          >
-                            <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                              <Icon className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <div className="font-medium text-foreground group-hover:text-primary transition-colors text-sm">
-                                {article.title}
-                              </div>
-                              <div className="text-xs text-muted-foreground">
-                                {article.description}
-                              </div>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              {/* Roles Mega Menu */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
-                  Roles
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[600px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
                     <div className="grid grid-cols-2 gap-6">
-                      {/* Industries */}
+                      {/* Left: Skill Training Tools */}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide">By Industry</h3>
+                        <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <Brain className="h-4 w-4" />
+                          Skill Training
+                        </h3>
                         <div className="space-y-2">
-                          {industries.map((industry) => {
-                            const Icon = industry.icon;
+                          {skillTools.map((tool) => {
+                            const Icon = tool.icon;
                             return (
                               <Link
-                                key={industry.id}
-                                to={`/career-hub/industries/${industry.id}`}
-                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted transition-colors group"
+                                key={tool.slug}
+                                to={`/career-hub/tools/${tool.slug}`}
+                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors group"
                               >
-                                <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                                  <Icon className="h-4 w-4 text-primary" />
-                                </div>
+                                <Icon className="h-4 w-4 text-primary" />
                                 <div>
-                                  <div className="font-medium text-foreground group-hover:text-primary transition-colors">
-                                    {industry.name}
+                                  <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                                    {tool.title}
                                   </div>
-                                  <div className="text-xs text-muted-foreground">
-                                    {industry.roles} roles
-                                  </div>
+                                  <div className="text-xs text-muted-foreground">{tool.description}</div>
                                 </div>
                               </Link>
                             );
@@ -281,30 +298,35 @@ const Header = () => {
                         </div>
                       </div>
 
-                      {/* Popular Roles */}
+                      {/* Right: Guides & Resources */}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide">Popular Roles</h3>
+                        <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <BookOpen className="h-4 w-4" />
+                          Guides & Resources
+                        </h3>
                         <div className="space-y-2">
-                          {popularRoles.map((role) => (
-                            <Link
-                              key={role.slug}
-                              to={`/career-hub/roles/${role.slug}`}
-                              className="flex items-center justify-between p-3 rounded-xl hover:bg-muted transition-colors group"
-                            >
-                              <span className="font-medium text-foreground group-hover:text-primary transition-colors">
-                                {role.title}
-                              </span>
-                              <span className="text-sm text-muted-foreground">
-                                {role.pay}
-                              </span>
-                            </Link>
-                          ))}
+                          {guideCategories.map((category) => {
+                            const Icon = category.icon;
+                            const basePath = category.isFinancial ? '/career-hub/financial-tips' : '/career-hub/guides';
+                            return (
+                              <Link
+                                key={category.slug}
+                                to={category.isFinancial ? basePath : `${basePath}/${category.slug}`}
+                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors group"
+                              >
+                                <Icon className="h-4 w-4 text-primary" />
+                                <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                                  {category.title}
+                                </span>
+                              </Link>
+                            );
+                          })}
                         </div>
                         <Link
-                          to="/career-hub/locations"
+                          to="/career-hub/guides"
                           className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 hover:underline"
                         >
-                          View all markets →
+                          All career guides <ArrowRight className="h-3 w-3" />
                         </Link>
                       </div>
                     </div>
@@ -333,62 +355,138 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - Simplified */}
+        {/* Mobile Navigation - Accordion */}
         {mobileMenuOpen && (
           <nav className="md:hidden py-4 border-t border-primary-foreground/20">
-            <div className="flex flex-col gap-1">
-              <Link
-                to="/career-hub/tools"
-                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-medium">Tools</span>
-                <Calculator className="h-4 w-4 opacity-60" />
-              </Link>
-              
-              <Link
-                to="/career-hub/job-application-toolkit"
-                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-medium">Job Application Toolkit</span>
-                <FileText className="h-4 w-4 opacity-60" />
-              </Link>
-              
-              <Link
-                to="/career-hub/guides"
-                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-medium">Career Guides</span>
-                <BookOpen className="h-4 w-4 opacity-60" />
-              </Link>
-              
-              <Link
-                to="/career-hub/financial-tips"
-                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-medium">Financial Tips</span>
-                <DollarSign className="h-4 w-4 opacity-60" />
-              </Link>
-              
-              <Link
-                to="/career-hub/locations"
-                className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="font-medium">Roles & Locations</span>
-                <Compass className="h-4 w-4 opacity-60" />
-              </Link>
+            <Accordion type="single" collapsible className="w-full">
+              {/* Find Work */}
+              <AccordionItem value="find-work" className="border-primary-foreground/20">
+                <AccordionTrigger className="text-primary-foreground hover:no-underline py-3">
+                  <span className="flex items-center gap-2 font-medium">
+                    <MapPin className="h-4 w-4" />
+                    Find Work
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="pl-6 space-y-1 pb-2">
+                    <Link
+                      to="/career-hub/active-markets"
+                      className="block py-2 text-primary-foreground/80 hover:text-accent"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Active Markets (19)
+                    </Link>
+                    {industries.map((industry) => (
+                      <Link
+                        key={industry.id}
+                        to={`/career-hub/industries/${industry.id}`}
+                        className="block py-2 text-primary-foreground/80 hover:text-accent"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {industry.name}
+                      </Link>
+                    ))}
+                    <Link
+                      to="/career-hub/seasonal-hiring"
+                      className="block py-2 text-accent font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      🎄 Seasonal Hiring
+                    </Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-              <div className="pt-3 mt-2 border-t border-primary-foreground/20">
-                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full rounded-xl" asChild>
-                  <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
-                    Get the App
-                  </a>
-                </Button>
-              </div>
+              {/* Calculate */}
+              <AccordionItem value="calculate" className="border-primary-foreground/20">
+                <AccordionTrigger className="text-primary-foreground hover:no-underline py-3">
+                  <span className="flex items-center gap-2 font-medium">
+                    <Calculator className="h-4 w-4" />
+                    Calculate
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="pl-6 space-y-1 pb-2">
+                    <Link
+                      to="/career-hub/tools/pay-calculator"
+                      className="block py-2 text-accent font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Pay Calculator ★
+                    </Link>
+                    {calculateTools.slice(1).map((tool) => (
+                      <Link
+                        key={tool.slug}
+                        to={`/career-hub/tools/${tool.slug}`}
+                        className="block py-2 text-primary-foreground/80 hover:text-accent"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {tool.title}
+                      </Link>
+                    ))}
+                    <Link
+                      to="/career-hub/tools"
+                      className="block py-2 text-primary-foreground/80 hover:text-accent font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      All Tools →
+                    </Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Grow */}
+              <AccordionItem value="grow" className="border-primary-foreground/20">
+                <AccordionTrigger className="text-primary-foreground hover:no-underline py-3">
+                  <span className="flex items-center gap-2 font-medium">
+                    <TrendingUp className="h-4 w-4" />
+                    Grow
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="pl-6 space-y-1 pb-2">
+                    <Link
+                      to="/career-hub/job-application-toolkit"
+                      className="block py-2 text-accent font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Job Application Toolkit ★
+                    </Link>
+                    <Link
+                      to="/career-hub/guides"
+                      className="block py-2 text-primary-foreground/80 hover:text-accent"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Career Guides
+                    </Link>
+                    <Link
+                      to="/career-hub/financial-tips"
+                      className="block py-2 text-primary-foreground/80 hover:text-accent"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Financial Tips
+                    </Link>
+                    {skillTools.slice(0, 3).map((tool) => (
+                      <Link
+                        key={tool.slug}
+                        to={`/career-hub/tools/${tool.slug}`}
+                        className="block py-2 text-primary-foreground/80 hover:text-accent"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {tool.title}
+                      </Link>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <div className="pt-4 mt-2 border-t border-primary-foreground/20">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full rounded-xl" asChild>
+                <a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer">
+                  Get the App
+                </a>
+              </Button>
             </div>
           </nav>
         )}
