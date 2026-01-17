@@ -1,4 +1,4 @@
-import { BookOpen, TrendingUp, Users, Award, Star, Calendar, FileCheck, LucideIcon } from "lucide-react";
+import { BookOpen, TrendingUp, Users, Award, Star, Calendar, FileCheck, FileText, LucideIcon } from "lucide-react";
 
 export interface ArticleSection {
   heading: string;
@@ -35,6 +35,19 @@ export const guideCategories: GuideCategory[] = [
       { title: "Complete Guide to Indeed Flex", slug: "complete-guide", readTime: "8 min" },
       { title: "What to Expect on Your First Shift", slug: "first-shift", readTime: "4 min" },
       { title: "Building Your Worker Profile", slug: "worker-profile", readTime: "6 min" },
+    ]
+  },
+  {
+    category: "Job Application & Resume",
+    slug: "job-application",
+    icon: FileText,
+    articles: [
+      { title: "How to Write a Resume for Temp Work", slug: "temp-work-resume-guide", readTime: "12 min" },
+      { title: "Resume for Warehouse Jobs: Complete 2026 Guide", slug: "warehouse-resume-guide", readTime: "15 min" },
+      { title: "Hospitality Resume Tips: Get Hired Faster", slug: "hospitality-resume-tips", readTime: "12 min" },
+      { title: "First Job Resume: No Experience Template", slug: "first-job-resume-template", readTime: "10 min" },
+      { title: "Indeed Flex Profile Optimization Guide", slug: "indeed-flex-profile-guide", readTime: "8 min" },
+      { title: "Cover Letter for Temp Jobs: Templates & Examples", slug: "temp-job-cover-letter", readTime: "10 min" },
     ]
   },
   {
@@ -2003,5 +2016,145 @@ export const guideArticles: Record<string, Article> = {
       }
     ],
     relatedArticles: ["i9-complete-guide", "i9-documents-list", "work-authorization-types", "work-without-ssn"]
+  },
+
+  // Job Application articles - placeholders for AI-generated content
+  "temp-work-resume-guide": {
+    slug: "temp-work-resume-guide",
+    title: "How to Write a Resume for Temp Work",
+    category: "Job Application & Resume",
+    categorySlug: "job-application",
+    readTime: "12 min",
+    description: "Complete guide to creating a temp work resume that gets you hired. Learn what hiring managers look for, essential sections to include, and templates for flexible workers in 2026.",
+    keyTakeaways: [
+      "Temp resumes should highlight adaptability, reliability, and quick-learning ability",
+      "Lead with a Skills Summary instead of a traditional Objective statement",
+      "Include availability and flexibility prominently—it's what staffing agencies look for",
+      "Quantify achievements with numbers: shifts completed, ratings earned, certifications held"
+    ],
+    sections: [
+      { heading: "Why Temp Work Resumes Are Different", content: "Traditional resumes are designed for long-term employment. Temp work resumes need to prove you're **adaptable, reliable, and ready to contribute immediately**.\n\nHiring managers for temp positions make decisions in under 30 seconds. Your resume must communicate value instantly." },
+      { heading: "Essential Sections for a Temp Resume", content: "Include: Contact Info, Skills Summary, Key Skills, Work Experience (grouped by type), Certifications, and Availability. See our [Indeed Flex Profile Guide](/career-hub/guides/indeed-flex-profile-guide) for translating this to app-based platforms." }
+    ],
+    faqs: [
+      { question: "Do I need a resume for Indeed Flex?", answer: "No, Indeed Flex uses your in-app profile. However, a well-organized resume helps you build a strong profile." },
+      { question: "How long should a temp work resume be?", answer: "One page maximum. Hiring managers make decisions in under 30 seconds." }
+    ],
+    relatedArticles: ["warehouse-resume-guide", "hospitality-resume-tips", "first-job-resume-template"]
+  },
+
+  "warehouse-resume-guide": {
+    slug: "warehouse-resume-guide",
+    title: "Resume for Warehouse Jobs: Complete 2026 Guide",
+    category: "Job Application & Resume",
+    categorySlug: "job-application",
+    readTime: "15 min",
+    description: "Master the warehouse resume in 2026. Learn what Amazon, FedEx, and UPS look for, essential ATS keywords, and templates that get interviews.",
+    keyTakeaways: [
+      "Include specific equipment certifications (forklift, pallet jack, RF scanner)",
+      "Use exact keywords from job postings to pass ATS screening",
+      "Quantify everything: orders picked per hour, accuracy rates, shifts completed"
+    ],
+    sections: [
+      { heading: "What Warehouse Hiring Managers Look For", content: "In 2026, most major employers use **Applicant Tracking Systems (ATS)** to screen resumes. Include: equipment certifications, physical capabilities, technology skills, and shift flexibility." },
+      { heading: "ATS Keywords for Warehouse Resumes", content: "Forklift, RF scanner, picker packer, inventory management, shipping/receiving, WMS, OSHA, heavy lifting. Match exact keywords from the job posting." }
+    ],
+    faqs: [
+      { question: "Do I need forklift certification?", answer: "Not for all roles, but it significantly expands options and adds $2-5/hr to your pay." },
+      { question: "How do I pass the ATS for Amazon jobs?", answer: "Use exact keywords from the job posting: 'picker packer,' 'RF scanner,' 'order fulfillment.'" }
+    ],
+    relatedArticles: ["temp-work-resume-guide", "warehouse-guide", "certifications"]
+  },
+
+  "hospitality-resume-tips": {
+    slug: "hospitality-resume-tips",
+    title: "Hospitality Resume Tips: Get Hired Faster",
+    category: "Job Application & Resume",
+    categorySlug: "job-application",
+    readTime: "12 min",
+    description: "Create a hospitality resume that stands out. Templates for servers, bartenders, cooks, and event staff.",
+    keyTakeaways: [
+      "Emphasize customer service skills and personality",
+      "List certifications like ServSafe and TIPS prominently",
+      "Quantify: covers per night, tip averages, guest satisfaction"
+    ],
+    sections: [
+      { heading: "What Hospitality Managers Look For", content: "Hospitality hiring prioritizes **personality and attitude** as much as experience. Managers look for warmth, flexibility, reliability, and grace under pressure." },
+      { heading: "Essential Certifications", content: "Food Handler (ServSafe) is required in most states. TIPS Alcohol is required for bartending. Both are cheap ($15-55) and fast (2-4 hours online)." }
+    ],
+    faqs: [
+      { question: "Do I need experience for hospitality?", answer: "No! Many positions are entry-level. Managers often prefer training someone with the right attitude." },
+      { question: "What certifications do I need?", answer: "Food Handler (ServSafe) and TIPS Alcohol are the essentials. Both can be done online in a few hours." }
+    ],
+    relatedArticles: ["temp-work-resume-guide", "hospitality-guide", "certifications"]
+  },
+
+  "first-job-resume-template": {
+    slug: "first-job-resume-template",
+    title: "First Job Resume: No Experience Template",
+    category: "Job Application & Resume",
+    categorySlug: "job-application",
+    readTime: "10 min",
+    description: "Creating your first resume with no work experience? Templates and tips for students and first-time workers.",
+    keyTakeaways: [
+      "Focus on skills and potential rather than experience you don't have",
+      "Include school activities, volunteering, and personal projects",
+      "Availability and willingness to learn are your biggest advantages"
+    ],
+    sections: [
+      { heading: "You Have More to Offer Than You Think", content: "Employers hiring for entry-level positions know you're new. They're looking for **potential, attitude, and reliability**—not a 10-year work history." },
+      { heading: "What to Include", content: "School activities & clubs, volunteering, personal responsibilities (babysitting), and any certifications. Focus on transferable skills like reliability and teamwork." }
+    ],
+    faqs: [
+      { question: "Can I get a job with no experience?", answer: "Absolutely! Many entry-level positions expect applicants with no experience. Attitude and reliability matter more than work history." },
+      { question: "What do I put on a resume if I've never worked?", answer: "Include school activities, volunteering, personal responsibilities, hobbies, and any certifications." }
+    ],
+    relatedArticles: ["temp-work-resume-guide", "first-flex-job", "certifications"]
+  },
+
+  "indeed-flex-profile-guide": {
+    slug: "indeed-flex-profile-guide",
+    title: "Indeed Flex Profile Optimization Guide",
+    category: "Job Application & Resume",
+    categorySlug: "job-application",
+    readTime: "8 min",
+    description: "Optimize your Indeed Flex profile to get more shift offers. What hiring managers see and how to stand out.",
+    keyTakeaways: [
+      "Complete profiles get 40% more shift offers",
+      "A professional photo is the single biggest factor",
+      "Upload all certifications immediately—they unlock higher-paying shifts"
+    ],
+    sections: [
+      { heading: "Why Your Profile Matters", content: "On [Indeed Flex](https://indeedflex.com/download-app/), **your profile IS your resume**. Businesses see your photo, bio, skills, ratings, certifications, and availability when deciding to offer shifts." },
+      { heading: "Profile Photo Best Practices", content: "Clear, well-lit face photo with neutral background. Work-appropriate attire. Friendly expression. This is what businesses see first." }
+    ],
+    faqs: [
+      { question: "How do I get more shifts?", answer: "Complete your profile 100%, upload a professional photo, add all skills, keep availability accurate, upload certifications, and maintain high ratings." },
+      { question: "What should I write in my bio?", answer: "2-3 sentences: your experience/rating, key certifications, main skills, and availability." }
+    ],
+    relatedArticles: ["temp-work-resume-guide", "complete-guide", "shift-rating-tips"]
+  },
+
+  "temp-job-cover-letter": {
+    slug: "temp-job-cover-letter",
+    title: "Cover Letter for Temp Jobs: Templates & Examples",
+    category: "Job Application & Resume",
+    categorySlug: "job-application",
+    readTime: "10 min",
+    description: "When and how to write cover letters for temp work. Templates for warehouse, hospitality, and temp-to-perm.",
+    keyTakeaways: [
+      "Most temp/shift work doesn't require cover letters",
+      "Cover letters matter for temp-to-perm opportunities",
+      "Keep it short: 3-4 paragraphs maximum"
+    ],
+    sections: [
+      { heading: "When You Need a Cover Letter", content: "Most temp jobs don't require cover letters—your profile is enough. Write one for: temp-to-perm opportunities, direct-hire positions, and management roles." },
+      { heading: "Temp Cover Letter Template", content: "Opening: your rating and experience. Middle: 3 key qualifications. Closing: availability and interest. Keep under 250 words." }
+    ],
+    faqs: [
+      { question: "Do I need a cover letter for Indeed Flex?", answer: "No. Indeed Flex uses your profile instead of resumes and cover letters." },
+      { question: "How long should a temp cover letter be?", answer: "3-4 paragraphs, under 250 words. Temp hiring is fast-paced." }
+    ],
+    relatedArticles: ["temp-work-resume-guide", "indeed-flex-profile-guide", "temp-to-perm-guide"]
   }
 };
