@@ -11,7 +11,7 @@ import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { SEOMetaTags } from "@/components/career-hub/seo";
 import { usLocations } from "@/data/locations";
 import { roles } from "@/data/roles";
-import { MapPin, BadgeCheck, ChevronRight } from "lucide-react";
+import { MapPin, BadgeCheck, ChevronRight, FileText } from "lucide-react";
 
 // Indeed Flex active markets (from official website)
 const ACTIVE_MARKET_CITIES = [
@@ -70,10 +70,11 @@ const tools = [
     featured: true,
   },
   {
-    title: "Shift Income Planner",
-    description: "Plan your earnings based on shifts per week, hourly rate, and expected tips.",
-    icon: "TrendingUp" as const,
-    href: "/career-hub/tools/shift-planner",
+    title: "Job Application Toolkit",
+    description: "Resume tips, cover letter templates & profile optimization for temp workers.",
+    icon: "FileText" as const,
+    href: "/career-hub/job-application-toolkit",
+    featured: true,
   },
   {
     title: "Career Path Explorer",

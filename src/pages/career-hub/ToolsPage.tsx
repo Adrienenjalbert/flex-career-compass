@@ -13,7 +13,8 @@ import {
   ArrowRight,
   Sparkles,
   HelpCircle,
-  CheckCircle2
+  CheckCircle2,
+  FileText
 } from "lucide-react";
 
 const toolCategories = [
@@ -98,6 +99,14 @@ const toolCategories = [
     colorClass: "bg-purple-500/10 text-purple-600",
     iconBg: "bg-purple-500/10",
     tools: [
+      {
+        title: "Job Application Toolkit",
+        description: "Resume tips, cover letter templates & Indeed Flex profile optimization for temp workers.",
+        icon: "FileText" as const,
+        href: "/career-hub/job-application-toolkit",
+        answersQuestion: "How do I create a great resume?",
+        estimatedTime: "~10 min",
+      },
       {
         title: "Career Path Explorer",
         description: "Visualize your career progression from entry-level to management roles. See salary growth potential.",
