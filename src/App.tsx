@@ -42,6 +42,9 @@ import ProgrammaticRouter from "./pages/career-hub/programmatic/ProgrammaticRout
 import SeasonalHiringPage from "./pages/career-hub/SeasonalHiringPage";
 import PresentationPage from "./pages/career-hub/PresentationPage";
 import JobApplicationToolkitPage from "./pages/career-hub/JobApplicationToolkitPage";
+import FindWorkHub from "./pages/career-hub/FindWorkHub";
+import CalculateHub from "./pages/career-hub/CalculateHub";
+import GrowHub from "./pages/career-hub/GrowHub";
 
 const queryClient = new QueryClient();
 
@@ -89,6 +92,10 @@ const App = () => (
           <Route path="/career-hub/seasonal-hiring" element={<SeasonalHiringPage />} />
           <Route path="/career-hub/presentation" element={<PresentationPage />} />
           <Route path="/career-hub/job-application-toolkit" element={<JobApplicationToolkitPage />} />
+          <Route path="/career-hub/find-work" element={<FindWorkHub />} />
+          <Route path="/career-hub/calculate" element={<CalculateHub />} />
+          <Route path="/career-hub/grow" element={<GrowHub />} />
+          <Route path="/career-hub/active-markets" element={<ActiveMarketsPage />} />
           
           {/* Programmatic SEO Routes */}
           <Route path="/:slug" element={<ProgrammaticRouter />} />

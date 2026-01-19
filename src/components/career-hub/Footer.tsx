@@ -1,68 +1,73 @@
 import { Link } from "react-router-dom";
+import { Briefcase, Calculator, GraduationCap } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div>
             <img src={logo} alt="Indeed Flex" className="h-8 w-auto mb-4 brightness-0 invert" />
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+            <p className="text-primary-foreground/70 text-sm leading-relaxed mb-4">
               Find flexible work that fits your life. Hospitality, warehouse, retail, and more.
             </p>
+            <a 
+              href="https://indeedflex.onelink.me/4jvh/x7l4jms3" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-block bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-xl px-4 py-2 text-sm transition-colors"
+            >
+              Download the App →
+            </a>
           </div>
 
-          {/* Industries */}
+          {/* FIND WORK Pillar */}
           <div>
-            <h4 className="font-semibold mb-5">Explore Industries</h4>
+            <div className="flex items-center gap-2 mb-5">
+              <Briefcase className="h-4 w-4 opacity-80" />
+              <h4 className="font-semibold">Find Work</h4>
+            </div>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
+              <li><Link to="/career-hub/job-application-toolkit" className="hover:text-accent transition-colors">Job Application Toolkit</Link></li>
+              <li><Link to="/career-hub/active-markets" className="hover:text-accent transition-colors">Active Markets (19 cities)</Link></li>
+              <li><Link to="/career-hub/seasonal-hiring" className="hover:text-accent transition-colors">Seasonal Hiring</Link></li>
               <li><Link to="/career-hub/industries/hospitality" className="hover:text-accent transition-colors">Hospitality Jobs</Link></li>
-              <li><Link to="/career-hub/industries/industrial" className="hover:text-accent transition-colors">Warehouse & Industrial</Link></li>
-              <li><Link to="/career-hub/industries/retail" className="hover:text-accent transition-colors">Retail Jobs</Link></li>
-              <li><Link to="/career-hub/industries/facilities" className="hover:text-accent transition-colors">Facilities Management</Link></li>
-              <li><Link to="/career-hub" className="hover:text-accent transition-colors font-medium text-accent">All Roles →</Link></li>
+              <li><Link to="/career-hub/industries/industrial" className="hover:text-accent transition-colors">Warehouse Jobs</Link></li>
+              <li><Link to="/career-hub" className="hover:text-accent transition-colors font-medium text-accent">Browse All Jobs →</Link></li>
             </ul>
           </div>
 
-          {/* Top Tools */}
+          {/* CALCULATE Pillar */}
           <div>
-            <h4 className="font-semibold mb-5">Career Tools</h4>
+            <div className="flex items-center gap-2 mb-5">
+              <Calculator className="h-4 w-4 opacity-80" />
+              <h4 className="font-semibold">Calculate</h4>
+            </div>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
               <li><Link to="/career-hub/tools/pay-calculator" className="hover:text-accent transition-colors">Pay Calculator</Link></li>
-              <li><Link to="/career-hub/tools/tax-calculator" className="hover:text-accent transition-colors">Tax Estimator</Link></li>
+              <li><Link to="/career-hub/tools/tax-calculator" className="hover:text-accent transition-colors">Tax Calculator</Link></li>
               <li><Link to="/career-hub/tools/childcare-calculator" className="hover:text-accent transition-colors">Childcare Calculator</Link></li>
               <li><Link to="/career-hub/tools/commute-calculator" className="hover:text-accent transition-colors">Commute Calculator</Link></li>
-              <li><Link to="/career-hub/tools/worktalk" className="hover:text-accent transition-colors">WorkTalk (Job English)</Link></li>
-              <li><Link to="/career-hub/tools" className="hover:text-accent transition-colors font-medium text-accent">All 10 Tools →</Link></li>
+              <li><Link to="/career-hub/financial-tips" className="hover:text-accent transition-colors">Financial Guides</Link></li>
+              <li><Link to="/career-hub/tools" className="hover:text-accent transition-colors font-medium text-accent">All Tools →</Link></li>
             </ul>
           </div>
 
-          {/* Indeed Flex Markets */}
+          {/* GROW Pillar */}
           <div>
-            <h4 className="font-semibold mb-5">Active Markets</h4>
+            <div className="flex items-center gap-2 mb-5">
+              <GraduationCap className="h-4 w-4 opacity-80" />
+              <h4 className="font-semibold">Grow</h4>
+            </div>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
-              <li><Link to="/career-hub/locations/austin" className="hover:text-accent transition-colors">Austin, TX</Link></li>
-              <li><Link to="/career-hub/locations/dallas" className="hover:text-accent transition-colors">Dallas, TX</Link></li>
-              <li><Link to="/career-hub/locations/chicago" className="hover:text-accent transition-colors">Chicago, IL</Link></li>
-              <li><Link to="/career-hub/locations/atlanta" className="hover:text-accent transition-colors">Atlanta, GA</Link></li>
-              <li><Link to="/career-hub/locations/las-vegas" className="hover:text-accent transition-colors">Las Vegas, NV</Link></li>
-              <li><Link to="/career-hub/locations/nashville" className="hover:text-accent transition-colors">Nashville, TN</Link></li>
-              <li><Link to="/career-hub/active-markets" className="hover:text-accent transition-colors font-medium text-accent">All 19 Markets →</Link></li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="font-semibold mb-5">Resources</h4>
-            <ul className="space-y-3 text-sm text-primary-foreground/70">
-              <li><Link to="/career-hub/guides" className="hover:text-accent transition-colors">Career Guides</Link></li>
-              <li><Link to="/career-hub/financial-tips" className="hover:text-accent transition-colors">Financial Tips</Link></li>
-              <li><Link to="/career-hub/guides/complete-guide" className="hover:text-accent transition-colors">Getting Started</Link></li>
+              <li><Link to="/career-hub/guides/complete-guide" className="hover:text-accent transition-colors">Getting Started Guide</Link></li>
               <li><Link to="/career-hub/guides/certifications" className="hover:text-accent transition-colors">Certifications</Link></li>
-              <li><Link to="/career-hub/cities" className="hover:text-accent transition-colors">All US Cities</Link></li>
-              <li><a href="https://indeedflex.onelink.me/4jvh/x7l4jms3" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors font-medium text-accent">Download the App →</a></li>
+              <li><Link to="/career-hub/tools/worktalk" className="hover:text-accent transition-colors">WorkTalk (Job English)</Link></li>
+              <li><Link to="/career-hub/tools/career-path" className="hover:text-accent transition-colors">Career Path Explorer</Link></li>
+              <li><Link to="/career-hub/guides/i9-complete-guide" className="hover:text-accent transition-colors">I-9 Guide</Link></li>
+              <li><Link to="/career-hub/guides" className="hover:text-accent transition-colors font-medium text-accent">All Guides →</Link></li>
             </ul>
           </div>
         </div>
