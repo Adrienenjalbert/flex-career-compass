@@ -48,6 +48,8 @@ import TemplatesIndexPage from "./pages/career-hub/templates/TemplatesIndexPage"
 import TemplatePage from "./pages/career-hub/templates/TemplatePage";
 import ActionVerbsPage from "./pages/career-hub/resources/ActionVerbsPage";
 import BulletGeneratorPage from "./pages/career-hub/resources/BulletGeneratorPage";
+import CoverLettersIndexPage from "./pages/career-hub/templates/CoverLettersIndexPage";
+import CoverLetterPage from "./pages/career-hub/templates/CoverLetterPage";
 
 const queryClient = new QueryClient();
 
@@ -102,6 +104,8 @@ const App = () => (
           <Route path="/career-hub/resume-examples/:roleSlug/:variation" element={<ResumeExamplePage />} />
           <Route path="/career-hub/templates" element={<TemplatesIndexPage />} />
           <Route path="/career-hub/templates/:templateSlug" element={<TemplatePage />} />
+          <Route path="/career-hub/cover-letters" element={<CoverLettersIndexPage />} />
+          <Route path="/career-hub/cover-letters/:templateSlug" element={<CoverLetterPage />} />
           
           {/* Programmatic SEO Routes */}
           <Route path="/:slug" element={<ProgrammaticRouter />} />
