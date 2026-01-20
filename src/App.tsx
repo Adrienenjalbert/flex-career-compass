@@ -42,6 +42,8 @@ import ProgrammaticRouter from "./pages/career-hub/programmatic/ProgrammaticRout
 import SeasonalHiringPage from "./pages/career-hub/SeasonalHiringPage";
 import PresentationPage from "./pages/career-hub/PresentationPage";
 import JobApplicationToolkitPage from "./pages/career-hub/JobApplicationToolkitPage";
+import ResumeExamplesIndexPage from "./pages/career-hub/resume-examples/ResumeExamplesIndexPage";
+import ResumeExamplePage from "./pages/career-hub/resume-examples/ResumeExamplePage";
 
 const queryClient = new QueryClient();
 
@@ -89,6 +91,9 @@ const App = () => (
           <Route path="/career-hub/seasonal-hiring" element={<SeasonalHiringPage />} />
           <Route path="/career-hub/presentation" element={<PresentationPage />} />
           <Route path="/career-hub/job-application-toolkit" element={<JobApplicationToolkitPage />} />
+          <Route path="/career-hub/resume-examples" element={<ResumeExamplesIndexPage />} />
+          <Route path="/career-hub/resume-examples/:roleSlug" element={<ResumeExamplePage />} />
+          <Route path="/career-hub/resume-examples/:roleSlug/:variation" element={<ResumeExamplePage />} />
           
           {/* Programmatic SEO Routes */}
           <Route path="/:slug" element={<ProgrammaticRouter />} />
