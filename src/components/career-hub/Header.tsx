@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, UtensilsCrossed, Warehouse, ShoppingBag, Building2, Calculator, BookOpen, DollarSign, Compass, Clock, TrendingUp, Wrench, Wallet, PiggyBank, Receipt, Shield, Award, ArrowRight, FileText } from "lucide-react";
+import { 
+  Menu, X, UtensilsCrossed, Warehouse, ShoppingBag, Building2, Calculator, 
+  BookOpen, DollarSign, Compass, Clock, TrendingUp, Wrench, Wallet, PiggyBank, 
+  Receipt, Shield, Award, ArrowRight, FileText, GraduationCap, Users, Scale,
+  MessageSquare, LayoutTemplate, FileUser, Mail, Zap, Search
+} from "lucide-react";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -33,7 +38,50 @@ const tools = [
   { title: "Career Path", slug: "career-path", icon: Compass, description: "Plan your growth" },
 ];
 
-// Career Guide categories with featured articles
+// Job Application Mega Menu Data
+const jobApplicationPillars = [
+  {
+    title: "Resume Resources",
+    icon: FileText,
+    description: "Templates, examples & guides",
+    links: [
+      { title: "Resume Templates", slug: "/career-hub/templates", badge: "6 formats" },
+      { title: "Resume Examples by Role", slug: "/career-hub/resume-examples", badge: "23 roles" },
+      { title: "Action Verbs Library", slug: "/career-hub/resources/action-verbs", badge: "200+" },
+    ]
+  },
+  {
+    title: "Cover Letters",
+    icon: Mail,
+    description: "Industry-specific templates",
+    links: [
+      { title: "Cover Letter Templates", slug: "/career-hub/cover-letters", badge: "6 templates" },
+      { title: "Temp Job Cover Letter", slug: "/career-hub/guides/temp-job-cover-letter" },
+    ]
+  }
+];
+
+const fresherStudentArticles = [
+  { title: "Resume for Freshers 2026", slug: "fresher-resume-guide", icon: GraduationCap },
+  { title: "Student Resume Template", slug: "student-resume-template", icon: BookOpen },
+  { title: "Get Hired With Zero Experience", slug: "zero-experience-jobs", icon: Users },
+  { title: "Transferable Skills Guide", slug: "transferable-skills-guide", icon: TrendingUp },
+];
+
+const comparisonArticles = [
+  { title: "Best Resume Builders 2026", slug: "best-resume-builders-2026", icon: LayoutTemplate },
+  { title: "Best Job Boards by Industry", slug: "best-job-boards-2026", icon: Search },
+  { title: "Indeed Flex vs Staffing Agencies", slug: "indeed-flex-vs-staffing-agencies", icon: Scale },
+];
+
+const interviewArticles = [
+  { title: "Warehouse Interview Questions", slug: "warehouse-interview-questions", icon: Warehouse },
+  { title: "Hospitality Interview Questions", slug: "hospitality-interview-questions", icon: UtensilsCrossed },
+  { title: "ATS Resume Tips", slug: "ats-resume-tips", icon: FileText },
+  { title: "Temp to Permanent Guide", slug: "temp-to-permanent-guide", icon: TrendingUp },
+];
+
+// Career Guide categories (without job application content)
 const guideCategories = [
   {
     category: "Getting Started",
@@ -131,17 +179,17 @@ const Header = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* Career Guides Mega Menu */}
+              {/* Job Application Mega Menu - NEW */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
-                  Career Guides
+                  Job Application
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[600px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
-                    {/* Featured: Job Application Toolkit */}
+                  <div className="w-[720px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
+                    {/* Featured: Job Application Toolkit Hub */}
                     <Link
                       to="/career-hub/job-application-toolkit"
-                      className="flex items-center justify-between p-4 mb-4 rounded-xl bg-gradient-to-r from-primary to-primary/80 text-primary-foreground hover:from-primary/90 hover:to-primary/70 transition-colors group"
+                      className="flex items-center justify-between p-4 mb-5 rounded-xl bg-gradient-to-r from-primary to-primary/80 text-primary-foreground hover:from-primary/90 hover:to-primary/70 transition-colors group"
                     >
                       <div className="flex items-center gap-3">
                         <div className="p-2 bg-primary-foreground/20 rounded-lg">
@@ -149,22 +197,127 @@ const Header = () => {
                         </div>
                         <div>
                           <div className="font-semibold text-lg">Job Application Toolkit</div>
-                          <div className="text-sm text-primary-foreground/80">Resume tips & profile optimization</div>
+                          <div className="text-sm text-primary-foreground/80">Resume templates, examples & interview prep</div>
                         </div>
                       </div>
                       <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
 
+                    <div className="grid grid-cols-3 gap-6">
+                      {/* Column 1: Resources */}
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                          <FileUser className="h-4 w-4 text-primary" />
+                          Resources
+                        </h3>
+                        <div className="space-y-1">
+                          {jobApplicationPillars.map((pillar) => (
+                            <div key={pillar.title} className="space-y-1">
+                              {pillar.links.map((link) => (
+                                <Link
+                                  key={link.slug}
+                                  to={link.slug}
+                                  className="flex items-center justify-between p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors group"
+                                >
+                                  <span>{link.title}</span>
+                                  {link.badge && (
+                                    <span className="text-xs text-muted-foreground group-hover:text-primary/70">{link.badge}</span>
+                                  )}
+                                </Link>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 2: For Students & Freshers */}
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                          <GraduationCap className="h-4 w-4 text-primary" />
+                          For Students
+                        </h3>
+                        <div className="space-y-1">
+                          {fresherStudentArticles.map((article) => {
+                            const Icon = article.icon;
+                            return (
+                              <Link
+                                key={article.slug}
+                                to={`/career-hub/guides/${article.slug}`}
+                                className="flex items-center gap-2 p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                              >
+                                <Icon className="h-3.5 w-3.5 text-muted-foreground" />
+                                <span className="line-clamp-1">{article.title}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+
+                        {/* Comparisons */}
+                        <h3 className="font-semibold text-foreground mt-4 mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                          <Scale className="h-4 w-4 text-primary" />
+                          Compare
+                        </h3>
+                        <div className="space-y-1">
+                          {comparisonArticles.slice(0, 2).map((article) => {
+                            const Icon = article.icon;
+                            return (
+                              <Link
+                                key={article.slug}
+                                to={`/career-hub/guides/${article.slug}`}
+                                className="flex items-center gap-2 p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                              >
+                                <Icon className="h-3.5 w-3.5 text-muted-foreground" />
+                                <span className="line-clamp-1">{article.title}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Column 3: Interview Prep */}
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                          <MessageSquare className="h-4 w-4 text-primary" />
+                          Interview Prep
+                        </h3>
+                        <div className="space-y-1">
+                          {interviewArticles.map((article) => {
+                            const Icon = article.icon;
+                            return (
+                              <Link
+                                key={article.slug}
+                                to={`/career-hub/guides/${article.slug}`}
+                                className="flex items-center gap-2 p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                              >
+                                <Icon className="h-3.5 w-3.5 text-muted-foreground" />
+                                <span className="line-clamp-1">{article.title}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Career Guides Mega Menu - Simplified (removed job application) */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
+                  Career Guides
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[520px] p-6 bg-card border border-border shadow-soft-lg rounded-xl">
                     {/* View All Guides CTA */}
                     <Link
                       to="/career-hub/guides"
-                      className="flex items-center justify-between p-3 mb-4 rounded-xl bg-muted hover:bg-muted/80 transition-colors group"
+                      className="flex items-center justify-between p-4 mb-4 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors group"
                     >
                       <div>
-                        <div className="font-medium text-foreground">All Career Guides</div>
-                        <div className="text-xs text-muted-foreground">16+ guides for getting started & growing</div>
+                        <div className="font-semibold text-lg">All Career Guides</div>
+                        <div className="text-sm text-primary-foreground/80">Getting started, growth & industry tips</div>
                       </div>
-                      <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     
                     <div className="grid grid-cols-3 gap-5">
@@ -351,7 +504,7 @@ const Header = () => {
                 className="flex items-center justify-between py-3 px-2 rounded-lg hover:bg-primary-foreground/10 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <span className="font-medium">Job Application Toolkit</span>
+                <span className="font-medium">Job Application</span>
                 <FileText className="h-4 w-4 opacity-60" />
               </Link>
               
