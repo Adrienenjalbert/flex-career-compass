@@ -14,6 +14,7 @@ export interface CoverLetterTemplate {
     retail: number;
     facilities: number;
   };
+  exampleData: Record<string, string>;
 }
 
 export interface CoverLetterSection {
@@ -79,7 +80,22 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       'Match keywords from the job posting',
       'Quantify achievements with numbers when possible',
       'Proofread carefully for spelling and grammar errors'
-    ]
+    ],
+    exampleData: {
+      your_name: 'John Smith',
+      your_phone: '(555) 123-4567',
+      your_email: 'john.smith@email.com',
+      your_city: 'Austin, TX',
+      date: 'January 20, 2026',
+      hiring_manager: 'Ms. Sarah Johnson',
+      company_name: 'Amazon Fulfillment Center',
+      job_title: 'Warehouse Associate',
+      how_found: 'Indeed Flex app',
+      why_interested: 'I am drawn to Amazon\'s reputation for operational excellence and opportunities for growth. The fast-paced fulfillment environment aligns perfectly with my experience and work style.',
+      key_skill_1: 'Processed 150+ orders daily with 99.5% accuracy at FedEx Ground, consistently exceeding productivity targets',
+      key_skill_2: 'Trained 8 new team members on RF scanner operations and safety protocols, reducing onboarding time by 20%',
+      closing_statement: 'I am available for immediate start and flexible scheduling including nights, weekends, and overtime. I am forklift certified and ready to contribute from day one.'
+    }
   },
   'temp-flex': {
     slug: 'temp-flex',
@@ -128,7 +144,22 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       'Highlight same-day availability if applicable',
       'List multiple industries to show versatility',
       'Emphasize attendance record and punctuality'
-    ]
+    ],
+    exampleData: {
+      your_name: 'Maria Garcia',
+      your_phone: '(555) 234-5678',
+      your_email: 'maria.garcia@email.com',
+      your_city: 'Houston, TX',
+      date: 'January 20, 2026',
+      company_name: 'Indeed Flex',
+      role_types: 'warehouse, event staffing, and hospitality',
+      availability: 'days, evenings, and weekends with same-day booking flexibility',
+      total_shifts: '200+ shifts across multiple industries',
+      rating: '4.9-star rating',
+      top_skills: 'RF scanner operation, forklift certification, and customer service excellence',
+      reliability_proof: '98% attendance rate and zero no-shows',
+      industries: 'warehousing, hospitality, and retail'
+    }
   },
   'career-change': {
     slug: 'career-change',
@@ -178,7 +209,23 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       'Show enthusiasm for the new direction',
       'Address the transition directly rather than avoiding it',
       'Highlight soft skills like reliability, adaptability, and work ethic'
-    ]
+    ],
+    exampleData: {
+      your_name: 'David Chen',
+      your_phone: '(555) 345-6789',
+      your_email: 'david.chen@email.com',
+      your_city: 'Chicago, IL',
+      date: 'January 20, 2026',
+      hiring_manager: 'Hiring Manager',
+      company_name: 'Target Distribution Center',
+      job_title: 'Warehouse Associate',
+      previous_career: 'office administration',
+      why_change: 'seeking more active work with flexible scheduling that fits my lifestyle. After 5 years in an office environment, I am excited to transition into hands-on warehouse operations',
+      transferable_skill_1: 'Organizational skills: Managed complex filing systems and inventory tracking for office supplies with zero discrepancies',
+      transferable_skill_2: 'Attention to detail: Processed 500+ documents monthly with 99% accuracy and caught errors before they impacted operations',
+      transferable_skill_3: 'Team collaboration: Coordinated with 20+ colleagues daily on workflow management and deadline compliance',
+      enthusiasm: 'I am eager to apply my strong work ethic, proven reliability, and organizational skills to this new path'
+    }
   },
   'entry-level': {
     slug: 'entry-level',
@@ -227,7 +274,22 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       'Mention relevant coursework if applicable',
       'Show enthusiasm—employers value attitude over experience for entry roles',
       'Be specific about your availability'
-    ]
+    ],
+    exampleData: {
+      your_name: 'Emily Rodriguez',
+      your_phone: '(555) 456-7890',
+      your_email: 'emily.rodriguez@email.com',
+      your_city: 'Nashville, TN',
+      date: 'January 20, 2026',
+      hiring_manager: 'Hiring Manager',
+      company_name: 'Marriott Hotels',
+      job_title: 'Event Staff',
+      education: 'a sophomore at Nashville State Community College studying Hospitality Management',
+      availability: 'evenings and weekends, with full-time availability during school breaks',
+      relevant_activity_1: 'Volunteered at 10+ community events, handling setup, guest services, and cleanup for groups of 200+ attendees',
+      relevant_activity_2: 'Completed customer service training course with distinction and earned a Food Handler certification',
+      personal_qualities: 'I am punctual, eager to learn, and committed to providing excellent service. My professors describe me as reliable and detail-oriented'
+    }
   },
   'hospitality': {
     slug: 'hospitality',
@@ -276,7 +338,22 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       'Show flexibility with scheduling—hospitality demands it',
       'Use hospitality-specific language: "guest experience," "service excellence"',
       'Highlight teamwork and collaboration skills'
-    ]
+    ],
+    exampleData: {
+      your_name: 'Alex Johnson',
+      your_phone: '(555) 567-8901',
+      your_email: 'alex.johnson@email.com',
+      your_city: 'Las Vegas, NV',
+      date: 'January 20, 2026',
+      hiring_manager: 'Ms. Patricia Williams',
+      company_name: 'The Venetian Resort',
+      job_title: 'Banquet Server',
+      years_experience: '3 years',
+      guest_achievement: 'Maintained 98% positive guest feedback scores across 500+ interactions, receiving multiple commendations for exceptional service',
+      team_achievement: 'Collaborated seamlessly with 20-person teams during events serving 1,000+ guests, ensuring smooth service flow',
+      pace_example: 'Thrived during peak dining hours at busy restaurants, turning 15+ tables per shift while maintaining quality service standards',
+      certifications: 'Food Handler Card, TIPS Alcohol Certification, ServSafe Manager'
+    }
   },
   'warehouse': {
     slug: 'warehouse',
@@ -326,7 +403,23 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       'Mention physical capability for lifting and standing',
       'Include experience with WMS, RF scanners, and other systems',
       'Show availability for various shifts'
-    ]
+    ],
+    exampleData: {
+      your_name: 'Michael Thompson',
+      your_phone: '(555) 678-9012',
+      your_email: 'michael.thompson@email.com',
+      your_city: 'Columbus, OH',
+      date: 'January 20, 2026',
+      hiring_manager: 'Hiring Manager',
+      company_name: 'Amazon Fulfillment Center',
+      job_title: 'Warehouse Associate',
+      years_experience: '4 years',
+      productivity_achievement: 'Consistently exceeded daily pick rate targets by 20%, processing 175+ orders per shift while maintaining quality standards',
+      accuracy_achievement: 'Maintained 99.7% order accuracy over 18-month period, contributing to team recognition for quality excellence',
+      safety_achievement: 'Zero safety incidents in 4 years while operating heavy machinery including forklifts and pallet jacks',
+      equipment_skills: 'Certified forklift operator (sit-down, stand-up, reach), RF scanner proficient, experienced with Manhattan WMS',
+      physical_statement: 'Comfortable lifting 50+ lbs repeatedly and standing for 10-hour shifts in fast-paced environment'
+    }
   }
 };
 
