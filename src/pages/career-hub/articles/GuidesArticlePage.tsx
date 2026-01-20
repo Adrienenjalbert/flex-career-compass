@@ -12,10 +12,12 @@ import CTASection from "@/components/career-hub/CTASection";
 import { ExternalResourcesSection } from "@/components/career-hub/ExternalResourcesSection";
 import Layout from "@/components/career-hub/Layout";
 import MarkdownContent from "@/components/career-hub/MarkdownContent";
+import ResearchInsights from "@/components/career-hub/ResearchInsights";
 import { SEOMetaTags } from "@/components/career-hub/seo";
 import TableOfContents, { generateTOCFromSections } from "@/components/career-hub/TableOfContents";
 import { guideArticles, guideCategories } from "@/data/articles/guides";
 import { certifications, getCertificationsByCategory } from "@/data/certifications";
+import { useArticleResearchData } from "@/hooks/useArticleResearchData";
 import { Clock, ArrowLeft, ArrowRight, CheckCircle2, Award, ExternalLink } from "lucide-react";
 
 // Helper functions to determine resource category based on article slug
@@ -163,6 +165,9 @@ const getResourceDescription = (slug: string): string => {
 const GuidesArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? guideArticles[slug] : null;
+  
+  // Fetch research data for job application articles
+  const { data: researchData, hasResearch } = useArticleResearchData(slug);
 
   if (!article) {
     return <Navigate to="/career-hub/guides" replace />;
@@ -402,6 +407,17 @@ const GuidesArticlePage = () => {
             </div>
           </section>
 
+          {/* Research Insights Section - Only for job application articles with research data */}
+          {hasResearch && researchData && (
+            <section className="py-6">
+              <div className="container mx-auto px-4">
+                <div className="max-w-3xl mx-auto">
+                  <ResearchInsights data={researchData} variant="inline" />
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Article Content with Sticky TOC */}
           <section className="py-12">
             <div className="container mx-auto px-4">
@@ -410,7 +426,13 @@ const GuidesArticlePage = () => {
                   {/* Sticky Table of Contents - Desktop */}
                   {tocItems.length >= 3 && (
                     <aside className="hidden lg:block lg:w-64 flex-shrink-0">
-                      <TableOfContents items={tocItems} sticky />
+                      <div className="sticky top-24 space-y-6">
+                        <TableOfContents items={tocItems} sticky />
+                        {/* Sidebar Research Card */}
+                        {hasResearch && researchData && (
+                          <ResearchInsights data={researchData} variant="sidebar" />
+                        )}
+                      </div>
                     </aside>
                   )}
 
