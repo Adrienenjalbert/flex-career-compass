@@ -1,4 +1,5 @@
 import { BookOpen, TrendingUp, Users, Award, Star, Calendar, FileCheck, FileText, LucideIcon } from "lucide-react";
+import { jobApplicationArticles } from "./job-application-articles";
 
 export interface ArticleSection {
   heading: string;
@@ -48,6 +49,17 @@ export const guideCategories: GuideCategory[] = [
       { title: "First Job Resume: No Experience Template", slug: "first-job-resume-template", readTime: "10 min" },
       { title: "Indeed Flex Profile Optimization Guide", slug: "indeed-flex-profile-guide", readTime: "8 min" },
       { title: "Cover Letter for Temp Jobs: Templates & Examples", slug: "temp-job-cover-letter", readTime: "10 min" },
+      { title: "Resume for Freshers 2026: Complete Guide", slug: "fresher-resume-guide", readTime: "15 min" },
+      { title: "Student Resume Template: Balance Work & School", slug: "student-resume-template", readTime: "12 min" },
+      { title: "How to Get Hired With Zero Experience", slug: "zero-experience-jobs", readTime: "14 min" },
+      { title: "Transferable Skills for Your First Resume", slug: "transferable-skills-guide", readTime: "12 min" },
+      { title: "ATS Resume Tips: Beat the Bots in 2026", slug: "ats-resume-tips", readTime: "10 min" },
+      { title: "Best Free Resume Builders 2026: Complete Comparison", slug: "best-resume-builders-2026", readTime: "18 min" },
+      { title: "Best Job Boards by Industry 2026", slug: "best-job-boards-2026", readTime: "16 min" },
+      { title: "Indeed Flex vs Staffing Agencies: Complete Comparison", slug: "indeed-flex-vs-staffing-agencies", readTime: "14 min" },
+      { title: "Warehouse Interview Questions & Answers 2026", slug: "warehouse-interview-questions", readTime: "18 min" },
+      { title: "Hospitality Interview Questions & Answers 2026", slug: "hospitality-interview-questions", readTime: "18 min" },
+      { title: "How to Turn a Temp Job Into Permanent Employment", slug: "temp-to-permanent-guide", readTime: "12 min" },
     ]
   },
   {
@@ -2269,5 +2281,7 @@ export const guideArticles: Record<string, Article> = {
       { question: "What if I have no experience?", answer: "Focus on transferable skills, reliability, and enthusiasm. Highlight volunteering, school activities, or personal qualities. Emphasize availability and willingness to learn. See our [First Job Resume Guide](/career-hub/guides/first-job-resume-template)." }
     ],
     relatedArticles: ["temp-work-resume-guide", "indeed-flex-profile-guide", "temp-to-perm-guide"]
-  }
+  },
+  // Merge in the new job application articles
+  ...jobApplicationArticles
 };
