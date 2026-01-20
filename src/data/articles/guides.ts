@@ -38,30 +38,8 @@ export const guideCategories: GuideCategory[] = [
       { title: "Building Your Worker Profile", slug: "worker-profile", readTime: "6 min" },
     ]
   },
-  {
-    category: "Job Application & Resume",
-    slug: "job-application",
-    icon: FileText,
-    articles: [
-      { title: "How to Write a Resume for Temp Work", slug: "temp-work-resume-guide", readTime: "12 min" },
-      { title: "Resume for Warehouse Jobs: Complete 2026 Guide", slug: "warehouse-resume-guide", readTime: "15 min" },
-      { title: "Hospitality Resume Tips: Get Hired Faster", slug: "hospitality-resume-tips", readTime: "12 min" },
-      { title: "First Job Resume: No Experience Template", slug: "first-job-resume-template", readTime: "10 min" },
-      { title: "Indeed Flex Profile Optimization Guide", slug: "indeed-flex-profile-guide", readTime: "8 min" },
-      { title: "Cover Letter for Temp Jobs: Templates & Examples", slug: "temp-job-cover-letter", readTime: "10 min" },
-      { title: "Resume for Freshers 2026: Complete Guide", slug: "fresher-resume-guide", readTime: "15 min" },
-      { title: "Student Resume Template: Balance Work & School", slug: "student-resume-template", readTime: "12 min" },
-      { title: "How to Get Hired With Zero Experience", slug: "zero-experience-jobs", readTime: "14 min" },
-      { title: "Transferable Skills for Your First Resume", slug: "transferable-skills-guide", readTime: "12 min" },
-      { title: "ATS Resume Tips: Beat the Bots in 2026", slug: "ats-resume-tips", readTime: "10 min" },
-      { title: "Best Free Resume Builders 2026: Complete Comparison", slug: "best-resume-builders-2026", readTime: "18 min" },
-      { title: "Best Job Boards by Industry 2026", slug: "best-job-boards-2026", readTime: "16 min" },
-      { title: "Indeed Flex vs Staffing Agencies: Complete Comparison", slug: "indeed-flex-vs-staffing-agencies", readTime: "14 min" },
-      { title: "Warehouse Interview Questions & Answers 2026", slug: "warehouse-interview-questions", readTime: "18 min" },
-      { title: "Hospitality Interview Questions & Answers 2026", slug: "hospitality-interview-questions", readTime: "18 min" },
-      { title: "How to Turn a Temp Job Into Permanent Employment", slug: "temp-to-permanent-guide", readTime: "12 min" },
-    ]
-  },
+  // Job Application articles moved to Job Application Toolkit (/career-hub/job-application-toolkit)
+  // Articles are still accessible via /career-hub/guides/{slug} URLs for SEO continuity
   {
     category: "Career Growth",
     slug: "career-growth",
