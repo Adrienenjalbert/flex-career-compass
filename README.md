@@ -12,6 +12,57 @@
 
 ---
 
+## 🗺️ Site Architecture
+
+```mermaid
+graph TD
+    HOME[🏠 Career Hub Home] --> FIND[📝 Find Work]
+    HOME --> CALC[🧮 Calculate]
+    HOME --> GROW[📈 Grow]
+    
+    FIND --> TOOLKIT[Job Application Toolkit]
+    FIND --> MARKETS[Active Markets<br/>19 Cities]
+    FIND --> SEASONAL[Seasonal Hiring Hub]
+    
+    TOOLKIT --> RESUME[Resume Templates<br/>6 Formats]
+    TOOLKIT --> COVER[Cover Letters<br/>6 Templates]
+    TOOLKIT --> EXAMPLES[Resume Examples<br/>23 Roles]
+    TOOLKIT --> GUIDES[Application Guides<br/>17 Articles]
+    
+    MARKETS --> CITY[City Pages<br/>50+ Cities]
+    CITY --> CITYROLE[City + Role Pages<br/>500+ Combinations]
+    
+    SEASONAL --> HOLIDAY[Holiday Hiring]
+    SEASONAL --> SUMMER[Summer Jobs]
+    SEASONAL --> EVENTS[Event Staffing]
+    SEASONAL --> LOCALSEASON[Seasonal + City<br/>114 Pages]
+    
+    CALC --> PAY[Pay Calculator]
+    CALC --> TAX[Tax Estimator]
+    CALC --> SHIFT[Shift Planner]
+    CALC --> CHILDCARE[Childcare Calculator]
+    CALC --> COMMUTE[Commute Calculator]
+    CALC --> TOOLS[+ 9 More Tools]
+    
+    GROW --> STARTED[Getting Started]
+    GROW --> SKILLS[Skills Training]
+    GROW --> CAREER[Career Advancement]
+    GROW --> I9[Work Authorization]
+    
+    style HOME fill:#2164F3,color:#fff
+    style FIND fill:#10B981,color:#fff
+    style CALC fill:#F97316,color:#fff
+    style GROW fill:#8B5CF6,color:#fff
+```
+
+**How Pages Connect:**
+- **Home** links to all three pillars
+- **Pillars** link to their sub-hubs
+- **Sub-hubs** link to individual content pages
+- **Every page** links back up and to related content
+
+---
+
 ## 📋 What Is This Project?
 
 The **Indeed Flex Career Hub** is a website that helps people who are looking for temporary or flexible work. It provides:
