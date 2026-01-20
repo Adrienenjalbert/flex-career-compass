@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      article_research_results: {
+        Row: {
+          article_slug: string
+          citations: Json | null
+          created_at: string
+          id: string
+          key_statistics: Json | null
+          research_query: string
+          research_response: string | null
+          researched_at: string
+          updated_at: string
+        }
+        Insert: {
+          article_slug: string
+          citations?: Json | null
+          created_at?: string
+          id?: string
+          key_statistics?: Json | null
+          research_query: string
+          research_response?: string | null
+          researched_at?: string
+          updated_at?: string
+        }
+        Update: {
+          article_slug?: string
+          citations?: Json | null
+          created_at?: string
+          id?: string
+          key_statistics?: Json | null
+          research_query?: string
+          research_response?: string | null
+          researched_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       city_employers: {
         Row: {
           apply_url: string | null

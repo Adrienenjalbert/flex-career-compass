@@ -50,6 +50,7 @@ import ActionVerbsPage from "./pages/career-hub/resources/ActionVerbsPage";
 import BulletGeneratorPage from "./pages/career-hub/resources/BulletGeneratorPage";
 import CoverLettersIndexPage from "./pages/career-hub/templates/CoverLettersIndexPage";
 import CoverLetterPage from "./pages/career-hub/templates/CoverLetterPage";
+import ResearchAdminPage from "./pages/career-hub/admin/ResearchAdminPage";
 
 const queryClient = new QueryClient();
 
@@ -106,6 +107,7 @@ const App = () => (
           <Route path="/career-hub/templates/:templateSlug" element={<TemplatePage />} />
           <Route path="/career-hub/cover-letters" element={<CoverLettersIndexPage />} />
           <Route path="/career-hub/cover-letters/:templateSlug" element={<CoverLetterPage />} />
+          <Route path="/career-hub/admin/research" element={<ResearchAdminPage />} />
           
           {/* Programmatic SEO Routes */}
           <Route path="/:slug" element={<ProgrammaticRouter />} />
