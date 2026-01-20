@@ -33,7 +33,13 @@ import {
   Filter,
   X,
   Users,
-  FileUser
+  FileUser,
+  GraduationCap,
+  Scale,
+  MessageSquare,
+  Search,
+  TrendingUp,
+  CheckCircle
 } from "lucide-react";
 
 // Industries for filtering
@@ -51,6 +57,139 @@ const experienceLevels = [
   { id: 'entry', label: 'Entry Level (0-1 years)' },
   { id: 'mid', label: 'Some Experience (1-3 years)' },
   { id: 'experienced', label: 'Experienced (3+ years)' },
+];
+
+// New: Students & Freshers articles
+const fresherArticles = [
+  {
+    slug: "fresher-resume-guide",
+    title: "Resume for Freshers 2026: Complete Guide",
+    description: "Step-by-step guide to creating your first resume with no work experience. Focus on education, skills, and potential.",
+    icon: GraduationCap,
+    readTime: "15 min",
+    iconBg: "bg-blue-500/20",
+    iconColor: "text-blue-600",
+    badge: "Most Popular",
+    searchVolume: "30K+/mo"
+  },
+  {
+    slug: "student-resume-template",
+    title: "Student Resume Template: Balance Work & School",
+    description: "Templates and strategies for students seeking part-time or flexible work while studying.",
+    icon: Users,
+    readTime: "12 min",
+    iconBg: "bg-purple-500/20",
+    iconColor: "text-purple-600",
+    badge: "For Students",
+    searchVolume: "18K+/mo"
+  },
+  {
+    slug: "zero-experience-jobs",
+    title: "How to Get Hired With Zero Experience",
+    description: "Proven strategies for landing your first job when you have no work history.",
+    icon: Sparkles,
+    readTime: "10 min",
+    iconBg: "bg-green-500/20",
+    iconColor: "text-green-600",
+    badge: "Entry Level",
+    searchVolume: "25K+/mo"
+  },
+  {
+    slug: "transferable-skills-guide",
+    title: "Transferable Skills for Your First Resume",
+    description: "Map skills from school, volunteer work, and life experience to job requirements.",
+    icon: TrendingUp,
+    readTime: "12 min",
+    iconBg: "bg-amber-500/20",
+    iconColor: "text-amber-600",
+    badge: null,
+    searchVolume: "12K+/mo"
+  }
+];
+
+// New: Compare Your Options articles
+const comparisonArticles = [
+  {
+    slug: "best-resume-builders-2026",
+    title: "Best Free Resume Builders 2026: Complete Comparison",
+    description: "Side-by-side comparison of top resume builders with ATS compatibility scores and pricing.",
+    icon: LayoutTemplate,
+    readTime: "18 min",
+    iconBg: "bg-primary/20",
+    iconColor: "text-primary",
+    badge: "Comparison",
+    searchVolume: "45K+/mo"
+  },
+  {
+    slug: "best-job-boards-2026",
+    title: "Best Job Boards by Industry: Where to Find Work",
+    description: "Find the best job sites for warehouse, hospitality, retail, and temp work in 2026.",
+    icon: Search,
+    readTime: "15 min",
+    iconBg: "bg-rose-500/20",
+    iconColor: "text-rose-600",
+    badge: "Comparison",
+    searchVolume: "35K+/mo"
+  },
+  {
+    slug: "indeed-flex-vs-staffing-agencies",
+    title: "Indeed Flex vs Staffing Agencies: Which Is Right?",
+    description: "Honest comparison of app-based flexible work vs traditional temp agencies.",
+    icon: Scale,
+    readTime: "12 min",
+    iconBg: "bg-indigo-500/20",
+    iconColor: "text-indigo-600",
+    badge: "vs Guide",
+    searchVolume: "8K+/mo"
+  }
+];
+
+// New: Interview Prep articles
+const interviewArticles = [
+  {
+    slug: "warehouse-interview-questions",
+    title: "Warehouse Interview Questions & Answers 2026",
+    description: "Top 20 warehouse interview questions with STAR method answers and safety scenarios.",
+    icon: Warehouse,
+    readTime: "18 min",
+    iconBg: "bg-amber-500/20",
+    iconColor: "text-amber-600",
+    badge: "Interview Prep",
+    searchVolume: "22K+/mo"
+  },
+  {
+    slug: "hospitality-interview-questions",
+    title: "Hospitality Interview Questions & Answers 2026",
+    description: "Questions for servers, bartenders, and event staff with customer scenario responses.",
+    icon: UtensilsCrossed,
+    readTime: "18 min",
+    iconBg: "bg-purple-500/20",
+    iconColor: "text-purple-600",
+    badge: "Interview Prep",
+    searchVolume: "18K+/mo"
+  },
+  {
+    slug: "ats-resume-tips",
+    title: "ATS Resume Tips: Beat the Bots in 2026",
+    description: "How ATS systems work and formatting tips to ensure your resume gets seen by humans.",
+    icon: FileText,
+    readTime: "12 min",
+    iconBg: "bg-blue-500/20",
+    iconColor: "text-blue-600",
+    badge: "Essential",
+    searchVolume: "28K+/mo"
+  },
+  {
+    slug: "temp-to-permanent-guide",
+    title: "How to Turn a Temp Job Into Permanent Employment",
+    description: "10 strategies to convert seasonal or temp work into a full-time position.",
+    icon: TrendingUp,
+    readTime: "10 min",
+    iconBg: "bg-green-500/20",
+    iconColor: "text-green-600",
+    badge: "Career Growth",
+    searchVolume: "15K+/mo"
+  }
 ];
 
 // Guide articles with enhanced metadata
@@ -95,20 +234,6 @@ const resumeArticles = [
     topics: ["Service skills", "POS systems", "Certifications", "Guest experience"],
     industries: ['hospitality'],
     experienceLevel: 'all',
-    type: 'guide'
-  },
-  {
-    slug: "first-job-resume-template",
-    title: "First Job Resume: No Experience Template",
-    description: "Landing your first job without experience? Use our template and strategies to highlight transferable skills and potential.",
-    icon: Sparkles,
-    readTime: "10 min",
-    iconBg: "bg-green-500/20",
-    iconColor: "text-green-600",
-    featured: false,
-    topics: ["No experience tips", "Transferable skills", "Education section", "Volunteer work"],
-    industries: ['industrial', 'hospitality', 'retail', 'facilities'],
-    experienceLevel: 'entry',
     type: 'guide'
   },
   {
@@ -196,8 +321,8 @@ const rolesByIndustry = resumeRoles.reduce((acc, role) => {
 
 const quickStats = [
   { value: "23", label: "Role Examples", icon: FileUser },
+  { value: "11", label: "In-Depth Guides", icon: FileText },
   { value: "6", label: "Resume Templates", icon: LayoutTemplate },
-  { value: "6", label: "Cover Letters", icon: Mail },
   { value: "200+", label: "Action Verbs", icon: Zap }
 ];
 
@@ -225,6 +350,22 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "How do I write a resume with no experience?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Focus on education, skills, projects, and volunteer work. Use a functional resume format that highlights what you CAN do rather than where you've worked. Include coursework, extracurricular activities, and any certifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best resume format for freshers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The functional format (skills-based) or combination format works best for freshers. These emphasize transferable skills over chronological work history."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do I need a resume for Indeed Flex?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -233,26 +374,26 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How long should a temp work resume be?",
+      "name": "What are the best free resume builders in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One page maximum. Hiring managers for temp positions make decisions in under 30 seconds, so your resume must communicate value instantly."
+        "text": "Top free resume builders include Canva, Resume.io, Zety, and Indeed's Resume Builder. Consider ATS compatibility, template variety, and export options when choosing."
       }
     },
     {
       "@type": "Question",
-      "name": "What skills should I put on a warehouse resume?",
+      "name": "How do I pass ATS resume screening?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Include equipment certifications (forklift, pallet jack, RF scanner), WMS experience, productivity metrics, safety training, and physical capabilities like lifting requirements."
+        "text": "Use standard section headings, include job posting keywords in your skills section, avoid graphics and fancy formatting, save as PDF, and use standard fonts like Arial or Calibri."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I write a resume with no experience?",
+      "name": "What questions are asked in warehouse interviews?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Focus on transferable skills from school, volunteer work, or personal projects. Highlight reliability, willingness to learn, physical capabilities, and any relevant coursework or certifications."
+        "text": "Common warehouse interview questions include: 'Can you lift 50 pounds repeatedly?', 'What's your experience with inventory systems?', 'How do you handle working in extreme temperatures?', and safety-related scenario questions."
       }
     }
   ]
@@ -262,10 +403,20 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Job Application Toolkit - Resume & Cover Letter Guides",
-  "description": "Complete toolkit for temp workers: resume guides, cover letter templates, and Indeed Flex profile optimization tips for 2026.",
+  "description": "Complete toolkit for job seekers: resume guides for freshers and students, cover letter templates, interview prep, and comparison guides for 2026.",
   "url": "https://flex-career-compass.lovable.app/career-hub/job-application-toolkit",
   "hasPart": [
-    ...resumeArticles.map(article => ({
+    ...fresherArticles.map(article => ({
+      "@type": "Article",
+      "name": article.title,
+      "url": `https://flex-career-compass.lovable.app/career-hub/guides/${article.slug}`
+    })),
+    ...comparisonArticles.map(article => ({
+      "@type": "Article",
+      "name": article.title,
+      "url": `https://flex-career-compass.lovable.app/career-hub/guides/${article.slug}`
+    })),
+    ...interviewArticles.map(article => ({
       "@type": "Article",
       "name": article.title,
       "url": `https://flex-career-compass.lovable.app/career-hub/guides/${article.slug}`
@@ -274,11 +425,6 @@ const collectionSchema = {
       "@type": "HowTo",
       "name": t.name,
       "url": `https://flex-career-compass.lovable.app/career-hub/templates/${t.slug}`
-    })),
-    ...Object.values(coverLetterTemplates).map(t => ({
-      "@type": "HowTo",
-      "name": t.name,
-      "url": `https://flex-career-compass.lovable.app/career-hub/cover-letters/${t.slug}`
     }))
   ]
 };
@@ -353,10 +499,10 @@ const JobApplicationToolkitPage = () => {
   return (
     <Layout>
       <SEOMetaTags
-        title="Job Application Toolkit: Resume & Cover Letter Guides | Indeed Flex Career Hub"
-        description="Complete toolkit for temp workers: resume guides for warehouse and hospitality jobs, cover letter templates, action verbs library, and Indeed Flex profile optimization tips for 2026."
+        title="Job Application Toolkit: Resume & Interview Guides 2026 | Indeed Flex Career Hub"
+        description="Complete toolkit for job seekers: resume templates for freshers & students, interview prep for warehouse & hospitality, ATS tips, and job board comparisons for 2026."
         canonical="https://flex-career-compass.lovable.app/career-hub/job-application-toolkit"
-        keywords={["resume for temp work", "warehouse resume", "hospitality resume", "cover letter template", "indeed flex profile", "job application tips", "no experience resume", "action verbs resume"]}
+        keywords={["resume for freshers", "student resume template", "warehouse interview questions", "best resume builders 2026", "ATS resume tips", "how to get a job with no experience", "indeed flex vs temp agency"]}
       />
 
       {/* Schema Markup */}
@@ -378,7 +524,7 @@ const JobApplicationToolkitPage = () => {
           <div className="max-w-4xl">
             <Badge className="mb-4 bg-primary-foreground/20 text-primary-foreground border-0">
               <Briefcase className="w-3 h-3 mr-1" />
-              Resume & Application Resources
+              Resume, Interview & Application Resources
             </Badge>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -386,7 +532,7 @@ const JobApplicationToolkitPage = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl">
-              Everything you need to land temp jobs: interactive templates, guides, and tools tailored for flexible workers.
+              Everything you need to land your next job: resume templates, interview prep, comparison guides, and tools tailored for students, freshers, and flexible workers.
             </p>
 
             {/* Quick Stats */}
@@ -442,8 +588,212 @@ const JobApplicationToolkitPage = () => {
         </div>
       </section>
 
+      {/* NEW: For Students & Freshers Section */}
+      <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-foreground">
+                    For Students & Freshers
+                  </h2>
+                  <p className="text-sm text-muted-foreground">
+                    First job? No experience? Start here.
+                  </p>
+                </div>
+              </div>
+              <Badge className="w-fit bg-blue-500/10 text-blue-600 border-blue-500/20">
+                <Star className="w-3 h-3 mr-1" />
+                Most Searched
+              </Badge>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {fresherArticles.map((article) => (
+                <Link 
+                  key={article.slug}
+                  to={`/career-hub/guides/${article.slug}`}
+                  className="group"
+                >
+                  <Card className="h-full border-2 border-transparent hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start justify-between">
+                        <div className={`w-10 h-10 rounded-xl ${article.iconBg} flex items-center justify-center`}>
+                          <article.icon className={`w-5 h-5 ${article.iconColor}`} />
+                        </div>
+                        <div className="flex flex-col items-end gap-1">
+                          {article.badge && (
+                            <Badge variant="secondary" className="text-xs">
+                              {article.badge}
+                            </Badge>
+                          )}
+                          <span className="text-xs text-muted-foreground">{article.searchVolume}</span>
+                        </div>
+                      </div>
+                      <CardTitle className="text-base group-hover:text-primary transition-colors line-clamp-2">
+                        {article.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-2 text-sm">
+                        {article.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Clock className="w-3 h-3" />
+                          {article.readTime}
+                        </span>
+                        <span className="flex items-center gap-1 text-primary font-medium text-sm group-hover:gap-2 transition-all">
+                          Read <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Compare Your Options Section */}
+      <section className="py-8 md:py-12 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center">
+                  <Scale className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-foreground">
+                    Compare Your Options
+                  </h2>
+                  <p className="text-sm text-muted-foreground">
+                    Make informed decisions with side-by-side comparisons
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {comparisonArticles.map((article) => (
+                <Link 
+                  key={article.slug}
+                  to={`/career-hub/guides/${article.slug}`}
+                  className="group"
+                >
+                  <Card className="h-full border-2 border-transparent hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start justify-between">
+                        <div className={`w-10 h-10 rounded-xl ${article.iconBg} flex items-center justify-center`}>
+                          <article.icon className={`w-5 h-5 ${article.iconColor}`} />
+                        </div>
+                        <div className="flex flex-col items-end gap-1">
+                          <Badge variant="outline" className="text-xs border-rose-500/30 text-rose-600">
+                            {article.badge}
+                          </Badge>
+                          <span className="text-xs text-muted-foreground">{article.searchVolume}</span>
+                        </div>
+                      </div>
+                      <CardTitle className="text-base group-hover:text-primary transition-colors line-clamp-2">
+                        {article.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-2 text-sm">
+                        {article.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Clock className="w-3 h-3" />
+                          {article.readTime}
+                        </span>
+                        <span className="flex items-center gap-1 text-primary font-medium text-sm group-hover:gap-2 transition-all">
+                          Compare <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Interview Prep Section */}
+      <section className="py-8 md:py-12 bg-muted/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                  <MessageSquare className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-foreground">
+                    Interview Prep & ATS Tips
+                  </h2>
+                  <p className="text-sm text-muted-foreground">
+                    Ace your interview and beat the resume bots
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {interviewArticles.map((article) => (
+                <Link 
+                  key={article.slug}
+                  to={`/career-hub/guides/${article.slug}`}
+                  className="group"
+                >
+                  <Card className="h-full border-2 border-transparent hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start justify-between">
+                        <div className={`w-10 h-10 rounded-xl ${article.iconBg} flex items-center justify-center`}>
+                          <article.icon className={`w-5 h-5 ${article.iconColor}`} />
+                        </div>
+                        <div className="flex flex-col items-end gap-1">
+                          <Badge variant="secondary" className="text-xs bg-green-500/10 text-green-600 border-green-500/20">
+                            {article.badge}
+                          </Badge>
+                          <span className="text-xs text-muted-foreground">{article.searchVolume}</span>
+                        </div>
+                      </div>
+                      <CardTitle className="text-base group-hover:text-primary transition-colors line-clamp-2">
+                        {article.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-2 text-sm">
+                        {article.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Clock className="w-3 h-3" />
+                          {article.readTime}
+                        </span>
+                        <span className="flex items-center gap-1 text-primary font-medium text-sm group-hover:gap-2 transition-all">
+                          Prepare <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Template Comparison */}
-      <section className="py-8 md:py-10 bg-muted/30 border-y border-border">
+      <section className="py-8 md:py-10 bg-background border-y border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <TemplateComparison />
@@ -528,7 +878,7 @@ const JobApplicationToolkitPage = () => {
       </section>
 
       {/* Templates Section with Tabs */}
-      <section className="py-8 md:py-12 bg-background">
+      <section className="py-8 md:py-12 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             {/* Compact Filter Bar */}
@@ -702,86 +1052,6 @@ const JobApplicationToolkitPage = () => {
         </div>
       </section>
 
-      {/* Guides Section */}
-      <section className="py-8 md:py-12 bg-muted/30">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
-              <div>
-                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
-                  In-Depth Guides
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  Comprehensive articles to level up your applications
-                  {hasActiveFilters && (
-                    <span className="ml-2 text-primary">
-                      ({filteredArticles.length} matching)
-                    </span>
-                  )}
-                </p>
-              </div>
-              <Link to="/career-hub/guides">
-                <Button variant="outline" size="sm" className="h-8">
-                  View All <ArrowRight className="w-3 h-3 ml-1" />
-                </Button>
-              </Link>
-            </div>
-
-            {filteredArticles.length > 0 ? (
-              <div className="grid gap-4 md:grid-cols-2">
-                {filteredArticles.map((article) => (
-                  <Link 
-                    key={article.slug}
-                    to={`/career-hub/guides/${article.slug}`}
-                    className="group flex items-start gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
-                  >
-                    <div className={`w-12 h-12 rounded-xl ${article.iconBg} flex items-center justify-center flex-shrink-0`}>
-                      <article.icon className={`w-6 h-6 ${article.iconColor}`} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start gap-2 mb-1">
-                        <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                          {article.title}
-                        </h3>
-                        {article.featured && (
-                          <Badge variant="secondary" className="text-xs flex-shrink-0">
-                            <Star className="w-3 h-3 mr-1" />
-                            Featured
-                          </Badge>
-                        )}
-                      </div>
-                      <p className="text-sm text-muted-foreground line-clamp-2 mb-2">
-                        {article.description}
-                      </p>
-                      <div className="flex items-center gap-3 text-sm">
-                        <span className="flex items-center gap-1 text-muted-foreground">
-                          <Clock className="w-3.5 h-3.5" />
-                          {article.readTime}
-                        </span>
-                        <div className="flex gap-1">
-                          {article.industries.slice(0, 2).map((ind) => {
-                            const Icon = getIndustryIcon(ind);
-                            return <Icon key={ind} className="w-3.5 h-3.5 text-muted-foreground" />;
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12 bg-card rounded-xl border border-border">
-                <p className="text-muted-foreground mb-4">No guides match your current filters</p>
-                <Button variant="outline" size="sm" onClick={clearFilters}>
-                  Clear Filters
-                </Button>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 md:px-6">
@@ -812,62 +1082,58 @@ const JobApplicationToolkitPage = () => {
       {/* Related Resources */}
       <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-lg font-bold text-foreground mb-4">Related Resources</h2>
-            <div className="grid gap-4 md:grid-cols-3">
-              <Link 
-                to="/career-hub/guides/i9-complete-guide"
-                className="group p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
-              >
-                <h3 className="font-semibold text-foreground group-hover:text-primary mb-1">
-                  Form I-9 Complete Guide
-                </h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Everything you need for employment verification
-                </p>
-                <span className="inline-flex items-center gap-1 text-sm text-primary font-medium">
-                  Read guide <ArrowRight className="w-3 h-3" />
-                </span>
-              </Link>
-              
-              <Link 
-                to="/career-hub/guides/first-job-america-guide"
-                className="group p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
-              >
-                <h3 className="font-semibold text-foreground group-hover:text-primary mb-1">
-                  First Job in America Guide
-                </h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Complete guide for new US workers
-                </p>
-                <span className="inline-flex items-center gap-1 text-sm text-primary font-medium">
-                  Read guide <ArrowRight className="w-3 h-3" />
-                </span>
-              </Link>
-              
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-xl font-bold text-foreground mb-4">
+              Related Resources
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <Link 
                 to="/career-hub/tools/skills-analyzer"
-                className="group p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
+                className="p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-sm transition-all group"
               >
-                <h3 className="font-semibold text-foreground group-hover:text-primary mb-1">
-                  Skills Gap Analyzer
-                </h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Find skills to add to your resume
-                </p>
-                <span className="inline-flex items-center gap-1 text-sm text-primary font-medium">
-                  Try tool <ArrowRight className="w-3 h-3" />
-                </span>
+                <div className="flex items-center gap-2 mb-2">
+                  <Lightbulb className="w-4 h-4 text-primary" />
+                  <span className="font-medium text-sm group-hover:text-primary transition-colors">Skills Analyzer</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Discover your strengths</p>
+              </Link>
+              <Link 
+                to="/career-hub/tools/pay-calculator"
+                className="p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-sm transition-all group"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-4 h-4 text-primary" />
+                  <span className="font-medium text-sm group-hover:text-primary transition-colors">Pay Calculator</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Estimate your earnings</p>
+              </Link>
+              <Link 
+                to="/career-hub/locations"
+                className="p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-sm transition-all group"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Building className="w-4 h-4 text-primary" />
+                  <span className="font-medium text-sm group-hover:text-primary transition-colors">Active Markets</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Find jobs near you</p>
+              </Link>
+              <Link 
+                to="/career-hub/guides"
+                className="p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-sm transition-all group"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <FileText className="w-4 h-4 text-primary" />
+                  <span className="font-medium text-sm group-hover:text-primary transition-colors">All Guides</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Career development tips</p>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Internal Links */}
-      <InternalLinkHub currentPage={{ type: 'guide', slug: 'job-application-toolkit' }} />
+      <InternalLinkHub currentPage={{ type: "guide", slug: "job-application-toolkit" }} />
 
-      {/* CTA */}
       <CTASection />
     </Layout>
   );
