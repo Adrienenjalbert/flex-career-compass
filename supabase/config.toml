@@ -26,3 +26,9 @@ verify_jwt = false
 
 [functions.seasonal-research]
 verify_jwt = false
+
+[functions.resume-research]
+verify_jwt = false
+
+[functions.article-research]
+verify_jwt = false
