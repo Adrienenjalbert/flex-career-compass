@@ -44,6 +44,8 @@ import PresentationPage from "./pages/career-hub/PresentationPage";
 import JobApplicationToolkitPage from "./pages/career-hub/JobApplicationToolkitPage";
 import ResumeExamplesIndexPage from "./pages/career-hub/resume-examples/ResumeExamplesIndexPage";
 import ResumeExamplePage from "./pages/career-hub/resume-examples/ResumeExamplePage";
+import TemplatesIndexPage from "./pages/career-hub/templates/TemplatesIndexPage";
+import TemplatePage from "./pages/career-hub/templates/TemplatePage";
 
 const queryClient = new QueryClient();
 
@@ -94,6 +96,8 @@ const App = () => (
           <Route path="/career-hub/resume-examples" element={<ResumeExamplesIndexPage />} />
           <Route path="/career-hub/resume-examples/:roleSlug" element={<ResumeExamplePage />} />
           <Route path="/career-hub/resume-examples/:roleSlug/:variation" element={<ResumeExamplePage />} />
+          <Route path="/career-hub/templates" element={<TemplatesIndexPage />} />
+          <Route path="/career-hub/templates/:templateSlug" element={<TemplatePage />} />
           
           {/* Programmatic SEO Routes */}
           <Route path="/:slug" element={<ProgrammaticRouter />} />
