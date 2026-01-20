@@ -62,23 +62,23 @@ const jobApplicationPillars = [
 ];
 
 const fresherStudentArticles = [
-  { title: "Resume for Freshers 2026", slug: "fresher-resume-guide", icon: GraduationCap },
-  { title: "Student Resume Template", slug: "student-resume-template", icon: BookOpen },
-  { title: "Get Hired With Zero Experience", slug: "zero-experience-jobs", icon: Users },
-  { title: "Transferable Skills Guide", slug: "transferable-skills-guide", icon: TrendingUp },
+  { title: "Resume for Freshers 2026", slug: "fresher-resume-guide" },
+  { title: "Student Resume Template", slug: "student-resume-template" },
+  { title: "Get Hired With Zero Experience", slug: "zero-experience-jobs" },
+  { title: "Transferable Skills Guide", slug: "transferable-skills-guide" },
 ];
 
 const comparisonArticles = [
-  { title: "Best Resume Builders 2026", slug: "best-resume-builders-2026", icon: LayoutTemplate },
-  { title: "Best Job Boards by Industry", slug: "best-job-boards-2026", icon: Search },
-  { title: "Indeed Flex vs Staffing Agencies", slug: "indeed-flex-vs-staffing-agencies", icon: Scale },
+  { title: "Best Resume Builders 2026", slug: "best-resume-builders-2026" },
+  { title: "Best Job Boards by Industry", slug: "best-job-boards-2026" },
+  { title: "Indeed Flex vs Staffing Agencies", slug: "indeed-flex-vs-staffing-agencies" },
 ];
 
 const interviewArticles = [
-  { title: "Warehouse Interview Questions", slug: "warehouse-interview-questions", icon: Warehouse },
-  { title: "Hospitality Interview Questions", slug: "hospitality-interview-questions", icon: UtensilsCrossed },
-  { title: "ATS Resume Tips", slug: "ats-resume-tips", icon: FileText },
-  { title: "Temp to Permanent Guide", slug: "temp-to-permanent-guide", icon: TrendingUp },
+  { title: "Warehouse Interview Questions", slug: "warehouse-interview-questions" },
+  { title: "Hospitality Interview Questions", slug: "hospitality-interview-questions" },
+  { title: "ATS Resume Tips", slug: "ats-resume-tips" },
+  { title: "Temp to Permanent Guide", slug: "temp-to-permanent-guide" },
 ];
 
 // Career Guide categories (without job application content)
@@ -206,23 +206,20 @@ const Header = () => {
                     <div className="grid grid-cols-3 gap-6">
                       {/* Column 1: Resources */}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                        <h3 className="font-semibold text-foreground mb-2 text-sm flex items-center gap-2">
                           <FileUser className="h-4 w-4 text-primary" />
                           Resources
                         </h3>
-                        <div className="space-y-1">
+                        <div className="space-y-0.5">
                           {jobApplicationPillars.map((pillar) => (
-                            <div key={pillar.title} className="space-y-1">
+                            <div key={pillar.title}>
                               {pillar.links.map((link) => (
                                 <Link
                                   key={link.slug}
                                   to={link.slug}
-                                  className="flex items-center justify-between p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors group"
+                                  className="block py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
                                 >
-                                  <span>{link.title}</span>
-                                  {link.badge && (
-                                    <span className="text-xs text-muted-foreground group-hover:text-primary/70">{link.badge}</span>
-                                  )}
+                                  {link.title}
                                 </Link>
                               ))}
                             </div>
@@ -232,68 +229,56 @@ const Header = () => {
 
                       {/* Column 2: For Students & Freshers */}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                        <h3 className="font-semibold text-foreground mb-2 text-sm flex items-center gap-2">
                           <GraduationCap className="h-4 w-4 text-primary" />
                           For Students
                         </h3>
-                        <div className="space-y-1">
-                          {fresherStudentArticles.map((article) => {
-                            const Icon = article.icon;
-                            return (
-                              <Link
-                                key={article.slug}
-                                to={`/career-hub/guides/${article.slug}`}
-                                className="flex items-center gap-2 p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                              >
-                                <Icon className="h-3.5 w-3.5 text-muted-foreground" />
-                                <span className="line-clamp-1">{article.title}</span>
-                              </Link>
-                            );
-                          })}
+                        <div className="space-y-0.5">
+                          {fresherStudentArticles.map((article) => (
+                            <Link
+                              key={article.slug}
+                              to={`/career-hub/guides/${article.slug}`}
+                              className="block py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                            >
+                              {article.title}
+                            </Link>
+                          ))}
                         </div>
 
                         {/* Comparisons */}
-                        <h3 className="font-semibold text-foreground mt-4 mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                        <h3 className="font-semibold text-foreground mt-4 mb-2 text-sm flex items-center gap-2">
                           <Scale className="h-4 w-4 text-primary" />
                           Compare
                         </h3>
-                        <div className="space-y-1">
-                          {comparisonArticles.slice(0, 2).map((article) => {
-                            const Icon = article.icon;
-                            return (
-                              <Link
-                                key={article.slug}
-                                to={`/career-hub/guides/${article.slug}`}
-                                className="flex items-center gap-2 p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                              >
-                                <Icon className="h-3.5 w-3.5 text-muted-foreground" />
-                                <span className="line-clamp-1">{article.title}</span>
-                              </Link>
-                            );
-                          })}
+                        <div className="space-y-0.5">
+                          {comparisonArticles.map((article) => (
+                            <Link
+                              key={article.slug}
+                              to={`/career-hub/guides/${article.slug}`}
+                              className="block py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                            >
+                              {article.title}
+                            </Link>
+                          ))}
                         </div>
                       </div>
 
                       {/* Column 3: Interview Prep */}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide flex items-center gap-2">
+                        <h3 className="font-semibold text-foreground mb-2 text-sm flex items-center gap-2">
                           <MessageSquare className="h-4 w-4 text-primary" />
                           Interview Prep
                         </h3>
-                        <div className="space-y-1">
-                          {interviewArticles.map((article) => {
-                            const Icon = article.icon;
-                            return (
-                              <Link
-                                key={article.slug}
-                                to={`/career-hub/guides/${article.slug}`}
-                                className="flex items-center gap-2 p-2 rounded-lg text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                              >
-                                <Icon className="h-3.5 w-3.5 text-muted-foreground" />
-                                <span className="line-clamp-1">{article.title}</span>
-                              </Link>
-                            );
-                          })}
+                        <div className="space-y-0.5">
+                          {interviewArticles.map((article) => (
+                            <Link
+                              key={article.slug}
+                              to={`/career-hub/guides/${article.slug}`}
+                              className="block py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                            >
+                              {article.title}
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     </div>
