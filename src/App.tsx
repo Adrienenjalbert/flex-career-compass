@@ -51,6 +51,7 @@ import BulletGeneratorPage from "./pages/career-hub/resources/BulletGeneratorPag
 import CoverLettersIndexPage from "./pages/career-hub/templates/CoverLettersIndexPage";
 import CoverLetterPage from "./pages/career-hub/templates/CoverLetterPage";
 import ResearchAdminPage from "./pages/career-hub/admin/ResearchAdminPage";
+import { ForStudentsPage, ForFreshersPage, ForImmigrantsPage } from "./pages/career-hub/personas";
 
 const queryClient = new QueryClient();
 
@@ -108,6 +109,11 @@ const App = () => (
           <Route path="/career-hub/cover-letters" element={<CoverLettersIndexPage />} />
           <Route path="/career-hub/cover-letters/:templateSlug" element={<CoverLetterPage />} />
           <Route path="/career-hub/admin/research" element={<ResearchAdminPage />} />
+          
+          {/* Persona Landing Pages */}
+          <Route path="/career-hub/for-students" element={<ForStudentsPage />} />
+          <Route path="/career-hub/for-freshers" element={<ForFreshersPage />} />
+          <Route path="/career-hub/for-immigrants" element={<ForImmigrantsPage />} />
           
           {/* Programmatic SEO Routes */}
           <Route path="/:slug" element={<ProgrammaticRouter />} />
