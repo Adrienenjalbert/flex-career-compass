@@ -121,6 +121,18 @@ const guideArticles = [
   "networking-strategies",
   "work-life-balance",
   "interview-preparation",
+  // Job Application Articles (11 new)
+  "fresher-resume-guide",
+  "student-resume-template",
+  "zero-experience-jobs",
+  "transferable-skills-guide",
+  "best-resume-builders-2026",
+  "best-job-boards-2026",
+  "indeed-flex-vs-staffing-agencies",
+  "warehouse-interview-questions",
+  "hospitality-interview-questions",
+  "ats-resume-tips",
+  "temp-to-permanent-guide",
 ];
 
 const financialTips = [
