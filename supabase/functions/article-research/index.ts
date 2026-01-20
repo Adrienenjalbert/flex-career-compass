@@ -1,3 +1,5 @@
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -107,6 +109,7 @@ interface ResearchRequest {
   topic?: string;
   researchQueries?: string[];
   usePreset?: boolean;
+  saveToDatabase?: boolean;
 }
 
 interface PerplexityResult {
@@ -121,7 +124,9 @@ interface ResearchResult {
   articleSlug: string;
   topic: string;
   perplexityResults: PerplexityResult[];
+  totalCitations: number;
   timestamp: string;
+  savedToDatabase?: boolean;
   error?: string;
 }
 
@@ -132,7 +137,7 @@ Deno.serve(async (req) => {
 
   try {
     const requestData = await req.json() as ResearchRequest;
-    const { articleSlug, usePreset = true } = requestData;
+    const { articleSlug, usePreset = true, saveToDatabase = false } = requestData;
 
     if (!articleSlug) {
       return new Response(
@@ -221,16 +226,63 @@ Focus area: ${topic}`
     );
 
     const successfulResults = perplexityResults.filter(r => r.content && !r.error);
+    
+    // Aggregate all citations and content
+    const allCitations = successfulResults.flatMap(r => r.citations);
+    const combinedContent = successfulResults.map(r => `## ${r.query}\n\n${r.content}`).join('\n\n---\n\n');
+    
+    // Extract key statistics from the content
+    const statisticsPattern = /(\d+(?:\.\d+)?%|\$[\d,]+(?:\.\d+)?|\d+(?:,\d+)* (?:workers|jobs|people|resumes|applicants))/gi;
+    const keyStatistics = [...new Set(combinedContent.match(statisticsPattern) || [])].slice(0, 20);
+
+    let savedToDatabase = false;
+
+    // Save to database if requested
+    if (saveToDatabase && successfulResults.length > 0) {
+      try {
+        const supabaseUrl = Deno.env.get('SUPABASE_URL');
+        const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+        
+        if (supabaseUrl && supabaseKey) {
+          const supabase = createClient(supabaseUrl, supabaseKey);
+          
+          const { error: dbError } = await supabase
+            .from('article_research_results')
+            .upsert({
+              article_slug: articleSlug,
+              research_query: topic,
+              research_response: combinedContent,
+              citations: allCitations,
+              key_statistics: keyStatistics,
+              researched_at: new Date().toISOString(),
+              updated_at: new Date().toISOString(),
+            }, {
+              onConflict: 'article_slug'
+            });
+
+          if (dbError) {
+            console.error('Database save error:', dbError);
+          } else {
+            savedToDatabase = true;
+            console.log(`Saved research results to database for: ${articleSlug}`);
+          }
+        }
+      } catch (dbErr) {
+        console.error('Database connection error:', dbErr);
+      }
+    }
 
     const result: ResearchResult = {
       success: successfulResults.length > 0,
       articleSlug,
       topic,
       perplexityResults: successfulResults,
+      totalCitations: allCitations.length,
       timestamp: new Date().toISOString(),
+      savedToDatabase,
     };
 
-    console.log(`Research complete for ${articleSlug}: ${successfulResults.length}/${researchQueries.length} successful`);
+    console.log(`Research complete for ${articleSlug}: ${successfulResults.length}/${researchQueries.length} successful, ${allCitations.length} citations`);
 
     return new Response(
       JSON.stringify(result),
