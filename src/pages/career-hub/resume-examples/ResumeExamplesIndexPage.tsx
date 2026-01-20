@@ -35,11 +35,13 @@ const ResumeExamplesIndexPage = () => {
   const [activeFilters, setActiveFilters] = useState<ActiveFilters>({
     industry: [],
     experienceLevel: [],
+    userSituation: [],
     documentType: [],
     format: [],
+    language: [],
+    contentIntent: [],
     search: ''
   });
-
   const filteredExamples = useMemo(() => {
     return resumeExamples.filter(example => {
       // Search filter

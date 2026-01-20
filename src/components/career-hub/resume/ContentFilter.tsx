@@ -2,7 +2,6 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card } from '@/components/ui/card';
 import { 
   Select, 
   SelectContent, 
@@ -25,10 +24,33 @@ import {
   Briefcase,
   GraduationCap,
   FileText,
-  Building2
+  Building2,
+  Users,
+  Globe,
+  Target,
+  Sparkles
 } from 'lucide-react';
+import { 
+  INDUSTRIES, 
+  EXPERIENCE_LEVELS, 
+  USER_SITUATIONS, 
+  RESUME_FORMATS,
+  LANGUAGES,
+  INDUSTRY_LABELS,
+  EXPERIENCE_LABELS,
+  SITUATION_LABELS,
+  FORMAT_LABELS,
+  INTENT_LABELS,
+  type Industry,
+  type ExperienceLevel,
+  type UserSituation,
+  type ResumeFormat,
+  type Language,
+  type ContentIntent
+} from '@/data/taxonomy';
+import { useUrlFilters, type UrlFilters, FILTER_PRESETS } from '@/hooks/useUrlFilters';
 
-export type FilterCategory = 'industry' | 'experienceLevel' | 'documentType' | 'format';
+export type FilterCategory = 'industry' | 'experienceLevel' | 'userSituation' | 'documentType' | 'format' | 'language' | 'contentIntent';
 
 export interface FilterOption {
   value: string;
@@ -48,8 +70,11 @@ export interface FilterConfig {
 export interface ActiveFilters {
   industry: string[];
   experienceLevel: string[];
+  userSituation: string[];
   documentType: string[];
   format: string[];
+  language: string[];
+  contentIntent: string[];
   search: string;
 }
 
@@ -59,14 +84,42 @@ interface ContentFilterProps {
   onFilterChange: (filters: ActiveFilters) => void;
   totalResults?: number;
   className?: string;
+  showPresets?: boolean;
+  syncWithUrl?: boolean;
 }
+
+// Convert UrlFilters to ActiveFilters for backward compatibility
+const urlFiltersToActiveFilters = (state: UrlFilters): ActiveFilters => ({
+  industry: state.industry,
+  experienceLevel: state.experienceLevel,
+  userSituation: state.userSituation,
+  documentType: state.documentType,
+  format: state.format,
+  language: state.language,
+  contentIntent: state.contentIntent,
+  search: state.search
+});
+
+// Convert ActiveFilters to partial UrlFilters
+const activeFiltersToUrlFilters = (filters: ActiveFilters): Partial<UrlFilters> => ({
+  industry: filters.industry as Industry[],
+  experienceLevel: filters.experienceLevel as ExperienceLevel[],
+  userSituation: filters.userSituation as UserSituation[],
+  documentType: filters.documentType,
+  format: filters.format as ResumeFormat[],
+  language: filters.language,
+  contentIntent: filters.contentIntent as ContentIntent[],
+  search: filters.search
+});
 
 export const ContentFilter: React.FC<ContentFilterProps> = ({
   filters,
   activeFilters,
   onFilterChange,
   totalResults,
-  className = ''
+  className = '',
+  showPresets = false,
+  syncWithUrl = false
 }) => {
   const [searchValue, setSearchValue] = useState(activeFilters.search);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -75,8 +128,11 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
     return (
       activeFilters.industry.length +
       activeFilters.experienceLevel.length +
+      (activeFilters.userSituation?.length || 0) +
       activeFilters.documentType.length +
       activeFilters.format.length +
+      (activeFilters.language?.length || 0) +
+      (activeFilters.contentIntent?.length || 0) +
       (activeFilters.search ? 1 : 0)
     );
   }, [activeFilters]);
@@ -87,7 +143,7 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
   }, [activeFilters, onFilterChange]);
 
   const handleFilterToggle = useCallback((category: FilterCategory, value: string) => {
-    const currentValues = activeFilters[category];
+    const currentValues = activeFilters[category] || [];
     const newValues = currentValues.includes(value)
       ? currentValues.filter(v => v !== value)
       : [...currentValues, value];
@@ -103,8 +159,11 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
     onFilterChange({
       industry: [],
       experienceLevel: [],
+      userSituation: [],
       documentType: [],
       format: [],
+      language: [],
+      contentIntent: [],
       search: ''
     });
   }, [onFilterChange]);
@@ -112,12 +171,68 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
   const removeFilter = useCallback((category: FilterCategory, value: string) => {
     onFilterChange({
       ...activeFilters,
-      [category]: activeFilters[category].filter(v => v !== value)
+      [category]: (activeFilters[category] || []).filter(v => v !== value)
     });
+  }, [activeFilters, onFilterChange]);
+
+  const applyPreset = useCallback((presetKey: string) => {
+    const preset = FILTER_PRESETS[presetKey];
+    if (preset) {
+      onFilterChange({
+        ...activeFilters,
+        industry: (preset.industry || []) as string[],
+        experienceLevel: (preset.experienceLevel || []) as string[],
+        userSituation: (preset.userSituation || []) as string[],
+        format: (preset.format || []) as string[],
+      });
+    }
   }, [activeFilters, onFilterChange]);
 
   return (
     <div className={`space-y-4 ${className}`}>
+      {/* Preset Quick Filters */}
+      {showPresets && (
+        <div className="flex flex-wrap gap-2 pb-2">
+          <span className="text-sm text-muted-foreground mr-2 self-center">Quick filters:</span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => applyPreset('for-students')}
+            className="gap-1"
+          >
+            <GraduationCap className="h-3 w-3" />
+            Students
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => applyPreset('for-freshers')}
+            className="gap-1"
+          >
+            <Sparkles className="h-3 w-3" />
+            First Job
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => applyPreset('for-immigrants')}
+            className="gap-1"
+          >
+            <Globe className="h-3 w-3" />
+            New to US
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => applyPreset('for-parents')}
+            className="gap-1"
+          >
+            <Users className="h-3 w-3" />
+            Parents
+          </Button>
+        </div>
+      )}
+
       {/* Search and Filter Bar */}
       <div className="flex flex-col sm:flex-row gap-3">
         {/* Search Input */}
@@ -145,9 +260,9 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
               <ChevronDown className="h-4 w-4 ml-1" />
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-80 p-4" align="end">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
+          <PopoverContent className="w-80 p-4 bg-popover border shadow-lg z-50" align="end">
+            <div className="space-y-4 max-h-[60vh] overflow-y-auto">
+              <div className="flex items-center justify-between sticky top-0 bg-popover pb-2">
                 <h4 className="font-semibold">Filters</h4>
                 {activeFilterCount > 0 && (
                   <Button variant="ghost" size="sm" onClick={clearAllFilters}>
@@ -170,7 +285,7 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
                       >
                         <Checkbox
                           id={`${filter.category}-${option.value}`}
-                          checked={activeFilters[filter.category].includes(option.value)}
+                          checked={(activeFilters[filter.category] || []).includes(option.value)}
                           onCheckedChange={() => handleFilterToggle(filter.category, option.value)}
                         />
                         <Label
@@ -201,7 +316,7 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
           <SelectTrigger className="w-[140px]">
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-popover border shadow-lg z-50">
             <SelectItem value="relevance">Relevance</SelectItem>
             <SelectItem value="newest">Newest</SelectItem>
             <SelectItem value="popular">Most Popular</SelectItem>
@@ -263,6 +378,35 @@ export const ContentFilter: React.FC<ContentFilterProps> = ({
   );
 };
 
+// URL-synced version of ContentFilter
+export const ContentFilterWithUrl: React.FC<{
+  filters: FilterConfig[];
+  totalResults?: number;
+  className?: string;
+  showPresets?: boolean;
+  onFiltersChange?: (filters: ActiveFilters) => void;
+}> = ({ filters, totalResults, className, showPresets = true, onFiltersChange }) => {
+  const { activeFilters: urlFilters, updateFilters, clearAllFilters } = useUrlFilters();
+  
+  const activeFilters = urlFiltersToActiveFilters(urlFilters);
+  
+  const handleFilterChange = useCallback((newFilters: ActiveFilters) => {
+    updateFilters(activeFiltersToUrlFilters(newFilters));
+    onFiltersChange?.(newFilters);
+  }, [updateFilters, onFiltersChange]);
+
+  return (
+    <ContentFilter
+      filters={filters}
+      activeFilters={activeFilters}
+      onFilterChange={handleFilterChange}
+      totalResults={totalResults}
+      className={className}
+      showPresets={showPresets}
+    />
+  );
+};
+
 // Quick filter bar for mobile
 export const QuickFilterBar: React.FC<{
   options: { value: string; label: string; icon?: React.ReactNode }[];
@@ -288,57 +432,93 @@ export const QuickFilterBar: React.FC<{
   );
 };
 
-// Default filter configurations
+// Enhanced filter configurations using taxonomy
 export const defaultFilterConfigs: FilterConfig[] = [
   {
     category: 'industry',
     label: 'Industry',
     icon: <Building2 className="h-4 w-4" />,
-    options: [
-      { value: 'hospitality', label: 'Hospitality', count: 11 },
-      { value: 'industrial', label: 'Industrial & Warehouse', count: 7 },
-      { value: 'retail', label: 'Retail', count: 3 },
-      { value: 'facilities', label: 'Facilities', count: 2 },
-    ],
+    options: INDUSTRIES.map(ind => ({
+      value: ind,
+      label: INDUSTRY_LABELS[ind].label
+    })),
     multiSelect: true
   },
   {
     category: 'experienceLevel',
     label: 'Experience Level',
     icon: <GraduationCap className="h-4 w-4" />,
-    options: [
-      { value: 'no-experience', label: 'No Experience' },
-      { value: 'entry-level', label: 'Entry Level (0-2 years)' },
-      { value: 'experienced', label: 'Experienced (2+ years)' },
-      { value: 'career-change', label: 'Career Change' },
-    ],
+    options: EXPERIENCE_LEVELS.map(level => ({
+      value: level,
+      label: EXPERIENCE_LABELS[level].label
+    })),
     multiSelect: true
   },
   {
-    category: 'documentType',
-    label: 'Document Type',
-    icon: <FileText className="h-4 w-4" />,
-    options: [
-      { value: 'resume', label: 'Resume Examples' },
-      { value: 'template', label: 'Templates' },
-      { value: 'cover-letter', label: 'Cover Letters' },
-      { value: 'skills', label: 'Skills & Keywords' },
-      { value: 'components', label: 'Copy-Paste Components' },
-    ],
+    category: 'userSituation',
+    label: 'Your Situation',
+    icon: <Users className="h-4 w-4" />,
+    options: USER_SITUATIONS.map(situation => ({
+      value: situation,
+      label: SITUATION_LABELS[situation].label
+    })),
     multiSelect: true
   },
   {
     category: 'format',
     label: 'Resume Format',
-    icon: <Briefcase className="h-4 w-4" />,
+    icon: <FileText className="h-4 w-4" />,
+    options: RESUME_FORMATS.map(format => ({
+      value: format,
+      label: FORMAT_LABELS[format].label
+    })),
+    multiSelect: true
+  },
+  {
+    category: 'language',
+    label: 'Language',
+    icon: <Globe className="h-4 w-4" />,
+    options: LANGUAGES.map(lang => ({
+      value: lang,
+      label: lang === 'english' ? 'English' : lang === 'spanish' ? 'Español' : 'Bilingual'
+    })),
+    multiSelect: true
+  },
+  {
+    category: 'contentIntent',
+    label: 'What You Want',
+    icon: <Target className="h-4 w-4" />,
     options: [
-      { value: 'chronological', label: 'Chronological' },
-      { value: 'functional', label: 'Functional' },
-      { value: 'combination', label: 'Combination' },
-      { value: 'one-page', label: 'One-Page' },
+      { value: 'learn', label: 'Learn & Understand' },
+      { value: 'create', label: 'Create Something' },
+      { value: 'calculate', label: 'Calculate / Estimate' },
+      { value: 'compare', label: 'Compare Options' },
+      { value: 'find-work', label: 'Find Work' }
     ],
     multiSelect: true
   }
+];
+
+// Simplified filter configs for resume examples page
+export const resumeFilterConfigs: FilterConfig[] = [
+  defaultFilterConfigs[0], // industry
+  defaultFilterConfigs[1], // experienceLevel
+  defaultFilterConfigs[2], // userSituation
+];
+
+// Filter configs for tools page
+export const toolsFilterConfigs: FilterConfig[] = [
+  defaultFilterConfigs[0], // industry
+  defaultFilterConfigs[2], // userSituation
+  defaultFilterConfigs[5], // contentIntent
+];
+
+// Filter configs for guides page
+export const guidesFilterConfigs: FilterConfig[] = [
+  defaultFilterConfigs[0], // industry
+  defaultFilterConfigs[1], // experienceLevel
+  defaultFilterConfigs[2], // userSituation
+  defaultFilterConfigs[4], // language
 ];
 
 export default ContentFilter;
