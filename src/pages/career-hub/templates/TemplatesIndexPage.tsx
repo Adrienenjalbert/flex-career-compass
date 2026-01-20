@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { resumeTemplates, templateCategories } from '@/data/resume-templates';
 import { FileText, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
-
+import { TemplateComparison } from '@/components/career-hub/TemplateComparison';
 const TemplatesIndexPage = () => {
   const breadcrumbs = [
     { label: 'Career Hub', href: '/career-hub' },
@@ -58,6 +58,9 @@ const TemplatesIndexPage = () => {
             </Card>
           ))}
         </div>
+
+        {/* Template Comparison */}
+        <TemplateComparison />
 
         {/* Template Categories */}
         {templateCategories.map((category) => (
