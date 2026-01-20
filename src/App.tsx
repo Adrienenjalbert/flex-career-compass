@@ -46,6 +46,8 @@ import ResumeExamplesIndexPage from "./pages/career-hub/resume-examples/ResumeEx
 import ResumeExamplePage from "./pages/career-hub/resume-examples/ResumeExamplePage";
 import TemplatesIndexPage from "./pages/career-hub/templates/TemplatesIndexPage";
 import TemplatePage from "./pages/career-hub/templates/TemplatePage";
+import ActionVerbsPage from "./pages/career-hub/resources/ActionVerbsPage";
+import BulletGeneratorPage from "./pages/career-hub/resources/BulletGeneratorPage";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +88,8 @@ const App = () => (
           <Route path="/career-hub/financial-tips" element={<FinancialTipsPage />} />
           <Route path="/career-hub/financial-tips/:slug" element={<FinancialTipsArticlePage />} />
           <Route path="/career-hub/resources" element={<ResourcesPage />} />
+          <Route path="/career-hub/resources/action-verbs" element={<ActionVerbsPage />} />
+          <Route path="/career-hub/resources/bullet-generator" element={<BulletGeneratorPage />} />
           <Route path="/career-hub/cities" element={<CitiesIndexPage />} />
           <Route path="/career-hub/cities/:citySlug" element={<CityPage />} />
           <Route path="/career-hub/cities/:citySlug/:roleSlug" element={<CityRolePage />} />
