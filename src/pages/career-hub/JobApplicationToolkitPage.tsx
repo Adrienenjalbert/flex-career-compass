@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { resumeTemplates } from "@/data/resume-templates";
 import { coverLetterTemplates } from "@/data/cover-letter-templates";
+import { resumeRoles } from "@/data/resume-content";
 import { 
   FileText, 
   Warehouse, 
@@ -30,7 +31,9 @@ import {
   ShoppingBag,
   Lightbulb,
   Filter,
-  X
+  X,
+  Users,
+  FileUser
 } from "lucide-react";
 
 // Industries for filtering
@@ -141,6 +144,14 @@ const resumeArticles = [
 // Quick action cards
 const quickActions = [
   {
+    title: "Resume Examples",
+    description: "23 role-specific resumes with ATS keywords",
+    href: "/career-hub/resume-examples",
+    icon: FileUser,
+    color: "bg-purple-500/10 text-purple-600",
+    count: resumeRoles.length
+  },
+  {
     title: "Resume Templates",
     description: "6 interactive templates with fill-in-the-blank builders",
     href: "/career-hub/templates",
@@ -163,22 +174,31 @@ const quickActions = [
     icon: Zap,
     color: "bg-amber-500/10 text-amber-600",
     count: "200+"
-  },
-  {
-    title: "Bullet Generator",
-    description: "STAR-format achievement builder for any role",
-    href: "/career-hub/resources/bullet-generator",
-    icon: Lightbulb,
-    color: "bg-green-500/10 text-green-600",
-    count: "18+"
   }
 ];
 
+// Industry icons map
+const industryIcons: Record<string, typeof Warehouse> = {
+  industrial: Warehouse,
+  hospitality: UtensilsCrossed,
+  retail: ShoppingBag,
+  facilities: Building
+};
+
+// Group resume roles by industry
+const rolesByIndustry = resumeRoles.reduce((acc, role) => {
+  if (!acc[role.industry]) {
+    acc[role.industry] = [];
+  }
+  acc[role.industry].push(role);
+  return acc;
+}, {} as Record<string, typeof resumeRoles>);
+
 const quickStats = [
+  { value: "23", label: "Role Examples", icon: FileUser },
   { value: "6", label: "Resume Templates", icon: LayoutTemplate },
-  { value: "6", label: "Cover Letter Templates", icon: Mail },
-  { value: "200+", label: "Action Verbs", icon: Zap },
-  { value: "18+", label: "Bullet Templates", icon: Lightbulb }
+  { value: "6", label: "Cover Letters", icon: Mail },
+  { value: "200+", label: "Action Verbs", icon: Zap }
 ];
 
 // Template cards with industry fit
@@ -427,6 +447,82 @@ const JobApplicationToolkitPage = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <TemplateComparison />
+          </div>
+        </div>
+      </section>
+
+      {/* Role-Specific Resume Examples */}
+      <section className="py-8 md:py-12 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <FileUser className="w-5 h-5 text-primary" />
+                  <h2 className="text-xl md:text-2xl font-bold text-foreground">
+                    Resume Examples by Job Title
+                  </h2>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {resumeRoles.length} role-specific templates with ATS keywords, BLS data & STAR bullets
+                </p>
+              </div>
+              <Link to="/career-hub/resume-examples">
+                <Button variant="outline" size="sm" className="h-8">
+                  View All Examples <ArrowRight className="w-3 h-3 ml-1" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {Object.entries(rolesByIndustry).map(([industry, roles]) => {
+                const Icon = industryIcons[industry] || Briefcase;
+                const displayRoles = selectedIndustry === 'all' || selectedIndustry === industry ? roles : [];
+                
+                if (selectedIndustry !== 'all' && selectedIndustry !== industry) return null;
+                
+                return (
+                  <div key={industry} className="bg-card rounded-xl border border-border p-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                        industry === 'hospitality' ? 'bg-purple-500/10' :
+                        industry === 'industrial' ? 'bg-amber-500/10' :
+                        industry === 'retail' ? 'bg-blue-500/10' :
+                        'bg-green-500/10'
+                      }`}>
+                        <Icon className={`w-4 h-4 ${
+                          industry === 'hospitality' ? 'text-purple-600' :
+                          industry === 'industrial' ? 'text-amber-600' :
+                          industry === 'retail' ? 'text-blue-600' :
+                          'text-green-600'
+                        }`} />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground capitalize text-sm">
+                          {industry}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">{roles.length} roles</p>
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
+                      {displayRoles.map((role) => (
+                        <Link
+                          key={role.slug}
+                          to={`/career-hub/resume-examples/${role.slug}`}
+                          className="group flex items-center gap-2 p-2 -mx-2 rounded-lg hover:bg-muted/50 transition-colors"
+                        >
+                          <FileText className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary" />
+                          <span className="text-sm text-foreground group-hover:text-primary transition-colors flex-1 truncate">
+                            {role.title}
+                          </span>
+                          <ArrowRight className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
