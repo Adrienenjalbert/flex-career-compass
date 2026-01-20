@@ -79,7 +79,90 @@ Indeed Flex is a flexible staffing platform that connects workers with temporary
 - App: Available on iOS App Store and Google Play
 - Support: support@indeedflex.com
 
+## Job Application Resources
+
+### Resume Guides for Beginners
+
+**Resume for Freshers 2026: Complete Guide**
+- URL: /career-hub/guides/fresher-resume-guide
+- Target: First-time job seekers, recent graduates
+- Key Topics: Functional vs chronological format, highlighting education, volunteer work, skills-first approach
+- FAQ: What format works best for freshers? How do I write a resume with no experience?
+
+**Student Resume Template: Balance Work & School**
+- URL: /career-hub/guides/student-resume-template
+- Target: College students, part-time workers
+- Key Topics: Class schedule flexibility, coursework as experience, campus activities, part-time job examples
+- FAQ: How do I list education on a student resume? Should I include GPA?
+
+**How to Get Hired With Zero Experience**
+- URL: /career-hub/guides/zero-experience-jobs
+- Target: Career changers, first job seekers
+- Key Topics: Entry-level opportunities, transferable skills, volunteer experience, soft skills emphasis
+- FAQ: What jobs don't require experience? How do I get my first job?
+
+**Transferable Skills for Your First Resume**
+- URL: /career-hub/guides/transferable-skills-guide
+- Target: Career changers, students
+- Key Topics: Skills mapping from education, identifying hidden skills, STAR method examples
+- FAQ: What are transferable skills? How do I identify my transferable skills?
+
+### Comparison & Decision Guides
+
+**Best Free Resume Builders 2026: Complete Comparison**
+- URL: /career-hub/guides/best-resume-builders-2026
+- Target: Job seekers evaluating resume tools
+- Key Topics: Canva vs Resume.io vs Zety vs NovoResume, ATS compatibility ratings, pricing tiers, template variety
+- Comparison: 10+ builders ranked by features, ease of use, and ATS pass rates
+- FAQ: Which resume builder is best for ATS? Are free resume builders good enough?
+
+**Best Job Boards by Industry 2026**
+- URL: /career-hub/guides/best-job-boards-2026
+- Target: Job seekers by industry
+- Key Topics: Warehouse job boards, hospitality job sites, retail opportunities, gig platforms
+- Industries Covered: Industrial/Warehouse, Hospitality, Retail, Facilities
+- FAQ: What is the best job board for warehouse jobs? Where do I find temp hospitality work?
+
+**Indeed Flex vs Staffing Agencies: Which Is Right for You?**
+- URL: /career-hub/guides/indeed-flex-vs-staffing-agencies
+- Target: Workers comparing staffing options
+- Key Topics: App-based vs traditional agencies, pay comparison, flexibility, Same Day Pay feature
+- Comparison: Control, payment speed, job variety, benefits
+- FAQ: Is Indeed Flex better than temp agencies? How does Indeed Flex compare to Wonolo?
+
+### Interview Preparation
+
+**Warehouse Interview Questions & Answers 2026**
+- URL: /career-hub/guides/warehouse-interview-questions
+- Target: Warehouse job candidates
+- Key Topics: Top 20 questions, STAR method answers, safety questions, what to wear
+- Sample Questions: Tell me about a time you met a deadline, How do you prioritize tasks?
+- FAQ: What questions are asked in warehouse interviews? How should I dress?
+
+**Hospitality Interview Questions & Answers 2026**
+- URL: /career-hub/guides/hospitality-interview-questions
+- Target: Restaurant, hotel, event job candidates
+- Key Topics: Server interview tips, bartender questions, customer service scenarios
+- Sample Questions: How do you handle difficult customers? Describe your busiest shift.
+- FAQ: What questions are asked in restaurant interviews? How do I prepare for a server interview?
+
+**ATS Resume Tips: Beat the Bots in 2026**
+- URL: /career-hub/guides/ats-resume-tips
+- Target: All job seekers
+- Key Topics: How ATS systems work, keyword optimization, formatting rules, common rejection reasons
+- Statistics: 75% of resumes rejected by ATS before human review
+- FAQ: What is an ATS? How do I make my resume ATS-friendly?
+
+**How to Turn a Temp Job Into Permanent Employment**
+- URL: /career-hub/guides/temp-to-permanent-guide
+- Target: Temp workers seeking full-time roles
+- Key Topics: Conversion strategies, timing, networking, performance tips
+- Statistics: 30-40% of temp assignments convert to permanent roles
+- FAQ: Can a temp job become permanent? When should I ask about conversion?
+
 ## Structured Data
 - Organization Type: Employment Agency
 - Service Type: Temporary Staffing, Flexible Work
 - Target Audience: Gig workers, students, career changers, people seeking flexible income
+- Content Types: Career Guides, Resume Templates, Interview Preparation, Job Board Comparisons
+- Last Updated: January 2026
