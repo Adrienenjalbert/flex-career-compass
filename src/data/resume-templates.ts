@@ -14,6 +14,7 @@ export interface ResumeTemplate {
     retail: number;
     facilities: number;
   };
+  exampleData: Record<string, string>;
 }
 
 export interface TemplateSection {
@@ -81,7 +82,24 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       'Keep to 1 page for less than 10 years of experience',
       'Use consistent date formatting throughout',
       'List certifications like forklift license prominently in skills section'
-    ]
+    ],
+    exampleData: {
+      name: 'John Smith',
+      phone: '(555) 123-4567',
+      email: 'john.smith@email.com',
+      city: 'Austin, TX',
+      objective: 'Dedicated warehouse professional with 4 years of experience in high-volume fulfillment operations. Seeking to leverage strong inventory management skills and forklift certification to contribute to an efficient, safety-focused team.',
+      job1_title: 'Warehouse Associate',
+      job1_company: 'Amazon Fulfillment Center',
+      job1_dates: 'Jan 2022 - Present',
+      job1_bullets: '• Processed 150+ orders daily with 99.5% accuracy rate\n• Trained 8 new team members on RF scanner operations and safety protocols\n• Recognized as Employee of the Month twice for exceeding productivity targets',
+      job2_title: 'Picker/Packer',
+      job2_company: 'FedEx Ground',
+      job2_dates: 'Mar 2020 - Dec 2021',
+      job2_bullets: '• Maintained zero safety incidents over 22-month tenure\n• Exceeded daily pick rate targets by 15% consistently\n• Assisted with inventory audits, identifying and resolving 200+ discrepancies',
+      skills: 'RF Scanner | Forklift Certified (Sit-down, Reach) | Inventory Management | WMS Systems | Team Leadership | OSHA Safety Compliant',
+      education: 'High School Diploma, Austin High School, 2019'
+    }
   },
   'functional': {
     slug: 'functional',
@@ -130,7 +148,22 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       'Lead with your strongest, most relevant skill category',
       'Use industry-specific keywords in skill category headers',
       'Ideal when your skills matter more than where you developed them'
-    ]
+    ],
+    exampleData: {
+      name: 'Maria Garcia',
+      phone: '(555) 234-5678',
+      email: 'maria.garcia@email.com',
+      city: 'Houston, TX',
+      summary: 'Versatile professional with 5+ years of combined experience in customer service, retail, and warehouse operations. Proven ability to adapt quickly to new environments and deliver consistent results across diverse industries.',
+      skill1_name: 'Customer Service Excellence',
+      skill1_bullets: '• Resolved 50+ customer inquiries daily with 95% satisfaction rating\n• Trained new staff on POS systems and customer interaction protocols\n• Maintained calm demeanor during high-pressure situations',
+      skill2_name: 'Operations & Logistics',
+      skill2_bullets: '• Managed inventory tracking for 5,000+ SKUs with 99% accuracy\n• Reduced order processing time by 20% through workflow optimization\n• Operated RF scanners and basic warehouse equipment',
+      skill3_name: 'Team Collaboration',
+      skill3_bullets: '• Coordinated with 15-person team during peak season operations\n• Mentored 6 new hires, improving team retention by 30%\n• Communicated effectively across departments to meet deadlines',
+      work_history: 'Retail Associate, Target (2021-2023)\nWarehouse Worker, UPS (2019-2021)\nFood Service, Various (2017-2019)',
+      education: 'Food Handler Certification, 2023\nHigh School Diploma, 2017'
+    }
   },
   'temp-worker': {
     slug: 'temp-worker',
@@ -183,7 +216,25 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       'Emphasize reliability metrics (attendance, punctuality)',
       'Include your availability to show flexibility',
       'List industry-specific certifications prominently'
-    ]
+    ],
+    exampleData: {
+      name: 'Alex Johnson',
+      phone: '(555) 345-6789',
+      email: 'alex.johnson@email.com',
+      city: 'Nashville, TN',
+      flexer_rating: '⭐ 4.9 Indeed Flex Rating',
+      summary: 'Reliable flex worker with a proven track record of excellence across multiple industries. Known for punctuality, adaptability, and consistently exceeding client expectations. Available for immediate booking and flexible scheduling.',
+      stats: '200+ shifts completed | 98% attendance | 4.9★ rating | Same-day available',
+      industries: 'Industrial, Hospitality, Retail',
+      assignment1: 'Warehouse Operations',
+      assignment1_clients: 'Amazon, FedEx, Target Distribution',
+      assignment1_bullets: '• Consistently exceeded pick rate targets by 25%\n• Invited to 12 client talent pools for repeat work\n• Zero safety violations across all assignments',
+      assignment2: 'Event Staffing',
+      assignment2_clients: 'Marriott, Hilton, Nashville Convention Center',
+      assignment2_bullets: '• Served 500+ guests at high-profile corporate events\n• Received 15 five-star client reviews\n• Trained on-site for banquet and catering protocols',
+      certifications: 'Forklift Certified (Sit-down, Reach) | Food Handler Card | OSHA 10 | TIPS Alcohol Certified',
+      availability: 'Flexible schedule | Days, nights, weekends | Same-day bookings accepted'
+    }
   },
   'combination': {
     slug: 'combination',
@@ -234,7 +285,25 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       'Keep work history focused on achievements, not duties',
       'Perfect for when you need to showcase both skills and progression',
       'ATS-friendly when properly formatted'
-    ]
+    ],
+    exampleData: {
+      name: 'David Chen',
+      phone: '(555) 456-7890',
+      email: 'david.chen@email.com',
+      city: 'Chicago, IL',
+      summary: 'Results-driven warehouse professional with 5 years of progressive experience in fulfillment and distribution operations. Proven leader with expertise in team management, process optimization, and safety compliance. Seeking to leverage strong operational skills in a Warehouse Lead position.',
+      core_skills: 'Inventory Management | Team Leadership (12+ direct reports) | Safety Compliance | Forklift Operation (All Types) | RF Scanning & WMS | Quality Control | Process Improvement',
+      job1_title: 'Warehouse Lead',
+      job1_company: 'Amazon Fulfillment',
+      job1_dates: 'Mar 2022 - Present',
+      job1_bullets: '• Led team of 12 associates achieving 105% of daily targets consistently\n• Reduced error rate from 2.5% to 0.8% through process improvements\n• Trained 25+ new hires on standard operating procedures',
+      job2_title: 'Warehouse Associate',
+      job2_company: 'Target Distribution',
+      job2_dates: 'Jun 2020 - Feb 2022',
+      job2_bullets: '• Processed 200+ orders daily with 99.7% accuracy\n• Earned Employee of the Month twice for exceeding metrics\n• Promoted to team trainer within 6 months',
+      certifications: 'Forklift Certified (Sit-down, Stand-up, Reach) | OSHA 30-Hour Safety | First Aid/CPR Certified | Lean Six Sigma Yellow Belt',
+      education: "Associate's Degree, Logistics Management, Chicago City College, 2020"
+    }
   },
   'student': {
     slug: 'student',
@@ -287,7 +356,24 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       'Highlight transferable skills from school projects and activities',
       'Include your availability - employers want to know your schedule',
       'Volunteer work demonstrates reliability and work ethic'
-    ]
+    ],
+    exampleData: {
+      name: 'Emily Rodriguez',
+      phone: '(555) 567-8901',
+      email: 'emily.rodriguez@email.com',
+      city: 'Orlando, FL',
+      objective: 'Motivated business student seeking part-time flexible work to gain hands-on experience in retail or hospitality while completing my degree. Strong customer service skills and reliable work ethic.',
+      school: 'University of Central Florida',
+      degree: 'Bachelor of Science in Business Administration',
+      grad_date: 'Expected May 2025',
+      gpa: 'GPA: 3.5/4.0',
+      relevant_coursework: 'Operations Management, Supply Chain Logistics, Business Communication, Customer Relations',
+      work_experience: 'Summer Camp Counselor, YMCA Orlando (Summer 2023)\n• Supervised groups of 15-20 children ages 8-12\n• Organized daily activities and maintained safety protocols\n• Received outstanding performance evaluation',
+      volunteer: 'Second Harvest Food Bank (2022-Present)\n• Sorted and packaged 1,000+ lbs of food donations weekly\n• Trained new volunteers on warehouse safety procedures',
+      activities: 'Business Student Association, Member | Intramural Soccer Team Captain | Dean\'s List: Fall 2023, Spring 2024',
+      skills: 'Microsoft Office Suite | Spanish (Conversational) | Customer Service | Cash Handling | Point-of-Sale Systems | Team Collaboration',
+      availability: 'Available 20-30 hours/week | Evenings and weekends | Full-time during school breaks'
+    }
   },
   'career-gap': {
     slug: 'career-gap',
@@ -343,7 +429,27 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       'Consider omitting months and using only years for older jobs',
       'Emphasize eagerness and readiness to return to work in summary',
       'Temp work is ideal for rebuilding work history - mention this'
-    ]
+    ],
+    exampleData: {
+      name: 'Sarah Thompson',
+      phone: '(555) 678-9012',
+      email: 'sarah.thompson@email.com',
+      city: 'Atlanta, GA',
+      summary: 'Experienced retail professional with 7+ years of customer service and supervisory experience, now ready to return to the workforce. During my career break, I maintained certifications and completed additional training to ensure a smooth transition back to work. Seeking flexible opportunities to leverage my proven leadership and customer relations skills.',
+      skills: 'Team Supervision (8+ direct reports) | Customer Service Excellence | Inventory Management | POS Systems | Conflict Resolution | Training & Onboarding | Cash Handling',
+      recent_training: 'Customer Service Excellence Certificate, 2024 | Forklift Certification, 2024 | First Aid/CPR Recertification, 2024',
+      gap_activity: 'Family Caregiving',
+      gap_dates: '2022 - 2024',
+      previous_job1_title: 'Retail Supervisor',
+      previous_job1_company: 'Walmart',
+      previous_job1_dates: '2018 - 2022',
+      previous_job1_bullets: '• Managed team of 8 associates in high-volume department\n• Achieved 95% customer satisfaction scores consistently\n• Reduced shrinkage by 18% through improved inventory controls',
+      previous_job2_title: 'Sales Associate',
+      previous_job2_company: 'Target',
+      previous_job2_dates: '2015 - 2018',
+      previous_job2_bullets: '• Exceeded sales goals by 20% for 8 consecutive quarters\n• Trained 15+ new hires on POS systems and customer service protocols\n• Selected for cross-training in multiple departments',
+      education: 'High School Diploma, Atlanta High School, 2014'
+    }
   }
 };
 

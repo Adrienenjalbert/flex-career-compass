@@ -49,19 +49,25 @@ const CoverLetterPage = () => {
     type: v.type === 'textarea' ? 'textarea' as const : 'text' as const
   }));
 
-  // Build full cover letter preview
-  const buildFullCoverLetter = () => {
+  // Build cover letter with specific data
+  const buildCoverLetterWithData = (data: Record<string, string>) => {
     let content = '';
     template.sections.forEach(section => {
       let sectionContent = section.content;
       template.variables.forEach(v => {
-        const value = variableValues[v.id] || v.placeholder || `[${v.label}]`;
+        const value = data[v.id] || v.placeholder || `[${v.label}]`;
         sectionContent = sectionContent.replace(new RegExp(`\\{${v.id}\\}`, 'g'), value);
       });
       content += sectionContent + '\n\n';
     });
     return content.trim();
   };
+
+  // Build cover letter with user's input
+  const buildFullCoverLetter = () => buildCoverLetterWithData(variableValues);
+  
+  // Build cover letter with example data
+  const buildExampleCoverLetter = () => buildCoverLetterWithData(template.exampleData);
 
   const copyFullCoverLetter = () => {
     navigator.clipboard.writeText(buildFullCoverLetter());
@@ -233,12 +239,42 @@ const CoverLetterPage = () => {
             Interactive Cover Letter Builder
           </h2>
           
-          <Tabs defaultValue="builder" className="mb-8">
+          <Tabs defaultValue="example" className="mb-8">
             <TabsList>
+              <TabsTrigger value="example">View Example</TabsTrigger>
               <TabsTrigger value="builder">Build Your Letter</TabsTrigger>
-              <TabsTrigger value="preview">Full Preview</TabsTrigger>
+              <TabsTrigger value="preview">Your Preview</TabsTrigger>
               <TabsTrigger value="sections">Section Guide</TabsTrigger>
             </TabsList>
+
+            <TabsContent value="example" className="mt-6">
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        <Mail className="w-5 h-5 text-primary" />
+                        Sample Cover Letter
+                      </CardTitle>
+                      <CardDescription>
+                        See what this template looks like with realistic example content
+                      </CardDescription>
+                    </div>
+                    <Badge variant="secondary" className="text-xs">Example Data</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-white dark:bg-gray-900 border rounded-lg p-8 font-serif text-sm whitespace-pre-wrap min-h-[400px] leading-relaxed">
+                    {buildExampleCoverLetter()}
+                  </div>
+                  <div className="mt-4 flex justify-center">
+                    <a href="#builder" className="text-primary font-medium hover:underline flex items-center gap-1">
+                      Use This Template → Customize with Your Info
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
 
             <TabsContent value="builder" className="mt-6">
               <CopyPanel
@@ -253,7 +289,7 @@ const CoverLetterPage = () => {
               <Card>
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle>Full Cover Letter Preview</CardTitle>
+                    <CardTitle>Your Cover Letter Preview</CardTitle>
                     <div className="flex gap-2">
                       <Button size="sm" variant="outline" onClick={copyFullCoverLetter}>
                         <Copy className="w-4 h-4 mr-1" /> Copy
