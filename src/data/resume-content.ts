@@ -1045,5 +1045,852 @@ export const resumeExamples: ResumeExampleDisplay[] = [
     faqs: [
       { question: 'What equipment should I list on a cleaner resume?', answer: 'Include floor buffers, carpet extractors, pressure washers, industrial vacuums, and any specialized equipment. Mention chemical handling experience and safety training.' }
     ]
+  },
+  // New roles populated via Perplexity research
+  {
+    roleSlug: 'barback',
+    roleTitle: 'Barback',
+    industry: 'Hospitality',
+    metaDescription: 'Barback resume example with bar support skills, inventory management achievements, and high-volume service experience for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience'],
+    blsData: {
+      medianHourly: '$13.50',
+      jobGrowth: '+9%',
+      totalJobs: '280K',
+      outlook: 'Growing',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Restocking', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Inventory Management', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Customer Service', atsScore: 90, category: 'soft-skill' },
+      { keyword: 'Bar Equipment', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Glassware Handling', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Speed & Efficiency', atsScore: 82, category: 'soft-skill' },
+      { keyword: 'Ice Management', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Garnish Preparation', atsScore: 78, category: 'hard-skill' },
+      { keyword: 'Sanitation', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Team Communication', atsScore: 75, category: 'soft-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Energetic barback with 6 months experience supporting high-volume bar operations. Skilled in restocking supplies, maintaining glassware, and assisting bartenders during peak hours. Consistently praised for speed and attention to detail.'
+      },
+      {
+        level: 'experienced',
+        text: 'Efficient barback with 2+ years experience in fast-paced nightlife and restaurant bars. Expert in inventory management, garnish prep, and bar equipment maintenance. Known for reducing bartender wait times by 25% through proactive restocking.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Motivated individual seeking barback position. Strong work ethic with ability to work in fast-paced environments. Quick learner committed to supporting bartenders and maintaining clean, organized bar areas.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Streamlined', metric: 'bar restocking processes', result: 'reducing downtime by 20% and enabling service to 300+ patrons per night', category: 'Efficiency' },
+      { action: 'Managed', metric: '$2,000+ in inventory', result: 'cutting waste by 20% through precise tracking and rotation', category: 'Inventory' },
+      { action: 'Assisted', metric: 'bartenders with 500+ drinks', result: 'per shift, boosting service speed by 15%', category: 'Productivity' },
+      { action: 'Maintained', metric: '150+ pieces of barware', result: 'nightly with perfect health inspection scores', category: 'Quality' }
+    ],
+    certifications: [
+      { name: 'TIPS Certification', description: 'Alcohol awareness for bar staff', cost: '$35-45', payBoost: '+$1/hr', timeToComplete: '3-4 hours' },
+      { name: 'Food Handler Card', description: 'Basic food safety certification', cost: '$10-15', payBoost: '+$0.50/hr', timeToComplete: '2-4 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Can barbacks become bartenders?', answer: 'Yes, barback is a common pathway to bartending. Many establishments promote from within after 6-12 months of excellent barback performance.' }
+    ]
+  },
+  {
+    roleSlug: 'barista',
+    roleTitle: 'Barista',
+    industry: 'Hospitality',
+    metaDescription: 'Barista resume template with coffee expertise, customer service achievements, and specialty drink skills for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience', 'career-change'],
+    blsData: {
+      medianHourly: '$14.00',
+      jobGrowth: '+8%',
+      totalJobs: '420K',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Espresso Preparation', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Customer Service', atsScore: 92, category: 'soft-skill' },
+      { keyword: 'Latte Art', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Cash Handling', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'POS Systems', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Beverage Preparation', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Inventory Management', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Multitasking', atsScore: 78, category: 'soft-skill' },
+      { keyword: 'Food Safety', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Upselling', atsScore: 75, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Friendly barista with 1 year of experience crafting specialty coffee drinks. Skilled in espresso preparation, latte art, and providing exceptional customer service. Consistently upsold beverages, increasing daily sales by 15%.'
+      },
+      {
+        level: 'experienced',
+        text: 'Skilled barista with 3+ years experience in high-volume specialty coffee shops. Expert in espresso techniques, inventory management, and team training. Led initiatives that boosted year-over-year sales by 30% and improved employee retention by 80%.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Enthusiastic coffee lover seeking barista position. Strong customer service skills with genuine passion for creating great beverages. Quick learner ready to master espresso techniques and build customer relationships.'
+      },
+      {
+        level: 'career-change',
+        text: 'Customer-focused professional transitioning to specialty coffee. Strong communication and cash handling skills from previous retail experience. Passionate about coffee culture and creating memorable guest experiences.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Led', metric: 'team of 12 baristas', result: 'boosting year-over-year sales by 30%', category: 'Leadership' },
+      { action: 'Served', metric: '150+ customers daily', result: 'with 98% satisfaction rate, increasing sales by 15%', category: 'Service' },
+      { action: 'Trained', metric: '5 new baristas', result: 'cutting training time by 20% and enhancing team performance', category: 'Training' },
+      { action: 'Managed', metric: 'inventory effectively', result: 'reducing waste by 15% and ensuring peak-hour supply', category: 'Operations' }
+    ],
+    certifications: [
+      { name: 'SCA Barista Skills', description: 'Specialty Coffee Association certification', cost: '$200-400', payBoost: '+$1-2/hr', timeToComplete: '2-3 days' },
+      { name: 'Food Handler Card', description: 'Required in most states', cost: '$10-20', payBoost: 'Required', timeToComplete: '2-4 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'How long to become a skilled barista?', answer: 'Basic skills take 2-4 weeks. Mastering latte art and advanced techniques requires 3-6 months of practice.' }
+    ]
+  },
+  {
+    roleSlug: 'waiting-staff',
+    roleTitle: 'Waiting Staff / Server',
+    industry: 'Hospitality',
+    metaDescription: 'Server and waiting staff resume example with upselling achievements, customer service skills, and dining experience for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience', 'career-change'],
+    blsData: {
+      medianHourly: '$14.50',
+      jobGrowth: '+6%',
+      totalJobs: '2.5M',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Customer Service', atsScore: 95, category: 'soft-skill' },
+      { keyword: 'Food Service', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'POS Systems', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Upselling', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Menu Knowledge', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Order Accuracy', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Wine Service', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Team Coordination', atsScore: 78, category: 'soft-skill' },
+      { keyword: 'ServSafe', atsScore: 85, category: 'certification' },
+      { keyword: 'Cash Handling', atsScore: 82, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Personable server with 1 year of experience in casual dining. Skilled in POS systems, menu recommendations, and maintaining high guest satisfaction. Increased check averages by 15% through strategic upselling.'
+      },
+      {
+        level: 'experienced',
+        text: 'Dynamic server with 4+ years in upscale dining environments. Expert in wine pairings, tableside service, and team leadership. Consistently achieved 95%+ customer satisfaction while managing sections of 20+ tables.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Friendly and motivated individual seeking server position. Excellent communication skills with natural ability to make guests feel welcome. Quick learner eager to master restaurant service standards.'
+      },
+      {
+        level: 'career-change',
+        text: 'Customer service professional transitioning to hospitality. Proven track record in client relations and sales. Passionate about creating exceptional dining experiences and building repeat clientele.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Implemented', metric: 'upselling techniques on 50+ tables', result: 'increasing average check size by 25%', category: 'Sales' },
+      { action: 'Achieved', metric: '95%+ customer satisfaction', result: 'resulting in 20% increase in repeat customers', category: 'Service' },
+      { action: 'Managed', metric: 'multiple tables during peak hours', result: 'serving 150+ customers per shift', category: 'Productivity' },
+      { action: 'Trained', metric: '5 new servers', result: 'improving team productivity and 10% faster turnover', category: 'Leadership' }
+    ],
+    certifications: [
+      { name: 'ServSafe Food Handler', description: 'Required for food service', cost: '$15-20', payBoost: 'Required', timeToComplete: '2-4 hours' },
+      { name: 'TIPS Certification', description: 'Alcohol service training', cost: '$35-45', payBoost: '+$1/hr', timeToComplete: '3-4 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'How much do servers make with tips?', answer: 'Total earnings typically range from $15-35/hr including tips. Fine dining servers often earn $25-50+/hr.' }
+    ]
+  },
+  {
+    roleSlug: 'chef-de-partie',
+    roleTitle: 'Chef de Partie',
+    industry: 'Hospitality',
+    metaDescription: 'Chef de Partie resume example with station management, culinary achievements, and kitchen leadership for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'career-change'],
+    blsData: {
+      medianHourly: '$18.50',
+      jobGrowth: '+5%',
+      totalJobs: '1.4M',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Food Preparation', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Station Management', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'HACCP', atsScore: 90, category: 'certification' },
+      { keyword: 'Inventory Control', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Menu Development', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Kitchen Leadership', atsScore: 88, category: 'soft-skill' },
+      { keyword: 'Plating & Presentation', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Food Safety', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Time Management', atsScore: 78, category: 'soft-skill' },
+      { keyword: 'Quality Control', atsScore: 85, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Passionate Chef de Partie with 2 years of line cook experience. Skilled in station management, plating, and maintaining food safety standards. Achieved zero health inspection violations while handling 65+ covers per hour.'
+      },
+      {
+        level: 'experienced',
+        text: 'Accomplished Chef de Partie with 5+ years managing sauce and grill stations in fine dining establishments. Expert in menu development, team training, and inventory management. Reduced food waste by 20% through portion control and stock rotation.'
+      },
+      {
+        level: 'career-change',
+        text: 'Culinary enthusiast transitioning to professional kitchen work. Strong organizational and leadership skills with formal culinary training. Passionate about quality and committed to mastering classic techniques.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Reduced', metric: 'food waste by 20%', result: 'through portion control and stock rotation', category: 'Cost Control' },
+      { action: 'Managed', metric: 'kitchen team of 8', result: 'during peak hours maintaining 65+ covers per hour', category: 'Leadership' },
+      { action: 'Increased', metric: 'customer satisfaction by 25%', result: 'through innovative menu items and consistent quality', category: 'Quality' },
+      { action: 'Trained', metric: '4 junior staff', result: 'on cooking techniques and safety, improving efficiency by 25%', category: 'Training' }
+    ],
+    certifications: [
+      { name: 'ServSafe Manager', description: 'Advanced food safety certification', cost: '$150-200', payBoost: '+$1-2/hr', timeToComplete: '1-2 days' },
+      { name: 'HACCP Certification', description: 'Hazard analysis food safety', cost: '$150-300', payBoost: '+$1-2/hr', timeToComplete: '1-3 days' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'What kitchen stations can a Chef de Partie manage?', answer: 'Common stations include sauté, grill, pastry, garde manger (cold dishes), and fish. Specializing in one builds expertise.' }
+    ]
+  },
+  {
+    roleSlug: 'commis-chef',
+    roleTitle: 'Commis Chef',
+    industry: 'Hospitality',
+    metaDescription: 'Commis Chef resume template with culinary skills, food prep experience, and kitchen support achievements for 2026.',
+    experienceLevels: ['entry-level', 'no-experience'],
+    blsData: {
+      medianHourly: '$16.00',
+      jobGrowth: '+6%',
+      totalJobs: '900K',
+      outlook: 'Growing',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Food Preparation', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Food Safety', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Kitchen Hygiene', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Inventory Management', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Knife Skills', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Recipe Following', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Station Setup', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Team Collaboration', atsScore: 78, category: 'soft-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Dedicated Commis Chef with 1 year of kitchen experience. Proficient in food prep, station setup, and maintaining hygiene standards. Prepared 60+ dishes daily while achieving 100% quality consistency during peak hours.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Passionate culinary student seeking Commis Chef position. Strong knife skills from home cooking and culinary classes. Eager to learn professional techniques and contribute to a high-performing kitchen team.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Prepared', metric: '60+ dishes daily', result: 'maintaining 100% quality consistency during peak hours', category: 'Productivity' },
+      { action: 'Reduced', metric: 'kitchen waste by 20%', result: 'through optimized prep techniques and portion control', category: 'Efficiency' },
+      { action: 'Trained', metric: '4 junior staff', result: 'on cooking techniques, increasing team efficiency by 25%', category: 'Training' },
+      { action: 'Executed', metric: 'precise plating for 200+ covers', result: 'contributing to zero health inspection violations', category: 'Quality' }
+    ],
+    certifications: [
+      { name: 'Food Handler Card', description: 'Basic food safety certification', cost: '$10-20', payBoost: 'Required', timeToComplete: '2-4 hours' },
+      { name: 'ServSafe Food Handler', description: 'Industry-standard food safety', cost: '$15-20', payBoost: '+$0.50/hr', timeToComplete: '2-4 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Is Commis Chef a good starting position?', answer: 'Yes, Commis Chef is the traditional entry point for professional culinary careers. Most head chefs started in this role.' }
+    ]
+  },
+  {
+    roleSlug: 'kitchen-porter',
+    roleTitle: 'Kitchen Porter',
+    industry: 'Hospitality',
+    metaDescription: 'Kitchen Porter resume with dishwashing efficiency, hygiene standards, and kitchen support experience for 2026.',
+    experienceLevels: ['entry-level', 'no-experience'],
+    blsData: {
+      medianHourly: '$14.00',
+      jobGrowth: '+8%',
+      totalJobs: '550K',
+      outlook: 'Growing',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Dishwashing', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Sanitation', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Kitchen Equipment', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Food Safety', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Stock Rotation', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Deep Cleaning', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Physical Stamina', atsScore: 80, category: 'soft-skill' },
+      { keyword: 'Team Support', atsScore: 78, category: 'soft-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Reliable Kitchen Porter with 6 months experience in fast-paced restaurant kitchens. Expert in dishwashing, sanitation, and supporting food prep. Maintained 100% food safety compliance across 50+ inspections.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Hardworking individual seeking Kitchen Porter position. Strong physical stamina with excellent attention to hygiene. Eager to support kitchen operations and learn culinary industry basics.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Optimized', metric: 'dishwashing processes', result: 'handling 500+ pieces per shift, reducing time by 25%', category: 'Efficiency' },
+      { action: 'Implemented', metric: 'waste reduction program', result: 'minimizing food wastage by 20%', category: 'Cost Savings' },
+      { action: 'Maintained', metric: '100% food safety compliance', result: 'passing all audits without violations', category: 'Compliance' },
+      { action: 'Supported', metric: 'prep team efficiency', result: 'peeling and slicing for 100+ meals daily', category: 'Productivity' }
+    ],
+    certifications: [
+      { name: 'Food Handler Card', description: 'Basic food safety', cost: '$10-20', payBoost: '+$0.50/hr', timeToComplete: '2-4 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Can Kitchen Porter lead to a chef career?', answer: 'Absolutely! Many successful chefs started as kitchen porters and learned by observing and assisting senior staff.' }
+    ]
+  },
+  {
+    roleSlug: 'prep-cook',
+    roleTitle: 'Prep Cook',
+    industry: 'Hospitality',
+    metaDescription: 'Prep Cook resume example with food preparation skills, efficiency achievements, and kitchen experience for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience'],
+    blsData: {
+      medianHourly: '$15.50',
+      jobGrowth: '+7%',
+      totalJobs: '800K',
+      outlook: 'Growing',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Food Preparation', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Knife Skills', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Sanitation Standards', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Inventory Control', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Recipe Following', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Food Safety', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Portion Control', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Time Management', atsScore: 78, category: 'soft-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Efficient Prep Cook with 1 year of experience in high-volume restaurants. Skilled in knife techniques, portion control, and maintaining sanitation standards. Reduced food spoilage by 32% through proper stock rotation.'
+      },
+      {
+        level: 'experienced',
+        text: 'Seasoned Prep Cook with 3+ years supporting busy restaurant kitchens. Expert in high-volume prep, inventory management, and training junior staff. Increased prep efficiency by 64% through workflow optimization.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Detail-oriented individual seeking Prep Cook position. Strong home cooking skills with passion for food service. Quick learner ready to master professional prep techniques and food safety standards.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Rotated', metric: 'inventory stock', result: 'reducing food spoilage by 32% and saving $5,000 annually', category: 'Cost Control' },
+      { action: 'Prepared', metric: 'ingredients for 250+ diners', result: 'per night with zero delays', category: 'Productivity' },
+      { action: 'Trained', metric: '8 junior prep cooks', result: 'boosting team productivity by 20%', category: 'Training' },
+      { action: 'Sanitized', metric: 'kitchen surfaces daily', result: 'maintaining grade-A health inspection scores for 3 years', category: 'Compliance' }
+    ],
+    certifications: [
+      { name: 'Food Handler Card', description: 'Required for food preparation', cost: '$10-20', payBoost: 'Required', timeToComplete: '2-4 hours' },
+      { name: 'ServSafe Food Handler', description: 'Industry standard certification', cost: '$15-20', payBoost: '+$0.50/hr', timeToComplete: '2-4 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'What skills do prep cooks need?', answer: 'Essential skills include knife techniques, food safety knowledge, ability to follow recipes, time management, and physical stamina for standing and lifting.' }
+    ]
+  },
+  {
+    roleSlug: 'dishwasher',
+    roleTitle: 'Dishwasher',
+    industry: 'Hospitality',
+    metaDescription: 'Dishwasher resume template with efficiency achievements, sanitation skills, and kitchen support experience for 2026.',
+    experienceLevels: ['entry-level', 'no-experience'],
+    blsData: {
+      medianHourly: '$14.00',
+      jobGrowth: '+9%',
+      totalJobs: '520K',
+      outlook: 'Growing',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Dishwashing', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Sanitation', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Industrial Equipment', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Food Safety', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Time Management', atsScore: 80, category: 'soft-skill' },
+      { keyword: 'Physical Stamina', atsScore: 82, category: 'soft-skill' },
+      { keyword: 'Team Support', atsScore: 78, category: 'soft-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Efficient dishwasher with 6 months experience in fast-paced restaurant environments. Skilled in operating industrial dishwashing equipment and maintaining sanitation standards. Processed 150+ plates per shift while reducing turnaround time by 20%.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Reliable and hardworking individual seeking dishwasher position. Strong attention to detail and ability to work in fast-paced environments. Committed to maintaining clean, organized kitchen spaces.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Optimized', metric: 'dishwashing workflow', result: 'processing 150 plates per shift and reducing turnaround by 20%', category: 'Efficiency' },
+      { action: 'Developed', metric: 'post-event dish system', result: 'boosting cleanup speed by 30%', category: 'Process Improvement' },
+      { action: 'Monitored', metric: 'chemical levels daily', result: 'achieving 98% cleanliness rating', category: 'Quality' },
+      { action: 'Trained', metric: '6 new dishwashers', result: 'enhancing team efficiency by 20%', category: 'Training' }
+    ],
+    certifications: [
+      { name: 'Food Handler Card', description: 'Basic food safety', cost: '$10-20', payBoost: '+$0.50/hr', timeToComplete: '2-4 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Is dishwasher a good entry-level job?', answer: 'Yes, dishwasher positions offer flexible schedules, no experience requirements, and can lead to prep cook and line cook roles.' }
+    ]
+  },
+  {
+    roleSlug: 'forklift-driver',
+    roleTitle: 'Forklift Driver',
+    industry: 'Industrial',
+    metaDescription: 'Forklift Driver resume example with OSHA certification, safety record, and warehouse operations experience for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'career-change'],
+    blsData: {
+      medianHourly: '$20.00',
+      jobGrowth: '+5%',
+      totalJobs: '900K',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Forklift Operation', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'OSHA Certified', atsScore: 92, category: 'certification' },
+      { keyword: 'Safety Awareness', atsScore: 90, category: 'soft-skill' },
+      { keyword: 'Inventory Management', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Loading/Unloading', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Pallet Jack', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Reach Truck', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'RF Scanner', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Shipping/Receiving', atsScore: 78, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'OSHA-certified Forklift Driver with 1 year of experience in warehouse operations. Skilled in loading/unloading, inventory placement, and safety compliance. Maintained 100% safety record while processing 50+ pallets daily.'
+      },
+      {
+        level: 'experienced',
+        text: 'Expert Forklift Operator with 5+ years in high-volume distribution centers. Certified in multiple forklift types including reach trucks and order pickers. Improved stock accuracy to 98% while reducing retrieval time by 40%.'
+      },
+      {
+        level: 'career-change',
+        text: 'Detail-oriented professional transitioning to forklift operation with recent OSHA certification. Strong safety awareness and mechanical aptitude. Committed to efficient, incident-free warehouse operations.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Operated', metric: 'forklifts to load 50+ pallets daily', result: 'boosting warehouse throughput by 25%', category: 'Productivity' },
+      { action: 'Conducted', metric: 'daily safety inspections', result: 'reducing malfunctions and downtime by 15%', category: 'Safety' },
+      { action: 'Managed', metric: 'inventory placement for 200+ items', result: 'improving stock accuracy to 98%', category: 'Accuracy' },
+      { action: 'Trained', metric: '10+ new hires', result: 'on forklift techniques, halving onboarding time', category: 'Training' }
+    ],
+    certifications: [
+      { name: 'Forklift Certification', description: 'OSHA-compliant operator certification', cost: '$50-150', payBoost: '+$1-3/hr', timeToComplete: '1-2 days', required: true },
+      { name: 'OSHA 10-Hour', description: 'General industry safety', cost: 'Free-$25', payBoost: '+$0.50-1/hr', timeToComplete: '10 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Is forklift certification required?', answer: 'Yes, OSHA requires employers to certify all forklift operators. Many companies provide free training for new hires.' }
+    ]
+  },
+  {
+    roleSlug: 'delivery-driver',
+    roleTitle: 'Delivery Driver',
+    industry: 'Industrial',
+    metaDescription: 'Delivery Driver resume example with route optimization, safety record, and on-time delivery achievements for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'career-change'],
+    blsData: {
+      medianHourly: '$18.50',
+      jobGrowth: '+12%',
+      totalJobs: '1.5M',
+      outlook: 'Strong',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Route Optimization', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Safe Driving', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'CDL', atsScore: 90, category: 'certification' },
+      { keyword: 'GPS Navigation', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Customer Service', atsScore: 85, category: 'soft-skill' },
+      { keyword: 'Time Management', atsScore: 82, category: 'soft-skill' },
+      { keyword: 'Vehicle Maintenance', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Loading/Unloading', atsScore: 78, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Reliable Delivery Driver with clean driving record and 1 year of local delivery experience. Skilled in route navigation, customer service, and safe vehicle operation. Achieved 99%+ on-time delivery rate.'
+      },
+      {
+        level: 'experienced',
+        text: 'Professional Delivery Driver with 4+ years transporting goods across regional routes. Expert in route optimization, vehicle maintenance, and DOT compliance. Reduced fuel costs by 15% through efficient route planning.'
+      },
+      {
+        level: 'career-change',
+        text: 'Customer service professional transitioning to delivery driving. Clean driving record with strong navigation skills. Reliable, punctual, and committed to safe, on-time deliveries.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Optimized', metric: 'delivery routes', result: 'reducing fuel costs by 15% and saving $7,000 annually', category: 'Efficiency' },
+      { action: 'Managed', metric: '15+ daily routes', result: 'achieving 99.6% on-time delivery rate', category: 'Productivity' },
+      { action: 'Conducted', metric: '500+ deliveries', result: 'maintaining zero accidents for 3 years', category: 'Safety' },
+      { action: 'Performed', metric: 'vehicle maintenance', result: 'reducing downtime by 20%', category: 'Operations' }
+    ],
+    certifications: [
+      { name: 'CDL', description: 'Commercial Driver\'s License', cost: '$50-200', payBoost: '+$3-5/hr', timeToComplete: '2-6 weeks' },
+      { name: 'DOT Medical Card', description: 'Required for commercial driving', cost: '$50-150', payBoost: 'Required', timeToComplete: '1 day' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Do I need a CDL for delivery driving?', answer: 'Most local delivery jobs require only a standard license. CDL is needed for vehicles over 26,000 lbs.' }
+    ]
+  },
+  {
+    roleSlug: 'machine-operator',
+    roleTitle: 'Machine Operator',
+    industry: 'Industrial',
+    metaDescription: 'Machine Operator resume example with CNC experience, preventive maintenance skills, and production achievements for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'career-change'],
+    blsData: {
+      medianHourly: '$19.00',
+      jobGrowth: '+4%',
+      totalJobs: '1.1M',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Machine Operation', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'CNC', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Preventive Maintenance', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Quality Control', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Safety Compliance', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Blueprint Reading', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Troubleshooting', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Production Targets', atsScore: 78, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Detail-oriented Machine Operator with 1 year of manufacturing experience. Skilled in machine setup, quality control, and safety compliance. Achieved 95% quality rate while maintaining production targets.'
+      },
+      {
+        level: 'experienced',
+        text: 'Experienced CNC Machine Operator with 5+ years in high-volume production environments. Expert in setup, calibration, and preventive maintenance. Reduced downtime by 30% through proactive equipment care.'
+      },
+      {
+        level: 'career-change',
+        text: 'Mechanically inclined professional transitioning to machine operation. Strong troubleshooting abilities and safety awareness. Eager to apply technical skills in manufacturing environment.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Operated', metric: 'CNC machines', result: 'achieving 98% uptime and producing 500+ components weekly', category: 'Productivity' },
+      { action: 'Conducted', metric: 'preventative maintenance', result: 'reducing downtime by 30%', category: 'Maintenance' },
+      { action: 'Implemented', metric: 'process improvements', result: 'cutting waste by 30% and boosting efficiency', category: 'Efficiency' },
+      { action: 'Trained', metric: '8 new operators', result: 'enhancing team productivity by 15%', category: 'Training' }
+    ],
+    certifications: [
+      { name: 'OSHA 10-Hour', description: 'Manufacturing safety training', cost: 'Free-$25', payBoost: '+$0.50-1/hr', timeToComplete: '10 hours' },
+      { name: 'CNC Certification', description: 'Computer numerical control operation', cost: '$500-2000', payBoost: '+$2-4/hr', timeToComplete: '1-3 months' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Do machine operators need certifications?', answer: 'Entry-level positions often train on-the-job. CNC or specialized equipment certifications can increase pay by $2-4/hr.' }
+    ]
+  },
+  {
+    roleSlug: 'loader-crew',
+    roleTitle: 'Loader / Crew',
+    industry: 'Industrial',
+    metaDescription: 'Loader and Crew resume example with material handling skills, safety compliance, and loading efficiency for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience'],
+    blsData: {
+      medianHourly: '$17.50',
+      jobGrowth: '+6%',
+      totalJobs: '750K',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Loading/Unloading', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Forklift Operation', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Material Handling', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Safety Compliance', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Physical Stamina', atsScore: 85, category: 'soft-skill' },
+      { keyword: 'Team Coordination', atsScore: 82, category: 'soft-skill' },
+      { keyword: 'Pallet Jack', atsScore: 80, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Dependable Loader with 1 year of experience in fast-paced warehouse environments. Skilled in loading trucks, operating pallet jacks, and maintaining safety standards. Processed 500+ pallets weekly with zero shipment delays.'
+      },
+      {
+        level: 'experienced',
+        text: 'Efficient Loader with 3+ years handling high-volume freight operations. Expert in forklift operation, hazardous materials handling, and team coordination. Reduced damage incidents by 30% through meticulous handling.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Physically fit individual seeking Loader position. Strong work ethic with ability to lift 50+ lbs consistently. Eager to learn proper loading techniques and contribute to team efficiency.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Loaded', metric: '500+ pallets weekly', result: 'ensuring 100% on-time departures', category: 'Productivity' },
+      { action: 'Trained', metric: '10 new team members', result: 'on forklift and safety protocols, reducing onboarding time by 25%', category: 'Training' },
+      { action: 'Streamlined', metric: 'unloading procedures', result: 'improving efficiency by 25%', category: 'Efficiency' },
+      { action: 'Reduced', metric: 'damage incidents by 30%', result: 'through meticulous handling and quality checks', category: 'Quality' }
+    ],
+    certifications: [
+      { name: 'Forklift Certification', description: 'OSHA-compliant operator certification', cost: '$50-150', payBoost: '+$1-2/hr', timeToComplete: '1-2 days' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'What physical requirements do loaders have?', answer: 'Most positions require lifting 50+ lbs, standing for 8+ hours, and working in varying temperatures. Physical stamina is essential.' }
+    ]
+  },
+  {
+    roleSlug: 'assembler',
+    roleTitle: 'Assembler',
+    industry: 'Industrial',
+    metaDescription: 'Assembler resume example with production line experience, quality control achievements, and manufacturing skills for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience'],
+    blsData: {
+      medianHourly: '$17.00',
+      jobGrowth: '+3%',
+      totalJobs: '1.8M',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Assembly', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Quality Control', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Blueprint Reading', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Hand Tools', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Precision Measurement', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Safety Compliance', atsScore: 82, category: 'hard-skill' },
+      { keyword: 'Production Targets', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Lean Manufacturing', atsScore: 78, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Detail-oriented Assembler with 1 year of production line experience. Skilled in blueprint reading, hand tools, and quality control. Achieved 98% accuracy while exceeding production quotas by 15%.'
+      },
+      {
+        level: 'experienced',
+        text: 'Skilled Assembler with 4+ years in precision manufacturing. Expert in complex assemblies, quality inspection, and lean principles. Led initiatives that cut setup times by 40% and reduced defects by 15%.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Mechanically inclined individual seeking Assembler position. Strong attention to detail with good hand dexterity. Quick learner ready to master assembly techniques and quality standards.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Assembled', metric: '100+ precision units daily', result: 'achieving 98% accuracy and exceeding quotas by 15%', category: 'Productivity' },
+      { action: 'Implemented', metric: 'quality control checks', result: 'reducing defects by 15% and saving $10K annually', category: 'Quality' },
+      { action: 'Trained', metric: '5 new assemblers', result: 'boosting team efficiency by 20%', category: 'Training' },
+      { action: 'Optimized', metric: 'assembly processes', result: 'increasing output by 25%', category: 'Efficiency' }
+    ],
+    certifications: [
+      { name: 'IPC-A-610', description: 'Electronics assembly standard', cost: '$200-400', payBoost: '+$1-2/hr', timeToComplete: '2-3 days' },
+      { name: 'OSHA 10-Hour', description: 'Manufacturing safety', cost: 'Free-$25', payBoost: '+$0.50/hr', timeToComplete: '10 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'Do assemblers need experience?', answer: 'Many entry-level positions provide on-the-job training. Basic mechanical aptitude and hand dexterity are the main requirements.' }
+    ]
+  },
+  {
+    roleSlug: 'sales-associate',
+    roleTitle: 'Sales Associate',
+    industry: 'Retail',
+    metaDescription: 'Sales Associate resume example with sales achievements, customer service skills, and retail experience for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience', 'career-change'],
+    blsData: {
+      medianHourly: '$15.50',
+      jobGrowth: '+2%',
+      totalJobs: '4.0M',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Sales', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Customer Service', atsScore: 92, category: 'soft-skill' },
+      { keyword: 'Upselling', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'POS Systems', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Product Knowledge', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'Visual Merchandising', atsScore: 80, category: 'hard-skill' },
+      { keyword: 'Inventory Management', atsScore: 78, category: 'hard-skill' },
+      { keyword: 'CRM', atsScore: 75, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Enthusiastic Sales Associate with 1 year of retail experience. Skilled in customer engagement, POS systems, and visual merchandising. Exceeded monthly sales targets by 15% through effective upselling.'
+      },
+      {
+        level: 'experienced',
+        text: 'Top-performing Sales Associate with 4+ years in high-volume retail. Expert in customer relations, inventory management, and team leadership. Consistently achieved 120-135% of annual sales quota.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Personable individual seeking Sales Associate position. Natural ability to connect with people and identify their needs. Eager to learn retail operations and build customer relationships.'
+      },
+      {
+        level: 'career-change',
+        text: 'Customer-focused professional transitioning to retail sales. Strong communication and relationship-building skills from previous client-facing roles. Passionate about delivering exceptional shopping experiences.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Exceeded', metric: 'monthly sales targets by 15%', result: 'through targeted upselling and cross-selling', category: 'Sales' },
+      { action: 'Boosted', metric: 'store sales by 20%', result: 'by building customer rapport and recommending products', category: 'Revenue' },
+      { action: 'Increased', metric: 'repeat business by 25%', result: 'through CRM implementation and follow-ups', category: 'Customer Retention' },
+      { action: 'Reduced', metric: 'stock shortages by 20%', result: 'through accurate forecasting and reordering', category: 'Inventory' }
+    ],
+    certifications: [],
+    templateSections: [],
+    faqs: [
+      { question: 'What makes a good sales associate?', answer: 'Key traits include excellent communication, product knowledge, ability to read customer needs, positive attitude, and persistence without being pushy.' }
+    ]
+  },
+  {
+    roleSlug: 'cashier',
+    roleTitle: 'Cashier',
+    industry: 'Retail',
+    metaDescription: 'Cashier resume example with transaction accuracy, customer service skills, and retail experience for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience'],
+    blsData: {
+      medianHourly: '$14.50',
+      jobGrowth: '-1%',
+      totalJobs: '3.3M',
+      outlook: 'Declining',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Cash Handling', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'POS Systems', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Customer Service', atsScore: 90, category: 'soft-skill' },
+      { keyword: 'Transaction Processing', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Accuracy', atsScore: 85, category: 'soft-skill' },
+      { keyword: 'Problem Resolution', atsScore: 80, category: 'soft-skill' },
+      { keyword: 'Upselling', atsScore: 78, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Accurate Cashier with 1 year of retail experience. Skilled in POS systems, cash handling, and customer service. Processed 250+ transactions daily with 98% accuracy and zero discrepancies.'
+      },
+      {
+        level: 'experienced',
+        text: 'Efficient Cashier with 3+ years in high-volume retail environments. Expert in cash management, team training, and customer issue resolution. Managed drawers with 99.9% accuracy while leading checkout teams.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Detail-oriented individual seeking Cashier position. Strong math skills and friendly demeanor. Quick learner ready to master POS systems and provide excellent customer service.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Processed', metric: '250+ transactions daily', result: 'with 98% accuracy and zero cash discrepancies', category: 'Accuracy' },
+      { action: 'Trained', metric: '5 new cashiers', result: 'boosting team efficiency by 25%', category: 'Training' },
+      { action: 'Upsold', metric: 'promotions and loyalty programs', result: 'increasing sign-ups by 15%', category: 'Sales' },
+      { action: 'Resolved', metric: '90% of complaints on first contact', result: 'improving satisfaction ratings by 20%', category: 'Service' }
+    ],
+    certifications: [],
+    templateSections: [],
+    faqs: [
+      { question: 'What skills do cashiers need?', answer: 'Essential skills include accurate cash handling, basic math, customer service, POS proficiency, and ability to work efficiently during busy periods.' }
+    ]
+  },
+  {
+    roleSlug: 'custodian',
+    roleTitle: 'Custodian',
+    industry: 'Facilities',
+    metaDescription: 'Custodian resume example with facility maintenance experience, cleaning expertise, and safety compliance for 2026.',
+    experienceLevels: ['entry-level', 'experienced', 'no-experience'],
+    blsData: {
+      medianHourly: '$16.00',
+      jobGrowth: '+5%',
+      totalJobs: '2.2M',
+      outlook: 'Stable',
+      source: 'BLS',
+      lastUpdated: '2025'
+    },
+    skillsKeywords: [
+      { keyword: 'Facility Maintenance', atsScore: 95, category: 'hard-skill' },
+      { keyword: 'Floor Care', atsScore: 92, category: 'hard-skill' },
+      { keyword: 'Sanitation', atsScore: 90, category: 'hard-skill' },
+      { keyword: 'Equipment Operation', atsScore: 88, category: 'hard-skill' },
+      { keyword: 'Chemical Safety', atsScore: 85, category: 'hard-skill' },
+      { keyword: 'OSHA Compliance', atsScore: 82, category: 'certification' },
+      { keyword: 'Time Management', atsScore: 80, category: 'soft-skill' },
+      { keyword: 'Inventory Control', atsScore: 78, category: 'hard-skill' },
+    ],
+    professionalSummaries: [
+      {
+        level: 'entry-level',
+        text: 'Dependable Custodian with 1 year of commercial cleaning experience. Skilled in floor care equipment, sanitation protocols, and supply management. Maintained 100,000+ sq ft to exceeding cleanliness standards.'
+      },
+      {
+        level: 'experienced',
+        text: 'Experienced Custodian with 5+ years maintaining large commercial and institutional facilities. Expert in sustainable cleaning practices, team supervision, and equipment maintenance. Reduced workplace injuries by 40% through safety training.'
+      },
+      {
+        level: 'no-experience',
+        text: 'Reliable individual seeking Custodian position. Strong work ethic with attention to cleanliness and detail. Committed to maintaining safe, hygienic environments for building occupants.'
+      }
+    ],
+    bulletExamples: [
+      { action: 'Maintained', metric: '1.4 million sq ft', result: 'of office space daily, reducing cleaning time by 25%', category: 'Operations' },
+      { action: 'Implemented', metric: 'color-coded cleaning system', result: 'minimizing cross-contamination risks by 30%', category: 'Safety' },
+      { action: 'Developed', metric: 'sustainable cleaning protocols', result: 'cutting chemical usage by 40%', category: 'Sustainability' },
+      { action: 'Supervised', metric: 'team of 50 custodians', result: 'reducing workplace injuries by 40%', category: 'Leadership' }
+    ],
+    certifications: [
+      { name: 'OSHA 10-Hour', description: 'Workplace safety certification', cost: 'Free-$25', payBoost: '+$0.50-1/hr', timeToComplete: '10 hours' },
+      { name: 'Bloodborne Pathogens', description: 'Healthcare facility cleaning', cost: '$25-50', payBoost: '+$1-2/hr', timeToComplete: '2-4 hours' },
+      { name: 'Green Cleaning', description: 'Sustainable cleaning practices', cost: '$50-100', payBoost: '+$0.50-1/hr', timeToComplete: '4-8 hours' }
+    ],
+    templateSections: [],
+    faqs: [
+      { question: 'What equipment should custodians know?', answer: 'Common equipment includes floor buffers, scrubbers, extractors, pressure washers, and industrial vacuums. Knowledge of chemical safety is also essential.' }
+    ]
   }
 ];
