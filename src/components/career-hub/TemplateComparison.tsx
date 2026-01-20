@@ -43,37 +43,37 @@ export const TemplateComparison = () => {
     .filter(Boolean);
 
   return (
-    <section className="mb-12">
-      <div className="flex items-center justify-between mb-6">
+    <div>
+      <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="text-2xl font-bold flex items-center gap-2">
-            <Columns3 className="w-6 h-6 text-primary" />
-            Compare Templates Side-by-Side
+          <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2">
+            <Columns3 className="w-5 h-5 text-primary" />
+            Compare Templates
           </h2>
-          <p className="text-muted-foreground mt-1">
-            Select up to 3 templates to compare their formats with example content
+          <p className="text-sm text-muted-foreground mt-1">
+            Select up to 3 templates to compare formats with example content
           </p>
         </div>
       </div>
 
       {/* Template Selector */}
-      <div className="flex flex-wrap gap-3 mb-6">
+      <div className="flex flex-wrap gap-2 mb-6">
         {templateList.map(template => (
           <label
             key={template.slug}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg border cursor-pointer transition-all ${
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border cursor-pointer transition-all text-sm ${
               selectedTemplates.includes(template.slug)
                 ? 'border-primary bg-primary/10 text-primary'
-                : 'border-border hover:border-primary/50'
+                : 'border-border hover:border-primary/50 bg-card'
             }`}
           >
             <Checkbox
               checked={selectedTemplates.includes(template.slug)}
               onCheckedChange={() => toggleTemplate(template.slug)}
-              className="data-[state=checked]:bg-primary"
+              className="data-[state=checked]:bg-primary h-3.5 w-3.5"
             />
-            <span className="text-lg">{template.icon}</span>
-            <span className="font-medium text-sm">{template.name.replace(' Resume', '')}</span>
+            <span className="text-base">{template.icon}</span>
+            <span className="font-medium text-xs">{template.name.replace(' Resume', '')}</span>
           </label>
         ))}
       </div>
@@ -111,14 +111,14 @@ export const TemplateComparison = () => {
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
                 {/* Best For */}
-                <div className="text-xs text-green-600 dark:text-green-400 mb-3">
+                <div className="text-xs text-primary mb-3">
                   <span className="font-medium">Best for:</span> {template.bestFor[0]}
                 </div>
 
                 {/* Resume Preview */}
-                <div className="flex-1 bg-white dark:bg-gray-900 border rounded-lg p-4 font-mono text-[10px] leading-relaxed whitespace-pre-wrap overflow-hidden max-h-[350px] relative">
+                <div className="flex-1 bg-card border rounded-lg p-3 font-mono text-[9px] leading-relaxed whitespace-pre-wrap overflow-hidden max-h-[280px] relative text-foreground">
                   {buildExamplePreview(template)}
-                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-gray-900 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-card to-transparent pointer-events-none" />
                 </div>
 
                 {/* CTA */}
@@ -134,12 +134,12 @@ export const TemplateComparison = () => {
       )}
 
       {selectedTemplateData.length === 0 && (
-        <div className="text-center py-12 bg-muted/30 rounded-lg">
-          <Columns3 className="w-12 h-12 mx-auto text-muted-foreground mb-3" />
-          <p className="text-muted-foreground">Select templates above to compare them side-by-side</p>
+        <div className="text-center py-10 bg-card rounded-lg border border-border">
+          <Columns3 className="w-10 h-10 mx-auto text-muted-foreground mb-2" />
+          <p className="text-sm text-muted-foreground">Select templates above to compare</p>
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/career-hub/Breadcrumbs";
 import CTASection from "@/components/career-hub/CTASection";
 import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { SEOMetaTags } from "@/components/career-hub/seo";
+import { TemplateComparison } from "@/components/career-hub/TemplateComparison";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,23 +19,18 @@ import {
   ArrowRight,
   Clock,
   Star,
-  CheckCircle2,
   Sparkles,
-  BookOpen,
   Briefcase,
   UserCheck,
   PenLine,
-  Filter,
   LayoutTemplate,
   Mail,
   Zap,
-  GraduationCap,
-  RefreshCw,
   Building,
   ShoppingBag,
-  Wrench,
-  X,
-  Lightbulb
+  Lightbulb,
+  Filter,
+  X
 } from "lucide-react";
 
 // Industries for filtering
@@ -391,13 +387,10 @@ const JobApplicationToolkitPage = () => {
       </section>
 
       {/* Quick Actions Grid */}
-      <section className="py-8 md:py-12 bg-background border-b border-border">
+      <section className="py-8 md:py-10 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">
-              Quick Access
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {quickActions.map((action) => (
                 <Link 
                   key={action.href}
@@ -405,19 +398,19 @@ const JobApplicationToolkitPage = () => {
                   className="group"
                 >
                   <Card className="h-full border-2 border-transparent hover:border-primary/30 hover:shadow-md transition-all duration-300">
-                    <CardContent className="p-4 md:p-5">
-                      <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl ${action.color.split(' ')[0]} flex items-center justify-center mb-3`}>
-                        <action.icon className={`w-5 h-5 md:w-6 md:h-6 ${action.color.split(' ')[1]}`} />
+                    <CardContent className="p-4">
+                      <div className={`w-10 h-10 rounded-xl ${action.color.split(' ')[0]} flex items-center justify-center mb-3`}>
+                        <action.icon className={`w-5 h-5 ${action.color.split(' ')[1]}`} />
                       </div>
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-sm md:text-base text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors">
                           {action.title}
                         </h3>
                         <Badge variant="secondary" className="text-xs">
                           {action.count}
                         </Badge>
                       </div>
-                      <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
+                      <p className="text-xs text-muted-foreground line-clamp-2">
                         {action.description}
                       </p>
                     </CardContent>
@@ -429,88 +422,67 @@ const JobApplicationToolkitPage = () => {
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="py-6 bg-muted/30 border-b border-border sticky top-0 z-10 backdrop-blur-sm">
+      {/* Template Comparison */}
+      <section className="py-8 md:py-10 bg-muted/30 border-y border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-center gap-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Filter className="w-4 h-4" />
-                <span>Filter by:</span>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 flex-1">
-                {/* Industry Filter */}
-                <div className="flex flex-wrap gap-1.5">
-                  {industries.map((industry) => {
-                    const Icon = industry.icon;
-                    return (
-                      <Button
-                        key={industry.id}
-                        variant={selectedIndustry === industry.id ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => setSelectedIndustry(industry.id)}
-                        className="h-8 text-xs md:text-sm"
-                      >
-                        <Icon className="w-3.5 h-3.5 mr-1.5" />
-                        {industry.label}
-                      </Button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {hasActiveFilters && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={clearFilters}
-                  className="h-8 text-xs"
-                >
-                  <X className="w-3.5 h-3.5 mr-1" />
-                  Clear
-                </Button>
-              )}
-            </div>
-
-            {/* Experience Level */}
-            <div className="flex flex-wrap gap-1.5 mt-3">
-              {experienceLevels.map((level) => (
-                <Button
-                  key={level.id}
-                  variant={selectedExperience === level.id ? "secondary" : "ghost"}
-                  size="sm"
-                  onClick={() => setSelectedExperience(level.id)}
-                  className="h-7 text-xs"
-                >
-                  {level.label}
-                </Button>
-              ))}
-            </div>
+            <TemplateComparison />
           </div>
         </div>
       </section>
 
       {/* Templates Section with Tabs */}
-      <section className="py-10 md:py-14 bg-background">
+      <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
+            {/* Compact Filter Bar */}
+            <div className="flex flex-wrap items-center gap-2 mb-6 pb-4 border-b border-border">
+              <Filter className="w-4 h-4 text-muted-foreground" />
+              <span className="text-sm text-muted-foreground mr-2">Filter:</span>
+              {industries.map((industry) => {
+                const Icon = industry.icon;
+                return (
+                  <Button
+                    key={industry.id}
+                    variant={selectedIndustry === industry.id ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedIndustry(industry.id)}
+                    className="h-7 text-xs px-2.5"
+                  >
+                    <Icon className="w-3 h-3 mr-1" />
+                    {industry.label.replace(' Industries', '')}
+                  </Button>
+                );
+              })}
+              {hasActiveFilters && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={clearFilters}
+                  className="h-7 text-xs ml-auto"
+                >
+                  <X className="w-3 h-3 mr-1" />
+                  Clear
+                </Button>
+              )}
+            </div>
+
             <Tabs defaultValue="resume" className="w-full">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
                     Interactive Templates
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                     Fill-in-the-blank builders with live preview
                   </p>
                 </div>
                 <TabsList className="grid w-full md:w-auto grid-cols-2">
-                  <TabsTrigger value="resume" className="gap-2">
+                  <TabsTrigger value="resume" className="gap-2 text-sm">
                     <LayoutTemplate className="w-4 h-4" />
                     Resume
                   </TabsTrigger>
-                  <TabsTrigger value="cover-letter" className="gap-2">
+                  <TabsTrigger value="cover-letter" className="gap-2 text-sm">
                     <Mail className="w-4 h-4" />
                     Cover Letter
                   </TabsTrigger>
@@ -635,15 +607,15 @@ const JobApplicationToolkitPage = () => {
       </section>
 
       {/* Guides Section */}
-      <section className="py-10 md:py-14 bg-muted/30">
+      <section className="py-8 md:py-12 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
                   In-Depth Guides
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Comprehensive articles to level up your applications
                   {hasActiveFilters && (
                     <span className="ml-2 text-primary">
@@ -653,8 +625,8 @@ const JobApplicationToolkitPage = () => {
                 </p>
               </div>
               <Link to="/career-hub/guides">
-                <Button variant="outline" size="sm">
-                  View All Guides <ArrowRight className="w-4 h-4 ml-2" />
+                <Button variant="outline" size="sm" className="h-8">
+                  View All <ArrowRight className="w-3 h-3 ml-1" />
                 </Button>
               </Link>
             </div>
@@ -715,23 +687,23 @@ const JobApplicationToolkitPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-10 md:py-14 bg-background">
+      <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
               Frequently Asked Questions
             </h2>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {faqSchema.mainEntity.map((faq, index) => (
                 <div 
                   key={index}
-                  className="bg-card rounded-xl border border-border p-5"
+                  className="bg-card rounded-lg border border-border p-4"
                 >
-                  <h3 className="font-semibold text-foreground mb-2">
+                  <h3 className="font-medium text-foreground mb-2 text-sm">
                     {faq.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {faq.acceptedAnswer.text}
                   </p>
                 </div>
@@ -742,10 +714,10 @@ const JobApplicationToolkitPage = () => {
       </section>
 
       {/* Related Resources */}
-      <section className="py-10 bg-muted/30">
+      <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-xl font-bold text-foreground mb-6">Related Resources</h2>
+            <h2 className="text-lg font-bold text-foreground mb-4">Related Resources</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <Link 
                 to="/career-hub/guides/i9-complete-guide"
