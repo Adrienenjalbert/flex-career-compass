@@ -1,3 +1,18 @@
+import type { Industry, ExperienceLevel, UserSituation, ContentIntent, Language } from "@/data/taxonomy";
+
+export interface TemplateTaxonomy {
+  userSituations: UserSituation[];
+  industries: Industry[];
+  experienceLevels: ExperienceLevel[];
+  contentIntent: ContentIntent;
+  language: Language;
+  primaryKeyword?: string;
+  searchVolume?: number;
+  relatedRoles?: string[];
+  relatedArticles?: string[];
+  relatedTools?: string[];
+}
+
 export interface ResumeTemplate {
   slug: string;
   name: string;
@@ -15,6 +30,7 @@ export interface ResumeTemplate {
     facilities: number;
   };
   exampleData: Record<string, string>;
+  taxonomy: TemplateTaxonomy;
 }
 
 export interface TemplateSection {
@@ -99,6 +115,18 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       job2_bullets: '• Maintained zero safety incidents over 22-month tenure\n• Exceeded daily pick rate targets by 15% consistently\n• Assisted with inventory audits, identifying and resolving 200+ discrepancies',
       skills: 'RF Scanner | Forklift Certified (Sit-down, Reach) | Inventory Management | WMS Systems | Team Leadership | OSHA Safety Compliant',
       education: 'High School Diploma, Austin High School, 2019'
+    },
+    taxonomy: {
+      userSituations: ['experienced', 'career-returner'],
+      industries: ['industrial', 'hospitality', 'retail', 'facilities'],
+      experienceLevels: ['some-experience', 'experienced'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'chronological resume template 2026',
+      searchVolume: 4800,
+      relatedRoles: ['warehouse-operative', 'picker-packer', 'forklift-driver', 'retail-associate'],
+      relatedArticles: ['resume-tips', 'ats-resume-tips', 'temp-work-resume-guide'],
+      relatedTools: ['skills-analyzer', 'action-verbs']
     }
   },
   'functional': {
@@ -163,6 +191,18 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       skill3_bullets: '• Coordinated with 15-person team during peak season operations\n• Mentored 6 new hires, improving team retention by 30%\n• Communicated effectively across departments to meet deadlines',
       work_history: 'Retail Associate, Target (2021-2023)\nWarehouse Worker, UPS (2019-2021)\nFood Service, Various (2017-2019)',
       education: 'Food Handler Certification, 2023\nHigh School Diploma, 2017'
+    },
+    taxonomy: {
+      userSituations: ['fresher', 'career-changer', 'career-returner', 'immigrant'],
+      industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+      experienceLevels: ['no-experience', 'entry-level', 'career-change'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'functional resume template 2026',
+      searchVolume: 3600,
+      relatedRoles: ['server', 'retail-associate', 'cleaner', 'dishwasher'],
+      relatedArticles: ['transferable-skills-guide', 'fresher-resume-guide', 'zero-experience-jobs'],
+      relatedTools: ['skills-analyzer', 'action-verbs']
     }
   },
   'temp-worker': {
@@ -234,6 +274,18 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       assignment2_bullets: '• Served 500+ guests at high-profile corporate events\n• Received 15 five-star client reviews\n• Trained on-site for banquet and catering protocols',
       certifications: 'Forklift Certified (Sit-down, Reach) | Food Handler Card | OSHA 10 | TIPS Alcohol Certified',
       availability: 'Flexible schedule | Days, nights, weekends | Same-day bookings accepted'
+    },
+    taxonomy: {
+      userSituations: ['side-gig', 'seasonal', 'student', 'parent'],
+      industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+      experienceLevels: ['entry-level', 'some-experience'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'temp worker resume template 2026',
+      searchVolume: 2100,
+      relatedRoles: ['picker-packer', 'event-staff', 'warehouse-operative', 'banquet-server'],
+      relatedArticles: ['temp-work-resume-guide', 'indeed-flex-profile-guide', 'more-shifts'],
+      relatedTools: ['shift-planner', 'pay-calculator']
     }
   },
   'combination': {
@@ -303,6 +355,18 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       job2_bullets: '• Processed 200+ orders daily with 99.7% accuracy\n• Earned Employee of the Month twice for exceeding metrics\n• Promoted to team trainer within 6 months',
       certifications: 'Forklift Certified (Sit-down, Stand-up, Reach) | OSHA 30-Hour Safety | First Aid/CPR Certified | Lean Six Sigma Yellow Belt',
       education: "Associate's Degree, Logistics Management, Chicago City College, 2020"
+    },
+    taxonomy: {
+      userSituations: ['career-changer', 'experienced'],
+      industries: ['industrial', 'hospitality', 'retail', 'facilities'],
+      experienceLevels: ['some-experience', 'experienced', 'career-change'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'combination resume template 2026',
+      searchVolume: 2800,
+      relatedRoles: ['forklift-driver', 'warehouse-operative', 'line-cook', 'bartender'],
+      relatedArticles: ['career-paths', 'skill-boost', 'temp-to-perm-guide'],
+      relatedTools: ['career-path', 'skills-analyzer']
     }
   },
   'student': {
@@ -373,6 +437,18 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       activities: 'Business Student Association, Member | Intramural Soccer Team Captain | Dean\'s List: Fall 2023, Spring 2024',
       skills: 'Microsoft Office Suite | Spanish (Conversational) | Customer Service | Cash Handling | Point-of-Sale Systems | Team Collaboration',
       availability: 'Available 20-30 hours/week | Evenings and weekends | Full-time during school breaks'
+    },
+    taxonomy: {
+      userSituations: ['student', 'fresher', 'teen'],
+      industries: ['hospitality', 'retail', 'industrial'],
+      experienceLevels: ['no-experience', 'entry-level'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'student resume template 2026',
+      searchVolume: 8900,
+      relatedRoles: ['retail-associate', 'server', 'event-staff', 'picker-packer'],
+      relatedArticles: ['student-resume-template', 'zero-experience-jobs', 'student-jobs-fall'],
+      relatedTools: ['shift-planner', 'pay-calculator']
     }
   },
   'career-gap': {
@@ -449,6 +525,18 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       previous_job2_dates: '2015 - 2018',
       previous_job2_bullets: '• Exceeded sales goals by 20% for 8 consecutive quarters\n• Trained 15+ new hires on POS systems and customer service protocols\n• Selected for cross-training in multiple departments',
       education: 'High School Diploma, Atlanta High School, 2014'
+    },
+    taxonomy: {
+      userSituations: ['career-returner', 'parent', 'senior'],
+      industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+      experienceLevels: ['career-change', 'some-experience', 'experienced'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'career gap resume template 2026',
+      searchVolume: 2400,
+      relatedRoles: ['retail-associate', 'cleaner', 'custodian', 'warehouse-operative'],
+      relatedArticles: ['transferable-skills-guide', 'temp-to-perm-guide', 'certifications'],
+      relatedTools: ['skills-analyzer', 'career-path']
     }
   }
 };

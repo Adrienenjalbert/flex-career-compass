@@ -1,3 +1,18 @@
+import type { Industry, ExperienceLevel, UserSituation, ContentIntent, Language } from "@/data/taxonomy";
+
+export interface CoverLetterTaxonomy {
+  userSituations: UserSituation[];
+  industries: Industry[];
+  experienceLevels: ExperienceLevel[];
+  contentIntent: ContentIntent;
+  language: Language;
+  primaryKeyword?: string;
+  searchVolume?: number;
+  relatedRoles?: string[];
+  relatedArticles?: string[];
+  relatedTools?: string[];
+}
+
 export interface CoverLetterTemplate {
   slug: string;
   name: string;
@@ -15,6 +30,7 @@ export interface CoverLetterTemplate {
     facilities: number;
   };
   exampleData: Record<string, string>;
+  taxonomy: CoverLetterTaxonomy;
 }
 
 export interface CoverLetterSection {
@@ -95,6 +111,18 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       key_skill_1: 'Processed 150+ orders daily with 99.5% accuracy at FedEx Ground, consistently exceeding productivity targets',
       key_skill_2: 'Trained 8 new team members on RF scanner operations and safety protocols, reducing onboarding time by 20%',
       closing_statement: 'I am available for immediate start and flexible scheduling including nights, weekends, and overtime. I am forklift certified and ready to contribute from day one.'
+    },
+    taxonomy: {
+      userSituations: ['experienced', 'career-returner', 'career-changer'],
+      industries: ['industrial', 'hospitality', 'retail', 'facilities'],
+      experienceLevels: ['entry-level', 'some-experience', 'experienced'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'cover letter template 2026',
+      searchVolume: 6200,
+      relatedRoles: ['warehouse-operative', 'picker-packer', 'retail-associate', 'server'],
+      relatedArticles: ['temp-job-cover-letter', 'interview-skills', 'resume-tips'],
+      relatedTools: ['action-verbs']
     }
   },
   'temp-flex': {
@@ -159,6 +187,18 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       top_skills: 'RF scanner operation, forklift certification, and customer service excellence',
       reliability_proof: '98% attendance rate and zero no-shows',
       industries: 'warehousing, hospitality, and retail'
+    },
+    taxonomy: {
+      userSituations: ['side-gig', 'seasonal', 'student', 'parent'],
+      industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+      experienceLevels: ['entry-level', 'some-experience'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'temp worker cover letter 2026',
+      searchVolume: 1800,
+      relatedRoles: ['picker-packer', 'event-staff', 'warehouse-operative', 'banquet-server'],
+      relatedArticles: ['temp-job-cover-letter', 'indeed-flex-profile-guide', 'more-shifts'],
+      relatedTools: ['shift-planner', 'pay-calculator']
     }
   },
   'career-change': {
@@ -225,6 +265,18 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       transferable_skill_2: 'Attention to detail: Processed 500+ documents monthly with 99% accuracy and caught errors before they impacted operations',
       transferable_skill_3: 'Team collaboration: Coordinated with 20+ colleagues daily on workflow management and deadline compliance',
       enthusiasm: 'I am eager to apply my strong work ethic, proven reliability, and organizational skills to this new path'
+    },
+    taxonomy: {
+      userSituations: ['career-changer', 'career-returner'],
+      industries: ['industrial', 'hospitality', 'retail', 'facilities'],
+      experienceLevels: ['career-change', 'some-experience'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'career change cover letter 2026',
+      searchVolume: 3200,
+      relatedRoles: ['warehouse-operative', 'picker-packer', 'retail-associate', 'cleaner'],
+      relatedArticles: ['transferable-skills-guide', 'temp-to-perm-guide', 'career-paths'],
+      relatedTools: ['skills-analyzer', 'career-path']
     }
   },
   'entry-level': {
@@ -289,6 +341,18 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       relevant_activity_1: 'Volunteered at 10+ community events, handling setup, guest services, and cleanup for groups of 200+ attendees',
       relevant_activity_2: 'Completed customer service training course with distinction and earned a Food Handler certification',
       personal_qualities: 'I am punctual, eager to learn, and committed to providing excellent service. My professors describe me as reliable and detail-oriented'
+    },
+    taxonomy: {
+      userSituations: ['fresher', 'student', 'teen', 'career-returner'],
+      industries: ['hospitality', 'retail', 'industrial'],
+      experienceLevels: ['no-experience', 'entry-level'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'entry level cover letter 2026',
+      searchVolume: 4800,
+      relatedRoles: ['event-staff', 'server', 'retail-associate', 'dishwasher'],
+      relatedArticles: ['fresher-resume-guide', 'zero-experience-jobs', 'first-flex-job'],
+      relatedTools: ['pay-calculator', 'action-verbs']
     }
   },
   'hospitality': {
@@ -353,6 +417,18 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       team_achievement: 'Collaborated seamlessly with 20-person teams during events serving 1,000+ guests, ensuring smooth service flow',
       pace_example: 'Thrived during peak dining hours at busy restaurants, turning 15+ tables per shift while maintaining quality service standards',
       certifications: 'Food Handler Card, TIPS Alcohol Certification, ServSafe Manager'
+    },
+    taxonomy: {
+      userSituations: ['fresher', 'student', 'career-changer', 'seasonal'],
+      industries: ['hospitality'],
+      experienceLevels: ['entry-level', 'some-experience'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'hospitality cover letter 2026',
+      searchVolume: 2200,
+      relatedRoles: ['server', 'bartender', 'banquet-server', 'event-staff', 'dishwasher'],
+      relatedArticles: ['hospitality-guide', 'hospitality-interview-questions', 'summer-hospitality-guide'],
+      relatedTools: ['cocktail-quiz', 'menu-master']
     }
   },
   'warehouse': {
@@ -419,6 +495,18 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       safety_achievement: 'Zero safety incidents in 4 years while operating heavy machinery including forklifts and pallet jacks',
       equipment_skills: 'Certified forklift operator (sit-down, stand-up, reach), RF scanner proficient, experienced with Manhattan WMS',
       physical_statement: 'Comfortable lifting 50+ lbs repeatedly and standing for 10-hour shifts in fast-paced environment'
+    },
+    taxonomy: {
+      userSituations: ['fresher', 'career-changer', 'experienced'],
+      industries: ['industrial'],
+      experienceLevels: ['entry-level', 'some-experience', 'experienced'],
+      contentIntent: 'create',
+      language: 'english',
+      primaryKeyword: 'warehouse cover letter 2026',
+      searchVolume: 3400,
+      relatedRoles: ['picker-packer', 'forklift-driver', 'warehouse-operative', 'machine-operator'],
+      relatedArticles: ['warehouse-guide', 'warehouse-interview-questions', 'holiday-warehouse-guide'],
+      relatedTools: ['safety-first', 'pay-calculator']
     }
   }
 };
