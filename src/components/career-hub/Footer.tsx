@@ -1,11 +1,22 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
+import { SITUATION_LABELS } from "@/data/taxonomy";
 
 const Footer = () => {
+  // Persona pages based on taxonomy
+  const personaPages = [
+    { slug: 'for-students', situation: 'student' },
+    { slug: 'for-freshers', situation: 'fresher' },
+    { slug: 'for-immigrants', situation: 'immigrant' },
+    { slug: 'for-parents', situation: 'parent' },
+    { slug: 'for-seasonal-workers', situation: 'seasonal' },
+    { slug: 'for-side-gig', situation: 'side-gig' },
+  ] as const;
+
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <img src={logo} alt="Indeed Flex" className="h-8 w-auto mb-4 brightness-0 invert" />
@@ -14,9 +25,27 @@ const Footer = () => {
             </p>
           </div>
 
+          {/* For You (Persona Pages) */}
+          <div>
+            <h4 className="font-semibold mb-5">For You</h4>
+            <ul className="space-y-3 text-sm text-primary-foreground/70">
+              {personaPages.map(({ slug, situation }) => (
+                <li key={slug}>
+                  <Link 
+                    to={`/career-hub/${slug}`} 
+                    className="hover:text-accent transition-colors flex items-center gap-2"
+                  >
+                    <span>{SITUATION_LABELS[situation].icon}</span>
+                    {SITUATION_LABELS[situation].label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Industries */}
           <div>
-            <h4 className="font-semibold mb-5">Explore Industries</h4>
+            <h4 className="font-semibold mb-5">Industries</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
               <li><Link to="/career-hub/industries/hospitality" className="hover:text-accent transition-colors">Hospitality Jobs</Link></li>
               <li><Link to="/career-hub/industries/industrial" className="hover:text-accent transition-colors">Warehouse & Industrial</Link></li>
@@ -35,7 +64,7 @@ const Footer = () => {
               <li><Link to="/career-hub/tools/childcare-calculator" className="hover:text-accent transition-colors">Childcare Calculator</Link></li>
               <li><Link to="/career-hub/tools/commute-calculator" className="hover:text-accent transition-colors">Commute Calculator</Link></li>
               <li><Link to="/career-hub/tools/worktalk" className="hover:text-accent transition-colors">WorkTalk (Job English)</Link></li>
-              <li><Link to="/career-hub/tools" className="hover:text-accent transition-colors font-medium text-accent">All 10 Tools →</Link></li>
+              <li><Link to="/career-hub/tools" className="hover:text-accent transition-colors font-medium text-accent">All Tools →</Link></li>
             </ul>
           </div>
 
@@ -48,7 +77,6 @@ const Footer = () => {
               <li><Link to="/career-hub/locations/chicago" className="hover:text-accent transition-colors">Chicago, IL</Link></li>
               <li><Link to="/career-hub/locations/atlanta" className="hover:text-accent transition-colors">Atlanta, GA</Link></li>
               <li><Link to="/career-hub/locations/las-vegas" className="hover:text-accent transition-colors">Las Vegas, NV</Link></li>
-              <li><Link to="/career-hub/locations/nashville" className="hover:text-accent transition-colors">Nashville, TN</Link></li>
               <li><Link to="/career-hub/active-markets" className="hover:text-accent transition-colors font-medium text-accent">All 19 Markets →</Link></li>
             </ul>
           </div>
