@@ -408,6 +408,44 @@ export const GUIDE_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedRoles: [],
     relatedTools: [],
     relatedTemplates: []
+  },
+
+  // Resume & Profile Guides
+  "temp-work-resume-guide": {
+    userSituations: ['fresher', 'career-changer', 'side-gig', 'career-returner'],
+    industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+    experienceLevels: ['no-experience', 'entry-level', 'some-experience'],
+    contentIntent: 'create',
+    language: 'english',
+    primaryKeyword: 'temp work resume 2026',
+    searchVolume: 3400,
+    relatedRoles: ['picker-packer', 'server', 'event-staff', 'warehouse-operative'],
+    relatedTools: ['skills-analyzer', 'action-verbs'],
+    relatedTemplates: ['temp-worker', 'chronological', 'functional']
+  },
+  "indeed-flex-profile-guide": {
+    userSituations: ['fresher', 'student', 'career-changer', 'side-gig'],
+    industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+    experienceLevels: ['no-experience', 'entry-level', 'some-experience'],
+    contentIntent: 'create',
+    language: 'english',
+    primaryKeyword: 'indeed flex profile tips',
+    searchVolume: 1800,
+    relatedRoles: ['picker-packer', 'server', 'forklift-driver', 'event-staff'],
+    relatedTools: ['skills-analyzer', 'pay-calculator'],
+    relatedTemplates: ['chronological', 'functional']
+  },
+  "temp-job-cover-letter": {
+    userSituations: ['fresher', 'career-changer', 'career-returner', 'side-gig'],
+    industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+    experienceLevels: ['no-experience', 'entry-level', 'some-experience'],
+    contentIntent: 'create',
+    language: 'english',
+    primaryKeyword: 'cover letter temp job 2026',
+    searchVolume: 2600,
+    relatedRoles: ['picker-packer', 'server', 'retail-associate', 'warehouse-operative'],
+    relatedTools: ['action-verbs'],
+    relatedTemplates: ['entry-level-cover', 'general-cover', 'hospitality-cover']
   }
 };
 
