@@ -12,3 +12,7 @@ export { JobApplicationNav } from './JobApplicationNav';
 export { StudentMarketStats } from './StudentMarketStats';
 export { StudentSuccessTips } from './StudentSuccessTips';
 export { RelatedArticlesGrid } from './RelatedArticlesGrid';
+export { FresherMarketStats } from './FresherMarketStats';
+export { FresherSuccessTips } from './FresherSuccessTips';
+export { ImmigrantMarketStats } from './ImmigrantMarketStats';
+export { ImmigrantSuccessTips } from './ImmigrantSuccessTips';
