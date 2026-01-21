@@ -1,5 +1,28 @@
 import type { Industry, ExperienceLevel, UserSituation, ContentIntent, Language } from "@/data/taxonomy";
 
+// Helper functions for taxonomy-based filtering
+export const getTemplatesForSituation = (situation: UserSituation): ResumeTemplate[] => {
+  return Object.values(resumeTemplates).filter(
+    template => template.taxonomy.userSituations.includes(situation)
+  );
+};
+
+export const getTemplatesForIndustry = (industry: Industry): ResumeTemplate[] => {
+  return Object.values(resumeTemplates).filter(
+    template => template.taxonomy.industries.includes(industry)
+  );
+};
+
+export const getTemplatesForExperienceLevel = (level: ExperienceLevel): ResumeTemplate[] => {
+  return Object.values(resumeTemplates).filter(
+    template => template.taxonomy.experienceLevels.includes(level)
+  );
+};
+
+export const getRecommendedTemplatesForSituation = (situation: UserSituation, limit = 3): ResumeTemplate[] => {
+  return getTemplatesForSituation(situation).slice(0, limit);
+};
+
 export interface TemplateTaxonomy {
   userSituations: UserSituation[];
   industries: Industry[];

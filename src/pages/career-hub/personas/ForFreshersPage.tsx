@@ -18,9 +18,13 @@ import {
   Award
 } from "lucide-react";
 import { getContentForSituation } from "@/data/taxonomy";
+import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
+import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
 
 const ForFreshersPage = () => {
   const fresherContent = getContentForSituation('fresher');
+  const recommendedResumeTemplates = getRecommendedTemplatesForSituation('fresher', 3);
+  const recommendedCoverLetters = getRecommendedCoverLettersForSituation('fresher', 2);
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   const fresherBenefits = [
@@ -46,11 +50,14 @@ const ForFreshersPage = () => {
     { slug: "first-flex-job", title: "Your First Indeed Flex Job", description: "What to expect and how to succeed" },
   ];
 
-  const resumeFormats = [
-    { format: "functional", title: "Functional Resume", description: "Highlights skills over work history—perfect for freshers", recommended: true },
-    { format: "one-page", title: "One-Page Resume", description: "Concise format ideal for entry-level applications" },
-    { format: "skills-based", title: "Skills-Based Resume", description: "Lead with your capabilities, not your experience" },
-  ];
+  // Dynamic resume formats from taxonomy
+  const dynamicResumeFormats = recommendedResumeTemplates.map(template => ({
+    format: template.slug,
+    title: template.name,
+    description: template.description,
+    icon: template.icon,
+    recommended: template.taxonomy.userSituations.includes('fresher')
+  }));
 
   const faqs = [
     {
@@ -201,40 +208,70 @@ const ForFreshersPage = () => {
         </div>
       </section>
 
-      {/* Resume Formats Section */}
+      {/* Dynamic Resume Formats Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Award className="w-6 h-6 text-primary" />
-              <h2 className="text-3xl font-bold">Best Resume Formats for Freshers</h2>
+              <h2 className="text-3xl font-bold">Recommended Resume Formats</h2>
             </div>
             <p className="text-center text-muted-foreground mb-8">
-              Traditional chronological resumes don't work when you have no experience. Use these formats instead.
+              Based on your situation, these resume templates are ideal for first-time job seekers.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
-              {resumeFormats.map((format) => (
-                <Card key={format.format} className={`hover:shadow-lg transition-shadow ${format.recommended ? 'ring-2 ring-primary' : ''}`}>
+              {dynamicResumeFormats.map((format, index) => (
+                <Card key={format.format} className={`hover:shadow-lg transition-shadow ${index === 0 ? 'ring-2 ring-primary' : ''}`}>
                   <CardContent className="pt-6">
-                    {format.recommended && (
+                    {index === 0 && (
                       <Badge className="mb-3 bg-primary text-primary-foreground">
                         <Sparkles className="w-3 h-3 mr-1" />
-                        Recommended
+                        Top Pick
                       </Badge>
                     )}
+                    <div className="text-2xl mb-2">{format.icon}</div>
                     <h3 className="font-semibold text-lg mb-2">{format.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{format.description}</p>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{format.description}</p>
                     <Link 
-                      to={`/career-hub/templates?format=${format.format}`}
+                      to={`/career-hub/templates/${format.format}`}
                       className="text-primary hover:underline text-sm font-medium inline-flex items-center"
                     >
-                      View Templates
+                      Use Template
                       <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </CardContent>
                 </Card>
               ))}
             </div>
+            
+            {/* Cover Letters for Freshers */}
+            {recommendedCoverLetters.length > 0 && (
+              <div className="mt-10">
+                <h3 className="text-xl font-semibold text-center mb-6">Cover Letter Templates</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {recommendedCoverLetters.map((template) => (
+                    <Card key={template.slug} className="hover:shadow-md transition-shadow">
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3">
+                          <span className="text-2xl">{template.icon}</span>
+                          <div>
+                            <h4 className="font-semibold">{template.name}</h4>
+                            <p className="text-muted-foreground text-sm line-clamp-2">{template.description}</p>
+                            <Link 
+                              to={`/career-hub/cover-letters/${template.slug}`}
+                              className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-2"
+                            >
+                              View Template
+                              <ArrowRight className="ml-1 h-4 w-4" />
+                            </Link>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
