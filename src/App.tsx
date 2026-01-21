@@ -51,7 +51,15 @@ import BulletGeneratorPage from "./pages/career-hub/resources/BulletGeneratorPag
 import CoverLettersIndexPage from "./pages/career-hub/templates/CoverLettersIndexPage";
 import CoverLetterPage from "./pages/career-hub/templates/CoverLetterPage";
 import ResearchAdminPage from "./pages/career-hub/admin/ResearchAdminPage";
-import { ForStudentsPage, ForFreshersPage, ForImmigrantsPage } from "./pages/career-hub/personas";
+import { 
+  ForStudentsPage, 
+  ForFreshersPage, 
+  ForImmigrantsPage,
+  ForCareerChangersPage,
+  ForParentsPage,
+  ForSeasonalWorkersPage,
+  ForSideGigPage
+} from "./pages/career-hub/personas";
 
 const queryClient = new QueryClient();
 
@@ -114,6 +122,15 @@ const App = () => (
           <Route path="/career-hub/for-students" element={<ForStudentsPage />} />
           <Route path="/career-hub/for-freshers" element={<ForFreshersPage />} />
           <Route path="/career-hub/for-immigrants" element={<ForImmigrantsPage />} />
+          <Route path="/career-hub/for-career-changers" element={<ForCareerChangersPage />} />
+          <Route path="/career-hub/for-parents" element={<ForParentsPage />} />
+          <Route path="/career-hub/for-seasonal-workers" element={<ForSeasonalWorkersPage />} />
+          <Route path="/career-hub/for-side-gig" element={<ForSideGigPage />} />
+          
+          {/* Programmatic SEO Routes */}
+          <Route path="/:slug" element={<ProgrammaticRouter />} />
+          
+          <Route path="*" element={<NotFound />} />
           
           {/* Programmatic SEO Routes */}
           <Route path="/:slug" element={<ProgrammaticRouter />} />
