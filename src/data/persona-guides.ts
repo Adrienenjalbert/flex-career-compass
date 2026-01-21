@@ -49,7 +49,7 @@ export const PERSONA_GUIDE_MAPPINGS: Record<string, Record<string, string>> = {
     'side-gig-guide': 'multiple-gigs', // maps to multiple gigs
     'same-day-pay': 'same-day-pay-explained', // dedicated article
     'same-day-pay-explained': 'same-day-pay-explained', // direct link
-    'tax-guide-gig-workers': 'complete-guide', // redirect to complete guide (until we create this)
+    'tax-guide-gig-workers': 'tax-guide-gig-workers', // now exists!
     'more-shifts': 'more-shifts', // exists
   },
 };
@@ -91,7 +91,7 @@ export const PERSONA_GUIDES: Record<string, Array<{ slug: string; title: string;
   'side-gig': [
     { slug: 'multiple-gigs', title: 'Managing Multiple Gigs', description: 'Balance your side hustle with your main job' },
     { slug: 'same-day-pay-explained', title: 'Same Day Pay Explained', description: 'Get paid within 1 hour of completing shifts' },
-    { slug: 'complete-guide', title: 'Indeed Flex Complete Guide', description: 'Same-day pay, benefits, and more' },
+    { slug: 'tax-guide-gig-workers', title: 'Gig Worker Tax Guide 2026', description: '1099 vs W-2, quarterly taxes & deductions' },
     { slug: 'more-shifts', title: 'Getting More Shifts', description: 'Maximize your earning opportunities' },
   ],
 };
