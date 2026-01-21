@@ -199,6 +199,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://indeedflex.com/career-hub/guides/working-parent-guide</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Financial Tips -->
   <url>
     <loc>https://indeedflex.com/career-hub/financial-tips/irregular-income-budget</loc>
