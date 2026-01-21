@@ -16,15 +16,17 @@ interface PopularRolesGridProps {
   roles: Role[];
   title?: string;
   subtitle?: string;
+  className?: string;
 }
 
 export function PopularRolesGrid({ 
   roles, 
   title = "Popular Roles",
-  subtitle 
+  subtitle,
+  className
 }: PopularRolesGridProps) {
   return (
-    <section className="py-16 bg-muted/30">
+    <section className={`py-16 ${className || 'bg-muted/30'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <div>
