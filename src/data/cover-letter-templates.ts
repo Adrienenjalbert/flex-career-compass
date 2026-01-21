@@ -1,5 +1,21 @@
 import type { Industry, ExperienceLevel, UserSituation, ContentIntent, Language } from "@/data/taxonomy";
 
+// Helper functions for taxonomy-based filtering
+export const getCoverLettersForSituation = (situation: UserSituation): CoverLetterTemplate[] => {
+  return Object.values(coverLetterTemplates).filter(
+    template => template.taxonomy.userSituations.includes(situation)
+  );
+};
+
+export const getCoverLettersForIndustry = (industry: Industry): CoverLetterTemplate[] => {
+  return Object.values(coverLetterTemplates).filter(
+    template => template.taxonomy.industries.includes(industry)
+  );
+};
+
+export const getRecommendedCoverLettersForSituation = (situation: UserSituation, limit = 3): CoverLetterTemplate[] => {
+  return getCoverLettersForSituation(situation).slice(0, limit);
+};
 export interface CoverLetterTaxonomy {
   userSituations: UserSituation[];
   industries: Industry[];

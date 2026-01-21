@@ -17,9 +17,13 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { getContentForSituation, SITUATION_LABELS } from "@/data/taxonomy";
+import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
+import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
 
 const ForStudentsPage = () => {
   const studentContent = getContentForSituation('student');
+  const recommendedResumeTemplates = getRecommendedTemplatesForSituation('student', 3);
+  const recommendedCoverLetters = getRecommendedCoverLettersForSituation('student', 2);
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   const studentBenefits = [
@@ -255,30 +259,80 @@ const ForStudentsPage = () => {
         </div>
       </section>
 
-      {/* Resume Templates Section */}
+      {/* Dynamic Resume Templates Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-2 mb-4">
             <FileText className="w-6 h-6 text-primary" />
-            <h2 className="text-3xl font-bold">Student Resume Templates</h2>
+            <h2 className="text-3xl font-bold">Recommended Templates for Students</h2>
           </div>
           <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-            No work experience? No problem. These templates highlight your education, activities, and transferable skills.
+            These templates are specifically recommended for students based on our taxonomy system.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          
+          {/* Resume Templates */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {recommendedResumeTemplates.map((template) => (
+              <Card key={template.slug} className="hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="text-3xl mb-3">{template.icon}</div>
+                  <h3 className="font-semibold text-lg mb-2">{template.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{template.description}</p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {template.bestFor.slice(0, 2).map((item, idx) => (
+                      <Badge key={idx} variant="secondary" className="text-xs">{item}</Badge>
+                    ))}
+                  </div>
+                  <Link 
+                    to={`/career-hub/templates/${template.slug}`}
+                    className="text-primary hover:underline text-sm font-medium inline-flex items-center"
+                  >
+                    Use Template
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Cover Letters */}
+          {recommendedCoverLetters.length > 0 && (
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold text-center mb-6">Cover Letter Templates</h3>
+              <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                {recommendedCoverLetters.map((template) => (
+                  <Card key={template.slug} className="hover:shadow-md transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-2xl">{template.icon}</span>
+                        <div>
+                          <h4 className="font-semibold">{template.name}</h4>
+                          <p className="text-muted-foreground text-sm line-clamp-2">{template.description}</p>
+                          <Link 
+                            to={`/career-hub/cover-letters/${template.slug}`}
+                            className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-2"
+                          >
+                            View Template
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Button asChild variant="outline">
               <Link to="/career-hub/resume-examples?situation=student">
-                Browse Student Examples
+                Browse All Student Examples
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link to="/career-hub/templates?format=functional">
-                Functional Format (No Experience)
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/career-hub/templates?format=one-page">
-                One-Page Templates
+              <Link to="/career-hub/templates?situation=student">
+                All Student Templates
               </Link>
             </Button>
           </div>

@@ -16,12 +16,17 @@ import {
   ArrowRight,
   CheckCircle2,
   AlertCircle,
-  HelpCircle
+  HelpCircle,
+  FileText
 } from "lucide-react";
 import { getContentForSituation } from "@/data/taxonomy";
+import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
+import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
 
 const ForImmigrantsPage = () => {
   const immigrantContent = getContentForSituation('immigrant');
+  const recommendedResumeTemplates = getRecommendedTemplatesForSituation('immigrant', 3);
+  const recommendedCoverLetters = getRecommendedCoverLettersForSituation('immigrant', 2);
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   const immigrantBenefits = [
@@ -403,8 +408,80 @@ const ForImmigrantsPage = () => {
         </div>
       </section>
 
+      {/* Dynamic Templates Section */}
+      {(recommendedResumeTemplates.length > 0 || recommendedCoverLetters.length > 0) && (
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <FileText className="w-6 h-6 text-primary" />
+              <h2 className="text-3xl font-bold">Recommended Templates</h2>
+            </div>
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+              These templates are designed for workers new to the US job market.
+            </p>
+            
+            {recommendedResumeTemplates.length > 0 && (
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                {recommendedResumeTemplates.map((template) => (
+                  <Card key={template.slug} className="hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="text-3xl mb-3">{template.icon}</div>
+                      <h3 className="font-semibold text-lg mb-2">{template.name}</h3>
+                      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{template.description}</p>
+                      <Link 
+                        to={`/career-hub/templates/${template.slug}`}
+                        className="text-primary hover:underline text-sm font-medium inline-flex items-center"
+                      >
+                        Use Template
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+
+            {recommendedCoverLetters.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold text-center mb-6">Cover Letter Templates</h3>
+                <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                  {recommendedCoverLetters.map((template) => (
+                    <Card key={template.slug} className="hover:shadow-md transition-shadow">
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3">
+                          <span className="text-2xl">{template.icon}</span>
+                          <div>
+                            <h4 className="font-semibold">{template.name}</h4>
+                            <p className="text-muted-foreground text-sm line-clamp-2">{template.description}</p>
+                            <Link 
+                              to={`/career-hub/cover-letters/${template.slug}`}
+                              className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-2"
+                            >
+                              View Template
+                              <ArrowRight className="ml-1 h-4 w-4" />
+                            </Link>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="text-center mt-8">
+              <Button asChild variant="outline">
+                <Link to="/career-hub/templates?situation=immigrant">
+                  View All Templates for Immigrants
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6">
