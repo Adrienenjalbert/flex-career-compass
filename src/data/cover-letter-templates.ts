@@ -359,7 +359,7 @@ export const coverLetterTemplates: Record<string, CoverLetterTemplate> = {
       personal_qualities: 'I am punctual, eager to learn, and committed to providing excellent service. My professors describe me as reliable and detail-oriented'
     },
     taxonomy: {
-      userSituations: ['fresher', 'student', 'teen', 'career-returner'],
+      userSituations: ['fresher', 'student', 'career-returner'],
       industries: ['hospitality', 'retail', 'industrial'],
       experienceLevels: ['no-experience', 'entry-level'],
       contentIntent: 'create',

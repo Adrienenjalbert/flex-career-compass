@@ -35,7 +35,6 @@ export const USER_SITUATIONS = [
   'senior',             // 50+ returning to work
   'career-returner',    // After employment gap
   'side-gig',           // Supplemental income
-  'teen',               // 14-17 years old (legal restrictions)
   'bilingual',          // Spanish-English speakers
   'career-changer',     // Switching industries
   'seasonal',           // Holiday/summer workers
@@ -146,13 +145,7 @@ export const SITUATION_LABELS: Record<UserSituation, {
     icon: '💰',
     keywords: ['side hustle', 'extra income', 'weekend jobs']
   },
-  teen: { 
-    label: 'Teen Worker', 
-    description: '14-17 years old',
-    icon: '🧑',
-    keywords: ['jobs for 14 year olds', 'teen jobs', 'jobs at 15']
-  },
-  bilingual: { 
+  bilingual: {
     label: 'Spanish Speaker', 
     description: 'Bilingual opportunities',
     icon: '🗣️',
@@ -220,7 +213,7 @@ export const FORMAT_LABELS: Record<ResumeFormat, {
   'one-page': { 
     label: 'One-Page', 
     description: 'Concise single-page format',
-    bestFor: ['student', 'fresher', 'teen']
+    bestFor: ['student', 'fresher']
   },
   'ats-optimized': { 
     label: 'ATS-Optimized', 
@@ -437,7 +430,7 @@ export const GUIDE_TAXONOMY: Record<string, GuideTaxonomy> = {
   },
   'first-shift': {
     slug: 'first-shift',
-    userSituations: ['fresher', 'student', 'teen', 'immigrant'],
+    userSituations: ['fresher', 'student', 'immigrant'],
     experienceLevels: ['no-experience', 'entry-level'],
     industries: ['hospitality', 'industrial', 'retail', 'facilities'],
     contentIntent: 'learn',
@@ -531,7 +524,7 @@ export const GUIDE_TAXONOMY: Record<string, GuideTaxonomy> = {
   },
   'retail-guide': {
     slug: 'retail-guide',
-    userSituations: ['student', 'teen', 'fresher', 'side-gig'],
+    userSituations: ['student', 'fresher', 'side-gig'],
     experienceLevels: ['no-experience', 'entry-level'],
     industries: ['retail'],
     contentIntent: 'learn',
@@ -595,7 +588,7 @@ export const GUIDE_TAXONOMY: Record<string, GuideTaxonomy> = {
   },
   'summer-hospitality-guide': {
     slug: 'summer-hospitality-guide',
-    userSituations: ['seasonal', 'student', 'teen'],
+    userSituations: ['seasonal', 'student'],
     experienceLevels: ['no-experience', 'entry-level'],
     industries: ['hospitality'],
     contentIntent: 'find-work',
@@ -605,7 +598,7 @@ export const GUIDE_TAXONOMY: Record<string, GuideTaxonomy> = {
   },
   'student-jobs-fall': {
     slug: 'student-jobs-fall',
-    userSituations: ['student', 'teen'],
+    userSituations: ['student', 'fresher'],
     experienceLevels: ['no-experience', 'entry-level'],
     industries: ['hospitality', 'industrial', 'retail'],
     contentIntent: 'find-work',
@@ -622,7 +615,7 @@ export const GUIDE_TAXONOMY: Record<string, GuideTaxonomy> = {
 export const JOB_APPLICATION_TAXONOMY: Record<string, GuideTaxonomy> = {
   'fresher-resume-guide': {
     slug: 'fresher-resume-guide',
-    userSituations: ['fresher', 'student', 'teen'],
+    userSituations: ['fresher', 'student'],
     experienceLevels: ['no-experience'],
     industries: ['hospitality', 'industrial', 'retail', 'facilities'],
     contentIntent: 'learn',
@@ -632,7 +625,7 @@ export const JOB_APPLICATION_TAXONOMY: Record<string, GuideTaxonomy> = {
   },
   'student-resume-template': {
     slug: 'student-resume-template',
-    userSituations: ['student', 'teen'],
+    userSituations: ['student', 'fresher'],
     experienceLevels: ['no-experience', 'entry-level'],
     industries: ['hospitality', 'retail'],
     contentIntent: 'create',
@@ -642,7 +635,7 @@ export const JOB_APPLICATION_TAXONOMY: Record<string, GuideTaxonomy> = {
   },
   'zero-experience-jobs': {
     slug: 'zero-experience-jobs',
-    userSituations: ['fresher', 'career-returner', 'teen'],
+    userSituations: ['fresher', 'career-returner'],
     experienceLevels: ['no-experience'],
     industries: ['hospitality', 'industrial', 'retail', 'facilities'],
     contentIntent: 'find-work',
@@ -719,7 +712,7 @@ export const ROLE_TAXONOMY: Record<string, RoleTaxonomy> = {
   'picker-packer': {
     slug: 'picker-packer',
     industry: 'industrial',
-    userSituations: ['fresher', 'immigrant', 'teen', 'student', 'seasonal'],
+    userSituations: ['fresher', 'immigrant', 'student', 'seasonal'],
     experienceLevels: ['no-experience', 'entry-level'],
     relatedGuides: ['warehouse-guide', 'zero-experience-jobs', 'holiday-warehouse-guide'],
     relatedTools: ['safety-first', 'pay-calculator'],
@@ -755,7 +748,7 @@ export const ROLE_TAXONOMY: Record<string, RoleTaxonomy> = {
   'event-staff': {
     slug: 'event-staff',
     industry: 'hospitality',
-    userSituations: ['student', 'seasonal', 'side-gig', 'teen'],
+    userSituations: ['student', 'seasonal', 'side-gig'],
     experienceLevels: ['no-experience', 'entry-level'],
     relatedGuides: ['event-staffing-guide', 'summer-hospitality-guide', 'first-flex-job'],
     relatedTools: ['pay-calculator', 'shift-planner'],
@@ -773,7 +766,7 @@ export const ROLE_TAXONOMY: Record<string, RoleTaxonomy> = {
   'dishwasher': {
     slug: 'dishwasher',
     industry: 'hospitality',
-    userSituations: ['fresher', 'immigrant', 'teen', 'student'],
+    userSituations: ['fresher', 'immigrant', 'student'],
     experienceLevels: ['no-experience', 'entry-level'],
     relatedGuides: ['hospitality-guide', 'zero-experience-jobs', 'first-flex-job'],
     relatedTools: ['pay-calculator'],
@@ -782,7 +775,7 @@ export const ROLE_TAXONOMY: Record<string, RoleTaxonomy> = {
   'retail-associate': {
     slug: 'retail-associate',
     industry: 'retail',
-    userSituations: ['student', 'teen', 'fresher', 'side-gig'],
+    userSituations: ['student', 'fresher', 'side-gig'],
     experienceLevels: ['no-experience', 'entry-level'],
     relatedGuides: ['retail-guide', 'student-jobs-fall', 'zero-experience-jobs'],
     relatedTools: ['pay-calculator', 'shift-planner'],
