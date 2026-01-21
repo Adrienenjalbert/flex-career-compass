@@ -10,22 +10,21 @@ import {
   DollarSign, 
   Calendar, 
   BookOpen, 
-  Briefcase,
   Calculator,
   FileText,
   ArrowRight,
   CheckCircle2,
-  Heart,
-  Home
+  Heart
 } from "lucide-react";
-import { getContentForSituation } from "@/data/taxonomy";
 import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
 import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
+import { getPersonaGuides } from "@/data/persona-guides";
+import { PersonaResearchSection } from "@/components/career-hub/persona";
 
 const ForParentsPage = () => {
-  const parentContent = getContentForSituation('parent');
   const recommendedResumeTemplates = getRecommendedTemplatesForSituation('parent', 3);
   const recommendedCoverLetters = getRecommendedCoverLettersForSituation('parent', 2);
+  const guides = getPersonaGuides('parent');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   const benefits = [
@@ -40,12 +39,6 @@ const ForParentsPage = () => {
     { slug: "cleaner", title: "Cleaner", pay: "$14-20/hr", description: "Flexible daytime hours" },
     { slug: "warehouse-clerk", title: "Warehouse Clerk", pay: "$17-24/hr", description: "Set schedules available" },
     { slug: "retail-assistant", title: "Retail Assistant", pay: "$14-18/hr", description: "Part-time options" },
-  ];
-
-  const guides = [
-    { slug: "working-parent-guide", title: "Working Parent's Guide to Flex Work", description: "Balance kids and career" },
-    { slug: "same-day-pay", title: "Same Day Pay Explained", description: "Get paid when you need it" },
-    { slug: "medical-benefits", title: "Indeed Flex Benefits Guide", description: "Health coverage for families" },
   ];
 
   const tools = [
@@ -138,6 +131,9 @@ const ForParentsPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Research Insights Section */}
+      <PersonaResearchSection personaSlug="parent" personaName="Working Parent" />
 
       {/* Benefits Section */}
       <section className="py-16 bg-background">

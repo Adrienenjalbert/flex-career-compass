@@ -10,21 +10,21 @@ import {
   DollarSign, 
   Shield, 
   BookOpen, 
-  Briefcase,
   Calculator,
   FileText,
   ArrowRight,
   CheckCircle2,
   TrendingUp
 } from "lucide-react";
-import { getContentForSituation } from "@/data/taxonomy";
 import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
 import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
+import { getPersonaGuides } from "@/data/persona-guides";
+import { PersonaResearchSection } from "@/components/career-hub/persona";
 
 const ForCareerChangersPage = () => {
-  const careerChangerContent = getContentForSituation('career-changer');
   const recommendedResumeTemplates = getRecommendedTemplatesForSituation('career-changer', 3);
   const recommendedCoverLetters = getRecommendedCoverLettersForSituation('career-changer', 2);
+  const guides = getPersonaGuides('career-changer');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   const benefits = [
@@ -39,12 +39,6 @@ const ForCareerChangersPage = () => {
     { slug: "event-staff", title: "Event Staff", pay: "$15-22/hr", description: "Customer service experience valued" },
     { slug: "forklift-driver", title: "Forklift Driver", pay: "$18-28/hr", description: "Certification training available" },
     { slug: "administrative-assistant", title: "Admin Assistant", pay: "$16-24/hr", description: "Leverage existing admin skills" },
-  ];
-
-  const guides = [
-    { slug: "career-transition", title: "Career Transition Guide 2026", description: "Navigate your industry switch successfully" },
-    { slug: "transferable-skills", title: "Identifying Transferable Skills", description: "Translate your experience to new roles" },
-    { slug: "temp-to-perm-success", title: "Temp-to-Perm Success Guide", description: "Turn flexible work into permanent offers" },
   ];
 
   const tools = [
@@ -137,6 +131,9 @@ const ForCareerChangersPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Research Insights Section */}
+      <PersonaResearchSection personaSlug="career-changer" personaName="Career Changer" />
 
       {/* Benefits Section */}
       <section className="py-16 bg-background">

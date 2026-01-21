@@ -10,22 +10,21 @@ import {
   DollarSign, 
   Calendar, 
   BookOpen, 
-  Briefcase,
   Calculator,
   FileText,
   ArrowRight,
   CheckCircle2,
-  PlusCircle,
   Zap
 } from "lucide-react";
-import { getContentForSituation } from "@/data/taxonomy";
 import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
 import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
+import { getPersonaGuides } from "@/data/persona-guides";
+import { PersonaResearchSection } from "@/components/career-hub/persona";
 
 const ForSideGigPage = () => {
-  const sideGigContent = getContentForSituation('side-gig');
   const recommendedResumeTemplates = getRecommendedTemplatesForSituation('side-gig', 3);
   const recommendedCoverLetters = getRecommendedCoverLettersForSituation('side-gig', 2);
+  const guides = getPersonaGuides('side-gig');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   const benefits = [
@@ -40,12 +39,6 @@ const ForSideGigPage = () => {
     { slug: "banquet-server", title: "Banquet Server", pay: "$15-25/hr", description: "Friday/Saturday weddings" },
     { slug: "warehouse-operative", title: "Warehouse Operative", pay: "$16-24/hr", description: "Evening & overnight shifts" },
     { slug: "bartender", title: "Bartender", pay: "$12-20/hr + tips", description: "High-energy weekend work" },
-  ];
-
-  const guides = [
-    { slug: "side-gig-guide", title: "Side Gig Success Guide", description: "Maximize your extra income" },
-    { slug: "same-day-pay", title: "Same Day Pay Explained", description: "Get paid fast" },
-    { slug: "tax-guide-gig-workers", title: "Tax Guide for Gig Workers", description: "Manage taxes on extra income" },
   ];
 
   const tools = [
@@ -145,6 +138,9 @@ const ForSideGigPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Research Insights Section */}
+      <PersonaResearchSection personaSlug="side-gig" personaName="Side Gig Worker" />
 
       {/* Benefits Section */}
       <section className="py-16 bg-background">
