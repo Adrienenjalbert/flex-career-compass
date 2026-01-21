@@ -335,6 +335,51 @@ export type Database = {
         }
         Relationships: []
       }
+      persona_research_results: {
+        Row: {
+          citations: string[] | null
+          content_gaps: Json | null
+          created_at: string | null
+          external_resources: Json | null
+          firecrawl_data: Json | null
+          id: string
+          perplexity_response: string | null
+          persona_slug: string
+          researched_at: string | null
+          seo_keywords: Json | null
+          statistics: Json | null
+          updated_at: string | null
+        }
+        Insert: {
+          citations?: string[] | null
+          content_gaps?: Json | null
+          created_at?: string | null
+          external_resources?: Json | null
+          firecrawl_data?: Json | null
+          id?: string
+          perplexity_response?: string | null
+          persona_slug: string
+          researched_at?: string | null
+          seo_keywords?: Json | null
+          statistics?: Json | null
+          updated_at?: string | null
+        }
+        Update: {
+          citations?: string[] | null
+          content_gaps?: Json | null
+          created_at?: string | null
+          external_resources?: Json | null
+          firecrawl_data?: Json | null
+          id?: string
+          perplexity_response?: string | null
+          persona_slug?: string
+          researched_at?: string | null
+          seo_keywords?: Json | null
+          statistics?: Json | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

@@ -32,3 +32,6 @@ verify_jwt = false
 
 [functions.article-research]
 verify_jwt = false
+
+[functions.persona-research]
+verify_jwt = false
