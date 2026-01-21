@@ -10,20 +10,20 @@ import {
   DollarSign, 
   Calendar, 
   BookOpen, 
-  Briefcase,
   Calculator,
   FileText,
   ArrowRight,
   CheckCircle2
 } from "lucide-react";
-import { getContentForSituation, SITUATION_LABELS } from "@/data/taxonomy";
 import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
 import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
+import { getPersonaGuides } from "@/data/persona-guides";
+import { PersonaResearchSection } from "@/components/career-hub/persona";
 
 const ForStudentsPage = () => {
-  const studentContent = getContentForSituation('student');
   const recommendedResumeTemplates = getRecommendedTemplatesForSituation('student', 3);
   const recommendedCoverLetters = getRecommendedCoverLettersForSituation('student', 2);
+  const studentGuides = getPersonaGuides('student');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   const studentBenefits = [
@@ -38,12 +38,6 @@ const ForStudentsPage = () => {
     { slug: "warehouse-operative", title: "Warehouse Operative", pay: "$16-24/hr", description: "Evening & night shifts available" },
     { slug: "banquet-server", title: "Banquet Server", pay: "$15-25/hr", description: "Tips + flexible scheduling" },
     { slug: "retail-assistant", title: "Retail Assistant", pay: "$14-18/hr", description: "Part-time hours, holiday rush" },
-  ];
-
-  const studentGuides = [
-    { slug: "student-resume-template", title: "Student Resume Template 2026", description: "Balance academics and work experience" },
-    { slug: "zero-experience-jobs", title: "Jobs With No Experience Required", description: "Start earning with no prior work history" },
-    { slug: "first-flex-job", title: "Your First Flexible Job Guide", description: "Step-by-step getting started" },
   ];
 
   const studentTools = [
@@ -136,6 +130,9 @@ const ForStudentsPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Research Insights Section */}
+      <PersonaResearchSection personaSlug="student" personaName="Student" />
 
       {/* Benefits Section */}
       <section className="py-16 bg-background">
