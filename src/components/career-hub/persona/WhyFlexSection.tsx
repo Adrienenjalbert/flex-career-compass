@@ -1,86 +1,83 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Clock, DollarSign, Calendar, TrendingUp, Shield, Users } from "lucide-react";
+import { Clock, DollarSign, Calendar, TrendingUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Benefit {
   icon: React.ElementType;
   title: string;
-  stat: string;
   description: string;
 }
 
 interface WhyFlexSectionProps {
   personaName: string;
-  benefits: Benefit[];
+  benefits?: Benefit[];
   headline?: string;
+  className?: string;
 }
 
 const defaultBenefits: Benefit[] = [
   { 
     icon: Clock, 
     title: "Flexible Scheduling", 
-    stat: "100%",
     description: "Control over when you work" 
   },
   { 
     icon: DollarSign, 
     title: "Same Day Pay", 
-    stat: "50%",
     description: "Access earnings within 1 hour" 
   },
   { 
     icon: Calendar, 
     title: "No Minimums", 
-    stat: "0 hrs",
     description: "Work as much or little as needed" 
   },
   { 
     icon: TrendingUp, 
     title: "Skill Building", 
-    stat: "20+",
-    description: "Role types to develop experience" 
+    description: "20+ role types to develop experience" 
   },
 ];
 
 export function WhyFlexSection({ 
   personaName, 
   benefits = defaultBenefits,
-  headline 
+  headline,
+  className 
 }: WhyFlexSectionProps) {
   return (
-    <section className="py-16 bg-background">
+    <section className={cn("py-10 border-b border-border/50", className)}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">
-            {headline || `Why ${personaName} Choose Flexible Work`}
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join 165,000+ Flexers who've discovered the freedom of working on your own terms.
-          </p>
-        </div>
-        
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit, index) => (
-            <Card 
-              key={benefit.title} 
-              className="relative overflow-hidden group hover:shadow-lg transition-all duration-300 border-border/50"
-            >
-              <CardContent className="pt-6">
-                {/* Stat Badge */}
-                <div className="absolute top-4 right-4">
-                  <span className="text-2xl font-bold text-primary">{benefit.stat}</span>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          {/* Headline - Left side on desktop */}
+          <div className="lg:max-w-xs flex-shrink-0">
+            <h2 className="text-xl font-semibold text-foreground">
+              {headline || `Why ${personaName} Choose Flex`}
+            </h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              165,000+ Flexers nationwide
+            </p>
+          </div>
+          
+          {/* Benefits - Horizontal strip */}
+          <div className="flex flex-wrap lg:flex-nowrap gap-3 lg:gap-6">
+            {benefits.map((benefit) => (
+              <div 
+                key={benefit.title} 
+                className="flex items-center gap-3 bg-muted/40 rounded-full px-4 py-2.5 hover:bg-muted/60 transition-colors"
+              >
+                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <benefit.icon className="w-4 h-4 text-primary" />
                 </div>
-                
-                {/* Icon */}
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <benefit.icon className="w-6 h-6 text-primary" />
+                <div className="min-w-0">
+                  <span className="font-medium text-sm text-foreground block">
+                    {benefit.title}
+                  </span>
+                  <span className="text-xs text-muted-foreground hidden sm:block">
+                    {benefit.description}
+                  </span>
                 </div>
-                
-                {/* Content */}
-                <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground text-sm">{benefit.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -30,31 +30,27 @@ const ForStudentsPage = () => {
   const studentGuides = getPersonaGuides('student');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
-  // Benefits data with stats from research
+  // Benefits data for horizontal strip (no stats - moved to StudentMarketStats)
   const studentBenefits = [
     { 
       icon: Clock, 
       title: "Flexible Hours", 
-      stat: "100%",
-      description: "Full control over your work schedule" 
+      description: "Work around your class schedule" 
     },
     { 
       icon: DollarSign, 
       title: "Same Day Pay", 
-      stat: "50%",
-      description: "Access earnings within 1 hour" 
+      description: "Get paid within 1 hour" 
     },
     { 
       icon: Calendar, 
       title: "No Minimums", 
-      stat: "0",
-      description: "No weekly hour requirements" 
+      description: "Work when you want" 
     },
     { 
       icon: TrendingUp, 
-      title: "Career Skills", 
-      stat: "20+",
-      description: "Role types to build experience" 
+      title: "Build Skills", 
+      description: "Real-world experience" 
     },
   ];
 
@@ -296,15 +292,15 @@ const ForStudentsPage = () => {
         </div>
       </section>
 
-      {/* Why Section */}
+      {/* Why Section - Horizontal strip */}
       <WhyFlexSection 
         personaName="Students" 
         benefits={studentBenefits}
-        headline="Why Students Choose Flexible Work"
+        headline="Why Students Choose Flex"
       />
 
-      {/* 2026 Market Stats Section - Curated from research */}
-      <StudentMarketStats />
+      {/* 2026 Market Stats Section - Visual data cards */}
+      <StudentMarketStats className="bg-muted/20" />
 
       {/* Popular Roles Section */}
       <PopularRolesGrid 

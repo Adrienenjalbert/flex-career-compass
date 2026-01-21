@@ -10,16 +10,25 @@ import {
   TrendingUp, 
   Users, 
   FileText, 
-  Briefcase,
-  Target,
+  DollarSign,
   Sparkles,
   ArrowRight,
   CheckCircle2,
-  Award
+  Award,
+  Clock,
+  Calendar
 } from "lucide-react";
 import { getContentForSituation } from "@/data/taxonomy";
 import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
 import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
+import {
+  WhyFlexSection,
+  PopularRolesGrid,
+  FresherMarketStats,
+  FresherSuccessTips,
+  JobApplicationNav,
+  RelatedArticlesGrid
+} from "@/components/career-hub/persona";
 
 const ForFreshersPage = () => {
   const fresherContent = getContentForSituation('fresher');
@@ -27,37 +36,45 @@ const ForFreshersPage = () => {
   const recommendedCoverLetters = getRecommendedCoverLettersForSituation('fresher', 2);
   const baseUrl = "https://flex-career-compass.lovable.app";
 
+  // Benefits for horizontal strip (no stats)
   const fresherBenefits = [
-    { icon: Rocket, title: "No Experience Required", description: "Many roles welcome first-time workers with zero experience" },
-    { icon: Star, title: "Build Your Reputation", description: "Earn ratings and reviews to unlock better opportunities" },
-    { icon: TrendingUp, title: "Quick Career Growth", description: "Move from entry-level to skilled roles within months" },
-    { icon: Users, title: "Join 165K+ Community", description: "Connect with experienced Flexers who can mentor you" },
+    { icon: Rocket, title: "No Experience Needed", description: "Zero work history required" },
+    { icon: Star, title: "Build Reputation", description: "Earn ratings for better shifts" },
+    { icon: TrendingUp, title: "Quick Growth", description: "Advance within months" },
+    { icon: Users, title: "165K+ Community", description: "Learn from experienced Flexers" },
   ];
 
+  // Popular entry-level roles
   const entryLevelRoles = [
-    { slug: "picker-packer", title: "Picker Packer", pay: "$15-20/hr", description: "Most common first role—learn warehouse basics" },
-    { slug: "warehouse-operative", title: "Warehouse Operative", pay: "$16-24/hr", description: "General warehouse duties, no certification needed" },
-    { slug: "event-staff", title: "Event Staff", pay: "$15-22/hr", description: "Fun, social work at concerts and sports events" },
-    { slug: "dishwasher", title: "Dishwasher", pay: "$14-18/hr", description: "Entry into hospitality—pathway to kitchen roles" },
-    { slug: "cleaner", title: "Cleaner", pay: "$14-18/hr", description: "Flexible hours, consistent demand" },
-    { slug: "loader-crew", title: "Loader/Crew", pay: "$15-22/hr", description: "Physical work, quick training" },
+    { slug: "picker-packer", title: "Picker Packer", pay: "$15-20/hr", description: "Most common first role—learn warehouse basics", tags: ["No Experience", "Physical"] },
+    { slug: "warehouse-operative", title: "Warehouse Operative", pay: "$16-24/hr", description: "General warehouse duties, no certification needed", tags: ["Entry Level"] },
+    { slug: "event-staff", title: "Event Staff", pay: "$15-22/hr", description: "Fun, social work at concerts and sports events", tags: ["Weekends", "Social"], highlight: true },
+    { slug: "dishwasher", title: "Dishwasher", pay: "$14-18/hr", description: "Entry into hospitality—pathway to kitchen roles", tags: ["Hospitality"] },
   ];
 
+  // Guides and tools
   const fresherGuides = [
-    { slug: "fresher-resume-guide", title: "Resume for Freshers: Complete 2026 Guide", description: "Create a winning resume with no work history" },
-    { slug: "zero-experience-jobs", title: "How to Get Hired With Zero Experience", description: "Proven strategies to land your first job" },
-    { slug: "transferable-skills-guide", title: "Transferable Skills Guide", description: "Turn life experience into resume gold" },
-    { slug: "first-flex-job", title: "Your First Indeed Flex Job", description: "What to expect and how to succeed" },
+    { slug: 'fresher-resume-guide', title: 'Resume for Freshers: Complete 2026 Guide', description: 'Create a winning resume with no work history', readTime: '10 min' },
+    { slug: 'zero-experience-jobs', title: 'How to Get Hired With Zero Experience', description: 'Proven strategies to land your first job', readTime: '8 min' },
+    { slug: 'transferable-skills-guide', title: 'Transferable Skills Guide', description: 'Turn life experience into resume gold', readTime: '7 min' },
+    { slug: 'first-flex-job', title: 'Your First Indeed Flex Job', description: 'What to expect and how to succeed', readTime: '6 min' },
   ];
 
-  // Dynamic resume formats from taxonomy
-  const dynamicResumeFormats = recommendedResumeTemplates.map(template => ({
-    format: template.slug,
-    title: template.name,
-    description: template.description,
-    icon: template.icon,
-    recommended: template.taxonomy.userSituations.includes('fresher')
-  }));
+  const fresherTools = [
+    { path: "/career-hub/tools/skills-analyzer", title: "Skills Analyzer", description: "Discover your hidden strengths", icon: Star },
+    { path: "/career-hub/resources/action-verbs", title: "Action Verbs", description: "Power words for your resume", icon: FileText },
+    { path: "/career-hub/tools/pay-calculator", title: "Pay Calculator", description: "Estimate your earnings", icon: DollarSign },
+  ];
+
+  // Related articles from research
+  const relatedArticles = [
+    { type: 'guide' as const, slug: 'fresher-resume-guide', title: 'Resume for Freshers 2026', description: 'Build an impressive resume with no experience.', readTime: '10 min', highlight: true },
+    { type: 'guide' as const, slug: 'zero-experience-jobs', title: 'Jobs With No Experience', description: 'Entry-level roles hiring now.', readTime: '8 min' },
+    { type: 'guide' as const, slug: 'transferable-skills-guide', title: 'Transferable Skills Guide', description: 'Turn life experience into job qualifications.', readTime: '7 min' },
+    { type: 'tool' as const, slug: 'skills-analyzer', title: 'Skills Analyzer Tool', description: 'Discover your hidden strengths.', readTime: '3 min' },
+    { type: 'guide' as const, slug: 'interview-skills', title: 'Interview Skills', description: 'Ace your verification interview.', readTime: '8 min' },
+    { type: 'guide' as const, slug: 'first-flex-job', title: 'Your First Flex Job', description: 'What to expect on day one.', readTime: '6 min' },
+  ];
 
   const faqs = [
     {
@@ -104,33 +121,66 @@ const ForFreshersPage = () => {
     ]
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "First Job Resume & Tips | Jobs for Freshers 2026",
+    "description": "Get your first job with no experience. Free resume templates, interview tips, and entry-level roles that don't require work history.",
+    "author": { "@type": "Organization", "name": "Indeed Flex Career Hub" },
+    "publisher": { "@type": "Organization", "name": "Indeed Flex Career Hub" },
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-01-21"
+  };
+
   return (
     <Layout>
       <SEOHead
         title="First Job Resume & Tips | Jobs for Freshers With No Experience 2026"
-        description="Get your first job with no experience. Free resume templates, interview tips, and entry-level roles that don't require work history. Start your career today."
+        description="Get your first job with no experience. Free resume templates, interview tips, and entry-level roles paying $14-24/hr. Start your career today."
         canonical={`${baseUrl}/career-hub/for-freshers`}
-        type="website"
-        tags={["first job", "no experience jobs", "fresher resume", "entry level jobs", "how to get first job"]}
+        type="article"
+        tags={["first job", "no experience jobs", "fresher resume", "entry level jobs", "how to get first job 2026"]}
       />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-accent/20 via-background to-primary/10 py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-accent/10 via-background to-primary/10 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-accent/20 text-accent-foreground border-accent/30">
               <Rocket className="w-4 h-4 mr-2" />
               First Job? Start Here
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Land Your <span className="text-primary">First Job</span> With Zero Experience
             </h1>
+            
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Everyone starts somewhere. Get the resume templates, guides, and entry-level opportunities you need to launch your career.
+              Everyone starts somewhere. Get resume templates, proven strategies, and entry-level roles paying $14-24/hr.
             </p>
+            
+            {/* Quick Stats */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <DollarSign className="w-4 h-4 mr-1" />
+                $14-24/hr entry roles
+              </Badge>
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <Clock className="w-4 h-4 mr-1" />
+                2-3 months to advance
+              </Badge>
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <Star className="w-4 h-4 mr-1" />
+                No experience required
+              </Badge>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg">
                 <Link to="/career-hub/guides/fresher-resume-guide">
@@ -148,179 +198,58 @@ const ForFreshersPage = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Indeed Flex is Perfect for First-Timers</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {fresherBenefits.map((benefit) => (
-              <Card key={benefit.title} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Why Section - Horizontal strip */}
+      <WhyFlexSection 
+        personaName="First-Timers" 
+        benefits={fresherBenefits}
+        headline="Why First-Timers Choose Flex"
+      />
 
-      {/* Entry-Level Roles Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Entry-Level Roles (No Experience Needed)</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            These roles hire workers with zero experience. Your attitude and reliability matter more than your resume.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {entryLevelRoles.map((role) => (
-              <Card key={role.slug} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg">{role.title}</CardTitle>
-                    <Badge variant="secondary">{role.pay}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm mb-4">{role.description}</p>
-                  <div className="flex gap-2">
-                    <Link 
-                      to={`/career-hub/roles/${role.slug}`}
-                      className="text-primary hover:underline text-sm font-medium"
-                    >
-                      Role Details
-                    </Link>
-                    <span className="text-muted-foreground">•</span>
-                    <Link 
-                      to={`/career-hub/resume-examples/${role.slug}`}
-                      className="text-primary hover:underline text-sm font-medium"
-                    >
-                      Resume Example
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Market Stats - Visual data cards */}
+      <FresherMarketStats className="bg-muted/20" />
 
-      {/* Dynamic Resume Formats Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Award className="w-6 h-6 text-primary" />
-              <h2 className="text-3xl font-bold">Recommended Resume Formats</h2>
-            </div>
-            <p className="text-center text-muted-foreground mb-8">
-              Based on your situation, these resume templates are ideal for first-time job seekers.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {dynamicResumeFormats.map((format, index) => (
-                <Card key={format.format} className={`hover:shadow-lg transition-shadow ${index === 0 ? 'ring-2 ring-primary' : ''}`}>
-                  <CardContent className="pt-6">
-                    {index === 0 && (
-                      <Badge className="mb-3 bg-primary text-primary-foreground">
-                        <Sparkles className="w-3 h-3 mr-1" />
-                        Top Pick
-                      </Badge>
-                    )}
-                    <div className="text-2xl mb-2">{format.icon}</div>
-                    <h3 className="font-semibold text-lg mb-2">{format.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{format.description}</p>
-                    <Link 
-                      to={`/career-hub/templates/${format.format}`}
-                      className="text-primary hover:underline text-sm font-medium inline-flex items-center"
-                    >
-                      Use Template
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            
-            {/* Cover Letters for Freshers */}
-            {recommendedCoverLetters.length > 0 && (
-              <div className="mt-10">
-                <h3 className="text-xl font-semibold text-center mb-6">Cover Letter Templates</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {recommendedCoverLetters.map((template) => (
-                    <Card key={template.slug} className="hover:shadow-md transition-shadow">
-                      <CardContent className="p-4">
-                        <div className="flex items-start gap-3">
-                          <span className="text-2xl">{template.icon}</span>
-                          <div>
-                            <h4 className="font-semibold">{template.name}</h4>
-                            <p className="text-muted-foreground text-sm line-clamp-2">{template.description}</p>
-                            <Link 
-                              to={`/career-hub/cover-letters/${template.slug}`}
-                              className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-2"
-                            >
-                              View Template
-                              <ArrowRight className="ml-1 h-4 w-4" />
-                            </Link>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      {/* Popular Roles Section */}
+      <PopularRolesGrid 
+        roles={entryLevelRoles}
+        title="Entry-Level Roles (No Experience Needed)"
+        subtitle="Your attitude and reliability matter more than your resume"
+      />
 
-      {/* Guides Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Essential Guides for First-Time Job Seekers</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Step-by-step advice to get hired, write your resume, and succeed in your first job.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {fresherGuides.map((guide) => (
-              <Card key={guide.slug} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <Link to={`/career-hub/guides/${guide.slug}`} className="block">
-                    <h3 className="font-semibold text-lg text-foreground hover:text-primary transition-colors mb-2">
-                      {guide.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">{guide.description}</p>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button asChild variant="outline">
-              <Link to="/career-hub/job-application-toolkit">
-                View Full Job Application Toolkit
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Success Tips */}
+      <FresherSuccessTips className="bg-muted/30" />
+
+      {/* Related Articles */}
+      <RelatedArticlesGrid 
+        items={relatedArticles}
+        title="Explore More Resources"
+        subtitle="Everything you need to launch your career"
+      />
+
+      {/* Job Application Navigation */}
+      <JobApplicationNav 
+        personaSlug="fresher" 
+        personaName="First-Time Workers"
+      />
 
       {/* FAQ Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Common Questions About First Jobs</h2>
-          <div className="space-y-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-3">Common Questions About First Jobs</h2>
+            <p className="text-muted-foreground">
+              Everything first-time workers need to know
+            </p>
+          </div>
+          
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index}>
+              <Card key={index} className="hover:shadow-sm transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg mb-2 flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <h3 className="font-semibold text-lg mb-3 flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground ml-7">{faq.answer}</p>
+                  <p className="text-muted-foreground ml-8">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}
@@ -331,6 +260,7 @@ const ForFreshersPage = () => {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
+          <Rocket className="w-12 h-12 mx-auto mb-4 opacity-80" />
           <h2 className="text-3xl font-bold mb-4">Your First Job Is Waiting</h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
             165,000+ Flexers started exactly where you are now. Take the first step today.
