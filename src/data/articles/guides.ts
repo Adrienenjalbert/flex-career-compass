@@ -1,10 +1,15 @@
 import { BookOpen, TrendingUp, Users, Award, Star, Calendar, FileCheck, FileText, LucideIcon } from "lucide-react";
 import { jobApplicationArticles } from "./job-application-articles";
+import { GUIDE_TAXONOMY, JOB_APPLICATION_TAXONOMY, getGuideTaxonomy, type ArticleTaxonomyData } from "./article-taxonomy";
+import type { Industry, ExperienceLevel, UserSituation, ContentIntent, Language } from "@/data/taxonomy";
 
 export interface ArticleSection {
   heading: string;
   content: string;
 }
+
+// Re-export taxonomy types for convenience
+export type { ArticleTaxonomyData };
 
 export interface Article {
   slug: string;
@@ -17,6 +22,24 @@ export interface Article {
   sections: ArticleSection[];
   faqs: { question: string; answer: string }[];
   relatedArticles: string[];
+}
+
+// Enhanced article with taxonomy (computed at runtime)
+export interface EnrichedArticle extends Article {
+  taxonomy: ArticleTaxonomyData;
+}
+
+/**
+ * Get an article with its taxonomy metadata
+ */
+export function getEnrichedArticle(slug: string): EnrichedArticle | undefined {
+  const article = guideArticles[slug];
+  if (!article) return undefined;
+  
+  const taxonomy = getGuideTaxonomy(slug);
+  if (!taxonomy) return undefined;
+  
+  return { ...article, taxonomy };
 }
 
 export interface GuideCategory {
@@ -2263,3 +2286,14 @@ export const guideArticles: Record<string, Article> = {
   // Merge in the new job application articles
   ...jobApplicationArticles
 };
+
+// Re-export taxonomy utilities for use across the app
+export { 
+  GUIDE_TAXONOMY, 
+  JOB_APPLICATION_TAXONOMY, 
+  getGuideTaxonomy,
+  getArticlesForSituation,
+  getArticlesForIndustry,
+  getRelatedArticlesBySituation,
+  getArticlesByIntent
+} from "./article-taxonomy";
