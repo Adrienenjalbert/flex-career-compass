@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/career-hub/Layout";
 import SEOHead from "@/components/career-hub/SEOHead";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { 
@@ -11,39 +11,115 @@ import {
   Calendar, 
   BookOpen, 
   Calculator,
-  FileText,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  TrendingUp,
+  Shield
 } from "lucide-react";
-import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
-import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
 import { getPersonaGuides } from "@/data/persona-guides";
-import { PersonaResearchSection } from "@/components/career-hub/persona";
+import { usePersonaResearchData } from "@/hooks/usePersonaResearch";
+import { 
+  WhyFlexSection,
+  PopularRolesGrid,
+  GuidesToolsSection,
+  JobApplicationNav,
+  DeepResearchSection
+} from "@/components/career-hub/persona";
 
 const ForStudentsPage = () => {
-  const recommendedResumeTemplates = getRecommendedTemplatesForSituation('student', 3);
-  const recommendedCoverLetters = getRecommendedCoverLettersForSituation('student', 2);
   const studentGuides = getPersonaGuides('student');
+  const { data: researchData, isLoading, hasResearch } = usePersonaResearchData('student');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
+  // Benefits data with stats from research
   const studentBenefits = [
-    { icon: Clock, title: "Flexible Hours", description: "Work around your class schedule, not the other way around" },
-    { icon: DollarSign, title: "Same Day Pay", description: "Access up to 50% of earnings within 1 hour of shift completion" },
-    { icon: Calendar, title: "No Minimum Hours", description: "Work as much or as little as you need each week" },
-    { icon: BookOpen, title: "Skill Building", description: "Gain real-world experience for your resume" },
+    { 
+      icon: Clock, 
+      title: "Flexible Hours", 
+      stat: "100%",
+      description: "Full control over your work schedule" 
+    },
+    { 
+      icon: DollarSign, 
+      title: "Same Day Pay", 
+      stat: "50%",
+      description: "Access earnings within 1 hour" 
+    },
+    { 
+      icon: Calendar, 
+      title: "No Minimums", 
+      stat: "0",
+      description: "No weekly hour requirements" 
+    },
+    { 
+      icon: TrendingUp, 
+      title: "Career Skills", 
+      stat: "20+",
+      description: "Role types to build experience" 
+    },
   ];
 
+  // Popular roles for students with pay data
   const popularRoles = [
-    { slug: "event-staff", title: "Event Staff", pay: "$15-22/hr", description: "Perfect for weekend availability" },
-    { slug: "warehouse-operative", title: "Warehouse Operative", pay: "$16-24/hr", description: "Evening & night shifts available" },
-    { slug: "banquet-server", title: "Banquet Server", pay: "$15-25/hr", description: "Tips + flexible scheduling" },
-    { slug: "retail-assistant", title: "Retail Assistant", pay: "$14-18/hr", description: "Part-time hours, holiday rush" },
+    { 
+      slug: "event-staff", 
+      title: "Event Staff", 
+      pay: "$15-22/hr", 
+      description: "Concerts, festivals, and sports venues",
+      tags: ["Weekends", "No Experience"],
+      highlight: true
+    },
+    { 
+      slug: "warehouse-operative", 
+      title: "Warehouse Operative", 
+      pay: "$16-24/hr", 
+      description: "Picking, packing, and logistics",
+      tags: ["Night Shifts", "Physical"]
+    },
+    { 
+      slug: "banquet-server", 
+      title: "Banquet Server", 
+      pay: "$15-25/hr", 
+      description: "Hotels and event venues with tips",
+      tags: ["Tips", "Hospitality"]
+    },
+    { 
+      slug: "retail-assistant", 
+      title: "Retail Assistant", 
+      pay: "$14-18/hr", 
+      description: "Seasonal retail and customer service",
+      tags: ["Part-Time", "Customer Service"]
+    },
   ];
 
+  // Tools relevant for students
   const studentTools = [
-    { path: "/career-hub/tools/shift-planner", title: "Shift Planner", description: "Plan work around classes", icon: Calendar },
-    { path: "/career-hub/tools/pay-calculator", title: "Pay Calculator", description: "Estimate weekly earnings", icon: Calculator },
-    { path: "/career-hub/tools/tax-calculator", title: "Tax Calculator", description: "Understand student tax situations", icon: DollarSign },
+    { 
+      path: "/career-hub/tools/shift-planner", 
+      title: "Shift Planner", 
+      description: "Plan work around your class schedule", 
+      icon: Calendar 
+    },
+    { 
+      path: "/career-hub/tools/pay-calculator", 
+      title: "Pay Calculator", 
+      description: "Estimate your weekly take-home pay", 
+      icon: Calculator 
+    },
+    { 
+      path: "/career-hub/tools/tax-calculator", 
+      title: "Tax Calculator", 
+      description: "Understand taxes for part-time income", 
+      icon: DollarSign 
+    },
+  ];
+
+  // Enhanced guides with read times
+  const enhancedGuides = [
+    { slug: 'zero-experience-jobs', title: 'Jobs With No Experience Required', description: 'Start earning with no prior work history', readTime: '5 min' },
+    { slug: 'first-flex-job', title: 'Your First Flexible Job Guide', description: 'Step-by-step getting started', readTime: '8 min' },
+    { slug: 'student-resume-template', title: 'Student Resume Template 2026', description: 'Balance academics and work experience', readTime: '6 min' },
+    { slug: 'skill-boost', title: 'Skills That Boost Your Pay', description: 'High-demand skills employers look for', readTime: '4 min' },
   ];
 
   const faqs = [
@@ -62,6 +138,10 @@ const ForStudentsPage = () => {
     {
       question: "How quickly can I get paid?",
       answer: "With Same Day Pay, you can access up to 50% of your earnings within 1 hour after completing a shift. The remainder is deposited on Friday."
+    },
+    {
+      question: "How much can college students earn per hour?",
+      answer: "Pay varies by role: tutoring pays $17-25/hr, food delivery averages $17.64/hr, fitness instruction $24-32/hr, and campus jobs $12-25/hr. Many students earn $400-800+ per week working part-time."
     },
   ];
 
@@ -87,33 +167,74 @@ const ForStudentsPage = () => {
     ]
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Student Jobs & Flexible Work Guide 2026",
+    "description": "Complete guide to finding flexible part-time jobs that work around your class schedule. Includes 2026 wage data, job market statistics, and career resources.",
+    "author": {
+      "@type": "Organization",
+      "name": "Indeed Flex Career Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Indeed Flex Career Hub"
+    },
+    "datePublished": "2026-01-01",
+    "dateModified": researchData?.researched_at || "2026-01-21"
+  };
+
   return (
     <Layout>
       <SEOHead
-        title="Student Jobs & Flexible Work | Part-Time Jobs for College Students"
-        description="Find flexible part-time jobs that work around your class schedule. Same day pay, no minimum hours, and no experience required. Perfect for college students."
+        title="Student Jobs & Flexible Work 2026 | Part-Time Jobs for College Students"
+        description="Find flexible part-time jobs that work around your class schedule. 2026 wage data: tutoring $17-25/hr, delivery $17.64/hr, campus jobs $12-25/hr. Same day pay, no minimums."
         canonical={`${baseUrl}/career-hub/for-students`}
-        type="website"
-        tags={["student jobs", "part-time jobs", "college jobs", "flexible work", "same day pay"]}
+        type="article"
+        tags={["student jobs", "part-time jobs", "college jobs", "flexible work", "same day pay", "jobs for college students 2026"]}
       />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">
               <GraduationCap className="w-4 h-4 mr-2" />
-              For Students
+              For College Students
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Flexible Jobs That Fit Your <span className="text-primary">Class Schedule</span>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              Jobs That Fit Your <span className="text-primary">Class Schedule</span>
             </h1>
+            
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Work when you want, get paid fast, and build real-world experience—all while staying focused on your studies.
+              Earn $15-25/hour with flexible shifts, same-day pay, and no minimum hours. 
+              Join 165,000+ students balancing work and education.
             </p>
+            
+            {/* Quick Stats */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <DollarSign className="w-4 h-4 mr-1" />
+                Avg. $17.64/hr delivery
+              </Badge>
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <Clock className="w-4 h-4 mr-1" />
+                Flexible scheduling
+              </Badge>
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <Shield className="w-4 h-4 mr-1" />
+                No experience needed
+              </Badge>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg">
                 <a href="https://indeedflex.com/download-app/" target="_blank" rel="noopener noreferrer">
@@ -122,8 +243,8 @@ const ForStudentsPage = () => {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/career-hub/resume-examples?situation=student">
-                  View Student Resumes
+                <Link to="#research">
+                  View 2026 Market Data
                 </Link>
               </Button>
             </div>
@@ -131,224 +252,75 @@ const ForStudentsPage = () => {
         </div>
       </section>
 
-      {/* Research Insights Section */}
-      <PersonaResearchSection personaSlug="student" personaName="Student" />
-
-      {/* Benefits Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Students Choose Indeed Flex</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {studentBenefits.map((benefit) => (
-              <Card key={benefit.title} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Why Section */}
+      <WhyFlexSection 
+        personaName="Students" 
+        benefits={studentBenefits}
+        headline="Why Students Choose Flexible Work"
+      />
 
       {/* Popular Roles Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Popular Roles for Students</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            These roles offer flexible scheduling, no experience requirements, and competitive pay.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {popularRoles.map((role) => (
-              <Card key={role.slug} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg">{role.title}</CardTitle>
-                    <Badge variant="secondary">{role.pay}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm mb-4">{role.description}</p>
-                  <Link 
-                    to={`/career-hub/roles/${role.slug}`}
-                    className="text-primary hover:underline text-sm font-medium inline-flex items-center"
-                  >
-                    View Role Details
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <PopularRolesGrid 
+        roles={popularRoles}
+        title="Popular Roles for Students"
+        subtitle="No experience required • Flexible schedules • Competitive pay"
+      />
+
+      {/* Guides & Tools Section */}
+      <GuidesToolsSection 
+        guides={enhancedGuides}
+        tools={studentTools}
+        guidesTitle="Student Career Guides"
+        toolsTitle="Planning Tools"
+      />
+
+      {/* Job Application Navigation */}
+      <JobApplicationNav 
+        personaSlug="student" 
+        personaName="Students"
+      />
+
+      {/* Deep Research Section with Tabs */}
+      {hasResearch && researchData && (
+        <div id="research">
+          <DeepResearchSection 
+            data={researchData}
+            personaName="Student"
+          />
         </div>
-      </section>
+      )}
 
-      {/* Guides & Resources Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Guides */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <BookOpen className="w-6 h-6 text-primary" />
-                <h2 className="text-2xl font-bold">Student Career Guides</h2>
-              </div>
-              <div className="space-y-4">
-                {studentGuides.map((guide) => (
-                  <Card key={guide.slug} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <Link to={`/career-hub/guides/${guide.slug}`} className="block">
-                        <h3 className="font-semibold text-foreground hover:text-primary transition-colors">
-                          {guide.title}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mt-1">{guide.description}</p>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-                <Link 
-                  to="/career-hub/guides?situation=student" 
-                  className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-4"
-                >
-                  View All Student Guides
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Tools */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <Calculator className="w-6 h-6 text-primary" />
-                <h2 className="text-2xl font-bold">Helpful Tools</h2>
-              </div>
-              <div className="space-y-4">
-                {studentTools.map((tool) => (
-                  <Card key={tool.path} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <Link to={tool.path} className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <tool.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground hover:text-primary transition-colors">
-                            {tool.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm">{tool.description}</p>
-                        </div>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-                <Link 
-                  to="/career-hub/tools" 
-                  className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-4"
-                >
-                  View All Tools
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
+      {/* Loading state for research */}
+      {isLoading && (
+        <section className="py-16 bg-muted/20">
+          <div className="container mx-auto px-4 text-center">
+            <div className="animate-pulse flex flex-col items-center gap-2">
+              <div className="h-8 w-64 bg-muted rounded"></div>
+              <div className="h-4 w-48 bg-muted rounded"></div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Dynamic Resume Templates Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <FileText className="w-6 h-6 text-primary" />
-            <h2 className="text-3xl font-bold">Recommended Templates for Students</h2>
-          </div>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-            These templates are specifically recommended for students based on our taxonomy system.
-          </p>
-          
-          {/* Resume Templates */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {recommendedResumeTemplates.map((template) => (
-              <Card key={template.slug} className="hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="text-3xl mb-3">{template.icon}</div>
-                  <h3 className="font-semibold text-lg mb-2">{template.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{template.description}</p>
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {template.bestFor.slice(0, 2).map((item, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">{item}</Badge>
-                    ))}
-                  </div>
-                  <Link 
-                    to={`/career-hub/templates/${template.slug}`}
-                    className="text-primary hover:underline text-sm font-medium inline-flex items-center"
-                  >
-                    Use Template
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Cover Letters */}
-          {recommendedCoverLetters.length > 0 && (
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-center mb-6">Cover Letter Templates</h3>
-              <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                {recommendedCoverLetters.map((template) => (
-                  <Card key={template.slug} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="text-2xl">{template.icon}</span>
-                        <div>
-                          <h4 className="font-semibold">{template.name}</h4>
-                          <p className="text-muted-foreground text-sm line-clamp-2">{template.description}</p>
-                          <Link 
-                            to={`/career-hub/cover-letters/${template.slug}`}
-                            className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-2"
-                          >
-                            View Template
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </Link>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Button asChild variant="outline">
-              <Link to="/career-hub/resume-examples?situation=student">
-                Browse All Student Examples
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/career-hub/templates?situation=student">
-                All Student Templates
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-3">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground">
+              Everything students need to know about flexible work
+            </p>
+          </div>
+          
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index}>
+              <Card key={index} className="hover:shadow-sm transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg mb-2 flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <h3 className="font-semibold text-lg mb-3 flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground ml-7">{faq.answer}</p>
+                  <p className="text-muted-foreground ml-8">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}
@@ -359,9 +331,11 @@ const ForStudentsPage = () => {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
+          <GraduationCap className="w-12 h-12 mx-auto mb-4 opacity-80" />
           <h2 className="text-3xl font-bold mb-4">Ready to Start Earning?</h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Join 165,000+ Flexers who balance work and life on their own terms.
+            Join 165,000+ Flexers who balance work and life on their own terms. 
+            No experience required, no minimum hours.
           </p>
           <Button asChild size="lg" variant="secondary" className="text-lg">
             <a href="https://indeedflex.com/download-app/" target="_blank" rel="noopener noreferrer">
