@@ -262,6 +262,20 @@ export const GUIDE_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedTemplates: []
   },
 
+  // Working Parents
+  "working-parent-guide": {
+    userSituations: ['parent', 'career-returner', 'side-gig'],
+    industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+    experienceLevels: ['no-experience', 'entry-level', 'some-experience', 'experienced'],
+    contentIntent: 'learn',
+    language: 'english',
+    primaryKeyword: 'working parent flexible jobs',
+    searchVolume: 4800,
+    relatedRoles: ['picker-packer', 'cleaner', 'warehouse-clerk', 'retail-assistant'],
+    relatedTools: ['childcare-calculator', 'shift-planner', 'pay-calculator', 'tax-calculator'],
+    relatedTemplates: ['career-break', 'parent-resume']
+  },
+
   // Workplace Success
   "workplace-success": {
     userSituations: ['fresher', 'career-changer', 'career-returner'],

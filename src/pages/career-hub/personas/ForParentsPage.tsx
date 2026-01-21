@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/career-hub/Layout";
 import SEOHead from "@/components/career-hub/SEOHead";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { 
@@ -9,60 +9,181 @@ import {
   Clock, 
   DollarSign, 
   Calendar, 
-  BookOpen, 
   Calculator,
-  FileText,
   ArrowRight,
   CheckCircle2,
-  Heart
+  Heart,
+  Shield
 } from "lucide-react";
-import { getRecommendedTemplatesForSituation } from "@/data/resume-templates";
-import { getRecommendedCoverLettersForSituation } from "@/data/cover-letter-templates";
 import { getPersonaGuides } from "@/data/persona-guides";
-import { PersonaResearchSection } from "@/components/career-hub/persona";
+import { 
+  WhyFlexSection,
+  PopularRolesGrid,
+  GuidesToolsSection,
+  JobApplicationNav,
+  ParentMarketStats,
+  ParentSuccessTips,
+  RelatedArticlesGrid
+} from "@/components/career-hub/persona";
 
 const ForParentsPage = () => {
-  const recommendedResumeTemplates = getRecommendedTemplatesForSituation('parent', 3);
-  const recommendedCoverLetters = getRecommendedCoverLettersForSituation('parent', 2);
-  const guides = getPersonaGuides('parent');
+  const parentGuides = getPersonaGuides('parent');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
-  const benefits = [
-    { icon: Clock, title: "School-Hour Shifts", description: "Work while kids are in school, be home when they're home" },
-    { icon: DollarSign, title: "Same Day Pay", description: "Access earnings fast for unexpected expenses" },
-    { icon: Calendar, title: "Week-by-Week Flexibility", description: "Adjust hours around school breaks and activities" },
-    { icon: Heart, title: "Medical Benefits", description: "Access to medical, dental, and vision insurance" },
+  // Benefits data for horizontal strip
+  const parentBenefits = [
+    { 
+      icon: Clock, 
+      title: "School-Hour Shifts", 
+      description: "Work 8am-3pm, home for pickup" 
+    },
+    { 
+      icon: DollarSign, 
+      title: "Same Day Pay", 
+      description: "Access earnings in 1 hour" 
+    },
+    { 
+      icon: Calendar, 
+      title: "No Minimums", 
+      description: "Take off during school breaks" 
+    },
+    { 
+      icon: Heart, 
+      title: "Medical Benefits", 
+      description: "Health, dental & vision" 
+    },
   ];
 
+  // Popular roles for parents with pay data
   const popularRoles = [
-    { slug: "picker-packer", title: "Picker Packer", pay: "$15-20/hr", description: "Morning shifts end before pickup" },
-    { slug: "cleaner", title: "Cleaner", pay: "$14-20/hr", description: "Flexible daytime hours" },
-    { slug: "warehouse-clerk", title: "Warehouse Clerk", pay: "$17-24/hr", description: "Set schedules available" },
-    { slug: "retail-assistant", title: "Retail Assistant", pay: "$14-18/hr", description: "Part-time options" },
+    { 
+      slug: "picker-packer", 
+      title: "Picker Packer", 
+      pay: "$15-20/hr", 
+      description: "Morning shifts end before pickup",
+      tags: ["School Hours", "No Experience"],
+      highlight: true
+    },
+    { 
+      slug: "cleaner", 
+      title: "Cleaner", 
+      pay: "$14-20/hr", 
+      description: "Flexible daytime commercial cleaning",
+      tags: ["Daytime", "Consistent"]
+    },
+    { 
+      slug: "warehouse-clerk", 
+      title: "Warehouse Clerk", 
+      pay: "$17-24/hr", 
+      description: "Set schedules, predictable hours",
+      tags: ["Set Schedule", "Indoor"]
+    },
+    { 
+      slug: "retail-assistant", 
+      title: "Retail Assistant", 
+      pay: "$14-18/hr", 
+      description: "Part-time midday availability",
+      tags: ["Part-Time", "Customer Service"]
+    },
   ];
 
-  const tools = [
-    { path: "/career-hub/tools/childcare-calculator", title: "Childcare Calculator", description: "Is work worth the childcare cost?", icon: Baby },
-    { path: "/career-hub/tools/shift-planner", title: "Shift Planner", description: "Plan around school schedules", icon: Calendar },
-    { path: "/career-hub/tools/pay-calculator", title: "Pay Calculator", description: "Estimate weekly take-home", icon: Calculator },
+  // Tools relevant for parents
+  const parentTools = [
+    { 
+      path: "/career-hub/tools/childcare-calculator", 
+      title: "Childcare Calculator", 
+      description: "Is work worth the childcare cost?", 
+      icon: Baby 
+    },
+    { 
+      path: "/career-hub/tools/shift-planner", 
+      title: "Shift Planner", 
+      description: "Plan work around school schedule", 
+      icon: Calendar 
+    },
+    { 
+      path: "/career-hub/tools/pay-calculator", 
+      title: "Pay Calculator", 
+      description: "Estimate your weekly take-home", 
+      icon: Calculator 
+    },
+  ];
+
+  // Enhanced guides with read times
+  const enhancedGuides = [
+    { slug: 'working-parent-guide', title: 'Complete Working Parent Guide', description: 'Balance family and flexible work', readTime: '18 min' },
+    { slug: 'same-day-pay-explained', title: 'Same Day Pay Explained', description: 'Access earnings when you need them', readTime: '7 min' },
+    { slug: 'complete-guide', title: 'Complete Indeed Flex Guide', description: 'Benefits, pay, and scheduling', readTime: '8 min' },
+    { slug: 'multiple-gigs', title: 'Balancing Multiple Gigs', description: 'Manage work and family time', readTime: '8 min' },
+  ];
+
+  // Related articles for parents
+  const relatedArticles = [
+    { 
+      type: 'guide' as const, 
+      slug: 'working-parent-guide', 
+      title: 'Complete Working Parent Guide 2026', 
+      description: 'Everything you need to know about balancing flexible work and family.',
+      readTime: '18 min',
+      highlight: true
+    },
+    { 
+      type: 'tool' as const, 
+      slug: 'childcare-calculator', 
+      title: 'Childcare Cost Calculator', 
+      description: 'Find out if working is financially worth it after childcare costs.',
+      readTime: '2 min'
+    },
+    { 
+      type: 'guide' as const, 
+      slug: 'same-day-pay-explained', 
+      title: 'Same Day Pay Explained', 
+      description: 'Access up to 50% of your earnings within 1 hour.',
+      readTime: '7 min'
+    },
+    { 
+      type: 'guide' as const, 
+      slug: 'tax-guide-gig-workers', 
+      title: 'Gig Worker Tax Guide 2026', 
+      description: 'Understand taxes, credits, and deductions for flexible workers.',
+      readTime: '15 min'
+    },
+    { 
+      type: 'guide' as const, 
+      slug: 'multiple-gigs', 
+      title: 'Balancing Multiple Gigs', 
+      description: 'Manage multiple jobs without burning out.',
+      readTime: '8 min'
+    },
+    { 
+      type: 'tool' as const, 
+      slug: 'shift-planner', 
+      title: 'Shift Planner', 
+      description: 'Map your work schedule around school hours.',
+      readTime: '2 min'
+    },
   ];
 
   const faqs = [
     {
       question: "Can I work only during school hours?",
-      answer: "Yes! Many Indeed Flex shifts run from 8am-2pm or 9am-3pm, perfect for parents. You can filter available shifts by time to find ones that work with your schedule."
+      answer: "Yes! Many Indeed Flex shifts run from 8am-2pm or 9am-3pm, perfect for parents. You can filter available shifts by time to find ones that work with your school pickup schedule."
     },
     {
       question: "What happens if my child is sick?",
       answer: "With Indeed Flex, there's no penalty for not booking shifts. If you need to stay home, simply don't book work that day. There are no minimum hour requirements."
     },
     {
+      question: "Is the childcare cost worth it?",
+      answer: "Use our Childcare Calculator to find out! It compares your potential earnings against local childcare costs, including tax credits like the CDCTC (up to $1,050/child) and Dependent Care FSA savings."
+    },
+    {
       question: "Can I take time off for school breaks?",
       answer: "Absolutely. You control your schedule week by week. Many parents work more during school weeks and take off during holidays and summer when kids are home."
     },
     {
-      question: "Is the childcare cost worth it?",
-      answer: "Use our Childcare Calculator to find out! It compares your potential earnings against local childcare costs to help you make an informed decision."
+      question: "What about medical benefits?",
+      answer: "Indeed Flex offers medical, dental, and vision insurance through Essential StaffCARE to qualifying workers. This can save families thousands compared to marketplace plans."
     },
   ];
 
@@ -88,33 +209,72 @@ const ForParentsPage = () => {
     ]
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jobs for Parents: Flexible Work Around Your Family",
+    "description": "Complete guide to finding flexible jobs that work around school hours, kids' activities, and family needs. 2026 childcare cost data, tax benefits, and scheduling strategies.",
+    "author": {
+      "@type": "Organization",
+      "name": "Indeed Flex Career Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Indeed Flex Career Hub"
+    },
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-01-21"
+  };
+
   return (
     <Layout>
       <SEOHead
-        title="Jobs for Parents | Flexible Work Around Your Kids' Schedule"
-        description="Find flexible jobs that work around school hours, kids' activities, and family needs. Same day pay, no minimum hours, and medical benefits available."
+        title="Jobs for Parents 2026 | Flexible Work Around Your Kids' Schedule"
+        description="Find flexible jobs that work around school hours, kids' activities, and family needs. 2026 childcare cost data shows avg. $11,582/year. Same day pay, no minimum hours, medical benefits."
         canonical={`${baseUrl}/career-hub/for-parents`}
-        type="website"
-        tags={["jobs for parents", "flexible jobs for moms", "work from home", "school hours jobs", "part-time jobs for parents"]}
+        type="article"
+        tags={["jobs for parents", "flexible jobs for moms", "school hours jobs", "part-time jobs for parents", "working parent guide 2026"]}
       />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">
               <Baby className="w-4 h-4 mr-2" />
-              For Parents
+              For Working Parents
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Work That Works <span className="text-primary">Around Your Family</span>
             </h1>
+            
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Be there for school drop-off, pickup, and everything in between. Find flexible shifts that fit your family's schedule.
             </p>
+            
+            {/* Quick Stats */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <Clock className="w-4 h-4 mr-1" />
+                8am-3pm shifts available
+              </Badge>
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <DollarSign className="w-4 h-4 mr-1" />
+                Avg. childcare: $11,582/yr
+              </Badge>
+              <Badge variant="secondary" className="text-sm py-1.5 px-3">
+                <Shield className="w-4 h-4 mr-1" />
+                Medical benefits included
+              </Badge>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg">
                 <a href="https://indeedflex.com/download-app/" target="_blank" rel="noopener noreferrer">
@@ -132,200 +292,67 @@ const ForParentsPage = () => {
         </div>
       </section>
 
-      {/* Research Insights Section */}
-      <PersonaResearchSection personaSlug="parent" personaName="Working Parent" />
+      {/* Why Section - Horizontal strip */}
+      <WhyFlexSection 
+        personaName="Parents" 
+        benefits={parentBenefits}
+        headline="Why Parents Love Indeed Flex"
+      />
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Parents Love Indeed Flex</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit) => (
-              <Card key={benefit.title} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 2026 Market Stats Section - Visual data cards */}
+      <ParentMarketStats className="bg-muted/20" />
 
       {/* Popular Roles Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Parent-Friendly Roles</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            These roles offer daytime shifts, predictable hours, and flexibility for family needs.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {popularRoles.map((role) => (
-              <Card key={role.slug} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg">{role.title}</CardTitle>
-                    <Badge variant="secondary">{role.pay}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm mb-4">{role.description}</p>
-                  <Link 
-                    to={`/career-hub/roles/${role.slug}`}
-                    className="text-primary hover:underline text-sm font-medium inline-flex items-center"
-                  >
-                    View Role Details
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PopularRolesGrid 
+        roles={popularRoles}
+        title="Parent-Friendly Roles"
+        subtitle="Daytime shifts • Predictable hours • Work around school"
+      />
+
+      {/* Research-Backed Success Tips */}
+      <ParentSuccessTips />
 
       {/* Guides & Tools Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <BookOpen className="w-6 h-6 text-primary" />
-                <h2 className="text-2xl font-bold">Guides for Working Parents</h2>
-              </div>
-              <div className="space-y-4">
-                {guides.map((guide) => (
-                  <Card key={guide.slug} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <Link to={`/career-hub/guides/${guide.slug}`} className="block">
-                        <h3 className="font-semibold text-foreground hover:text-primary transition-colors">
-                          {guide.title}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mt-1">{guide.description}</p>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-                <Link 
-                  to="/career-hub/guides?situation=parent" 
-                  className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-4"
-                >
-                  View All Parent Guides
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
+      <GuidesToolsSection 
+        guides={enhancedGuides}
+        tools={parentTools}
+        guidesTitle="Working Parent Guides"
+        toolsTitle="Family Planning Tools"
+      />
 
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <Calculator className="w-6 h-6 text-primary" />
-                <h2 className="text-2xl font-bold">Family Planning Tools</h2>
-              </div>
-              <div className="space-y-4">
-                {tools.map((tool) => (
-                  <Card key={tool.path} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <Link to={tool.path} className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <tool.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground hover:text-primary transition-colors">
-                            {tool.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm">{tool.description}</p>
-                        </div>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Related Articles Grid */}
+      <RelatedArticlesGrid 
+        items={relatedArticles}
+        title="Explore Parent Resources"
+        subtitle="Guides and tools designed for working parents"
+        className="bg-muted/20"
+      />
 
-      {/* Templates Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <FileText className="w-6 h-6 text-primary" />
-            <h2 className="text-3xl font-bold">Recommended Templates for Parents</h2>
-          </div>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Templates that address employment gaps and highlight your organizational and multitasking skills.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {recommendedResumeTemplates.map((template) => (
-              <Card key={template.slug} className="hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="text-3xl mb-3">{template.icon}</div>
-                  <h3 className="font-semibold text-lg mb-2">{template.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{template.description}</p>
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {template.bestFor.slice(0, 2).map((item, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">{item}</Badge>
-                    ))}
-                  </div>
-                  <Link 
-                    to={`/career-hub/templates/${template.slug}`}
-                    className="text-primary hover:underline text-sm font-medium inline-flex items-center"
-                  >
-                    Use Template
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {recommendedCoverLetters.length > 0 && (
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-center mb-6">Cover Letter Templates</h3>
-              <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                {recommendedCoverLetters.map((template) => (
-                  <Card key={template.slug} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="text-2xl">{template.icon}</span>
-                        <div>
-                          <h4 className="font-semibold">{template.name}</h4>
-                          <p className="text-muted-foreground text-sm line-clamp-2">{template.description}</p>
-                          <Link 
-                            to={`/career-hub/cover-letters/${template.slug}`}
-                            className="text-primary hover:underline text-sm font-medium inline-flex items-center mt-2"
-                          >
-                            View Template
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </Link>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
+      {/* Job Application Navigation */}
+      <JobApplicationNav 
+        personaSlug="parent" 
+        personaName="Parents"
+      />
 
       {/* FAQ Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-3">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground">
+              Everything parents need to know about flexible work
+            </p>
+          </div>
+          
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index}>
+              <Card key={index} className="hover:shadow-sm transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg mb-2 flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <h3 className="font-semibold text-lg mb-3 flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground ml-7">{faq.answer}</p>
+                  <p className="text-muted-foreground ml-8">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}
@@ -336,9 +363,11 @@ const ForParentsPage = () => {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
+          <Baby className="w-12 h-12 mx-auto mb-4 opacity-80" />
           <h2 className="text-3xl font-bold mb-4">Ready to Find Family-Friendly Work?</h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Join thousands of parents who balance work and family with Indeed Flex.
+            Join thousands of parents who balance work and family with Indeed Flex. 
+            No minimum hours, same day pay, medical benefits available.
           </p>
           <Button asChild size="lg" variant="secondary" className="text-lg">
             <a href="https://indeedflex.com/download-app/" target="_blank" rel="noopener noreferrer">
