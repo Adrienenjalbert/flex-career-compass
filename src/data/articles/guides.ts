@@ -57,6 +57,7 @@ export const guideCategories: GuideCategory[] = [
     articles: [
       { title: "How to Get Your First Flexible Job", slug: "first-flex-job", readTime: "5 min" },
       { title: "Complete Guide to Indeed Flex", slug: "complete-guide", readTime: "8 min" },
+      { title: "Same Day Pay Explained: Get Paid Today", slug: "same-day-pay-explained", readTime: "7 min" },
       { title: "What to Expect on Your First Shift", slug: "first-shift", readTime: "4 min" },
       { title: "Building Your Worker Profile", slug: "worker-profile", readTime: "6 min" },
     ]
@@ -247,7 +248,75 @@ export const guideArticles: Record<string, Article> = {
         answer: "You can cancel shifts, but frequent cancellations hurt your reliability score and reduce future opportunities. Try to cancel at least 24 hours in advance to minimize impact."
       }
     ],
-    relatedArticles: ["first-flex-job", "more-shifts", "skill-boost"]
+    relatedArticles: ["first-flex-job", "more-shifts", "skill-boost", "same-day-pay-explained"]
+  },
+  "same-day-pay-explained": {
+    slug: "same-day-pay-explained",
+    title: "Same Day Pay Explained: Get Paid Within 1 Hour",
+    category: "Getting Started",
+    categorySlug: "getting-started",
+    readTime: "7 min",
+    description: "Learn how Indeed Flex's Same Day Pay feature works. Access up to 50% of your earnings within 1 hour of completing a shift—perfect for students, parents, and anyone who needs fast cash.",
+    keyTakeaways: [
+      "Access up to 50% of your shift earnings within 1 hour of clocking out",
+      "No fees for Same Day Pay withdrawals—it's a free benefit for all Flexers",
+      "Remaining earnings deposit to your bank on Friday (standard weekly payroll)",
+      "73% of college students report cash flow as their biggest work concern—Same Day Pay solves this",
+      "Perfect for unexpected expenses, rent deadlines, or bridging gaps between pay periods"
+    ],
+    sections: [
+      {
+        heading: "What Is Same Day Pay?",
+        content: "[Same Day Pay](https://indeedflex.com/benefits-pay/same-day-pay/) is Indeed Flex's instant earnings access feature that lets you withdraw up to **50% of your shift earnings within 1 hour** of completing work.\n\n### How It Works\n\n1. **Complete your shift** – Clock out through the Indeed Flex app\n2. **Check your earnings** – Your eligible amount appears in the app\n3. **Request withdrawal** – Tap to transfer up to 50% to your bank\n4. **Receive funds** – Money typically arrives within 1 hour (depends on your bank)\n\n### Key Details\n\n| Feature | Details |\n|---------|--------|\n| Maximum withdrawal | 50% of shift earnings |\n| Availability | Within 1 hour of shift completion |\n| Fees | **Free** – no transaction fees |\n| Remaining pay | Deposited Friday (standard payroll) |\n| Bank requirements | US registered bank account |\n\n> **Why only 50%?** The remaining 50% covers payroll taxes and ensures accurate processing on your regular Friday paycheck."
+      },
+      {
+        heading: "Why Same Day Pay Matters",
+        content: "Traditional payroll cycles create cash flow challenges that Same Day Pay solves.\n\n### The 2026 Reality for Hourly Workers\n\n- **73% of college students** cite cash flow as their biggest work-related stress\n- **78% of Americans** live paycheck to paycheck\n- **Average overdraft fee**: $35 per incident\n- **Average payday loan APR**: 400%+\n\n### Real Scenarios Where Same Day Pay Helps\n\n**🎓 For Students:**\n- Work a Friday shift, pay for Saturday's textbooks\n- Cover unexpected car repair before Monday class\n- Contribute to rent on the 1st without waiting for payday\n\n**👨‍👩‍👧 For Parents:**\n- Pay the babysitter immediately after your shift\n- Cover emergency medical copays\n- Buy groceries mid-week when funds are low\n\n**💼 For Side-Gig Workers:**\n- Avoid overdraft fees by timing withdrawals\n- Skip predatory payday loans entirely\n- Bridge gaps between main job paychecks\n\n**🌡️ For Seasonal Workers:**\n- Handle variable income during peak seasons\n- Cash flow during slow weeks\n- Transition money between assignments"
+      },
+      {
+        heading: "Step-by-Step: Using Same Day Pay",
+        content: "### After Your Shift Ends\n\n**Step 1: Clock out properly**\n\n- Use the Indeed Flex app to clock out\n- Confirm your shift hours are correct\n- Ensure GPS verification completed successfully\n\n**Step 2: Check your earnings**\n\n- Open the app's earnings/pay section\n- View your shift total and Same Day Pay eligible amount\n- Eligible amount = up to 50% of your gross earnings\n\n**Step 3: Request withdrawal**\n\n- Tap \"Request Same Day Pay\" (or similar)\n- Enter the amount you want (up to available maximum)\n- Confirm your bank account details\n\n**Step 4: Receive your money**\n\n- Funds typically arrive within 1 hour\n- Timing depends on your bank's processing\n- Some banks may take 2-3 hours\n\n### Tips for Faster Transfers\n\n- Use a bank that accepts instant transfers\n- Avoid withdrawing during bank system maintenance windows\n- Ensure your bank details are current in the app\n\n### What Happens to the Rest?\n\nThe remaining 50% (plus any amount you didn't withdraw) follows the standard payroll schedule:\n\n- **Pay period**: Week ending Saturday\n- **Deposit day**: Following Friday\n- **Includes**: Remaining earnings, overtime, any adjustments"
+      },
+      {
+        heading: "Same Day Pay vs. Traditional Pay vs. Payday Loans",
+        content: "### Comparison: Getting Money When You Need It\n\n| Option | Speed | Cost | Risk |\n|--------|-------|------|------|\n| **Same Day Pay** | 1 hour | **Free** | None |\n| Traditional payroll | 5-14 days | Free | Waiting period |\n| Earned wage access apps | 1-2 days | $1-5/transfer | Fees add up |\n| Payday loans | Same day | $15-30 per $100 | Debt spiral |\n| Credit card cash advance | Immediate | 25%+ APR | Interest + fees |\n| Bank overdraft | Immediate | $35 per incident | Fees accumulate |\n\n### Annual Cost Comparison\n\n**If you need $200 early twice per month:**\n\n| Method | Annual Cost |\n|--------|-------------|\n| Same Day Pay | **$0** |\n| Earned wage apps ($2.50 avg) | $60/year |\n| Payday loans | $720+/year |\n| Overdraft fees | $840+/year |\n\n> **Bottom line:** Same Day Pay saves the average user $600-1,000+ annually compared to alternatives."
+      },
+      {
+        heading: "Smart Strategies for Same Day Pay",
+        content: "### When to Use Same Day Pay\n\n**✅ Good reasons:**\n- Avoiding overdraft fees\n- Paying time-sensitive bills (rent, utilities)\n- Emergency expenses (car repair, medical)\n- Avoiding high-interest debt\n\n**❌ Think twice:**\n- Impulse purchases (wait for Friday paycheck)\n- Non-urgent wants (build savings instead)\n- When you have buffer in your account\n\n### Building a Cash Flow System\n\n**Week 1-2: Track your patterns**\n- When do you typically run low on cash?\n- What unexpected expenses pop up?\n- When are your bills due?\n\n**Week 3-4: Time your shifts**\n- Schedule shifts before big expense days\n- Use Same Day Pay strategically for due dates\n- Keep some buffer in your account\n\n**Ongoing: Reduce dependence**\n- Build a small emergency fund ($500 target)\n- Eventually, rely on Friday paychecks only\n- Same Day Pay becomes a backup, not a necessity\n\n### Budgeting with Variable Income\n\nFlexible work means variable paychecks. Here's how to manage:\n\n1. **Calculate your baseline needs** (rent, food, transport)\n2. **Book enough shifts to cover baseline + 20%**\n3. **Use Same Day Pay only for necessities**\n4. **Let Friday deposits build your buffer**\n\nLearn more: [Budgeting for Irregular Income](/career-hub/financial-tips/irregular-income-budget)"
+      },
+      {
+        heading: "Frequently Asked Questions",
+        content: "### Is Same Day Pay really free?\n\n**Yes.** Indeed Flex does not charge fees for Same Day Pay. Some banks may have their own receiving fees, but most don't for standard transfers.\n\n### Why can I only access 50%?\n\nThe 50% limit ensures accurate tax withholding and payroll processing. Your remaining earnings deposit on the regular Friday schedule.\n\n### What if I work multiple shifts in one day?\n\nSame Day Pay calculates based on your total daily earnings. Complete all your shifts, then request up to 50% of the combined total.\n\n### How long until the money arrives?\n\nTypically within 1 hour. Factors affecting timing:\n- Bank processing speeds\n- Time of day (business hours vs. evenings)\n- Bank maintenance windows\n\n### Can I use Same Day Pay on every shift?\n\nYes! There's no limit to how often you use it. Each completed shift generates new Same Day Pay eligibility.\n\n### What if there's an issue with my withdrawal?\n\nContact Indeed Flex support:\n- **Lexi AI**: Available 24/7 in the app\n- **Human support**: Mon-Sat 6:30 AM-10:30 PM, Sun 8 AM-10 PM"
+      }
+    ],
+    faqs: [
+      {
+        question: "How does Indeed Flex Same Day Pay work?",
+        answer: "After completing a shift and clocking out, you can access up to 50% of your earnings within 1 hour. Simply open the Indeed Flex app, go to your earnings, and request a Same Day Pay withdrawal. The money transfers to your registered bank account."
+      },
+      {
+        question: "Is there a fee for Same Day Pay?",
+        answer: "No. Same Day Pay is completely free for all Indeed Flex workers. There are no transaction fees, hidden costs, or interest charges. The remaining 50% of your earnings is deposited on Friday through standard payroll."
+      },
+      {
+        question: "Why can I only access 50% of my earnings?",
+        answer: "The 50% limit ensures proper tax withholding and accurate payroll processing. Payroll taxes, deductions, and any adjustments are calculated from the remaining amount, which deposits with your Friday paycheck."
+      },
+      {
+        question: "How fast does Same Day Pay deposit?",
+        answer: "Funds typically arrive within 1 hour of requesting the withdrawal. Actual timing depends on your bank's processing speed. Most major banks process transfers quickly, but some may take 2-3 hours during peak times."
+      },
+      {
+        question: "Who can use Same Day Pay?",
+        answer: "All verified Indeed Flex workers with a registered US bank account can use Same Day Pay. Once you complete your first shift and clock out, the feature becomes available in your app."
+      },
+      {
+        question: "Is Same Day Pay better than payday loans?",
+        answer: "Absolutely. Same Day Pay is free with no interest, while payday loans charge 400%+ APR and trap many borrowers in debt cycles. Same Day Pay gives you access to money you've already earned—there's no borrowing involved."
+      }
+    ],
+    relatedArticles: ["complete-guide", "first-flex-job", "multiple-gigs"]
   },
   "first-shift": {
     slug: "first-shift",

@@ -6,7 +6,8 @@ export const PERSONA_GUIDE_MAPPINGS: Record<string, Record<string, string>> = {
     'student-resume-template': 'student-resume-template', // exists in job-application-articles
     'zero-experience-jobs': 'zero-experience-jobs', // exists in job-application-articles
     'first-flex-job': 'first-flex-job', // exists in guides
-    'same-day-pay': 'complete-guide', // redirect to complete guide (same-day-pay section)
+    'same-day-pay': 'same-day-pay-explained', // dedicated article
+    'same-day-pay-explained': 'same-day-pay-explained', // direct link
     'skill-boost': 'skill-boost', // exists
   },
   fresher: {
@@ -32,7 +33,8 @@ export const PERSONA_GUIDE_MAPPINGS: Record<string, Record<string, string>> = {
   },
   parent: {
     'working-parent-guide': 'first-flex-job', // maps to getting started
-    'same-day-pay': 'complete-guide', // redirect to complete guide
+    'same-day-pay': 'same-day-pay-explained', // dedicated article
+    'same-day-pay-explained': 'same-day-pay-explained', // direct link
     'medical-benefits': 'complete-guide', // redirect to complete guide (benefits section)
     'multiple-gigs': 'multiple-gigs', // exists
   },
@@ -45,7 +47,8 @@ export const PERSONA_GUIDE_MAPPINGS: Record<string, Record<string, string>> = {
   },
   'side-gig': {
     'side-gig-guide': 'multiple-gigs', // maps to multiple gigs
-    'same-day-pay': 'complete-guide', // redirect to complete guide
+    'same-day-pay': 'same-day-pay-explained', // dedicated article
+    'same-day-pay-explained': 'same-day-pay-explained', // direct link
     'tax-guide-gig-workers': 'complete-guide', // redirect to complete guide (until we create this)
     'more-shifts': 'more-shifts', // exists
   },
@@ -56,6 +59,7 @@ export const PERSONA_GUIDES: Record<string, Array<{ slug: string; title: string;
   student: [
     { slug: 'student-resume-template', title: 'Student Resume Template 2026', description: 'Balance academics and work experience' },
     { slug: 'zero-experience-jobs', title: 'Jobs With No Experience Required', description: 'Start earning with no prior work history' },
+    { slug: 'same-day-pay-explained', title: 'Same Day Pay: Get Paid Within 1 Hour', description: 'Access 50% of earnings instantly' },
     { slug: 'first-flex-job', title: 'Your First Flexible Job Guide', description: 'Step-by-step getting started' },
   ],
   fresher: [
@@ -75,6 +79,7 @@ export const PERSONA_GUIDES: Record<string, Array<{ slug: string; title: string;
   ],
   parent: [
     { slug: 'first-flex-job', title: 'Getting Started with Flex Work', description: 'Find family-friendly opportunities' },
+    { slug: 'same-day-pay-explained', title: 'Same Day Pay Explained', description: 'Access earnings when you need them' },
     { slug: 'complete-guide', title: 'Complete Indeed Flex Guide', description: 'Benefits, pay, and scheduling' },
     { slug: 'multiple-gigs', title: 'Balancing Multiple Gigs', description: 'Manage work and family time' },
   ],
@@ -85,6 +90,7 @@ export const PERSONA_GUIDES: Record<string, Array<{ slug: string; title: string;
   ],
   'side-gig': [
     { slug: 'multiple-gigs', title: 'Managing Multiple Gigs', description: 'Balance your side hustle with your main job' },
+    { slug: 'same-day-pay-explained', title: 'Same Day Pay Explained', description: 'Get paid within 1 hour of completing shifts' },
     { slug: 'complete-guide', title: 'Indeed Flex Complete Guide', description: 'Same-day pay, benefits, and more' },
     { slug: 'more-shifts', title: 'Getting More Shifts', description: 'Maximize your earning opportunities' },
   ],

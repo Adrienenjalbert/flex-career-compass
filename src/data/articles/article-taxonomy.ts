@@ -49,6 +49,18 @@ export const GUIDE_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedTools: ['pay-calculator', 'shift-planner', 'tax-calculator'],
     relatedTemplates: ['chronological', 'temp-worker']
   },
+  "same-day-pay-explained": {
+    userSituations: ['student', 'fresher', 'side-gig', 'parent', 'seasonal'],
+    industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+    experienceLevels: ['no-experience', 'entry-level', 'some-experience'],
+    contentIntent: 'learn',
+    language: 'english',
+    primaryKeyword: 'same day pay jobs',
+    searchVolume: 6600,
+    relatedRoles: ['picker-packer', 'server', 'event-staff', 'warehouse-operative'],
+    relatedTools: ['pay-calculator', 'shift-planner'],
+    relatedTemplates: ['temp-worker', 'first-job']
+  },
   "first-shift": {
     userSituations: ['fresher', 'student', 'career-returner'],
     industries: ['hospitality', 'industrial', 'retail', 'facilities'],
