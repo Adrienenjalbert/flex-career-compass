@@ -248,6 +248,20 @@ export const GUIDE_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedTemplates: []
   },
 
+  // Financial & Taxes
+  "tax-guide-gig-workers": {
+    userSituations: ['side-gig', 'parent', 'student', 'fresher', 'seasonal'],
+    industries: ['hospitality', 'industrial', 'retail', 'facilities'],
+    experienceLevels: ['no-experience', 'entry-level', 'some-experience', 'experienced'],
+    contentIntent: 'learn',
+    language: 'english',
+    primaryKeyword: 'gig worker taxes 1099',
+    searchVolume: 8100,
+    relatedRoles: [],
+    relatedTools: ['tax-calculator', 'pay-calculator'],
+    relatedTemplates: []
+  },
+
   // Workplace Success
   "workplace-success": {
     userSituations: ['fresher', 'career-changer', 'career-returner'],

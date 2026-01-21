@@ -88,6 +88,14 @@ export const guideCategories: GuideCategory[] = [
     ]
   },
   {
+    category: "Financial & Taxes",
+    slug: "financial-taxes",
+    icon: FileText,
+    articles: [
+      { title: "Gig Worker Tax Guide 2026: 1099 vs W-2", slug: "tax-guide-gig-workers", readTime: "15 min" },
+    ]
+  },
+  {
     category: "Professional Development",
     slug: "professional-development",
     icon: Award,
@@ -2351,6 +2359,84 @@ export const guideArticles: Record<string, Article> = {
       { question: "What if I have no experience?", answer: "Focus on transferable skills, reliability, and enthusiasm. Highlight volunteering, school activities, or personal qualities. Emphasize availability and willingness to learn. See our [First Job Resume Guide](/career-hub/guides/first-job-resume-template)." }
     ],
     relatedArticles: ["temp-work-resume-guide", "indeed-flex-profile-guide", "temp-to-perm-guide"]
+  },
+  
+  // Financial & Taxes
+  "tax-guide-gig-workers": {
+    slug: "tax-guide-gig-workers",
+    title: "Gig Worker Tax Guide 2026: 1099 vs W-2, Quarterly Taxes & Deductions",
+    category: "Financial & Taxes",
+    categorySlug: "financial-taxes",
+    readTime: "15 min",
+    description: "Complete tax guide for flexible workers. Understand 1099 vs W-2 classification, quarterly estimated taxes, self-employment tax, and maximize your deductions as a gig worker.",
+    keyTakeaways: [
+      "Indeed Flex workers are W-2 employees—taxes are withheld automatically, no quarterly payments needed",
+      "1099 contractors pay 15.3% self-employment tax on top of income tax (7.65% more than W-2)",
+      "Quarterly estimated tax payments are due April 15, June 15, September 15, and January 15",
+      "Common deductions: mileage (70¢/mile in 2026), uniforms, safety gear, and work-related expenses",
+      "Use our [Tax Calculator](/career-hub/tools/tax-calculator) to estimate your tax liability"
+    ],
+    sections: [
+      {
+        heading: "W-2 vs 1099: What's the Difference?",
+        content: "Understanding your tax classification is crucial for managing your finances as a flexible worker.\n\n### W-2 Employees (Indeed Flex Workers)\n\nIf you work through [Indeed Flex](https://indeedflex.com/download-app/), you're classified as a **W-2 employee**. This means:\n\n| Benefit | W-2 Employees |\n|---------|---------------|\n| Tax withholding | Automatic—employer handles it |\n| FICA taxes | Split 50/50 with employer (you pay 7.65%) |\n| Quarterly payments | Not required—already withheld |\n| Form received | W-2 in January |\n| Benefits eligibility | Yes (health, dental, vision) |\n| Unemployment insurance | Covered |\n\n**Key advantage:** Indeed Flex handles your payroll taxes, so you don't have to worry about quarterly estimated payments or self-employment tax.\n\n### 1099 Independent Contractors\n\nIf you work through other gig platforms (DoorDash, Uber, TaskRabbit), you're likely a **1099 contractor**:\n\n| Responsibility | 1099 Contractors |\n|----------------|------------------|\n| Tax withholding | None—you must set aside money |\n| FICA taxes | You pay full 15.3% (self-employment tax) |\n| Quarterly payments | Required if you owe $1,000+ |\n| Form received | 1099-NEC in January |\n| Benefits | Not provided—must purchase own |\n| Deductions | More available (business expenses) |\n\n**The 15.3% difference:** As a 1099 worker, you pay both the employee AND employer portions of Social Security and Medicare taxes.\n\n### Side-by-Side Tax Comparison\n\n| Earning $40,000/year | W-2 Worker | 1099 Contractor |\n|---------------------|------------|------------------|\n| Gross income | $40,000 | $40,000 |\n| FICA/SE tax | $3,060 (7.65%) | $5,652 (15.3% × 92.35%) |\n| Federal income tax | ~$2,800 | ~$2,400 (after SE deduction) |\n| **Total tax** | **~$5,860** | **~$8,052** |\n| **Take-home** | **~$34,140** | **~$31,948** |\n\n> **Bottom line:** W-2 employment through Indeed Flex saves you roughly $2,200/year in taxes compared to 1099 work at the same earnings level."
+      },
+      {
+        heading: "Quarterly Estimated Taxes (1099 Workers)",
+        content: "If you earn 1099 income alongside your Indeed Flex W-2 work, you may need to make quarterly estimated tax payments.\n\n### 2026 Quarterly Tax Deadlines\n\n| Quarter | Income Period | Due Date |\n|---------|---------------|----------|\n| Q1 | Jan 1 – Mar 31 | April 15, 2026 |\n| Q2 | Apr 1 – May 31 | June 16, 2026 |\n| Q3 | Jun 1 – Aug 31 | September 15, 2026 |\n| Q4 | Sep 1 – Dec 31 | January 15, 2027 |\n\n### Do You Need to Pay Quarterly?\n\nYou must make quarterly payments if:\n\n✅ You expect to owe **$1,000 or more** in taxes after withholding\n✅ Your 1099 income is **$5,000+** per year\n✅ You have **significant deductions** you want to offset quarterly\n\nYou can skip quarterly payments if:\n\n❌ Your 1099 income is minimal (under $5,000/year)\n❌ Your W-2 withholding covers your total tax liability\n❌ You owed less than $1,000 last year\n\n### How to Calculate Quarterly Payments\n\n**Simple method:** Set aside 25-30% of your 1099 income for taxes.\n\n**More accurate method:**\n\n1. Estimate annual 1099 income: $________\n2. Multiply by 92.35% (SE tax base): $________\n3. Multiply by 15.3% (SE tax rate): $________\n4. Add estimated federal income tax: $________\n5. Add estimated state tax: $________\n6. Divide by 4 for quarterly payment: $________\n\n**Use our [Tax Calculator](/career-hub/tools/tax-calculator)** to get personalized estimates.\n\n### How to Pay Quarterly Taxes\n\n**Option 1: IRS Direct Pay** (free)\n- Go to [irs.gov/payments](https://www.irs.gov/payments)\n- Select \"Make a Payment\" → \"Estimated Tax\"\n- Enter bank account information\n- Schedule payment for each deadline\n\n**Option 2: EFTPS** (Electronic Federal Tax Payment System)\n- Enroll at [eftps.gov](https://www.eftps.gov)\n- Schedule recurring payments\n- Best for consistent quarterly payments\n\n**Option 3: Mail Form 1040-ES**\n- Download vouchers from IRS\n- Mail check to appropriate address\n- Keep proof of mailing\n\n### Penalty for Missing Payments\n\nThe IRS charges ~8% annual interest on underpayments (2026 rate). Missing a $1,000 quarterly payment could cost you:\n\n- 3 months late: ~$20 penalty\n- 6 months late: ~$40 penalty\n- 1 year late: ~$80 penalty\n\n> **Pro tip:** If you're new to 1099 work, set up automatic transfers of 25% of each payment to a separate \"tax savings\" account."
+      },
+      {
+        heading: "Self-Employment Tax Explained",
+        content: "The self-employment (SE) tax is often the biggest surprise for new 1099 workers.\n\n### What Is Self-Employment Tax?\n\nSE tax covers Social Security and Medicare—the same as FICA for W-2 employees. The difference:\n\n| Tax Component | W-2 Employee | 1099 Contractor |\n|---------------|--------------|------------------|\n| Social Security (6.2%) | ✅ | ✅ |\n| Employer SS match (6.2%) | Paid by employer | **Paid by you** |\n| Medicare (1.45%) | ✅ | ✅ |\n| Employer Medicare (1.45%) | Paid by employer | **Paid by you** |\n| **Total** | **7.65%** | **15.3%** |\n\n### Calculating Self-Employment Tax\n\nSE tax only applies to **net self-employment income** (after deductions):\n\n1. Start with 1099 income: $20,000\n2. Subtract business deductions: -$2,000\n3. Net SE income: $18,000\n4. Multiply by 92.35%: $16,623 (SE tax base)\n5. Multiply by 15.3%: **$2,543 SE tax**\n\n### The SE Tax Deduction\n\n**Good news:** You can deduct half of your SE tax from your income tax calculation.\n\nUsing the example above:\n- SE tax: $2,543\n- Deductible amount: $1,271.50\n- This reduces your taxable income, saving ~$150-300 in income tax\n\n### 2026 Social Security Wage Base\n\nSocial Security tax (12.4% of SE tax) only applies to the first **$176,100** of earnings in 2026.\n\n- If you earn under $176,100: Full 15.3% SE tax applies\n- If you earn over $176,100: Only 2.9% Medicare applies to excess\n\n### Additional Medicare Tax\n\nHigh earners pay an extra 0.9% Medicare tax:\n\n- Single filers: Income over $200,000\n- Married filing jointly: Income over $250,000\n\nMost flexible workers won't hit this threshold, but it's worth knowing if you have multiple income sources."
+      },
+      {
+        heading: "Tax Deductions for Gig Workers",
+        content: "Maximizing deductions is key to reducing your tax bill—but this primarily benefits 1099 workers.\n\n### W-2 Workers: Limited Deductions\n\nAs an Indeed Flex W-2 employee, you **cannot** deduct:\n- Mileage to work\n- Work clothes (unless specialty uniforms)\n- Tools required for the job\n- Most work-related expenses\n\n**Exception:** Union dues, if applicable, may be deductible in some states.\n\n### 1099 Workers: Maximize These Deductions\n\n#### Mileage Deduction (2026: 70¢/mile)\n\nTrack all business miles:\n\n| Drive Type | Deductible? |\n|------------|-------------|\n| Home to first job | ❌ (commuting) |\n| Job to job | ✅ |\n| Job to supply store | ✅ |\n| Job to bank (deposits) | ✅ |\n| Last job to home | ❌ (commuting) |\n\n**Example:** 5,000 business miles × $0.70 = **$3,500 deduction**\n\n**Tracking apps:** MileIQ, Everlance, Stride—all free or low-cost.\n\n#### Equipment & Supplies\n\n| Item | Deductible? | Notes |\n|------|-------------|-------|\n| Non-slip work shoes | ✅ | If required for job |\n| Safety gear (gloves, glasses) | ✅ | Must be for work |\n| Phone (% used for work) | ✅ | Track work usage |\n| Phone mount/charger | ✅ | If used for work |\n| Insulated bags (delivery) | ✅ | 100% business |\n| Uniforms | ✅ | If not suitable for everyday wear |\n\n#### Vehicle Expenses (Alternative to Mileage)\n\nInstead of the standard mileage rate, you can deduct actual expenses:\n\n- Gas and oil\n- Insurance (business portion)\n- Repairs and maintenance\n- Registration fees\n- Depreciation\n\n**Choose one method:** You must use the same method for the life of the vehicle.\n\n#### Home Office Deduction\n\nIf you have a dedicated workspace for gig administration:\n\n- Simplified method: $5/sq ft, up to 300 sq ft = **$1,500 max**\n- Regular method: Calculate actual expenses × business use %\n\n**Qualifies:** A space used **regularly and exclusively** for business.\n\n#### Health Insurance Premium Deduction\n\nSelf-employed individuals can deduct 100% of health insurance premiums paid for themselves and dependents.\n\n> **Important:** This applies to 1099 income only. If you have W-2 coverage through Indeed Flex's Essential StaffCARE, you're already getting tax-advantaged benefits."
+      },
+      {
+        heading: "Filing Your Taxes: Step-by-Step",
+        content: "### Documents You'll Need\n\n**From Indeed Flex (W-2 income):**\n- Form W-2 (arrives by January 31)\n- Pay stubs showing earnings and withholding\n\n**From 1099 platforms:**\n- Form 1099-NEC (arrives by January 31)\n- Your own income records (platform may not report under $600)\n\n**For deductions:**\n- Mileage log or app export\n- Receipts for business expenses\n- Health insurance premium statements (Form 1095-A if marketplace)\n\n### Tax Filing Options\n\n| Option | Best For | Cost |\n|--------|----------|------|\n| Free File (IRS) | Income under $79,000 | Free |\n| TurboTax Self-Employed | Gig workers with deductions | $120-200 |\n| H&R Block Self-Employed | Mixed W-2/1099 income | $110-180 |\n| Cash App Taxes | Simple returns | Free |\n| CPA/Tax Professional | Complex situations | $200-500+ |\n\n### Key Forms to Know\n\n| Form | Purpose | Who Files |\n|------|---------|----------|\n| 1040 | Main individual tax return | Everyone |\n| Schedule C | Business income/deductions | 1099 workers |\n| Schedule SE | Self-employment tax | 1099 workers |\n| 1040-ES | Quarterly estimated payments | 1099 workers |\n| W-2 | Wage statement | Received from Indeed Flex |\n| 1099-NEC | Non-employee compensation | Received from gig platforms |\n\n### Filing Deadlines 2026\n\n| Deadline | Action |\n|----------|--------|\n| January 31 | W-2 and 1099 forms mailed |\n| April 15 | Tax return due (or extension) |\n| April 15 | Q1 estimated payment due |\n| October 15 | Extended return due |\n\n### Common Mistakes to Avoid\n\n❌ **Not reporting all 1099 income** — The IRS gets copies too\n❌ **Missing the 1099-K threshold** — $600 in 2026 (down from $20,000)\n❌ **Deducting W-2 commuting costs** — Not allowed since 2018\n❌ **Mixing personal and business expenses** — Keep separate accounts\n❌ **Not keeping receipts** — You need proof for deductions"
+      },
+      {
+        heading: "State Tax Considerations",
+        content: "State taxes add another layer to your tax planning.\n\n### States With No Income Tax\n\nIf you live in one of these states, you only pay federal taxes:\n\n- Alaska\n- Florida\n- Nevada\n- New Hampshire (dividends/interest only)\n- South Dakota\n- Tennessee\n- Texas\n- Washington\n- Wyoming\n\n### State Tax Rates for Common Indeed Flex Markets\n\n| State | Top Rate | Notes |\n|-------|----------|-------|\n| Texas | 0% | No state income tax |\n| Florida | 0% | No state income tax |\n| California | 13.3% | Highest in US |\n| Georgia | 5.49% | Flat rate as of 2024 |\n| Ohio | 3.75% | Progressive brackets |\n| Tennessee | 0% | No wage income tax |\n| Arizona | 2.5% | Flat rate |\n| Illinois | 4.95% | Flat rate |\n| Nevada | 0% | No state income tax |\n| North Carolina | 4.5% | Flat rate |\n\n### Multi-State Work\n\nIf you work in multiple states (common for delivery workers near state borders):\n\n1. **Home state** — Usually where you file\n2. **Work state** — May require separate filing\n3. **Credit for taxes paid** — Avoid double taxation\n\nConsult a tax professional if you regularly work across state lines.\n\n### State Quarterly Payments\n\nMany states require separate quarterly estimated payments:\n\n- California: Forms 540-ES\n- New York: Form IT-2105\n- Most others: Similar state-specific forms\n\n> **Pro tip:** Use our [Tax Calculator](/career-hub/tools/tax-calculator) to see state-specific estimates for all 50 states."
+      },
+      {
+        heading: "Tax Planning Strategies",
+        content: "Smart tax planning throughout the year saves money at filing time.\n\n### For W-2 Workers (Indeed Flex)\n\n**1. Adjust Your Withholding**\n\nIf you received a large refund or owed money last year:\n- Submit a new W-4 to adjust withholding\n- Use the IRS Withholding Estimator at [irs.gov](https://www.irs.gov/individuals/tax-withholding-estimator)\n\n**2. Contribute to Retirement Accounts**\n\n- Traditional IRA: Up to $7,000 (2026), tax-deductible\n- Roth IRA: Up to $7,000 (2026), tax-free growth\n- 401(k) if available: Up to $23,500 (2026)\n\n**3. Use Pre-Tax Benefits**\n\n- HSA contributions (if eligible): Up to $4,300 individual / $8,550 family\n- FSA contributions: Up to $3,200 for healthcare\n\n### For 1099 Workers\n\n**1. SEP-IRA Contributions**\n\nSelf-employed individuals can contribute up to 25% of net self-employment income (max $69,000 in 2026).\n\n**Example:** $40,000 net SE income → up to $10,000 SEP-IRA contribution → saves $1,200-2,400 in taxes.\n\n**2. Solo 401(k)**\n\nEven better contribution limits:\n- Employee portion: $23,500\n- Employer portion: 25% of compensation\n- Total max: $69,000\n\n**3. Track Every Expense**\n\nSet up a system from day one:\n- Separate business bank account\n- Dedicated credit card for business expenses\n- Mileage tracking app\n- Digital receipt storage (Expensify, QuickBooks)\n\n**4. Time Your Income**\n\n- Delay December invoices to January (if beneficial)\n- Accelerate expenses before year-end\n- Make equipment purchases in high-income years\n\n### Mixed W-2 + 1099 Strategy\n\nIf you have both Indeed Flex (W-2) and 1099 income:\n\n1. **Increase W-2 withholding** to cover 1099 taxes\n   - This avoids quarterly payment requirements\n   - Submit Form W-4 with extra withholding\n\n2. **Calculate the right amount:**\n   - Estimate 1099 tax liability\n   - Divide by remaining pay periods\n   - Add to W-4 \"Additional withholding\" line\n\n> **Example:** You owe $4,000 in 1099 taxes. With 20 W-2 pay periods remaining, add $200 extra withholding per paycheck."
+      }
+    ],
+    faqs: [
+      { 
+        question: "Do Indeed Flex workers pay self-employment tax?", 
+        answer: "No. Indeed Flex workers are W-2 employees, so your employer pays half of FICA taxes (7.65%) and withholds your half from your paycheck. You don't pay the 15.3% self-employment tax that 1099 contractors owe." 
+      },
+      { 
+        question: "What's the tax difference between 1099 and W-2?", 
+        answer: "1099 workers pay 7.65% more in taxes (the self-employment tax). On $40,000 of income, a 1099 contractor pays roughly $2,200 more than a W-2 employee. However, 1099 workers can deduct more business expenses." 
+      },
+      { 
+        question: "Do I need to make quarterly estimated tax payments?", 
+        answer: "Only if you have significant 1099 income. As an Indeed Flex W-2 worker, taxes are already withheld from your paycheck. You only need quarterly payments if you expect to owe $1,000+ in additional taxes from 1099 work." 
+      },
+      { 
+        question: "Can I deduct mileage to and from Indeed Flex shifts?", 
+        answer: "No. As a W-2 employee, commuting costs are not tax-deductible. The 2017 Tax Cuts and Jobs Act eliminated the employee business expense deduction. Only 1099 contractors can deduct business mileage." 
+      },
+      { 
+        question: "When do I receive my W-2 from Indeed Flex?", 
+        answer: "W-2 forms are mailed and/or available electronically by January 31 each year. Check your Indeed Flex app settings for electronic delivery options. If you don't receive it by mid-February, contact Indeed Flex support." 
+      },
+      { 
+        question: "How much should I set aside for taxes on 1099 income?", 
+        answer: "A safe rule is 25-30% of your 1099 income. This covers 15.3% self-employment tax plus 10-15% federal income tax. Use our Tax Calculator for a more precise estimate based on your total income and state." 
+      },
+      { 
+        question: "What deductions can gig workers claim?", 
+        answer: "1099 workers can deduct mileage (70¢/mile in 2026), work supplies, phone (business %), home office, health insurance, and vehicle expenses. W-2 workers have limited deductions—mostly retirement contributions and pre-tax benefits." 
+      }
+    ],
+    relatedArticles: ["complete-guide", "same-day-pay-explained", "multiple-gigs", "career-paths"]
   },
   // Merge in the new job application articles
   ...jobApplicationArticles
