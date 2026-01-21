@@ -162,7 +162,7 @@ export const GUIDE_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedTemplates: ['warehouse', 'chronological']
   },
   "retail-guide": {
-    userSituations: ['fresher', 'student', 'teen', 'side-gig'],
+    userSituations: ['fresher', 'student', 'side-gig'],
     industries: ['retail'],
     experienceLevels: ['no-experience', 'entry-level'],
     contentIntent: 'learn',
@@ -300,7 +300,7 @@ export const GUIDE_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedTemplates: ['hospitality', 'chronological']
   },
   "student-jobs-fall": {
-    userSituations: ['student', 'teen'],
+    userSituations: ['student', 'fresher'],
     industries: ['hospitality', 'retail', 'industrial'],
     experienceLevels: ['no-experience', 'entry-level'],
     contentIntent: 'learn',
@@ -467,7 +467,7 @@ export const JOB_APPLICATION_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedTemplates: ['functional', 'first-job', 'one-page']
   },
   "student-resume-template": {
-    userSituations: ['student', 'teen', 'fresher'],
+    userSituations: ['student', 'fresher'],
     industries: ['hospitality', 'retail', 'industrial'],
     experienceLevels: ['no-experience', 'entry-level'],
     contentIntent: 'create',
@@ -479,7 +479,7 @@ export const JOB_APPLICATION_TAXONOMY: Record<string, ArticleTaxonomyData> = {
     relatedTemplates: ['student', 'one-page', 'chronological']
   },
   "zero-experience-jobs": {
-    userSituations: ['fresher', 'student', 'career-returner', 'teen'],
+    userSituations: ['fresher', 'student', 'career-returner'],
     industries: ['hospitality', 'industrial', 'retail', 'facilities'],
     experienceLevels: ['no-experience'],
     contentIntent: 'find-work',

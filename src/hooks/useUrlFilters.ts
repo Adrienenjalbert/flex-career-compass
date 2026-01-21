@@ -241,10 +241,6 @@ export const FILTER_PRESETS: Record<string, Partial<UrlFilters>> = {
     userSituation: ['career-changer'],
     experienceLevel: ['career-change']
   },
-  'for-teens': {
-    userSituation: ['teen'],
-    experienceLevel: ['no-experience']
-  },
   'for-seasonal': {
     userSituation: ['seasonal']
   },

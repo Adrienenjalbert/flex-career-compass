@@ -462,7 +462,7 @@ export const resumeTemplates: Record<string, ResumeTemplate> = {
       availability: 'Available 20-30 hours/week | Evenings and weekends | Full-time during school breaks'
     },
     taxonomy: {
-      userSituations: ['student', 'fresher', 'teen'],
+      userSituations: ['student', 'fresher'],
       industries: ['hospitality', 'retail', 'industrial'],
       experienceLevels: ['no-experience', 'entry-level'],
       contentIntent: 'create',
