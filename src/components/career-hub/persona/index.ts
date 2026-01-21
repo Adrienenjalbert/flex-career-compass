@@ -9,4 +9,6 @@ export { WhyFlexSection } from './WhyFlexSection';
 export { PopularRolesGrid } from './PopularRolesGrid';
 export { GuidesToolsSection } from './GuidesToolsSection';
 export { JobApplicationNav } from './JobApplicationNav';
-export { DeepResearchSection } from './DeepResearchSection';
+export { StudentMarketStats } from './StudentMarketStats';
+export { StudentSuccessTips } from './StudentSuccessTips';
+export { RelatedArticlesGrid } from './RelatedArticlesGrid';

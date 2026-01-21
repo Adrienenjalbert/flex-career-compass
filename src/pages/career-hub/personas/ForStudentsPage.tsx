@@ -9,7 +9,6 @@ import {
   Clock, 
   DollarSign, 
   Calendar, 
-  BookOpen, 
   Calculator,
   ArrowRight,
   CheckCircle2,
@@ -17,18 +16,18 @@ import {
   Shield
 } from "lucide-react";
 import { getPersonaGuides } from "@/data/persona-guides";
-import { usePersonaResearchData } from "@/hooks/usePersonaResearch";
 import { 
   WhyFlexSection,
   PopularRolesGrid,
   GuidesToolsSection,
   JobApplicationNav,
-  DeepResearchSection
+  StudentMarketStats,
+  StudentSuccessTips,
+  RelatedArticlesGrid
 } from "@/components/career-hub/persona";
 
 const ForStudentsPage = () => {
   const studentGuides = getPersonaGuides('student');
-  const { data: researchData, isLoading, hasResearch } = usePersonaResearchData('student');
   const baseUrl = "https://flex-career-compass.lovable.app";
 
   // Benefits data with stats from research
@@ -59,7 +58,7 @@ const ForStudentsPage = () => {
     },
   ];
 
-  // Popular roles for students with pay data
+  // Popular roles for students with pay data (from research)
   const popularRoles = [
     { 
       slug: "event-staff", 
@@ -116,10 +115,57 @@ const ForStudentsPage = () => {
 
   // Enhanced guides with read times
   const enhancedGuides = [
-    { slug: 'zero-experience-jobs', title: 'Jobs With No Experience Required', description: 'Start earning with no prior work history', readTime: '5 min' },
     { slug: 'first-flex-job', title: 'Your First Flexible Job Guide', description: 'Step-by-step getting started', readTime: '8 min' },
-    { slug: 'student-resume-template', title: 'Student Resume Template 2026', description: 'Balance academics and work experience', readTime: '6 min' },
-    { slug: 'skill-boost', title: 'Skills That Boost Your Pay', description: 'High-demand skills employers look for', readTime: '4 min' },
+    { slug: 'skill-boost', title: 'Skills That Boost Your Pay', description: 'High-demand skills employers look for', readTime: '7 min' },
+    { slug: 'resume-tips', title: 'Resume Tips for Students', description: 'Stand out with limited experience', readTime: '5 min' },
+    { slug: 'multiple-gigs', title: 'Balancing Multiple Gigs', description: 'Juggle work and school successfully', readTime: '8 min' },
+  ];
+
+  // Related articles derived from research topics
+  const relatedArticles = [
+    { 
+      type: 'guide' as const, 
+      slug: 'resume-freshers-2026', 
+      title: 'Resume for Freshers 2026', 
+      description: 'Build an impressive resume with no experience using proven templates.',
+      readTime: '8 min',
+      highlight: true
+    },
+    { 
+      type: 'guide' as const, 
+      slug: 'no-experience-jobs', 
+      title: 'How to Land a Job With No Experience', 
+      description: 'Strategies to get hired when you have limited work history.',
+      readTime: '10 min'
+    },
+    { 
+      type: 'guide' as const, 
+      slug: 'transferable-skills', 
+      title: 'Transferable Skills That Employers Love', 
+      description: 'Turn campus activities into resume-worthy experience.',
+      readTime: '6 min'
+    },
+    { 
+      type: 'tool' as const, 
+      slug: 'shift-planner', 
+      title: 'Shift Planner Tool', 
+      description: 'Map your class schedule against available work shifts.',
+      readTime: '2 min'
+    },
+    { 
+      type: 'guide' as const, 
+      slug: 'interview-skills', 
+      title: 'Interview Skills for Flex Work', 
+      description: 'Ace your verification interview and get more shifts.',
+      readTime: '10 min'
+    },
+    { 
+      type: 'guide' as const, 
+      slug: 'warehouse-guide', 
+      title: 'Warehouse Work 101', 
+      description: 'Everything you need to know about warehouse jobs.',
+      readTime: '8 min'
+    },
   ];
 
   const faqs = [
@@ -181,7 +227,7 @@ const ForStudentsPage = () => {
       "name": "Indeed Flex Career Hub"
     },
     "datePublished": "2026-01-01",
-    "dateModified": researchData?.researched_at || "2026-01-21"
+    "dateModified": "2026-01-21"
   };
 
   return (
@@ -200,7 +246,6 @@ const ForStudentsPage = () => {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24 overflow-hidden">
-        {/* Background decoration */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         
         <div className="container mx-auto px-4 relative">
@@ -215,8 +260,7 @@ const ForStudentsPage = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Earn $15-25/hour with flexible shifts, same-day pay, and no minimum hours. 
-              Join 165,000+ students balancing work and education.
+              75% of undergrads work while enrolled. Earn $15-25/hour with flexible shifts, same-day pay, and no minimum hours.
             </p>
             
             {/* Quick Stats */}
@@ -227,7 +271,7 @@ const ForStudentsPage = () => {
               </Badge>
               <Badge variant="secondary" className="text-sm py-1.5 px-3">
                 <Clock className="w-4 h-4 mr-1" />
-                Flexible scheduling
+                Keep under 20 hrs/week
               </Badge>
               <Badge variant="secondary" className="text-sm py-1.5 px-3">
                 <Shield className="w-4 h-4 mr-1" />
@@ -243,8 +287,8 @@ const ForStudentsPage = () => {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="#research">
-                  View 2026 Market Data
+                <Link to="/career-hub/guides/first-flex-job">
+                  Read Getting Started Guide
                 </Link>
               </Button>
             </div>
@@ -259,12 +303,18 @@ const ForStudentsPage = () => {
         headline="Why Students Choose Flexible Work"
       />
 
+      {/* 2026 Market Stats Section - Curated from research */}
+      <StudentMarketStats />
+
       {/* Popular Roles Section */}
       <PopularRolesGrid 
         roles={popularRoles}
         title="Popular Roles for Students"
         subtitle="No experience required • Flexible schedules • Competitive pay"
       />
+
+      {/* Research-Backed Success Tips */}
+      <StudentSuccessTips />
 
       {/* Guides & Tools Section */}
       <GuidesToolsSection 
@@ -274,33 +324,19 @@ const ForStudentsPage = () => {
         toolsTitle="Planning Tools"
       />
 
+      {/* Related Articles Grid - Content derived from research */}
+      <RelatedArticlesGrid 
+        items={relatedArticles}
+        title="Explore More Resources"
+        subtitle="Dive deeper into topics that help students succeed at work"
+        className="bg-muted/20"
+      />
+
       {/* Job Application Navigation */}
       <JobApplicationNav 
         personaSlug="student" 
         personaName="Students"
       />
-
-      {/* Deep Research Section with Tabs */}
-      {hasResearch && researchData && (
-        <div id="research">
-          <DeepResearchSection 
-            data={researchData}
-            personaName="Student"
-          />
-        </div>
-      )}
-
-      {/* Loading state for research */}
-      {isLoading && (
-        <section className="py-16 bg-muted/20">
-          <div className="container mx-auto px-4 text-center">
-            <div className="animate-pulse flex flex-col items-center gap-2">
-              <div className="h-8 w-64 bg-muted rounded"></div>
-              <div className="h-4 w-48 bg-muted rounded"></div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* FAQ Section */}
       <section className="py-16 bg-background">
