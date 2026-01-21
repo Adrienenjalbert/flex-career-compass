@@ -32,11 +32,12 @@ export const PERSONA_GUIDE_MAPPINGS: Record<string, Record<string, string>> = {
     'skill-boost': 'skill-boost', // exists
   },
   parent: {
-    'working-parent-guide': 'first-flex-job', // maps to getting started
+    'working-parent-guide': 'working-parent-guide', // now exists!
     'same-day-pay': 'same-day-pay-explained', // dedicated article
     'same-day-pay-explained': 'same-day-pay-explained', // direct link
     'medical-benefits': 'complete-guide', // redirect to complete guide (benefits section)
     'multiple-gigs': 'multiple-gigs', // exists
+    'childcare-calculator': 'working-parent-guide', // article with calculator links
   },
   seasonal: {
     'holiday-warehouse-guide': 'holiday-warehouse-guide', // exists
@@ -78,7 +79,7 @@ export const PERSONA_GUIDES: Record<string, Array<{ slug: string; title: string;
     { slug: 'career-paths', title: 'Career Progression Paths', description: 'From entry-level to management' },
   ],
   parent: [
-    { slug: 'first-flex-job', title: 'Getting Started with Flex Work', description: 'Find family-friendly opportunities' },
+    { slug: 'working-parent-guide', title: 'Complete Working Parent Guide 2026', description: 'Balance family and flexible work' },
     { slug: 'same-day-pay-explained', title: 'Same Day Pay Explained', description: 'Access earnings when you need them' },
     { slug: 'complete-guide', title: 'Complete Indeed Flex Guide', description: 'Benefits, pay, and scheduling' },
     { slug: 'multiple-gigs', title: 'Balancing Multiple Gigs', description: 'Manage work and family time' },

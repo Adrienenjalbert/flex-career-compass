@@ -16,3 +16,5 @@ export { FresherMarketStats } from './FresherMarketStats';
 export { FresherSuccessTips } from './FresherSuccessTips';
 export { ImmigrantMarketStats } from './ImmigrantMarketStats';
 export { ImmigrantSuccessTips } from './ImmigrantSuccessTips';
+export { ParentMarketStats } from './ParentMarketStats';
+export { ParentSuccessTips } from './ParentSuccessTips';
