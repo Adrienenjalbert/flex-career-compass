@@ -5,3 +5,8 @@ export { ResearchInsightsPanel } from './ResearchInsightsPanel';
 export { PersonaHeroStats } from './PersonaHeroStats';
 export { ExternalResourcesPanel } from './ExternalResourcesPanel';
 export { PersonaResearchSection } from './PersonaResearchSection';
+export { WhyFlexSection } from './WhyFlexSection';
+export { PopularRolesGrid } from './PopularRolesGrid';
+export { GuidesToolsSection } from './GuidesToolsSection';
+export { JobApplicationNav } from './JobApplicationNav';
+export { DeepResearchSection } from './DeepResearchSection';
