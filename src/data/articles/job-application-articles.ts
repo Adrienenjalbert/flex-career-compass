@@ -2,6 +2,10 @@
 // These articles target high-volume search queries for freshers, students, and job seekers
 
 import { Article } from "./guides";
+import { JOB_APPLICATION_TAXONOMY, getGuideTaxonomy, type ArticleTaxonomyData } from "./article-taxonomy";
+
+// Re-export for convenience
+export { JOB_APPLICATION_TAXONOMY, getGuideTaxonomy };
 
 export const jobApplicationArticles: Record<string, Article> = {
   "fresher-resume-guide": {
