@@ -93,14 +93,11 @@ export const guideCategories: GuideCategory[] = [
     icon: FileText,
     articles: [
       { title: "Gig Worker Tax Guide 2026: 1099 vs W-2", slug: "tax-guide-gig-workers", readTime: "15 min" },
-    ]
-  },
-  {
-    category: "Working Parents",
-    slug: "working-parents",
-    icon: Users,
-    articles: [
-      { title: "Complete Working Parent Guide 2026", slug: "working-parent-guide", readTime: "18 min" },
+      { title: "Budgeting for Irregular Income", slug: "irregular-income-budget", readTime: "7 min" },
+      { title: "Building an Emergency Fund", slug: "emergency-fund-guide", readTime: "8 min" },
+      { title: "Tax Tips for Flexible Workers", slug: "tax-tips", readTime: "10 min" },
+      { title: "Managing Money Between Shifts", slug: "between-shifts", readTime: "6 min" },
+      { title: "Benefits and Insurance Options", slug: "gig-benefits", readTime: "9 min" },
     ]
   },
   {
