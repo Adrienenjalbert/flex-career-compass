@@ -6,7 +6,7 @@ import ToolCard from "@/components/career-hub/ToolCard";
 import CTASection from "@/components/career-hub/CTASection";
 import FAQSection from "@/components/career-hub/FAQSection";
 import GuidesCategorySection from "@/components/career-hub/GuidesCategorySection";
-import FinancialTipsSection from "@/components/career-hub/FinancialTipsSection";
+import PersonaSection from "@/components/career-hub/PersonaSection";
 import { InternalLinkHub } from "@/components/career-hub/InternalLinkHub";
 import { SEOMetaTags } from "@/components/career-hub/seo";
 import { usLocations } from "@/data/locations";
@@ -179,8 +179,8 @@ const CareerHubHome = () => {
         {/* Career Guides Section */}
         <GuidesCategorySection />
 
-        {/* Financial Tips Section */}
-        <FinancialTipsSection />
+        {/* Persona Section */}
+        <PersonaSection />
 
         {/* Active Markets Section */}
         <section className="py-16 bg-secondary">
